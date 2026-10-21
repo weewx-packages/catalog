@@ -2,7 +2,9 @@ name: Upstream skins
 
 on:
   schedule:
-    - cron: '3 4 * * *'
+    - cron: '3 4 * * 1'
+    - cron: '3 4 * * 3'
+    - cron: '3 4 * * 5'
   workflow_dispatch:
 
 permissions:
@@ -12,23 +14,43 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  mirror:
+  select:
     if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    outputs:
+      mirrors: ${{ steps.select.outputs.mirrors }}
+      packages: ${{ steps.select.outputs.packages }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Select this weekday's upstreams
+        id: select
+        env:
+          SCHEDULE: ${{ github.event.schedule }}
+        run: |
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json, os
+          from pathlib import Path
+          schedule = os.environ['SCHEDULE']
+          specs = json.loads(Path('ci/upstreams.json').read_text())
+          # Manual runs include every skin; schedules select one weekly group.
+          if schedule:
+              specs = [s for s in specs if s['weekday'] == int(schedule.split()[-1])]
+          if not specs:
+              raise ValueError('No upstreams assigned to this schedule')
+          mirrors = [{k: s[k] for k in ('upstream', 'fork', 'secret')} for s in specs]
+          print('mirrors=' + json.dumps({'include': mirrors}))
+          print('packages=' + json.dumps([s['id'] for s in specs]))
+          PY
+
+  mirror:
+    needs: select
     runs-on: ubuntu-latest
     timeout-minutes: 10
     strategy:
       fail-fast: false
-      matrix:
-        include:
-          - upstream: seehase/neowx-material
-            fork: weewx-packages/neowx-material
-            secret: NEOWX_MIRROR_SSH_KEY
-          - upstream: poblabs/weewx-belchertown
-            fork: weewx-packages/weewx-belchertown
-            secret: BELCHERTOWN_MIRROR_SSH_KEY
-          - upstream: Millardiang/weewx-divumwx
-            fork: weewx-packages/weewx-divumwx
-            secret: DIVUMWX_MIRROR_SSH_KEY
+      matrix: ${{ fromJSON(needs.select.outputs.mirrors) }}
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
@@ -49,7 +71,7 @@ jobs:
           bash ci/sync-weewx.sh "https://github.com/$UPSTREAM.git" "git@github.com:$FORK.git"
 
   plan:
-    needs: mirror
+    needs: [select, mirror]
     runs-on: ubuntu-latest
     outputs:
       candidates: ${{ steps.plan.outputs.candidates }}
@@ -68,8 +90,18 @@ jobs:
         id: plan
         env:
           GH_TOKEN: ${{ github.token }}
+          PACKAGES: ${{ needs.select.outputs.packages }}
         run: |
-          python ci/upstreams.py plan > upstream-plan.json
+          python - <<'PY' > upstream-plan.json
+          import json, os, sys
+          from pathlib import Path
+          sys.path.insert(0, 'ci')
+          from upstreams import plan
+          packages = json.loads(os.environ['PACKAGES'])
+          specs = json.loads(Path('ci/upstreams.json').read_text())
+          selected = [s for s in specs if s['id'] in packages]
+          print(json.dumps(plan(selected, json.loads(Path('repository.json').read_text()))))
+          PY
           python - <<'PY' >> "$GITHUB_OUTPUT"
           import json
           from pathlib import Path

@@ -70,12 +70,12 @@ digest checks agreement with the index, so use catalogs and publishers you trust
 ## Compatibility checks
 
 [GitHub Actions](https://github.com/weewx-packages/catalog/actions/workflows/compatibility.yml)
-tests catalog releases daily against WeeWX `master` and `development`.
+tests catalog releases weekly against WeeWX `master` and `development`.
 Failures open or update a [compatibility issue](https://github.com/weewx-packages/catalog/issues?q=label%3Acompatibility).
 See [the checks and their coverage](COMPATIBILITY.md).
 
 The [upstream skin workflow](https://github.com/weewx-packages/catalog/actions/workflows/upstreams.yml)
-mirrors the three skin forks daily and publishes new stable versions after their
+mirrors each skin fork weekly and publishes new stable versions after its
 installation and report tests pass. The package table comes from the catalog
 index and is updated in the same commit.
 

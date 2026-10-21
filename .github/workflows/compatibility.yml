@@ -2,11 +2,8 @@ name: WeeWX compatibility
 
 on:
   schedule:
-    - cron: '23 4 * * *'
+    - cron: '23 4 * * 4'
   workflow_dispatch:
-  workflow_run:
-    workflows: [Upstream skins]
-    types: [completed]
   push:
     branches: [main]
   pull_request:

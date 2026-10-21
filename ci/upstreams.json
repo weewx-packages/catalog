@@ -1,6 +1,7 @@
 [
   {
     "id": "neowx-material",
+    "weekday": 1,
     "upstream": "seehase/neowx-material",
     "fork": "weewx-packages/neowx-material",
     "branch": "master",
@@ -33,6 +34,7 @@
   },
   {
     "id": "belchertown",
+    "weekday": 3,
     "upstream": "poblabs/weewx-belchertown",
     "fork": "weewx-packages/weewx-belchertown",
     "branch": "master",
@@ -63,6 +65,7 @@
   },
   {
     "id": "divumwx",
+    "weekday": 5,
     "upstream": "Millardiang/weewx-divumwx",
     "fork": "weewx-packages/weewx-divumwx",
     "branch": "main",

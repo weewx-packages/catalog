@@ -1,6 +1,6 @@
 # Check upcoming WeeWX changes
 
-The compatibility workflow runs daily at 04:23 UTC, on catalog pushes and pull
+The compatibility workflow runs Thursdays at 04:23 UTC, on catalog pushes and pull
 requests, and through **Run workflow** in GitHub Actions. It tests the latest
 stable, non-yanked release of every catalog package against the current commits
 of WeeWX branches `master` and `development`, on Python 3.10 and 3.14.
@@ -83,11 +83,12 @@ and use temporary station directories.
 
 ## Mirrored skins and release packaging
 
-[Upstream skins](.github/workflows/upstreams.yml) runs daily at 04:03 UTC and can
-be started manually. It mirrors NeoWX Material, Belchertown and DivumWX into the
-organization. Branches and tags keep their upstream history; divergent refs stop
-the sync. Actions in these forks are disabled. Each fork has its own write deploy
-key, available only to the mirror job.
+[Upstream skins](.github/workflows/upstreams.yml) runs at 04:03 UTC on Mondays for
+NeoWX Material, Wednesdays for Belchertown and Fridays for DivumWX. The weekday
+assignments are in `ci/upstreams.json`, using cron weekday numbers. Manual runs
+include all three skins. Branches and tags keep their upstream history;
+divergent refs stop the sync. Actions in these forks are disabled. Each fork has
+its own write deploy key, available only to the mirror job.
 
 The workflow selects stable GitHub releases. NeoWX Material also uses stable
 version tags, matching its upstream release process. Untagged branch changes are
@@ -117,9 +118,10 @@ archives and provenance receipts to this catalog's GitHub releases under
 `PACKAGE/vVERSION`. That job executes catalog code only. Existing release bytes
 are never replaced. It appends the release to `repository.json`, pins its test
 source in `ci/packages.json`, and regenerates the README package table from the
-index. All three files are committed together. The normal compatibility workflow
-runs after this workflow and checks the published downloads, maintaining issues
-for regressions in catalog releases.
+index. All three files are committed together. The weekly compatibility workflow
+checks the published downloads, maintaining issues for regressions in catalog
+releases. It also runs on catalog pushes and pull requests and can be started
+manually.
 
 Package descriptions, source repositories and compatibility requirements are
 maintained in [ci/upstreams.json](ci/upstreams.json). Versions come from upstream
