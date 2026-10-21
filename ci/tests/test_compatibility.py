@@ -203,3 +203,15 @@ def test_full_recovery_closes_once(issue_cases, monkeypatch):
     api.reset_mock()
     issues.reconcile(issue_cases, results, [bot_issue('closed')], 'owner/catalog', 'https://run/2')
     api.assert_not_called()
+
+
+def test_explicit_python_profile_does_not_claim_unsupported_versions(package, monkeypatch):
+    monkeypatch.setattr(compat, 'revision', lambda *args: 'a'*40)
+    checks = {'example': dict(repository='owner/example', ref='v{version}',
+              imports=[], allowed_skips=[], pythons=['3.14'])}
+    plan = compat.matrix({'packages': [package]}, checks)
+    assert len(plan['include']) == 2
+    assert {case['python'] for case in plan['include']} == {'3.14'}
+    checks['example']['pythons'] = []
+    with pytest.raises(ValueError, match='Python'):
+        compat.matrix({'packages': [package]}, checks)

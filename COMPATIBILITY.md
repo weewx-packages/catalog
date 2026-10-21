@@ -80,3 +80,50 @@ the test source is configured separately from the download.
 Run `just test-ci` to test the automation locally. It needs Python 3.10 or later,
 pytest, packaging, Git and Bash. Full compatibility runs require WeeWX and PHP
 and use temporary station directories.
+
+## Mirrored skins and release packaging
+
+[Upstream skins](.github/workflows/upstreams.yml) runs daily at 04:03 UTC and can
+be started manually. It mirrors NeoWX Material, Belchertown and DivumWX into the
+organization. Branches and tags keep their upstream history; divergent refs stop
+the sync. Actions in these forks are disabled. Each fork has its own write deploy
+key, available only to the mirror job.
+
+The workflow selects stable GitHub releases. NeoWX Material also uses stable
+version tags, matching its upstream release process. Untagged branch changes are
+mirrored but do not become catalog updates. Prereleases are excluded.
+
+Belchertown's existing archive is copied byte for byte. The other skins are
+packaged with `git archive` from the selected immutable commit. No installer or
+runtime code is patched. Each candidate is installed and rendered against WeeWX
+`master` and `development`, with both commits pinned for the run. NeoWX Material
+and Belchertown use Python 3.10 and 3.14; DivumWX uses 3.14 because its upstream
+requires Python 3.13.5 or later and WeeWX 5.5 or later.
+
+The skin suite runs the original installer, verifies installer identity and
+imports from the installed station, fills an isolated SQLite archive, and runs
+the actual report generators. It rejects report errors, missing output files and
+invalid generated JSON. DivumWX's schema additions run against an existing base
+archive, as they do on a running station. Its installation prompts receive an
+explicit fixture without API secrets. NeoWX Material's StandardReport skin is
+selected explicitly, following its upstream installation instructions.
+
+Forecast/API calls, MQTT, live astronomy services, optional cameras, timelapse
+and browser interaction are outside these report checks. The test configuration
+disables external forecast and update features. Physical stations are untouched.
+
+Only a complete passing candidate matrix can publish. A separate job uploads
+archives and provenance receipts to this catalog's GitHub releases under
+`PACKAGE/vVERSION`. That job executes catalog code only. Existing release bytes
+are never replaced. It appends the release to `repository.json`, pins its test
+source in `ci/packages.json`, and regenerates the README package table from the
+index. All three files are committed together. The normal compatibility workflow
+runs after this workflow and checks the published downloads, maintaining issues
+for regressions in catalog releases.
+
+Package descriptions, source repositories and compatibility requirements are
+maintained in [ci/upstreams.json](ci/upstreams.json). Versions come from upstream
+tags and must match the archive's installer; SHA-256 is computed from the exact
+published bytes. Adding a skin requires a definition, a test profile and a
+separate mirror deploy key. Failed candidate tests leave the published catalog
+at its previous version; inspect the candidate workflow logs before retrying.

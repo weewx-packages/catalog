@@ -104,7 +104,10 @@ def matrix(catalog, checks):
         ref = check['ref'].format(version=release['version'])
         source_sha = revision(check['repository'], ref)
         for branch, weewx_sha in upstream.items():
-            for python in PYTHONS:
+            pythons = check.get('pythons', PYTHONS)
+            if not pythons or not set(pythons).issubset(PYTHONS):
+                raise ValueError('Invalid Python test versions for ' + package['id'])
+            for python in pythons:
                 cases.append(dict(package=package['id'], installer_name=package['installer_name'],
                                   release=release, **check, source_sha=source_sha,
                                   branch=branch, weewx_sha=weewx_sha,
@@ -177,16 +180,17 @@ def test_failures(report, allowed_skips):
     return failures
 
 
-def command(args, cwd=None, env=None):
+def command(args, cwd=None, env=None, input_text=None):
     """Run a test step with its output in the workflow log.
 
     Args:
         args (list[str]): Command and arguments, without a shell.
         cwd (Path|None): Working directory, or the current directory.
         env (dict|None): Process environment, or the inherited environment.
+        input_text (str|None): Explicit fixture answers for an interactive installer.
     """
     print('+ ' + ' '.join(args), flush=True)
-    subprocess.run(args, cwd=cwd, env=env, check=True, timeout=300)
+    subprocess.run(args, cwd=cwd, env=env, input=input_text, text=True, check=True, timeout=300)
 
 
 def run(case, source, work):
@@ -214,7 +218,8 @@ def run(case, source, work):
         # Tests come from the release's source revision. Runtime files always
         # come from the published archive, so a broken release cannot be hidden
         # by a newer source file or a file omitted from the download.
-        shutil.copytree(source / 'tests', payload / 'tests', dirs_exist_ok=True)
+        if case.get('kind') != 'skin':
+            shutil.copytree(source / 'tests', payload / 'tests', dirs_exist_ok=True)
         status, phase = 'failed', 'requirements'
         import weewx
         if not SpecifierSet(release['requires_python']).contains(platform.python_version()):
@@ -227,7 +232,18 @@ def run(case, source, work):
         config = station / 'weewx.conf'
         phase = 'installation'
         command(['weectl', 'station', 'create', str(station), '--no-prompt'])
-        command(['weectl', 'extension', 'install', str(archive), '--config', str(config), '--yes'])
+        if case.get('kind') == 'skin':
+            # Skins are installed into an existing WeeWX station. Some installers
+            # extend its archive schema, which requires the base database first.
+            command([sys.executable, '-c',
+                'import sys,weecfg,weewx.manager; '
+                '_,c=weecfg.read_config(sys.argv[1]); '
+                'weewx.manager.open_manager_with_config(c,"wx_binding",initialize=True).close()', str(config)])
+        install = ['weectl', 'extension', 'install', str(archive), '--config', str(config), '--yes']
+        if case.get('install_input'):
+            command(install, input_text=case['install_input'])
+        else:
+            command(install)
         env = dict(os.environ, PYTHONPATH=str(station / 'bin'))
         # Import in another process so the suite cannot reuse a source module
         # already loaded by this installation check.
@@ -236,10 +252,15 @@ def run(case, source, work):
                  '[importlib.import_module(name) for name in sys.argv[1:]]',
                  *case['imports']], cwd=work, env=env)
         phase = 'tests'
-        env['PYTHONPATH'] = str(payload / 'bin')
+        if case.get('kind') == 'skin':
+            tests = str(ROOT / 'ci/skin_tests')
+            env.update(SKIN_STATION=str(station), SKIN_PAYLOAD=str(payload), SKIN_CASE=json.dumps(case))
+        else:
+            tests = 'tests'
+            env['PYTHONPATH'] = str(payload / 'bin')
         report = work / 'junit.xml'
         try:
-            command([sys.executable, '-m', 'pytest', '-q', '-ra', 'tests',
+            command([sys.executable, '-m', 'pytest', '-q', '-ra', tests,
                      '--junitxml=' + str(report)], cwd=payload, env=env)
         finally:
             if not report.is_file():

@@ -50,3 +50,18 @@ Submit the metadata as a pull request. Describe which package or version you
 added and which installation test you ran.
 
 New packages also need a [compatibility check](COMPATIBILITY.md#add-a-package-check).
+
+## Keep the package table in sync
+
+The README package table is generated from `repository.json`, including manually
+maintained packages. After editing the index, run:
+
+```shell
+python3 ci/upstreams.py readme
+just fast
+```
+
+Validation rejects a stale table. The upstream skin publishing workflow updates
+the index, test profile and README in one commit. See
+[mirrored skin packaging](COMPATIBILITY.md#mirrored-skins-and-release-packaging)
+for its release selection and tests.

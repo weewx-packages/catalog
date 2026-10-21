@@ -25,10 +25,21 @@ weectl extension install livedata --repo packages
 
 Follow the package's configuration instructions after installation.
 
+The mirrored skins use the same catalog. DivumWX requires Python 3.13.5 or later,
+WeeWX 5.5 or later, and the `requests` and `skyfield` Python packages. Run your
+station once to create its archive database before installing it. Its installer
+asks for station settings and extends that database. Follow its upstream
+uninstall instructions for the frontend and custom configuration it manages.
+NeoWX Material may require selecting `skin = neowx-material` in your
+`[[StandardReport]]` configuration and enabling that report.
+
+<!-- packages:start -->
 | Package | ID | Purpose |
 |---|---|---|
-| [LiveData](https://github.com/weewx-packages/weewx-livedata) | `livedata` | Publish live readings through `live.php` |
-| [Ecowitt HTTP Push](https://github.com/weewx-packages/weewx-ecowitt-http-push) | `ecowitt-http-push` | Receive custom-server HTTP uploads from Ecowitt hardware |
+| [LiveData](https://github.com/weewx-packages/weewx-livedata) | `livedata` | Publish live WeeWX readings as static JSON through a signed PHP endpoint. |
+| [Ecowitt HTTP Push](https://github.com/weewx-packages/weewx-ecowitt-http-push) | `ecowitt-http-push` | Receive HTTP push uploads from Ecowitt gateways and consoles using the Ecowitt or Weather Underground custom-server protocol. |
+| [Davis RTL-SDR](https://github.com/weewx-packages/weewx-rtldavis) | `rtldavis` | Receive Davis Vantage Pro, Pro2 and Vue wireless observations through RTL-SDR. Requires the separately built rtldavis receiver. |
+<!-- packages:end -->
 
 New packages become available through the same registered source when its index
 refreshes. Use `weectl extension repo refresh packages` to refresh it explicitly.
@@ -59,6 +70,11 @@ digest checks agreement with the index, so use catalogs and publishers you trust
 tests catalog releases daily against WeeWX `master` and `development`.
 Failures open or update a [compatibility issue](https://github.com/weewx-packages/catalog/issues?q=label%3Acompatibility).
 See [the checks and their coverage](COMPATIBILITY.md).
+
+The [upstream skin workflow](https://github.com/weewx-packages/catalog/actions/workflows/upstreams.yml)
+mirrors the three skin forks daily and publishes new stable versions after their
+installation and report tests pass. The package table comes from the catalog
+index and is updated in the same commit.
 
 ## License
 

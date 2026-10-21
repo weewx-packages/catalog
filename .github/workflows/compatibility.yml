@@ -4,6 +4,9 @@ on:
   schedule:
     - cron: '23 4 * * *'
   workflow_dispatch:
+  workflow_run:
+    workflows: [Upstream skins]
+    types: [completed]
   push:
     branches: [main]
   pull_request:
@@ -54,6 +57,7 @@ jobs:
           python-version: '3.14'
       - run: python -m pip install pytest packaging jsonschema
       - run: python -m pytest -q ci/tests
+      - run: python ci/upstreams.py readme --check
       - name: Validate catalog structure
         run: |
           python - <<'PY'
@@ -109,7 +113,7 @@ jobs:
           sudo apt-get update -qq
           sudo apt-get install -y php-cli
           php --version
-          python -m pip install ./weewx pytest packaging
+          python -m pip install ./weewx pytest packaging requests skyfield
       - name: Install and test the release archive
         env:
           CASE_JSON: ${{ toJSON(matrix) }}

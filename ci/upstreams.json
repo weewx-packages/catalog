@@ -1,0 +1,98 @@
+[
+  {
+    "id": "neowx-material",
+    "upstream": "seehase/neowx-material",
+    "fork": "weewx-packages/neowx-material",
+    "branch": "master",
+    "secret": "NEOWX_MIRROR_SSH_KEY",
+    "tag_prefix": "",
+    "name": "NeoWX Material",
+    "requires_python": ">=3.10",
+    "requires_weewx": ">=5,<6",
+    "check": {
+      "repository": "weewx-packages/neowx-material",
+      "ref": "{version}",
+      "kind": "skin",
+      "report": "StandardReport",
+      "imports": [
+        "user.historygenerator",
+        "user.openmeteo",
+        "user.panelorder"
+      ],
+      "outputs": [
+        "index.html",
+        "live.json",
+        "manifest.json"
+      ],
+      "allowed_skips": [],
+      "skin": "neowx-material"
+    },
+    "installer_name": "neowx-material",
+    "description": "Material-style weather website with interactive charts and live observations.",
+    "tagged_releases": true
+  },
+  {
+    "id": "belchertown",
+    "upstream": "poblabs/weewx-belchertown",
+    "fork": "weewx-packages/weewx-belchertown",
+    "branch": "master",
+    "secret": "BELCHERTOWN_MIRROR_SSH_KEY",
+    "tag_prefix": "weewx-belchertown-",
+    "name": "Belchertown",
+    "requires_python": ">=3.10",
+    "requires_weewx": ">=5,<6",
+    "check": {
+      "repository": "weewx-packages/weewx-belchertown",
+      "ref": "weewx-belchertown-{version}",
+      "kind": "skin",
+      "report": "Belchertown",
+      "imports": [
+        "user.belchertown",
+        "user.belchertown_forecast"
+      ],
+      "outputs": [
+        "index.html",
+        "json/weewx_data.json",
+        "manifest.json"
+      ],
+      "allowed_skips": [],
+      "skin": "Belchertown"
+    },
+    "installer_name": "Belchertown",
+    "description": "Weather website with live observations, interactive charts and forecasts."
+  },
+  {
+    "id": "divumwx",
+    "upstream": "Millardiang/weewx-divumwx",
+    "fork": "weewx-packages/weewx-divumwx",
+    "branch": "main",
+    "secret": "DIVUMWX_MIRROR_SSH_KEY",
+    "tag_prefix": "ver",
+    "name": "DivumWX",
+    "requires_python": ">=3.13.5",
+    "requires_weewx": ">=5.5,<6",
+    "check": {
+      "repository": "weewx-packages/weewx-divumwx",
+      "ref": "ver{version}",
+      "kind": "skin",
+      "report": "DivumWXReport",
+      "imports": [
+        "user.divumwx",
+        "user.divumwx_cards"
+      ],
+      "outputs": [
+        "index.html",
+        "jsondata/archive.json",
+        "jsondata/charts.json"
+      ],
+      "allowed_skips": [],
+      "pythons": [
+        "3.14"
+      ],
+      "install_input": "\n\n\n\n\n\n\ny\nn\nn\n\n\nn\nn\nn\nn\nn\nn\nn\nn\nn\nn\nn\nn\nn\nn\nn\nn\nn\nn\nn\nn\n",
+      "skin": "DivumWX"
+    },
+    "installer_name": "divumwx",
+    "description": "Live weather dashboard with charts, forecasts and astronomy pages. Requires requests and skyfield; installation asks for station settings."
+  }
+]
