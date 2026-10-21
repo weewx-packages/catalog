@@ -48,3 +48,5 @@ station. A successful install does not verify real hardware behavior.
 
 Submit the metadata as a pull request. Describe which package or version you
 added and which installation test you ran.
+
+New packages also need a [compatibility check](COMPATIBILITY.md#add-a-package-check).

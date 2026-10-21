@@ -53,6 +53,13 @@ contract is [repository-v1.schema.json](schemas/repository-v1.schema.json).
 Installing an extension executes its publisher's Python installer. An archive
 digest checks agreement with the index, so use catalogs and publishers you trust.
 
+## Compatibility checks
+
+[GitHub Actions](https://github.com/weewx-packages/catalog/actions/workflows/compatibility.yml)
+tests catalog releases daily against WeeWX `master` and `development`.
+Failures open or update a [compatibility issue](https://github.com/weewx-packages/catalog/issues?q=label%3Acompatibility).
+See [the checks and their coverage](COMPATIBILITY.md).
+
 ## License
 
 The catalog, schema, and documentation use [GPL-3.0-only](LICENSE).

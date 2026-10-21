@@ -1,0 +1,14 @@
+{
+  "livedata": {
+    "repository": "weewx-packages/weewx-livedata",
+    "ref": "v{version}",
+    "imports": ["user.livedata"],
+    "allowed_skips": ["needs repository support"]
+  },
+  "ecowitt-http-push": {
+    "repository": "weewx-packages/weewx-ecowitt-http-push",
+    "ref": "v{version}",
+    "imports": ["user.ecowitt.driver", "user.listener"],
+    "allowed_skips": ["WeeWX with a listener is not installed"]
+  }
+}
