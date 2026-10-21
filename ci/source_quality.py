@@ -26,6 +26,8 @@ def check(mirror, branch, weewx_sha, work):
     Returns:
         tuple[dict, dict]: Resolved issue-report case and installation result.
     """
+    # Git resolves archive output after changing to the source directory.
+    work = work.resolve()
     work.mkdir(parents=True)
     source = work / 'source'
     case = dict(package=mirror['fork'].split('/')[1], repository=mirror['fork'],
@@ -47,7 +49,7 @@ def check(mirror, branch, weewx_sha, work):
             files.extend((source / 'bin').rglob('*.py'))
         for path in files:
             py_compile.compile(str(path), doraise=True)
-        phase = 'installation'
+        status, phase = 'error', 'station setup'
         station = work / 'station'
         config = station / 'weewx.conf'
         archive = work / 'package.zip'
@@ -57,6 +59,7 @@ def check(mirror, branch, weewx_sha, work):
         command([sys.executable, '-c', 'import sys,weecfg,weewx.manager; '
             '_,c=weecfg.read_config(sys.argv[1]); '
             'weewx.manager.open_manager_with_config(c,"wx_binding",initialize=True).close()', str(config)])
+        status, phase = 'failed', 'installation'
         command(['weectl', 'extension', 'install', str(archive), '--config', str(config), '--yes'],
                 input_text=mirror.get('install_input', ''))
         status = 'passed'

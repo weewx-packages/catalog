@@ -9,6 +9,8 @@ import os
 from pathlib import Path
 import subprocess
 
+from gitlab_status import collect as collect_gitlab
+
 ROOT = Path(__file__).resolve().parents[1]
 MARKER = '<!-- weewx-upstream-activity -->'
 
@@ -42,11 +44,13 @@ def collect(repository):
     """Capture open issues and PRs, including discussions, reviews and file patches.
 
     Args:
-        repository (str): GitHub owner/repository.
+        repository (str): GitHub owner/repository or gitlab.com/namespace/project.
 
     Returns:
         dict: Snapshot suitable for storage in the private backup repository.
     """
+    if repository.startswith('gitlab.com/'):
+        return collect_gitlab(repository.removeprefix('gitlab.com/'))
     prefix = 'repos/' + repository
     metadata = api(prefix)
     items = api(prefix + '/issues?state=open&per_page=100', paginate=True)
@@ -118,7 +122,7 @@ def capture(mirrors, weekday, backup, output):
         backup (Path): Checkout of the group's private backup branch.
         output (Path): Public summary artifact path.
     """
-    repositories = sorted({mirror['upstream'].removeprefix('https://github.com/').removesuffix('.git')
+    repositories = sorted({mirror['upstream'].removeprefix('https://github.com/').removeprefix('https://').removesuffix('.git')
                            for mirror in mirrors if mirror['weekday'] == weekday})
     state_path = backup / 'index.json'
     previous = json.loads(state_path.read_text()) if state_path.exists() else {}
@@ -159,11 +163,12 @@ def report(directory, repository, run_url):
         '| Upstream | Last capture | Open issues | Open PRs | License notices |', '|---|---|---|---|---|']
     updates = []
     for source, record in sorted(state.items()):
+        source_url = 'https://' + source if source.startswith('gitlab.com/') else 'https://github.com/' + source
         items = list(record['items'].values())
         delta = activity.get(source, dict(new=[], changed=[], closed=[], initial=False,
                                           license_notices_changed=False))
-        lines.append('| [%s](https://github.com/%s) | %s | %s | %s | %s |' % (
-            source, source, record['captured_at'][:10], sum(item['kind'] == 'issue' for item in items),
+        lines.append('| [%s](%s) | %s | %s | %s | %s |' % (
+            source, source_url, record['captured_at'][:10], sum(item['kind'] == 'issue' for item in items),
             sum(item['kind'] == 'PR' for item in items),
             'Changed; review terms' if delta['license_notices_changed'] else
             'Scan incomplete' if not record['notice_scan_complete'] else 'Recorded'))
@@ -173,7 +178,7 @@ def report(directory, repository, run_url):
                 action = 'Initial open' if delta['initial'] else 'No longer open' if kind == 'closed' else kind.capitalize()
                 updates.append('- %s %s: [%s](%s)' % (action, item['kind'], title, item['url']))
         if delta['license_notices_changed']:
-            updates.append('- License notices changed in [source](https://github.com/%s).' % source)
+            updates.append('- License notices changed in [source](%s).' % source_url)
     lines.extend(['', '[Workflow and quality results](%s)' % run_url,
                   '[Private discussion backups](https://github.com/weewx-packages/upstream-backup)', '',
                   'The table shows each repository\'s latest capture. This run updates its assigned groups.',

@@ -8,17 +8,23 @@
     "blocked_license_assets": 1,
     "blocked_license": 17,
     "fork_created": 61,
-    "hard_fork_plan_only": 25,
+    "blocked_distribution_rights": 4,
     "hold_maintenance_borderline": 4,
     "defer_external_import": 3,
     "blocked_source_unavailable": 1,
+    "local_driver_fixes_distribution_blocked": 1,
+    "released": 7,
     "hold_successor_license_packaging": 1,
+    "resolved_by_successor_release": 1,
     "independent_continuation_published": 1,
+    "local_configurator_distribution_blocked": 1,
     "already_present_hard_fork": 1,
     "skip_deprecated_unavailable": 1,
+    "local_successor_fixes_bundle_distribution_blocked": 1,
     "skip_superseded": 2,
     "defer_maintenance": 2,
-    "hard_fork_plan": 6,
+    "cloned_full_history": 1,
+    "published_pending_tracker_comments": 5,
     "existing_fork_verified": 5,
     "borderline_active_old_items": 3,
     "hard_fork_plan_license_review": 1,
@@ -31,9 +37,10 @@
     "superseded_license_restricted": 1,
     "true_fork_created": 38,
     "external_archive_no_git": 1,
-    "license_blocked": 5,
+    "license_blocked": 6,
     "hold_aged_responded": 2,
     "license_scope_unclear": 1,
+    "completed_available_work": 9,
     "external_license_scope_unclear": 1,
     "organization_index_resolved_duplicates": 1,
     "hold_recent_fix": 1,
@@ -244,7 +251,7 @@
       "source": "https://github.com/wrybread/weewx-ArduinoWeatherStation",
       "reviewed_revision": "4788362246dca7c17b866f282aa82a05db0e6d7b",
       "last_commit": "2020-01-17T18:59:47Z",
-      "decision": "hard_fork_plan_only",
+      "decision": "blocked_distribution_rights",
       "reason": "2020 kein neuer Code; Python-3-Anpassung 2022 nur im Issue erklärt, nie ins Projekt integriert. Unbeantwortete alte Supportpunkte.",
       "fork": null,
       "license": {
@@ -394,7 +401,61 @@
         "decision": "none_documented",
         "inventory": "/home/hilman2/weewx-packages/wiki-audit-20261022/inventory.json",
         "evidence_path": "/home/hilman2/weewx-packages/wiki-audit-20261022/drivers/117-aws/readmes-and-licenses.txt"
-      }
+      },
+      "repairs": [
+        {
+          "upstream": "wrybread/weewx-ArduinoWeatherStation",
+          "fork_url": null,
+          "decision": "blocked_distribution_rights",
+          "upstream_revision": "4788362246dca7c17b866f282aa82a05db0e6d7b",
+          "rights_evidence": {
+            "code": [
+              "bin/user/aws.py",
+              "ArduinoWeather.ino",
+              "arduino_test.py"
+            ],
+            "assets": [
+              "arduino-to-davis-anemometer-hookup-circuit.jpg"
+            ],
+            "finding": "No per-file grant for AWS driver, Arduino firmware, test client or circuit image. GPL text entered with a bundled Meteostick upload at 51f0ee7 and was deleted at 3234aac about five minutes later. Installer alone declares GPLv3. This historical license may concern the imported Meteostick template; repository-wide AWS/asset scope remains unproven. README separately attributes both Arduino sketch and circuit diagram to cactus.io, so Alec Bennett’s installer header cannot establish those third-party rights.",
+            "need": "Author must confirm the license scope of AWS code, Arduino firmware and image, including permission to redistribute modified versions. Include the cactus.io derivative sketch and wiring diagram in the rights clarification.",
+            "revision": "4788362246dca7c17b866f282aa82a05db0e6d7b",
+            "history_complete": true,
+            "license_history": [
+              "3234aac6db458a87dbe3f4873e7f80e69dff03d9 Delete license",
+              "51f0ee75ac0f2520b80523a83b945511560405a5 Add files via upload"
+            ],
+            "headers": {
+              "bin/user/aws.py": "#!/usr/bin/env python\n#\n# This is a weeWX driver to enable weeWX to read data from an Arduino.\n#\n# See here for more details:\n#\n# https://github.com/wrybread/ArduinoWeatherStation\n#\n# by wrybread@gmail.com\n#\n#\n#\n\n\n\n\"\"\"Driver for Arduion Weather Station.\n\nSee here for more info:\n\nhttps://github.com/wrybread/ArduinoWeatherStation\n\n\"\"\"",
+              "ArduinoWeather.ino": "/*\n\nAdapted from the excellent work here:\n\nhttp://cactus.io/hookups/weather/anemometer/davis/hookup-arduino-to-davis-anemometer\n\nWorks with a Davis anemometer, which is available on eBay in the $110 range.\n\nIntended to interface with the weeWX program but easily adapted for other uses.\n\nSee https://github.com/wrybread/ArduinoWeatherStation\n\nwrybread@gmail.com\n\n\n*/\n\n\n#include \"TimerOne.h\" // Timer Interrupt set to 2 second for read sensors \n#include <math.h> \n\n#define WindSensorPin (2) // The pin location of the anemometer sensor ",
+              "arduino_test.py": "#!/usr/bin/env python\n\n\n'''\n\nSimple script that reads serial data from the Arduino attached to whatever port.\n\n\n'''\n\n\n# adjust this to taste\nport = \"/dev/ttyACM0\"\n\n\n\n\n\nimport time, os, serial \n\n\nprint \"Connecting to %s...\" % port"
+            }
+          },
+          "items": [
+            {
+              "number": 4,
+              "type": "issue",
+              "url": "https://github.com/wrybread/weewx-ArduinoWeatherStation/issues/4",
+              "status": "reviewed_distribution_blocked",
+              "comment_url": null
+            },
+            {
+              "number": 3,
+              "type": "issue",
+              "url": "https://github.com/wrybread/weewx-ArduinoWeatherStation/issues/3",
+              "status": "reviewed_distribution_blocked",
+              "comment_url": null
+            },
+            {
+              "number": 1,
+              "type": "issue",
+              "url": "https://github.com/wrybread/weewx-ArduinoWeatherStation/issues/1",
+              "status": "reviewed_distribution_blocked",
+              "comment_url": null
+            }
+          ]
+        }
+      ]
     },
     {
       "wiki_line": 118,
@@ -1073,8 +1134,8 @@
       "section": "Drivers",
       "name": "interceptor",
       "wiki_url": "https://github.com/matthewwall/weewx-interceptor",
-      "source": "https://github.com/matthewwall/weewx-interceptor",
-      "reviewed_revision": "43a36003b939a35500b723dee6593af061fcd353",
+      "source": "https://github.com/tfilo/weewx-interceptor",
+      "reviewed_revision": "16d87044c8d7eba69d3b3cd8bf12a8cb7a0f2393",
       "last_commit": "2022-08-09T14:44:59Z",
       "decision": "fork_created",
       "reason": "Original seit 2022 ohne Codeänderung; alter Reparaturstau vollständig gelesen. tfilo dokumentiert Fortführung, hat aktuelle Änderungen vom September 2026 und einen vollständig leeren offenen Tracker. Deshalb Fortführung als echten Fork auswählen, Original nicht übernehmen.",
@@ -1082,10 +1143,10 @@
       "license": {
         "spdx": "GPL-3.0-only",
         "evidence": [
-          "https://github.com/matthewwall/weewx-interceptor/blob/43a36003b939a35500b723dee6593af061fcd353/license",
-          "https://github.com/matthewwall/weewx-interceptor/blob/43a36003b939a35500b723dee6593af061fcd353/readme",
-          "https://github.com/matthewwall/weewx-interceptor/blob/43a36003b939a35500b723dee6593af061fcd353/bin/user/interceptor.py",
-          "https://github.com/matthewwall/weewx-interceptor/blob/43a36003b939a35500b723dee6593af061fcd353/install.py"
+          "https://github.com/tfilo/weewx-interceptor/blob/16d87044c8d7eba69d3b3cd8bf12a8cb7a0f2393/license",
+          "https://github.com/tfilo/weewx-interceptor/blob/16d87044c8d7eba69d3b3cd8bf12a8cb7a0f2393/readme",
+          "https://github.com/tfilo/weewx-interceptor/blob/16d87044c8d7eba69d3b3cd8bf12a8cb7a0f2393/bin/user/interceptor.py",
+          "https://github.com/tfilo/weewx-interceptor/blob/16d87044c8d7eba69d3b3cd8bf12a8cb7a0f2393/install.py"
         ],
         "obligations": [
           "Copyright und GPL-Lizenztext inklusive Gewährleistungsausschlüssen unverändert erhalten.",
@@ -1914,7 +1975,7 @@
       "source": "https://github.com/matthewwall/weewx-klimalogg",
       "reviewed_revision": "9b70be25bc1650ae109de8fa9071ae9ce384e352",
       "last_commit": "2020-05-25T17:26:25Z",
-      "decision": "hard_fork_plan_only",
+      "decision": "local_driver_fixes_distribution_blocked",
       "reason": "Seit 2020 keine Codepflege; zwei unbeantwortete Reparatur-PRs von 2019/2020, auch keine Maintainerreviews.",
       "fork": null,
       "license": {
@@ -1960,7 +2021,50 @@
         "decision": "none_documented",
         "inventory": "/home/hilman2/weewx-packages/wiki-audit-20261022/inventory.json",
         "evidence_path": "/home/hilman2/weewx-packages/wiki-audit-20261022/drivers/130-klimalogg/readmes-and-licenses.txt"
-      }
+      },
+      "repairs": [
+        {
+          "upstream": "matthewwall/weewx-klimalogg",
+          "fork_url": null,
+          "decision": "local_driver_fixes_distribution_blocked",
+          "upstream_revision": "9b70be25bc1650ae109de8fa9071ae9ce384e352",
+          "rights_evidence": {
+            "code": [
+              "bin/user/kl.py",
+              "install.py"
+            ],
+            "assets": [
+              "skins/kl/skin.conf",
+              "skins/kl/index.html.tmpl"
+            ],
+            "finding": "kl.py explicitly grants GPL-3.0-or-later. Installer and bundled skin contain copyrights without a grant. Complete Git history has no repository-wide license file.",
+            "need": "Confirm installer/skin redistribution license or authorize a driver-only distribution with a newly written installer and no unlicensed history/assets.",
+            "revision": "9b70be25bc1650ae109de8fa9071ae9ce384e352",
+            "history_complete": true,
+            "license_history": [],
+            "headers": {
+              "bin/user/kl.py": "# TFA KlimaLogg driver for weewx\n#\n# Copyright 2015-2020 Luc Heijst, Matthew Wall\n#\n# This program is free software: you can redistribute it and/or modify it under\n# the terms of the GNU General Public License as published by the Free Software\n# Foundation, either version 3 of the License, or any later version.\n#\n# This program is distributed in the hope that it will be useful, but WITHOUT\n# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS\n# FOR A PARTICULAR PURPOSE.\n#\n# See http://www.gnu.org/licenses/\n#\n# The driver logic is adapted from the ws28xx driver for LaCrosse 2800 and\n# TFA Primus and Opus weather stations.\n#\n# Thanks to Michael Schulze for making the sensor map dynamic.\n#\n# Also many thanks to our testers, in special Boris Smeds and Raffael Boesch.\n# Without their help we couldn't have written this driver.\n",
+              "install.py": "# installer for klimalogg\n# Copyright 2015 Luc Heijst\n\nfrom weecfg.extension import ExtensionInstaller\n\ndef loader():\n    return KlimaLoggInstaller()\n\nclass KlimaLoggInstaller(ExtensionInstaller):\n    def __init__(self):\n        super(KlimaLoggInstaller, self).__init__(\n            version=\"1.4.2\",\n            name='klimalogg',\n            description='Collect and display KlimaLogg Pro sensor data',\n            author=\"Luc Heijst\",\n            author_email=\"ljm.heijst@gmail.com\",\n            config={\n                'StdReport': {\n                    'data_binding': 'kl_binding',\n                    'kl': {\n                        'HTML_ROOT': 'kl',\n                        'skin': 'kl'}},"
+            }
+          },
+          "items": [
+            {
+              "number": 5,
+              "type": "pull_request",
+              "url": "https://github.com/matthewwall/weewx-klimalogg/pull/5",
+              "status": "reviewed_distribution_blocked",
+              "comment_url": null
+            },
+            {
+              "number": 4,
+              "type": "pull_request",
+              "url": "https://github.com/matthewwall/weewx-klimalogg/pull/4",
+              "status": "reviewed_distribution_blocked",
+              "comment_url": null
+            }
+          ]
+        }
+      ]
     },
     {
       "wiki_line": 131,
@@ -2036,9 +2140,9 @@
       "source": "https://github.com/matthewwall/weewx-meteostick",
       "reviewed_revision": "669a0e55aae255169e8132afe4133fe65bfb63f4",
       "last_commit": "2020-06-01T21:25:26Z",
-      "decision": "hard_fork_plan_only",
+      "decision": "released",
       "reason": "Keine Commits seit Juni 2020; drei seit Jahren unbeantwortete PRs. PR #10 enthält noch 2025 gemeldete WeeWX-5.2-Probleme.",
-      "fork": null,
+      "fork": "https://github.com/weewx-packages/weewx-meteostick",
       "license": {
         "spdx": "GPL-3.0-or-later AND GPL-3.0-only",
         "evidence": [
@@ -2096,7 +2200,41 @@
         "decision": "none_documented",
         "inventory": "/home/hilman2/weewx-packages/wiki-audit-20261022/inventory.json",
         "evidence_path": "/home/hilman2/weewx-packages/wiki-audit-20261022/drivers/133-meteostick/readmes-and-licenses.txt"
-      }
+      },
+      "repairs": [
+        {
+          "upstream": "matthewwall/weewx-meteostick",
+          "fork_url": "https://github.com/weewx-packages/weewx-meteostick",
+          "decision": "released",
+          "release": "https://github.com/weewx-packages/weewx-meteostick/releases/tag/v0.68.1",
+          "version": "0.68.1",
+          "upstream_revision": "669a0e55aae255169e8132afe4133fe65bfb63f4",
+          "revision": "2345202a03892295e6ce8689a1bdc5d3eb6f8000",
+          "items": [
+            {
+              "number": 11,
+              "type": "pull_request",
+              "url": "https://github.com/matthewwall/weewx-meteostick/pull/11",
+              "status": "fixed_software_device_followup",
+              "comment_url": "https://github.com/matthewwall/weewx-meteostick/pull/11#issuecomment-6328890388"
+            },
+            {
+              "number": 10,
+              "type": "pull_request",
+              "url": "https://github.com/matthewwall/weewx-meteostick/pull/10",
+              "status": "fixed_software_device_followup",
+              "comment_url": "https://github.com/matthewwall/weewx-meteostick/pull/10#issuecomment-6328890570"
+            },
+            {
+              "number": 9,
+              "type": "pull_request",
+              "url": "https://github.com/matthewwall/weewx-meteostick/pull/9",
+              "status": "already_present_verified",
+              "comment_url": "https://github.com/matthewwall/weewx-meteostick/pull/9#issuecomment-6328890832"
+            }
+          ]
+        }
+      ]
     },
     {
       "wiki_line": 134,
@@ -2138,8 +2276,8 @@
       "section": "Drivers",
       "name": "netatmo",
       "wiki_url": "https://github.com/matthewwall/weewx-netatmo",
-      "source": "https://github.com/matthewwall/weewx-netatmo",
-      "reviewed_revision": "f79ebe01f5d18ed1eeee3f7ff8b777e39517370f",
+      "source": "https://github.com/Buco7854/weewx-netatmo",
+      "reviewed_revision": "132ce8562c969a88ebc1fc455a9d3106851a5c64",
       "last_commit": "2019-02-07T20:15:10Z",
       "decision": "fork_created",
       "reason": "Original enthält seit 2019 unveränderten Python-2-Code und alte unbeantwortete API-/Regen-Issues. Diskussion verweist auf Buco7854; dessen README bestätigt eingearbeitete Authentifizierungs- und Regenänderungen. Fortführung vom Juni 2024 hat GPL-Lizenz und vollständig leeren Tracker. Original nicht übernehmen.",
@@ -2147,10 +2285,10 @@
       "license": {
         "spdx": "GPL-3.0-only",
         "evidence": [
-          "https://github.com/matthewwall/weewx-netatmo/blob/f79ebe01f5d18ed1eeee3f7ff8b777e39517370f/LICENSE",
-          "https://github.com/matthewwall/weewx-netatmo/blob/f79ebe01f5d18ed1eeee3f7ff8b777e39517370f/README.md",
-          "https://github.com/matthewwall/weewx-netatmo/blob/f79ebe01f5d18ed1eeee3f7ff8b777e39517370f/bin/user/netatmo.py",
-          "https://github.com/matthewwall/weewx-netatmo/blob/f79ebe01f5d18ed1eeee3f7ff8b777e39517370f/install.py"
+          "https://github.com/Buco7854/weewx-netatmo/blob/132ce8562c969a88ebc1fc455a9d3106851a5c64/LICENSE",
+          "https://github.com/Buco7854/weewx-netatmo/blob/132ce8562c969a88ebc1fc455a9d3106851a5c64/README.md",
+          "https://github.com/Buco7854/weewx-netatmo/blob/132ce8562c969a88ebc1fc455a9d3106851a5c64/bin/user/netatmo.py",
+          "https://github.com/Buco7854/weewx-netatmo/blob/132ce8562c969a88ebc1fc455a9d3106851a5c64/install.py"
         ],
         "obligations": [
           "Copyright und GPL-Lizenztext inklusive Gewährleistungsausschlüssen unverändert erhalten.",
@@ -2506,9 +2644,9 @@
       "source": "https://github.com/matthewwall/weewx-sdr",
       "reviewed_revision": "e5f1f9915322fa6d1c25b4ff8e490b804cefeac1",
       "last_commit": "2025-01-13T17:57:21Z",
-      "decision": "hard_fork_plan_only",
+      "decision": "released",
       "reason": "Letzte Upstream-Commits Januar 2025, letzte Ownerantwort Dezember 2024. Sieben offene PRs und alte unbeantwortete Punkte; aktive Hilfe kommt 2026 von Community-Forks, nicht vom Owner.",
-      "fork": null,
+      "fork": "https://github.com/weewx-packages/weewx-sdr",
       "license": {
         "spdx": "GPL-3.0-only",
         "evidence": [
@@ -2840,7 +2978,174 @@
         "decision": "alternatives_checked_not_imported",
         "inventory": "/home/hilman2/weewx-packages/wiki-audit-20261022/inventory.json",
         "evidence_path": "/home/hilman2/weewx-packages/wiki-audit-20261022/drivers/139-sdr/readmes-and-licenses.txt"
-      }
+      },
+      "repairs": [
+        {
+          "upstream": "matthewwall/weewx-sdr",
+          "fork_url": "https://github.com/weewx-packages/weewx-sdr",
+          "decision": "released",
+          "release": "https://github.com/weewx-packages/weewx-sdr/releases/tag/v0.99.0",
+          "version": "0.99.0",
+          "upstream_revision": "e5f1f9915322fa6d1c25b4ff8e490b804cefeac1",
+          "revision": "94bb25391588651657874772bf7a84b3d473855e",
+          "items": [
+            {
+              "number": 211,
+              "type": "pull_request",
+              "url": "https://github.com/matthewwall/weewx-sdr/pull/211",
+              "status": "reviewed_alternative_published",
+              "comment_url": "https://github.com/matthewwall/weewx-sdr/pull/211#issuecomment-6329055034"
+            },
+            {
+              "number": 210,
+              "type": "issue",
+              "url": "https://github.com/matthewwall/weewx-sdr/issues/210",
+              "status": "answered_design_decision",
+              "comment_url": "https://github.com/matthewwall/weewx-sdr/issues/210#issuecomment-6329055206"
+            },
+            {
+              "number": 209,
+              "type": "pull_request",
+              "url": "https://github.com/matthewwall/weewx-sdr/pull/209",
+              "status": "integrated_tested",
+              "comment_url": "https://github.com/matthewwall/weewx-sdr/pull/209#issuecomment-6329055396"
+            },
+            {
+              "number": 208,
+              "type": "issue",
+              "url": "https://github.com/matthewwall/weewx-sdr/issues/208",
+              "status": "fixed",
+              "comment_url": "https://github.com/matthewwall/weewx-sdr/issues/208#issuecomment-6329055599"
+            },
+            {
+              "number": 207,
+              "type": "issue",
+              "url": "https://github.com/matthewwall/weewx-sdr/issues/207",
+              "status": "fixed",
+              "comment_url": "https://github.com/matthewwall/weewx-sdr/issues/207#issuecomment-6329055782"
+            },
+            {
+              "number": 206,
+              "type": "pull_request",
+              "url": "https://github.com/matthewwall/weewx-sdr/pull/206",
+              "status": "integrated_tested",
+              "comment_url": "https://github.com/matthewwall/weewx-sdr/pull/206#issuecomment-6329055958"
+            },
+            {
+              "number": 205,
+              "type": "issue",
+              "url": "https://github.com/matthewwall/weewx-sdr/issues/205",
+              "status": "answered_verified",
+              "comment_url": "https://github.com/matthewwall/weewx-sdr/issues/205#issuecomment-6329056133"
+            },
+            {
+              "number": 204,
+              "type": "pull_request",
+              "url": "https://github.com/matthewwall/weewx-sdr/pull/204",
+              "status": "integrated_tested",
+              "comment_url": "https://github.com/matthewwall/weewx-sdr/pull/204#issuecomment-6329056304"
+            },
+            {
+              "number": 203,
+              "type": "pull_request",
+              "url": "https://github.com/matthewwall/weewx-sdr/pull/203",
+              "status": "integrated_tested",
+              "comment_url": "https://github.com/matthewwall/weewx-sdr/pull/203#issuecomment-6329056488"
+            },
+            {
+              "number": 202,
+              "type": "issue",
+              "url": "https://github.com/matthewwall/weewx-sdr/issues/202",
+              "status": "fixed",
+              "comment_url": "https://github.com/matthewwall/weewx-sdr/issues/202#issuecomment-6329056648"
+            },
+            {
+              "number": 200,
+              "type": "issue",
+              "url": "https://github.com/matthewwall/weewx-sdr/issues/200",
+              "status": "fixed_with_configuration_answer",
+              "comment_url": "https://github.com/matthewwall/weewx-sdr/issues/200#issuecomment-6329056838"
+            },
+            {
+              "number": 199,
+              "type": "pull_request",
+              "url": "https://github.com/matthewwall/weewx-sdr/pull/199",
+              "status": "implemented_tested",
+              "comment_url": "https://github.com/matthewwall/weewx-sdr/pull/199#issuecomment-6329057062"
+            },
+            {
+              "number": 198,
+              "type": "issue",
+              "url": "https://github.com/matthewwall/weewx-sdr/issues/198",
+              "status": "software_paths_fixed_exact_runtime_message_unreproduced",
+              "comment_url": "https://github.com/matthewwall/weewx-sdr/issues/198#issuecomment-6329057261"
+            },
+            {
+              "number": 197,
+              "type": "issue",
+              "url": "https://github.com/matthewwall/weewx-sdr/issues/197",
+              "status": "answered_and_runtime_fixed",
+              "comment_url": "https://github.com/matthewwall/weewx-sdr/issues/197#issuecomment-6329057486"
+            },
+            {
+              "number": 196,
+              "type": "issue",
+              "url": "https://github.com/matthewwall/weewx-sdr/issues/196",
+              "status": "software_fixed_device_permissions_followup",
+              "comment_url": "https://github.com/matthewwall/weewx-sdr/issues/196#issuecomment-6329057685"
+            },
+            {
+              "number": 194,
+              "type": "issue",
+              "url": "https://github.com/matthewwall/weewx-sdr/issues/194",
+              "status": "software_fixed_usb_failure_followup",
+              "comment_url": "https://github.com/matthewwall/weewx-sdr/issues/194#issuecomment-6329057877"
+            },
+            {
+              "number": 193,
+              "type": "issue",
+              "url": "https://github.com/matthewwall/weewx-sdr/issues/193",
+              "status": "parser_fixed_service_configuration_followup",
+              "comment_url": "https://github.com/matthewwall/weewx-sdr/issues/193#issuecomment-6329058073"
+            },
+            {
+              "number": 188,
+              "type": "issue",
+              "url": "https://github.com/matthewwall/weewx-sdr/issues/188",
+              "status": "answered_verified",
+              "comment_url": "https://github.com/matthewwall/weewx-sdr/issues/188#issuecomment-6329058256"
+            },
+            {
+              "number": 172,
+              "type": "issue",
+              "url": "https://github.com/matthewwall/weewx-sdr/issues/172",
+              "status": "fixed",
+              "comment_url": "https://github.com/matthewwall/weewx-sdr/issues/172#issuecomment-6329058416"
+            },
+            {
+              "number": 170,
+              "type": "issue",
+              "url": "https://github.com/matthewwall/weewx-sdr/issues/170",
+              "status": "needs_reporter_packet_timing_capture",
+              "comment_url": "https://github.com/matthewwall/weewx-sdr/issues/170#issuecomment-6329058565"
+            },
+            {
+              "number": 169,
+              "type": "issue",
+              "url": "https://github.com/matthewwall/weewx-sdr/issues/169",
+              "status": "already_fixed_verified",
+              "comment_url": "https://github.com/matthewwall/weewx-sdr/issues/169#issuecomment-6329058711"
+            },
+            {
+              "number": 104,
+              "type": "pull_request",
+              "url": "https://github.com/matthewwall/weewx-sdr/pull/104",
+              "status": "implemented_tested",
+              "comment_url": "https://github.com/matthewwall/weewx-sdr/pull/104#issuecomment-6329058874"
+            }
+          ]
+        }
+      ]
     },
     {
       "wiki_line": 140,
@@ -2850,9 +3155,9 @@
       "source": "https://github.com/matthewwall/weewx-sds011",
       "reviewed_revision": "f268900993c7804d873737302a49126ce8bdf96c",
       "last_commit": "2019-06-27T04:16:55Z",
-      "decision": "hard_fork_plan_only",
+      "decision": "resolved_by_successor_release",
       "reason": "Seit 2019 keine Commits und keinerlei Maintainerantwort auf offene Bugs/PR seit 2019/2020.",
-      "fork": null,
+      "fork": "https://github.com/weewx-packages/weewx-NovaSDS011",
       "license": {
         "spdx": "GPL-3.0-only",
         "evidence": [
@@ -2934,7 +3239,48 @@
             "role": "service; review before deciding repair scope"
           }
         ]
-      }
+      },
+      "repairs": [
+        {
+          "upstream": "matthewwall/weewx-sds011",
+          "fork_url": "https://github.com/weewx-packages/weewx-NovaSDS011",
+          "decision": "resolved_by_successor_release",
+          "release": "https://github.com/weewx-packages/weewx-NovaSDS011/releases/tag/v1.1.0",
+          "version": "1.1.0",
+          "upstream_revision": "f268900993c7804d873737302a49126ce8bdf96c",
+          "revision": "ddc78c0aab0bf60c3bef583224388cbb269648a1",
+          "items": [
+            {
+              "number": 4,
+              "type": "issue",
+              "url": "https://github.com/matthewwall/weewx-sds011/issues/4",
+              "status": "implemented_local_http_remote_formats_separate",
+              "comment_url": "https://github.com/matthewwall/weewx-sds011/issues/4#issuecomment-6329175508"
+            },
+            {
+              "number": 3,
+              "type": "pull_request",
+              "url": "https://github.com/matthewwall/weewx-sds011/pull/3",
+              "status": "verified_not_needed_on_weewx5",
+              "comment_url": "https://github.com/matthewwall/weewx-sds011/pull/3#issuecomment-6329175327"
+            },
+            {
+              "number": 2,
+              "type": "issue",
+              "url": "https://github.com/matthewwall/weewx-sds011/issues/2",
+              "status": "answered_verified_successor",
+              "comment_url": "https://github.com/matthewwall/weewx-sds011/issues/2#issuecomment-6329175148"
+            },
+            {
+              "number": 1,
+              "type": "issue",
+              "url": "https://github.com/matthewwall/weewx-sds011/issues/1",
+              "status": "resolved_by_verified_successor",
+              "comment_url": "https://github.com/matthewwall/weewx-sds011/issues/1#issuecomment-6329174969"
+            }
+          ]
+        }
+      ]
     },
     {
       "wiki_line": 141,
@@ -3200,43 +3546,17 @@
       "repairs": [
         {
           "upstream": "matthewwall/weewx-tracer",
-          "fork": "weewx-packages/weewx-tracer",
           "fork_url": "https://github.com/weewx-packages/weewx-tracer",
           "decision": "independent_continuation_published",
+          "release": "https://github.com/weewx-packages/weewx-tracer/releases/tag/v0.3.0",
           "source_revision": "7ffb96444660fe1363c3b8df5ec55b76aadd71de",
           "revision": "359c4b353ba2acc600742ac79af21b368645aa0e",
-          "license": "GPL-3.0-only",
-          "license_evidence": [
-            "license",
-            "bin/user/tracer.py",
-            "install.py"
-          ],
-          "release": "https://github.com/weewx-packages/weewx-tracer/releases/tag/v0.3.0",
-          "tests": [
-            "9 regression cases on Python 3.10 / WeeWX 5.0.2 / pymodbus 3.11.0",
-            "9 regression cases on Python 3.14 / WeeWX 5.6.0 / pymodbus 3.16.1",
-            "Published archive download, SHA-256, isolated installation/import and tests passed",
-            "Mutations: reserved-register crossing, energy scale and transport retry each fail regression tests",
-            "Google docstring type check and mypy passed"
-          ],
           "items": [
             {
               "number": 1,
-              "kind": "issue",
               "url": "https://github.com/matthewwall/weewx-tracer/issues/1",
-              "comment_url": "https://github.com/matthewwall/weewx-tracer/issues/1#issuecomment-6328735176",
               "status": "software_fixed_hardware_followup",
-              "changes": [
-                "LS1024B settings reads skip reserved 0x9068",
-                "Fractional and signed readings retained",
-                "Report and USB serial path documented",
-                "Current Python/WeeWX/pymodbus APIs supported",
-                "Current/voltage mapping, consumed-energy field and watt-hour units corrected"
-              ],
-              "remaining": [
-                "Physical controller validation",
-                "Cause of status_charge_fault=1 needs full controller status from operator"
-              ]
+              "comment_url": "https://github.com/matthewwall/weewx-tracer/issues/1#issuecomment-6328735176"
             }
           ]
         }
@@ -3250,7 +3570,7 @@
       "source": "https://github.com/matthewwall/weewx-twi",
       "reviewed_revision": "75b5444bfac60a57a6b31656382e823d38d0fbc9",
       "last_commit": "2022-05-01T00:28:22Z",
-      "decision": "hard_fork_plan_only",
+      "decision": "blocked_distribution_rights",
       "reason": "Seit Mai 2022 keine Commits; PR und Issue zu Python-3-Bytes seit Januar 2023 unbeantwortet.",
       "fork": null,
       "license": {
@@ -3296,7 +3616,46 @@
         "decision": "none_documented",
         "inventory": "/home/hilman2/weewx-packages/wiki-audit-20261022/inventory.json",
         "evidence_path": "/home/hilman2/weewx-packages/wiki-audit-20261022/drivers/145-twi/readmes-and-licenses.txt"
-      }
+      },
+      "repairs": [
+        {
+          "upstream": "matthewwall/weewx-twi",
+          "fork_url": null,
+          "decision": "blocked_distribution_rights",
+          "upstream_revision": "75b5444bfac60a57a6b31656382e823d38d0fbc9",
+          "rights_evidence": {
+            "code": [
+              "bin/user/twi.py",
+              "install.py"
+            ],
+            "finding": "Full tracked history contains no LICENSE/COPYING. Driver says all rights reserved. PR #3 retains no redistribution grant for original code.",
+            "need": "Matthew Wall must provide a license grant covering original driver and installer before a modified distribution can be published.",
+            "revision": "75b5444bfac60a57a6b31656382e823d38d0fbc9",
+            "history_complete": true,
+            "license_history": [],
+            "headers": {
+              "bin/user/twi.py": "#!/usr/bin/env python\n# Copyright 2016-2022 Matthew Wall, all rights reserved\n\"\"\"\nCollect data from Texas Weather Instruments stations.  This driver should work\nwith at least the following models: WLS, WRL, WR, WPS.\n\nBased on the protocol as specified by TWI:\n  http://txwx.com/wp-content/uploads/2013/04/TWI_binary_record_format.pdf\n\nThanks to weewx user Jason Kitchens for testing and validation.\n\nCommands:\nV - firmware version number\nS - firmware serial number\nI - unit ID number\nC - daily minimum and maximum of all parameters (rainfall rate), then clear\nc - daily minimum and maximum of all parameters (term rain), then clear\nD - same as C but no clear\nd - same as c but no clear\nE - min/max plus date and time of occurence\ne - min/max plus date and time of occurence\nM - term min/max with datetime then clear",
+              "install.py": "# installer for twi driver\n# Copyright 2016 Matthew Wall\n\nfrom weecfg.extension import ExtensionInstaller\n\ndef loader():\n    return TWIInstaller()\n\nclass TWIInstaller(ExtensionInstaller):\n    def __init__(self):\n        super(TWIInstaller, self).__init__(\n            version=\"0.4\",\n            name='twi',\n            description='Collect data from Texas Weather Instruments hardware',\n            author=\"Matthew Wall\",\n            author_email=\"mwall@users.sourceforge.net\",\n            files=[('bin/user', ['bin/user/twi.py'])]\n            )"
+            }
+          },
+          "items": [
+            {
+              "number": 3,
+              "type": "pull_request",
+              "url": "https://github.com/matthewwall/weewx-twi/pull/3",
+              "status": "reviewed_distribution_blocked",
+              "comment_url": null
+            },
+            {
+              "number": 2,
+              "type": "issue",
+              "url": "https://github.com/matthewwall/weewx-twi/issues/2",
+              "status": "reviewed_distribution_blocked",
+              "comment_url": null
+            }
+          ]
+        }
+      ]
     },
     {
       "wiki_line": 146,
@@ -3390,9 +3749,9 @@
       "source": "https://github.com/daduke/ventusw820",
       "reviewed_revision": "1428e097c0e34fc1ce9f88c5001a9d8d264c565c",
       "last_commit": "2019-03-15T19:55:24Z",
-      "decision": "hard_fork_plan_only",
+      "decision": "released",
       "reason": "Keine Commits seit 2019. Maintainer erklärt im September 2021, dass seine W820 defekt ist und er nicht testen kann. Python-3-PR #4 wurde April 2026 vom Autor selbst ungemergt geschlossen, kein Maintainersignal.",
-      "fork": null,
+      "fork": "https://github.com/weewx-packages/ventusw820",
       "license": {
         "spdx": "GPL-3.0-or-later (README)",
         "evidence": [],
@@ -3528,7 +3887,34 @@
         "decision": "none_documented",
         "inventory": "/home/hilman2/weewx-packages/wiki-audit-20261022/inventory.json",
         "evidence_path": "/home/hilman2/weewx-packages/wiki-audit-20261022/drivers/148-w820/readmes-and-licenses.txt"
-      }
+      },
+      "repairs": [
+        {
+          "upstream": "daduke/ventusw820",
+          "fork_url": "https://github.com/weewx-packages/ventusw820",
+          "decision": "released",
+          "release": "https://github.com/weewx-packages/ventusw820/releases/tag/v0.2.1",
+          "version": "0.2.1",
+          "upstream_revision": "1428e097c0e34fc1ce9f88c5001a9d8d264c565c",
+          "revision": "97b41caecbf776c3039836cbd12024a03beccdba",
+          "items": [
+            {
+              "number": 3,
+              "type": "issue",
+              "url": "https://github.com/daduke/ventusw820/issues/3",
+              "status": "fixed_software_device_followup",
+              "comment_url": "https://github.com/daduke/ventusw820/issues/3#issuecomment-6328993721"
+            },
+            {
+              "number": 2,
+              "type": "issue",
+              "url": "https://github.com/daduke/ventusw820/issues/2",
+              "status": "fixed",
+              "comment_url": "https://github.com/daduke/ventusw820/issues/2#issuecomment-6328993970"
+            }
+          ]
+        }
+      ]
     },
     {
       "wiki_line": 149,
@@ -3956,9 +4342,9 @@
       "source": "https://github.com/matthewwall/weewx-wh23xx",
       "reviewed_revision": "36e844b45e567942c24879985e26ba399c9ae98e",
       "last_commit": "2017-12-10T19:01:06Z",
-      "decision": "hard_fork_plan_only",
+      "decision": "released",
       "reason": "Seit Dezember 2017 keine Commits. Alle acht offenen Punkte sind alt und ohne Maintainerantwort; zwei Python-3-PRs seit 2020 ungemergt.",
-      "fork": null,
+      "fork": "https://github.com/weewx-packages/weewx-wh23xx",
       "license": {
         "spdx": "GPL-3.0-only",
         "evidence": [
@@ -4076,7 +4462,76 @@
         "decision": "none_documented",
         "inventory": "/home/hilman2/weewx-packages/wiki-audit-20261022/inventory.json",
         "evidence_path": "/home/hilman2/weewx-packages/wiki-audit-20261022/drivers/151-wh23xx/readmes-and-licenses.txt"
-      }
+      },
+      "repairs": [
+        {
+          "upstream": "matthewwall/weewx-wh23xx",
+          "fork_url": "https://github.com/weewx-packages/weewx-wh23xx",
+          "decision": "released",
+          "release": "https://github.com/weewx-packages/weewx-wh23xx/releases/tag/v0.15.0",
+          "version": "0.15.0",
+          "upstream_revision": "36e844b45e567942c24879985e26ba399c9ae98e",
+          "revision": "015cd77d894c503ca3ba3581307886fc40f87151",
+          "items": [
+            {
+              "number": 16,
+              "type": "issue",
+              "url": "https://github.com/matthewwall/weewx-wh23xx/issues/16",
+              "status": "fixed",
+              "comment_url": "https://github.com/matthewwall/weewx-wh23xx/issues/16#issuecomment-6328938732"
+            },
+            {
+              "number": 15,
+              "type": "issue",
+              "url": "https://github.com/matthewwall/weewx-wh23xx/issues/15",
+              "status": "answered_verified",
+              "comment_url": "https://github.com/matthewwall/weewx-wh23xx/issues/15#issuecomment-6328938925"
+            },
+            {
+              "number": 14,
+              "type": "issue",
+              "url": "https://github.com/matthewwall/weewx-wh23xx/issues/14",
+              "status": "fixed",
+              "comment_url": "https://github.com/matthewwall/weewx-wh23xx/issues/14#issuecomment-6328939118"
+            },
+            {
+              "number": 12,
+              "type": "pull_request",
+              "url": "https://github.com/matthewwall/weewx-wh23xx/pull/12",
+              "status": "integrated_tested",
+              "comment_url": "https://github.com/matthewwall/weewx-wh23xx/pull/12#issuecomment-6328939290"
+            },
+            {
+              "number": 11,
+              "type": "pull_request",
+              "url": "https://github.com/matthewwall/weewx-wh23xx/pull/11",
+              "status": "corrected_alternative",
+              "comment_url": "https://github.com/matthewwall/weewx-wh23xx/pull/11#issuecomment-6328939491"
+            },
+            {
+              "number": 10,
+              "type": "issue",
+              "url": "https://github.com/matthewwall/weewx-wh23xx/issues/10",
+              "status": "software_fixed_protocol_capture_needed",
+              "comment_url": "https://github.com/matthewwall/weewx-wh23xx/issues/10#issuecomment-6328939677"
+            },
+            {
+              "number": 9,
+              "type": "issue",
+              "url": "https://github.com/matthewwall/weewx-wh23xx/issues/9",
+              "status": "fixed",
+              "comment_url": "https://github.com/matthewwall/weewx-wh23xx/issues/9#issuecomment-6328939842"
+            },
+            {
+              "number": 1,
+              "type": "pull_request",
+              "url": "https://github.com/matthewwall/weewx-wh23xx/pull/1",
+              "status": "implemented_device_followup",
+              "comment_url": "https://github.com/matthewwall/weewx-wh23xx/pull/1#issuecomment-6328940073"
+            }
+          ]
+        }
+      ]
     },
     {
       "wiki_line": 152,
@@ -4086,7 +4541,7 @@
       "source": "https://github.com/matthewwall/weewx-wlink",
       "reviewed_revision": "e059d28045336b8002444ea57ccbcd5267d12e33",
       "last_commit": "2019-12-21T04:39:12Z",
-      "decision": "hard_fork_plan_only",
+      "decision": "blocked_distribution_rights",
       "reason": "Seit Dezember 2019 keine Commits; API-/Python-3-PR seit 2021 ohne Maintainerantwort.",
       "fork": null,
       "license": {
@@ -4120,7 +4575,43 @@
         "decision": "none_documented",
         "inventory": "/home/hilman2/weewx-packages/wiki-audit-20261022/inventory.json",
         "evidence_path": "/home/hilman2/weewx-packages/wiki-audit-20261022/drivers/152-wlink/readmes-and-licenses.txt"
-      }
+      },
+      "repairs": [
+        {
+          "upstream": "matthewwall/weewx-wlink",
+          "fork_url": null,
+          "decision": "blocked_distribution_rights",
+          "upstream_revision": "e059d28045336b8002444ea57ccbcd5267d12e33",
+          "rights_evidence": {
+            "code": [
+              "bin/user/wlink.py",
+              "install.py"
+            ],
+            "assets": [
+              "bin/user/testfile-us.xml",
+              "bin/user/testfile-metric.xml"
+            ],
+            "finding": "No redistribution grant in complete Git history or PR #2. XML/JSON samples carry Davis copyright/terms links, separate from author code.",
+            "need": "Obtain original driver/installer permission and clarify Davis sample redistribution. API credentials are separately required only for live service verification.",
+            "revision": "e059d28045336b8002444ea57ccbcd5267d12e33",
+            "history_complete": true,
+            "license_history": [],
+            "headers": {
+              "bin/user/wlink.py": "#!/usr/bin/python\n# $Id: wlink.py 1783 2018-01-29 11:57:57Z mwall $\n# Copyright 2014 Matthew Wall\n\"\"\"weewx driver for WeatherLink web sites\n   download data from a weatherlink site for use in weewx\n\nTo use this driver:\n\n1) copy this file to the weewx user directory\n\n   cp wlink.py /home/weewx/bin/user\n\n2) configure weewx.conf\n\n[Station]\n    ...\n    station_type = WeatherLink\n[WeatherLink]\n    username = USERNAME\n    password = PASSWORD\n    driver = user.wlink\n\"\"\"",
+              "install.py": "# $Id: install.py 1783 2018-01-29 11:57:57Z mwall $\n# installer for WeatherLink driver\n# Copyright 2014 Matthew Wall\n\nfrom setup import ExtensionInstaller\n\ndef loader():\n    return WeatherLinkInstaller()\n\nclass WeatherLinkInstaller(ExtensionInstaller):\n    def __init__(self):\n        super(WeatherLinkInstaller, self).__init__(\n            version=\"0.14\",\n            name='wlink',\n            description='driver that collects data from weatherlink.com',\n            author=\"Matthew Wall\",\n            author_email=\"mwall@users.sourceforge.net\",\n            files=[('bin/user', ['bin/user/wlink.py'])]\n            )"
+            }
+          },
+          "items": [
+            {
+              "number": 2,
+              "type": "pull_request",
+              "url": "https://github.com/matthewwall/weewx-wlink/pull/2",
+              "status": "reviewed_distribution_blocked",
+              "comment_url": null
+            }
+          ]
+        }
+      ]
     },
     {
       "wiki_line": 153,
@@ -4259,9 +4750,9 @@
       "source": "https://github.com/matthewwall/weewx-wxt5x0",
       "reviewed_revision": "d64d39747f3b446ca5706bc8c492dbb39b0aa261",
       "last_commit": "2024-02-21T20:25:49Z",
-      "decision": "hard_fork_plan_only",
+      "decision": "released",
       "reason": "Keine Codeänderung seit Februar 2024. PR #12 und Fehler #13 von 2024/2025 ohne Maintainerantwort; letzte Ownerantwort Februar 2024. #11 ist vom Nutzer auf fehlendes Rc zurückgeführt, also nicht als Treiberfehler übernehmen.",
-      "fork": null,
+      "fork": "https://github.com/weewx-packages/weewx-wxt5x0",
       "license": {
         "spdx": "GPL-3.0-only",
         "evidence": [
@@ -4389,7 +4880,55 @@
         "decision": "none_documented",
         "inventory": "/home/hilman2/weewx-packages/wiki-audit-20261022/inventory.json",
         "evidence_path": "/home/hilman2/weewx-packages/wiki-audit-20261022/drivers/155-wxt5x0/readmes-and-licenses.txt"
-      }
+      },
+      "repairs": [
+        {
+          "upstream": "matthewwall/weewx-wxt5x0",
+          "fork_url": "https://github.com/weewx-packages/weewx-wxt5x0",
+          "decision": "released",
+          "release": "https://github.com/weewx-packages/weewx-wxt5x0/releases/tag/v0.9.0",
+          "version": "0.9.0",
+          "upstream_revision": "d64d39747f3b446ca5706bc8c492dbb39b0aa261",
+          "revision": "cfb1ea9822b97c8d5e9666869f924df19244dd8f",
+          "items": [
+            {
+              "number": 13,
+              "type": "issue",
+              "url": "https://github.com/matthewwall/weewx-wxt5x0/issues/13",
+              "status": "fixed_software_device_followup",
+              "comment_url": "https://github.com/matthewwall/weewx-wxt5x0/issues/13#issuecomment-6328911566"
+            },
+            {
+              "number": 12,
+              "type": "pull_request",
+              "url": "https://github.com/matthewwall/weewx-wxt5x0/pull/12",
+              "status": "implemented_with_recovery",
+              "comment_url": "https://github.com/matthewwall/weewx-wxt5x0/pull/12#issuecomment-6328911796"
+            },
+            {
+              "number": 11,
+              "type": "issue",
+              "url": "https://github.com/matthewwall/weewx-wxt5x0/issues/11",
+              "status": "answered_requires_transmitter_configuration",
+              "comment_url": "https://github.com/matthewwall/weewx-wxt5x0/issues/11#issuecomment-6328912010"
+            },
+            {
+              "number": 10,
+              "type": "issue",
+              "url": "https://github.com/matthewwall/weewx-wxt5x0/issues/10",
+              "status": "answered_verified",
+              "comment_url": "https://github.com/matthewwall/weewx-wxt5x0/issues/10#issuecomment-6328912212"
+            },
+            {
+              "number": 9,
+              "type": "issue",
+              "url": "https://github.com/matthewwall/weewx-wxt5x0/issues/9",
+              "status": "implemented_and_answered",
+              "comment_url": "https://github.com/matthewwall/weewx-wxt5x0/issues/9#issuecomment-6328912393"
+            }
+          ]
+        }
+      ]
     },
     {
       "wiki_line": 159,
@@ -4723,7 +5262,7 @@
       "source": "https://github.com/jardiamj/wmII",
       "reviewed_revision": "6879835c1f498d7d30a177fee70543ced34b638f",
       "last_commit": "2022-01-03T05:57:30Z",
-      "decision": "hard_fork_plan_only",
+      "decision": "local_configurator_distribution_blocked",
       "reason": "Seit Januar 2022 kein Code. Owner erklärt 2023 Zeitmangel und lädt zur Übernahme des Configurators ein; nachfolgende Nutzerfragen bleiben seit 2023/2024 ohne Antwort.",
       "fork": null,
       "license": {
@@ -4805,7 +5344,39 @@
         "decision": "none_documented",
         "inventory": "/home/hilman2/weewx-packages/wiki-audit-20261022/inventory.json",
         "evidence_path": "/home/hilman2/weewx-packages/wiki-audit-20261022/drivers/165-wmII/readmes-and-licenses.txt"
-      }
+      },
+      "repairs": [
+        {
+          "upstream": "jardiamj/wmII",
+          "fork_url": null,
+          "decision": "local_configurator_distribution_blocked",
+          "upstream_revision": "6879835c1f498d7d30a177fee70543ced34b638f",
+          "rights_evidence": {
+            "code": [
+              "wmII.py"
+            ],
+            "finding": "Own work is GPLv3 in LICENSE/README. README says most methods derive from Scott Hassan’s Weather Update under an unspecified PSF License. Upstream PSF text/version and required original copyright notice are absent. Origin server refused both HTTP/HTTPS; bounded archive query timed out.",
+            "need": "Recover the original Weather Update source license/notice and version, or obtain the original author’s grant. PSF is not being rejected; its concrete retention obligations must be identified.",
+            "revision": "6879835c1f498d7d30a177fee70543ced34b638f",
+            "history_complete": true,
+            "license_history": [
+              "49f5296bb946017b161bd017840829681e0ca96f Create LICENSE"
+            ],
+            "headers": {
+              "wmII.py": "#!/usr/bin/env python\n#\n# Copyright 2018 Jardi A. Martinez Jordan <jardiamj@gmail.com>\n# See the file LICENSE.txt for your rights.\n# Derived from Ultimeter driver.\n# Most methods were derived from The Weather Update app by:\n#   Scott Hassan <hassan@dotfunk.com>\n#\n#//////////////////////////////////////////////////////////////////////////////\n# Adapted for Python3 Jay R. Jaeger  cube1us@gmail.com June, 2021\n# with additional tests added for getting and setting station time\n#\n# REQUIRES: Python3 (tested under 3.8), weewx Version 4 (or later)\n#\n# Note:  I left ord(single-byte-value), though strictly speaking\n# it should probably be done as int(single-byte-value)\n#\n\n\"\"\"Driver for Davis Weather Monitor II weather station, Should also work with\nWizzard and Perception but hasn't been tested\n\n"
+            }
+          },
+          "items": [
+            {
+              "number": 11,
+              "type": "issue",
+              "url": "https://github.com/jardiamj/wmII/issues/11",
+              "status": "reviewed_distribution_blocked",
+              "comment_url": null
+            }
+          ]
+        }
+      ]
     },
     {
       "wiki_line": 171,
@@ -4914,7 +5485,7 @@
       "source": "https://github.com/tridge/DavisSi1000",
       "reviewed_revision": "1a325912bd961f04cf6a2c93d40f8de58567f34a",
       "last_commit": "2013-05-15T04:00:14Z",
-      "decision": "hard_fork_plan_only",
+      "decision": "blocked_distribution_rights",
       "reason": "Seit Mai 2013 keine Commits; alle acht offenen Issues/PRs ohne Maintainerantwort, Python-3-/WeeWX-5.1-PR seit 2024 offen.",
       "fork": null,
       "license": {
@@ -5034,7 +5605,91 @@
         "decision": "none_documented",
         "inventory": "/home/hilman2/weewx-packages/wiki-audit-20261022/inventory.json",
         "evidence_path": "/home/hilman2/weewx-packages/wiki-audit-20261022/drivers/177-si1000/readmes-and-licenses.txt"
-      }
+      },
+      "repairs": [
+        {
+          "upstream": "tridge/DavisSi1000",
+          "fork_url": null,
+          "decision": "blocked_distribution_rights",
+          "upstream_revision": "1a325912bd961f04cf6a2c93d40f8de58567f34a",
+          "rights_evidence": {
+            "code": [
+              "weewx/Si1000.py",
+              "Firmware/radio/printfl.c"
+            ],
+            "finding": "COPYING grants BSD-2-Clause for Michael Smith firmware work. Si1000.py separately points to absent LICENSE.txt and derives from WeeWX simulator.py. printfl.c names GNU General Public License version 2.1 or later with an SDCC linking exception, an ambiguous version reference that cannot be silently converted to GPLv2 or LGPLv2.1.",
+            "need": "Clarify Andrew Tridgell’s WeeWX driver grant and inherited simulator license, and identify printfl.c’s intended license text and SDCC exception.",
+            "revision": "1a325912bd961f04cf6a2c93d40f8de58567f34a",
+            "history_complete": true,
+            "license_history": [
+              "7d4158f9d0f7d4694e67c376caab3eaf06984763 Add some basic documentation and a copyright for folks that are curious."
+            ],
+            "headers": {
+              "weewx/Si1000.py": "#\n#    Copyright (c) 2013 Andrew Tridgell\n#\n#    See the file LICENSE.txt for your full rights.\n#\n#\n\"\"\"Driver for Si1000 radio receiver for a Davis weather station\n\nSee https://github.com/tridge/DavisSi1000 for details of the radio\nreceiver used\n\nDriver based on simulator.py written by Tom Keffer\n\nTo use this driver, add the following to weewx.conf:\n\n[Station]\n    station_type = Si1000\n\n[Si1000]\n    driver = weewx.drivers.Si1000\n    port = /dev/ttyAMA0\n    baudrate = 57600",
+              "Firmware/radio/printfl.c": "/*-----------------------------------------------------------------\n printfl.c - source file for reduced version of printf\n\n Copyright (C) 1999, Sandeep Dutta . sandeep.dutta@usa.net\n 2001060401: Improved by was@icb.snz.chel.su\n\n This library is free software; you can redistribute it and/or modify it\n under the terms of the GNU General Public License as published by the\n Free Software Foundation; either version 2.1, or (at your option) any\n later version.\n\n This library is distributed in the hope that it will be useful,\n but WITHOUT ANY WARRANTY; without even the implied warranty of\n MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n GNU General Public License for more details.\n\n You should have received a copy of the GNU General Public License\n along with this library; see the file COPYING. If not, write to the\n Free Software Foundation, 51 Franklin Street, Fifth Floor, Boston,\n MA 02110-1301, USA.\n\n As a special exception, if you link this library with other files,"
+            },
+            "later_version_note": "printfl.c explicitly permits a later GNU GPL version. Selecting GPLv3 while preserving the original notice and SDCC exception is a possible license path; it must not be silently relabeled LGPLv2.1. The separate WeeWX-driver/original-simulator license chain remains unresolved regardless."
+          },
+          "items": [
+            {
+              "number": 8,
+              "type": "pull_request",
+              "url": "https://github.com/tridge/DavisSi1000/pull/8",
+              "status": "reviewed_distribution_blocked",
+              "comment_url": null
+            },
+            {
+              "number": 7,
+              "type": "issue",
+              "url": "https://github.com/tridge/DavisSi1000/issues/7",
+              "status": "reviewed_distribution_blocked",
+              "comment_url": null
+            },
+            {
+              "number": 6,
+              "type": "issue",
+              "url": "https://github.com/tridge/DavisSi1000/issues/6",
+              "status": "reviewed_distribution_blocked",
+              "comment_url": null
+            },
+            {
+              "number": 5,
+              "type": "issue",
+              "url": "https://github.com/tridge/DavisSi1000/issues/5",
+              "status": "reviewed_distribution_blocked",
+              "comment_url": null
+            },
+            {
+              "number": 4,
+              "type": "pull_request",
+              "url": "https://github.com/tridge/DavisSi1000/pull/4",
+              "status": "reviewed_distribution_blocked",
+              "comment_url": null
+            },
+            {
+              "number": 3,
+              "type": "pull_request",
+              "url": "https://github.com/tridge/DavisSi1000/pull/3",
+              "status": "reviewed_distribution_blocked",
+              "comment_url": null
+            },
+            {
+              "number": 2,
+              "type": "pull_request",
+              "url": "https://github.com/tridge/DavisSi1000/pull/2",
+              "status": "reviewed_distribution_blocked",
+              "comment_url": null
+            },
+            {
+              "number": 1,
+              "type": "issue",
+              "url": "https://github.com/tridge/DavisSi1000/issues/1",
+              "status": "reviewed_distribution_blocked",
+              "comment_url": null
+            }
+          ]
+        }
+      ]
     },
     {
       "wiki_line": 184,
@@ -5242,7 +5897,7 @@
       "source": "https://github.com/grebleem/weewx-weatherlinkliveudp",
       "reviewed_revision": "dfa92f7581f22f41f266aad0d78574128086e086",
       "last_commit": "2021-08-10T11:16:52Z",
-      "decision": "hard_fork_plan_only",
+      "decision": "local_successor_fixes_bundle_distribution_blocked",
       "reason": "Keine Commits seit August 2021 und keine Maintainerantwort auf offenen Punkten seit 2020. Fortführung WernerKr wird separat geprüft.",
       "fork": null,
       "license": {
@@ -5312,7 +5967,45 @@
         "decision": "alternatives_checked_not_imported",
         "inventory": "/home/hilman2/weewx-packages/wiki-audit-20261022/inventory.json",
         "evidence_path": "/home/hilman2/weewx-packages/wiki-audit-20261022/drivers/192-WeatherLink-Live-UDP/readmes-and-licenses.txt"
-      }
+      },
+      "repairs": [
+        {
+          "upstream": "grebleem/weewx-weatherlinkliveudp",
+          "fork_url": null,
+          "decision": "local_successor_fixes_bundle_distribution_blocked",
+          "upstream_revision": "dfa92f7581f22f41f266aad0d78574128086e086",
+          "items": [
+            {
+              "number": 26,
+              "type": "pull_request",
+              "url": "https://github.com/grebleem/weewx-weatherlinkliveudp/pull/26",
+              "status": "reviewed_distribution_blocked",
+              "comment_url": null
+            },
+            {
+              "number": 25,
+              "type": "issue",
+              "url": "https://github.com/grebleem/weewx-weatherlinkliveudp/issues/25",
+              "status": "reviewed_distribution_blocked",
+              "comment_url": null
+            },
+            {
+              "number": 22,
+              "type": "issue",
+              "url": "https://github.com/grebleem/weewx-weatherlinkliveudp/issues/22",
+              "status": "reviewed_distribution_blocked",
+              "comment_url": null
+            },
+            {
+              "number": 2,
+              "type": "issue",
+              "url": "https://github.com/grebleem/weewx-weatherlinkliveudp/issues/2",
+              "status": "reviewed_distribution_blocked",
+              "comment_url": null
+            }
+          ]
+        }
+      ]
     },
     {
       "wiki_line": 193,
@@ -5469,9 +6162,9 @@
       "source": "https://github.com/jonotaegi/weewx-wll",
       "reviewed_revision": "19d60ac6ef4da450f187bb3e7adbe08992928779",
       "last_commit": "2020-09-26T07:55:27Z",
-      "decision": "hard_fork_plan_only",
+      "decision": "released",
       "reason": "Keine Commits seit September 2020, letzte Maintainerantwort Juni 2020. Timeout-PR #7 und alte Fehlerpunkte ohne weitere Reaktion.",
-      "fork": null,
+      "fork": "https://github.com/weewx-packages/weewx-wll",
       "license": {
         "spdx": "GPL-3.0-or-later AND GPL-3.0-only",
         "evidence": [],
@@ -5643,7 +6336,55 @@
         "decision": "none_documented",
         "inventory": "/home/hilman2/weewx-packages/wiki-audit-20261022/inventory.json",
         "evidence_path": "/home/hilman2/weewx-packages/wiki-audit-20261022/drivers/195-WeatherLink-Live-WLL/readmes-and-licenses.txt"
-      }
+      },
+      "repairs": [
+        {
+          "upstream": "jonotaegi/weewx-wll",
+          "fork_url": "https://github.com/weewx-packages/weewx-wll",
+          "decision": "released",
+          "release": "https://github.com/weewx-packages/weewx-wll/releases/tag/v0.2.1",
+          "version": "0.2.1",
+          "upstream_revision": "19d60ac6ef4da450f187bb3e7adbe08992928779",
+          "revision": "a77102b5bbeece13a8be1f3f0a50b0258ec08c91",
+          "items": [
+            {
+              "number": 7,
+              "type": "pull_request",
+              "url": "https://github.com/jonotaegi/weewx-wll/pull/7",
+              "status": "fixed",
+              "comment_url": "https://github.com/jonotaegi/weewx-wll/pull/7#issuecomment-6328873229"
+            },
+            {
+              "number": 6,
+              "type": "issue",
+              "url": "https://github.com/jonotaegi/weewx-wll/issues/6",
+              "status": "fixed_mapping_device_followup",
+              "comment_url": "https://github.com/jonotaegi/weewx-wll/issues/6#issuecomment-6328874033"
+            },
+            {
+              "number": 5,
+              "type": "issue",
+              "url": "https://github.com/jonotaegi/weewx-wll/issues/5",
+              "status": "fixed_software_device_followup",
+              "comment_url": "https://github.com/jonotaegi/weewx-wll/issues/5#issuecomment-6328873655"
+            },
+            {
+              "number": 3,
+              "type": "issue",
+              "url": "https://github.com/jonotaegi/weewx-wll/issues/3",
+              "status": "fixed",
+              "comment_url": "https://github.com/jonotaegi/weewx-wll/issues/3#issuecomment-6328873457"
+            },
+            {
+              "number": 1,
+              "type": "issue",
+              "url": "https://github.com/jonotaegi/weewx-wll/issues/1",
+              "status": "fixed",
+              "comment_url": "https://github.com/jonotaegi/weewx-wll/issues/1#issuecomment-6328873842"
+            }
+          ]
+        }
+      ]
     },
     {
       "wiki_line": 201,
@@ -6185,9 +6926,9 @@
       "source": "https://github.com/dkmcode/weewx-observerip",
       "reviewed_revision": "689352c90134885d661db3a35eb6318c5c3b6c6b",
       "last_commit": "2015-04-13T06:37:32Z",
-      "decision": "hard_fork_plan_only",
+      "decision": "released",
       "reason": "Keine Commits seit April 2015. Python-3-Issue seit 2020, Temperaturpunkt seit 2019 und PR seit 2015 offen; letzte Maintainerantwort April 2015.",
-      "fork": null,
+      "fork": "https://github.com/weewx-packages/weewx-observerip",
       "license": {
         "spdx": "GPL-3.0-only",
         "evidence": [
@@ -6290,7 +7031,41 @@
         "decision": "none_documented",
         "inventory": "/home/hilman2/weewx-packages/wiki-audit-20261022/inventory.json",
         "evidence_path": "/home/hilman2/weewx-packages/wiki-audit-20261022/drivers/217-observerip/readmes-and-licenses.txt"
-      }
+      },
+      "repairs": [
+        {
+          "upstream": "dkmcode/weewx-observerip",
+          "fork_url": "https://github.com/weewx-packages/weewx-observerip",
+          "decision": "released",
+          "release": "https://github.com/weewx-packages/weewx-observerip/releases/tag/v0.2.1",
+          "version": "0.2.1",
+          "upstream_revision": "689352c90134885d661db3a35eb6318c5c3b6c6b",
+          "revision": "e08f1e8e9402668bd16a2ec4cdfaa2fb23b90207",
+          "items": [
+            {
+              "number": 3,
+              "type": "issue",
+              "url": "https://github.com/dkmcode/weewx-observerip/issues/3",
+              "status": "fixed_software_device_followup",
+              "comment_url": "https://github.com/dkmcode/weewx-observerip/issues/3#issuecomment-6329034834"
+            },
+            {
+              "number": 2,
+              "type": "issue",
+              "url": "https://github.com/dkmcode/weewx-observerip/issues/2",
+              "status": "fixed_with_configuration_answer",
+              "comment_url": "https://github.com/dkmcode/weewx-observerip/issues/2#issuecomment-6329035027"
+            },
+            {
+              "number": 1,
+              "type": "pull_request",
+              "url": "https://github.com/dkmcode/weewx-observerip/pull/1",
+              "status": "implemented_tested",
+              "comment_url": "https://github.com/dkmcode/weewx-observerip/pull/1#issuecomment-6329035227"
+            }
+          ]
+        }
+      ]
     },
     {
       "wiki_line": 218,
@@ -6477,7 +7252,7 @@
       "source": "https://github.com/jonathankoren/weewx-aqi",
       "reviewed_revision": "d5bf9c9f28e8da15e3a65c55bc623e56a42e3602",
       "last_commit": "2023-01-02T07:48:51Z",
-      "decision": "hard_fork_plan",
+      "decision": "cloned_full_history",
       "reason": "Acht alte offene Issues, unbeantwortete Crash-/Einheiten-/AQI-Meldungen seit 2022 bis 2024; letzter Commit 02.01.2023, letzte Maintainerantwort im offenen Tracker 27.07.2021. Reparaturbedarf und langjährige fehlende Reaktion zusammen belegen anhaltende Inaktivität dieses Repos.",
       "fork": null,
       "license": {
@@ -6615,7 +7390,16 @@
           }
         ]
       },
-      "successor": []
+      "successor": [],
+      "repairs": [
+        {
+          "upstream": "https://github.com/jonathankoren/weewx-aqi",
+          "fork_url": null,
+          "decision": "cloned_full_history",
+          "source_revision": "d5bf9c9f28e8da15e3a65c55bc623e56a42e3602",
+          "items": []
+        }
+      ]
     },
     {
       "wiki_line": 229,
@@ -6656,9 +7440,9 @@
       "source": "https://gitlab.com/wjcarpenter/bme280wx",
       "reviewed_revision": "b897cfc3ce2c1b981d33ef93d76d80f280c47289",
       "last_commit": "2020-05-27T16:42:57.000+00:00",
-      "decision": "hard_fork_plan",
+      "decision": "published_pending_tracker_comments",
       "reason": "GitLab-Quelle mit BSD-2-Clause, Commit 27.05.2020; zwei alte offene Issues und ein offener MR von 2022. Alle öffentlichen Kommentare per GraphQL nach REST-401 gelesen. Keine Maintainerantwort; Logging-Fix liegt im MR und wird 2023 von einem Nutzer bestätigt. GitLab kann nicht als echter GitHub-Fork übernommen werden.",
-      "fork": null,
+      "fork": "https://github.com/weewx-packages/bme280wx",
       "license": {
         "spdx": "BSD-2-Clause",
         "evidence": [
@@ -6709,7 +7493,31 @@
           }
         ]
       },
-      "successor": []
+      "successor": [],
+      "repairs": [
+        {
+          "upstream": "https://gitlab.com/wjcarpenter/bme280wx",
+          "fork_url": "https://github.com/weewx-packages/bme280wx",
+          "decision": "published_pending_tracker_comments",
+          "version": "1.1.0",
+          "source_revision": "b897cfc3ce2c1b981d33ef93d76d80f280c47289",
+          "revision": "69193fb5807f6416af3ad1f6ece51a67ec40e800",
+          "items": [
+            {
+              "number": 1,
+              "comment_url": null
+            },
+            {
+              "number": 2,
+              "comment_url": null
+            },
+            {
+              "number": 2,
+              "comment_url": null
+            }
+          ]
+        }
+      ]
     },
     {
       "wiki_line": 231,
@@ -6719,9 +7527,9 @@
       "source": "https://github.com/matthewwall/weewx-cmon",
       "reviewed_revision": "396546b9b569bcd60a6995feecc4cdd62cac2026",
       "last_commit": "2020-01-12T09:48:49Z",
-      "decision": "hard_fork_plan",
+      "decision": "published_pending_tracker_comments",
       "reason": "Drei alte offene Fehler seit 2020/2024 ohne Maintainerantwort, letzter Commit 12.01.2020. Darunter ein WeeWX-5-Absturz bei nicht lesbaren Docker-Mounts. Leerer Tracker liegt ausdrücklich nicht vor.",
-      "fork": null,
+      "fork": "https://github.com/weewx-packages/weewx-cmon",
       "license": {
         "spdx": "GPL-3.0-only",
         "evidence": [
@@ -6774,7 +7582,31 @@
           }
         ]
       },
-      "successor": []
+      "successor": [],
+      "repairs": [
+        {
+          "upstream": "https://github.com/matthewwall/weewx-cmon",
+          "fork_url": "https://github.com/weewx-packages/weewx-cmon",
+          "decision": "published_pending_tracker_comments",
+          "version": "0.21.0",
+          "source_revision": "396546b9b569bcd60a6995feecc4cdd62cac2026",
+          "revision": "c0b1dde56c83ac0ece3c9407381e1b279bc0446e",
+          "items": [
+            {
+              "number": 4,
+              "comment_url": "https://github.com/matthewwall/weewx-cmon/issues/4#issuecomment-6329070614"
+            },
+            {
+              "number": 2,
+              "comment_url": "https://github.com/matthewwall/weewx-cmon/issues/2#issuecomment-6329070765"
+            },
+            {
+              "number": 3,
+              "comment_url": "https://github.com/matthewwall/weewx-cmon/issues/3#issuecomment-6329070961"
+            }
+          ]
+        }
+      ]
     },
     {
       "wiki_line": 232,
@@ -6784,9 +7616,9 @@
       "source": "https://github.com/matthewwall/weewx-csv",
       "reviewed_revision": "34a9a52e5fedb47af216c281084f03a833fd75e6",
       "last_commit": "2021-09-18T02:51:11Z",
-      "decision": "hard_fork_plan",
+      "decision": "published_pending_tracker_comments",
       "reason": "Zwei seit 2024/2025 unbeantwortete offene Issues, letzter Commit 18.09.2021. Bericht über zeitweilig unvollständige CSV-Dateien muss zuerst reproduziert werden, Ursache noch nicht belegt.",
-      "fork": null,
+      "fork": "https://github.com/weewx-packages/weewx-csv",
       "license": {
         "spdx": "GPL-3.0-only",
         "evidence": [
@@ -6829,7 +7661,27 @@
           }
         ]
       },
-      "successor": []
+      "successor": [],
+      "repairs": [
+        {
+          "upstream": "https://github.com/matthewwall/weewx-csv",
+          "fork_url": "https://github.com/weewx-packages/weewx-csv",
+          "decision": "published_pending_tracker_comments",
+          "version": "0.12.0",
+          "source_revision": "34a9a52e5fedb47af216c281084f03a833fd75e6",
+          "revision": "af9af29f147b2c1e36c616232bc95b564eff149b",
+          "items": [
+            {
+              "number": 2,
+              "comment_url": "https://github.com/matthewwall/weewx-csv/issues/2#issuecomment-6329070426"
+            },
+            {
+              "number": 1,
+              "comment_url": "https://github.com/matthewwall/weewx-csv/issues/1#issuecomment-6329070180"
+            }
+          ]
+        }
+      ]
     },
     {
       "wiki_line": 233,
@@ -8379,7 +9231,7 @@
         "open_items": []
       },
       "successor": [],
-      "publication": "Paused: Dirtylane demo terms require clarification; licensed package variant in preparation."
+      "publication": "Paused: bundled fonts include an explicit redistribution restriction and Apple Watch-only terms; licensed variant in preparation."
     },
     {
       "wiki_line": 273,
@@ -8724,9 +9576,9 @@
       "source": "https://github.com/teeks99/weewx-json",
       "reviewed_revision": "dd4b466644367f9f80f844fc50aa20ca9425bc3f",
       "last_commit": "2024-10-31T01:32:37Z",
-      "decision": "hard_fork_plan",
+      "decision": "published_pending_tracker_comments",
       "reason": "Drei alte offene Punkte, darunter unbeantworteter PR #15 vom 01.09.2025 und Installationsdokumentation #13 vom 07.06.2024. Commit 31.10.2024; letzte Maintainerantwort im offenen Tracker 10.10.2022. GPLv3 ist in LICENSE belegt.",
-      "fork": null,
+      "fork": "https://github.com/weewx-packages/weewx-json",
       "license": {
         "spdx": "GPL-3.0-only",
         "evidence": [
@@ -8785,7 +9637,31 @@
           }
         ]
       },
-      "successor": []
+      "successor": [],
+      "repairs": [
+        {
+          "upstream": "https://github.com/teeks99/weewx-json",
+          "fork_url": "https://github.com/weewx-packages/weewx-json",
+          "decision": "published_pending_tracker_comments",
+          "version": "1.3.0",
+          "source_revision": "dd4b466644367f9f80f844fc50aa20ca9425bc3f",
+          "revision": "1b59f6d0e0bc2cadb04e5497c77bae83672c97f9",
+          "items": [
+            {
+              "number": 15,
+              "comment_url": "https://github.com/teeks99/weewx-json/pull/15#issuecomment-6329071476"
+            },
+            {
+              "number": 13,
+              "comment_url": "https://github.com/teeks99/weewx-json/issues/13#issuecomment-6329071114"
+            },
+            {
+              "number": 9,
+              "comment_url": "https://github.com/teeks99/weewx-json/issues/9#issuecomment-6329071331"
+            }
+          ]
+        }
+      ]
     },
     {
       "wiki_line": 279,
@@ -9140,9 +10016,9 @@
       "source": "https://gitlab.com/ngulden/niculskin",
       "reviewed_revision": "d9741244a2a42321d3e0f5802bfeeb2952156ffb",
       "last_commit": "2021-01-04T23:00:48.000+01:00",
-      "decision": "hard_fork_plan",
+      "decision": "published_pending_tracker_comments",
       "reason": "GitLab-Quelle, Commit 04.01.2021; drei alte offene Issues und konfliktbehafteter MR !10 von 2018. Maintainer erläuterte #21 zuletzt 05.04.2022, keine spätere Behebung im Default-Branch. GPLv2-Text in LICENSE und GPL-Hinweise in Quellheadern vorhanden; alle öffentlichen Notes vollständig per GraphQL gelesen.",
-      "fork": null,
+      "fork": "https://github.com/weewx-packages/niculskin",
       "license": {
         "spdx": "GPL-2.0-only",
         "evidence": [
@@ -9211,7 +10087,35 @@
           }
         ]
       },
-      "successor": []
+      "successor": [],
+      "repairs": [
+        {
+          "upstream": "https://gitlab.com/ngulden/niculskin",
+          "fork_url": "https://github.com/weewx-packages/niculskin",
+          "decision": "published_pending_tracker_comments",
+          "version": "1.1.0",
+          "source_revision": "d9741244a2a42321d3e0f5802bfeeb2952156ffb",
+          "revision": "2a30565104975c5eb5eef3878aecf3a74cf221db",
+          "items": [
+            {
+              "number": 21,
+              "comment_url": null
+            },
+            {
+              "number": 20,
+              "comment_url": null
+            },
+            {
+              "number": 19,
+              "comment_url": null
+            },
+            {
+              "number": 10,
+              "comment_url": null
+            }
+          ]
+        }
+      ]
     },
     {
       "wiki_line": 284,
@@ -11163,9 +12067,9 @@
       "source": "https://github.com/matthewwall/weewx-crt",
       "reviewed_revision": "12a342cf6e72053327178fff616d9ba78c0522ef",
       "last_commit": "2024-02-21T15:18:18-05:00",
-      "decision": "hard_fork_plan_only",
+      "decision": "completed_available_work",
       "reason": "Alte offene Punkte mit ausbleibender aktueller Maintainerreaktion sowie jahrelange fehlende Repositorypflege. Lizenz belegt; separaten Reparaturfork erst nach Zuteilung erstellen.",
-      "fork": null,
+      "fork": "https://github.com/weewx-packages/weewx-crt",
       "license": {
         "spdx": "GPL-3.0-only",
         "evidence": [
@@ -11239,7 +12143,61 @@
           }
         ]
       },
-      "successor": []
+      "successor": [],
+      "repairs": [
+        {
+          "upstream": "matthewwall/weewx-crt",
+          "fork_url": "https://github.com/weewx-packages/weewx-crt",
+          "decision": "completed_available_work",
+          "release": {
+            "tag": "v0.24.0",
+            "url": "https://github.com/weewx-packages/weewx-crt/releases/tag/v0.24.0",
+            "asset_url": "https://github.com/weewx-packages/weewx-crt/releases/download/v0.24.0/weewx-crt-0.24.0.tar.gz",
+            "sha256": "966c6ec35f6bdcede4cb40dd428fc3e6ffb1f1cdfe18d279377842692233d7d4"
+          },
+          "version": "0.24.0",
+          "published_revision": "51618831ffaf2eb818c170d7e4ecca3219078099",
+          "revision": "51618831ffaf2eb818c170d7e4ecca3219078099",
+          "limitations": [
+            "Empty recent archive windows use current packet speed, gust and bearing; windGust is converted to output units. This fallback is an instantaneous sample, not a measured 10-minute average.",
+            "Optional realmore_txt emits pressure extrema and 16 wind totals. Archive durations are weighted to realmore_interval. Original high-frequency LOOP samples cannot be reconstructed from an archive."
+          ],
+          "items": [
+            {
+              "number": 13,
+              "type": "issue",
+              "url": "https://github.com/matthewwall/weewx-crt/issues/13",
+              "repair_status": "fixed",
+              "answer": "Removed distutils; numeric release gate accepts newer beta versions and rejects prereleases of the minimum release.",
+              "comment_url": "https://github.com/matthewwall/weewx-crt/issues/13#issuecomment-6329061431"
+            },
+            {
+              "number": 12,
+              "type": "issue",
+              "url": "https://github.com/matthewwall/weewx-crt/issues/12",
+              "repair_status": "fixed_with_documented_fallback",
+              "answer": "Empty recent archive windows use current packet speed, gust and bearing; windGust is converted to output units. This fallback is an instantaneous sample, not a measured 10-minute average.",
+              "comment_url": "https://github.com/matthewwall/weewx-crt/issues/12#issuecomment-6329061945"
+            },
+            {
+              "number": 8,
+              "type": "issue",
+              "url": "https://github.com/matthewwall/weewx-crt/issues/8",
+              "repair_status": "fixed",
+              "answer": "METRICWX integration now converts metres to kilometres before distance conversion; US and METRIC regression cases also pass.",
+              "comment_url": "https://github.com/matthewwall/weewx-crt/issues/8#issuecomment-6329062523"
+            },
+            {
+              "number": 7,
+              "type": "issue",
+              "url": "https://github.com/matthewwall/weewx-crt/issues/7",
+              "repair_status": "implemented_with_sampling_limit",
+              "answer": "Optional realmore_txt emits pressure extrema and 16 wind totals. Archive durations are weighted to realmore_interval. Original high-frequency LOOP samples cannot be reconstructed from an archive.",
+              "comment_url": "https://github.com/matthewwall/weewx-crt/issues/7#issuecomment-6329063068"
+            }
+          ]
+        }
+      ]
     },
     {
       "wiki_line": 366,
@@ -11249,9 +12207,9 @@
       "source": "https://github.com/matthewwall/weewx-cwxn",
       "reviewed_revision": "a5ba61a6b192e1c6bd565e4a294d0433e7bd9a5b",
       "last_commit": "2021-02-14T09:03:04-05:00",
-      "decision": "hard_fork_plan_only",
+      "decision": "completed_available_work",
       "reason": "Alte offene Punkte mit ausbleibender aktueller Maintainerreaktion sowie jahrelange fehlende Repositorypflege. Lizenz belegt; separaten Reparaturfork erst nach Zuteilung erstellen.",
-      "fork": null,
+      "fork": "https://github.com/weewx-packages/weewx-cwxn",
       "license": {
         "spdx": "GPL-3.0-only",
         "evidence": [
@@ -11307,7 +12265,50 @@
           }
         ]
       },
-      "successor": []
+      "successor": [],
+      "repairs": [
+        {
+          "upstream": "matthewwall/weewx-cwxn",
+          "fork_url": "https://github.com/weewx-packages/weewx-cwxn",
+          "decision": "completed_available_work",
+          "release": {
+            "tag": "v0.6.0",
+            "url": "https://github.com/weewx-packages/weewx-cwxn/releases/tag/v0.6.0",
+            "asset_url": "https://github.com/weewx-packages/weewx-cwxn/releases/download/v0.6.0/weewx-cwxn-0.6.0.tar.gz",
+            "sha256": "9e316a3b1997098028adfb4263e03d2f44c4e9400f4d4f7337677c1598a796af"
+          },
+          "version": "0.6.0",
+          "published_revision": "68f0b2b76ebb28f38c1d4157f02c6f7d042d2efd",
+          "revision": "68f0b2b76ebb28f38c1d4157f02c6f7d042d2efd",
+          "limitations": [],
+          "items": [
+            {
+              "number": 3,
+              "type": "pull_request",
+              "url": "https://github.com/matthewwall/weewx-cwxn/pull/3",
+              "repair_status": "fixed",
+              "answer": "Missing sensor/rain values remain blank; zero and negative temperature survive. Reimplemented without dropping real rain values.",
+              "comment_url": "https://github.com/matthewwall/weewx-cwxn/pull/3#issuecomment-6329063647"
+            },
+            {
+              "number": 2,
+              "type": "issue",
+              "url": "https://github.com/matthewwall/weewx-cwxn/issues/2",
+              "repair_status": "fixed",
+              "answer": "Two-character humidity with explicit 0/1/99/100, missing and invalid limits.",
+              "comment_url": "https://github.com/matthewwall/weewx-cwxn/issues/2#issuecomment-6329064237"
+            },
+            {
+              "number": 1,
+              "type": "pull_request",
+              "url": "https://github.com/matthewwall/weewx-cwxn/pull/1",
+              "repair_status": "fixed",
+              "answer": "Two-character humidity; 100%=00; missing values remain blank.",
+              "comment_url": "https://github.com/matthewwall/weewx-cwxn/pull/1#issuecomment-6329064874"
+            }
+          ]
+        }
+      ]
     },
     {
       "wiki_line": 367,
@@ -11348,9 +12349,9 @@
       "source": "https://github.com/ampledata/weewx_graphite",
       "reviewed_revision": "0c79e67ab1727bb1d5c500c3eead524845620b82",
       "last_commit": "2016-10-18T23:57:22-07:00",
-      "decision": "hard_fork_plan_only",
+      "decision": "completed_available_work",
       "reason": "Alte offene Punkte mit ausbleibender aktueller Maintainerreaktion sowie jahrelange fehlende Repositorypflege. Lizenz belegt; separaten Reparaturfork erst nach Zuteilung erstellen.",
-      "fork": null,
+      "fork": "https://github.com/weewx-packages/weewx-graphite",
       "license": {
         "spdx": "Apache-2.0",
         "evidence": [
@@ -11425,7 +12426,62 @@
           }
         ]
       },
-      "successor": []
+      "successor": [],
+      "repairs": [
+        {
+          "upstream": "ampledata/weewx_graphite",
+          "fork_url": "https://github.com/weewx-packages/weewx-graphite",
+          "decision": "completed_available_work",
+          "release": {
+            "tag": "v2.2.0",
+            "url": "https://github.com/weewx-packages/weewx-graphite/releases/tag/v2.2.0",
+            "asset_url": "https://github.com/weewx-packages/weewx-graphite/releases/download/v2.2.0/weewx-graphite-2.2.0.tar.gz",
+            "sha256": "f8a3bf7b73a1190b9d0953dd8b9a9b97475b06ff492ef705c350c652221833db"
+          },
+          "version": "2.2.0",
+          "published_revision": "ce6a237bd265f9dc9d8673490274ac6b32429e87",
+          "revision": "ce6a237bd265f9dc9d8673490274ac6b32429e87",
+          "limitations": [
+            "Installer imports weecfg.extension. Isolated install passes on WeeWX 4/5. WeeWX 4 core still requires Engine/Services/restful_services to exist; reproduced missing-key failure and tested documented empty-option recovery.",
+            "Documented prefix and configured Carbon LOCAL_DATA_DIR/Whisper deletion process. Actual backend/path on reporter server not knowable from extension config.",
+            "Local Carbon receiver proves original archive timestamps are sent. Documented retention/range checks. Historical retention and Grafana datasource configuration on reporter server require its logs/configuration."
+          ],
+          "items": [
+            {
+              "number": 4,
+              "type": "issue",
+              "url": "https://github.com/ampledata/weewx_graphite/issues/4",
+              "repair_status": "fixed_with_legacy_prerequisite",
+              "answer": "Installer imports weecfg.extension. Isolated install passes on WeeWX 4/5. WeeWX 4 core still requires Engine/Services/restful_services to exist; reproduced missing-key failure and tested documented empty-option recovery.",
+              "comment_url": "https://github.com/ampledata/weewx_graphite/issues/4#issuecomment-6329065502"
+            },
+            {
+              "number": 3,
+              "type": "issue",
+              "url": "https://github.com/ampledata/weewx_graphite/issues/3",
+              "repair_status": "answered_with_operator_boundary",
+              "answer": "Documented prefix and configured Carbon LOCAL_DATA_DIR/Whisper deletion process. Actual backend/path on reporter server not knowable from extension config.",
+              "comment_url": "https://github.com/ampledata/weewx_graphite/issues/3#issuecomment-6329066089"
+            },
+            {
+              "number": 2,
+              "type": "issue",
+              "url": "https://github.com/ampledata/weewx_graphite/issues/2",
+              "repair_status": "answered_with_operator_boundary",
+              "answer": "Local Carbon receiver proves original archive timestamps are sent. Documented retention/range checks. Historical retention and Grafana datasource configuration on reporter server require its logs/configuration.",
+              "comment_url": "https://github.com/ampledata/weewx_graphite/issues/2#issuecomment-6329066736"
+            },
+            {
+              "number": 1,
+              "type": "issue",
+              "url": "https://github.com/ampledata/weewx_graphite/issues/1",
+              "repair_status": "verified_and_ported",
+              "answer": "Current source already uses accumulateLeaves rather than removed get_dict. Service initialization tested on WeeWX 4/5; Python 3 queue/socket handling repaired.",
+              "comment_url": "https://github.com/ampledata/weewx_graphite/issues/1#issuecomment-6329067317"
+            }
+          ]
+        }
+      ]
     },
     {
       "wiki_line": 369,
@@ -11461,9 +12517,9 @@
       "source": "https://github.com/matthewwall/weewx-influx",
       "reviewed_revision": "28595e873bb97b9c407e449f87748f5e68211abf",
       "last_commit": "2022-07-22T08:12:10-04:00",
-      "decision": "hard_fork_plan_only",
+      "decision": "completed_available_work",
       "reason": "Alte offene Punkte mit ausbleibender aktueller Maintainerreaktion sowie jahrelange fehlende Repositorypflege. Lizenz belegt; separaten Reparaturfork erst nach Zuteilung erstellen.",
-      "fork": null,
+      "fork": "https://github.com/weewx-packages/weewx-influx",
       "license": {
         "spdx": "GPL-3.0-only",
         "evidence": [
@@ -11670,7 +12726,146 @@
           }
         ]
       },
-      "successor": []
+      "successor": [],
+      "repairs": [
+        {
+          "upstream": "matthewwall/weewx-influx",
+          "fork_url": "https://github.com/weewx-packages/weewx-influx",
+          "decision": "completed_available_work",
+          "release": {
+            "tag": "v0.21.0",
+            "url": "https://github.com/weewx-packages/weewx-influx/releases/tag/v0.21.0",
+            "asset_url": "https://github.com/weewx-packages/weewx-influx/releases/download/v0.21.0/weewx-influx-0.21.0.tar.gz",
+            "sha256": "8181a0807fd437bb00c0a98f02db0649b0845d1fa0bcdbe8240397990cd14839"
+          },
+          "version": "0.21.0",
+          "published_revision": "7ce466f23ee5342ebb4b9cd0beb8fdddfb7c65d0",
+          "revision": "7ce466f23ee5342ebb4b9cd0beb8fdddfb7c65d0",
+          "limitations": [],
+          "items": [
+            {
+              "number": 36,
+              "type": "pull_request",
+              "url": "https://github.com/matthewwall/weewx-influx/pull/36",
+              "repair_status": "fixed",
+              "answer": "Removed distutils, added numeric/prerelease-aware gate; measured import and regression tests.",
+              "comment_url": "https://github.com/matthewwall/weewx-influx/pull/36#issuecomment-6329067912"
+            },
+            {
+              "number": 35,
+              "type": "issue",
+              "url": "https://github.com/matthewwall/weewx-influx/issues/35",
+              "repair_status": "fixed",
+              "answer": "Imports on Python 3.14 without distutils.",
+              "comment_url": "https://github.com/matthewwall/weewx-influx/issues/35#issuecomment-6329068476"
+            },
+            {
+              "number": 34,
+              "type": "pull_request",
+              "url": "https://github.com/matthewwall/weewx-influx/pull/34",
+              "repair_status": "fixed",
+              "answer": "Native v1/v2 endpoint selection, encoded org/bucket, token authentication; v1 remains supported. Tested against actual InfluxDB 1.8 and 2.7 with readback.",
+              "comment_url": "https://github.com/matthewwall/weewx-influx/pull/34#issuecomment-6329069079"
+            },
+            {
+              "number": 33,
+              "type": "issue",
+              "url": "https://github.com/matthewwall/weewx-influx/issues/33",
+              "repair_status": "implemented",
+              "answer": "backfill.py reads wx_binding through WeeWX manager and replays original record timestamps within explicit bounds; stops on upload failure.",
+              "comment_url": "https://github.com/matthewwall/weewx-influx/issues/33#issuecomment-6329069707"
+            },
+            {
+              "number": 32,
+              "type": "issue",
+              "url": "https://github.com/matthewwall/weewx-influx/issues/32",
+              "repair_status": "fixed_and_documented",
+              "answer": "Version 2 configuration uses full server_url, org, bucket and token. Existing bucket required. Real v2 write/readback passed; original account permissions not tested.",
+              "comment_url": "https://github.com/matthewwall/weewx-influx/issues/32#issuecomment-6329070340"
+            },
+            {
+              "number": 31,
+              "type": "pull_request",
+              "url": "https://github.com/matthewwall/weewx-influx/pull/31",
+              "repair_status": "fixed",
+              "answer": "Token authentication implemented alongside v1 Basic authentication; loop_bucket supported without replacing v1.",
+              "comment_url": "https://github.com/matthewwall/weewx-influx/pull/31#issuecomment-6329070939"
+            },
+            {
+              "number": 30,
+              "type": "pull_request",
+              "url": "https://github.com/matthewwall/weewx-influx/pull/30",
+              "repair_status": "implemented",
+              "answer": "README converted to Markdown and updated for WeeWX 5, dual backends and replay. Original attribution retained.",
+              "comment_url": "https://github.com/matthewwall/weewx-influx/pull/30#issuecomment-6329071530"
+            },
+            {
+              "number": 28,
+              "type": "issue",
+              "url": "https://github.com/matthewwall/weewx-influx/issues/28",
+              "repair_status": "fixed",
+              "answer": "Native Token authentication implemented and observed on local HTTP wire.",
+              "comment_url": "https://github.com/matthewwall/weewx-influx/issues/28#issuecomment-6329072103"
+            },
+            {
+              "number": 26,
+              "type": "issue",
+              "url": "https://github.com/matthewwall/weewx-influx/issues/26",
+              "repair_status": "fixed",
+              "answer": "CREATE DATABASE quotes/escapes identifiers, uses actual admin credentials, and URL-encodes database on write. Real hyphenated v1 database write/readback passed.",
+              "comment_url": "https://github.com/matthewwall/weewx-influx/issues/26#issuecomment-6329072678"
+            },
+            {
+              "number": 25,
+              "type": "issue",
+              "url": "https://github.com/matthewwall/weewx-influx/issues/25",
+              "repair_status": "answered_with_diagnostics",
+              "answer": "Database creation is POST /query; records POST /write or /api/v2/write. 405 is reported as permanent endpoint error. Reporter endpoint/proxy needs its response/config to diagnose specifically.",
+              "comment_url": "https://github.com/matthewwall/weewx-influx/issues/25#issuecomment-6329073302"
+            },
+            {
+              "number": 24,
+              "type": "issue",
+              "url": "https://github.com/matthewwall/weewx-influx/issues/24",
+              "repair_status": "answered_with_readback",
+              "answer": "Real server readback confirms record measurement, original timestamp, binding and field. Documented matching query bucket/database, measurement and range. Reporter server configuration not available.",
+              "comment_url": "https://github.com/matthewwall/weewx-influx/issues/24#issuecomment-6329073900"
+            },
+            {
+              "number": 14,
+              "type": "issue",
+              "url": "https://github.com/matthewwall/weewx-influx/issues/14",
+              "repair_status": "implemented",
+              "answer": "Bounded WeeWX archive replay added; original timestamps retained.",
+              "comment_url": "https://github.com/matthewwall/weewx-influx/issues/14#issuecomment-6329074458"
+            },
+            {
+              "number": 13,
+              "type": "issue",
+              "url": "https://github.com/matthewwall/weewx-influx/issues/13",
+              "repair_status": "binding_option_implemented_and_upload_verified",
+              "answer": "Configurable data_binding selects kl_binding; real service/queue test verifies custom temp0 and humidity0 values reach the local HTTP receiver. backfill --binding supports custom archives. Original hardware is not required for this reproduced binding case.",
+              "comment_url": "https://github.com/matthewwall/weewx-influx/issues/13#issuecomment-6329075072"
+            },
+            {
+              "number": 6,
+              "type": "issue",
+              "url": "https://github.com/matthewwall/weewx-influx/issues/6",
+              "repair_status": "verified_and_hardened",
+              "answer": "ConfigObj tag lists are joined, including direct thread construction; station=A,field=C observed on the wire. Existing service had already joined list tags.",
+              "comment_url": "https://github.com/matthewwall/weewx-influx/issues/6#issuecomment-6329075695"
+            },
+            {
+              "number": 1,
+              "type": "issue",
+              "url": "https://github.com/matthewwall/weewx-influx/issues/1",
+              "repair_status": "fixed",
+              "answer": "TLS verifies certificate and hostname by default; ca_file and explicit verify_ssl option. Real local TLS rejects untrusted CA and accepts configured CA.",
+              "comment_url": "https://github.com/matthewwall/weewx-influx/issues/1#issuecomment-6329076292"
+            }
+          ]
+        }
+      ]
     },
     {
       "wiki_line": 371,
@@ -11818,9 +13013,9 @@
       "source": "https://github.com/matthewwall/weewx-meteotemplate",
       "reviewed_revision": "8325c48025f537a5ec59bfa40b15c1dd25f3dd71",
       "last_commit": "2020-05-10T13:44:49-04:00",
-      "decision": "hard_fork_plan_only",
+      "decision": "completed_available_work",
       "reason": "Alte offene Punkte mit ausbleibender aktueller Maintainerreaktion sowie jahrelange fehlende Repositorypflege. Lizenz belegt; separaten Reparaturfork erst nach Zuteilung erstellen.",
-      "fork": null,
+      "fork": "https://github.com/weewx-packages/weewx-meteotemplate",
       "license": {
         "spdx": "GPL-3.0-only",
         "evidence": [
@@ -11876,7 +13071,52 @@
           }
         ]
       },
-      "successor": []
+      "successor": [],
+      "repairs": [
+        {
+          "upstream": "matthewwall/weewx-meteotemplate",
+          "fork_url": "https://github.com/weewx-packages/weewx-meteotemplate",
+          "decision": "completed_available_work",
+          "release": {
+            "tag": "v0.11.0",
+            "url": "https://github.com/weewx-packages/weewx-meteotemplate/releases/tag/v0.11.0",
+            "asset_url": "https://github.com/weewx-packages/weewx-meteotemplate/releases/download/v0.11.0/weewx-meteotemplate-0.11.0.tar.gz",
+            "sha256": "74e4d439d016f44226da6a436d4c233c3b54ab434849f83319845371947b0dbf"
+          },
+          "version": "0.11.0",
+          "published_revision": "cadb1d33bc0d51668da19e4a85c7ae25ca1c6754",
+          "revision": "cadb1d33bc0d51668da19e4a85c7ae25ca1c6754",
+          "limitations": [
+            "Configurable API field_map sends PM2.5/PM10/lightning values when available; fixture confirms absent PM10 omitted. WH41 cannot supply unmeasured PM10; installed api.php must accept configured field names."
+          ],
+          "items": [
+            {
+              "number": 12,
+              "type": "issue",
+              "url": "https://github.com/matthewwall/weewx-meteotemplate/issues/12",
+              "repair_status": "implemented_with_sensor_boundary",
+              "answer": "Configurable API field_map sends PM2.5/PM10/lightning values when available; fixture confirms absent PM10 omitted. WH41 cannot supply unmeasured PM10; installed api.php must accept configured field names.",
+              "comment_url": "https://github.com/matthewwall/weewx-meteotemplate/issues/12#issuecomment-6329076852"
+            },
+            {
+              "number": 11,
+              "type": "issue",
+              "url": "https://github.com/matthewwall/weewx-meteotemplate/issues/11",
+              "repair_status": "answered_with_tested_response_handling",
+              "answer": "Success with trailing newline accepted; Unauthorized remains FailedPost. Local receiver passes. Reporter password/path/dashboard state requires its exact response and server log.",
+              "comment_url": "https://github.com/matthewwall/weewx-meteotemplate/issues/11#issuecomment-6329077403"
+            },
+            {
+              "number": 6,
+              "type": "issue",
+              "url": "https://github.com/matthewwall/weewx-meteotemplate/issues/6",
+              "repair_status": "verified",
+              "answer": "Real SQLite archive augmentation sums daily rain and converts METRICWX millimetres correctly; existing behavior validated.",
+              "comment_url": "https://github.com/matthewwall/weewx-meteotemplate/issues/6#issuecomment-6329077994"
+            }
+          ]
+        }
+      ]
     },
     {
       "wiki_line": 375,
@@ -11982,9 +13222,9 @@
       "source": "https://github.com/matthewwall/weewx-owm",
       "reviewed_revision": "297dd97b8e6a486ac8bfd31474261caf040759ae",
       "last_commit": "2020-05-10T13:38:22-04:00",
-      "decision": "hard_fork_plan_only",
+      "decision": "completed_available_work",
       "reason": "Alte offene Punkte mit ausbleibender aktueller Maintainerreaktion sowie jahrelange fehlende Repositorypflege. Lizenz belegt; separaten Reparaturfork erst nach Zuteilung erstellen.",
-      "fork": null,
+      "fork": "https://github.com/weewx-packages/weewx-owm",
       "license": {
         "spdx": "GPL-3.0-only",
         "evidence": [
@@ -12027,7 +13267,42 @@
           }
         ]
       },
-      "successor": []
+      "successor": [],
+      "repairs": [
+        {
+          "upstream": "matthewwall/weewx-owm",
+          "fork_url": "https://github.com/weewx-packages/weewx-owm",
+          "decision": "completed_available_work",
+          "release": {
+            "tag": "v0.10.0",
+            "url": "https://github.com/weewx-packages/weewx-owm/releases/tag/v0.10.0",
+            "asset_url": "https://github.com/weewx-packages/weewx-owm/releases/download/v0.10.0/weewx-owm-0.10.0.tar.gz",
+            "sha256": "411cd48f827a7dc10dc25724aab4dd7af404eaa5cb90dc3e19b9c7391cbe14c5"
+          },
+          "version": "0.10.0",
+          "published_revision": "5369ee8ba1b85fbb1fd0f35ea131dbeb3591752f",
+          "revision": "5369ee8ba1b85fbb1fd0f35ea131dbeb3591752f",
+          "limitations": [],
+          "items": [
+            {
+              "number": 4,
+              "type": "pull_request",
+              "url": "https://github.com/matthewwall/weewx-owm/pull/4",
+              "repair_status": "implemented",
+              "answer": "Documented WeeWX 5 weectl installation alongside WeeWX 4. Isolated install passes on both. Default measurement endpoint switched to verified HTTPS.",
+              "comment_url": "https://github.com/matthewwall/weewx-owm/pull/4#issuecomment-6329078618"
+            },
+            {
+              "number": 3,
+              "type": "issue",
+              "url": "https://github.com/matthewwall/weewx-owm/issues/3",
+              "repair_status": "answered_and_tested",
+              "answer": "station_id is the station registration response internal id, distinct from external_id/appid/city id. Opaque id preserved in actual local JSON HTTP post.",
+              "comment_url": "https://github.com/matthewwall/weewx-owm/issues/3#issuecomment-6329079229"
+            }
+          ]
+        }
+      ]
     },
     {
       "wiki_line": 379,
@@ -12063,9 +13338,9 @@
       "source": "https://github.com/sulrich/weewx-prompush",
       "reviewed_revision": "15236f665ed6756deadd5c452cead6f89b392d56",
       "last_commit": "2018-08-24T12:58:24-05:00",
-      "decision": "hard_fork_plan_only",
+      "decision": "completed_available_work",
       "reason": "Alte offene Punkte mit ausbleibender aktueller Maintainerreaktion sowie jahrelange fehlende Repositorypflege. Lizenz belegt; separaten Reparaturfork erst nach Zuteilung erstellen.",
-      "fork": null,
+      "fork": "https://github.com/weewx-packages/weewx-prompush",
       "license": {
         "spdx": "Apache-2.0",
         "evidence": [
@@ -12097,7 +13372,34 @@
           }
         ]
       },
-      "successor": []
+      "successor": [],
+      "repairs": [
+        {
+          "upstream": "sulrich/weewx-prompush",
+          "fork_url": "https://github.com/weewx-packages/weewx-prompush",
+          "decision": "completed_available_work",
+          "release": {
+            "tag": "v1.1.0",
+            "url": "https://github.com/weewx-packages/weewx-prompush/releases/tag/v1.1.0",
+            "asset_url": "https://github.com/weewx-packages/weewx-prompush/releases/download/v1.1.0/weewx-prompush-1.1.0.tar.gz",
+            "sha256": "218603734fb844bd11d41c8f57bb8eb575f87e8bbde1c72509f9e2e646bff53d"
+          },
+          "version": "1.1.0",
+          "published_revision": "b407479f0607771c83f2f56cda5fdbf2e4811c88",
+          "revision": "b407479f0607771c83f2f56cda5fdbf2e4811c88",
+          "limitations": [],
+          "items": [
+            {
+              "number": 6,
+              "type": "pull_request",
+              "url": "https://github.com/sulrich/weewx-prompush/pull/6",
+              "repair_status": "fixed",
+              "answer": "Replaced Requests 2.10.0 pin with >=2.32.5,<3; removed unrelated setup dependency; ported Python 3 and installer. HTTP receiver/parser tests preserve zero, omit missing values, honor skip and report HTTP failures.",
+              "comment_url": "https://github.com/sulrich/weewx-prompush/pull/6#issuecomment-6329079911"
+            }
+          ]
+        }
+      ]
     },
     {
       "wiki_line": 381,
@@ -12342,9 +13644,9 @@
       "source": "https://github.com/matthewwall/weewx-twitter",
       "reviewed_revision": "70073c85f4d7cf3c1ef4def318188ceb3c875b2b",
       "last_commit": "2020-05-10T15:11:47-04:00",
-      "decision": "hard_fork_plan_only",
+      "decision": "completed_available_work",
       "reason": "Alte offene Punkte mit ausbleibender aktueller Maintainerreaktion sowie jahrelange fehlende Repositorypflege. Lizenz belegt; separaten Reparaturfork erst nach Zuteilung erstellen.",
-      "fork": null,
+      "fork": "https://github.com/weewx-packages/weewx-twitter",
       "license": {
         "spdx": "GPL-3.0-only",
         "evidence": [
@@ -12375,7 +13677,34 @@
           }
         ]
       },
-      "successor": []
+      "successor": [],
+      "repairs": [
+        {
+          "upstream": "matthewwall/weewx-twitter",
+          "fork_url": "https://github.com/weewx-packages/weewx-twitter",
+          "decision": "completed_available_work",
+          "release": {
+            "tag": "v0.16.0",
+            "url": "https://github.com/weewx-packages/weewx-twitter/releases/tag/v0.16.0",
+            "asset_url": "https://github.com/weewx-packages/weewx-twitter/releases/download/v0.16.0/weewx-twitter-0.16.0.tar.gz",
+            "sha256": "8ca86431c2572597b28d0d86bbde6e006cfcfa557fb9f6632f1463a920e014c5"
+          },
+          "version": "0.16.0",
+          "published_revision": "697c90ce3b7fee9a9707f928a98a33a8899c8b23",
+          "revision": "697c90ce3b7fee9a9707f928a98a33a8899c8b23",
+          "limitations": [],
+          "items": [
+            {
+              "number": 4,
+              "type": "issue",
+              "url": "https://github.com/matthewwall/weewx-twitter/issues/4",
+              "repair_status": "implemented",
+              "answer": "post_times HH:MM with bounded window and once-per-slot success; takes precedence over elapsed interval. Test starts at 04:31 and posts at 06:00,12:00,18:00 without duplicates. Public Twitter account/API entitlement not tested; no records means no scheduled send.",
+              "comment_url": "https://github.com/matthewwall/weewx-twitter/issues/4#issuecomment-6329080536"
+            }
+          ]
+        }
+      ]
     },
     {
       "wiki_line": 389,
@@ -12415,7 +13744,7 @@
       "source": "https://github.com/matthewwall/weewx-wcloud",
       "reviewed_revision": "83ee7922ed2015079be8850e0e21d0e59f129cec",
       "last_commit": "2020-05-07T09:27:49-04:00",
-      "decision": "hard_fork_plan_only",
+      "decision": "license_blocked",
       "reason": "Alte offene Punkte mit ausbleibender aktueller Maintainerreaktion sowie jahrelange fehlende Repositorypflege. Lizenz belegt; separaten Reparaturfork erst nach Zuteilung erstellen.",
       "fork": null,
       "license": {
@@ -12468,7 +13797,44 @@
           }
         ]
       },
-      "successor": []
+      "successor": [],
+      "repairs": [
+        {
+          "upstream": "matthewwall/weewx-wcloud",
+          "fork_url": null,
+          "decision": "license_blocked",
+          "revision": "83ee7922ed2015079be8850e0e21d0e59f129cec",
+          "limitations": [
+            "No redistribution or public hard-fork pending an explicit license grant. Local reproduction continues."
+          ],
+          "items": [
+            {
+              "number": 5,
+              "type": "issue",
+              "url": "https://github.com/matthewwall/weewx-wcloud/issues/5",
+              "repair_status": "license_blocked",
+              "answer": "WeeWX 5 command is weectl extension install. No package republished while redistribution permission is unclear.",
+              "comment_url": null
+            },
+            {
+              "number": 4,
+              "type": "issue",
+              "url": "https://github.com/matthewwall/weewx-wcloud/issues/4",
+              "repair_status": "license_blocked",
+              "answer": "Local full process_record succeeds with absent/None hourRain/rain24, zero wind and no direction. Actual original service rejection remains unproven without its response/log.",
+              "comment_url": null
+            },
+            {
+              "number": 2,
+              "type": "issue",
+              "url": "https://github.com/matthewwall/weewx-wcloud/issues/2",
+              "repair_status": "license_blocked",
+              "answer": "Installer version 0.12 vs runtime 0.13 confirmed. No redistributed fix without license grant.",
+              "comment_url": null
+            }
+          ]
+        }
+      ]
     },
     {
       "wiki_line": 391,
@@ -13846,9 +15212,9 @@
       "source": "https://github.com/RandomReaper/weewx-zabbix",
       "reviewed_revision": "b28f8c1c98d0e6131ea18269f4800c24f2966f3b",
       "last_commit": "2021-04-20T09:35:45+02:00",
-      "decision": "hard_fork_plan_only",
+      "decision": "completed_available_work",
       "reason": "Alte offene Punkte mit ausbleibender aktueller Maintainerreaktion sowie jahrelange fehlende Repositorypflege. Lizenz belegt; separaten Reparaturfork erst nach Zuteilung erstellen.",
-      "fork": null,
+      "fork": "https://github.com/weewx-packages/weewx-zabbix",
       "license": {
         "spdx": "Apache-2.0",
         "evidence": [
@@ -13916,7 +15282,58 @@
           }
         ]
       },
-      "successor": []
+      "successor": [],
+      "repairs": [
+        {
+          "upstream": "RandomReaper/weewx-zabbix",
+          "fork_url": "https://github.com/weewx-packages/weewx-zabbix",
+          "decision": "completed_available_work",
+          "release": {
+            "tag": "v0.2.0",
+            "url": "https://github.com/weewx-packages/weewx-zabbix/releases/tag/v0.2.0",
+            "asset_url": "https://github.com/weewx-packages/weewx-zabbix/releases/download/v0.2.0/weewx-zabbix-0.2.0.tar.gz",
+            "sha256": "b24a57dffae5019fbd2bfc6b0eb30a448c6528d31a794883a90e67082c5d66fd"
+          },
+          "version": "0.2.0",
+          "published_revision": "bfab1ba5c3d3fe80b67ded00f40abcfd03417e53",
+          "revision": "bfab1ba5c3d3fe80b67ded00f40abcfd03417e53",
+          "limitations": [],
+          "items": [
+            {
+              "number": 10,
+              "type": "pull_request",
+              "url": "https://github.com/RandomReaper/weewx-zabbix/pull/10",
+              "repair_status": "implemented_and_imported",
+              "answer": "Dustin Demuth template adapted to consistent METRICWX inputs; unique items checked, real Zabbix 7.0.32 API import succeeded.",
+              "comment_url": "https://github.com/RandomReaper/weewx-zabbix/pull/10#issuecomment-6329081153"
+            },
+            {
+              "number": 9,
+              "type": "issue",
+              "url": "https://github.com/RandomReaper/weewx-zabbix/issues/9",
+              "repair_status": "implemented_and_imported",
+              "answer": "Zabbix 7 template imported through real API; requires unit_system=METRICWX as documented.",
+              "comment_url": "https://github.com/RandomReaper/weewx-zabbix/issues/9#issuecomment-6329081784"
+            },
+            {
+              "number": 8,
+              "type": "issue",
+              "url": "https://github.com/RandomReaper/weewx-zabbix/issues/8",
+              "repair_status": "already_fixed_upstream_verified",
+              "answer": "Source already uses Python logging. Tests capture logging through configured logger; did not copy erroneous proposed import/try ordering.",
+              "comment_url": "https://github.com/RandomReaper/weewx-zabbix/issues/8#issuecomment-6329082425"
+            },
+            {
+              "number": 7,
+              "type": "issue",
+              "url": "https://github.com/RandomReaper/weewx-zabbix/issues/7",
+              "repair_status": "fixed",
+              "answer": "Sender output is normalized to one log line, absent measurements skipped, subprocess errors logged. Local executable fixture verifies actual stdin and stdout handling.",
+              "comment_url": "https://github.com/RandomReaper/weewx-zabbix/issues/7#issuecomment-6329082996"
+            }
+          ]
+        }
+      ]
     },
     {
       "wiki_line": 440,

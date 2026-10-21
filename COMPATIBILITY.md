@@ -184,3 +184,8 @@ A separate reporting job maintains installation issues in this catalog. Missing
 branch results cannot close an existing failure. Failures identify the tested
 source and WeeWX commits; dependency or configuration failures need investigation
 before being attributed to a WeeWX change.
+
+Public GitLab upstreams use the same weekly discussion backup. Merge request
+notes and available diffs are captured along with issues; the public index
+distinguishes issue and merge request numbers. Anonymous GraphQL reads provide
+notes when GitLab requires authentication for its REST notes endpoint.

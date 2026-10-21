@@ -16,8 +16,8 @@ coverage is recorded separately; presence here does not make it a tested
 catalog package. Restricted use terms are recorded individually, rather
 than treated as an automatic redistribution prohibition.
 
-DivumWX package publication is paused while its bundled Dirtylane font terms
-are clarified. The original archive is withdrawn. Tracer 0.3.0 is published
+DivumWX package publication is paused while restricted fonts are replaced.
+The original archive is withdrawn. Tracer 0.3.0 is published
 with regression tests; physical controller validation remains outstanding.
 
 The [machine-readable review](ci/wiki-audit.json) contains pinned license
@@ -29,7 +29,7 @@ evidence, tracker details, reasons, successor decisions and repair results.
 | 114 | [airmar](https://github.com/fullergalway/weewx-airmar-150wx-driver) | NOASSERTION | blocked_license |  |
 | 115 | [ambientweatherapi-json](https://github.com/themoosman/weewx-ambientweatherapi-json) | LicenseRef-Partial-GPL-3.0 | blocked_license |  |
 | 116 | [atmocom](https://github.com/captain-coredump/weewx-atmocom-udp) | GPL-3.0-only | fork_created | [repository](https://github.com/weewx-packages/weewx-atmocom-udp) |
-| 117 | [aws](https://github.com/wrybread/weewx-ArduinoWeatherStation) | GPL-3.0-only (installer only); LicenseRef-Unproven-Arduino-and-assets | hard_fork_plan_only |  |
+| 117 | [aws](https://github.com/wrybread/weewx-ArduinoWeatherStation) | GPL-3.0-only (installer only); LicenseRef-Unproven-Arduino-and-assets | blocked_distribution_rights |  |
 | 118 | [BCRobotics](https://github.com/David-Enst/WeeWX-BCRobotics) | LicenseRef-Partial-GPL-3.0 | blocked_license |  |
 | 119 | [byows_rpi](https://github.com/jardiamj/BYOWS_RPi) | GPL-3.0-or-later | hold_maintenance_borderline |  |
 | 120 | [cm1](https://github.com/matthewwall/weewx-cm1) | GPL-3.0-only | fork_created | [repository](https://github.com/weewx-packages/weewx-cm1) |
@@ -39,65 +39,65 @@ evidence, tracker details, reasons, successor decisions and repair results.
 | 124 | [hackulink](https://geekfun.com/hackulink) | GPL-3.0-only | defer_external_import |  |
 | 125 | [Hp1000](https://github.com/AussieSusan/HP1000) | NOASSERTION | blocked_license |  |
 | 126 | [id5001](https://github.com/n2ee/weewx-id5001) | GPL-3.0-only | fork_created | [repository](https://github.com/weewx-packages/weewx-id5001) |
-| 127 | [interceptor](https://github.com/matthewwall/weewx-interceptor) | GPL-3.0-only | fork_created | [repository](https://github.com/weewx-packages/weewx-interceptor) |
+| 127 | [interceptor](https://github.com/tfilo/weewx-interceptor) | GPL-3.0-only | fork_created | [repository](https://github.com/weewx-packages/weewx-interceptor) |
 | 128 | [ip100](https://github.com/chaunceygardiner/weewx-ip100) | GPL-3.0-only | fork_created | [repository](https://github.com/weewx-packages/weewx-ip100) |
 | 129 | [ipwx](http://nincehelser.com/ipwx) | NOASSERTION | blocked_source_unavailable |  |
-| 130 | [klimalogg](https://github.com/matthewwall/weewx-klimalogg) | GPL-3.0-or-later (driver) | hard_fork_plan_only |  |
+| 130 | [klimalogg](https://github.com/matthewwall/weewx-klimalogg) | GPL-3.0-or-later (driver) | local_driver_fixes_distribution_blocked |  |
 | 131 | [mate](https://github.com/matthewwall/weewx-mate) | NOASSERTION | blocked_license |  |
 | 132 | [maxbotix](https://github.com/matthewwall/weewx-maxbotix) | GPL-3.0-only | fork_created | [repository](https://github.com/weewx-packages/weewx-maxbotix) |
-| 133 | [meteostick](https://github.com/matthewwall/weewx-meteostick) | GPL-3.0-or-later AND GPL-3.0-only | hard_fork_plan_only |  |
+| 133 | [meteostick](https://github.com/matthewwall/weewx-meteostick) | GPL-3.0-or-later AND GPL-3.0-only | released | [repository](https://github.com/weewx-packages/weewx-meteostick) |
 | 134 | [ModbusTCP](https://github.com/FColinet/WeeWX-ModbusTCP-driver) | MIT | fork_created | [repository](https://github.com/weewx-packages/weewx-modbus-tcp) |
-| 135 | [netatmo](https://github.com/matthewwall/weewx-netatmo) | GPL-3.0-only | fork_created | [repository](https://github.com/weewx-packages/weewx-netatmo) |
+| 135 | [netatmo](https://github.com/Buco7854/weewx-netatmo) | GPL-3.0-only | fork_created | [repository](https://github.com/weewx-packages/weewx-netatmo) |
 | 136 | [nm150](https://github.com/matthewwall/weewx-nm150) | GPL-3.0-or-later (driver only) | blocked_license |  |
 | 137 | [owfs](https://github.com/matthewwall/weewx-owfs) | GPL-3.0-or-later AND GPL-3.0-only | hold_successor_license_packaging |  |
 | 138 | [rmyro](https://github.com/abillits/weewx-rmyro) | NOASSERTION | blocked_license |  |
-| 139 | [sdr](https://github.com/matthewwall/weewx-sdr) | GPL-3.0-only | hard_fork_plan_only |  |
-| 140 | [sds011](https://github.com/matthewwall/weewx-sds011) | GPL-3.0-only | hard_fork_plan_only |  |
+| 139 | [sdr](https://github.com/matthewwall/weewx-sdr) | GPL-3.0-only | released | [repository](https://github.com/weewx-packages/weewx-sdr) |
+| 140 | [sds011](https://github.com/matthewwall/weewx-sds011) | GPL-3.0-only | resolved_by_successor_release | [repository](https://github.com/weewx-packages/weewx-NovaSDS011) |
 | 141 | [swb](https://github.com/matthewwall/weewx-swb) | NOASSERTION | blocked_license |  |
 | 142 | [tempestWS](https://github.com/livysdad27/tempestWS) | GPL-3.0-or-later | fork_created | [repository](https://github.com/weewx-packages/weewx-tempest-ws) |
 | 143 | [tfrc](https://github.com/matthewwall/weewx-tfrc) | GPL-3.0-only | fork_created | [repository](https://github.com/weewx-packages/weewx-tfrc) |
 | 144 | [tracer](https://github.com/matthewwall/weewx-tracer) | GPL-3.0-only | independent_continuation_published | [repository](https://github.com/weewx-packages/weewx-tracer) |
-| 145 | [twi](https://github.com/matthewwall/weewx-twi) | NOASSERTION | hard_fork_plan_only |  |
+| 145 | [twi](https://github.com/matthewwall/weewx-twi) | NOASSERTION | blocked_distribution_rights |  |
 | 146 | [uradmon](https://github.com/glennmckechnie/weewx-uradmon) | GPL-3.0-only | fork_created | [repository](https://github.com/weewx-packages/weewx-uradmon) |
 | 147 | [vedirect](https://github.com/matthewwall/weewx-vedirect) | GPL-3.0-only | fork_created | [repository](https://github.com/weewx-packages/weewx-vedirect) |
-| 148 | [w820](https://github.com/daduke/ventusw820) | GPL-3.0-or-later (README) | hard_fork_plan_only |  |
+| 148 | [w820](https://github.com/daduke/ventusw820) | GPL-3.0-or-later (README) | released | [repository](https://github.com/weewx-packages/ventusw820) |
 | 149 | [wanet](https://sourceforge.net/projects/wariome11) | GPL-3.0-or-later AND GPL-3.0-only | defer_external_import |  |
 | 150 | [weatherflowUDP](https://github.com/captain-coredump/weatherflow-udp) | GPL-3.0-only | hold_maintenance_borderline |  |
-| 151 | [wh23xx](https://github.com/matthewwall/weewx-wh23xx) | GPL-3.0-only | hard_fork_plan_only |  |
-| 152 | [wlink](https://github.com/matthewwall/weewx-wlink) | NOASSERTION | hard_fork_plan_only |  |
+| 151 | [wh23xx](https://github.com/matthewwall/weewx-wh23xx) | GPL-3.0-only | released | [repository](https://github.com/weewx-packages/weewx-wh23xx) |
+| 152 | [wlink](https://github.com/matthewwall/weewx-wlink) | NOASSERTION | blocked_distribution_rights |  |
 | 153 | [wmr89](https://github.com/tkeffer/weewx-wmr89) | LGPL-3.0-only | fork_created | [repository](https://github.com/weewx-packages/weewx-wmr89) |
 | 154 | [ws6in1](https://github.com/BobAtchley/weewx-ws6in1) | GPL-3.0-only | fork_created | [repository](https://github.com/weewx-packages/weewx-ws6in1) |
-| 155 | [wxt5x0](https://github.com/matthewwall/weewx-wxt5x0) | GPL-3.0-only | hard_fork_plan_only |  |
+| 155 | [wxt5x0](https://github.com/matthewwall/weewx-wxt5x0) | GPL-3.0-only | released | [repository](https://github.com/weewx-packages/weewx-wxt5x0) |
 | 159 | [ultimate-push](https://github.com/hilman2/weewx-ultimate-push) | GPL-3.0-only | fork_created | [repository](https://github.com/weewx-packages/weewx-ultimate-push) |
-| 165 | [wmII](https://github.com/jardiamj/wmII) | GPL-3.0-only AND LicenseRef-PSF-derived-code | hard_fork_plan_only |  |
+| 165 | [wmII](https://github.com/jardiamj/wmII) | GPL-3.0-only AND LicenseRef-PSF-derived-code | local_configurator_distribution_blocked |  |
 | 171 | [airlink](https://github.com/chaunceygardiner/weewx-airlink) | GPL-3.0-or-later AND GPL-3.0-only AND OFL-1.1 | fork_created | [repository](https://github.com/weewx-packages/weewx-airlink) |
 | 172 | [airlink forked](https://github.com/evilbunny2008/weewx-airlink) | GPL-3.0-or-later AND GPL-3.0-only | fork_created | [repository](https://github.com/weewx-packages/weewx-airlink-extended) |
 | 176 | [rtldavis](https://github.com/weewx-contrib/weewx-rtldavis) | NOASSERTION (wiki upstream); GPL-3.0-only (existing hard fork license file) | already_present_hard_fork | [repository](https://github.com/weewx-packages/weewx-rtldavis) |
-| 177 | [si1000](https://github.com/tridge/DavisSi1000) | BSD-2-Clause AND LicenseRef-GPL-2.1-or-later-SDCC-exception AND LicenseRef-Unproven-WeeWX-driver | hard_fork_plan_only |  |
+| 177 | [si1000](https://github.com/tridge/DavisSi1000) | BSD-2-Clause AND LicenseRef-GPL-2.1-or-later-SDCC-exception AND LicenseRef-Unproven-WeeWX-driver | blocked_distribution_rights |  |
 | 184 | [Davis Console Model 6313](https://github.com/WernerKr/davisconsoleapi) | GPL-3.0-or-later AND GPL-3.0-only AND OFL-1.1 | fork_created | [repository](https://github.com/weewx-packages/weewx-davisconsoleapi) |
 | 190 | [WeatherLink Live](https://github.com/michael-slx/weewx-weatherlink-live) | MIT | hold_maintenance_borderline |  |
 | 191 | [WeatherLink Live JSON](https://github.com/vinceskahan/weewx-weatherlinklive-json) | NOASSERTION | skip_deprecated_unavailable |  |
-| 192 | [WeatherLink Live UDP](https://github.com/grebleem/weewx-weatherlinkliveudp) | GPL-3.0-or-later AND GPL-3.0-only | hard_fork_plan_only |  |
+| 192 | [WeatherLink Live UDP](https://github.com/grebleem/weewx-weatherlinkliveudp) | GPL-3.0-or-later AND GPL-3.0-only | local_successor_fixes_bundle_distribution_blocked |  |
 | 193 | [WeatherLink Live UDP and Airlink](https://github.com/WernerKr/weewx-weatherlinkliveudp) | GPL-3.0-or-later AND GPL-3.0-only AND OFL-1.1 AND LicenseRef-Unresolved-bundled-components | blocked_license |  |
 | 194 | [WeatherLink Live](https://github.com/Drealine/weatherlinklive-driver-weewx) | Apache-2.0 | hold_maintenance_borderline |  |
-| 195 | [WeatherLink Live WLL](https://github.com/jonotaegi/weewx-wll) | GPL-3.0-or-later AND GPL-3.0-only | hard_fork_plan_only |  |
+| 195 | [WeatherLink Live WLL](https://github.com/jonotaegi/weewx-wll) | GPL-3.0-or-later AND GPL-3.0-only | released | [repository](https://github.com/weewx-packages/weewx-wll) |
 | 201 | [ecowittcustom](https://github.com/WernerKr/Ecowitt-or-DAVIS-stations-and-Season-skin) | GPL-3.0-or-later AND GPL-3.0-only AND OFL-1.1 AND LicenseRef-Highcharts AND LicenseRef-Unresolved-bundled-components | blocked_license |  |
 | 202 | [ecowittGateway](https://github.com/Millardiang/weewx-ecowittGateway) | GPL-3.0-or-later | fork_created | [repository](https://github.com/weewx-packages/weewx-ecowittGateway) |
 | 203 | [gw1000](https://github.com/weewx-contrib/weewx-gw1000) | GPL-3.0-or-later AND GPL-2.0-or-later | skip_superseded |  |
 | 204 | [Weewx_Ecowitt-Gateway-API_Driver](https://repo.w0chp.net/Chipster/Weewx_Ecowitt-Gateway-API_Driver) | GPL-3.0-only | defer_external_import |  |
 | 210 | [MQTTSubscribe](https://github.com/weewx-mqtt/subscribe) | GPL-3.0-only | fork_created | [repository](https://github.com/weewx-packages/weewx-mqtt-subscribe) |
 | 211 | [weewxMQTT](https://github.com/morrowwm/weewxMQTT) | GPL-3.0-or-later (driver); GPL-3.0-only (README) | skip_superseded |  |
-| 217 | [observerip](https://github.com/dkmcode/weewx-observerip) | GPL-3.0-only | hard_fork_plan_only |  |
+| 217 | [observerip](https://github.com/dkmcode/weewx-observerip) | GPL-3.0-only | released | [repository](https://github.com/weewx-packages/weewx-observerip) |
 | 218 | [socketlogger](https://github.com/poblabs/weewx-socketlogger) | NOASSERTION | blocked_license |  |
 | 224 | [Aggregated Values](https://github.com/evilbunny2008/AggregatedValues) | GPL-3.0-only | fork_created | [repository](https://github.com/weewx-packages/weewx-aggregated-values) |
 | 225 | [airgradient](https://github.com/chaunceygardiner/weewx-airgradient) | GPL-3.0-only | fork_created | [repository](https://github.com/weewx-packages/weewx-airgradient) |
 | 226 | [airQ](https://github.com/roe-dl/weewx-airQ) | GPL-3.0-only | fork_created | [repository](https://github.com/weewx-packages/weewx-airQ) |
 | 227 | [AirVisual](https://github.com/inguy24/weewx-airvisual) | GPL-3.0-only | defer_maintenance |  |
-| 228 | [aqi](https://github.com/jonathankoren/weewx-aqi) | GPL-3.0-only | hard_fork_plan |  |
+| 228 | [aqi](https://github.com/jonathankoren/weewx-aqi) | GPL-3.0-only | cloned_full_history |  |
 | 229 | [as3935](https://github.com/matthewwall/weewx-as3935) | GPL-3.0-only | fork_created | [repository](https://github.com/weewx-packages/weewx-as3935) |
-| 230 | [bme280wx](https://gitlab.com/wjcarpenter/bme280wx) | BSD-2-Clause | hard_fork_plan |  |
-| 231 | [cmon](https://github.com/matthewwall/weewx-cmon) | GPL-3.0-only | hard_fork_plan |  |
-| 232 | [csv](https://github.com/matthewwall/weewx-csv) | GPL-3.0-only | hard_fork_plan |  |
+| 230 | [bme280wx](https://gitlab.com/wjcarpenter/bme280wx) | BSD-2-Clause | published_pending_tracker_comments | [repository](https://github.com/weewx-packages/bme280wx) |
+| 231 | [cmon](https://github.com/matthewwall/weewx-cmon) | GPL-3.0-only | published_pending_tracker_comments | [repository](https://github.com/weewx-packages/weewx-cmon) |
+| 232 | [csv](https://github.com/matthewwall/weewx-csv) | GPL-3.0-only | published_pending_tracker_comments | [repository](https://github.com/weewx-packages/weewx-csv) |
 | 233 | [davishealthapi](https://github.com/uajqq/weewx-davishealthapi) | NOASSERTION | blocked_license |  |
 | 234 | [DWD](https://github.com/roe-dl/weewx-DWD) | GPL-3.0-or-later | fork_created | [repository](https://github.com/weewx-packages/weewx-DWD) |
 | 235 | [filepile](https://github.com/tkeffer/filepile) | LGPL-3.0-only | fork_created | [repository](https://github.com/weewx-packages/weewx-filepile) |
@@ -138,12 +138,12 @@ evidence, tracker details, reasons, successor decisions and repair results.
 | 275 | [extended Seasons almanac page](https://github.com/roe-dl/weewx-skymap-almanac) | GPL-3.0-or-later | existing_fork_verified | [repository](https://github.com/weewx-packages/weewx-skymap-almanac) |
 | 276 | [Flat](https://github.com/neoground/sofaskin) | MIT | superseded |  |
 | 277 | [jas](https://github.com/weewx-extensions/jas) | GPL-3.0-only | fork_created | [repository](https://github.com/weewx-packages/weewx-jas) |
-| 278 | [JSON](https://github.com/teeks99/weewx-json) | GPL-3.0-only | hard_fork_plan |  |
+| 278 | [JSON](https://github.com/teeks99/weewx-json) | GPL-3.0-only | published_pending_tracker_comments | [repository](https://github.com/weewx-packages/weewx-json) |
 | 279 | [Metrics](https://github.com/Cosmospacedog/weewx-metrics) | GPL-3.0-only | fork_created | [repository](https://github.com/weewx-packages/weewx-metrics) |
 | 280 | [MesoWX](https://github.com/glennmckechnie/weewx-mesowx) | NOASSERTION | blocked_license_borderline |  |
 | 281 | [NeoWX](https://github.com/neoground/neowx) | MIT | superseded |  |
 | 282 | [NeoWX Material](https://github.com/seehase/neowx-material) | MIT AND LicenseRef-GPL-unspecified | existing_successor_fork | [repository](https://github.com/weewx-packages/neowx-material) |
-| 283 | [Niculskin](https://gitlab.com/ngulden/niculskin) | GPL-2.0-only | hard_fork_plan |  |
+| 283 | [Niculskin](https://gitlab.com/ngulden/niculskin) | GPL-2.0-only | published_pending_tracker_comments | [repository](https://github.com/weewx-packages/niculskin) |
 | 284 | [Responsive](https://github.com/Lint-Free-Technology/weewx-responsive-skin) | NOASSERTION | blocked_license |  |
 | 285 | [simple](https://github.com/matthewwall/weewx-simple) | NOASSERTION | blocked_license_hard_fork_plan |  |
 | 286 | [SteelSeries Weather Gauges](https://github.com/mcrossley/SteelSeries-Weather-Gauges) | GPL-2.0-only | missing_wrapper_borderline_upstream |  |
@@ -181,22 +181,22 @@ evidence, tracker details, reasons, successor decisions and repair results.
 | 357 | [WXgraphic](https://github.com/glennmckechnie/weewx-WXgraphic) | GPL-2.0-or-later AND GPL-3.0-only | true_fork_created | [repository](https://github.com/weewx-packages/weewx-WXgraphic) |
 | 358 | [wxobs](https://github.com/glennmckechnie/weewx-wxobs) | GPL-3.0-only | hold_aged_responded |  |
 | 364 | [broadcastWeatherFlowUDP](https://github.com/weewx-contrib/broadcastWeatherFlowUDP) | Not established | license_scope_unclear |  |
-| 365 | [crt](https://github.com/matthewwall/weewx-crt) | GPL-3.0-only | hard_fork_plan_only |  |
-| 366 | [cwxn](https://github.com/matthewwall/weewx-cwxn) | GPL-3.0-only | hard_fork_plan_only |  |
+| 365 | [crt](https://github.com/matthewwall/weewx-crt) | GPL-3.0-only | completed_available_work | [repository](https://github.com/weewx-packages/weewx-crt) |
+| 366 | [cwxn](https://github.com/matthewwall/weewx-cwxn) | GPL-3.0-only | completed_available_work | [repository](https://github.com/weewx-packages/weewx-cwxn) |
 | 367 | [emoncms](https://github.com/matthewwall/weewx-emoncms) | GPL-3.0-only | true_fork_created | [repository](https://github.com/weewx-packages/weewx-emoncms) |
-| 368 | [graphite](https://github.com/ampledata/weewx_graphite) | Apache-2.0 | hard_fork_plan_only |  |
+| 368 | [graphite](https://github.com/ampledata/weewx_graphite) | Apache-2.0 | completed_available_work | [repository](https://github.com/weewx-packages/weewx-graphite) |
 | 369 | [idokep](https://github.com/lorantkurthy/weewx-idokep) | Not established | license_blocked |  |
-| 370 | [influxdb](https://github.com/matthewwall/weewx-influx) | GPL-3.0-only | hard_fork_plan_only |  |
+| 370 | [influxdb](https://github.com/matthewwall/weewx-influx) | GPL-3.0-only | completed_available_work | [repository](https://github.com/weewx-packages/weewx-influx) |
 | 371 | [knx](https://github.com/AZAZ78/weewx-knx) | GPL-3.0-only | true_fork_created | [repository](https://github.com/weewx-packages/weewx-knx) |
 | 372 | [mastodon](https://github.com/glennmckechnie/weewx-mastodon) | GPL-3.0-only | hold_aged_responded |  |
 | 373 | [Meteo-Services](https://stations.meteo-services.com/wxupdates/EXTENSION) | Not established | external_license_scope_unclear |  |
-| 374 | [meteotemplate](https://github.com/matthewwall/weewx-meteotemplate) | GPL-3.0-only | hard_fork_plan_only |  |
+| 374 | [meteotemplate](https://github.com/matthewwall/weewx-meteotemplate) | GPL-3.0-only | completed_available_work | [repository](https://github.com/weewx-packages/weewx-meteotemplate) |
 | 375 | [notifier](https://github.com/teeks99/weewx-notify) | GPL-3.0-only | true_fork_created | [repository](https://github.com/weewx-packages/weewx-notify) |
 | 376 | [OpenAstro](https://github.com/open-astro) | Not established | organization_index_resolved_duplicates |  |
 | 377 | [OpenSenseMap](https://github.com/sbsrouteur/weewx-opensensemap) | MIT | hold_recent_fix |  |
-| 378 | [openweathermap](https://github.com/matthewwall/weewx-owm) | GPL-3.0-only | hard_fork_plan_only |  |
+| 378 | [openweathermap](https://github.com/matthewwall/weewx-owm) | GPL-3.0-only | completed_available_work | [repository](https://github.com/weewx-packages/weewx-owm) |
 | 379 | [previmeteo](https://github.com/previmeteo/weewx-previmeteo) | Not established | license_blocked |  |
-| 380 | [prometheus](https://github.com/sulrich/weewx-prompush) | Apache-2.0 | hard_fork_plan_only |  |
+| 380 | [prometheus](https://github.com/sulrich/weewx-prompush) | Apache-2.0 | completed_available_work | [repository](https://github.com/weewx-packages/weewx-prompush) |
 | 381 | [pusher](https://github.com/raymondelooff/weewx-pusher) | GPL-3.0-only | true_fork_created | [repository](https://github.com/weewx-packages/weewx-pusher) |
 | 382 | [RainMachine](https://github.com/sprinkler/rainmachine-weewx) | Not established | license_blocked |  |
 | 383 | [Regionalwetter Sachsen-Anhalt](https://github.com/roe-dl/weewx-rwsa) | GPL-3.0-only | true_fork_created | [repository](https://github.com/weewx-packages/weewx-rwsa) |
@@ -204,9 +204,9 @@ evidence, tracker details, reasons, successor decisions and repair results.
 | 385 | [RP5](https://github.com/sapegin-o1eg/weewx-rp5) | Not established | license_blocked_repair_candidate |  |
 | 386 | [Skyvex](https://github.com/MichaelStrommer-dreiS/weewx-skyvex) | GPL-3.0-only | true_fork_created | [repository](https://github.com/weewx-packages/weewx-skyvex) |
 | 387 | [thingspeak](https://github.com/matthewwall/weewx-thingspeak) | GPL-3.0-only | true_fork_created | [repository](https://github.com/weewx-packages/weewx-thingspeak) |
-| 388 | [twitter](https://github.com/matthewwall/weewx-twitter) | GPL-3.0-only | hard_fork_plan_only |  |
+| 388 | [twitter](https://github.com/matthewwall/weewx-twitter) | GPL-3.0-only | completed_available_work | [repository](https://github.com/weewx-packages/weewx-twitter) |
 | 389 | [weatherbug](https://github.com/matthewwall/weewx-wbug) | GPL-3.0-only | true_fork_created | [repository](https://github.com/weewx-packages/weewx-wbug) |
-| 390 | [weathercloud](https://github.com/matthewwall/weewx-wcloud) | Not established | hard_fork_plan_only |  |
+| 390 | [weathercloud](https://github.com/matthewwall/weewx-wcloud) | Not established | license_blocked |  |
 | 391 | [wetter](https://github.com/matthewwall/weewx-wetter) | GPL-3.0-only | true_fork_created | [repository](https://github.com/weewx-packages/weewx-wetter) |
 | 392 | [Wetternetz Sachsen](https://github.com/roe-dl/weewx-wns) | GPL-3.0-only | true_fork_created | [repository](https://github.com/weewx-packages/weewx-wns) |
 | 393 | [windfinder](https://github.com/matthewwall/weewx-windfinder) | GPL-3.0-only | true_fork_created | [repository](https://github.com/weewx-packages/weewx-windfinder) |
@@ -227,6 +227,6 @@ evidence, tracker details, reasons, successor decisions and repair results.
 | 433 | [Healthchecks](https://github.com/weewx-extensions/healthchecks) | GPL-3.0-only | true_fork_created | [repository](https://github.com/weewx-packages/weewx-healthchecks) |
 | 434 | [opsgenie](https://github.com/dcapslock/Weewx-OpsGenie) | Not established | license_blocked_repair_candidate |  |
 | 435 | [Pushover](https://github.com/weewx-extensions/pushover) | GPL-3.0-only | true_fork_created | [repository](https://github.com/weewx-packages/weewx-pushover) |
-| 436 | [zabbix](https://github.com/RandomReaper/weewx-zabbix) | Apache-2.0 | hard_fork_plan_only |  |
+| 436 | [zabbix](https://github.com/RandomReaper/weewx-zabbix) | Apache-2.0 | completed_available_work | [repository](https://github.com/weewx-packages/weewx-zabbix) |
 | 440 | [SetProcessName](https://github.com/knight-of-ni/WeeWX-SetProcessName) | GPL-3.0-only | true_fork_created | [repository](https://github.com/weewx-packages/weewx-setprocessname) |
 | 449 | [WPWeeWX](https://github.com/open-astro/wp-weewx) | GPL-3.0 | fork_created | [repository](https://github.com/weewx-packages/wp-weewx) |

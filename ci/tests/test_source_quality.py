@@ -54,3 +54,27 @@ def test_missing_development_job_cannot_close_a_failure(tmp_path, monkeypatch):
         monkeypatch.setenv(key, value)
     quality.report(tmp_path)
     write.assert_not_called()
+
+
+def test_relative_work_directory_and_station_failure(tmp_path, monkeypatch):
+    """Use a real Git archive, then refuse to blame the extension for station setup."""
+    monkeypatch.chdir(tmp_path)
+    original = tmp_path / 'original'
+    subprocess.run(['git', 'init', '-b', 'main', str(original)], check=True, capture_output=True)
+    (original / 'install.py').write_text('VERSION = "1.0"\n')
+    subprocess.run(['git', '-C', str(original), 'add', '.'], check=True)
+    subprocess.run(['git', '-C', str(original), '-c', 'user.name=Test',
+                    '-c', 'user.email=test@example.test', 'commit', '-m', 'Installer'],
+                   check=True, capture_output=True)
+
+    def command(args, **kwargs):
+        if args[:2] == ['git', 'clone']:
+            args = ['git', 'clone', str(original), args[-1]]
+        if args[0] == 'weectl':
+            assert (tmp_path / 'relative/package.zip').is_file()
+            raise subprocess.CalledProcessError(1, args)
+        subprocess.run(args, check=True, capture_output=True)
+
+    monkeypatch.setattr(quality, 'command', command)
+    _, result = quality.check(dict(fork='org/extension'), 'master', 'a' * 40, Path('relative'))
+    assert result['status'] == 'error' and result['phase'] == 'station setup'
