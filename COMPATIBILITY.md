@@ -136,3 +136,51 @@ tags and must match the archive's installer; SHA-256 is computed from the exact
 published bytes. Adding a skin requires a definition, a test profile and a
 separate mirror deploy key. Failed candidate tests leave the published catalog
 at its previous version; inspect the candidate workflow logs before retrying.
+
+## Source backups and upstream activity
+
+The [Extension mirrors workflow](.github/workflows/mirrors.yml) handles the
+additional repositories from the [wiki review](WIKI-AUDIT.md). Assignments in
+`ci/mirrors.json` spread each repository's weekly capture across Monday through
+Friday at 03:43 UTC. Manual runs include every group. The three skin mirrors
+retain their separate release workflow; independent continuations are never
+overwritten by upstream synchronization.
+
+Each synchronized repository has its own write deploy key. The keys are stored
+in five weekday bundles to stay within the catalog's secret-count limit. Only
+the trusted mirror job receives them. Ref updates preserve history, reject
+divergence and retain branches and tags removed upstream. Mirroring copies Git
+source; it does not automatically approve a new catalog package or release.
+
+The snapshot job captures open GitHub issues and PRs, discussion replies, reviews,
+inline review comments and available file patches. Full snapshots are committed
+to the private [upstream-backup](https://github.com/weewx-packages/upstream-backup)
+repository on `weekday-1` through `weekday-5`. Commit history retains earlier
+versions when a thread changes or closes. External attachments, binaries absent
+from GitHub's patch responses, pre-existing closed discussions, release assets
+and wikis are outside this discussion capture.
+
+Public artifacts contain activity summaries and fingerprints. One catalog issue
+reports newly open, changed or no-longer-open upstream items. Changed license
+notice files are highlighted for review; their contents are not interpreted as
+an automatic ban on restricted-use software. Activity comments notify subscribers
+when something changes. The private backup job's deploy key cannot write to any
+extension repository, and no extension code runs in that job.
+
+The reporting job records the latest public activity and source-check summaries
+in `ci/upstream-state.json` and `ci/source-quality.json`. Each run updates only
+its assigned groups. Discussion bodies and patches stay in the private archive.
+
+Source checks use Python 3.14 with current WeeWX `master` and `development`
+checkouts. They compile runtime Python, archive the exact fork commit and run
+the original installer against an isolated station. Checks receive no mirror,
+backup or issue-write credentials. Unsupported layouts are recorded as
+`not-covered`, rather than passing without an installation test. Packages
+already in the catalog use their separate release tests. Hardware operation,
+API access and generated skin behavior require project-specific tests beyond
+this source-installation baseline.
+
+A separate reporting job maintains installation issues in this catalog. Missing
+branch results cannot close an existing failure. Failures identify the tested
+source and WeeWX commits; dependency or configuration failures need investigation
+before being attributed to a WeeWX change.

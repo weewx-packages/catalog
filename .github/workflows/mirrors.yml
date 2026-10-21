@@ -1,0 +1,183 @@
+name: Extension mirrors
+
+on:
+  schedule:
+    - cron: '43 3 * * 1'
+    - cron: '43 3 * * 2'
+    - cron: '43 3 * * 3'
+    - cron: '43 3 * * 4'
+    - cron: '43 3 * * 5'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: extension-mirrors
+  cancel-in-progress: false
+
+jobs:
+  select:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.select.outputs.matrix }}
+      count: ${{ steps.select.outputs.count }}
+      checks: ${{ steps.select.outputs.checks }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Select weekly groups
+        id: select
+        env:
+          SCHEDULE: ${{ github.event.schedule }}
+        run: |
+          python3 ci/mirrors.py matrix --schedule "$SCHEDULE" > matrix.json
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json
+          from pathlib import Path
+          matrix = json.loads(Path('matrix.json').read_text())
+          print('matrix=' + json.dumps(matrix))
+          print('count=' + str(len(matrix['include'])))
+          print('checks=' + json.dumps({'include': [dict(group, branch=branch)
+              for group in matrix['include'] for branch in ('master', 'development')]}))
+          PY
+
+  mirror:
+    needs: select
+    if: needs.select.outputs.count != '0'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJSON(needs.select.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Synchronize this weekday's forks
+        env:
+          GH_TOKEN: ${{ github.token }}
+          MIRROR_SSH_KEYS: ${{ secrets[format('WEEKLY_MIRROR_KEYS_{0}', matrix.weekday)] }}
+        run: python3 ci/mirrors.py sync --weekday '${{ matrix.weekday }}'
+
+  snapshot:
+    needs: select
+    if: needs.select.outputs.count != '0'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJSON(needs.select.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Capture upstream discussions in the private backup
+        env:
+          GH_TOKEN: ${{ github.token }}
+          UPSTREAM_BACKUP_SSH_KEY: ${{ secrets.UPSTREAM_BACKUP_SSH_KEY }}
+          SNAPSHOT_BRANCH: weekday-${{ matrix.weekday }}
+          WEEKDAY: ${{ matrix.weekday }}
+        run: |
+          umask 077
+          backup_key_dir=$(mktemp -d)
+          trap 'rm -rf "$backup_key_dir"' EXIT
+          printf '%s\n' "$UPSTREAM_BACKUP_SSH_KEY" > "$backup_key_dir/key"
+          unset UPSTREAM_BACKUP_SSH_KEY
+          gh api meta --jq '.ssh_keys[] | "github.com " + .' > "$backup_key_dir/known_hosts"
+          export GIT_SSH_COMMAND="ssh -i $backup_key_dir/key -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile=$backup_key_dir/known_hosts"
+          git clone --single-branch --branch "$SNAPSHOT_BRANCH" git@github.com:weewx-packages/upstream-backup.git backup
+          python3 ci/upstream_status.py capture --weekday "$WEEKDAY" --backup backup --output activity.json
+          git -C backup config user.name 'github-actions[bot]'
+          git -C backup config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git -C backup add snapshots index.json
+          git -C backup commit -m 'Capture weekly upstream discussions'
+          git -C backup push origin "$SNAPSHOT_BRANCH"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: activity-${{ matrix.weekday }}
+          path: activity.json
+          retention-days: 90
+
+  quality:
+    needs: [select, mirror]
+    if: ${{ !cancelled() && needs.select.result == 'success' && needs.select.outputs.count != '0' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJSON(needs.select.outputs.checks) }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: weewx/weewx
+          ref: ${{ matrix.branch }}
+          path: weewx
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.14'
+      - run: python -m pip install ./weewx packaging requests skyfield 'pymodbus>=3.11,<4' pyserial
+      - name: Check source installation with WeeWX
+        env:
+          WEEKDAY: ${{ matrix.weekday }}
+          WEEWX_BRANCH: ${{ matrix.branch }}
+        run: |
+          python ci/source_quality.py run --weekday "$WEEKDAY" --branch "$WEEWX_BRANCH" \
+            --weewx-sha "$(git -C weewx rev-parse HEAD)" --output quality
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: quality-${{ matrix.weekday }}-${{ matrix.branch }}
+          path: |
+            quality/matrix.json
+            quality/result-*/result.json
+          retention-days: 90
+
+  report:
+    needs: [select, snapshot, quality]
+    if: ${{ !cancelled() && needs.select.result == 'success' && needs.select.outputs.count != '0' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: main
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.14'
+      - run: python -m pip install packaging
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          path: reports
+      - name: Report upstream activity
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python ci/upstream_status.py report --artifacts reports
+      - name: Maintain source installation issues
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python ci/source_quality.py report --artifacts reports
+      - name: Record latest backup and quality status
+        if: always()
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add ci/upstream-state.json ci/source-quality.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Record weekly upstream backup and installation checks'
+            for attempt in 1 2 3; do
+              if git push origin HEAD:main; then exit 0; fi
+              printf 'Push attempt %s failed; rebasing the status update\n' "$attempt"
+              git pull --rebase origin main
+            done
+            exit 1
+          fi

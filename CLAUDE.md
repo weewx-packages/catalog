@@ -22,6 +22,10 @@ Static JSON index for WeeWX clients with extension repository support.
 - `ci/upstreams.py`: Select, package and publish tested upstream skin releases.
 - `ci/skin_tests/`: Installed-skin report generation with an isolated archive.
 - `COMPATIBILITY.md`: Check coverage, issue handling and adding package tests.
+- `WIKI-AUDIT.md`, `ci/wiki-audit.json`: Complete wiki review and pinned license evidence.
+- `ci/mirrors.json`, `ci/mirrors.py`: Weekly source-backup groups and deploy-key handling.
+- `ci/upstream_status.py`: Private discussion snapshots and public change summaries.
+- `ci/source_quality.py`: Source installation checks, separate from release regression tests.
 
 ## Conventions
 
@@ -38,3 +42,7 @@ Static JSON index for WeeWX clients with extension repository support.
   remain separate from upstream installers and report generators.
 - Generate the README package table from repository.json; run
   `python3 ci/upstreams.py readme` after manual index changes.
+- Keep independent continuations at `sync: false`; their fixes must never be
+  replaced by a routine upstream copy.
+- Source, discussion backup, test and reporting jobs have separate credentials.
+  Discussion bodies and PR patches belong in the private backup, not public artifacts.

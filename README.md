@@ -81,6 +81,13 @@ mirrors each skin fork weekly and publishes new stable versions after its
 installation and report tests pass. The package table comes from the catalog
 index and is updated in the same commit.
 
+The [wiki review](WIKI-AUDIT.md) records licensing, maintenance and successor
+decisions for the complete extension list. Additional source backups run weekly,
+distributed across Monday through Friday. Source installation checks and
+[upstream activity](https://github.com/weewx-packages/catalog/issues?q=%22Upstream+activity%22)
+are reported separately from the tested catalog releases. See
+[backup coverage](COMPATIBILITY.md#source-backups-and-upstream-activity).
+
 ## License
 
 The catalog, schema, and documentation use [GPL-3.0-only](LICENSE).

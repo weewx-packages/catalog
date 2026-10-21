@@ -37,9 +37,10 @@ def issue_body(package, cases, results, run_url):
         str: Issue body, including the automation's stable ownership marker.
     """
     first = cases[0]
+    description = ('Source installation checks failed for %s %s.' if first.get('coverage') == 'installation'
+                   else 'The published %s %s fails compatibility checks.')
     rows = ['<!-- weewx-compatibility:%s -->' % package,
-            'The published %s %s fails compatibility checks.' %
-            (package, first['release']['version']), '',
+            description % (package, first['release']['version']), '',
             '| WeeWX branch | Commit | Python | Result |', '|---|---|---|---|']
     for case in cases:
         result = results[result_name(case)]
@@ -56,6 +57,10 @@ def issue_body(package, cases, results, run_url):
     rows.extend(['', '[Test logs and artifacts](%s)' % run_url,
                  '[Release archive](%s) · [Test source](https://github.com/%s/tree/%s)' %
                  (first['release']['archive']['url'], first['repository'], first['source_sha'])])
+    if first.get('coverage') == 'installation':
+        rows.extend(['', 'These checks compile runtime Python and run the original installer in an',
+                     'isolated WeeWX station. Dependencies, configuration and hardware still need',
+                     'investigation; this result does not attribute the failure to WeeWX.'])
     return '\n'.join(rows) + '\n'
 
 
