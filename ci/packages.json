@@ -63,25 +63,12 @@
     "allowed_skips": [],
     "skin": "Belchertown"
   },
-  "divumwx": {
-    "repository": "weewx-packages/weewx-divumwx",
-    "ref": "ac720ea8b52158fe099327264f02368c0a3044d0",
-    "kind": "skin",
-    "report": "DivumWXReport",
+  "tracer": {
+    "repository": "weewx-packages/weewx-tracer",
+    "ref": "v{version}",
     "imports": [
-      "user.divumwx",
-      "user.divumwx_cards"
+      "user.tracer"
     ],
-    "outputs": [
-      "index.html",
-      "jsondata/archive.json",
-      "jsondata/charts.json"
-    ],
-    "allowed_skips": [],
-    "pythons": [
-      "3.14"
-    ],
-    "install_input": "\n\n\n\n\n\n\ny\nn\nn\n\n\nn\nn\nn\nn\nn\nn\nn\nn\nn\nn\nn\nn\nn\nn\nn\nn\nn\nn\nn\nn\n",
-    "skin": "DivumWX"
+    "allowed_skips": []
   }
 }

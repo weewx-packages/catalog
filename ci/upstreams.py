@@ -48,6 +48,8 @@ def plan(specs, catalog):
     commits = {branch: revision(WEEWX_REPOSITORY, branch) for branch in BRANCHES}
     candidates, cases = [], []
     for spec in specs:
+        if spec.get('blocked'):
+            continue
         releases = github('repos/%s/releases?per_page=100' % spec['upstream'])
         if spec.get('tagged_releases'):
             published = {release['tag_name'] for release in releases}

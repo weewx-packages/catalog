@@ -25,13 +25,15 @@ weectl extension install livedata --repo packages
 
 Follow the package's configuration instructions after installation.
 
-The mirrored skins use the same catalog. DivumWX requires Python 3.13.5 or later,
-WeeWX 5.5 or later, and the `requests` and `skyfield` Python packages. Run your
-station once to create its archive database before installing it. Its installer
-asks for station settings and extends that database. Follow its upstream
-uninstall instructions for the frontend and custom configuration it manages.
+The mirrored skins use the same catalog. DivumWX package publication is paused
+while the redistribution terms of a bundled font are clarified. The existing
+fork remains available; the catalog's original 1.7.0 archive has been withdrawn.
 NeoWX Material may require selecting `skin = neowx-material` in your
 `[[StandardReport]]` configuration and enabling that report.
+
+Tracer / EPEVER requires `pymodbus>=3.11,<4` and `pyserial`. Version 0.3.0 uses
+watt-hours for energy observations; review older energy values before combining
+records from different driver versions.
 
 <!-- packages:start -->
 | Package | ID | Purpose |
@@ -41,7 +43,7 @@ NeoWX Material may require selecting `skin = neowx-material` in your
 | [Davis RTL-SDR](https://github.com/weewx-packages/weewx-rtldavis) | `rtldavis` | Receive Davis Vantage Pro, Pro2 and Vue wireless observations through RTL-SDR. Requires the separately built rtldavis receiver. |
 | [NeoWX Material](https://github.com/weewx-packages/neowx-material) | `neowx-material` | Material-style weather website with interactive charts and live observations. |
 | [Belchertown](https://github.com/weewx-packages/weewx-belchertown) | `belchertown` | Weather website with live observations, interactive charts and forecasts. |
-| [DivumWX](https://github.com/weewx-packages/weewx-divumwx) | `divumwx` | Live weather dashboard with charts, forecasts and astronomy pages. Requires requests and skyfield; installation asks for station settings. |
+| [Tracer / EPEVER](https://github.com/weewx-packages/weewx-tracer) | `tracer` | Read EPEVER and Tracer MPPT solar charge controllers over RS485 Modbus. Requires pymodbus 3.11 through 3.x and pyserial. |
 <!-- packages:end -->
 
 New packages become available through the same registered source when its index

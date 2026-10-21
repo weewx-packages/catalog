@@ -101,6 +101,13 @@ runtime code is patched. Each candidate is installed and rendered against WeeWX
 and Belchertown use Python 3.10 and 3.14; DivumWX uses 3.14 because its upstream
 requires Python 3.13.5 or later and WeeWX 5.5 or later.
 
+DivumWX publication is currently paused because its bundled Dirtylane font has
+personal-use terms without a confirmed general redistribution grant. Its
+definition's `blocked` field prevents new versions from entering the catalog
+while a licensed package variant is prepared. The earlier 1.7.0 catalog archive
+has been withdrawn. A use restriction alone is not treated as a redistribution
+prohibition; each component's actual terms need review.
+
 The skin suite runs the original installer, verifies installer identity and
 imports from the installed station, fills an isolated SQLite archive, and runs
 the actual report generators. It rejects report errors, missing output files and

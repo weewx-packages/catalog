@@ -110,7 +110,7 @@ jobs:
           sudo apt-get update -qq
           sudo apt-get install -y php-cli
           php --version
-          python -m pip install ./weewx pytest packaging requests skyfield
+          python -m pip install ./weewx pytest packaging requests skyfield "pymodbus>=3.11,<4" pyserial
       - name: Install and test the release archive
         env:
           CASE_JSON: ${{ toJSON(matrix) }}

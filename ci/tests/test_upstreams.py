@@ -52,6 +52,15 @@ def test_candidate_refuses_unsynchronized_fork(spec, monkeypatch):
         upstreams.plan([spec], {'packages': []})
 
 
+def test_blocked_license_cannot_publish_an_upstream_update(spec, monkeypatch):
+    spec['blocked'] = 'Font redistribution terms need clarification'
+    api = Mock(side_effect=AssertionError('Blocked upstream must not be selected'))
+    monkeypatch.setattr(upstreams, 'github', api)
+    monkeypatch.setattr(upstreams, 'revision', lambda *args: 'a' * 40)
+    assert upstreams.plan([spec], {'packages': []}) == {'candidates': [], 'matrix': {'include': []}}
+    api.assert_not_called()
+
+
 def test_source_archive_preserves_installer_without_executing_it(spec, tmp_path):
     source = tmp_path / 'source'
     source.mkdir()
