@@ -1,1 +1,1715 @@
-{}
+{
+  "BobAtchley/weewx-ws6in1": {
+    "captured_at": "2026-10-21T23:50:42.529734+00:00",
+    "items": {
+      "15": {
+        "title": "Rain spikes with full data buffer",
+        "url": "https://github.com/BobAtchley/weewx-ws6in1/issues/15",
+        "kind": "issue",
+        "digest": "70e72260028f76bd3caea59a0e84dcd96a6a750d9981ba53d2eaf8a45de3b87f"
+      }
+    },
+    "notices": {
+      "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
+    },
+    "notice_scan_complete": true
+  },
+  "captain-coredump/weewx-atmocom-udp": {
+    "captured_at": "2026-10-21T23:50:41.953672+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE": "e963df8294069543e782fd72aa71832dca1571ca"
+    },
+    "notice_scan_complete": true
+  },
+  "chaunceygardiner/weewx-nws": {
+    "captured_at": "2026-10-21T23:50:42.093881+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
+    },
+    "notice_scan_complete": true
+  },
+  "evilbunny2008/MQTTPublishV2": {
+    "captured_at": "2026-10-21T23:50:41.995999+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
+    },
+    "notice_scan_complete": true
+  },
+  "evilbunny2008/WeeWXWeatherApp": {
+    "captured_at": "2026-10-21T23:50:44.553224+00:00",
+    "items": {
+      "48": {
+        "title": "App connection error",
+        "url": "https://github.com/evilbunny2008/WeeWXWeatherApp/issues/48",
+        "kind": "issue",
+        "digest": "7ed444490c78c0a2774b895988378f300bf675c5345e19e207b6b50ba7877542"
+      },
+      "43": {
+        "title": "2.0.11 and v2 of the plugin create warnings that block application of settings",
+        "url": "https://github.com/evilbunny2008/WeeWXWeatherApp/issues/43",
+        "kind": "issue",
+        "digest": "65ecb860e84526c1151acc0dadf056c37caa4a177ce9743ac2651cb62edccb47"
+      }
+    },
+    "notices": {
+      "LICENSE": "5b51c5485c0a896db3fb0770957bd48ad50e486f"
+    },
+    "notice_scan_complete": true
+  },
+  "evilbunny2008/weewx-airlink": {
+    "captured_at": "2026-10-21T23:50:43.344960+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
+    },
+    "notice_scan_complete": true
+  },
+  "glennmckechnie/weewx-WXgraphic": {
+    "captured_at": "2026-10-21T23:50:43.489515+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE": "d159169d1050894d3ea3b98e1c965c4058208fe1",
+      "skins/WXgraphic/license.txt": "06d1215d9413d444662daca7c86267eb534cbea7"
+    },
+    "notice_scan_complete": true
+  },
+  "matthewwall/weewx-cm1": {
+    "captured_at": "2026-10-21T23:50:43.978684+00:00",
+    "items": {},
+    "notices": {
+      "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
+    },
+    "notice_scan_complete": true
+  },
+  "matthewwall/weewx-envoy": {
+    "captured_at": "2026-10-21T23:50:44.739838+00:00",
+    "items": {},
+    "notices": {
+      "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
+    },
+    "notice_scan_complete": true
+  },
+  "matthewwall/weewx-maxbotix": {
+    "captured_at": "2026-10-21T23:50:44.898489+00:00",
+    "items": {},
+    "notices": {
+      "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
+    },
+    "notice_scan_complete": true
+  },
+  "matthewwall/weewx-tracer": {
+    "captured_at": "2026-10-21T23:50:45.832415+00:00",
+    "items": {
+      "1": {
+        "title": "Questions, Suggestions, Bugs",
+        "url": "https://github.com/matthewwall/weewx-tracer/issues/1",
+        "kind": "issue",
+        "digest": "6380b887b96098803625328cda4783129b2c06f9f055c0562e69e8fc9fc1eb75"
+      }
+    },
+    "notices": {
+      "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
+    },
+    "notice_scan_complete": true
+  },
+  "matthewwall/weewx-windfinder": {
+    "captured_at": "2026-10-21T23:50:45.875920+00:00",
+    "items": {},
+    "notices": {},
+    "notice_scan_complete": true
+  },
+  "open-astro/weewx-sqm": {
+    "captured_at": "2026-10-21T23:50:46.073402+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE": "88b64c98c8986043a6cc41530d74f5d03a61c283"
+    },
+    "notice_scan_complete": true
+  },
+  "roe-dl/weewx-easter-almanac-example": {
+    "captured_at": "2026-10-21T23:50:46.255004+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
+    },
+    "notice_scan_complete": true
+  },
+  "roe-dl/weewx-skyfield-almanac": {
+    "captured_at": "2026-10-21T23:50:47.128261+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
+    },
+    "notice_scan_complete": true
+  },
+  "sbsrouteur/weewx-sds011": {
+    "captured_at": "2026-10-21T23:50:47.217867+00:00",
+    "items": {},
+    "notices": {
+      "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
+    },
+    "notice_scan_complete": true
+  },
+  "seehase/neowx-material": {
+    "captured_at": "2026-10-21T23:50:54.414854+00:00",
+    "items": {
+      "409": {
+        "title": "Release2.0",
+        "url": "https://github.com/seehase/neowx-material/pull/409",
+        "kind": "PR",
+        "digest": "add9af8654c9847895ca8a58cc19a086d0bb3ddf1416857364e34f53e62b403f"
+      },
+      "405": {
+        "title": "Per-page section control and telemetry items in any section",
+        "url": "https://github.com/seehase/neowx-material/pull/405",
+        "kind": "PR",
+        "digest": "4659f96f1e9cec9da2f5b875fdfcbb87c558a1c9300251a09486943a02c9ff03"
+      },
+      "395": {
+        "title": "[FEATURE] Support telemetry cards and charts in every section",
+        "url": "https://github.com/seehase/neowx-material/issues/395",
+        "kind": "issue",
+        "digest": "1a8d8e921bfd8da9bec91b84d5babc516213341462c6486c7470afbc71e6bd8d"
+      }
+    },
+    "notices": {
+      "LICENSE": "09d096d308b745fd5c3ece1ed0309bf7b1bcaf4d",
+      "skins/neowx-material/fonts/OFL.txt": "d8e58fc921a200f1e1a7a991f5afe94dd7521279",
+      "skins/neowx-material/js/vendor/apexcharts/LICENSE": "1702793826939ae1d8357a1038c637a0fcdbf55e"
+    },
+    "notice_scan_complete": true
+  },
+  "tkeffer/weewx-postgresql": {
+    "captured_at": "2026-10-21T23:50:47.663446+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE.txt": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
+    },
+    "notice_scan_complete": true
+  },
+  "weewx-extensions/healthchecks": {
+    "captured_at": "2026-10-21T23:50:49.372983+00:00",
+    "items": {
+      "2": {
+        "title": "Make start ping configurable",
+        "url": "https://github.com/weewx-extensions/healthchecks/issues/2",
+        "kind": "issue",
+        "digest": "6ef742ce14fab8abe2c8769f14b0ea6d3c1893321e83b9addb7379889b0aeac6"
+      },
+      "1": {
+        "title": "Make fail ping configurable",
+        "url": "https://github.com/weewx-extensions/healthchecks/issues/1",
+        "kind": "issue",
+        "digest": "47da3c0c4cd96d1abdabcab2e8ce42589b5dc30ac335a814ae537706e26ac444"
+      }
+    },
+    "notices": {
+      "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
+    },
+    "notice_scan_complete": true
+  },
+  "weewx-extensions/jas": {
+    "captured_at": "2026-10-21T23:50:52.299514+00:00",
+    "items": {
+      "13": {
+        "title": "Refactor templates",
+        "url": "https://github.com/weewx-extensions/jas/issues/13",
+        "kind": "issue",
+        "digest": "f9d4893efc4332d18f92d0620e6e6d1b4430b976a757e0f6dd20938343042be8"
+      },
+      "11": {
+        "title": "jas.css.tmpl is not a cheetah template, use copy once for this file",
+        "url": "https://github.com/weewx-extensions/jas/issues/11",
+        "kind": "issue",
+        "digest": "05503772e287299e7eb4a83eda31a1223afaac118b011ce4cbe89ba7e536e0fb"
+      },
+      "10": {
+        "title": "Unit tests for cheetah templates",
+        "url": "https://github.com/weewx-extensions/jas/issues/10",
+        "kind": "issue",
+        "digest": "6ba8adad353966c9e293bd7b463caa7007f3d7c2b2a28ddc759c22a2c9597a64"
+      },
+      "8": {
+        "title": "Refactor chart generation",
+        "url": "https://github.com/weewx-extensions/jas/issues/8",
+        "kind": "issue",
+        "digest": "c66ebf66e6d952b97eb4e25a0f9c74bd7ef4b0882723f425001ac21b5800ffe9"
+      },
+      "5": {
+        "title": "Create a wind rose plot for echarts",
+        "url": "https://github.com/weewx-extensions/jas/issues/5",
+        "kind": "issue",
+        "digest": "29812068eeb741b3d6d1a6a38ac5daf1ac25c76dee4507e23b8e7ce934d68980"
+      },
+      "4": {
+        "title": "Update chart series data via MQTT (loop)",
+        "url": "https://github.com/weewx-extensions/jas/issues/4",
+        "kind": "issue",
+        "digest": "db603fc61a863054e9c1c672dc2f2e444788dca4c539eee1b2abbc2d09939218"
+      },
+      "3": {
+        "title": "Update charts on archive mqtt data",
+        "url": "https://github.com/weewx-extensions/jas/issues/3",
+        "kind": "issue",
+        "digest": "487f72de7a90723746ef768b6a7041cb96136bae5f82c2bb1abc112547498eb1"
+      },
+      "2": {
+        "title": "Verify and/or fix the javascript created from weewx.conf",
+        "url": "https://github.com/weewx-extensions/jas/issues/2",
+        "kind": "issue",
+        "digest": "9ccc9377c67afd63382a6e31970de4c90b4e390a5d627e171f75c7abe80845bf"
+      },
+      "1": {
+        "title": "Investigate the creation of the about page and possible memory leak",
+        "url": "https://github.com/weewx-extensions/jas/issues/1",
+        "kind": "issue",
+        "digest": "20eed9c22eb0f6a6db80cb710dc5b1b9a0470d4ddfd132a4e1b6fc280a38b5fa"
+      }
+    },
+    "notices": {
+      "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
+    },
+    "notice_scan_complete": true
+  },
+  "ziti/weewx-reservoir": {
+    "captured_at": "2026-10-21T23:50:51.583149+00:00",
+    "items": {
+      "10": {
+        "title": "chore: update ruff requirement from >=0.16.10 to >=0.17.1",
+        "url": "https://github.com/ziti/weewx-reservoir/pull/10",
+        "kind": "PR",
+        "digest": "c0de180978c967fb4d2088f531031893203a0f52fdbaec6a1e609da77242002f"
+      }
+    },
+    "notices": {
+      "LICENSE": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
+    },
+    "notice_scan_complete": true
+  },
+  "AZAZ78/weewx-knx": {
+    "captured_at": "2026-10-21T23:50:55.104677+00:00",
+    "items": {
+      "1": {
+        "title": "this extension has a page in the weewx wiki with instructions",
+        "url": "https://github.com/AZAZ78/weewx-knx/issues/1",
+        "kind": "issue",
+        "digest": "a54ec8958119946a266d47a2d353b602b60446a16e051edeb7c66ad79c413fc6"
+      }
+    },
+    "notices": {
+      "LICENSE": "e62ec04cdeece724caeeeeaeb6ae1f6af1bb6b9a"
+    },
+    "notice_scan_complete": true
+  },
+  "Jterrettaz/weewx-windy": {
+    "captured_at": "2026-10-21T23:50:54.818488+00:00",
+    "items": {},
+    "notices": {
+      "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
+    },
+    "notice_scan_complete": true
+  },
+  "Millardiang/weewx-meteoalarm": {
+    "captured_at": "2026-10-21T23:50:54.711029+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
+    },
+    "notice_scan_complete": true
+  },
+  "bburton/weewx-columbia-ms": {
+    "captured_at": "2026-10-21T23:50:54.746762+00:00",
+    "items": {},
+    "notices": {
+      "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
+    },
+    "notice_scan_complete": true
+  },
+  "chaunceygardiner/weewx-exfoliation": {
+    "captured_at": "2026-10-21T23:50:55.901254+00:00",
+    "items": {},
+    "notices": {
+      "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e",
+      "skins/exfoliation/font/LICENSE.txt": "75b52484ea471f882c29e02693b4f02dba175b5e"
+    },
+    "notice_scan_complete": true
+  },
+  "chaunceygardiner/weewx-weatherboard": {
+    "captured_at": "2026-10-21T23:50:55.821171+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7",
+      "skins/WeatherBoard/fonts/bebasneue/license.txt": "da9571488f44176ef90d7f10c0f402c8be74db67",
+      "skins/WeatherBoard/fonts/jost/license.txt": "751785dde9060b0153c128bcc3a9bc5f2efd1fcd"
+    },
+    "notice_scan_complete": true
+  },
+  "evilbunny2008/AggregatedValues": {
+    "captured_at": "2026-10-21T23:50:55.936560+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
+    },
+    "notice_scan_complete": true
+  },
+  "hilman2/weewx-ultimate-push": {
+    "captured_at": "2026-10-21T23:51:04.317850+00:00",
+    "items": {
+      "31": {
+        "title": "Clarify HTTP-only station transport before a remote TLS proxy",
+        "url": "https://github.com/hilman2/weewx-ultimate-push/issues/31",
+        "kind": "issue",
+        "digest": "046c745b9a0faeaf0826919e8a854e27c0737d6b0eaef7bf13826d0ef0769763"
+      },
+      "27": {
+        "title": "Beta testers wanted: the WS28xx driver, hosted",
+        "url": "https://github.com/hilman2/weewx-ultimate-push/issues/27",
+        "kind": "issue",
+        "digest": "98e0830c73c1a9a35bbfdbeadc90822e2ed83ba2f10b554a70b8b052a368bd96"
+      },
+      "26": {
+        "title": "Beta testers wanted: the WS23xx driver, hosted",
+        "url": "https://github.com/hilman2/weewx-ultimate-push/issues/26",
+        "kind": "issue",
+        "digest": "a34293be80f9ace489b87a1d10b74a6785d2e2da046b50d619934056a63f7396"
+      },
+      "25": {
+        "title": "Beta testers wanted: the WS1 driver, hosted",
+        "url": "https://github.com/hilman2/weewx-ultimate-push/issues/25",
+        "kind": "issue",
+        "digest": "ecb770ccb8d2ff5d370d76393ce5ae8f404cc05c6465d21e5a77b6d66e61c0b6"
+      },
+      "24": {
+        "title": "Beta testers wanted: the WMR9x8 driver, hosted",
+        "url": "https://github.com/hilman2/weewx-ultimate-push/issues/24",
+        "kind": "issue",
+        "digest": "fc01e966514cc7272fbdacdc357c38a4338a70e568ae6c297d7acf4419f904d9"
+      },
+      "23": {
+        "title": "Beta testers wanted: the WMR300 driver, hosted",
+        "url": "https://github.com/hilman2/weewx-ultimate-push/issues/23",
+        "kind": "issue",
+        "digest": "0386f50b95826c03619eedff753fe0e9e1754ba4ffac55722e849c02f81f03ea"
+      },
+      "22": {
+        "title": "Beta testers wanted: the WMR100 driver, hosted",
+        "url": "https://github.com/hilman2/weewx-ultimate-push/issues/22",
+        "kind": "issue",
+        "digest": "94dfe126f7e376e0e9994faf42ccb336845a94cc01d61075905a07a73f391c73"
+      },
+      "21": {
+        "title": "Beta testers wanted: the Ultimeter driver, hosted",
+        "url": "https://github.com/hilman2/weewx-ultimate-push/issues/21",
+        "kind": "issue",
+        "digest": "bf1b7bc8689322ae4f7ada7bc36fb28c8d8a634d6fdee6b5aea802e44dfef96a"
+      },
+      "20": {
+        "title": "Beta testers wanted: the TE923 driver, hosted",
+        "url": "https://github.com/hilman2/weewx-ultimate-push/issues/20",
+        "kind": "issue",
+        "digest": "8d1dd5c9b7c251a1f123872e7f437ebec2bda1b619b479989f7fadbe56deb8c7"
+      },
+      "19": {
+        "title": "Beta testers wanted: the FineOffsetUSB driver, hosted",
+        "url": "https://github.com/hilman2/weewx-ultimate-push/issues/19",
+        "kind": "issue",
+        "digest": "51d1189fd26453a986708c2dde398a6da05c0136f4fd49c9b01cd9a81de9b100"
+      },
+      "18": {
+        "title": "Beta testers wanted: the CC3000 driver, hosted",
+        "url": "https://github.com/hilman2/weewx-ultimate-push/issues/18",
+        "kind": "issue",
+        "digest": "9c94b9539761fa62fbf0ced7a3734ee5953ea85bbbe76726b069bf92aa2a5759"
+      },
+      "17": {
+        "title": "Beta testers wanted: the AcuRite driver, hosted",
+        "url": "https://github.com/hilman2/weewx-ultimate-push/issues/17",
+        "kind": "issue",
+        "digest": "c7a18544630942ee685a6d738568ee6af69fc66e3f6308a0f149ca104c74217a"
+      },
+      "16": {
+        "title": "Beta testers wanted: the Vantage driver, hosted",
+        "url": "https://github.com/hilman2/weewx-ultimate-push/issues/16",
+        "kind": "issue",
+        "digest": "34e3af1a10c8a17541d6fdb0af499e372f19df0003ca067d45d9b40b6d6352a3"
+      },
+      "15": {
+        "title": "Beta testers wanted: 433/868/915 MHz sensors over rtl_433",
+        "url": "https://github.com/hilman2/weewx-ultimate-push/issues/15",
+        "kind": "issue",
+        "digest": "3a82822801a0daece72a94f4a30220bead17dc4195efa0a4e39e68eba841583a"
+      },
+      "14": {
+        "title": "Beta testers wanted: WeatherFlow Tempest, AIR and SKY",
+        "url": "https://github.com/hilman2/weewx-ultimate-push/issues/14",
+        "kind": "issue",
+        "digest": "00c923fdb172cd5111c55d2fe941a5a0acfbec028cfa18c40bf3f0f270852d80"
+      },
+      "13": {
+        "title": "Beta testers wanted: Home Assistant as a source of readings",
+        "url": "https://github.com/hilman2/weewx-ultimate-push/issues/13",
+        "kind": "issue",
+        "digest": "4426ea80aec9e304d3aae7e8d2b1aa6625ea5fd3d5b33f90d7bc1ca30a438655"
+      },
+      "12": {
+        "title": "Beta testers wanted: Davis AirLink",
+        "url": "https://github.com/hilman2/weewx-ultimate-push/issues/12",
+        "kind": "issue",
+        "digest": "f122d2d5be69609263d44ec850177d47bf88db4f9044be7baa5cbe7d606e930c"
+      },
+      "11": {
+        "title": "Beta testers wanted: PurpleAir",
+        "url": "https://github.com/hilman2/weewx-ultimate-push/issues/11",
+        "kind": "issue",
+        "digest": "0d64aa52106781717442f6a27f3cd2ed1ef4940f9b2358bc3a7df514e63d596a"
+      },
+      "10": {
+        "title": "Beta testers wanted: an Ecowitt gateway over its own API",
+        "url": "https://github.com/hilman2/weewx-ultimate-push/issues/10",
+        "kind": "issue",
+        "digest": "5de8e6d2f636475074a6ff28ae49071ac89b21860757da924791b5bf7fc3c0d3"
+      },
+      "9": {
+        "title": "Beta testers wanted: LaCrosse LW301 and LW302 gateways",
+        "url": "https://github.com/hilman2/weewx-ultimate-push/issues/9",
+        "kind": "issue",
+        "digest": "a0905561b135397038886815613f2075ad51ba0a3c7763c5b214e52fd8a011fe"
+      },
+      "8": {
+        "title": "Beta testers wanted: Acurite smartHUB and Access",
+        "url": "https://github.com/hilman2/weewx-ultimate-push/issues/8",
+        "kind": "issue",
+        "digest": "c48b1f8ab736e2f06f38a7b734284448d271797c0ad6a3fbe2c5768bfd3ee54f"
+      },
+      "7": {
+        "title": "Beta testers wanted: Ambient Weather consoles",
+        "url": "https://github.com/hilman2/weewx-ultimate-push/issues/7",
+        "kind": "issue",
+        "digest": "1be6971f602c5bbe0e986fb386e7706deed515c422bc47f2cd44eab7e6703ae8"
+      },
+      "6": {
+        "title": "Beta testers wanted: Consoles set to the Weather Underground protocol",
+        "url": "https://github.com/hilman2/weewx-ultimate-push/issues/6",
+        "kind": "issue",
+        "digest": "fde75a2770e7cd6b80a9696e5822f564dbbe165dd4e6fd480def4b9c97d43e36"
+      },
+      "5": {
+        "title": "Beta testers wanted: Ecowitt, Froggit and Misol consoles",
+        "url": "https://github.com/hilman2/weewx-ultimate-push/issues/5",
+        "kind": "issue",
+        "digest": "f599f7cabe920c72e1623336cca04cd926327f4bdc7a6705d9b49bc601c6f845"
+      }
+    },
+    "notices": {
+      "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
+    },
+    "notice_scan_complete": true
+  },
+  "inguy24/weewx-openweather_API": {
+    "captured_at": "2026-10-21T23:50:56.931809+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
+    },
+    "notice_scan_complete": true
+  },
+  "knight-of-ni/WeeWX-SetProcessName": {
+    "captured_at": "2026-10-21T23:50:57.014664+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
+    },
+    "notice_scan_complete": true
+  },
+  "matthewwall/weewx-amphibian": {
+    "captured_at": "2026-10-21T23:50:57.029198+00:00",
+    "items": {},
+    "notices": {
+      "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
+    },
+    "notice_scan_complete": true
+  },
+  "n2ee/weewx-id5001": {
+    "captured_at": "2026-10-21T23:50:58.106489+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE": "ea97251003d0f46c0ba1b0eca493c6c229f9322b"
+    },
+    "notice_scan_complete": true
+  },
+  "poblabs/weewx-belchertown": {
+    "captured_at": "2026-10-21T23:50:58.101472+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE": "94a9ed024d3859793618152ea559a168bbcbb5e2"
+    },
+    "notice_scan_complete": true
+  },
+  "roe-dl/weewx-DWD": {
+    "captured_at": "2026-10-21T23:50:59.037782+00:00",
+    "items": {
+      "84": {
+        "title": "Timeouts beim Download vom DWD",
+        "url": "https://github.com/roe-dl/weewx-DWD/issues/84",
+        "kind": "issue",
+        "digest": "138095c9b550adc261c50b238b24bc77277a479e52f557e558a476febd9005e4"
+      },
+      "67": {
+        "title": "Biowetter ben\u00f6tigt zus\u00e4tzliche Styles",
+        "url": "https://github.com/roe-dl/weewx-DWD/issues/67",
+        "kind": "issue",
+        "digest": "bd46712a44e6d1163bb49a756faadc34f02353812e81f87beb8121bb29c18e11"
+      }
+    },
+    "notices": {
+      "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
+    },
+    "notice_scan_complete": true
+  },
+  "roe-dl/weewx-precipmeter": {
+    "captured_at": "2026-10-21T23:50:59.183156+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
+    },
+    "notice_scan_complete": true
+  },
+  "roe-dl/weewx-skymap-almanac": {
+    "captured_at": "2026-10-21T23:50:59.257294+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
+    },
+    "notice_scan_complete": true
+  },
+  "roe-dl/weewx-svg2png": {
+    "captured_at": "2026-10-21T23:51:00.108800+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
+    },
+    "notice_scan_complete": true
+  },
+  "smeisens/weewx-wundergroundlike": {
+    "captured_at": "2026-10-21T23:51:00.251287+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE.txt": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
+    },
+    "notice_scan_complete": true
+  },
+  "weewx-contrib/weewx-rtldavis": {
+    "captured_at": "2026-10-21T23:51:00.387004+00:00",
+    "items": {},
+    "notices": {},
+    "notice_scan_complete": true
+  },
+  "weewx-mqtt/subscribe": {
+    "captured_at": "2026-10-21T23:51:05.558911+00:00",
+    "items": {
+      "13": {
+        "title": "First-time install failure",
+        "url": "https://github.com/weewx-mqtt/subscribe/issues/13",
+        "kind": "issue",
+        "digest": "f269e81561e0a5354c71f7c55e68b0f32628edb2c989119313a34c23239e57fc"
+      },
+      "11": {
+        "title": "Allow packets that have \u2018traveled back in time\u2019 to be augmented",
+        "url": "https://github.com/weewx-mqtt/subscribe/issues/11",
+        "kind": "issue",
+        "digest": "a9ba4defc1276b380dd56bfae6e44ed656d2b9955227b53535e85a407b4a5736"
+      },
+      "10": {
+        "title": "MQTTSubscribe throws  ValueError: start time is greater than stop time when MQTT message timestamp equals loop packet timestamp",
+        "url": "https://github.com/weewx-mqtt/subscribe/issues/10",
+        "kind": "issue",
+        "digest": "3ee289b4194949503b402cfef1b7e3530741059c49f73274e018b7572df83310"
+      },
+      "9": {
+        "title": "case of script name and actually usable version number",
+        "url": "https://github.com/weewx-mqtt/subscribe/pull/9",
+        "kind": "PR",
+        "digest": "b5ad7b704adaec579bff41bc08007ed5337e936be3b0437fd8451fbce227ac63"
+      },
+      "4": {
+        "title": "Rename MQTTSubscribe.py to mqttsubscribe.py",
+        "url": "https://github.com/weewx-mqtt/subscribe/issues/4",
+        "kind": "issue",
+        "digest": "76eafe01fb8ed9d0cb61d1b38f232cf3018ff3600dc52f57253020b8bb2ff52a"
+      },
+      "3": {
+        "title": "Rework subfield processing",
+        "url": "https://github.com/weewx-mqtt/subscribe/issues/3",
+        "kind": "issue",
+        "digest": "338c0e4666e151d3f36c2f69e1ae8194893242b01a84b86bb8f2bb5ba41bbd6c"
+      },
+      "2": {
+        "title": "Deprecate and remove contains_total option",
+        "url": "https://github.com/weewx-mqtt/subscribe/issues/2",
+        "kind": "issue",
+        "digest": "9023132152a87dc799c0e676e6ab9a1f0dfb6f22b9b8e627eb2c585027608bae"
+      }
+    },
+    "notices": {
+      "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
+    },
+    "notice_scan_complete": true
+  },
+  "weewx-packages/weewx-ecowitt-http-push": {
+    "captured_at": "2026-10-21T23:51:01.273031+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
+    },
+    "notice_scan_complete": true
+  },
+  "Cosmospacedog/weewx-metrics": {
+    "captured_at": "2026-10-21T23:51:24.941307+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
+    },
+    "notice_scan_complete": true
+  },
+  "MichaelStrommer-dreiS/weewx-skyvex": {
+    "captured_at": "2026-10-21T23:51:24.974823+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
+    },
+    "notice_scan_complete": true
+  },
+  "Millardiang/weewx-carbonsteel-series": {
+    "captured_at": "2026-10-21T23:51:24.953827+00:00",
+    "items": {},
+    "notices": {
+      "CS/fonts/Lexend-OFL.txt": "6c35713d3e414367b9b2d9bba14d9d39c8b750db",
+      "CS/js/d3.LICENSE.txt": "3594fffaf63c7a0dddc35ff82b781e224230bea1",
+      "LICENSE": "29b2470d77bd69a0bd86f17fff66ce9a7acafe30",
+      "d3.LICENSE.txt": "3594fffaf63c7a0dddc35ff82b781e224230bea1",
+      "fonts/Lexend-OFL.txt": "6c35713d3e414367b9b2d9bba14d9d39c8b750db",
+      "js/d3.LICENSE.txt": "3594fffaf63c7a0dddc35ff82b781e224230bea1",
+      "skins/CS/fonts/Lexend-OFL.txt": "6c35713d3e414367b9b2d9bba14d9d39c8b750db",
+      "skins/CS/js/d3.LICENSE.txt": "3594fffaf63c7a0dddc35ff82b781e224230bea1"
+    },
+    "notice_scan_complete": true
+  },
+  "Millardiang/weewx-ecowittGateway": {
+    "captured_at": "2026-10-21T23:51:24.918192+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE": "f6cdd22a6c1fbc887e08a215cb4beb3c47048041"
+    },
+    "notice_scan_complete": true
+  },
+  "cavedon/weewx-aprs": {
+    "captured_at": "2026-10-21T23:51:29.059288+00:00",
+    "items": {
+      "7": {
+        "title": "weewx APRS crash",
+        "url": "https://github.com/cavedon/weewx-aprs/issues/7",
+        "kind": "issue",
+        "digest": "9ae953b7c27b1dfe34e357663cd28fb1f3b17e5c6025f27fc08934780e038e4f"
+      },
+      "4": {
+        "title": "no wind speed or direction",
+        "url": "https://github.com/cavedon/weewx-aprs/issues/4",
+        "kind": "issue",
+        "digest": "f71cd109595a0eea7a1cdabfeb68e5749739550cf50041d7b93df010a6514b91"
+      },
+      "1": {
+        "title": "weews-aprs_acurite_01036.py",
+        "url": "https://github.com/cavedon/weewx-aprs/pull/1",
+        "kind": "PR",
+        "digest": "25dccf9f4901ebee6580f9ecde2e4e5c64df2f92e67298e304c4402729a41728"
+      }
+    },
+    "notices": {
+      "license.txt": "ebf3e3d3bc0cfe838d002193cefbc8b26d5f34ba"
+    },
+    "notice_scan_complete": true
+  },
+  "chaunceygardiner/weewx-purple": {
+    "captured_at": "2026-10-21T23:51:26.122839+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7",
+      "skins/purple/font/license.txt": "b424dc41ae7d91a7f23faad7752127e2e58d4415"
+    },
+    "notice_scan_complete": true
+  },
+  "glennmckechnie/weewx-uradmon": {
+    "captured_at": "2026-10-21T23:51:26.523710+00:00",
+    "items": {
+      "5": {
+        "title": "Languages, over to you...",
+        "url": "https://github.com/glennmckechnie/weewx-uradmon/issues/5",
+        "kind": "issue",
+        "digest": "6d5988506e893bc5ad6a0eab4e2a72e457eac1bb63f9e7d74386f6dac6ff27e9"
+      }
+    },
+    "notices": {
+      "LICENSE": "9cecc1d4669ee8af2ca727a5d8cde10cd8b2d7cc"
+    },
+    "notice_scan_complete": true
+  },
+  "iiseppi/wlip-emulator": {
+    "captured_at": "2026-10-21T23:51:26.659821+00:00",
+    "items": {
+      "8": {
+        "title": "Emulate serial console",
+        "url": "https://github.com/iiseppi/wlip-emulator/issues/8",
+        "kind": "issue",
+        "digest": "dfc1930696c07426e9f89d2b9ac38e0043f16330f0c04bd1e18f9bea1331afb8"
+      }
+    },
+    "notices": {
+      "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
+    },
+    "notice_scan_complete": true
+  },
+  "livysdad27/tempestWS": {
+    "captured_at": "2026-10-21T23:51:28.109624+00:00",
+    "items": {
+      "17": {
+        "title": "does driver use rapid wind packets or obs_st?",
+        "url": "https://github.com/livysdad27/tempestWS/issues/17",
+        "kind": "issue",
+        "digest": "bd73a90ef70b5b409bef398775c4dbf828e1a3f6c7191d64b78b5f971e19ab18"
+      },
+      "12": {
+        "title": "Mismatch of rain units?",
+        "url": "https://github.com/livysdad27/tempestWS/issues/12",
+        "kind": "issue",
+        "digest": "26e9c76364152e88d95abce7962c9e1ab1be9ad1ddb85a7c9561ab583ebbb911"
+      }
+    },
+    "notices": {
+      "LICENSE": "53d1f3d01864c35841739c55aeba9700657627b7"
+    },
+    "notice_scan_complete": true
+  },
+  "matthewwall/weewx-netatmo": {
+    "captured_at": "2026-10-21T23:51:33.505400+00:00",
+    "items": {
+      "25": {
+        "title": "Netatmo driver doesn't seem to be working with weewx 5.0",
+        "url": "https://github.com/matthewwall/weewx-netatmo/issues/25",
+        "kind": "issue",
+        "digest": "001c5c4558ebb6169cbc332b1667180ba58706baa3cd1b4991aa2bb5cdefe439"
+      },
+      "24": {
+        "title": " HTTP Error 400:",
+        "url": "https://github.com/matthewwall/weewx-netatmo/issues/24",
+        "kind": "issue",
+        "digest": "2f68830b60092f2a8d6a219354bc511604cf60a52742f35635b3dd4af5acd71a"
+      },
+      "22": {
+        "title": "Configure shows \"?\" for netatmo driver",
+        "url": "https://github.com/matthewwall/weewx-netatmo/issues/22",
+        "kind": "issue",
+        "digest": "c03d8bf035d97736c5bfdaf39db815ef4d7b833d8c46a459e1af0792dd5a0c41"
+      },
+      "21": {
+        "title": "netatmo driver don't work anymore",
+        "url": "https://github.com/matthewwall/weewx-netatmo/issues/21",
+        "kind": "issue",
+        "digest": "8cbaf3e38a3630e5d581e5d5afce1f012e76c8f98031782da02c3fd4f1b2ab69"
+      },
+      "20": {
+        "title": "netatmo-client: exception in netatmo-client: 'time_utc'",
+        "url": "https://github.com/matthewwall/weewx-netatmo/pull/20",
+        "kind": "PR",
+        "digest": "1e01bfb5596c3ec3ee7f1883b861400637d8c029a4796d7cfd37c237ede4af16"
+      },
+      "18": {
+        "title": "Inconsistent rain data",
+        "url": "https://github.com/matthewwall/weewx-netatmo/issues/18",
+        "kind": "issue",
+        "digest": "6113cefd5e3312eaea8e57ef82ac3336d9a452e3d03ddfafef592390de07b7ef"
+      },
+      "17": {
+        "title": "Help to get all Netatmo info readings in skins etc? ",
+        "url": "https://github.com/matthewwall/weewx-netatmo/issues/17",
+        "kind": "issue",
+        "digest": "65d113a131e1ce8db81e13cc79c2de46f4ade6c86ca4869f15abcdda50121517"
+      },
+      "15": {
+        "title": "Doesn't work on WeeWX 4.0.0",
+        "url": "https://github.com/matthewwall/weewx-netatmo/issues/15",
+        "kind": "issue",
+        "digest": "9c659853ebe101bff25b5f230759fc1ad3a486b37031580cd6697c4cd8e25090"
+      },
+      "13": {
+        "title": "missing some of the data",
+        "url": "https://github.com/matthewwall/weewx-netatmo/issues/13",
+        "kind": "issue",
+        "digest": "d3deca6fd2f7667208d3bd7fdebfba56f2e32f6bd66239fd6addf69a7ef35456"
+      },
+      "12": {
+        "title": "WeeWX rain accumulation reporting differs from Netatmo rainfall reporting",
+        "url": "https://github.com/matthewwall/weewx-netatmo/issues/12",
+        "kind": "issue",
+        "digest": "3e54f11fccd25c3d93217e1e130ad1f13cb9643924b9a3204ff454319d873d1b"
+      },
+      "11": {
+        "title": "netatmo: netatmo-client: failed attempt 1 of 5 to get data: HTTP Error 400 - # in password",
+        "url": "https://github.com/matthewwall/weewx-netatmo/issues/11",
+        "kind": "issue",
+        "digest": "50953cce6cc14f440330997c766e012cd10803949fcc6e21c6752e219375fe63"
+      }
+    },
+    "notices": {
+      "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
+    },
+    "notice_scan_complete": true
+  },
+  "open-astro/weewx-conditions": {
+    "captured_at": "2026-10-21T23:51:27.785090+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
+    },
+    "notice_scan_complete": true
+  },
+  "roe-dl/weathericons": {
+    "captured_at": "2026-10-21T23:51:29.077556+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
+    },
+    "notice_scan_complete": true
+  },
+  "roe-dl/weewx-GTS": {
+    "captured_at": "2026-10-21T23:51:29.163933+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
+    },
+    "notice_scan_complete": true
+  },
+  "roe-dl/weewx-airQ": {
+    "captured_at": "2026-10-21T23:51:30.231585+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
+    },
+    "notice_scan_complete": true
+  },
+  "thomaslehmann1234/datenerfassung-ortsnetz-auslastung": {
+    "captured_at": "2026-10-21T23:51:36.057594+00:00",
+    "items": {
+      "33": {
+        "title": "Beispiel-Code f\u00fcr Smartmeter Typ EMU Professional 3/75 TCP/IP 3-phase energymeter 202494 M23 1259",
+        "url": "https://github.com/thomaslehmann1234/datenerfassung-ortsnetz-auslastung/issues/33",
+        "kind": "issue",
+        "digest": "979a31ff7a8d9a8c461d3fcf9dbe9ae4d0c88cb755417e5061ddb490059e8662"
+      },
+      "32": {
+        "title": "FHEM-Integration hinzugef\u00fcgt",
+        "url": "https://github.com/thomaslehmann1234/datenerfassung-ortsnetz-auslastung/pull/32",
+        "kind": "PR",
+        "digest": "3cc961eb216b97fcd9db607fd4fc400d25ab5e6299e1ca093507ac0f6076d5d2"
+      },
+      "30": {
+        "title": "HA: Umgang mit < 3 Phasen (BKW)",
+        "url": "https://github.com/thomaslehmann1234/datenerfassung-ortsnetz-auslastung/issues/30",
+        "kind": "issue",
+        "digest": "27e5ecd2f10c0cb61e18dc72df333b80b1ad85f4289164298c196573f181ba02"
+      },
+      "29": {
+        "title": "iobroker script",
+        "url": "https://github.com/thomaslehmann1234/datenerfassung-ortsnetz-auslastung/issues/29",
+        "kind": "issue",
+        "digest": "208f688cd8c1fcc46cef2552ae620397cfb900b44b671a5254a7d97c22f51396"
+      },
+      "16": {
+        "title": "Add SAX Smartmeter integration",
+        "url": "https://github.com/thomaslehmann1234/datenerfassung-ortsnetz-auslastung/pull/16",
+        "kind": "PR",
+        "digest": "2012f11a1a15a4590f377651512f25c7f24d55d32cc190edb617e4d1da72bd6b"
+      },
+      "14": {
+        "title": "Python Script f\u00fcr SAX-Speicher Smartmeter ADL400",
+        "url": "https://github.com/thomaslehmann1234/datenerfassung-ortsnetz-auslastung/issues/14",
+        "kind": "issue",
+        "digest": "f2480a94baa88ef1abf37c8843658a2508d86ac66aabf352bf0490ac2880208d"
+      },
+      "5": {
+        "title": "Shellscript f\u00fcr usb",
+        "url": "https://github.com/thomaslehmann1234/datenerfassung-ortsnetz-auslastung/issues/5",
+        "kind": "issue",
+        "digest": "c436356e94aa9af7bac224db08c3f48b34bab69322b5371d7d418c91c4dcc251"
+      }
+    },
+    "notices": {
+      "LICENSE": "2ebf864e9a2db48f552cb1c9f00e0ff0c03e5db6"
+    },
+    "notice_scan_complete": true
+  },
+  "tkeffer/filepile": {
+    "captured_at": "2026-10-21T23:51:30.265522+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE.txt": "0a041280bd00a9d068f503b8ee7ce35214bd24a1"
+    },
+    "notice_scan_complete": true
+  },
+  "tkeffer/import-wlk": {
+    "captured_at": "2026-10-21T23:51:31.272881+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE.txt": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
+    },
+    "notice_scan_complete": true
+  },
+  "tkeffer/weewx-xaggs": {
+    "captured_at": "2026-10-21T23:51:31.637004+00:00",
+    "items": {
+      "4": {
+        "title": "Support `sum`",
+        "url": "https://github.com/tkeffer/weewx-xaggs/issues/4",
+        "kind": "issue",
+        "digest": "d5ec8e6b66b84fbcf1ee9df6ec35ed082154d47ee5cb090c712bf86b21967122"
+      }
+    },
+    "notices": {
+      "LICENSE.txt": "0a041280bd00a9d068f503b8ee7ce35214bd24a1"
+    },
+    "notice_scan_complete": true
+  },
+  "weewx-packages/weewx-livedata": {
+    "captured_at": "2026-10-21T23:51:32.335295+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE.txt": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
+    },
+    "notice_scan_complete": true
+  },
+  "ziti/weewx-rtsp-image": {
+    "captured_at": "2026-10-21T23:51:34.952847+00:00",
+    "items": {
+      "12": {
+        "title": "chore: update ruff requirement from >=0.17.0 to >=0.17.1",
+        "url": "https://github.com/ziti/weewx-rtsp-image/pull/12",
+        "kind": "PR",
+        "digest": "5d2975db803e3718eead4679adaaf2db8df3a43e01e3aa9952a774024ed26869"
+      }
+    },
+    "notices": {
+      "LICENSE": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
+    },
+    "notice_scan_complete": true
+  },
+  "ziti/weewx-sftp": {
+    "captured_at": "2026-10-21T23:51:33.390795+00:00",
+    "items": {},
+    "notices": {
+      "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
+    },
+    "notice_scan_complete": true
+  },
+  "FColinet/WeeWX-ModbusTCP-driver": {
+    "captured_at": "2026-10-21T23:51:27.828547+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE": "8e48f0c4eda2e3e7a6e3ab31b62921af799d7607"
+    },
+    "notice_scan_complete": true
+  },
+  "Millardiang/weewx-ecowitt_console_emulator": {
+    "captured_at": "2026-10-21T23:51:28.035059+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
+    },
+    "notice_scan_complete": true
+  },
+  "WernerKr/davisconsoleapi": {
+    "captured_at": "2026-10-21T23:51:27.944475+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7",
+      "skins/console/font/OFL.txt": "5354775cacc5bf99ba97808a3982bfdf2ef51d68",
+      "skins/console/font/license.txt": "b7c850f5c8ccedb3528a595583f4add9ecff8d7d"
+    },
+    "notice_scan_complete": true
+  },
+  "chaunceygardiner/weewx-airgradient": {
+    "captured_at": "2026-10-21T23:51:27.990919+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7",
+      "skins/airgradient/font/license.txt": "b424dc41ae7d91a7f23faad7752127e2e58d4415"
+    },
+    "notice_scan_complete": true
+  },
+  "chaunceygardiner/weewx-celestial": {
+    "captured_at": "2026-10-21T23:51:28.841321+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
+    },
+    "notice_scan_complete": true
+  },
+  "chaunceygardiner/weewx-forecast": {
+    "captured_at": "2026-10-21T23:51:29.446877+00:00",
+    "items": {
+      "2": {
+        "title": "Endopint problems",
+        "url": "https://github.com/chaunceygardiner/weewx-forecast/issues/2",
+        "kind": "issue",
+        "digest": "1c029c36aed6153965ed09b2cb7bdbe4b40f4d74c158adcb0da81a1d5c276ef1"
+      }
+    },
+    "notices": {
+      "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
+    },
+    "notice_scan_complete": true
+  },
+  "chaunceygardiner/weewx-loopdata": {
+    "captured_at": "2026-10-21T23:51:29.169921+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
+    },
+    "notice_scan_complete": true
+  },
+  "chaunceygardiner/weewx-xtide": {
+    "captured_at": "2026-10-21T23:51:29.044085+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
+    },
+    "notice_scan_complete": true
+  },
+  "evilbunny2008/SinceLastArchiveAccumulator": {
+    "captured_at": "2026-10-21T23:51:29.861456+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
+    },
+    "notice_scan_complete": true
+  },
+  "glennmckechnie/weewx-owfs": {
+    "captured_at": "2026-10-21T23:51:30.041473+00:00",
+    "items": {},
+    "notices": {},
+    "notice_scan_complete": true
+  },
+  "matthewwall/weewx-interceptor": {
+    "captured_at": "2026-10-21T23:51:53.708009+00:00",
+    "items": {
+      "128": {
+        "title": "Fix Python 3 bytes/str TypeError in sniff mode",
+        "url": "https://github.com/matthewwall/weewx-interceptor/pull/128",
+        "kind": "PR",
+        "digest": "4762a3c346df7374547db834bbcde921ad828fdf9d4d0d6534a35f3f7bfd3688"
+      },
+      "127": {
+        "title": "Successfully getting Ambient Weather WS-1965 to work",
+        "url": "https://github.com/matthewwall/weewx-interceptor/issues/127",
+        "kind": "issue",
+        "digest": "ba48a4c3f97b23a01b52e80abc70e4d538550f590dff71c8c85dffb0bccc7be8"
+      },
+      "125": {
+        "title": "Update documentation for WeeWX 5.0+",
+        "url": "https://github.com/matthewwall/weewx-interceptor/pull/125",
+        "kind": "PR",
+        "digest": "01d4b73d3a8c46d115859080340a7ce4eaf03f4cd3a4c663f1024140f7130439"
+      },
+      "123": {
+        "title": "Supporting Bresser 7-in-1 WiFi",
+        "url": "https://github.com/matthewwall/weewx-interceptor/issues/123",
+        "kind": "issue",
+        "digest": "20e629120f0fcb431f79752cd4d588d603f946f37a01e9f278cf4e24253e0774"
+      },
+      "122": {
+        "title": "processing PASSWORD field of packets",
+        "url": "https://github.com/matthewwall/weewx-interceptor/issues/122",
+        "kind": "issue",
+        "digest": "6b25db14d521896c7db0797f610bec249463df18e6df4876639a08d9733cdea9"
+      },
+      "121": {
+        "title": "Add mapping used by Bresser weather sensors",
+        "url": "https://github.com/matthewwall/weewx-interceptor/pull/121",
+        "kind": "PR",
+        "digest": "cb56d6dac6a1a15f2cbed0cf391831e42555b595be8386769e5ba9209d596874"
+      },
+      "120": {
+        "title": "v5 weewx python3 documentation updates",
+        "url": "https://github.com/matthewwall/weewx-interceptor/issues/120",
+        "kind": "issue",
+        "digest": "f16e359d24e5ec8483f6bf5661aba5c9ef6f62570a67173bc707ca74457f56cf"
+      },
+      "118": {
+        "title": "dictionary update sequence element #29 has length 1; 2 is required",
+        "url": "https://github.com/matthewwall/weewx-interceptor/issues/118",
+        "kind": "issue",
+        "digest": "f7ed3fc10784c5c3b4b79a2f16b57353b038e44bf7c62d1958f8db9f2e0f3a5e"
+      },
+      "117": {
+        "title": "Debug mode:  TypeError: ord() expected string of length 1, but int found",
+        "url": "https://github.com/matthewwall/weewx-interceptor/issues/117",
+        "kind": "issue",
+        "digest": "daf0e3739ec7bb61b5e6c063e67596b72726c0c66ed54545ce15bddd7751a590"
+      },
+      "116": {
+        "title": "MacOS issue running driver directly",
+        "url": "https://github.com/matthewwall/weewx-interceptor/issues/116",
+        "kind": "issue",
+        "digest": "a99b82301ccd9a8de060ec08b9dbccd1f4c6c4f727425f7713ba814c85b886ac"
+      },
+      "115": {
+        "title": "Support for proweatherlive (PWL)?",
+        "url": "https://github.com/matthewwall/weewx-interceptor/issues/115",
+        "kind": "issue",
+        "digest": "51867a8cfefc1c48219c6c0683f3c69a6096771727f2a6db1ba8f9ca492161d4"
+      },
+      "114": {
+        "title": "Setup example for WSView missing path details.",
+        "url": "https://github.com/matthewwall/weewx-interceptor/issues/114",
+        "kind": "issue",
+        "digest": "d3675357590767d5489dd7b23fa3d26de06f8400e92411c9c7b46933b1e6378e"
+      },
+      "112": {
+        "title": "info message:  weewx[1455] INFO user.interceptor: unrecognized parameter b'PASSKEY=<sometext>",
+        "url": "https://github.com/matthewwall/weewx-interceptor/issues/112",
+        "kind": "issue",
+        "digest": "9db4e0c9813e1382217c33052927ce006a500b467b114a9cf4f37084603029cc"
+      },
+      "111": {
+        "title": "separate log in interceptor extension ",
+        "url": "https://github.com/matthewwall/weewx-interceptor/issues/111",
+        "kind": "issue",
+        "digest": "bc69ddd3037d995287083b0f3a3ac39c5530a223a3e602f8be6058f3813fc062"
+      },
+      "109": {
+        "title": "Interceptor in listen mode for AmbientWeather WS-2902C only currently works with THIS tweak",
+        "url": "https://github.com/matthewwall/weewx-interceptor/issues/109",
+        "kind": "issue",
+        "digest": "b8a2418678c7381c3e78b906a5d961a2af49633eec4d7c4e0bfed301912dcaf9"
+      },
+      "108": {
+        "title": "more unrecognized parameter and missing sensors",
+        "url": "https://github.com/matthewwall/weewx-interceptor/issues/108",
+        "kind": "issue",
+        "digest": "115f61d1ed190f573d04d867818478aadf2ae05ab59a489154af4b1bf5fa9b40"
+      },
+      "107": {
+        "title": "ModuleNotFoundError: No module named 'pcap'",
+        "url": "https://github.com/matthewwall/weewx-interceptor/issues/107",
+        "kind": "issue",
+        "digest": "c6ebe9b9231429ea47cb4e4edd36b1d27536cd901063a02c065846c7bb1bce38"
+      },
+      "106": {
+        "title": "rain data missed. Propose to consider yearly-monthly-weekly-daily",
+        "url": "https://github.com/matthewwall/weewx-interceptor/issues/106",
+        "kind": "issue",
+        "digest": "d5505a4f08289b785b3493197d04bcd88a74f168f9bc8bd96e78c3500aae2331"
+      },
+      "105": {
+        "title": "Forward onto other ecowitt handler",
+        "url": "https://github.com/matthewwall/weewx-interceptor/issues/105",
+        "kind": "issue",
+        "digest": "ac22d841b00cf36b4bc6e4fba6b65e58ea4bf7deb158a994f485cee156a1170b"
+      },
+      "104": {
+        "title": "Interceptor stopped working intermittently - empty queue",
+        "url": "https://github.com/matthewwall/weewx-interceptor/issues/104",
+        "kind": "issue",
+        "digest": "cff1b7fbc6f08408c06b3935f29315d7ce3c86bea656dc9a3a4f07c475285df8"
+      },
+      "103": {
+        "title": "11 unrecognized parameters in listener mode",
+        "url": "https://github.com/matthewwall/weewx-interceptor/issues/103",
+        "kind": "issue",
+        "digest": "054c48191bd4047dbf0cb53581aad6b42d1e4464e4b0d0af0f5d4a98c5fbf268"
+      },
+      "102": {
+        "title": "Two programs; only one customize screen in \"WSView\"",
+        "url": "https://github.com/matthewwall/weewx-interceptor/issues/102",
+        "kind": "issue",
+        "digest": "56d8256ffdc2f93ef85a24b6e87b8607231f640209913c39ae7541d33d6e1b07"
+      },
+      "101": {
+        "title": "UnicodeDecodeError: 'ascii' codec can't decode byte 0xff in position 0: ordinal not in range(128)",
+        "url": "https://github.com/matthewwall/weewx-interceptor/issues/101",
+        "kind": "issue",
+        "digest": "7be24e8c012ad1c2f184a676a89056971459ca7266b1e8afaf2d8c41c14caedd"
+      },
+      "100": {
+        "title": "Acurite Atlas hardcodes DNS / encrypts data to myacurite.com",
+        "url": "https://github.com/matthewwall/weewx-interceptor/issues/100",
+        "kind": "issue",
+        "digest": "b5bf4bee6ff2a9f52884e82bb1e228dc9f0b2e3cc254468b2296b834e84280c4"
+      },
+      "99": {
+        "title": "Added support for WH57 sensor",
+        "url": "https://github.com/matthewwall/weewx-interceptor/pull/99",
+        "kind": "PR",
+        "digest": "9540381b4a78ca84aa6c4665b91650b82a8c4da853ce67957ef6d0c447584396"
+      },
+      "98": {
+        "title": "Ecowitt WH45 co2 pm25 pm10 temp humi 5-in-1 missing/unrecognised parameters",
+        "url": "https://github.com/matthewwall/weewx-interceptor/issues/98",
+        "kind": "issue",
+        "digest": "a696a9725c0d90407247d6d7277ff75046ff10e5e0b1e0d175ac61a9803299fb"
+      },
+      "95": {
+        "title": "help question",
+        "url": "https://github.com/matthewwall/weewx-interceptor/issues/95",
+        "kind": "issue",
+        "digest": "f8871800364ca408fda0ae48a754b095cc8f4f22d3d9a95c6dd3b91ab7c862c7"
+      },
+      "94": {
+        "title": "How to map the battery status values to web console?",
+        "url": "https://github.com/matthewwall/weewx-interceptor/issues/94",
+        "kind": "issue",
+        "digest": "b3bb49d6c94de72031f32769bfe1b75990a0a9377553512abae762f6fb7810ae"
+      },
+      "92": {
+        "title": "Readme suggestion: Raspberry pi needs another package",
+        "url": "https://github.com/matthewwall/weewx-interceptor/issues/92",
+        "kind": "issue",
+        "digest": "cd060558d0cf1fea9358a487e5b82af92f77033da56b105810923f034b2b91d9"
+      },
+      "91": {
+        "title": "lacrosse gw1000u unknown packet type",
+        "url": "https://github.com/matthewwall/weewx-interceptor/issues/91",
+        "kind": "issue",
+        "digest": "50469be9c9386ec68103989fa67e767b2fd846bd0120856100d0f27ad30dbf66"
+      },
+      "90": {
+        "title": "TypeError: ord() expected string of length 1, but int found",
+        "url": "https://github.com/matthewwall/weewx-interceptor/issues/90",
+        "kind": "issue",
+        "digest": "b22f09bb98ebebbc2f226e3f5ea93dcbb6db5a8a93551d24b5c73d4b2167aafd"
+      },
+      "89": {
+        "title": "smarthub application version appears \"???\" and no data ",
+        "url": "https://github.com/matthewwall/weewx-interceptor/issues/89",
+        "kind": "issue",
+        "digest": "7574ede7352042b4aa56436247ca9a4699c8d7a3151389de1d5750d416043858"
+      },
+      "88": {
+        "title": "Fresh install of weewx, and weewx-interceptor not finding pcap",
+        "url": "https://github.com/matthewwall/weewx-interceptor/issues/88",
+        "kind": "issue",
+        "digest": "3e7454d50583b1ee8c3d9244c54d5ef9e943e8216163ac069fa7cc52285db987"
+      },
+      "87": {
+        "title": "Processing stops - Incorrect Date\\Time from Station",
+        "url": "https://github.com/matthewwall/weewx-interceptor/issues/87",
+        "kind": "issue",
+        "digest": "4ece409fa257b044fc25f8656d3da85715302795b366ee0585bafd5f2ae1beb7"
+      },
+      "86": {
+        "title": "help mapping weathersleuths sensors",
+        "url": "https://github.com/matthewwall/weewx-interceptor/issues/86",
+        "kind": "issue",
+        "digest": "34d499f5bef7b31d94f24f9f74ad87978c34b0a8de3ef111e3b7e46c83924801"
+      },
+      "85": {
+        "title": "Wu-client not mapping data ",
+        "url": "https://github.com/matthewwall/weewx-interceptor/issues/85",
+        "kind": "issue",
+        "digest": "c8d343f32f4bc9e8fcdac06aeb3e0833addfd7a80d635b4e151fea54517d5ff0"
+      },
+      "84": {
+        "title": "Trying to add a second rain sensor",
+        "url": "https://github.com/matthewwall/weewx-interceptor/issues/84",
+        "kind": "issue",
+        "digest": "d241c63fd678a5f1938861c3b6ae9a12c6256f96e7bd2193b42f69b09fd3aff7"
+      },
+      "83": {
+        "title": "Parse failed",
+        "url": "https://github.com/matthewwall/weewx-interceptor/issues/83",
+        "kind": "issue",
+        "digest": "7fbc7c8e93ed159f416f7fe8989cfa78ecfaf1575d19f2c568ec6f9cf7be728e"
+      },
+      "82": {
+        "title": "wu-client messages not parsed ",
+        "url": "https://github.com/matthewwall/weewx-interceptor/issues/82",
+        "kind": "issue",
+        "digest": "bf965b5ffd3be9c5ae8cfa3090977eb48d933d14e06fab41d7d4db77e1198626"
+      },
+      "80": {
+        "title": "Ignored and unrecognized parameters of Ecowitt GW1000",
+        "url": "https://github.com/matthewwall/weewx-interceptor/issues/80",
+        "kind": "issue",
+        "digest": "f70c31a76fe769578f73cd85466d9a6557c18436a21b0e021b2c4368251d5eae"
+      },
+      "79": {
+        "title": "Version 0.54b not in GitHub repository",
+        "url": "https://github.com/matthewwall/weewx-interceptor/issues/79",
+        "kind": "issue",
+        "digest": "a01a7c30f9817029a9f0eb9ed34e43fd6f3a0fa2481c27f68270a90b49ce5f81"
+      },
+      "78": {
+        "title": "reoccuring entry in log",
+        "url": "https://github.com/matthewwall/weewx-interceptor/issues/78",
+        "kind": "issue",
+        "digest": "9ca1cd165e5d98b3d1f864ece52d65c8e8449dbf3a126490762e25f54e396253"
+      },
+      "77": {
+        "title": "Update interceptor.py - ecowitt client return local utc_offset instead of static value of -18000",
+        "url": "https://github.com/matthewwall/weewx-interceptor/pull/77",
+        "kind": "PR",
+        "digest": "5df7a5b7cff154c0afb79b26c6b6f1f6eaac6615e056d329b92ed92956ed3683"
+      },
+      "74": {
+        "title": "No result from Frogitt WH3000SE",
+        "url": "https://github.com/matthewwall/weewx-interceptor/issues/74",
+        "kind": "issue",
+        "digest": "becf53eed83cf1c6d0bc037585dd3c97c30b6080bc93756544fad56a39da7a2f"
+      },
+      "73": {
+        "title": "VLAN",
+        "url": "https://github.com/matthewwall/weewx-interceptor/issues/73",
+        "kind": "issue",
+        "digest": "3959037200c813207bba627260d60314351d1630329d98e4872629eb9e9da96c"
+      },
+      "72": {
+        "title": "Add support for parsing WH57 (lightning) data for the EcowittClient",
+        "url": "https://github.com/matthewwall/weewx-interceptor/pull/72",
+        "kind": "PR",
+        "digest": "0ce8c6ccd168e72d0f8e89e125df47f0fef0eaebc13d8462a4086f1703252c00"
+      },
+      "71": {
+        "title": "WH2650 and weewx interceptor",
+        "url": "https://github.com/matthewwall/weewx-interceptor/issues/71",
+        "kind": "issue",
+        "digest": "7a7d852c7e123a5c84a270ae9d8e853d386a5baba4d6d26c64e4147bcb18d70c"
+      },
+      "70": {
+        "title": "Import of driver failed: in method 'pcapObject_open_live', argument 2 of type 'char *' (<type 'exceptions.TypeError'>)",
+        "url": "https://github.com/matthewwall/weewx-interceptor/issues/70",
+        "kind": "issue",
+        "digest": "76266290f9ff1890080ee445466c73f995a7b86d52bc740752ce4533a71d2039"
+      },
+      "69": {
+        "title": "Ecowitt: unrecognized parameters to add (WH55, WH57)",
+        "url": "https://github.com/matthewwall/weewx-interceptor/issues/69",
+        "kind": "issue",
+        "digest": "d0790a8b18dc554d61b9716a8c2f83e1f3e1e7f497c59fba363418ffd5a7e6a9"
+      },
+      "68": {
+        "title": "info 'totalrainin' for rain_total",
+        "url": "https://github.com/matthewwall/weewx-interceptor/issues/68",
+        "kind": "issue",
+        "digest": "7c6917840483ed4afcdad134b8f2e9e48d423de562dbf9f733102ae3f65458b2"
+      },
+      "67": {
+        "title": "unrecognized parameter windgustmph accurite bridge ",
+        "url": "https://github.com/matthewwall/weewx-interceptor/issues/67",
+        "kind": "issue",
+        "digest": "b7b540abd77fc644876f2f9dbe965bf0ed913c804c46acd838b800a13074abb5"
+      },
+      "66": {
+        "title": "Wu-client not correctly mapping rain data",
+        "url": "https://github.com/matthewwall/weewx-interceptor/issues/66",
+        "kind": "issue",
+        "digest": "1e6a75e68e55790d9138b0067d5c805baa1ba64266d766df13893435fb8a4f93"
+      },
+      "53": {
+        "title": "Packets processed in not correct order ",
+        "url": "https://github.com/matthewwall/weewx-interceptor/issues/53",
+        "kind": "issue",
+        "digest": "83f510d741e787a22b3cf012299d259ff523fdb71dabd69adc48a45c551fcc14"
+      }
+    },
+    "notices": {
+      "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
+    },
+    "notice_scan_complete": true
+  },
+  "matthewwall/weewx-tfrc": {
+    "captured_at": "2026-10-21T23:51:30.407860+00:00",
+    "items": {},
+    "notices": {
+      "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
+    },
+    "notice_scan_complete": true
+  },
+  "matthewwall/weewx-vedirect": {
+    "captured_at": "2026-10-21T23:51:30.803840+00:00",
+    "items": {},
+    "notices": {
+      "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
+    },
+    "notice_scan_complete": true
+  },
+  "raymondelooff/weewx-pusher": {
+    "captured_at": "2026-10-21T23:51:30.981920+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE": "9cecc1d4669ee8af2ca727a5d8cde10cd8b2d7cc"
+    },
+    "notice_scan_complete": true
+  },
+  "roe-dl/weewx-rwsa": {
+    "captured_at": "2026-10-21T23:51:31.344769+00:00",
+    "items": {},
+    "notices": {
+      "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
+    },
+    "notice_scan_complete": true
+  },
+  "roe-dl/weewx-snmp": {
+    "captured_at": "2026-10-21T23:51:31.713477+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
+    },
+    "notice_scan_complete": true
+  },
+  "tkeffer/weewx-nmea-xdr": {
+    "captured_at": "2026-10-21T23:51:31.933058+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE.txt": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
+    },
+    "notice_scan_complete": true
+  },
+  "tkeffer/weewx-wmr89": {
+    "captured_at": "2026-10-21T23:51:32.193680+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE.txt": "0a041280bd00a9d068f503b8ee7ce35214bd24a1"
+    },
+    "notice_scan_complete": true
+  },
+  "w4kus/weewx-weepe": {
+    "captured_at": "2026-10-21T23:51:32.719661+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE.txt": "86648b6bf93b72e747e9bc2239cb8ac5b890b05c"
+    },
+    "notice_scan_complete": true
+  },
+  "weewx-contrib/weewx-NovaSDS011": {
+    "captured_at": "2026-10-21T23:51:34.592479+00:00",
+    "items": {
+      "1": {
+        "title": "Add local Sensor.Community HTTP input",
+        "url": "https://github.com/weewx-contrib/weewx-NovaSDS011/pull/1",
+        "kind": "PR",
+        "digest": "830929e2d2f061c276273420ef441abd7e49e8901aa59d66116c1fd622d95590"
+      }
+    },
+    "notices": {
+      "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
+    },
+    "notice_scan_complete": true
+  },
+  "weewx-extensions/aqi-xtype": {
+    "captured_at": "2026-10-21T23:51:34.004432+00:00",
+    "items": {
+      "3": {
+        "title": "Support retrieving series data for nowcast algorithm",
+        "url": "https://github.com/weewx-extensions/aqi-xtype/issues/3",
+        "kind": "issue",
+        "digest": "969000ef41aeb996910d1e62cd64164a3634c017a2b160f7ecc40614c58751b0"
+      },
+      "2": {
+        "title": "Support aggregation (min, max, average, etc.) for nowcast algorithm",
+        "url": "https://github.com/weewx-extensions/aqi-xtype/issues/2",
+        "kind": "issue",
+        "digest": "1e223a84284912d1031c348d252b95c52ff20f7b413f95c9a7604e299cfe8a34"
+      },
+      "1": {
+        "title": "Support series of aggregation (min for the day over a month period) for the nowcast algorithm",
+        "url": "https://github.com/weewx-extensions/aqi-xtype/issues/1",
+        "kind": "issue",
+        "digest": "79458a5ee23ab7cd7eec6f4f7c71700f4c4b600d9b2a80c2eed80d236c818e4d"
+      }
+    },
+    "notices": {
+      "LICENSE": "0ad25db4bd1d86c452db3f9602ccdbe172438f52"
+    },
+    "notice_scan_complete": true
+  },
+  "Cosmospacedog/Gill-WeeWX": {
+    "captured_at": "2026-10-21T23:51:26.401132+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE": "52d26ec8f48a0ee7bd2b373be19fcef28e9deddc"
+    },
+    "notice_scan_complete": true
+  },
+  "Millardiang/weewx-divumwx": {
+    "captured_at": "2026-10-21T23:51:26.506034+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7",
+      "divumwx/css/fonts/OFL.txt": "5bb330e992aa09bb1c4bb5afbfd39b2928c30e06",
+      "divumwx/css/fonts/READ THIS.txt": "3d5f383245d1fc6e4ffdc9ee3c50a3023300220b",
+      "license.txt": "d0279c997bc34cd2ee13597eabb5b6e729c00fc4"
+    },
+    "notice_scan_complete": true
+  },
+  "chaunceygardiner/weewx-airlink": {
+    "captured_at": "2026-10-21T23:51:26.287355+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7",
+      "skins/airlink/font/license.txt": "b424dc41ae7d91a7f23faad7752127e2e58d4415"
+    },
+    "notice_scan_complete": true
+  },
+  "chaunceygardiner/weewx-ip100": {
+    "captured_at": "2026-10-21T23:51:26.384288+00:00",
+    "items": {},
+    "notices": {
+      "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
+    },
+    "notice_scan_complete": true
+  },
+  "chaunceygardiner/weewx-skyfield": {
+    "captured_at": "2026-10-21T23:51:27.353830+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
+    },
+    "notice_scan_complete": true
+  },
+  "ktrue/weewx-saratoga": {
+    "captured_at": "2026-10-21T23:51:29.268441+00:00",
+    "items": {
+      "1": {
+        "title": "Update WEEWXtags.php.tmpl with WEEWX's indoor humidity into WEEWXtags.php corresponding indoorhumidity",
+        "url": "https://github.com/ktrue/weewx-saratoga/pull/1",
+        "kind": "PR",
+        "digest": "c4154be94f38756a50153dfa93b0b5c82becc3033c728afcf1f63a361c660759"
+      }
+    },
+    "notices": {
+      "LICENSE": "0ad25db4bd1d86c452db3f9602ccdbe172438f52",
+      "skins/WEEWXtags/font/LICENSE.txt": "d645695673349e3947e8e5ae42332d0ac3164cd7"
+    },
+    "notice_scan_complete": true
+  },
+  "matthewwall/weewx-as3935": {
+    "captured_at": "2026-10-21T23:51:27.425862+00:00",
+    "items": {},
+    "notices": {
+      "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
+    },
+    "notice_scan_complete": true
+  },
+  "matthewwall/weewx-emoncms": {
+    "captured_at": "2026-10-21T23:51:27.478702+00:00",
+    "items": {},
+    "notices": {},
+    "notice_scan_complete": true
+  },
+  "matthewwall/weewx-thingspeak": {
+    "captured_at": "2026-10-21T23:51:28.259364+00:00",
+    "items": {},
+    "notices": {},
+    "notice_scan_complete": true
+  },
+  "matthewwall/weewx-wbug": {
+    "captured_at": "2026-10-21T23:51:28.321242+00:00",
+    "items": {},
+    "notices": {},
+    "notice_scan_complete": true
+  },
+  "matthewwall/weewx-wetter": {
+    "captured_at": "2026-10-21T23:51:28.369680+00:00",
+    "items": {},
+    "notices": {},
+    "notice_scan_complete": true
+  },
+  "open-astro/wp-weewx": {
+    "captured_at": "2026-10-21T23:51:29.322193+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE.md": "fb7bf50a4381735e6f539a2662af1d7a1bd66918"
+    },
+    "notice_scan_complete": true
+  },
+  "roe-dl/weewx-photovoltaics": {
+    "captured_at": "2026-10-21T23:51:29.344546+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
+    },
+    "notice_scan_complete": true
+  },
+  "roe-dl/weewx-sqlupload": {
+    "captured_at": "2026-10-21T23:51:29.310990+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
+    },
+    "notice_scan_complete": true
+  },
+  "roe-dl/weewx-wns": {
+    "captured_at": "2026-10-21T23:51:30.250310+00:00",
+    "items": {},
+    "notices": {
+      "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
+    },
+    "notice_scan_complete": true
+  },
+  "sbsrouteur/weewx-PiSenseHat": {
+    "captured_at": "2026-10-21T23:51:30.163115+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE": "6ff95fd9dde4899151c5df833cd6cc4f7b4335db"
+    },
+    "notice_scan_complete": true
+  },
+  "teeks99/weewx-notify": {
+    "captured_at": "2026-10-21T23:51:30.286708+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
+    },
+    "notice_scan_complete": true
+  },
+  "tkeffer/weewx-climate": {
+    "captured_at": "2026-10-21T23:51:30.416759+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE.txt": "0a041280bd00a9d068f503b8ee7ce35214bd24a1"
+    },
+    "notice_scan_complete": true
+  },
+  "tsoodla/weewx-luxtronik": {
+    "captured_at": "2026-10-21T23:51:31.029875+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
+    },
+    "notice_scan_complete": true
+  },
+  "weewx-extensions/pushover": {
+    "captured_at": "2026-10-21T23:51:31.597131+00:00",
+    "items": {
+      "1": {
+        "title": "Value",
+        "url": "https://github.com/weewx-extensions/pushover/issues/1",
+        "kind": "issue",
+        "digest": "9e63a3ee9846fc288e857e7541cadef5da3fd9c40124376eceeae17dbbae4aaf"
+      }
+    },
+    "notices": {
+      "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
+    },
+    "notice_scan_complete": true
+  },
+  "weewx-mqtt/publish": {
+    "captured_at": "2026-10-21T23:51:31.205215+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
+    },
+    "notice_scan_complete": true
+  }
+}
