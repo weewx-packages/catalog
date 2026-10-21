@@ -115,6 +115,96 @@
           "restart_required": true
         }
       ]
+    },
+    {
+      "id": "neowx-material",
+      "installer_name": "neowx-material",
+      "name": "NeoWX Material",
+      "description": "Material-style weather website with interactive charts and live observations.",
+      "types": [
+        "skin"
+      ],
+      "keywords": [
+        "neowx-material",
+        "skin",
+        "charts",
+        "weather"
+      ],
+      "homepage": "https://github.com/weewx-packages/neowx-material",
+      "releases": [
+        {
+          "version": "1.73.4",
+          "requires_python": ">=3.10",
+          "requires_weewx": ">=5,<6",
+          "archive": {
+            "url": "https://github.com/weewx-packages/catalog/releases/download/neowx-material/v1.73.4/neowx-material-1.73.4.zip",
+            "format": "zip",
+            "sha256": "5ffd2475c3656d5ef3fe3158c75c4109057dcac6292cfb61b2f673baecacca70"
+          },
+          "release_notes": "https://github.com/seehase/neowx-material/releases/tag/1.73.4",
+          "restart_required": true
+        }
+      ]
+    },
+    {
+      "id": "belchertown",
+      "installer_name": "Belchertown",
+      "name": "Belchertown",
+      "description": "Weather website with live observations, interactive charts and forecasts.",
+      "types": [
+        "skin"
+      ],
+      "keywords": [
+        "belchertown",
+        "skin",
+        "charts",
+        "weather"
+      ],
+      "homepage": "https://github.com/weewx-packages/weewx-belchertown",
+      "releases": [
+        {
+          "version": "3.0.0",
+          "requires_python": ">=3.10",
+          "requires_weewx": ">=5,<6",
+          "archive": {
+            "url": "https://github.com/weewx-packages/catalog/releases/download/belchertown/v3.0.0/belchertown-3.0.0.tar.gz",
+            "format": "tar",
+            "sha256": "25e7891b489e55a72a73ffc660c30f2ffceb069ced7dde9ee75853f75388a1af"
+          },
+          "release_notes": "https://github.com/poblabs/weewx-belchertown/releases/tag/weewx-belchertown-3.0.0",
+          "restart_required": true
+        }
+      ]
+    },
+    {
+      "id": "divumwx",
+      "installer_name": "divumwx",
+      "name": "DivumWX",
+      "description": "Live weather dashboard with charts, forecasts and astronomy pages. Requires requests and skyfield; installation asks for station settings.",
+      "types": [
+        "skin"
+      ],
+      "keywords": [
+        "divumwx",
+        "skin",
+        "charts",
+        "weather"
+      ],
+      "homepage": "https://github.com/weewx-packages/weewx-divumwx",
+      "releases": [
+        {
+          "version": "1.7.0",
+          "requires_python": ">=3.13.5",
+          "requires_weewx": ">=5.5,<6",
+          "archive": {
+            "url": "https://github.com/weewx-packages/catalog/releases/download/divumwx/v1.7.0/divumwx-1.7.0.zip",
+            "format": "zip",
+            "sha256": "4e4cbf293cc37b0c586fc2d3bd96ee15a4b1694d86aa90baa39aa136dd4ed4a3"
+          },
+          "release_notes": "https://github.com/Millardiang/weewx-divumwx/releases/tag/ver1.7.0",
+          "restart_required": true
+        }
+      ]
     }
   ]
 }
