@@ -79,6 +79,42 @@
           "restart_required": true
         }
       ]
+    },
+    {
+      "id": "rtldavis",
+      "installer_name": "rtldavis",
+      "name": "Davis RTL-SDR",
+      "description": "Receive Davis Vantage Pro, Pro2 and Vue wireless observations through RTL-SDR. Requires the separately built rtldavis receiver.",
+      "types": [
+        "driver"
+      ],
+      "keywords": [
+        "davis",
+        "vantage",
+        "pro2",
+        "vue",
+        "rtl-sdr",
+        "rtldavis",
+        "wireless",
+        "868",
+        "915",
+        "921"
+      ],
+      "homepage": "https://github.com/weewx-packages/weewx-rtldavis",
+      "releases": [
+        {
+          "version": "0.21.1",
+          "requires_python": ">=3.7",
+          "requires_weewx": ">=5,<6",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-rtldavis/releases/download/v0.21.1/weewx-rtldavis-0.21.1.zip",
+            "format": "zip",
+            "sha256": "bcb7eaa901ec3e9b9b8f73294c2e7036625e70e45d5f53385c7745d003e95bba"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-rtldavis/releases/tag/v0.21.1",
+          "restart_required": true
+        }
+      ]
     }
   ]
 }
