@@ -77,4 +77,5 @@ def test_relative_work_directory_and_station_failure(tmp_path, monkeypatch):
 
     monkeypatch.setattr(quality, 'command', command)
     _, result = quality.check(dict(fork='org/extension'), 'master', 'a' * 40, Path('relative'))
+    assert (tmp_path / 'relative/package.zip').is_file()
     assert result['status'] == 'error' and result['phase'] == 'station setup'
