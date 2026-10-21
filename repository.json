@@ -38,6 +38,47 @@
           "restart_required": true
         }
       ]
+    },
+    {
+      "id": "ecowitt-http-push",
+      "installer_name": "ecowitt",
+      "name": "Ecowitt HTTP Push",
+      "description": "Receive HTTP push uploads from Ecowitt gateways and consoles using the Ecowitt or Weather Underground custom-server protocol.",
+      "types": [
+        "driver"
+      ],
+      "keywords": [
+        "ecowitt",
+        "http",
+        "push",
+        "custom-server",
+        "weather-underground",
+        "fine-offset",
+        "gateway",
+        "gw1000",
+        "gw1100",
+        "gw2000",
+        "gw3000",
+        "hp2551",
+        "hp2561",
+        "wn34",
+        "wh52"
+      ],
+      "homepage": "https://github.com/weewx-packages/weewx-ecowitt-http-push",
+      "releases": [
+        {
+          "version": "0.3.2",
+          "requires_python": ">=3.7",
+          "requires_weewx": ">=5,<6",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-ecowitt-http-push/releases/download/v0.3.2/weewx-ecowitt-http-push-0.3.2.zip",
+            "format": "zip",
+            "sha256": "9609f5507c798957ee5e37d5c234f739c881e7890ee1717de7e16bbf695c2530"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-ecowitt-http-push/releases/tag/v0.3.2",
+          "restart_required": true
+        }
+      ]
     }
   ]
 }

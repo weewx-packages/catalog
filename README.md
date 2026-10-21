@@ -23,9 +23,12 @@ to use. To select this catalog explicitly:
 weectl extension install livedata --repo packages
 ```
 
-The first package is [LiveData](https://github.com/weewx-packages/weewx-livedata),
-which publishes live readings through `live.php`. Follow its configuration
-instructions after installation.
+Follow the package's configuration instructions after installation.
+
+| Package | ID | Purpose |
+|---|---|---|
+| [LiveData](https://github.com/weewx-packages/weewx-livedata) | `livedata` | Publish live readings through `live.php` |
+| [Ecowitt HTTP Push](https://github.com/weewx-packages/weewx-ecowitt-http-push) | `ecowitt-http-push` | Receive custom-server HTTP uploads from Ecowitt hardware |
 
 New packages become available through the same registered source when its index
 refreshes. Use `weectl extension repo refresh packages` to refresh it explicitly.
