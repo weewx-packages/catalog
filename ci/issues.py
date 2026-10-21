@@ -44,8 +44,9 @@ def issue_body(package, cases, results, run_url):
     for case in cases:
         result = results[result_name(case)]
         commit = case['weewx_sha']
-        rows.append('| %s | [%s](https://github.com/weewx/weewx/commit/%s) | %s | %s |' %
-                    (case['branch'], commit[:12], commit, case['python'], result['status']))
+        rows.append('| %s | [%s](https://github.com/%s/commit/%s) | %s | %s |' %
+                    (case['branch'], commit[:12], case['weewx_repository'], commit,
+                     case['python'], result['status']))
     for case in cases:
         result = results[result_name(case)]
         if result['status'] == 'failed':

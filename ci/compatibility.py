@@ -23,6 +23,7 @@ from packaging.specifiers import SpecifierSet
 from packaging.version import Version
 
 ROOT = Path(__file__).resolve().parents[1]
+WEEWX_REPOSITORY = 'weewx-packages/weewx'
 BRANCHES = ('master', 'development')
 PYTHONS = ('3.10', '3.14')
 
@@ -94,7 +95,7 @@ def matrix(catalog, checks):
     package_ids = [p['id'] for p in catalog['packages']]
     if len(set(package_ids)) != len(package_ids) or set(package_ids) != set(checks):
         raise ValueError('Every catalog package needs exactly one entry in ci/packages.json')
-    upstream = {branch: revision('weewx/weewx', branch)
+    upstream = {branch: revision(WEEWX_REPOSITORY, branch)
                 for branch in BRANCHES}
     cases = []
     for package in catalog['packages']:
@@ -106,7 +107,8 @@ def matrix(catalog, checks):
             for python in PYTHONS:
                 cases.append(dict(package=package['id'], installer_name=package['installer_name'],
                                   release=release, **check, source_sha=source_sha,
-                                  branch=branch, weewx_sha=weewx_sha, python=python))
+                                  branch=branch, weewx_sha=weewx_sha,
+                                  weewx_repository=WEEWX_REPOSITORY, python=python))
     return {'include': cases}
 
 

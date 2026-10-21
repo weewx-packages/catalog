@@ -17,7 +17,30 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  mirror:
+    if: ${{ github.ref == 'refs/heads/main' && github.event_name != 'pull_request' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Synchronize the WeeWX fork
+        env:
+          GH_TOKEN: ${{ github.token }}
+          MIRROR_SSH_KEY: ${{ secrets.WEEWX_MIRROR_SSH_KEY }}
+        run: |
+          umask 077
+          key_dir=$(mktemp -d)
+          trap 'rm -rf "$key_dir"' EXIT
+          printf '%s\n' "$MIRROR_SSH_KEY" > "$key_dir/key"
+          gh api meta --jq '.ssh_keys[] | "github.com " + .' > "$key_dir/known_hosts"
+          export GIT_SSH_COMMAND="ssh -i $key_dir/key -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile=$key_dir/known_hosts"
+          bash ci/sync-weewx.sh https://github.com/weewx/weewx.git git@github.com:weewx-packages/weewx.git
+
   prepare:
+    needs: mirror
+    if: ${{ !cancelled() && (needs.mirror.result == 'success' || needs.mirror.result == 'skipped') }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
     outputs:
@@ -40,7 +63,7 @@ jobs:
           jsonschema.validate(json.loads(Path('repository.json').read_text()),
                               json.loads(Path('schemas/repository-v1.schema.json').read_text()))
           PY
-      - name: Resolve release tests and upstream commits
+      - name: Resolve release tests and mirrored WeeWX commits
         id: plan
         env:
           GH_TOKEN: ${{ github.token }}
@@ -68,7 +91,7 @@ jobs:
           persist-credentials: false
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
-          repository: weewx/weewx
+          repository: ${{ matrix.weewx_repository }}
           ref: ${{ matrix.weewx_sha }}
           path: weewx
           persist-credentials: false

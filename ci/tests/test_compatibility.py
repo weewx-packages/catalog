@@ -48,6 +48,9 @@ def test_each_branch_is_pinned_once_for_the_entire_matrix(package, monkeypatch):
     assert len(plan['include']) == 4
     assert {case['weewx_sha'] for case in plan['include']} == {'master-sha', 'dev-sha'}
     assert {case['source_sha'] for case in plan['include']} == {'release-sha'}
+    assert {case['weewx_repository'] for case in plan['include']} == {'weewx-packages/weewx'}
+    assert api.call_args_list[0].args == ('repos/weewx-packages/weewx/commits/master',)
+    assert api.call_args_list[1].args == ('repos/weewx-packages/weewx/commits/development',)
     assert api.call_args_list[-1].args == ('repos/owner/example/commits/v1.10.0',)
 
 
@@ -134,6 +137,7 @@ def test_suite_uses_archive_code_even_when_source_checkout_is_fixed(tmp_path, mo
 def issue_cases():
     """Supply a complete pair of checks for one package."""
     return [dict(package='example', branch=branch, python='3.14', weewx_sha='abc123',
+                 weewx_repository='weewx-packages/weewx',
                  repository='owner/example', source_sha='release-sha',
                  release={'version': '1.0', 'archive': {'url': 'https://example.test/release.zip'}})
             for branch in ['master', 'development']]
