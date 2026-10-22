@@ -14,14 +14,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-WXgraphic/archive/b46451df116eebaa687ee65322f6a4b12864b5c9.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-airlink-extended-development-3.14": {
     "case": {
@@ -38,14 +39,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-airlink-extended/archive/2d484aa701371b75b40db87e11bfb43531548b0d.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-atmocom-udp-development-3.14": {
     "case": {
@@ -71,7 +73,7 @@
         "  File \"/home/runner/work/catalog/catalog/quality/weewx-atmocom-udp/source/bin/user/atmocomudp.py\", line 78\n    print \"\\nConfiguring AtmocomUDP station settings...\\n\"\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nSyntaxError: Missing parentheses in call to 'print'. Did you mean print(...)?\n"
       ]
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-cm1-development-3.14": {
     "case": {
@@ -97,7 +99,7 @@
         "  File \"/home/runner/work/catalog/catalog/quality/weewx-cm1/source/bin/user/cm1.py\", line 89\n    print \"Specify the serial port on which the station is connected, for\"\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nSyntaxError: Missing parentheses in call to 'print'. Did you mean print(...)?\n"
       ]
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-easter-almanac-example-development-3.14": {
     "case": {
@@ -114,14 +116,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-easter-almanac-example/archive/139e21fe58a1b06a41d82771b13e839fbb853986.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-envoy-development-3.14": {
     "case": {
@@ -147,7 +150,7 @@
         "  File \"/home/runner/work/catalog/catalog/quality/weewx-envoy/source/bin/user/envoy.py\", line 164\n    print \"Specify the hostname or address of the Envoy\"\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nSyntaxError: Missing parentheses in call to 'print'. Did you mean print(...)?\n"
       ]
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-healthchecks-development-3.14": {
     "case": {
@@ -164,14 +167,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-healthchecks/archive/35cd38ae245d5c84f871b7aeaa52c5e9699650d1.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-jas-development-3.14": {
     "case": {
@@ -188,14 +192,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-jas/archive/fd0e841eedbd98ec6eeb16d47b2cb28c18f936a8.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-maxbotix-development-3.14": {
     "case": {
@@ -212,14 +217,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-maxbotix/archive/31050c6c729cc214edf703d2eddf89a76de070e7.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-mqtt-publish-v2-development-3.14": {
     "case": {
@@ -236,14 +242,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-mqtt-publish-v2/archive/14cc2f6ce3c6b4566ac8f3decbf753eb53e718bd.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-nws-development-3.14": {
     "case": {
@@ -260,14 +267,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-nws/archive/3e3ee4406ce5e8e2c8d26c848a814e7cee72171e.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-postgresql-development-3.14": {
     "case": {
@@ -284,14 +292,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-postgresql/archive/d2b31a024779a5a15a89df32b7e1566cb3c15a5c.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-reservoir-development-3.14": {
     "case": {
@@ -308,14 +317,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-reservoir/archive/e64b6741e74d143fe86c23c20429503f5106d8a6.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-sds011-development-3.14": {
     "case": {
@@ -332,14 +342,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-sds011/archive/f8eabb43782be587047fd61af20a9c573a6ed489.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-skyfield-almanac-development-3.14": {
     "case": {
@@ -356,14 +367,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-skyfield-almanac/archive/5e7d0a55b13b3334d8bf0f7c98d2ec577b57e457.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-sqm-development-3.14": {
     "case": {
@@ -389,7 +401,7 @@
         "No root install.py; requires a project-specific WeeWX test profile."
       ]
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-weather-app-development-3.14": {
     "case": {
@@ -415,7 +427,7 @@
         "No root install.py; requires a project-specific WeeWX test profile."
       ]
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-windfinder-development-3.14": {
     "case": {
@@ -432,14 +444,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-windfinder/archive/07ccbc36b2a0c13cc3f72db4d7ff873182119fdf.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-ws6in1-development-3.14": {
     "case": {
@@ -456,14 +469,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-ws6in1/archive/1fb840239a1bbc2caee2e663208ea0c7bffe54cb.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-WXgraphic-master-3.14": {
     "case": {
@@ -480,14 +494,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-WXgraphic/archive/b46451df116eebaa687ee65322f6a4b12864b5c9.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-airlink-extended-master-3.14": {
     "case": {
@@ -504,14 +519,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-airlink-extended/archive/2d484aa701371b75b40db87e11bfb43531548b0d.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-atmocom-udp-master-3.14": {
     "case": {
@@ -537,7 +553,7 @@
         "  File \"/home/runner/work/catalog/catalog/quality/weewx-atmocom-udp/source/bin/user/atmocomudp.py\", line 78\n    print \"\\nConfiguring AtmocomUDP station settings...\\n\"\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nSyntaxError: Missing parentheses in call to 'print'. Did you mean print(...)?\n"
       ]
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-cm1-master-3.14": {
     "case": {
@@ -563,7 +579,7 @@
         "  File \"/home/runner/work/catalog/catalog/quality/weewx-cm1/source/bin/user/cm1.py\", line 89\n    print \"Specify the serial port on which the station is connected, for\"\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nSyntaxError: Missing parentheses in call to 'print'. Did you mean print(...)?\n"
       ]
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-easter-almanac-example-master-3.14": {
     "case": {
@@ -580,14 +596,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-easter-almanac-example/archive/139e21fe58a1b06a41d82771b13e839fbb853986.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-envoy-master-3.14": {
     "case": {
@@ -613,7 +630,7 @@
         "  File \"/home/runner/work/catalog/catalog/quality/weewx-envoy/source/bin/user/envoy.py\", line 164\n    print \"Specify the hostname or address of the Envoy\"\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nSyntaxError: Missing parentheses in call to 'print'. Did you mean print(...)?\n"
       ]
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-healthchecks-master-3.14": {
     "case": {
@@ -630,14 +647,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-healthchecks/archive/35cd38ae245d5c84f871b7aeaa52c5e9699650d1.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-jas-master-3.14": {
     "case": {
@@ -654,14 +672,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-jas/archive/fd0e841eedbd98ec6eeb16d47b2cb28c18f936a8.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-maxbotix-master-3.14": {
     "case": {
@@ -678,14 +697,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-maxbotix/archive/31050c6c729cc214edf703d2eddf89a76de070e7.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-mqtt-publish-v2-master-3.14": {
     "case": {
@@ -702,14 +722,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-mqtt-publish-v2/archive/14cc2f6ce3c6b4566ac8f3decbf753eb53e718bd.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-nws-master-3.14": {
     "case": {
@@ -726,14 +747,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-nws/archive/3e3ee4406ce5e8e2c8d26c848a814e7cee72171e.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-postgresql-master-3.14": {
     "case": {
@@ -750,14 +772,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-postgresql/archive/d2b31a024779a5a15a89df32b7e1566cb3c15a5c.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-reservoir-master-3.14": {
     "case": {
@@ -774,14 +797,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-reservoir/archive/e64b6741e74d143fe86c23c20429503f5106d8a6.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-sds011-master-3.14": {
     "case": {
@@ -798,14 +822,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-sds011/archive/f8eabb43782be587047fd61af20a9c573a6ed489.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-skyfield-almanac-master-3.14": {
     "case": {
@@ -822,14 +847,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-skyfield-almanac/archive/5e7d0a55b13b3334d8bf0f7c98d2ec577b57e457.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-sqm-master-3.14": {
     "case": {
@@ -855,7 +881,7 @@
         "No root install.py; requires a project-specific WeeWX test profile."
       ]
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-weather-app-master-3.14": {
     "case": {
@@ -881,7 +907,7 @@
         "No root install.py; requires a project-specific WeeWX test profile."
       ]
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-windfinder-master-3.14": {
     "case": {
@@ -898,14 +924,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-windfinder/archive/07ccbc36b2a0c13cc3f72db4d7ff873182119fdf.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-ws6in1-master-3.14": {
     "case": {
@@ -922,14 +949,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-ws6in1/archive/1fb840239a1bbc2caee2e663208ea0c7bffe54cb.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-DWD-development-3.14": {
     "case": {
@@ -946,14 +974,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-DWD/archive/dc8dfaec5a12b082d61c53738abb38c7d1daeeae.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-aggregated-values-development-3.14": {
     "case": {
@@ -970,14 +999,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-aggregated-values/archive/2bda26d4be4f5f5b7372e7477bc64a3fc87b7313.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-amphibian-development-3.14": {
     "case": {
@@ -994,14 +1024,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-amphibian/archive/60c14f51900d3923ec6f91c911efffb3761c9293.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-columbia-ms-development-3.14": {
     "case": {
@@ -1018,14 +1049,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-columbia-ms/archive/d68cc508b2538fd36452ea4d5e9d78a3afd32263.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-exfoliation-development-3.14": {
     "case": {
@@ -1042,14 +1074,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-exfoliation/archive/19ec9af514b2b32076713967911a9e5baffb6930.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-id5001-development-3.14": {
     "case": {
@@ -1075,7 +1108,7 @@
         "No root install.py; requires a project-specific WeeWX test profile."
       ]
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-knx-development-3.14": {
     "case": {
@@ -1092,14 +1125,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-knx/archive/a5dc631519ed7295fa3e707a3d1c51404c91a08a.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-meteoalarm-development-3.14": {
     "case": {
@@ -1116,14 +1150,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-meteoalarm/archive/3b31e8afcff3203989f32304472189c9f0a346a3.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-mqtt-subscribe-development-3.14": {
     "case": {
@@ -1140,14 +1175,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-mqtt-subscribe/archive/35068866003ab045dcf721fbccdd6dc82fb60b57.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-openweather_API-development-3.14": {
     "case": {
@@ -1164,16 +1200,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-openweather_API/archive/8f1209b5b24a3dd74e685baf4e9d222ec5274223.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
-      "status": "failed",
+      "status": "passed",
       "phase": "installation",
-      "details": [
-        "Command '['weectl', 'extension', 'install', '/home/runner/work/catalog/catalog/quality/weewx-openweather_API/package.zip', '--config', '/home/runner/work/catalog/catalog/quality/weewx-openweather_API/station/weewx.conf', '--yes']' returned non-zero exit status 1."
-      ]
+      "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-precipmeter-development-3.14": {
     "case": {
@@ -1190,14 +1225,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-precipmeter/archive/73d389789213d10ff3890735cc00d68bdb3ec081.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-setprocessname-development-3.14": {
     "case": {
@@ -1214,14 +1250,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-setprocessname/archive/1f2889a67b6688dfb44cc69a371ba183eaeeebb9.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-skymap-almanac-development-3.14": {
     "case": {
@@ -1238,14 +1275,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-skymap-almanac/archive/deb71735f700d2e6c5b611dd8ee33d3d30b97c1d.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-svg2png-development-3.14": {
     "case": {
@@ -1262,14 +1300,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-svg2png/archive/5d56f968fed7920d0e1e3ed22672fc71c9c750a5.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-ultimate-push-development-3.14": {
     "case": {
@@ -1286,14 +1325,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-ultimate-push/archive/3732d498150bfe6c9217e2169bbf27cb47395b87.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-weatherboard-development-3.14": {
     "case": {
@@ -1310,16 +1350,20 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-weatherboard/archive/1c57e19861099cac1c042b0c776b07e8d79632cf.zip"
         }
-      }
-    },
-    "result": {
-      "status": "failed",
-      "phase": "installation",
-      "details": [
-        "Command '['weectl', 'extension', 'install', '/home/runner/work/catalog/catalog/quality/weewx-weatherboard/package.zip', '--config', '/home/runner/work/catalog/catalog/quality/weewx-weatherboard/station/weewx.conf', '--yes']' returned non-zero exit status 1."
+      },
+      "prerequisites": [
+        {
+          "repository": "weewx-packages/weewx-loopdata",
+          "sha": "fe52a7944703584f02912f1b1c1ac4b3abaf6933"
+        }
       ]
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "result": {
+      "status": "passed",
+      "phase": "installation",
+      "details": []
+    },
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-windy-development-3.14": {
     "case": {
@@ -1336,14 +1380,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-windy/archive/032fee9173c4ad5c2000313ff4b75107e7c7bad9.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-wundergroundlike-development-3.14": {
     "case": {
@@ -1360,14 +1405,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-wundergroundlike/archive/bc688eef06546b9f1a04e04b0effd2f631af22aa.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-DWD-master-3.14": {
     "case": {
@@ -1384,14 +1430,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-DWD/archive/dc8dfaec5a12b082d61c53738abb38c7d1daeeae.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-aggregated-values-master-3.14": {
     "case": {
@@ -1408,14 +1455,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-aggregated-values/archive/2bda26d4be4f5f5b7372e7477bc64a3fc87b7313.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-amphibian-master-3.14": {
     "case": {
@@ -1432,14 +1480,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-amphibian/archive/60c14f51900d3923ec6f91c911efffb3761c9293.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-columbia-ms-master-3.14": {
     "case": {
@@ -1456,14 +1505,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-columbia-ms/archive/d68cc508b2538fd36452ea4d5e9d78a3afd32263.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-exfoliation-master-3.14": {
     "case": {
@@ -1480,14 +1530,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-exfoliation/archive/19ec9af514b2b32076713967911a9e5baffb6930.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-id5001-master-3.14": {
     "case": {
@@ -1513,7 +1564,7 @@
         "No root install.py; requires a project-specific WeeWX test profile."
       ]
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-knx-master-3.14": {
     "case": {
@@ -1530,14 +1581,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-knx/archive/a5dc631519ed7295fa3e707a3d1c51404c91a08a.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-meteoalarm-master-3.14": {
     "case": {
@@ -1554,14 +1606,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-meteoalarm/archive/3b31e8afcff3203989f32304472189c9f0a346a3.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-mqtt-subscribe-master-3.14": {
     "case": {
@@ -1578,14 +1631,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-mqtt-subscribe/archive/35068866003ab045dcf721fbccdd6dc82fb60b57.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-openweather_API-master-3.14": {
     "case": {
@@ -1602,16 +1656,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-openweather_API/archive/8f1209b5b24a3dd74e685baf4e9d222ec5274223.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
-      "status": "failed",
+      "status": "passed",
       "phase": "installation",
-      "details": [
-        "Command '['weectl', 'extension', 'install', '/home/runner/work/catalog/catalog/quality/weewx-openweather_API/package.zip', '--config', '/home/runner/work/catalog/catalog/quality/weewx-openweather_API/station/weewx.conf', '--yes']' returned non-zero exit status 1."
-      ]
+      "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-precipmeter-master-3.14": {
     "case": {
@@ -1628,14 +1681,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-precipmeter/archive/73d389789213d10ff3890735cc00d68bdb3ec081.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-setprocessname-master-3.14": {
     "case": {
@@ -1652,14 +1706,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-setprocessname/archive/1f2889a67b6688dfb44cc69a371ba183eaeeebb9.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-skymap-almanac-master-3.14": {
     "case": {
@@ -1676,14 +1731,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-skymap-almanac/archive/deb71735f700d2e6c5b611dd8ee33d3d30b97c1d.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-svg2png-master-3.14": {
     "case": {
@@ -1700,14 +1756,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-svg2png/archive/5d56f968fed7920d0e1e3ed22672fc71c9c750a5.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-ultimate-push-master-3.14": {
     "case": {
@@ -1724,14 +1781,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-ultimate-push/archive/3732d498150bfe6c9217e2169bbf27cb47395b87.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-weatherboard-master-3.14": {
     "case": {
@@ -1748,16 +1806,20 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-weatherboard/archive/1c57e19861099cac1c042b0c776b07e8d79632cf.zip"
         }
-      }
-    },
-    "result": {
-      "status": "failed",
-      "phase": "installation",
-      "details": [
-        "Command '['weectl', 'extension', 'install', '/home/runner/work/catalog/catalog/quality/weewx-weatherboard/package.zip', '--config', '/home/runner/work/catalog/catalog/quality/weewx-weatherboard/station/weewx.conf', '--yes']' returned non-zero exit status 1."
+      },
+      "prerequisites": [
+        {
+          "repository": "weewx-packages/weewx-loopdata",
+          "sha": "fe52a7944703584f02912f1b1c1ac4b3abaf6933"
+        }
       ]
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "result": {
+      "status": "passed",
+      "phase": "installation",
+      "details": []
+    },
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-windy-master-3.14": {
     "case": {
@@ -1774,14 +1836,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-windy/archive/032fee9173c4ad5c2000313ff4b75107e7c7bad9.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-wundergroundlike-master-3.14": {
     "case": {
@@ -1798,14 +1861,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-wundergroundlike/archive/bc688eef06546b9f1a04e04b0effd2f631af22aa.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-GTS-development-3.14": {
     "case": {
@@ -1822,14 +1886,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-GTS/archive/202b1546156b892c6baa4482ed6cc169a0f0a077.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-airQ-development-3.14": {
     "case": {
@@ -1846,14 +1911,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-airQ/archive/199698d5ba4228509b9014a313a546bfceb0cdf4.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-aprs-development-3.14": {
     "case": {
@@ -1870,14 +1936,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-aprs/archive/c732569694ec60c1b2cb9c2a174c68cebb7b5357.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-carbonsteel-series-development-3.14": {
     "case": {
@@ -1894,14 +1961,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-carbonsteel-series/archive/218a6e2b2f13ac826897a8661ce5cd4aec4d3423.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-conditions-development-3.14": {
     "case": {
@@ -1927,7 +1995,7 @@
         "No root install.py; requires a project-specific WeeWX test profile."
       ]
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-ecowittGateway-development-3.14": {
     "case": {
@@ -1944,14 +2012,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-ecowittGateway/archive/089ec6a63219166bfad6275a82be21e5bf6f9b3b.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-filepile-development-3.14": {
     "case": {
@@ -1968,14 +2037,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-filepile/archive/e58503e018b0ee7c34c09d41f254b1d81e783f23.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-import-wlk-development-3.14": {
     "case": {
@@ -1992,14 +2062,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-import-wlk/archive/ceafd8e59ca569c954b914d3f8339500edd96d5b.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-metrics-development-3.14": {
     "case": {
@@ -2025,7 +2096,7 @@
         "No root install.py; requires a project-specific WeeWX test profile."
       ]
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-netatmo-development-3.14": {
     "case": {
@@ -2042,14 +2113,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-netatmo/archive/132ce8562c969a88ebc1fc455a9d3106851a5c64.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-ortsnetz-auslastung-development-3.14": {
     "case": {
@@ -2075,7 +2147,7 @@
         "No root install.py; requires a project-specific WeeWX test profile."
       ]
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-purple-development-3.14": {
     "case": {
@@ -2092,14 +2164,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-purple/archive/0b677a510ca8bb04efde32e48e00d4724dbb5dd6.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-rtsp-image-development-3.14": {
     "case": {
@@ -2116,14 +2189,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-rtsp-image/archive/7ef9f47cb8a3979576c5a784a35da4ef2c7dbfd6.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-sftp-development-3.14": {
     "case": {
@@ -2140,14 +2214,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-sftp/archive/1c1e8b6d1670ff1041d7044918ba380293536ea3.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-skyvex-development-3.14": {
     "case": {
@@ -2164,14 +2239,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-skyvex/archive/87380266f44f7d4657e10e41877bab5bdeffdd93.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-tempest-ws-development-3.14": {
     "case": {
@@ -2188,14 +2264,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-tempest-ws/archive/4c27e0d51c3e355976241acc12661dfe2f1546de.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-uradmon-development-3.14": {
     "case": {
@@ -2212,14 +2289,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-uradmon/archive/c3070167a454dff6e6ebf4844667a404fb75af23.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-weathericons-development-3.14": {
     "case": {
@@ -2245,7 +2323,7 @@
         "No root install.py; requires a project-specific WeeWX test profile."
       ]
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-wlip-emulator-development-3.14": {
     "case": {
@@ -2262,14 +2340,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-wlip-emulator/archive/170e77f4f8043da36924a428d341389e049f85c6.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-xaggs-development-3.14": {
     "case": {
@@ -2286,14 +2365,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-xaggs/archive/d36145689b6d4bd363a792432df94215d69f5026.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-GTS-master-3.14": {
     "case": {
@@ -2310,14 +2390,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-GTS/archive/202b1546156b892c6baa4482ed6cc169a0f0a077.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-airQ-master-3.14": {
     "case": {
@@ -2334,14 +2415,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-airQ/archive/199698d5ba4228509b9014a313a546bfceb0cdf4.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-aprs-master-3.14": {
     "case": {
@@ -2358,14 +2440,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-aprs/archive/c732569694ec60c1b2cb9c2a174c68cebb7b5357.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-carbonsteel-series-master-3.14": {
     "case": {
@@ -2382,14 +2465,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-carbonsteel-series/archive/218a6e2b2f13ac826897a8661ce5cd4aec4d3423.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-conditions-master-3.14": {
     "case": {
@@ -2415,7 +2499,7 @@
         "No root install.py; requires a project-specific WeeWX test profile."
       ]
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-ecowittGateway-master-3.14": {
     "case": {
@@ -2432,14 +2516,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-ecowittGateway/archive/089ec6a63219166bfad6275a82be21e5bf6f9b3b.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-filepile-master-3.14": {
     "case": {
@@ -2456,14 +2541,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-filepile/archive/e58503e018b0ee7c34c09d41f254b1d81e783f23.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-import-wlk-master-3.14": {
     "case": {
@@ -2480,14 +2566,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-import-wlk/archive/ceafd8e59ca569c954b914d3f8339500edd96d5b.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-metrics-master-3.14": {
     "case": {
@@ -2513,7 +2600,7 @@
         "No root install.py; requires a project-specific WeeWX test profile."
       ]
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-netatmo-master-3.14": {
     "case": {
@@ -2530,14 +2617,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-netatmo/archive/132ce8562c969a88ebc1fc455a9d3106851a5c64.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-ortsnetz-auslastung-master-3.14": {
     "case": {
@@ -2563,7 +2651,7 @@
         "No root install.py; requires a project-specific WeeWX test profile."
       ]
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-purple-master-3.14": {
     "case": {
@@ -2580,14 +2668,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-purple/archive/0b677a510ca8bb04efde32e48e00d4724dbb5dd6.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-rtsp-image-master-3.14": {
     "case": {
@@ -2604,14 +2693,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-rtsp-image/archive/7ef9f47cb8a3979576c5a784a35da4ef2c7dbfd6.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-sftp-master-3.14": {
     "case": {
@@ -2628,14 +2718,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-sftp/archive/1c1e8b6d1670ff1041d7044918ba380293536ea3.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-skyvex-master-3.14": {
     "case": {
@@ -2652,14 +2743,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-skyvex/archive/87380266f44f7d4657e10e41877bab5bdeffdd93.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-tempest-ws-master-3.14": {
     "case": {
@@ -2676,14 +2768,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-tempest-ws/archive/4c27e0d51c3e355976241acc12661dfe2f1546de.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-uradmon-master-3.14": {
     "case": {
@@ -2700,14 +2793,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-uradmon/archive/c3070167a454dff6e6ebf4844667a404fb75af23.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-weathericons-master-3.14": {
     "case": {
@@ -2733,7 +2827,7 @@
         "No root install.py; requires a project-specific WeeWX test profile."
       ]
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-wlip-emulator-master-3.14": {
     "case": {
@@ -2750,14 +2844,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-wlip-emulator/archive/170e77f4f8043da36924a428d341389e049f85c6.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-xaggs-master-3.14": {
     "case": {
@@ -2774,14 +2869,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-xaggs/archive/d36145689b6d4bd363a792432df94215d69f5026.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-NovaSDS011-development-3.14": {
     "case": {
@@ -2822,14 +2918,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-airgradient/archive/b03cb8ba6b02daa4f1fc3740face83a6086b631f.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-aqi-xtype-development-3.14": {
     "case": {
@@ -2846,14 +2943,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-aqi-xtype/archive/dcf1f58562fd756c8beb42ce97580f376acc7ff2.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-celestial-development-3.14": {
     "case": {
@@ -2870,16 +2968,20 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-celestial/archive/63b6d781f9d065f8f9d7ff0cce9a90c538c0df55.zip"
         }
-      }
-    },
-    "result": {
-      "status": "failed",
-      "phase": "installation",
-      "details": [
-        "Command '['weectl', 'extension', 'install', '/home/runner/work/catalog/catalog/quality/weewx-celestial/package.zip', '--config', '/home/runner/work/catalog/catalog/quality/weewx-celestial/station/weewx.conf', '--yes']' returned non-zero exit status 1."
+      },
+      "prerequisites": [
+        {
+          "repository": "weewx-packages/weewx-loopdata",
+          "sha": "fe52a7944703584f02912f1b1c1ac4b3abaf6933"
+        }
       ]
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "result": {
+      "status": "passed",
+      "phase": "installation",
+      "details": []
+    },
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-davisconsoleapi-development-3.14": {
     "case": {
@@ -2905,7 +3007,7 @@
         "No root install.py; requires a project-specific WeeWX test profile."
       ]
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-ecowitt_console_emulator-development-3.14": {
     "case": {
@@ -2922,14 +3024,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-ecowitt_console_emulator/archive/d431c2f41f37af87cfbc355b26c27ac76d54d9ac.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-forecast-development-3.14": {
     "case": {
@@ -2946,14 +3049,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-forecast/archive/30af440fd2a1dcbe80d98ba31aa7667023cd45ec.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-interceptor-development-3.14": {
     "case": {
@@ -2970,14 +3074,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-interceptor/archive/16d87044c8d7eba69d3b3cd8bf12a8cb7a0f2393.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-loopdata-development-3.14": {
     "case": {
@@ -2994,14 +3099,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-loopdata/archive/fe52a7944703584f02912f1b1c1ac4b3abaf6933.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-modbus-tcp-development-3.14": {
     "case": {
@@ -3018,14 +3124,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-modbus-tcp/archive/9f85c17265e9be08018ee1001c14356170192b37.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-nmea-xdr-development-3.14": {
     "case": {
@@ -3042,14 +3149,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-nmea-xdr/archive/9f95b283580f420ac6e1bd8641b66c0088c0753d.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-owfs-development-3.14": {
     "case": {
@@ -3066,14 +3174,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-owfs/archive/886c8d8bcd7e8bd5ffcc98faf17af0f4545561c2.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-pusher-development-3.14": {
     "case": {
@@ -3090,14 +3199,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-pusher/archive/e3da95906316c88bc67eab4028909dd0a0a61af9.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-rwsa-development-3.14": {
     "case": {
@@ -3114,14 +3224,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-rwsa/archive/d14a2e21e3f1c58a71b2c40d869e2d2803165dc7.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-since-last-archive-accumulator-development-3.14": {
     "case": {
@@ -3138,14 +3249,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-since-last-archive-accumulator/archive/c38eaa4118abe36ff938acc02afb7ba5497836a4.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-snmp-development-3.14": {
     "case": {
@@ -3162,14 +3274,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-snmp/archive/89e4b613377295f434abcf6a482f0fbcb27cf19c.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-tfrc-development-3.14": {
     "case": {
@@ -3186,14 +3299,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-tfrc/archive/eb1a52630f6eeff53ab3ede9ef2528825db38d7f.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-vedirect-development-3.14": {
     "case": {
@@ -3210,14 +3324,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-vedirect/archive/8882de6e6cf52f1f418e020319e9965bb835aa1b.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-weepe-development-3.14": {
     "case": {
@@ -3234,14 +3349,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-weepe/archive/2a9b42fda7e6b181c5064e7586c2e1a6e1037e16.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-wmr89-development-3.14": {
     "case": {
@@ -3258,14 +3374,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-wmr89/archive/ad55ccbd58f57ae76f9f7d530c9ca570dcfc7326.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-xtide-development-3.14": {
     "case": {
@@ -3282,14 +3399,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-xtide/archive/84454b19a8b14180384bf15ba7a301619312a636.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-NovaSDS011-master-3.14": {
     "case": {
@@ -3330,14 +3448,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-airgradient/archive/b03cb8ba6b02daa4f1fc3740face83a6086b631f.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-aqi-xtype-master-3.14": {
     "case": {
@@ -3354,14 +3473,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-aqi-xtype/archive/dcf1f58562fd756c8beb42ce97580f376acc7ff2.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-celestial-master-3.14": {
     "case": {
@@ -3378,16 +3498,20 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-celestial/archive/63b6d781f9d065f8f9d7ff0cce9a90c538c0df55.zip"
         }
-      }
-    },
-    "result": {
-      "status": "failed",
-      "phase": "installation",
-      "details": [
-        "Command '['weectl', 'extension', 'install', '/home/runner/work/catalog/catalog/quality/weewx-celestial/package.zip', '--config', '/home/runner/work/catalog/catalog/quality/weewx-celestial/station/weewx.conf', '--yes']' returned non-zero exit status 1."
+      },
+      "prerequisites": [
+        {
+          "repository": "weewx-packages/weewx-loopdata",
+          "sha": "fe52a7944703584f02912f1b1c1ac4b3abaf6933"
+        }
       ]
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "result": {
+      "status": "passed",
+      "phase": "installation",
+      "details": []
+    },
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-davisconsoleapi-master-3.14": {
     "case": {
@@ -3413,7 +3537,7 @@
         "No root install.py; requires a project-specific WeeWX test profile."
       ]
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-ecowitt_console_emulator-master-3.14": {
     "case": {
@@ -3430,14 +3554,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-ecowitt_console_emulator/archive/d431c2f41f37af87cfbc355b26c27ac76d54d9ac.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-forecast-master-3.14": {
     "case": {
@@ -3454,14 +3579,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-forecast/archive/30af440fd2a1dcbe80d98ba31aa7667023cd45ec.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-interceptor-master-3.14": {
     "case": {
@@ -3478,14 +3604,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-interceptor/archive/16d87044c8d7eba69d3b3cd8bf12a8cb7a0f2393.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-loopdata-master-3.14": {
     "case": {
@@ -3502,14 +3629,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-loopdata/archive/fe52a7944703584f02912f1b1c1ac4b3abaf6933.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-modbus-tcp-master-3.14": {
     "case": {
@@ -3526,14 +3654,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-modbus-tcp/archive/9f85c17265e9be08018ee1001c14356170192b37.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-nmea-xdr-master-3.14": {
     "case": {
@@ -3550,14 +3679,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-nmea-xdr/archive/9f95b283580f420ac6e1bd8641b66c0088c0753d.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-owfs-master-3.14": {
     "case": {
@@ -3574,14 +3704,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-owfs/archive/886c8d8bcd7e8bd5ffcc98faf17af0f4545561c2.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-pusher-master-3.14": {
     "case": {
@@ -3598,14 +3729,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-pusher/archive/e3da95906316c88bc67eab4028909dd0a0a61af9.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-rwsa-master-3.14": {
     "case": {
@@ -3622,14 +3754,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-rwsa/archive/d14a2e21e3f1c58a71b2c40d869e2d2803165dc7.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-since-last-archive-accumulator-master-3.14": {
     "case": {
@@ -3646,14 +3779,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-since-last-archive-accumulator/archive/c38eaa4118abe36ff938acc02afb7ba5497836a4.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-snmp-master-3.14": {
     "case": {
@@ -3670,14 +3804,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-snmp/archive/89e4b613377295f434abcf6a482f0fbcb27cf19c.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-tfrc-master-3.14": {
     "case": {
@@ -3694,14 +3829,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-tfrc/archive/eb1a52630f6eeff53ab3ede9ef2528825db38d7f.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-vedirect-master-3.14": {
     "case": {
@@ -3718,14 +3854,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-vedirect/archive/8882de6e6cf52f1f418e020319e9965bb835aa1b.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-weepe-master-3.14": {
     "case": {
@@ -3742,14 +3879,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-weepe/archive/2a9b42fda7e6b181c5064e7586c2e1a6e1037e16.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-wmr89-master-3.14": {
     "case": {
@@ -3766,14 +3904,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-wmr89/archive/ad55ccbd58f57ae76f9f7d530c9ca570dcfc7326.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-xtide-master-3.14": {
     "case": {
@@ -3790,14 +3929,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-xtide/archive/84454b19a8b14180384bf15ba7a301619312a636.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-PiSenseHat-development-3.14": {
     "case": {
@@ -3817,13 +3957,13 @@
       }
     },
     "result": {
-      "status": "failed",
-      "phase": "installation",
+      "status": "not-covered",
+      "phase": "prerequisites",
       "details": [
-        "Command '['weectl', 'extension', 'install', '/home/runner/work/catalog/catalog/quality/weewx-PiSenseHat/package.zip', '--config', '/home/runner/work/catalog/catalog/quality/weewx-PiSenseHat/station/weewx.conf', '--yes']' returned non-zero exit status 1."
+        "The installer imports smbus, RPi.GPIO and a Raspberry Pi sensor module. Installation requires a Raspberry Pi hardware profile; runtime syntax is checked here."
       ]
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-airlink-development-3.14": {
     "case": {
@@ -3840,14 +3980,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-airlink/archive/5f3fb6338fdbcaf15e22ba582b8c50693d95c0ec.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-as3935-development-3.14": {
     "case": {
@@ -3864,14 +4005,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-as3935/archive/769a63f102e5367d3032263a21641bc238b4038b.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-climate-development-3.14": {
     "case": {
@@ -3888,14 +4030,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-climate/archive/6e642b2be72511eab26f4226e567a128fd11e73c.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-divumwx-development-3.14": {
     "case": {
@@ -3936,14 +4079,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-emoncms/archive/7c041135a485bbea9f8ffaf6784fe08dee37a41f.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-gill-metconnect-development-3.14": {
     "case": {
@@ -3960,14 +4104,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-gill-metconnect/archive/52ff5dd589e03178faac6f2cfda1fc8bba7bb133.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-ip100-development-3.14": {
     "case": {
@@ -3984,14 +4129,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-ip100/archive/6126a818dff13ff45824a90b251a5c7c5e7cecf1.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-luxtronik-development-3.14": {
     "case": {
@@ -4008,14 +4154,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-luxtronik/archive/1268ca671cdd930b610af6b0d8ae6fe508627275.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-mqtt-publish-development-3.14": {
     "case": {
@@ -4032,14 +4179,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-mqtt-publish/archive/df31bc4207eeb117100c94933d1c7a8ac47fcb75.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-notify-development-3.14": {
     "case": {
@@ -4065,7 +4213,7 @@
         "No root install.py; requires a project-specific WeeWX test profile."
       ]
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-photovoltaics-development-3.14": {
     "case": {
@@ -4082,14 +4230,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-photovoltaics/archive/5611cb37adf756288dd255f63164bb24d0d8fb7e.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-pushover-development-3.14": {
     "case": {
@@ -4106,14 +4255,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-pushover/archive/cb49dc9d23d1542b494194b2bdec3c6896802075.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-saratoga-development-3.14": {
     "case": {
@@ -4130,14 +4280,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-saratoga/archive/be1ed762fa093dd440bbc80dbe15ef6cadbf18be.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-skyfield-development-3.14": {
     "case": {
@@ -4154,14 +4305,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-skyfield/archive/c3496bbad09f1393e5e8427d3425b063d596882a.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-sqlupload-development-3.14": {
     "case": {
@@ -4178,14 +4330,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-sqlupload/archive/86d0200c91ba1ba59e18845f6163b94f03fdb199.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-thingspeak-development-3.14": {
     "case": {
@@ -4202,14 +4355,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-thingspeak/archive/a1ffa8ec672c217fed413eaa3e91618b3fb0b363.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-wbug-development-3.14": {
     "case": {
@@ -4226,14 +4380,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-wbug/archive/4992114511b14fce1a507d76b81e026b67886854.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-wetter-development-3.14": {
     "case": {
@@ -4250,14 +4405,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-wetter/archive/50a7f68d5f83ca639de056cdedf7b6a0370d6c1f.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-wns-development-3.14": {
     "case": {
@@ -4274,14 +4430,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-wns/archive/5f9d3fda59a7bc328c814fc3479b63c97067b8fa.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-PiSenseHat-master-3.14": {
     "case": {
@@ -4301,13 +4458,13 @@
       }
     },
     "result": {
-      "status": "failed",
-      "phase": "installation",
+      "status": "not-covered",
+      "phase": "prerequisites",
       "details": [
-        "Command '['weectl', 'extension', 'install', '/home/runner/work/catalog/catalog/quality/weewx-PiSenseHat/package.zip', '--config', '/home/runner/work/catalog/catalog/quality/weewx-PiSenseHat/station/weewx.conf', '--yes']' returned non-zero exit status 1."
+        "The installer imports smbus, RPi.GPIO and a Raspberry Pi sensor module. Installation requires a Raspberry Pi hardware profile; runtime syntax is checked here."
       ]
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-airlink-master-3.14": {
     "case": {
@@ -4324,14 +4481,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-airlink/archive/5f3fb6338fdbcaf15e22ba582b8c50693d95c0ec.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-as3935-master-3.14": {
     "case": {
@@ -4348,14 +4506,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-as3935/archive/769a63f102e5367d3032263a21641bc238b4038b.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-climate-master-3.14": {
     "case": {
@@ -4372,14 +4531,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-climate/archive/6e642b2be72511eab26f4226e567a128fd11e73c.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-divumwx-master-3.14": {
     "case": {
@@ -4420,14 +4580,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-emoncms/archive/7c041135a485bbea9f8ffaf6784fe08dee37a41f.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-gill-metconnect-master-3.14": {
     "case": {
@@ -4444,14 +4605,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-gill-metconnect/archive/52ff5dd589e03178faac6f2cfda1fc8bba7bb133.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-ip100-master-3.14": {
     "case": {
@@ -4468,14 +4630,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-ip100/archive/6126a818dff13ff45824a90b251a5c7c5e7cecf1.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-luxtronik-master-3.14": {
     "case": {
@@ -4492,14 +4655,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-luxtronik/archive/1268ca671cdd930b610af6b0d8ae6fe508627275.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-mqtt-publish-master-3.14": {
     "case": {
@@ -4516,14 +4680,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-mqtt-publish/archive/df31bc4207eeb117100c94933d1c7a8ac47fcb75.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-notify-master-3.14": {
     "case": {
@@ -4549,7 +4714,7 @@
         "No root install.py; requires a project-specific WeeWX test profile."
       ]
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-photovoltaics-master-3.14": {
     "case": {
@@ -4566,14 +4731,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-photovoltaics/archive/5611cb37adf756288dd255f63164bb24d0d8fb7e.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-pushover-master-3.14": {
     "case": {
@@ -4590,14 +4756,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-pushover/archive/cb49dc9d23d1542b494194b2bdec3c6896802075.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-saratoga-master-3.14": {
     "case": {
@@ -4614,14 +4781,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-saratoga/archive/be1ed762fa093dd440bbc80dbe15ef6cadbf18be.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-skyfield-master-3.14": {
     "case": {
@@ -4638,14 +4806,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-skyfield/archive/c3496bbad09f1393e5e8427d3425b063d596882a.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-sqlupload-master-3.14": {
     "case": {
@@ -4662,14 +4831,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-sqlupload/archive/86d0200c91ba1ba59e18845f6163b94f03fdb199.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-thingspeak-master-3.14": {
     "case": {
@@ -4686,14 +4856,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-thingspeak/archive/a1ffa8ec672c217fed413eaa3e91618b3fb0b363.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-wbug-master-3.14": {
     "case": {
@@ -4710,14 +4881,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-wbug/archive/4992114511b14fce1a507d76b81e026b67886854.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-wetter-master-3.14": {
     "case": {
@@ -4734,14 +4906,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-wetter/archive/50a7f68d5f83ca639de056cdedf7b6a0370d6c1f.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-weewx-wns-master-3.14": {
     "case": {
@@ -4758,14 +4931,15 @@
         "archive": {
           "url": "https://github.com/weewx-packages/weewx-wns/archive/5f9d3fda59a7bc328c814fc3479b63c97067b8fa.zip"
         }
-      }
+      },
+      "prerequisites": []
     },
     "result": {
       "status": "passed",
       "phase": "installation",
       "details": []
     },
-    "run": "https://github.com/weewx-packages/catalog/actions/runs/39696892178"
+    "run": "https://github.com/weewx-packages/catalog/actions/runs/39699085446"
   },
   "result-bme280wx-development-3.14": {
     "case": {

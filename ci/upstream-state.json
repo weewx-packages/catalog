@@ -1,6 +1,6 @@
 {
   "BobAtchley/weewx-ws6in1": {
-    "captured_at": "2026-10-21T23:59:37.720592+00:00",
+    "captured_at": "2026-10-22T00:20:37.211913+00:00",
     "items": {
       "15": {
         "title": "Rain spikes with full data buffer",
@@ -15,7 +15,7 @@
     "notice_scan_complete": true
   },
   "captain-coredump/weewx-atmocom-udp": {
-    "captured_at": "2026-10-21T23:59:37.354021+00:00",
+    "captured_at": "2026-10-22T00:20:36.625928+00:00",
     "items": {},
     "notices": {
       "LICENSE": "e963df8294069543e782fd72aa71832dca1571ca"
@@ -23,7 +23,7 @@
     "notice_scan_complete": true
   },
   "chaunceygardiner/weewx-nws": {
-    "captured_at": "2026-10-21T23:59:37.487821+00:00",
+    "captured_at": "2026-10-22T00:20:36.647605+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -31,7 +31,7 @@
     "notice_scan_complete": true
   },
   "evilbunny2008/MQTTPublishV2": {
-    "captured_at": "2026-10-21T23:59:38.481397+00:00",
+    "captured_at": "2026-10-22T00:20:38.142065+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -39,7 +39,7 @@
     "notice_scan_complete": true
   },
   "evilbunny2008/WeeWXWeatherApp": {
-    "captured_at": "2026-10-21T23:59:39.457640+00:00",
+    "captured_at": "2026-10-22T00:20:39.772843+00:00",
     "items": {
       "48": {
         "title": "App connection error",
@@ -60,7 +60,7 @@
     "notice_scan_complete": true
   },
   "evilbunny2008/weewx-airlink": {
-    "captured_at": "2026-10-21T23:59:38.852387+00:00",
+    "captured_at": "2026-10-22T00:20:38.563754+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -68,7 +68,7 @@
     "notice_scan_complete": true
   },
   "glennmckechnie/weewx-WXgraphic": {
-    "captured_at": "2026-10-21T23:59:39.992201+00:00",
+    "captured_at": "2026-10-22T00:20:39.950847+00:00",
     "items": {},
     "notices": {
       "LICENSE": "d159169d1050894d3ea3b98e1c965c4058208fe1",
@@ -77,7 +77,7 @@
     "notice_scan_complete": true
   },
   "matthewwall/weewx-cm1": {
-    "captured_at": "2026-10-21T23:59:39.984119+00:00",
+    "captured_at": "2026-10-22T00:20:39.954511+00:00",
     "items": {},
     "notices": {
       "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
@@ -85,7 +85,7 @@
     "notice_scan_complete": true
   },
   "matthewwall/weewx-envoy": {
-    "captured_at": "2026-10-21T23:59:41.029718+00:00",
+    "captured_at": "2026-10-22T00:20:41.228733+00:00",
     "items": {},
     "notices": {
       "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
@@ -93,7 +93,7 @@
     "notice_scan_complete": true
   },
   "matthewwall/weewx-maxbotix": {
-    "captured_at": "2026-10-21T23:59:41.116448+00:00",
+    "captured_at": "2026-10-22T00:20:41.347438+00:00",
     "items": {},
     "notices": {
       "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
@@ -101,7 +101,7 @@
     "notice_scan_complete": true
   },
   "matthewwall/weewx-tracer": {
-    "captured_at": "2026-10-21T23:59:42.419331+00:00",
+    "captured_at": "2026-10-22T00:20:43.146514+00:00",
     "items": {
       "1": {
         "title": "Questions, Suggestions, Bugs",
@@ -116,13 +116,13 @@
     "notice_scan_complete": true
   },
   "matthewwall/weewx-windfinder": {
-    "captured_at": "2026-10-21T23:59:43.457604+00:00",
+    "captured_at": "2026-10-22T00:20:44.556364+00:00",
     "items": {},
     "notices": {},
     "notice_scan_complete": true
   },
   "open-astro/weewx-sqm": {
-    "captured_at": "2026-10-21T23:59:44.622811+00:00",
+    "captured_at": "2026-10-22T00:20:45.887621+00:00",
     "items": {},
     "notices": {
       "LICENSE": "88b64c98c8986043a6cc41530d74f5d03a61c283"
@@ -130,7 +130,7 @@
     "notice_scan_complete": true
   },
   "roe-dl/weewx-easter-almanac-example": {
-    "captured_at": "2026-10-21T23:59:45.678088+00:00",
+    "captured_at": "2026-10-22T00:20:47.328560+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -138,7 +138,7 @@
     "notice_scan_complete": true
   },
   "roe-dl/weewx-skyfield-almanac": {
-    "captured_at": "2026-10-21T23:59:46.193357+00:00",
+    "captured_at": "2026-10-22T00:20:47.890571+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -146,7 +146,7 @@
     "notice_scan_complete": true
   },
   "sbsrouteur/weewx-sds011": {
-    "captured_at": "2026-10-21T23:59:46.747966+00:00",
+    "captured_at": "2026-10-22T00:20:48.626348+00:00",
     "items": {},
     "notices": {
       "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
@@ -154,7 +154,7 @@
     "notice_scan_complete": true
   },
   "seehase/neowx-material": {
-    "captured_at": "2026-10-21T23:59:52.757536+00:00",
+    "captured_at": "2026-10-22T00:20:56.239806+00:00",
     "items": {
       "409": {
         "title": "Release2.0",
@@ -183,7 +183,7 @@
     "notice_scan_complete": true
   },
   "tkeffer/weewx-postgresql": {
-    "captured_at": "2026-10-21T23:59:47.814412+00:00",
+    "captured_at": "2026-10-22T00:20:49.897523+00:00",
     "items": {},
     "notices": {
       "LICENSE.txt": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
@@ -191,7 +191,7 @@
     "notice_scan_complete": true
   },
   "weewx-extensions/healthchecks": {
-    "captured_at": "2026-10-21T23:59:49.610542+00:00",
+    "captured_at": "2026-10-22T00:20:52.247637+00:00",
     "items": {
       "2": {
         "title": "Make start ping configurable",
@@ -212,7 +212,7 @@
     "notice_scan_complete": true
   },
   "weewx-extensions/jas": {
-    "captured_at": "2026-10-21T23:59:53.497805+00:00",
+    "captured_at": "2026-10-22T00:20:57.026978+00:00",
     "items": {
       "13": {
         "title": "Refactor templates",
@@ -275,7 +275,7 @@
     "notice_scan_complete": true
   },
   "ziti/weewx-reservoir": {
-    "captured_at": "2026-10-21T23:59:53.195275+00:00",
+    "captured_at": "2026-10-22T00:20:56.240462+00:00",
     "items": {
       "10": {
         "title": "chore: update ruff requirement from >=0.16.10 to >=0.17.1",
@@ -290,7 +290,7 @@
     "notice_scan_complete": true
   },
   "AZAZ78/weewx-knx": {
-    "captured_at": "2026-10-21T23:59:36.972697+00:00",
+    "captured_at": "2026-10-22T00:20:35.338360+00:00",
     "items": {
       "1": {
         "title": "this extension has a page in the weewx wiki with instructions",
@@ -305,7 +305,7 @@
     "notice_scan_complete": true
   },
   "Jterrettaz/weewx-windy": {
-    "captured_at": "2026-10-21T23:59:36.520678+00:00",
+    "captured_at": "2026-10-22T00:20:35.024463+00:00",
     "items": {},
     "notices": {
       "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
@@ -313,7 +313,7 @@
     "notice_scan_complete": true
   },
   "Millardiang/weewx-meteoalarm": {
-    "captured_at": "2026-10-21T23:59:36.539881+00:00",
+    "captured_at": "2026-10-22T00:20:35.337849+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -321,7 +321,7 @@
     "notice_scan_complete": true
   },
   "bburton/weewx-columbia-ms": {
-    "captured_at": "2026-10-21T23:59:36.474110+00:00",
+    "captured_at": "2026-10-22T00:20:35.110636+00:00",
     "items": {},
     "notices": {
       "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
@@ -329,7 +329,7 @@
     "notice_scan_complete": true
   },
   "chaunceygardiner/weewx-exfoliation": {
-    "captured_at": "2026-10-21T23:59:37.765122+00:00",
+    "captured_at": "2026-10-22T00:20:36.119806+00:00",
     "items": {},
     "notices": {
       "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e",
@@ -338,7 +338,7 @@
     "notice_scan_complete": true
   },
   "chaunceygardiner/weewx-weatherboard": {
-    "captured_at": "2026-10-21T23:59:37.809589+00:00",
+    "captured_at": "2026-10-22T00:20:36.341651+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7",
@@ -348,7 +348,7 @@
     "notice_scan_complete": true
   },
   "evilbunny2008/AggregatedValues": {
-    "captured_at": "2026-10-21T23:59:39.078988+00:00",
+    "captured_at": "2026-10-22T00:20:37.262154+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -356,7 +356,7 @@
     "notice_scan_complete": true
   },
   "hilman2/weewx-ultimate-push": {
-    "captured_at": "2026-10-21T23:59:48.940588+00:00",
+    "captured_at": "2026-10-22T00:20:45.228655+00:00",
     "items": {
       "31": {
         "title": "Clarify HTTP-only station transport before a remote TLS proxy",
@@ -509,7 +509,7 @@
     "notice_scan_complete": true
   },
   "inguy24/weewx-openweather_API": {
-    "captured_at": "2026-10-21T23:59:40.287159+00:00",
+    "captured_at": "2026-10-22T00:20:38.576748+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -517,7 +517,7 @@
     "notice_scan_complete": true
   },
   "knight-of-ni/WeeWX-SetProcessName": {
-    "captured_at": "2026-10-21T23:59:41.508344+00:00",
+    "captured_at": "2026-10-22T00:20:39.697411+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -525,7 +525,7 @@
     "notice_scan_complete": true
   },
   "matthewwall/weewx-amphibian": {
-    "captured_at": "2026-10-21T23:59:41.769008+00:00",
+    "captured_at": "2026-10-22T00:20:39.884790+00:00",
     "items": {},
     "notices": {
       "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
@@ -533,7 +533,7 @@
     "notice_scan_complete": true
   },
   "n2ee/weewx-id5001": {
-    "captured_at": "2026-10-21T23:59:42.587985+00:00",
+    "captured_at": "2026-10-22T00:20:40.099243+00:00",
     "items": {},
     "notices": {
       "LICENSE": "ea97251003d0f46c0ba1b0eca493c6c229f9322b"
@@ -541,7 +541,7 @@
     "notice_scan_complete": true
   },
   "poblabs/weewx-belchertown": {
-    "captured_at": "2026-10-21T23:59:42.749455+00:00",
+    "captured_at": "2026-10-22T00:20:40.638331+00:00",
     "items": {},
     "notices": {
       "LICENSE": "94a9ed024d3859793618152ea559a168bbcbb5e2"
@@ -549,7 +549,7 @@
     "notice_scan_complete": true
   },
   "roe-dl/weewx-DWD": {
-    "captured_at": "2026-10-21T23:59:43.885832+00:00",
+    "captured_at": "2026-10-22T00:20:41.721280+00:00",
     "items": {
       "84": {
         "title": "Timeouts beim Download vom DWD",
@@ -570,7 +570,7 @@
     "notice_scan_complete": true
   },
   "roe-dl/weewx-precipmeter": {
-    "captured_at": "2026-10-21T23:59:43.888691+00:00",
+    "captured_at": "2026-10-22T00:20:41.136026+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -578,7 +578,7 @@
     "notice_scan_complete": true
   },
   "roe-dl/weewx-skymap-almanac": {
-    "captured_at": "2026-10-21T23:59:44.115672+00:00",
+    "captured_at": "2026-10-22T00:20:41.609035+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -586,7 +586,7 @@
     "notice_scan_complete": true
   },
   "roe-dl/weewx-svg2png": {
-    "captured_at": "2026-10-21T23:59:45.112550+00:00",
+    "captured_at": "2026-10-22T00:20:42.248323+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -594,7 +594,7 @@
     "notice_scan_complete": true
   },
   "smeisens/weewx-wundergroundlike": {
-    "captured_at": "2026-10-21T23:59:45.078064+00:00",
+    "captured_at": "2026-10-22T00:20:42.565378+00:00",
     "items": {},
     "notices": {
       "LICENSE.txt": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
@@ -602,13 +602,13 @@
     "notice_scan_complete": true
   },
   "weewx-contrib/weewx-rtldavis": {
-    "captured_at": "2026-10-21T23:59:46.323506+00:00",
+    "captured_at": "2026-10-22T00:20:43.467579+00:00",
     "items": {},
     "notices": {},
     "notice_scan_complete": true
   },
   "weewx-mqtt/subscribe": {
-    "captured_at": "2026-10-21T23:59:51.173025+00:00",
+    "captured_at": "2026-10-22T00:20:47.552391+00:00",
     "items": {
       "13": {
         "title": "First-time install failure",
@@ -659,7 +659,7 @@
     "notice_scan_complete": true
   },
   "weewx-packages/weewx-ecowitt-http-push": {
-    "captured_at": "2026-10-21T23:59:47.577340+00:00",
+    "captured_at": "2026-10-22T00:20:44.481884+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -667,7 +667,7 @@
     "notice_scan_complete": true
   },
   "Cosmospacedog/weewx-metrics": {
-    "captured_at": "2026-10-21T23:59:35.444406+00:00",
+    "captured_at": "2026-10-22T00:20:36.544640+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -675,7 +675,7 @@
     "notice_scan_complete": true
   },
   "MichaelStrommer-dreiS/weewx-skyvex": {
-    "captured_at": "2026-10-21T23:59:35.466847+00:00",
+    "captured_at": "2026-10-22T00:20:36.624914+00:00",
     "items": {},
     "notices": {
       "LICENSE": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
@@ -683,7 +683,7 @@
     "notice_scan_complete": true
   },
   "Millardiang/weewx-carbonsteel-series": {
-    "captured_at": "2026-10-21T23:59:35.443480+00:00",
+    "captured_at": "2026-10-22T00:20:36.581331+00:00",
     "items": {},
     "notices": {
       "CS/fonts/Lexend-OFL.txt": "6c35713d3e414367b9b2d9bba14d9d39c8b750db",
@@ -698,7 +698,7 @@
     "notice_scan_complete": true
   },
   "Millardiang/weewx-ecowittGateway": {
-    "captured_at": "2026-10-21T23:59:36.619946+00:00",
+    "captured_at": "2026-10-22T00:20:37.845176+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f6cdd22a6c1fbc887e08a215cb4beb3c47048041"
@@ -706,7 +706,7 @@
     "notice_scan_complete": true
   },
   "cavedon/weewx-aprs": {
-    "captured_at": "2026-10-21T23:59:39.110733+00:00",
+    "captured_at": "2026-10-22T00:20:41.273800+00:00",
     "items": {
       "7": {
         "title": "weewx APRS crash",
@@ -733,7 +733,7 @@
     "notice_scan_complete": true
   },
   "chaunceygardiner/weewx-purple": {
-    "captured_at": "2026-10-21T23:59:36.486054+00:00",
+    "captured_at": "2026-10-22T00:20:37.997526+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7",
@@ -742,7 +742,7 @@
     "notice_scan_complete": true
   },
   "glennmckechnie/weewx-uradmon": {
-    "captured_at": "2026-10-21T23:59:36.995435+00:00",
+    "captured_at": "2026-10-22T00:20:38.489229+00:00",
     "items": {
       "5": {
         "title": "Languages, over to you...",
@@ -757,7 +757,7 @@
     "notice_scan_complete": true
   },
   "iiseppi/wlip-emulator": {
-    "captured_at": "2026-10-21T23:59:37.895963+00:00",
+    "captured_at": "2026-10-22T00:20:39.553088+00:00",
     "items": {
       "8": {
         "title": "Emulate serial console",
@@ -772,7 +772,7 @@
     "notice_scan_complete": true
   },
   "livysdad27/tempestWS": {
-    "captured_at": "2026-10-21T23:59:38.384789+00:00",
+    "captured_at": "2026-10-22T00:20:40.193131+00:00",
     "items": {
       "17": {
         "title": "does driver use rapid wind packets or obs_st?",
@@ -868,7 +868,7 @@
     "notice_scan_complete": true
   },
   "open-astro/weewx-conditions": {
-    "captured_at": "2026-10-21T23:59:40.181134+00:00",
+    "captured_at": "2026-10-22T00:20:42.509801+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -876,7 +876,7 @@
     "notice_scan_complete": true
   },
   "roe-dl/weathericons": {
-    "captured_at": "2026-10-21T23:59:40.199874+00:00",
+    "captured_at": "2026-10-22T00:20:42.680064+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -884,7 +884,7 @@
     "notice_scan_complete": true
   },
   "roe-dl/weewx-GTS": {
-    "captured_at": "2026-10-21T23:59:41.169593+00:00",
+    "captured_at": "2026-10-22T00:20:43.758597+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -892,7 +892,7 @@
     "notice_scan_complete": true
   },
   "roe-dl/weewx-airQ": {
-    "captured_at": "2026-10-21T23:59:41.231589+00:00",
+    "captured_at": "2026-10-22T00:20:44.006835+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -900,7 +900,7 @@
     "notice_scan_complete": true
   },
   "thomaslehmann1234/datenerfassung-ortsnetz-auslastung": {
-    "captured_at": "2026-10-21T23:59:47.624378+00:00",
+    "captured_at": "2026-10-22T00:20:51.740544+00:00",
     "items": {
       "33": {
         "title": "Beispiel-Code f\u00fcr Smartmeter Typ EMU Professional 3/75 TCP/IP 3-phase energymeter 202494 M23 1259",
@@ -951,7 +951,7 @@
     "notice_scan_complete": true
   },
   "tkeffer/filepile": {
-    "captured_at": "2026-10-21T23:59:43.937636+00:00",
+    "captured_at": "2026-10-22T00:20:46.884279+00:00",
     "items": {},
     "notices": {
       "LICENSE.txt": "0a041280bd00a9d068f503b8ee7ce35214bd24a1"
@@ -959,7 +959,7 @@
     "notice_scan_complete": true
   },
   "tkeffer/import-wlk": {
-    "captured_at": "2026-10-21T23:59:44.984072+00:00",
+    "captured_at": "2026-10-22T00:20:48.146694+00:00",
     "items": {},
     "notices": {
       "LICENSE.txt": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
@@ -967,7 +967,7 @@
     "notice_scan_complete": true
   },
   "tkeffer/weewx-xaggs": {
-    "captured_at": "2026-10-21T23:59:45.538786+00:00",
+    "captured_at": "2026-10-22T00:20:49.139852+00:00",
     "items": {
       "4": {
         "title": "Support `sum`",
@@ -982,7 +982,7 @@
     "notice_scan_complete": true
   },
   "weewx-packages/weewx-livedata": {
-    "captured_at": "2026-10-21T23:59:45.724871+00:00",
+    "captured_at": "2026-10-22T00:20:49.326085+00:00",
     "items": {},
     "notices": {
       "LICENSE.txt": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
@@ -990,7 +990,7 @@
     "notice_scan_complete": true
   },
   "ziti/weewx-rtsp-image": {
-    "captured_at": "2026-10-21T23:59:48.087985+00:00",
+    "captured_at": "2026-10-22T00:20:52.073807+00:00",
     "items": {
       "12": {
         "title": "chore: update ruff requirement from >=0.17.0 to >=0.17.1",
@@ -1005,7 +1005,7 @@
     "notice_scan_complete": true
   },
   "ziti/weewx-sftp": {
-    "captured_at": "2026-10-21T23:59:46.584853+00:00",
+    "captured_at": "2026-10-22T00:20:50.293689+00:00",
     "items": {},
     "notices": {
       "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
@@ -1013,7 +1013,7 @@
     "notice_scan_complete": true
   },
   "FColinet/WeeWX-ModbusTCP-driver": {
-    "captured_at": "2026-10-21T23:59:37.175234+00:00",
+    "captured_at": "2026-10-22T00:20:34.776329+00:00",
     "items": {},
     "notices": {
       "LICENSE": "8e48f0c4eda2e3e7a6e3ab31b62921af799d7607"
@@ -1021,7 +1021,7 @@
     "notice_scan_complete": true
   },
   "Millardiang/weewx-ecowitt_console_emulator": {
-    "captured_at": "2026-10-21T23:59:37.210847+00:00",
+    "captured_at": "2026-10-22T00:20:35.042269+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -1029,7 +1029,7 @@
     "notice_scan_complete": true
   },
   "WernerKr/davisconsoleapi": {
-    "captured_at": "2026-10-21T23:59:37.212185+00:00",
+    "captured_at": "2026-10-22T00:20:34.984805+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7",
@@ -1039,7 +1039,7 @@
     "notice_scan_complete": true
   },
   "chaunceygardiner/weewx-airgradient": {
-    "captured_at": "2026-10-21T23:59:37.194269+00:00",
+    "captured_at": "2026-10-22T00:20:34.809181+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7",
@@ -1048,7 +1048,7 @@
     "notice_scan_complete": true
   },
   "chaunceygardiner/weewx-celestial": {
-    "captured_at": "2026-10-21T23:59:38.533143+00:00",
+    "captured_at": "2026-10-22T00:20:35.947924+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -1056,7 +1056,7 @@
     "notice_scan_complete": true
   },
   "chaunceygardiner/weewx-forecast": {
-    "captured_at": "2026-10-21T23:59:39.191381+00:00",
+    "captured_at": "2026-10-22T00:20:36.470739+00:00",
     "items": {
       "2": {
         "title": "Endopint problems",
@@ -1071,7 +1071,7 @@
     "notice_scan_complete": true
   },
   "chaunceygardiner/weewx-loopdata": {
-    "captured_at": "2026-10-21T23:59:38.586513+00:00",
+    "captured_at": "2026-10-22T00:20:36.118989+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -1079,7 +1079,7 @@
     "notice_scan_complete": true
   },
   "chaunceygardiner/weewx-xtide": {
-    "captured_at": "2026-10-21T23:59:38.556224+00:00",
+    "captured_at": "2026-10-22T00:20:36.387235+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -1087,7 +1087,7 @@
     "notice_scan_complete": true
   },
   "evilbunny2008/SinceLastArchiveAccumulator": {
-    "captured_at": "2026-10-21T23:59:39.885479+00:00",
+    "captured_at": "2026-10-22T00:20:37.091071+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -1095,7 +1095,7 @@
     "notice_scan_complete": true
   },
   "glennmckechnie/weewx-owfs": {
-    "captured_at": "2026-10-21T23:59:39.895781+00:00",
+    "captured_at": "2026-10-22T00:20:37.264061+00:00",
     "items": {},
     "notices": {},
     "notice_scan_complete": true
@@ -1428,7 +1428,7 @@
     "notice_scan_complete": true
   },
   "matthewwall/weewx-tfrc": {
-    "captured_at": "2026-10-21T23:59:41.221290+00:00",
+    "captured_at": "2026-10-22T00:20:40.717462+00:00",
     "items": {},
     "notices": {
       "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
@@ -1436,7 +1436,7 @@
     "notice_scan_complete": true
   },
   "matthewwall/weewx-vedirect": {
-    "captured_at": "2026-10-21T23:59:43.416847+00:00",
+    "captured_at": "2026-10-22T00:20:41.798467+00:00",
     "items": {},
     "notices": {
       "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
@@ -1444,7 +1444,7 @@
     "notice_scan_complete": true
   },
   "raymondelooff/weewx-pusher": {
-    "captured_at": "2026-10-21T23:59:44.392808+00:00",
+    "captured_at": "2026-10-22T00:20:41.940011+00:00",
     "items": {},
     "notices": {
       "LICENSE": "9cecc1d4669ee8af2ca727a5d8cde10cd8b2d7cc"
@@ -1452,7 +1452,7 @@
     "notice_scan_complete": true
   },
   "roe-dl/weewx-rwsa": {
-    "captured_at": "2026-10-21T23:59:44.661646+00:00",
+    "captured_at": "2026-10-22T00:20:42.638203+00:00",
     "items": {},
     "notices": {
       "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
@@ -1460,7 +1460,7 @@
     "notice_scan_complete": true
   },
   "roe-dl/weewx-snmp": {
-    "captured_at": "2026-10-21T23:59:45.071495+00:00",
+    "captured_at": "2026-10-22T00:20:42.875832+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -1468,7 +1468,7 @@
     "notice_scan_complete": true
   },
   "tkeffer/weewx-nmea-xdr": {
-    "captured_at": "2026-10-21T23:59:45.878943+00:00",
+    "captured_at": "2026-10-22T00:20:43.602661+00:00",
     "items": {},
     "notices": {
       "LICENSE.txt": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
@@ -1476,7 +1476,7 @@
     "notice_scan_complete": true
   },
   "tkeffer/weewx-wmr89": {
-    "captured_at": "2026-10-21T23:59:46.230720+00:00",
+    "captured_at": "2026-10-22T00:20:43.786482+00:00",
     "items": {},
     "notices": {
       "LICENSE.txt": "0a041280bd00a9d068f503b8ee7ce35214bd24a1"
@@ -1484,7 +1484,7 @@
     "notice_scan_complete": true
   },
   "w4kus/weewx-weepe": {
-    "captured_at": "2026-10-21T23:59:46.951024+00:00",
+    "captured_at": "2026-10-22T00:20:44.021173+00:00",
     "items": {},
     "notices": {
       "LICENSE.txt": "86648b6bf93b72e747e9bc2239cb8ac5b890b05c"
@@ -1492,7 +1492,7 @@
     "notice_scan_complete": true
   },
   "weewx-contrib/weewx-NovaSDS011": {
-    "captured_at": "2026-10-21T23:59:49.609134+00:00",
+    "captured_at": "2026-10-22T00:20:46.585064+00:00",
     "items": {
       "1": {
         "title": "Add local Sensor.Community HTTP input",
@@ -1507,7 +1507,7 @@
     "notice_scan_complete": true
   },
   "weewx-extensions/aqi-xtype": {
-    "captured_at": "2026-10-21T23:59:48.651857+00:00",
+    "captured_at": "2026-10-22T00:20:45.629176+00:00",
     "items": {
       "3": {
         "title": "Support retrieving series data for nowcast algorithm",
@@ -1534,7 +1534,7 @@
     "notice_scan_complete": true
   },
   "Cosmospacedog/Gill-WeeWX": {
-    "captured_at": "2026-10-21T23:59:36.895268+00:00",
+    "captured_at": "2026-10-22T00:20:37.311276+00:00",
     "items": {},
     "notices": {
       "LICENSE": "52d26ec8f48a0ee7bd2b373be19fcef28e9deddc"
@@ -1542,7 +1542,7 @@
     "notice_scan_complete": true
   },
   "Millardiang/weewx-divumwx": {
-    "captured_at": "2026-10-21T23:59:37.087666+00:00",
+    "captured_at": "2026-10-22T00:20:37.419544+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7",
@@ -1553,7 +1553,7 @@
     "notice_scan_complete": true
   },
   "chaunceygardiner/weewx-airlink": {
-    "captured_at": "2026-10-21T23:59:36.899459+00:00",
+    "captured_at": "2026-10-22T00:20:37.377694+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7",
@@ -1562,7 +1562,7 @@
     "notice_scan_complete": true
   },
   "chaunceygardiner/weewx-ip100": {
-    "captured_at": "2026-10-21T23:59:38.019239+00:00",
+    "captured_at": "2026-10-22T00:20:38.697900+00:00",
     "items": {},
     "notices": {
       "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
@@ -1570,7 +1570,7 @@
     "notice_scan_complete": true
   },
   "chaunceygardiner/weewx-skyfield": {
-    "captured_at": "2026-10-21T23:59:37.990756+00:00",
+    "captured_at": "2026-10-22T00:20:38.593131+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -1578,7 +1578,7 @@
     "notice_scan_complete": true
   },
   "ktrue/weewx-saratoga": {
-    "captured_at": "2026-10-21T23:59:40.219634+00:00",
+    "captured_at": "2026-10-22T00:20:41.389865+00:00",
     "items": {
       "1": {
         "title": "Update WEEWXtags.php.tmpl with WEEWX's indoor humidity into WEEWXtags.php corresponding indoorhumidity",
@@ -1594,7 +1594,7 @@
     "notice_scan_complete": true
   },
   "matthewwall/weewx-as3935": {
-    "captured_at": "2026-10-21T23:59:38.941627+00:00",
+    "captured_at": "2026-10-22T00:20:39.971782+00:00",
     "items": {},
     "notices": {
       "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
@@ -1602,31 +1602,31 @@
     "notice_scan_complete": true
   },
   "matthewwall/weewx-emoncms": {
-    "captured_at": "2026-10-21T23:59:39.968016+00:00",
+    "captured_at": "2026-10-22T00:20:41.307667+00:00",
     "items": {},
     "notices": {},
     "notice_scan_complete": true
   },
   "matthewwall/weewx-thingspeak": {
-    "captured_at": "2026-10-21T23:59:41.052090+00:00",
+    "captured_at": "2026-10-22T00:20:42.692029+00:00",
     "items": {},
     "notices": {},
     "notice_scan_complete": true
   },
   "matthewwall/weewx-wbug": {
-    "captured_at": "2026-10-21T23:59:41.362076+00:00",
+    "captured_at": "2026-10-22T00:20:42.725853+00:00",
     "items": {},
     "notices": {},
     "notice_scan_complete": true
   },
   "matthewwall/weewx-wetter": {
-    "captured_at": "2026-10-21T23:59:42.059967+00:00",
+    "captured_at": "2026-10-22T00:20:44.058316+00:00",
     "items": {},
     "notices": {},
     "notice_scan_complete": true
   },
   "open-astro/wp-weewx": {
-    "captured_at": "2026-10-21T23:59:42.437099+00:00",
+    "captured_at": "2026-10-22T00:20:44.037709+00:00",
     "items": {},
     "notices": {
       "LICENSE.md": "fb7bf50a4381735e6f539a2662af1d7a1bd66918"
@@ -1634,7 +1634,7 @@
     "notice_scan_complete": true
   },
   "roe-dl/weewx-photovoltaics": {
-    "captured_at": "2026-10-21T23:59:42.839955+00:00",
+    "captured_at": "2026-10-22T00:20:45.095743+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -1642,7 +1642,7 @@
     "notice_scan_complete": true
   },
   "roe-dl/weewx-sqlupload": {
-    "captured_at": "2026-10-21T23:59:43.079161+00:00",
+    "captured_at": "2026-10-22T00:20:45.412046+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -1650,7 +1650,7 @@
     "notice_scan_complete": true
   },
   "roe-dl/weewx-wns": {
-    "captured_at": "2026-10-21T23:59:43.448285+00:00",
+    "captured_at": "2026-10-22T00:20:45.273272+00:00",
     "items": {},
     "notices": {
       "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
@@ -1658,7 +1658,7 @@
     "notice_scan_complete": true
   },
   "sbsrouteur/weewx-PiSenseHat": {
-    "captured_at": "2026-10-21T23:59:43.925751+00:00",
+    "captured_at": "2026-10-22T00:20:46.484777+00:00",
     "items": {},
     "notices": {
       "LICENSE": "6ff95fd9dde4899151c5df833cd6cc4f7b4335db"
@@ -1666,7 +1666,7 @@
     "notice_scan_complete": true
   },
   "teeks99/weewx-notify": {
-    "captured_at": "2026-10-21T23:59:44.105867+00:00",
+    "captured_at": "2026-10-22T00:20:46.567088+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -1674,7 +1674,7 @@
     "notice_scan_complete": true
   },
   "tkeffer/weewx-climate": {
-    "captured_at": "2026-10-21T23:59:44.272193+00:00",
+    "captured_at": "2026-10-22T00:20:46.676192+00:00",
     "items": {},
     "notices": {
       "LICENSE.txt": "0a041280bd00a9d068f503b8ee7ce35214bd24a1"
@@ -1682,7 +1682,7 @@
     "notice_scan_complete": true
   },
   "tsoodla/weewx-luxtronik": {
-    "captured_at": "2026-10-21T23:59:44.516090+00:00",
+    "captured_at": "2026-10-22T00:20:47.028509+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -1690,7 +1690,7 @@
     "notice_scan_complete": true
   },
   "weewx-extensions/pushover": {
-    "captured_at": "2026-10-21T23:59:45.281245+00:00",
+    "captured_at": "2026-10-22T00:20:48.442658+00:00",
     "items": {
       "1": {
         "title": "Value",
@@ -1705,7 +1705,7 @@
     "notice_scan_complete": true
   },
   "weewx-mqtt/publish": {
-    "captured_at": "2026-10-21T23:59:45.139496+00:00",
+    "captured_at": "2026-10-22T00:20:47.884976+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -1713,7 +1713,7 @@
     "notice_scan_complete": true
   },
   "ampledata/weewx_graphite": {
-    "captured_at": "2026-10-21T23:59:38.920934+00:00",
+    "captured_at": "2026-10-22T00:20:38.571398+00:00",
     "items": {
       "4": {
         "title": "Does not install on 3.9.2",
@@ -1746,7 +1746,7 @@
     "notice_scan_complete": true
   },
   "gitlab.com/wjcarpenter/bme280wx": {
-    "captured_at": "2026-10-21T23:59:40.783694+00:00",
+    "captured_at": "2026-10-22T00:20:41.149934+00:00",
     "items": {
       "2": {
         "title": "WeeWX 4.9.1 exited after install bme280wx",
@@ -1773,7 +1773,7 @@
     "notice_scan_complete": true
   },
   "matthewwall/weewx-cwxn": {
-    "captured_at": "2026-10-21T23:59:45.027442+00:00",
+    "captured_at": "2026-10-22T00:20:46.528358+00:00",
     "items": {
       "3": {
         "title": "Address FIX ME comment in the code",
@@ -1800,7 +1800,7 @@
     "notice_scan_complete": true
   },
   "matthewwall/weewx-sdr": {
-    "captured_at": "2026-10-22T00:00:01.284706+00:00",
+    "captured_at": "2026-10-22T00:21:06.255338+00:00",
     "items": {
       "211": {
         "title": "Refactor to multiple files, adds tests",
@@ -1872,7 +1872,7 @@
         "title": "Refine exit logic to avoid crash errors",
         "url": "https://github.com/matthewwall/weewx-sdr/pull/199",
         "kind": "PR",
-        "digest": "86c22024d80426549564a67f24ae9d3affa95569a77ee6049c87462c9e973e14"
+        "digest": "9098df8aca8071436964fb7f0fc7685594045b9a5e1dd03a6d1d29901d3b0ac7"
       },
       "198": {
         "title": "SDR.PY issues on weewx 5.2.0",
@@ -1932,7 +1932,7 @@
         "title": "Subprocess shell",
         "url": "https://github.com/matthewwall/weewx-sdr/pull/104",
         "kind": "PR",
-        "digest": "e5f7f11292b9c67d9b6577264c40eafae651cbdce6618fd27fcc0f8866de08de"
+        "digest": "47ab3263898c8344324a2046e11334fba4c49b9281222710824ddac4367ccecc"
       }
     },
     "notices": {
@@ -1941,7 +1941,7 @@
     "notice_scan_complete": true
   },
   "matthewwall/weewx-wh23xx": {
-    "captured_at": "2026-10-21T23:59:50.023040+00:00",
+    "captured_at": "2026-10-22T00:20:52.194241+00:00",
     "items": {
       "16": {
         "title": "weewx 5.1.0 compatibility error",
@@ -1998,7 +1998,7 @@
     "notice_scan_complete": true
   },
   "daduke/ventusw820": {
-    "captured_at": "2026-10-21T23:59:38.652802+00:00",
+    "captured_at": "2026-10-22T00:20:37.211711+00:00",
     "items": {
       "3": {
         "title": "Move to python 3?",
@@ -2017,7 +2017,7 @@
     "notice_scan_complete": true
   },
   "dkmcode/weewx-observerip": {
-    "captured_at": "2026-10-21T23:59:41.413865+00:00",
+    "captured_at": "2026-10-22T00:20:39.048255+00:00",
     "items": {
       "3": {
         "title": "Python3 compatibility",
@@ -2044,7 +2044,7 @@
     "notice_scan_complete": true
   },
   "gitlab.com/ngulden/niculskin": {
-    "captured_at": "2026-10-21T23:59:40.554448+00:00",
+    "captured_at": "2026-10-22T00:20:38.827343+00:00",
     "items": {
       "21": {
         "title": "language is always english if weewx > 4.5.1",
@@ -2078,7 +2078,7 @@
     "notice_scan_complete": true
   },
   "teeks99/weewx-json": {
-    "captured_at": "2026-10-21T23:59:48.646558+00:00",
+    "captured_at": "2026-10-22T00:20:45.118233+00:00",
     "items": {
       "15": {
         "title": "Add UV Index and Radiation",
@@ -2105,7 +2105,7 @@
     "notice_scan_complete": true
   },
   "Buco7854/weewx-netatmo": {
-    "captured_at": "2026-10-21T23:59:35.452413+00:00",
+    "captured_at": "2026-10-22T00:20:36.548997+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -2113,7 +2113,7 @@
     "notice_scan_complete": true
   },
   "matthewwall/weewx-cmon": {
-    "captured_at": "2026-10-21T23:59:39.123021+00:00",
+    "captured_at": "2026-10-22T00:20:41.318771+00:00",
     "items": {
       "4": {
         "title": "After upgrade to weewx 5.02, cmon.py crashes weewx on trying to access docker overlay",
@@ -2140,7 +2140,7 @@
     "notice_scan_complete": true
   },
   "matthewwall/weewx-meteostick": {
-    "captured_at": "2026-10-21T23:59:44.753285+00:00",
+    "captured_at": "2026-10-22T00:20:48.268751+00:00",
     "items": {
       "11": {
         "title": "Restart after timeout implemented",
@@ -2167,7 +2167,7 @@
     "notice_scan_complete": true
   },
   "matthewwall/weewx-wxt5x0": {
-    "captured_at": "2026-10-21T23:59:42.989770+00:00",
+    "captured_at": "2026-10-22T00:20:45.718907+00:00",
     "items": {
       "13": {
         "title": "WeeWX dies when WXT5x0Driver loses connection",
@@ -2206,7 +2206,7 @@
     "notice_scan_complete": true
   },
   "sulrich/weewx-prompush": {
-    "captured_at": "2026-10-21T23:59:44.116336+00:00",
+    "captured_at": "2026-10-22T00:20:47.408803+00:00",
     "items": {
       "6": {
         "title": "Bump requests from 2.10.0 to 2.20.0",
@@ -2221,7 +2221,7 @@
     "notice_scan_complete": true
   },
   "jonotaegi/weewx-wll": {
-    "captured_at": "2026-10-21T23:59:43.894475+00:00",
+    "captured_at": "2026-10-22T00:20:40.975913+00:00",
     "items": {
       "7": {
         "title": "add request timeout",
@@ -2258,7 +2258,7 @@
     "notice_scan_complete": true
   },
   "matthewwall/weewx-crt": {
-    "captured_at": "2026-10-21T23:59:42.106279+00:00",
+    "captured_at": "2026-10-22T00:20:39.610715+00:00",
     "items": {
       "13": {
         "title": "crt fails to load on Python 3.12+: No module named 'distutils'",
@@ -2291,7 +2291,7 @@
     "notice_scan_complete": true
   },
   "matthewwall/weewx-influx": {
-    "captured_at": "2026-10-21T23:59:55.610390+00:00",
+    "captured_at": "2026-10-22T00:20:49.547051+00:00",
     "items": {
       "36": {
         "title": "Avoid distutils version parsing",
@@ -2390,7 +2390,7 @@
     "notice_scan_complete": true
   },
   "matthewwall/weewx-twitter": {
-    "captured_at": "2026-10-21T23:59:43.026305+00:00",
+    "captured_at": "2026-10-22T00:20:41.528874+00:00",
     "items": {
       "4": {
         "title": "Posting on Twitter at fixed time",
@@ -2403,7 +2403,7 @@
     "notice_scan_complete": true
   },
   "tfilo/weewx-interceptor": {
-    "captured_at": "2026-10-21T23:59:45.628675+00:00",
+    "captured_at": "2026-10-22T00:20:43.036129+00:00",
     "items": {},
     "notices": {
       "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
@@ -2411,7 +2411,7 @@
     "notice_scan_complete": true
   },
   "RandomReaper/weewx-zabbix": {
-    "captured_at": "2026-10-21T23:59:39.986295+00:00",
+    "captured_at": "2026-10-22T00:20:41.435908+00:00",
     "items": {
       "10": {
         "title": "Added a Template for WeeWX",
@@ -2444,7 +2444,7 @@
     "notice_scan_complete": true
   },
   "matthewwall/weewx-csv": {
-    "captured_at": "2026-10-21T23:59:39.708808+00:00",
+    "captured_at": "2026-10-22T00:20:41.066988+00:00",
     "items": {
       "2": {
         "title": "CSV contains wrong data",
@@ -2465,7 +2465,7 @@
     "notice_scan_complete": true
   },
   "matthewwall/weewx-meteotemplate": {
-    "captured_at": "2026-10-21T23:59:41.805232+00:00",
+    "captured_at": "2026-10-22T00:20:43.845886+00:00",
     "items": {
       "12": {
         "title": "altri dati da spedire a meteotemplate con la tua estensione",
@@ -2492,7 +2492,7 @@
     "notice_scan_complete": true
   },
   "matthewwall/weewx-owm": {
-    "captured_at": "2026-10-21T23:59:43.362941+00:00",
+    "captured_at": "2026-10-22T00:20:45.788443+00:00",
     "items": {
       "4": {
         "title": "Update readme.txt",
@@ -2508,6 +2508,63 @@
       }
     },
     "notices": {},
+    "notice_scan_complete": true
+  },
+  "jonathankoren/weewx-aqi": {
+    "captured_at": "2026-10-22T00:20:40.205142+00:00",
+    "items": {
+      "42": {
+        "title": "United States EPA has updated their AQI ranges for PM2.5",
+        "url": "https://github.com/jonathankoren/weewx-aqi/issues/42",
+        "kind": "issue",
+        "digest": "d8c87cb46699102774abdd074231511da93f8effec131c76b7732baf9a63c7b6"
+      },
+      "41": {
+        "title": "weewx-aqi  v1.4.1 calculation fail",
+        "url": "https://github.com/jonathankoren/weewx-aqi/issues/41",
+        "kind": "issue",
+        "digest": "97d2248d344666d2511889bb5ef97b7abc4a4f3cac9afb7013eb2634c331757d"
+      },
+      "40": {
+        "title": "weewx crashing",
+        "url": "https://github.com/jonathankoren/weewx-aqi/issues/40",
+        "kind": "issue",
+        "digest": "08584963953ab86aec9390128858de7257e51a0bbda95ca277f68afcad6626bd"
+      },
+      "37": {
+        "title": "Support/Docs for weewx-airlink",
+        "url": "https://github.com/jonathankoren/weewx-aqi/issues/37",
+        "kind": "issue",
+        "digest": "c3cd30beab8e20ad0580351bd6bea1a21381336cdc55133bc0c3571848c439b4"
+      },
+      "33": {
+        "title": "units.py: KeyError: 'parts_per_billion'",
+        "url": "https://github.com/jonathankoren/weewx-aqi/issues/33",
+        "kind": "issue",
+        "digest": "95bb7767528bd27a4d69e96298624501b2c6b8b7c178c8545fa7a1858f2c90bb"
+      },
+      "23": {
+        "title": "Support NowCast 2019 O3 Calculations",
+        "url": "https://github.com/jonathankoren/weewx-aqi/issues/23",
+        "kind": "issue",
+        "digest": "fe99a93d77b4aa1f731d36e1a78a8492e665454246a5c1fd6b7213d6ae98457b"
+      },
+      "20": {
+        "title": "Explicitly Support Unbounded Indicies",
+        "url": "https://github.com/jonathankoren/weewx-aqi/issues/20",
+        "kind": "issue",
+        "digest": "5406d635ad26f0e8f35ffe8cdb961088ac940ab6d9b3c15b3470b28b74637df1"
+      },
+      "13": {
+        "title": "custom PM sensor",
+        "url": "https://github.com/jonathankoren/weewx-aqi/issues/13",
+        "kind": "issue",
+        "digest": "45b26e4b2c5002d624b587ab1a8a28f8ed1392e5d3469c071ec7193f1585c213"
+      }
+    },
+    "notices": {
+      "LICENSE": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
+    },
     "notice_scan_complete": true
   }
 }
