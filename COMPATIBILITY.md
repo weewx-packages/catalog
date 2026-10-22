@@ -1,7 +1,8 @@
 # Check upcoming WeeWX changes
 
-The compatibility workflow runs Thursdays at 04:23 UTC, on catalog pushes and pull
-requests, and through **Run workflow** in GitHub Actions. It tests the latest
+The compatibility workflow runs one group each weekday at 04:23 UTC, following
+the assignments in `ci/mirrors.json`. Each project runs once a week. Catalog
+pushes, pull requests and **Run workflow** check every group. It tests the latest
 stable, non-yanked release of every catalog package against the current commits
 of WeeWX branches `master` and `development`, on Python 3.10 and 3.14.
 These checks warn about changes already published in those branches. They cannot
@@ -32,7 +33,10 @@ copied; GitHub issues, release assets and wikis are separate from this sync.
 Each case downloads the catalog archive, checks its SHA-256, installs it into a
 disposable station and imports its installed modules. The package's pytest suite
 runs against the extracted release files. Tests come from a source revision
-resolved once per run, normally the release tag. Extension source changes that
+resolved once per run, normally the release tag, or a project suite in this
+catalog. Separate jobs each get their own station and Python environment.
+Large plans use child matrices of at most 200 jobs; the full pinned plan remains
+an artifact used by tests and reporting. Extension source changes that
 have not been released cannot hide a broken release archive.
 
 Python and WeeWX requirement mismatches fail the check. Unexpected skipped
@@ -69,9 +73,30 @@ Add an entry keyed by the catalog package ID to `ci/packages.json`. Set
 `repository` to the GitHub repository containing its pytest suite, `ref` to a
 source ref such as `v{version}`, `imports` to the installed Python modules to
 check, and `allowed_skips` to an empty list unless a specific optional feature
-is unavailable. The source ref must contain a `tests/` directory. Tests must run
-with WeeWX, pytest and PHP as their dependencies. Add any extra dependencies to
-the workflow before adding a suite that needs them.
+is unavailable.
+
+By default, the source revision supplies `tests/`. For a suite maintained in this
+catalog, set `tests_path` to `ci/project_tests/<repository>`. Its `payload`,
+`station` and `case` fixtures identify the checksum-verified archive, disposable
+station and complete pinned case. Test behavior from the payload or installed
+modules. Tests must not import runtime code from the source checkout.
+
+Use `pip_packages` for additional Python dependencies and `system_packages` for
+Debian package names. Direct WeeWX dependencies and apt command options are
+rejected. An `install_prerequisites` list pins other extensions by repository
+and full `sha`; `install_input` supplies explicit installer answers without
+credentials. Prerequisite setup failures are infrastructure errors.
+
+The import subprocess uses only the station's `bin` directory on `PYTHONPATH`.
+For modules that cannot import on the runner's hardware, use `imports: []` and
+import the real payload inside functional tests, replacing only the hardware
+boundary. This does not count as physical device validation.
+
+Non-extension projects, such as a WordPress plugin or standalone rendering tool,
+use `ci/external.json`, keyed by ID, with `release` and `check_profile` fields.
+Their profiles use `kind: external` and the same project-test fixtures. They
+receive their own checks without a WeeWX installer or an installable catalog
+entry.
 
 Every catalog package needs a check. CI rejects missing entries so new packages
 cannot silently escape testing. Archive URLs can point to any supported host;

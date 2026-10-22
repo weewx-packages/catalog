@@ -7,6 +7,9 @@
     ],
     "allowed_skips": [
       "needs repository support"
+    ],
+    "system_packages": [
+      "php-cli"
     ]
   },
   "ecowitt-http-push": {
@@ -216,6 +219,12 @@
     "allowed_skips": [],
     "pip_packages": [
       "bluepy==1.3.0"
+    ],
+    "system_packages": [
+      "libglib2.0-dev",
+      "pkg-config",
+      "make",
+      "gcc"
     ]
   },
   "wh23xx": {

@@ -2,7 +2,11 @@ name: WeeWX compatibility
 
 on:
   schedule:
+    - cron: '23 4 * * 1'
+    - cron: '23 4 * * 2'
+    - cron: '23 4 * * 3'
     - cron: '23 4 * * 4'
+    - cron: '23 4 * * 5'
   workflow_dispatch:
   push:
     branches: [main]
@@ -68,9 +72,14 @@ jobs:
         id: plan
         env:
           GH_TOKEN: ${{ github.token }}
+          TEST_SCHEDULE: ${{ github.event.schedule }}
         run: |
-          python ci/compatibility.py matrix > matrix.json
-          echo "matrix=$(cat matrix.json)" >> "$GITHUB_OUTPUT"
+          if [ "$GITHUB_EVENT_NAME" = schedule ]; then
+            python ci/compatibility.py matrix --weekday "${TEST_SCHEDULE##* }" > matrix.json
+          else
+            python ci/compatibility.py matrix > matrix.json
+          fi
+          echo "matrix=$(python ci/compatibility.py shards --plan matrix.json)" >> "$GITHUB_OUTPUT"
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: plan
@@ -79,58 +88,12 @@ jobs:
 
   test:
     needs: prepare
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
     strategy:
       fail-fast: false
       matrix: ${{ fromJSON(needs.prepare.outputs.matrix) }}
-    name: ${{ matrix.package }} / ${{ matrix.branch }} / Python ${{ matrix.python }}
-    steps:
-      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
-        with:
-          path: catalog
-          persist-credentials: false
-      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
-        with:
-          repository: ${{ matrix.weewx_repository }}
-          ref: ${{ matrix.weewx_sha }}
-          path: weewx
-          persist-credentials: false
-      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
-        with:
-          repository: ${{ matrix.repository }}
-          ref: ${{ matrix.source_sha }}
-          path: extension
-          persist-credentials: false
-      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
-        with:
-          python-version: ${{ matrix.python }}
-      - name: Install test dependencies
-        env:
-          TEST_PACKAGE: ${{ matrix.package }}
-        run: |
-          if [ "$TEST_PACKAGE" = livedata ]; then
-            sudo apt-get update -qq
-            sudo apt-get install -y php-cli
-            php --version
-          elif [ "$TEST_PACKAGE" = ventusw820 ]; then
-            sudo apt-get update -qq
-            sudo apt-get install -y libglib2.0-dev pkg-config make gcc
-          fi
-          python -m pip install ./weewx pytest packaging requests skyfield "pymodbus>=3.11,<4" pyserial
-      - name: Install and test the release archive
-        env:
-          CASE_JSON: ${{ toJSON(matrix) }}
-        run: python catalog/ci/compatibility.py run --source extension --work result
-      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
-        if: always()
-        with:
-          name: result-${{ matrix.package }}-${{ matrix.branch }}-${{ matrix.python }}
-          path: |
-            result/result.json
-            result/junit.xml
-          if-no-files-found: warn
-          retention-days: 30
+    uses: ./.github/workflows/compatibility-group.yml
+    with:
+      matrix: ${{ toJSON(matrix.cases) }}
 
   report:
     needs: [prepare, test]
