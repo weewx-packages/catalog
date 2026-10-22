@@ -122,7 +122,7 @@ jobs:
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with:
           python-version: '3.14'
-      - run: python -m pip install ./weewx packaging requests skyfield 'pymodbus>=3.11,<4' pyserial
+      - run: python -m pip install ./weewx packaging requests skyfield 'pymodbus>=3.11,<4' pyserial PyYAML paho-mqtt
       - name: Check source installation with WeeWX
         env:
           WEEKDAY: ${{ matrix.weekday }}

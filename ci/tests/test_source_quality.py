@@ -6,6 +6,8 @@ import subprocess
 import sys
 from unittest.mock import Mock
 
+import pytest
+
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import issues
 import source_quality as quality
@@ -79,3 +81,29 @@ def test_relative_work_directory_and_station_failure(tmp_path, monkeypatch):
     _, result = quality.check(dict(fork='org/extension'), 'master', 'a' * 40, Path('relative'))
     assert (tmp_path / 'relative/package.zip').is_file()
     assert result['status'] == 'error' and result['phase'] == 'station setup'
+
+
+@pytest.mark.parametrize('dependency_fails', [True, False])
+def test_prerequisite_failure_cannot_blame_the_extension(tmp_path, monkeypatch, dependency_fails):
+    commands = []
+
+    def command(args, **kwargs):
+        commands.append(args)
+        if args[:2] == ['git', 'clone']:
+            source = Path(args[-1])
+            source.mkdir()
+            (source / 'install.py').write_text('VERSION = "1"\n')
+        if args[:3] == ['weectl', 'extension', 'install']:
+            assert kwargs['env']['PYTHONPATH'].endswith('/station/bin')
+            if dependency_fails and args[3].endswith('prerequisite-0.zip'):
+                raise subprocess.CalledProcessError(1, args)
+
+    monkeypatch.setattr(quality, 'command', command)
+    monkeypatch.setattr(quality.subprocess, 'check_output', Mock(return_value='a' * 40))
+    dependency = dict(repository='org/dependency', sha='b' * 40)
+    case, result = quality.check(dict(fork='org/extension', install_prerequisites=[dependency]),
+                                 'master', 'c' * 40, tmp_path / 'check')
+    assert case['prerequisites'] == [dependency]
+    assert any(args[-1] == dependency['sha'] for args in commands if 'fetch' in args)
+    assert result['status'] == ('error' if dependency_fails else 'passed')
+    assert result['phase'] == ('prerequisites' if dependency_fails else 'installation')

@@ -108,7 +108,8 @@
     "license": "MIT",
     "license_evidence": [
       "https://github.com/sbsrouteur/weewx-PiSenseHat/blob/70bcc9b31f8e914e773b762dc345f28d849f54a6/LICENSE"
-    ]
+    ],
+    "install_skip_reason": "The installer imports smbus, RPi.GPIO and a Raspberry Pi sensor module. Installation requires a Raspberry Pi hardware profile; runtime syntax is checked here."
   },
   {
     "upstream": "https://github.com/glennmckechnie/weewx-WXgraphic.git",
@@ -318,6 +319,12 @@
       "https://github.com/chaunceygardiner/weewx-celestial/blob/63b6d781f9d065f8f9d7ff0cce9a90c538c0df55/bin/user/celestial_sky.py",
       "https://github.com/chaunceygardiner/weewx-celestial/blob/63b6d781f9d065f8f9d7ff0cce9a90c538c0df55/skins/Celestial/celestial.js",
       "https://github.com/chaunceygardiner/weewx-celestial/blob/63b6d781f9d065f8f9d7ff0cce9a90c538c0df55/tests/test_celestial.py"
+    ],
+    "install_prerequisites": [
+      {
+        "repository": "weewx-packages/weewx-loopdata",
+        "sha": "fe52a7944703584f02912f1b1c1ac4b3abaf6933"
+      }
     ]
   },
   {
@@ -957,7 +964,8 @@
     "license": "GPL-3.0-only",
     "license_evidence": [
       "https://github.com/inguy24/weewx-openweather_API/blob/8f1209b5b24a3dd74e685baf4e9d222ec5274223/LICENSE"
-    ]
+    ],
+    "install_input": "ci-installation-fixture-0000000000\ny\n1\ny\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
   },
   {
     "upstream": "https://github.com/thomaslehmann1234/datenerfassung-ortsnetz-auslastung.git",
@@ -1490,6 +1498,12 @@
       "https://github.com/chaunceygardiner/weewx-weatherboard/blob/1c57e19861099cac1c042b0c776b07e8d79632cf/install.py",
       "https://github.com/chaunceygardiner/weewx-weatherboard/blob/1c57e19861099cac1c042b0c776b07e8d79632cf/tests/browser_check.py",
       "https://github.com/chaunceygardiner/weewx-weatherboard/blob/1c57e19861099cac1c042b0c776b07e8d79632cf/tests/check_templates.py"
+    ],
+    "install_prerequisites": [
+      {
+        "repository": "weewx-packages/weewx-loopdata",
+        "sha": "fe52a7944703584f02912f1b1c1ac4b3abaf6933"
+      }
     ]
   },
   {

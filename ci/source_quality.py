@@ -49,6 +49,9 @@ def check(mirror, branch, weewx_sha, work):
             files.extend((source / 'bin').rglob('*.py'))
         for path in files:
             py_compile.compile(str(path), doraise=True)
+        if mirror.get('install_skip_reason'):
+            return case, dict(status='not-covered', phase='prerequisites',
+                              details=[mirror['install_skip_reason']])
         status, phase = 'error', 'station setup'
         station = work / 'station'
         config = station / 'weewx.conf'
@@ -59,9 +62,21 @@ def check(mirror, branch, weewx_sha, work):
         command([sys.executable, '-c', 'import sys,weecfg,weewx.manager; '
             '_,c=weecfg.read_config(sys.argv[1]); '
             'weewx.manager.open_manager_with_config(c,"wx_binding",initialize=True).close()', str(config)])
+        phase = 'prerequisites'
+        env = dict(os.environ, PYTHONPATH=str(station / 'bin'))
+        case['prerequisites'] = mirror.get('install_prerequisites', [])
+        for number, dependency in enumerate(case['prerequisites']):
+            checkout = work / ('prerequisite-%s' % number)
+            bundle = work / ('prerequisite-%s.zip' % number)
+            command(['git', 'clone', '--depth=1', 'https://github.com/' + dependency['repository'] + '.git', str(checkout)])
+            command(['git', '-C', str(checkout), 'fetch', '--depth=1', 'origin', dependency['sha']])
+            command(['git', '-C', str(checkout), 'archive', '--format=zip', '--prefix=prerequisite/',
+                     '--output=' + str(bundle), dependency['sha']])
+            command(['weectl', 'extension', 'install', str(bundle), '--config', str(config), '--yes'],
+                    input_text='', env=env)
         status, phase = 'failed', 'installation'
         command(['weectl', 'extension', 'install', str(archive), '--config', str(config), '--yes'],
-                input_text=mirror.get('install_input', ''))
+                input_text=mirror.get('install_input', ''), env=env)
         status = 'passed'
     except (OSError, subprocess.SubprocessError, py_compile.PyCompileError) as error:
         details.append(str(error))

@@ -193,3 +193,10 @@ notes when GitLab requires authentication for its REST notes endpoint.
 A test profile may list extra Python dependencies in `pip_packages`. Requirements
 are parsed before matrix creation. Direct WeeWX requirements are rejected, and
 a pip constraint preserves the installed core version for transitive dependencies.
+
+Source profiles may name `install_prerequisites` as repository/SHA pairs. Those
+extensions are installed first in the same disposable station, and their exact
+refs appear in the results. Prerequisite failures remain infrastructure errors.
+An `install_skip_reason` records an unavailable hardware platform after syntax
+checks; it never counts as a successful installation. PiSenseHat needs a
+Raspberry Pi profile because its installer imports platform-specific modules.
