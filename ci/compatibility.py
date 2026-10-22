@@ -7,6 +7,7 @@ failures are compatibility failures. Only the latter produce package issues.
 
 import argparse
 import hashlib
+import importlib.metadata
 import json
 import os
 from pathlib import Path
@@ -20,6 +21,8 @@ import xml.etree.ElementTree as ET
 import zipfile
 
 from packaging.specifiers import SpecifierSet
+from packaging.requirements import Requirement
+from packaging.utils import canonicalize_name
 from packaging.version import Version
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -101,6 +104,9 @@ def matrix(catalog, checks):
     for package in catalog['packages']:
         release = latest_release(package)
         check = checks[package['id']]
+        for dependency in check.get('pip_packages', []):
+            if canonicalize_name(Requirement(dependency).name) == 'weewx':
+                raise ValueError('Package dependencies must not replace the WeeWX checkout')
         ref = check['ref'].format(version=release['version'])
         source_sha = revision(check['repository'], ref)
         for branch, weewx_sha in upstream.items():
@@ -209,6 +215,15 @@ def run(case, source, work):
     details = []
     release = case['release']
     try:
+        if case.get('pip_packages'):
+            phase = 'dependencies'
+            # A transitive dependency must not replace the core revision under
+            # test. Pip fails on a conflicting WeeWX requirement instead.
+            constraints = work / 'constraints.txt'
+            constraints.write_text('weewx==' + importlib.metadata.version('weewx') + '\n')
+            command([sys.executable, '-m', 'pip', 'install', '--constraint', str(constraints),
+                     *case['pip_packages']])
+        phase = 'download'
         archive = work / ('package.' + release['archive']['format'])
         with urllib.request.urlopen(release['archive']['url'], timeout=60) as response:
             archive.write_bytes(response.read())

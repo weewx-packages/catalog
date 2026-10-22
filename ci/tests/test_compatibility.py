@@ -39,6 +39,14 @@ def test_duplicate_package_ids_are_rejected(package):
         compat.matrix({'packages': [package, package]}, {'example': {}})
 
 
+@pytest.mark.parametrize('requirement', ['weewx>=5', 'WeeWX==5.0', '--upgrade'])
+def test_dependencies_cannot_override_core_or_supply_pip_options(package, monkeypatch, requirement):
+    monkeypatch.setattr(compat, 'revision', Mock(return_value='sha'))
+    with pytest.raises(ValueError):
+        compat.matrix({'packages': [package]}, {'example': dict(
+            repository='owner/example', ref='v{version}', pip_packages=[requirement])})
+
+
 def test_each_branch_is_pinned_once_for_the_entire_matrix(package, monkeypatch):
     api = Mock(side_effect=[{'sha': 'master-sha'}, {'sha': 'dev-sha'}, {'sha': 'release-sha'}])
     monkeypatch.setattr(compat, 'github', api)
@@ -98,6 +106,19 @@ def test_download_failure_is_not_a_compatibility_failure(tmp_path, monkeypatch):
     result = json.loads((tmp_path / 'work/result.json').read_text())
     assert result['status'] == 'error'
     assert result['details'] == ['offline']
+
+
+def test_transitive_dependencies_keep_the_installed_core_version(tmp_path, monkeypatch):
+    monkeypatch.setattr(compat.importlib.metadata, 'version', Mock(return_value='5.6.0'))
+    monkeypatch.setattr(compat.urllib.request, 'urlopen', Mock(side_effect=OSError('offline')))
+    install = Mock()
+    monkeypatch.setattr(compat, 'command', install)
+    case = dict(pip_packages=['influxdb-client>=1'], release=dict(archive=dict(
+        url='https://example.test/package.zip', format='zip')))
+    assert compat.run(case, tmp_path, tmp_path / 'work') == 1
+    args = install.call_args.args[0]
+    assert '--constraint' in args
+    assert Path(args[args.index('--constraint') + 1]).read_text() == 'weewx==5.6.0\n'
 
 
 @pytest.mark.parametrize('execute_tests', [True, False])

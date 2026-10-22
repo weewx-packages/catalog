@@ -97,6 +97,6 @@
     },
     "installer_name": "divumwx",
     "description": "Live weather dashboard with charts, forecasts and astronomy pages. Requires requests and skyfield; installation asks for station settings.",
-    "blocked": "Bundled Dirtylane font is restricted to personal use; package publication paused pending licensed asset cleanup."
+    "blocked": "New upstream tags require a font-license review and a separately versioned cleaned archive; direct package publication is disabled."
   }
 ]
