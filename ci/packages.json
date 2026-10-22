@@ -1516,5 +1516,20 @@
     "allowed_skips": [],
     "pip_packages": [],
     "tests_path": "ci/project_tests/weewx-wundergroundlike"
+  },
+  "davis-cloud": {
+    "repository": "weewx-packages/weewx-davis-cloud",
+    "ref": "v{version}",
+    "allow_prereleases": true,
+    "imports": [
+      "user.daviscloud.driver",
+      "user.daviscloud.service"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [
+      "requests",
+      "six"
+    ],
+    "tests_path": "ci/project_tests/weewx-davis-cloud"
   }
 }

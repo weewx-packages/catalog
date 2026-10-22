@@ -1732,5 +1732,17 @@
       "https://github.com/open-astro/wp-weewx/blob/47540be593d51732f2793c7c91a0e1a80ec4f8bb/LICENSE.md",
       "https://github.com/open-astro/wp-weewx/blob/47540be593d51732f2793c7c91a0e1a80ec4f8bb/README.md"
     ]
+  },
+  {
+    "upstream": "https://github.com/weewx-packages/weewx-davis-cloud.git",
+    "fork": "weewx-packages/weewx-davis-cloud",
+    "weekday": 4,
+    "sync": false,
+    "check": "catalog",
+    "reviewed_revision": "e77582deacc0187eab7b4f24cc20b0edcd28ab0f",
+    "license": "GPL-3.0-or-later",
+    "license_evidence": [
+      "https://github.com/weewx-packages/weewx-davis-cloud/blob/e77582deacc0187eab7b4f24cc20b0edcd28ab0f/LICENSE"
+    ]
   }
 ]

@@ -3056,6 +3056,39 @@
           "restart_required": true
         }
       ]
+    },
+    {
+      "id": "davis-cloud",
+      "installer_name": "davis-cloud",
+      "name": "Davis WeatherLink Cloud (pre-release)",
+      "description": "Unified Davis cloud current conditions, archives and optional health service. Pre-release; legacy package migration is incomplete.",
+      "types": [
+        "driver",
+        "service"
+      ],
+      "keywords": [
+        "davis",
+        "cloud",
+        "weatherlink",
+        "console",
+        "airlink",
+        "enviromonitor"
+      ],
+      "homepage": "https://github.com/weewx-packages/weewx-davis-cloud",
+      "releases": [
+        {
+          "version": "0.1.0a1",
+          "requires_python": ">=3.10,<3.15",
+          "requires_weewx": ">=5.5,<6",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-davis-cloud/releases/download/v0.1.0a1/davis-cloud-0.1.0a1.tar.gz",
+            "format": "tar.gz",
+            "sha256": "2dc0d2f8fbc38d9b146637238a0d762f8ebd1ce02ba2d8011989540846560b9c"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-davis-cloud/releases/tag/v0.1.0a1",
+          "restart_required": true
+        }
+      ]
     }
   ]
 }

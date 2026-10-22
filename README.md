@@ -161,6 +161,7 @@ records from different driver versions.
 | [wlip-emulator](https://github.com/weewx-packages/weewx-wlip-emulator) | `wlip-emulator` | WeatherLinkIP Emulator |
 | [Wetternetz Sachsen](https://github.com/weewx-packages/weewx-wns) | `wns` | Upload weather data to WNS. |
 | [wundergroundLike](https://github.com/weewx-packages/weewx-wundergroundlike) | `wundergroundlike` | Post to a custom server_url that uses Weather Underground formatting |
+| [Davis WeatherLink Cloud (pre-release)](https://github.com/weewx-packages/weewx-davis-cloud) | `davis-cloud` | Unified Davis cloud current conditions, archives and optional health service. Pre-release; legacy package migration is incomplete. |
 <!-- packages:end -->
 
 New packages become available through the same registered source when its index
