@@ -340,10 +340,9 @@ def run(case, source, work):
                 command(install, input_text=case['install_input'], env=env)
             else:
                 command(install, env=env)
-            if case.get('tests_path'):
-                phase = 'installed files'
-                command([sys.executable, str(ROOT / 'ci/installed_files.py'),
-                         str(payload), str(station)], cwd=payload, env=env)
+            phase = 'installed files'
+            command([sys.executable, str(ROOT / 'ci/installed_files.py'),
+                     str(payload), str(station)], cwd=payload, env=env)
         # Import in another process so the suite cannot reuse a source module
         # already loaded by this installation check.
         phase = 'imports'

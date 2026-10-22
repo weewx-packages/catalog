@@ -89,7 +89,7 @@ rejected. An `install_prerequisites` list pins other extensions by repository
 and full `sha`; `install_input` supplies explicit installer answers without
 credentials. Prerequisite setup failures are infrastructure errors.
 
-Before importing, project checks compare every Python file declared by the
+Before importing, checks compare every Python file declared by the
 installer with the released bytes, using the core's actual destination mapping.
 The same step rejects destinations outside `bin/user` and `skins`, matching the
 repository client's managed roots. This rejects an importable but altered

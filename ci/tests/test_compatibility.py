@@ -154,6 +154,35 @@ def test_suite_uses_archive_code_even_when_source_checkout_is_fixed(tmp_path, mo
     assert any(expected in detail for detail in result['details'])
 
 
+@pytest.mark.parametrize('profile', [{}, {'kind': 'skin'}, {'tests_path': 'ci/project_tests/example'}])
+def test_every_installation_checks_repository_paths(tmp_path, monkeypatch, profile):
+    """Source suites and skin suites must enforce the same installer contract."""
+    import hashlib
+
+    monkeypatch.setitem(sys.modules, 'weewx', Mock(__version__='5.5.2'))
+    source = tmp_path / 'source'
+    (source / 'tests').mkdir(parents=True)
+    archive = tmp_path / 'release.zip'
+    with zipfile.ZipFile(archive, 'w') as bundle:
+        bundle.writestr('package/install.py', '')
+    case = dict(profile, imports=[], allowed_skips=[], release=dict(
+        requires_python='>=3.10', requires_weewx='>=5', archive=dict(
+            url=archive.as_uri(), format='zip',
+            sha256=hashlib.sha256(archive.read_bytes()).hexdigest())))
+
+    def reject_unsupported_installer(args, **kwargs):
+        if str(CI / 'installed_files.py') in args:
+            raise ValueError('Destinations outside repository-managed roots')
+
+    monkeypatch.setattr(compat, 'command', reject_unsupported_installer)
+    work = tmp_path / 'work'
+    assert compat.run(case, source, work) == 1
+    result = json.loads((work / 'result.json').read_text())
+    assert result['status'] == 'failed'
+    assert result['phase'] == 'installed files'
+    assert result['details'] == ['Destinations outside repository-managed roots']
+
+
 @pytest.fixture
 def issue_cases():
     """Supply a complete pair of checks for one package."""

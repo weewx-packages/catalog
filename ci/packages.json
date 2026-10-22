@@ -260,7 +260,9 @@
     "imports": [
       "user.observerip"
     ],
-    "allowed_skips": []
+    "allowed_skips": [],
+    "tests_path": "ci/project_tests/weewx-observerip",
+    "pip_packages": []
   },
   "aqi": {
     "repository": "weewx-packages/weewx-aqi",
@@ -270,12 +272,14 @@
       "user.aqi.au",
       "user.aqi.ca",
       "user.aqi.us",
-      "user.aqi.ozone"
+      "user.aqi.ozone",
+      "user.aqi.backfill"
     ],
     "allowed_skips": [],
     "pip_packages": [
       "numpy>=2.2,<3"
-    ]
+    ],
+    "tests_path": "ci/project_tests/weewx-aqi"
   },
   "cmon": {
     "repository": "weewx-packages/weewx-cmon",
@@ -960,7 +964,8 @@
       "PyYAML"
     ],
     "tests_path": "ci/project_tests/weewx-openweather_API",
-    "install_input": "CI_FIXTURE_NOT_A_REAL_KEY_00000000\ny\ny\nn\n1\ny\n"
+    "install_input": "CI_FIXTURE_NOT_A_REAL_KEY_00000000\ny\ny\nn\n1\ny\n",
+    "initialize_archive": true
   },
   "purple": {
     "repository": "weewx-packages/weewx-purple",

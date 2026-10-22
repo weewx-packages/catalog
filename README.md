@@ -62,7 +62,7 @@ records from different driver versions.
 | [Vaisala WXT5x0](https://github.com/weewx-packages/weewx-wxt5x0) | `wxt5x0` | Read Vaisala WXT5x0 observations over serial or a TCP serial server. |
 | [WeatherLink Live](https://github.com/weewx-packages/weewx-wll) | `wll` | Poll the WeatherLink Live local HTTP API, including separate ISS and wind transmitters. |
 | [ObserverIP](https://github.com/weewx-packages/weewx-observerip) | `observerip` | Read Ambient ObserverIP observations directly or through an intercepted upload file. |
-| [Air quality indices](https://github.com/weewx-packages/weewx-aqi) | `aqi` | Calculate air quality indices with explicit historical and EPA 2024 standards. |
+| [Air quality indices](https://github.com/weewx-packages/weewx-aqi) | `aqi` | Calculate air quality indices with explicit historical and EPA 2024 standards. Backfill with PYTHONPATH=station/bin python -m user.aqi.backfill. |
 | [Computer monitor](https://github.com/weewx-packages/weewx-cmon) | `cmon` | Archive CPU, memory, disk and network measurements from the local computer. |
 | [CSV output](https://github.com/weewx-packages/weewx-csv) | `csv` | Write LOOP packets or archive records as CSV, with optional atomic snapshots and decimal precision. |
 | [JSON reports](https://github.com/weewx-packages/weewx-json) | `json` | Render current and historical weather observations as JSON with optional sensor fields. |

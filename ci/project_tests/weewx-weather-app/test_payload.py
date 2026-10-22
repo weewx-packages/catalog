@@ -17,9 +17,46 @@ DEPENDENCIES = [
      'dd0ce1b55a3ed2080cb70f9c655850cda86c206862310009dcb5e5c95265a5e0'),
     ('annotations.jar', 'https://dl.google.com/dl/android/maven2/androidx/annotation/annotation-jvm/1.9.1/annotation-jvm-1.9.1.jar',
      '1e343917ebf27ba96fe4dc52b1cad7fd32b738fbc6355bb6cd5b3b305d7212d0')]
+JAVA_HOME = Path('/usr/lib/jvm/java-21-openjdk-amd64')
+TOOLS_URL = 'https://dl.google.com/android/repository/commandlinetools-linux-16111833_latest.zip'
+TOOLS_SHA256 = '0877a1d048fe4a24efe2eff536ca4223f7adeb58648bb81909d33c446918cfa8'
+
+
+def java_environment():
+    """Select the profile's JDK 21 even when the runner puts older Java on PATH."""
+    for tool in ['java', 'javac']:
+        result = subprocess.run([str(JAVA_HOME / 'bin' / tool), '--version'],
+                                capture_output=True, text=True, timeout=30)
+        assert result.returncode == 0, result.stdout + result.stderr
+        assert result.stdout.split()[1].split('.')[0] == '21', result.stdout
+    return dict(os.environ, JAVA_HOME=str(JAVA_HOME),
+                PATH=str(JAVA_HOME / 'bin') + os.pathsep + os.environ['PATH'])
+
+
+def pinned_sdkmanager(cache):
+    """Use verified CLI 23.0 from our cache without replacing the runner's SDK tools."""
+    bundle = cache / 'commandlinetools-16111833.zip'
+    if not bundle.exists():
+        with urllib.request.urlopen(TOOLS_URL, timeout=90) as response:
+            data = response.read()
+        assert hashlib.sha256(data).hexdigest() == TOOLS_SHA256
+        bundle.write_bytes(data)
+    data = bundle.read_bytes()
+    assert hashlib.sha256(data).hexdigest() == TOOLS_SHA256
+    tools = cache / 'commandlinetools-16111833'
+    if not tools.exists():
+        with tempfile.TemporaryDirectory(dir=cache) as stage:
+            with zipfile.ZipFile(io.BytesIO(data)) as archive:
+                archive.extractall(stage)
+            shutil.move(str(Path(stage) / 'cmdline-tools'), tools)
+        for executable in (tools / 'bin').iterdir():
+            executable.chmod(0o755)
+    assert 'Pkg.Revision=23.0' in (tools / 'source.properties').read_text()
+    return tools / 'bin/sdkmanager'
 
 
 def test_forecast_json_round_trip(payload, tmp_path):
+    env = java_environment()
     jars = []
     for name, url, digest in DEPENDENCIES:
         with urllib.request.urlopen(url, timeout=30) as response:
@@ -49,52 +86,38 @@ public class ForecastParserCheck {
 }
 ''')
     classpath = os.pathsep.join(jars)
-    compiled = subprocess.run(['javac', '--release', '21', '-cp', classpath, '-d', str(tmp_path),
+    compiled = subprocess.run([str(JAVA_HOME / 'bin/javac'), '--release', '21', '-cp', classpath, '-d', str(tmp_path),
                               str(source / 'Day.java'), str(source / 'GsonHelper.java'), str(harness)],
-                             capture_output=True, text=True, timeout=60)
+                             env=env, capture_output=True, text=True, timeout=60)
     assert compiled.returncode == 0, compiled.stdout + compiled.stderr
-    executed = subprocess.run(['java', '-cp', classpath + os.pathsep + str(tmp_path),
+    executed = subprocess.run([str(JAVA_HOME / 'bin/java'), '-cp', classpath + os.pathsep + str(tmp_path),
                                'com.odiousapps.weewxweather.ForecastParserCheck'],
-                              capture_output=True, text=True, timeout=30)
+                              env=env, capture_output=True, text=True, timeout=30)
     assert executed.returncode == 0, executed.stdout + executed.stderr
     assert 'forecast-parser-ok' in executed.stdout
 
 
 def test_android_debug_build(payload, tmp_path):
-    """Build the archived app with a real SDK, bootstrapping pinned tools when needed."""
+    """Build the archived app with JDK 21 and the verified CLI's SDK 37.0 packages."""
     cache = Path(os.environ.get('RUNNER_TEMP', tempfile.gettempdir())) / 'weewx-weather-app-tools'
     cache.mkdir(exist_ok=True)
     sdk_hint = os.environ.get('ANDROID_HOME') or os.environ.get('ANDROID_SDK_ROOT')
     sdk = Path(sdk_hint) if sdk_hint else cache / 'sdk'
-    env = dict(os.environ, ANDROID_HOME=str(sdk),
+    env = dict(java_environment(), ANDROID_HOME=str(sdk), ANDROID_SDK_ROOT=str(sdk),
                GRADLE_USER_HOME=str(cache / 'gradle'))
-    java_home = Path('/usr/lib/jvm/java-21-openjdk-amd64')
-    if java_home.is_dir():
-        env['JAVA_HOME'] = str(java_home)
     with (cache / 'sdk.lock').open('w') as lock:
         fcntl.flock(lock, fcntl.LOCK_EX)
-        manager = next(iter(sdk.glob('cmdline-tools/*/bin/sdkmanager')), None)
-        if manager is None:
-            url = 'https://dl.google.com/android/repository/commandlinetools-linux-16111833_latest.zip'
-            with urllib.request.urlopen(url, timeout=90) as response:
-                data = response.read()
-            assert hashlib.sha256(data).hexdigest() == '0877a1d048fe4a24efe2eff536ca4223f7adeb58648bb81909d33c446918cfa8'
-            stage = cache / 'commandline-stage'
-            with zipfile.ZipFile(io.BytesIO(data)) as archive:
-                archive.extractall(stage)
-            tools = sdk / 'cmdline-tools/latest'
-            tools.parent.mkdir(parents=True, exist_ok=True)
-            shutil.move(str(stage / 'cmdline-tools'), tools)
-            for executable in (tools / 'bin').iterdir():
-                executable.chmod(0o755)
-            manager = tools / 'bin/sdkmanager'
-        if not (sdk / 'platforms/android-37/android.jar').is_file() or not (sdk / 'build-tools/37.0.0/aapt2').is_file():
+        manager = pinned_sdkmanager(cache)
+        if not (sdk / 'platforms/android-37.0/android.jar').is_file() or not (sdk / 'build-tools/37.0.0/aapt2').is_file():
             installed = subprocess.run([str(manager), '--sdk_root=' + str(sdk),
-                'platforms;android-37', 'build-tools;37.0.0', 'platform-tools'],
+                'platforms/android-37.0', 'build-tools/37.0.0', 'platform-tools'],
                 input='y\n' * 30, env=env, capture_output=True, text=True, timeout=720)
-            assert installed.returncode == 0, installed.stdout + installed.stderr
+            assert (installed.returncode == 0
+                    and (sdk / 'platforms/android-37.0/android.jar').is_file()
+                    and (sdk / 'build-tools/37.0.0/aapt2').is_file()), installed.stdout + installed.stderr
     build = subprocess.run(['bash', str(payload / 'gradlew'), '--project-dir', str(payload),
-                            '--no-daemon', '--max-workers=2', 'testDebugUnitTest', 'assembleDebug'],
+                            '-Dorg.gradle.java.home=' + str(JAVA_HOME), '--no-daemon',
+                            '--max-workers=2', 'testDebugUnitTest', 'assembleDebug'],
                            cwd=payload, env=env, capture_output=True, text=True, timeout=720)
     (tmp_path / 'android-build.log').write_text(build.stdout + build.stderr)
     assert build.returncode == 0, build.stdout + build.stderr

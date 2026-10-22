@@ -1625,17 +1625,17 @@
   "openweather-api": {
     "status": "published",
     "source_sha": "8f1209b5b24a3dd74e685baf4e9d222ec5274223",
-    "archive_sha256": "fdb3d50a63c9cd333dfd7f0a3fa5c56d162c1ba293b11939c995219607d84c46",
+    "archive_sha256": "a47a92aedb926aaaf5ec422e147127e0370f364324aae94042f4875bfaa3ea04",
     "limitations": [
-      "Verified on official WeeWX master 2202a2f873353d926d69814570b63b0a195f6d22 and development 06b5ffb3335417132d7527e738e7eea9769c46bf with Python 3.10.22 and 3.14.4.",
-      "Hardware and remote services are represented by byte, file or HTTP fixtures; no physical hardware result is claimed.",
-      "Field definitions are installed as bin/user/openweather_fields.yaml. The payload installer reads that copy; its cached installer resolves the installed YAML beside user.openweather. The original root YAML remains in the archive."
+      "HTTP payload extraction uses fixed weather and air-quality responses; no live API credentials or external OpenWeather account were used.",
+      "The installer extends an initialized wx_binding database via the active venv CLI. New service configuration remains in memory until the core commits it; the CLI reads only the existing database binding.",
+      "Installer version is 1.0.0.post2026102201; unchanged runtime VERSION remains 1.0.1."
     ],
     "publication": {
-      "release_id": 420355507,
-      "asset_id": 664838538,
+      "release_id": 420376562,
+      "asset_id": 664905868,
       "immutable": true,
-      "sha256": "fdb3d50a63c9cd333dfd7f0a3fa5c56d162c1ba293b11939c995219607d84c46"
+      "sha256": "a47a92aedb926aaaf5ec422e147127e0370f364324aae94042f4875bfaa3ea04"
     },
     "repository": "weewx-packages/weewx-openweather_API",
     "tests_path": "ci/project_tests/weewx-openweather_API",
@@ -1643,21 +1643,27 @@
     "packaging_recipe": {
       "source_sha": "8f1209b5b24a3dd74e685baf4e9d222ec5274223",
       "patch": "ci/recipes/openweather-api/package.patch",
-      "sha256": "753ba03e9aaae8e61a8a962d894196d7e7c17da6b092f46815e6b047aed7dd94",
-      "changes": "Field definitions are installed as bin/user/openweather_fields.yaml. The payload installer reads that copy; its cached installer resolves the installed YAML beside user.openweather. The original root YAML remains in the archive."
+      "sha256": "b1acb50a0788c489bc8eed48362a6ae52a5cce6c1c364d47b1989085aee845ee",
+      "changes": [
+        "Remove both config_dict.write() calls from installer configuration helpers.",
+        "Keep legacy field-selection settings in the engine configuration, without writing /etc/weewx/openweather_fields.conf.",
+        "Retain the preceding managed bin/user YAML layout repair and dated provenance notice.",
+        "Bump only the installer version; retain runtime, complete source and license bytes."
+      ]
     },
     "license": "GPL-3.0-only",
     "license_evidence": [
-      "https://github.com/inguy24/weewx-openweather_API/blob/8f1209b5b24a3dd74e685baf4e9d222ec5274223/LICENSE"
+      "https://github.com/weewx-packages/weewx-openweather_API/blob/8f1209b5b24a3dd74e685baf4e9d222ec5274223/LICENSE"
     ],
     "test_sha256": {
       "ci/project_tests/weewx-openweather_API/test_payload.py": "88c27e7cf12b54560b073b5c895ac1024bc537d06a09a2ee3f7ec2cf72e297f7",
+      "ci/project_tests/weewx-openweather_API/test_installer_configuration.py": "67a82bd00d0b20816d8b09b46f4ae8e0648ac66d1e3b179d5886d22dd8826b7f",
       "ci/project_tests/weewx-openweather_API/test_installed_hooks.py": "d46e6862749b8474bc12c848adaf1e294ad784f33d9282f395d3f2db92e70b08"
     },
     "archive": {
-      "url": "https://github.com/weewx-packages/catalog/releases/download/openweather-api/v1.0.0.post20261022/openweather-api-1.0.0.post20261022.tar.gz",
+      "url": "https://github.com/weewx-packages/catalog/releases/download/openweather-api/v1.0.0.post2026102201/openweather-api-1.0.0.post2026102201.tar.gz",
       "format": "tar.gz",
-      "sha256": "fdb3d50a63c9cd333dfd7f0a3fa5c56d162c1ba293b11939c995219607d84c46"
+      "sha256": "a47a92aedb926aaaf5ec422e147127e0370f364324aae94042f4875bfaa3ea04"
     }
   },
   "purple": {
@@ -1935,7 +1941,7 @@
       "https://github.com/evilbunny2008/WeeWXWeatherApp/blob/0e6b70572cc31577ded3d1bcadd647121e9b67f9/LICENSE"
     ],
     "test_sha256": {
-      "ci/project_tests/weewx-weather-app/test_payload.py": "f25e5350c438964bde687150f14b5e73746adb151b786c775ca01bf32f484072"
+      "ci/project_tests/weewx-weather-app/test_payload.py": "c77cf42efdd46577a05fbf973be4df10a094c4ccda70fe2b8277c29d9e4813f2"
     },
     "archive": {
       "url": "https://github.com/weewx-packages/catalog/releases/download/weather-app/v2.1.26.post20261022%2Bg0e6b70572cc3/weather-app-2.1.26.post20261022%2Bg0e6b70572cc3.tar.gz",
@@ -3388,13 +3394,86 @@
       "https://github.com/open-astro/wp-weewx/blob/47540be593d51732f2793c7c91a0e1a80ec4f8bb/README.md"
     ],
     "test_sha256": {
-      "ci/project_tests/wp-weewx/test_payload.py": "27f224959301cbe34b204c55c5e649a214017dda3fa5fd1135f1c89113e80d4c",
-      "ci/project_tests/wp-weewx/fixture.php": "294e12ec142a94a0aa47ecc595bae50a6f218a82aebf5b17f495b99cb27766fe"
+      "ci/project_tests/wp-weewx/test_payload.py": "27f224959301cbe34b204c55c5e649a214017dda3fa5fd1135f1c89113e80d4c"
     },
     "archive": {
       "url": "https://github.com/weewx-packages/catalog/releases/download/wp-weewx/v0.5.2/wp-weewx-0.5.2.tar.gz",
       "format": "tar.gz",
       "sha256": "90e2224525b182382db211d2d88a07e18fdea14b750dcfe8f743e4200a81d73b"
+    }
+  },
+  "aqi": {
+    "status": "published",
+    "source_sha": "a6133a018062a02b3f1823751c17e836e5ab7dcf",
+    "archive_sha256": "1ae5d8c19a0411f3f2a13402efd5069ea9f0c5bfe1550742557587b09772dae2",
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/aqi/v1.5.0.post20261022/aqi-1.5.0.post20261022.tar.gz",
+      "format": "tar.gz",
+      "sha256": "1ae5d8c19a0411f3f2a13402efd5069ea9f0c5bfe1550742557587b09772dae2"
+    },
+    "publication": {
+      "release_id": 420370931,
+      "asset_id": 664887836,
+      "immutable": true,
+      "sha256": "1ae5d8c19a0411f3f2a13402efd5069ea9f0c5bfe1550742557587b09772dae2"
+    },
+    "repository": "weewx-packages/weewx-aqi",
+    "tests_path": "ci/project_tests/weewx-aqi",
+    "coverage": "release",
+    "limitations": [
+      "The top-level bin/aqi_backfill launcher is retained as source but is not installed; use user.aqi.backfill.",
+      "No physical sensor, external API or station hardware is used by the backfill check."
+    ],
+    "packaging_recipe": {
+      "source_sha": "a6133a018062a02b3f1823751c17e836e5ab7dcf",
+      "patch": "ci/recipes/aqi/package.patch",
+      "sha256": "5909904d80e24cbdd0b5a4d14ba94c22608823a08f730faf9b0a4e0fa210ba43",
+      "changes": "The top-level bin/aqi_backfill launcher is retained as source but is not installed; use user.aqi.backfill."
+    },
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/weewx-packages/weewx-aqi/blob/a6133a018062a02b3f1823751c17e836e5ab7dcf/LICENSE"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-aqi/test_backfill.py": "1e197e9b850522424836db2390454ba8248b9f906c5ad62365b3e0ef882638ab"
+    }
+  },
+  "observerip": {
+    "status": "published",
+    "source_sha": "e08f1e8e9402668bd16a2ec4cdfaa2fb23b90207",
+    "archive_sha256": "0c3eefcc46f22fa783fba68b4913c910194a649adae77006cee5026932939e4d",
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/observerip/v0.2.1.post20261022/observerip-0.2.1.post20261022.tar.gz",
+      "format": "tar.gz",
+      "sha256": "0c3eefcc46f22fa783fba68b4913c910194a649adae77006cee5026932939e4d"
+    },
+    "publication": {
+      "release_id": 420372524,
+      "asset_id": 664892786,
+      "immutable": true,
+      "sha256": "0c3eefcc46f22fa783fba68b4913c910194a649adae77006cee5026932939e4d"
+    },
+    "repository": "weewx-packages/weewx-observerip",
+    "tests_path": "ci/project_tests/weewx-observerip",
+    "coverage": "release",
+    "limitations": [
+      "No physical ObserverIP hardware was used.",
+      "Apache and CGI deployment is manual; no system configuration or server behavior is claimed.",
+      "Four official core axes use the exact master/development SHAs recorded in matrix results; other compatible versions were not exercised.",
+      "The new client was tested separately on Python 3.14 using its recorded complete source snapshot, not represented as an official core revision."
+    ],
+    "packaging_recipe": {
+      "source_sha": "e08f1e8e9402668bd16a2ec4cdfaa2fb23b90207",
+      "patch": "ci/recipes/observerip/package.patch",
+      "sha256": "ce21770e06c4cb2ba528f89633cc2fb3d09a60aa6e6d24ec8c151ace2557f8bf",
+      "changes": "Install unchanged Apache examples below bin/user/observerip_examples and document manual deployment."
+    },
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/weewx-packages/weewx-observerip/blob/e08f1e8e9402668bd16a2ec4cdfaa2fb23b90207/LICENSE"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-observerip/test_driver.py": "feb81218915d7be0be8b74a2d25d972ae269ba0ecfeffeebfdaf770cd01e2d35"
     }
   }
 }

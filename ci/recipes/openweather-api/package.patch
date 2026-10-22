@@ -324,13 +324,14 @@
 \ No newline at end of file
 --- a/install.py
 +++ b/install.py
-@@ -1,4 +1,5 @@
+@@ -1,4 +1,6 @@
  #!/usr/bin/env python3
 +# 2026-10-22 weewx-packages: Install package files inside managed bin/user roots.
++# 2026-10-22 weewx-packages: Leave configuration persistence to the core transaction.
  """
  WeeWX OpenWeather Extension Installer - Reorganized with Proper Service Registration
  
-@@ -28,6 +29,16 @@
+@@ -28,6 +30,16 @@
      return OpenWeatherInstaller()
  
  
@@ -347,7 +348,7 @@
  class TerminalUI:
      """Simple terminal UI for field selection."""
      
-@@ -45,7 +56,7 @@
+@@ -45,7 +57,7 @@
          
          try:
              extension_dir = os.path.dirname(__file__)
@@ -356,7 +357,7 @@
              with open(config_path, 'r') as f:
                  api_config = yaml.safe_load(f)
              
-@@ -583,7 +594,7 @@
+@@ -583,7 +595,7 @@
      def _load_api_config(self, extension_dir):
          """Load API-first configuration from YAML."""
          try:
@@ -365,7 +366,7 @@
              with open(config_path, 'r') as f:
                  return yaml.safe_load(f)
          except Exception as e:
-@@ -626,7 +637,7 @@
+@@ -626,7 +638,7 @@
      def _load_field_definitions(self, extension_dir):
          """Load field definitions from YAML file."""
          try:
@@ -374,16 +375,64 @@
              with open(definitions_path, 'r') as f:
                  return yaml.safe_load(f)['field_definitions']
          except Exception as e:
-@@ -1180,7 +1191,7 @@
+@@ -769,8 +781,7 @@
+         return mappings
+ 
+     def _save_field_selection(self, selected_fields):
+-        """Save ONLY clean field selection data."""
+-        selection_file = '/etc/weewx/openweather_fields.conf'
++        """Keep clean field selection in the engine configuration for the core to save."""
+         
+         # CLEAN the selection - only keep actual field selections
+         clean_selection = {}
+@@ -780,8 +791,7 @@
+             if field_name in valid_fields:
+                 clean_selection[field_name] = selected
+         
+-        config = configobj.ConfigObj()
+-        config.filename = selection_file
++        config = self.config_dict.setdefault('OpenWeatherService', {})
+         
+         # Store ONLY clean field selection
+         config['field_selection'] = {
+@@ -790,8 +800,6 @@
+             'config_version': '1.0'
+         }
+         
+-        config.write()
+-        os.chmod(selection_file, 0o644)
+         
+     def _prompt_api_key(self):
+         """Prompt for OpenWeatherMap API key with validation."""
+@@ -891,7 +899,7 @@
+         return modules
+ 
+     def _write_enhanced_config(self, config_dict, selected_fields, api_key, intervals):
+-        """Write enhanced configuration with unit system and conversion data."""
++        """Update configuration in memory with unit system and conversion data."""
+         try:
+             print("  Writing enhanced service configuration...")
+             
+@@ -964,8 +972,7 @@
+             if 'unit_conversions' in self.api_config:
+                 service_config['unit_conversions'] = dict(self.api_config['unit_conversions'])
+             
+-            # Save configuration file
+-            config_dict.write()
++            # The core saves this configuration after configure() returns.
+             
+             print(f"    ✓ Enhanced configuration written successfully")
+             print(f"      - Unit system: {weewx_unit_system} → OpenWeather {api_units}")
+@@ -1180,7 +1187,7 @@
      
      def __init__(self):
          super(OpenWeatherInstaller, self).__init__(
 -            version="1.0.0",
-+            version="1.0.0.post20261022",
++            version="1.0.0.post2026102201",
              name="OpenWeather", 
              description="OpenWeatherMap API integration with modular field selection",
              author="WeeWX OpenWeather Extension",
-@@ -1191,7 +1202,7 @@
+@@ -1191,7 +1198,7 @@
              
              files=[
                  ('bin/user', ['bin/user/openweather.py']),
@@ -392,3 +441,47 @@
              ],
              config={
                  'OpenWeatherService': {
+@@ -1305,7 +1312,7 @@
+             return False
+           
+     def _write_service_config(self, config_dict, api_settings):
+-        """Write only operational settings to weewx.conf (no field selection).
++        """Update operational settings in memory (no field selection).
+         
+         Stores only the settings needed for service operation:
+         - API key and connection settings
+@@ -1313,14 +1320,14 @@
+         - Collection intervals
+         - Logging preferences
+         
+-        Field selection is stored separately in openweather_fields.conf.
++        The core persists these settings with the configurator's field selection.
+         
+         Args:
+             config_dict: WeeWX configuration dictionary
+             api_settings (dict): Operational settings from interactive setup
+         """
+         try:
+-            print(f"  Writing operational configuration to weewx.conf...")
++            print(f"  Updating operational configuration in memory...")
+             
+             # Ensure OpenWeatherService section exists
+             if 'OpenWeatherService' not in config_dict:
+@@ -1356,14 +1363,11 @@
+             service_config['modules']['uv_index'] = 'true' if 'uv_index' in modules else 'false'
+             service_config['modules']['forecast'] = 'true' if 'forecast' in modules else 'false'
+             
+-            # EXPLICITLY DO NOT write field selection to weewx.conf
+-            # Field selection is stored in /etc/weewx/openweather_fields.conf
+-            
+-            # Save configuration file
+-            config_dict.write()
++            # Field selection is populated by the configurator.
++            
++            # The core saves this configuration after configure() returns.
+             
+             print(f"    ✓ Operational configuration written successfully")
+-            print(f"    Note: Field selection stored separately in openweather_fields.conf")
+             
+         except Exception as e:
+             print(f"    ❌ Failed to write service configuration: {e}")
