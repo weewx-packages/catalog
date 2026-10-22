@@ -495,6 +495,368 @@
           "restart_required": true
         }
       ]
+    },
+    {
+      "id": "meteostick",
+      "installer_name": "meteostick",
+      "name": "Meteostick",
+      "description": "Read Meteostick weather observations over a serial connection.",
+      "types": [
+        "driver"
+      ],
+      "homepage": "https://github.com/weewx-packages/weewx-meteostick",
+      "releases": [
+        {
+          "version": "0.68.1",
+          "requires_python": ">=3.10",
+          "requires_weewx": ">=5.2,<6",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-meteostick/releases/download/v0.68.1/weewx-meteostick-0.68.1.zip",
+            "format": "zip",
+            "sha256": "808519119e8eb4cb521756002bff73c3fc505b8a1ae15e5d31279081384135b0"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-meteostick/releases/tag/v0.68.1",
+          "restart_required": true
+        }
+      ]
+    },
+    {
+      "id": "sdr",
+      "installer_name": "sdr",
+      "name": "SDR",
+      "description": "Read weather sensors through rtl_433. Requires a separately installed rtl_433 executable.",
+      "types": [
+        "driver"
+      ],
+      "homepage": "https://github.com/weewx-packages/weewx-sdr",
+      "releases": [
+        {
+          "version": "0.99.1",
+          "requires_python": ">=3.10",
+          "requires_weewx": ">=5.2,<6",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-sdr/releases/download/v0.99.1/weewx-sdr-0.99.1.zip",
+            "format": "zip",
+            "sha256": "a3dda70377d2b42c4db197f1acb5932703537b6afcf341453cfe36a95d0ac5c6"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-sdr/releases/tag/v0.99.1",
+          "restart_required": true
+        }
+      ]
+    },
+    {
+      "id": "nova-sds011",
+      "installer_name": "NovaSDS011",
+      "name": "Nova SDS011",
+      "description": "Add SDS011 particulate concentrations through a serial sensor or a local Sensor.Community HTTP endpoint.",
+      "types": [
+        "service"
+      ],
+      "homepage": "https://github.com/weewx-packages/weewx-NovaSDS011",
+      "releases": [
+        {
+          "version": "1.1.0",
+          "requires_python": ">=3.10",
+          "requires_weewx": ">=5.2,<6",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-NovaSDS011/releases/download/v1.1.0/weewx-NovaSDS011-1.1.0.zip",
+            "format": "zip",
+            "sha256": "f90f774907cc0708af891576fefa6a4a8e0e99ba4d4196e71e1c368e4cf14ab8"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-NovaSDS011/releases/tag/v1.1.0",
+          "restart_required": true
+        }
+      ]
+    },
+    {
+      "id": "ventusw820",
+      "installer_name": "ventusw820",
+      "name": "Ventus W820",
+      "description": "Read Ventus W820 weather observations over Bluetooth LE. Requires bluepy and a supported Bluetooth adapter.",
+      "types": [
+        "driver"
+      ],
+      "homepage": "https://github.com/weewx-packages/ventusw820",
+      "releases": [
+        {
+          "version": "0.2.1",
+          "requires_python": ">=3.10",
+          "requires_weewx": ">=5.2,<6",
+          "archive": {
+            "url": "https://github.com/weewx-packages/ventusw820/releases/download/v0.2.1/ventusw820-0.2.1.zip",
+            "format": "zip",
+            "sha256": "2e3fc29245500a53d42ca6ebe48ca3b66582b4cc83ae6fabb45e6d4a40e6bc3b"
+          },
+          "release_notes": "https://github.com/weewx-packages/ventusw820/releases/tag/v0.2.1",
+          "restart_required": true
+        }
+      ]
+    },
+    {
+      "id": "wh23xx",
+      "installer_name": "wh23xx",
+      "name": "WH23xx",
+      "description": "Read Fine Offset WH23xx weather stations over USB.",
+      "types": [
+        "driver"
+      ],
+      "homepage": "https://github.com/weewx-packages/weewx-wh23xx",
+      "releases": [
+        {
+          "version": "0.15.0",
+          "requires_python": ">=3.10",
+          "requires_weewx": ">=5.2,<6",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-wh23xx/releases/download/v0.15.0/weewx-wh23xx-0.15.0.zip",
+            "format": "zip",
+            "sha256": "88d0b19bd794cc88e1de3dc87171705f9d58815396c9f6ade3076bdb86069f87"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-wh23xx/releases/tag/v0.15.0",
+          "restart_required": true
+        }
+      ]
+    },
+    {
+      "id": "wxt5x0",
+      "installer_name": "wxt5x0",
+      "name": "Vaisala WXT5x0",
+      "description": "Read Vaisala WXT5x0 observations over serial or a TCP serial server.",
+      "types": [
+        "driver"
+      ],
+      "homepage": "https://github.com/weewx-packages/weewx-wxt5x0",
+      "releases": [
+        {
+          "version": "0.9.0",
+          "requires_python": ">=3.10",
+          "requires_weewx": ">=5.2,<6",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-wxt5x0/releases/download/v0.9.0/weewx-wxt5x0-0.9.0.zip",
+            "format": "zip",
+            "sha256": "7e330ce0c01df53efd97964c8ce431be78abab933a422bb0bc27d5e1ab302db3"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-wxt5x0/releases/tag/v0.9.0",
+          "restart_required": true
+        }
+      ]
+    },
+    {
+      "id": "wll",
+      "installer_name": "wll",
+      "name": "WeatherLink Live",
+      "description": "Poll the WeatherLink Live local HTTP API, including separate ISS and wind transmitters.",
+      "types": [
+        "driver"
+      ],
+      "homepage": "https://github.com/weewx-packages/weewx-wll",
+      "releases": [
+        {
+          "version": "0.2.2",
+          "requires_python": ">=3.10",
+          "requires_weewx": ">=5.2,<6",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-wll/releases/download/v0.2.2/weewx-wll-0.2.2.zip",
+            "format": "zip",
+            "sha256": "43a6de22ccffe8eef842e7efff12da43605f3d943a89c4af769cf9d1e1c136fb"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-wll/releases/tag/v0.2.2",
+          "restart_required": true
+        }
+      ]
+    },
+    {
+      "id": "observerip",
+      "installer_name": "observerip",
+      "name": "ObserverIP",
+      "description": "Read Ambient ObserverIP observations directly or through an intercepted upload file.",
+      "types": [
+        "driver"
+      ],
+      "homepage": "https://github.com/weewx-packages/weewx-observerip",
+      "releases": [
+        {
+          "version": "0.2.1",
+          "requires_python": ">=3.10",
+          "requires_weewx": ">=5.2,<6",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-observerip/releases/download/v0.2.1/weewx-observerip-0.2.1.zip",
+            "format": "zip",
+            "sha256": "656b17e703b6239e4515dfaf5861d0484a611f3724c7744b883d5215d9a2b764"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-observerip/releases/tag/v0.2.1",
+          "restart_required": true
+        }
+      ]
+    },
+    {
+      "id": "aqi",
+      "installer_name": "aqi",
+      "name": "Air quality indices",
+      "description": "Calculate air quality indices with explicit historical and EPA 2024 standards.",
+      "types": [
+        "service"
+      ],
+      "keywords": [
+        "aqi",
+        "weewx"
+      ],
+      "homepage": "https://github.com/weewx-packages/weewx-aqi",
+      "releases": [
+        {
+          "version": "1.5.0",
+          "requires_python": ">=3.10,<3.15",
+          "requires_weewx": ">=5.5.2,<5.7",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-aqi/releases/download/v1.5.0/weewx-aqi-1.5.0.zip",
+            "format": "zip",
+            "sha256": "17285110bbbe66a7e64364cf4ad7b6a137b8f5a6e90e26a3a9a06eafb64176b3"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-aqi/releases/tag/v1.5.0",
+          "restart_required": true
+        }
+      ]
+    },
+    {
+      "id": "cmon",
+      "installer_name": "cmon",
+      "name": "Computer monitor",
+      "description": "Archive CPU, memory, disk and network measurements from the local computer.",
+      "types": [
+        "service",
+        "driver",
+        "skin"
+      ],
+      "keywords": [
+        "cmon",
+        "weewx"
+      ],
+      "homepage": "https://github.com/weewx-packages/weewx-cmon",
+      "releases": [
+        {
+          "version": "0.21.0",
+          "requires_python": ">=3.10,<3.15",
+          "requires_weewx": ">=5.5.2,<5.7",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-cmon/releases/download/v0.21.0/weewx-cmon-0.21.0.zip",
+            "format": "zip",
+            "sha256": "a51309f76ecdb85bcad3926a9b18a2a5453cc195ecf4ace1073dee3a301b68a3"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-cmon/releases/tag/v0.21.0",
+          "restart_required": true
+        }
+      ]
+    },
+    {
+      "id": "csv",
+      "installer_name": "csv",
+      "name": "CSV output",
+      "description": "Write LOOP packets or archive records as CSV, with optional atomic snapshots and decimal precision.",
+      "types": [
+        "service"
+      ],
+      "keywords": [
+        "csv",
+        "weewx"
+      ],
+      "homepage": "https://github.com/weewx-packages/weewx-csv",
+      "releases": [
+        {
+          "version": "0.12.0",
+          "requires_python": ">=3.10,<3.15",
+          "requires_weewx": ">=5.5.2,<5.7",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-csv/releases/download/v0.12.0/weewx-csv-0.12.0.zip",
+            "format": "zip",
+            "sha256": "0b5cf7ff1723125de7a0aba9e88ff6c2c2e49aaee76c316b7f414a10fec36f05"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-csv/releases/tag/v0.12.0",
+          "restart_required": true
+        }
+      ]
+    },
+    {
+      "id": "json",
+      "installer_name": "JSON",
+      "name": "JSON reports",
+      "description": "Render current and historical weather observations as JSON with optional sensor fields.",
+      "types": [
+        "skin"
+      ],
+      "keywords": [
+        "json",
+        "weewx"
+      ],
+      "homepage": "https://github.com/weewx-packages/weewx-json",
+      "releases": [
+        {
+          "version": "1.3.0",
+          "requires_python": ">=3.10,<3.15",
+          "requires_weewx": ">=5.5.2,<5.7",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-json/releases/download/v1.3.0/weewx-json_1.3.0.tar.gz",
+            "format": "tar.gz",
+            "sha256": "36c88bc843daad49797825ddd03d2a1e59129111471f336dfadaf90d8e596f6f"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-json/releases/tag/v1.3.0",
+          "restart_required": true
+        }
+      ]
+    },
+    {
+      "id": "bme280wx",
+      "installer_name": "bme280wx",
+      "name": "BME280 data service",
+      "description": "Add temperature, humidity and pressure readings from an I2C BME280 sensor to LOOP packets.",
+      "types": [
+        "service"
+      ],
+      "keywords": [
+        "bme280wx",
+        "weewx"
+      ],
+      "homepage": "https://github.com/weewx-packages/bme280wx",
+      "releases": [
+        {
+          "version": "1.1.1",
+          "requires_python": ">=3.10,<3.15",
+          "requires_weewx": ">=5.5.2,<5.7",
+          "archive": {
+            "url": "https://github.com/weewx-packages/bme280wx/releases/download/v1.1.1/bme280wx-1.1.1.zip",
+            "format": "zip",
+            "sha256": "d34a0667898321d1761bdd03fe69d8a1d0e0712151d758a208e7dc63db65686a"
+          },
+          "release_notes": "https://github.com/weewx-packages/bme280wx/releases/tag/v1.1.1",
+          "restart_required": true
+        }
+      ]
+    },
+    {
+      "id": "niculskin",
+      "installer_name": "niculskin",
+      "name": "Niculskin",
+      "description": "Render translated weather reports, historical tables and weather graphs.",
+      "types": [
+        "skin"
+      ],
+      "keywords": [
+        "niculskin",
+        "weewx"
+      ],
+      "homepage": "https://github.com/weewx-packages/niculskin",
+      "releases": [
+        {
+          "version": "1.1.1",
+          "requires_python": ">=3.10,<3.15",
+          "requires_weewx": ">=5.5.2,<5.7",
+          "archive": {
+            "url": "https://github.com/weewx-packages/niculskin/releases/download/v1.1.1/niculskin-1.1.1.zip",
+            "format": "zip",
+            "sha256": "3a019a18be782f50f5a49a59aac9a95c5ac6963b4d94acc719eeada816feddfa"
+          },
+          "release_notes": "https://github.com/weewx-packages/niculskin/releases/tag/v1.1.1",
+          "restart_required": true
+        }
+      ]
     }
   ]
 }

@@ -3,7 +3,8 @@
 Review of the [WeeWX extension list](https://github.com/weewx/weewx/wiki),
 snapshot `753c05f167aa8cc2cdde41543bca6eabdbe3f338`, on 22 October 2026.
 All 203 extension entries were reviewed, plus SQLBackup and the related
-WordPress plugin. Repairs to independent continuations are in progress.
+WordPress plugin. Independent repairs and release checks are complete; rights,
+hardware and seven unauthenticated GitLab replies remain documented follow-ups.
 
 Source licenses and component notices were checked separately from GitHub
 license labels. An old commit alone does not establish abandonment. Open
@@ -93,11 +94,11 @@ evidence, tracker details, reasons, successor decisions and repair results.
 | 225 | [airgradient](https://github.com/chaunceygardiner/weewx-airgradient) | GPL-3.0-only | fork_created | [repository](https://github.com/weewx-packages/weewx-airgradient) |
 | 226 | [airQ](https://github.com/roe-dl/weewx-airQ) | GPL-3.0-only | fork_created | [repository](https://github.com/weewx-packages/weewx-airQ) |
 | 227 | [AirVisual](https://github.com/inguy24/weewx-airvisual) | GPL-3.0-only | defer_maintenance |  |
-| 228 | [aqi](https://github.com/jonathankoren/weewx-aqi) | GPL-3.0-only | published_pending_tracker_comments | [repository](https://github.com/weewx-packages/weewx-aqi) |
+| 228 | [aqi](https://github.com/jonathankoren/weewx-aqi) | GPL-3.0-only | completed | [repository](https://github.com/weewx-packages/weewx-aqi) |
 | 229 | [as3935](https://github.com/matthewwall/weewx-as3935) | GPL-3.0-only | fork_created | [repository](https://github.com/weewx-packages/weewx-as3935) |
-| 230 | [bme280wx](https://gitlab.com/wjcarpenter/bme280wx) | BSD-2-Clause | published_pending_tracker_comments | [repository](https://github.com/weewx-packages/bme280wx) |
-| 231 | [cmon](https://github.com/matthewwall/weewx-cmon) | GPL-3.0-only | published_pending_tracker_comments | [repository](https://github.com/weewx-packages/weewx-cmon) |
-| 232 | [csv](https://github.com/matthewwall/weewx-csv) | GPL-3.0-only | published_pending_tracker_comments | [repository](https://github.com/weewx-packages/weewx-csv) |
+| 230 | [bme280wx](https://gitlab.com/wjcarpenter/bme280wx) | BSD-2-Clause | completed_with_tracker_comment_blocker | [repository](https://github.com/weewx-packages/bme280wx) |
+| 231 | [cmon](https://github.com/matthewwall/weewx-cmon) | GPL-3.0-only | completed | [repository](https://github.com/weewx-packages/weewx-cmon) |
+| 232 | [csv](https://github.com/matthewwall/weewx-csv) | GPL-3.0-only | completed | [repository](https://github.com/weewx-packages/weewx-csv) |
 | 233 | [davishealthapi](https://github.com/uajqq/weewx-davishealthapi) | NOASSERTION | blocked_license |  |
 | 234 | [DWD](https://github.com/roe-dl/weewx-DWD) | GPL-3.0-or-later | fork_created | [repository](https://github.com/weewx-packages/weewx-DWD) |
 | 235 | [filepile](https://github.com/tkeffer/filepile) | LGPL-3.0-only | fork_created | [repository](https://github.com/weewx-packages/weewx-filepile) |
@@ -138,12 +139,12 @@ evidence, tracker details, reasons, successor decisions and repair results.
 | 275 | [extended Seasons almanac page](https://github.com/roe-dl/weewx-skymap-almanac) | GPL-3.0-or-later | existing_fork_verified | [repository](https://github.com/weewx-packages/weewx-skymap-almanac) |
 | 276 | [Flat](https://github.com/neoground/sofaskin) | MIT | superseded |  |
 | 277 | [jas](https://github.com/weewx-extensions/jas) | GPL-3.0-only | fork_created | [repository](https://github.com/weewx-packages/weewx-jas) |
-| 278 | [JSON](https://github.com/teeks99/weewx-json) | GPL-3.0-only | published_pending_tracker_comments | [repository](https://github.com/weewx-packages/weewx-json) |
+| 278 | [JSON](https://github.com/teeks99/weewx-json) | GPL-3.0-only | completed | [repository](https://github.com/weewx-packages/weewx-json) |
 | 279 | [Metrics](https://github.com/Cosmospacedog/weewx-metrics) | GPL-3.0-only | fork_created | [repository](https://github.com/weewx-packages/weewx-metrics) |
 | 280 | [MesoWX](https://github.com/glennmckechnie/weewx-mesowx) | NOASSERTION | blocked_license_borderline |  |
 | 281 | [NeoWX](https://github.com/neoground/neowx) | MIT | superseded |  |
 | 282 | [NeoWX Material](https://github.com/seehase/neowx-material) | MIT AND LicenseRef-GPL-unspecified | existing_successor_fork | [repository](https://github.com/weewx-packages/neowx-material) |
-| 283 | [Niculskin](https://gitlab.com/ngulden/niculskin) | GPL-2.0-only | published_pending_tracker_comments | [repository](https://github.com/weewx-packages/niculskin) |
+| 283 | [Niculskin](https://gitlab.com/ngulden/niculskin) | GPL-2.0-only | completed_with_tracker_comment_blocker | [repository](https://github.com/weewx-packages/niculskin) |
 | 284 | [Responsive](https://github.com/Lint-Free-Technology/weewx-responsive-skin) | NOASSERTION | blocked_license |  |
 | 285 | [simple](https://github.com/matthewwall/weewx-simple) | NOASSERTION | blocked_license_hard_fork_plan |  |
 | 286 | [SteelSeries Weather Gauges](https://github.com/mcrossley/SteelSeries-Weather-Gauges) | GPL-2.0-only | missing_wrapper_borderline_upstream |  |

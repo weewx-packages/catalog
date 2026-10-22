@@ -106,10 +106,17 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
       - name: Install test dependencies
+        env:
+          TEST_PACKAGE: ${{ matrix.package }}
         run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y php-cli
-          php --version
+          if [ "$TEST_PACKAGE" = livedata ]; then
+            sudo apt-get update -qq
+            sudo apt-get install -y php-cli
+            php --version
+          elif [ "$TEST_PACKAGE" = ventusw820 ]; then
+            sudo apt-get update -qq
+            sudo apt-get install -y libglib2.0-dev pkg-config make gcc
+          fi
           python -m pip install ./weewx pytest packaging requests skyfield "pymodbus>=3.11,<4" pyserial
       - name: Install and test the release archive
         env:

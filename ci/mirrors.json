@@ -4,7 +4,7 @@
     "fork": "weewx-packages/bme280wx",
     "weekday": 1,
     "sync": false,
-    "check": "installation",
+    "check": "catalog",
     "reviewed_revision": "b897cfc3ce2c1b981d33ef93d76d80f280c47289",
     "license": "BSD-2-Clause",
     "license_evidence": [
@@ -34,7 +34,7 @@
     "fork": "weewx-packages/niculskin",
     "weekday": 2,
     "sync": false,
-    "check": "installation",
+    "check": "catalog",
     "reviewed_revision": "d9741244a2a42321d3e0f5802bfeeb2952156ffb",
     "license": "GPL-2.0-only",
     "license_evidence": [
@@ -47,7 +47,7 @@
     "fork": "weewx-packages/ventusw820",
     "weekday": 2,
     "sync": false,
-    "check": "installation",
+    "check": "catalog",
     "reviewed_revision": "1428e097c0e34fc1ce9f88c5001a9d8d264c565c",
     "license": "GPL-3.0-or-later (README)",
     "license_evidence": []
@@ -90,7 +90,7 @@
     "fork": "weewx-packages/weewx-NovaSDS011",
     "weekday": 4,
     "sync": true,
-    "check": "installation",
+    "check": "catalog",
     "reviewed_revision": "c5771c1be97d3d2089c6a57a4dc219f4346141fe",
     "license": "GPL-3.0-only",
     "license_evidence": [
@@ -223,7 +223,7 @@
     "fork": "weewx-packages/weewx-aqi",
     "weekday": 4,
     "sync": false,
-    "check": "installation",
+    "check": "catalog",
     "reviewed_revision": "d5bf9c9f28e8da15e3a65c55bc623e56a42e3602",
     "license": "GPL-3.0-only",
     "license_evidence": [
@@ -358,7 +358,7 @@
     "fork": "weewx-packages/weewx-cmon",
     "weekday": 3,
     "sync": false,
-    "check": "installation",
+    "check": "catalog",
     "reviewed_revision": "396546b9b569bcd60a6995feecc4cdd62cac2026",
     "license": "GPL-3.0-only",
     "license_evidence": [
@@ -411,7 +411,7 @@
     "fork": "weewx-packages/weewx-csv",
     "weekday": 5,
     "sync": false,
-    "check": "installation",
+    "check": "catalog",
     "reviewed_revision": "34a9a52e5fedb47af216c281084f03a833fd75e6",
     "license": "GPL-3.0-only",
     "license_evidence": [
@@ -711,7 +711,7 @@
     "fork": "weewx-packages/weewx-json",
     "weekday": 2,
     "sync": false,
-    "check": "installation",
+    "check": "catalog",
     "reviewed_revision": "dd4b466644367f9f80f844fc50aa20ca9425bc3f",
     "license": "GPL-3.0-only",
     "license_evidence": [
@@ -799,7 +799,7 @@
     "fork": "weewx-packages/weewx-meteostick",
     "weekday": 3,
     "sync": false,
-    "check": "installation",
+    "check": "catalog",
     "reviewed_revision": "669a0e55aae255169e8132afe4133fe65bfb63f4",
     "license": "GPL-3.0-or-later AND GPL-3.0-only",
     "license_evidence": [
@@ -947,7 +947,7 @@
     "fork": "weewx-packages/weewx-observerip",
     "weekday": 2,
     "sync": false,
-    "check": "installation",
+    "check": "catalog",
     "reviewed_revision": "689352c90134885d661db3a35eb6318c5c3b6c6b",
     "license": "GPL-3.0-only",
     "license_evidence": [
@@ -1178,7 +1178,7 @@
     "fork": "weewx-packages/weewx-sdr",
     "weekday": 1,
     "sync": false,
-    "check": "installation",
+    "check": "catalog",
     "reviewed_revision": "e5f1f9915322fa6d1c25b4ff8e490b804cefeac1",
     "license": "GPL-3.0-only",
     "license_evidence": [
@@ -1552,7 +1552,7 @@
     "fork": "weewx-packages/weewx-wh23xx",
     "weekday": 1,
     "sync": false,
-    "check": "installation",
+    "check": "catalog",
     "reviewed_revision": "36e844b45e567942c24879985e26ba399c9ae98e",
     "license": "GPL-3.0-only",
     "license_evidence": [
@@ -1604,7 +1604,7 @@
     "fork": "weewx-packages/weewx-wll",
     "weekday": 4,
     "sync": false,
-    "check": "installation",
+    "check": "catalog",
     "reviewed_revision": "19d60ac6ef4da450f187bb3e7adbe08992928779",
     "license": "GPL-3.0-or-later AND GPL-3.0-only",
     "license_evidence": []
@@ -1669,7 +1669,7 @@
     "fork": "weewx-packages/weewx-wxt5x0",
     "weekday": 3,
     "sync": false,
-    "check": "installation",
+    "check": "catalog",
     "reviewed_revision": "d64d39747f3b446ca5706bc8c492dbb39b0aa261",
     "license": "GPL-3.0-only",
     "license_evidence": [

@@ -54,6 +54,20 @@ records from different driver versions.
 | [Twitter uploader](https://github.com/weewx-packages/weewx-twitter) | `twitter` | Post formatted WeeWX observations through Twython at elapsed intervals or fixed local times. |
 | [Zabbix sender service](https://github.com/weewx-packages/weewx-zabbix) | `zabbix` | Send WeeWX observations through zabbix_sender and provide a Zabbix 7 template for METRICWX inputs. |
 | [DivumWX](https://github.com/weewx-packages/weewx-divumwx) | `divumwx` | Live weather dashboard with charts, forecasts and astronomy pages. Cleaned font package; requires requests and skyfield. |
+| [Meteostick](https://github.com/weewx-packages/weewx-meteostick) | `meteostick` | Read Meteostick weather observations over a serial connection. |
+| [SDR](https://github.com/weewx-packages/weewx-sdr) | `sdr` | Read weather sensors through rtl_433. Requires a separately installed rtl_433 executable. |
+| [Nova SDS011](https://github.com/weewx-packages/weewx-NovaSDS011) | `nova-sds011` | Add SDS011 particulate concentrations through a serial sensor or a local Sensor.Community HTTP endpoint. |
+| [Ventus W820](https://github.com/weewx-packages/ventusw820) | `ventusw820` | Read Ventus W820 weather observations over Bluetooth LE. Requires bluepy and a supported Bluetooth adapter. |
+| [WH23xx](https://github.com/weewx-packages/weewx-wh23xx) | `wh23xx` | Read Fine Offset WH23xx weather stations over USB. |
+| [Vaisala WXT5x0](https://github.com/weewx-packages/weewx-wxt5x0) | `wxt5x0` | Read Vaisala WXT5x0 observations over serial or a TCP serial server. |
+| [WeatherLink Live](https://github.com/weewx-packages/weewx-wll) | `wll` | Poll the WeatherLink Live local HTTP API, including separate ISS and wind transmitters. |
+| [ObserverIP](https://github.com/weewx-packages/weewx-observerip) | `observerip` | Read Ambient ObserverIP observations directly or through an intercepted upload file. |
+| [Air quality indices](https://github.com/weewx-packages/weewx-aqi) | `aqi` | Calculate air quality indices with explicit historical and EPA 2024 standards. |
+| [Computer monitor](https://github.com/weewx-packages/weewx-cmon) | `cmon` | Archive CPU, memory, disk and network measurements from the local computer. |
+| [CSV output](https://github.com/weewx-packages/weewx-csv) | `csv` | Write LOOP packets or archive records as CSV, with optional atomic snapshots and decimal precision. |
+| [JSON reports](https://github.com/weewx-packages/weewx-json) | `json` | Render current and historical weather observations as JSON with optional sensor fields. |
+| [BME280 data service](https://github.com/weewx-packages/bme280wx) | `bme280wx` | Add temperature, humidity and pressure readings from an I2C BME280 sensor to LOOP packets. |
+| [Niculskin](https://github.com/weewx-packages/niculskin) | `niculskin` | Render translated weather reports, historical tables and weather graphs. |
 <!-- packages:end -->
 
 New packages become available through the same registered source when its index

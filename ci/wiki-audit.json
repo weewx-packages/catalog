@@ -23,7 +23,8 @@
     "local_successor_fixes_bundle_distribution_blocked": 1,
     "skip_superseded": 2,
     "defer_maintenance": 2,
-    "published_pending_tracker_comments": 6,
+    "completed": 4,
+    "completed_with_tracker_comment_blocker": 2,
     "existing_fork_verified": 5,
     "borderline_active_old_items": 3,
     "hard_fork_plan_license_review": 1,
@@ -47,7 +48,7 @@
     "component_covered_by_fork": 1,
     "true_fork_existing": 1
   },
-  "repair_phase": "in_progress",
+  "repair_phase": "completed_with_documented_blockers",
   "entries": [
     {
       "wiki_line": 63,
@@ -2233,7 +2234,24 @@
             }
           ]
         }
-      ]
+      ],
+      "catalog": {
+        "id": "meteostick",
+        "releases": [
+          {
+            "version": "0.68.1",
+            "requires_python": ">=3.10",
+            "requires_weewx": ">=5.2,<6",
+            "archive": {
+              "url": "https://github.com/weewx-packages/weewx-meteostick/releases/download/v0.68.1/weewx-meteostick-0.68.1.zip",
+              "format": "zip",
+              "sha256": "808519119e8eb4cb521756002bff73c3fc505b8a1ae15e5d31279081384135b0"
+            },
+            "release_notes": "https://github.com/weewx-packages/weewx-meteostick/releases/tag/v0.68.1",
+            "restart_required": true
+          }
+        ]
+      }
     },
     {
       "wiki_line": 134,
@@ -3144,7 +3162,24 @@
             }
           ]
         }
-      ]
+      ],
+      "catalog": {
+        "id": "sdr",
+        "releases": [
+          {
+            "version": "0.99.1",
+            "requires_python": ">=3.10",
+            "requires_weewx": ">=5.2,<6",
+            "archive": {
+              "url": "https://github.com/weewx-packages/weewx-sdr/releases/download/v0.99.1/weewx-sdr-0.99.1.zip",
+              "format": "zip",
+              "sha256": "a3dda70377d2b42c4db197f1acb5932703537b6afcf341453cfe36a95d0ac5c6"
+            },
+            "release_notes": "https://github.com/weewx-packages/weewx-sdr/releases/tag/v0.99.1",
+            "restart_required": true
+          }
+        ]
+      }
     },
     {
       "wiki_line": 140,
@@ -3279,7 +3314,24 @@
             }
           ]
         }
-      ]
+      ],
+      "catalog": {
+        "id": "nova-sds011",
+        "releases": [
+          {
+            "version": "1.1.0",
+            "requires_python": ">=3.10",
+            "requires_weewx": ">=5.2,<6",
+            "archive": {
+              "url": "https://github.com/weewx-packages/weewx-NovaSDS011/releases/download/v1.1.0/weewx-NovaSDS011-1.1.0.zip",
+              "format": "zip",
+              "sha256": "f90f774907cc0708af891576fefa6a4a8e0e99ba4d4196e71e1c368e4cf14ab8"
+            },
+            "release_notes": "https://github.com/weewx-packages/weewx-NovaSDS011/releases/tag/v1.1.0",
+            "restart_required": true
+          }
+        ]
+      }
     },
     {
       "wiki_line": 141,
@@ -3555,7 +3607,8 @@
               "number": 1,
               "url": "https://github.com/matthewwall/weewx-tracer/issues/1",
               "status": "software_fixed_hardware_followup",
-              "comment_url": "https://github.com/matthewwall/weewx-tracer/issues/1#issuecomment-6328735176"
+              "comment_url": "https://github.com/matthewwall/weewx-tracer/issues/1#issuecomment-6328735176",
+              "kind": "issue"
             }
           ]
         }
@@ -3930,7 +3983,24 @@
             }
           ]
         }
-      ]
+      ],
+      "catalog": {
+        "id": "ventusw820",
+        "releases": [
+          {
+            "version": "0.2.1",
+            "requires_python": ">=3.10",
+            "requires_weewx": ">=5.2,<6",
+            "archive": {
+              "url": "https://github.com/weewx-packages/ventusw820/releases/download/v0.2.1/ventusw820-0.2.1.zip",
+              "format": "zip",
+              "sha256": "2e3fc29245500a53d42ca6ebe48ca3b66582b4cc83ae6fabb45e6d4a40e6bc3b"
+            },
+            "release_notes": "https://github.com/weewx-packages/ventusw820/releases/tag/v0.2.1",
+            "restart_required": true
+          }
+        ]
+      }
     },
     {
       "wiki_line": 149,
@@ -4547,7 +4617,24 @@
             }
           ]
         }
-      ]
+      ],
+      "catalog": {
+        "id": "wh23xx",
+        "releases": [
+          {
+            "version": "0.15.0",
+            "requires_python": ">=3.10",
+            "requires_weewx": ">=5.2,<6",
+            "archive": {
+              "url": "https://github.com/weewx-packages/weewx-wh23xx/releases/download/v0.15.0/weewx-wh23xx-0.15.0.zip",
+              "format": "zip",
+              "sha256": "88d0b19bd794cc88e1de3dc87171705f9d58815396c9f6ade3076bdb86069f87"
+            },
+            "release_notes": "https://github.com/weewx-packages/weewx-wh23xx/releases/tag/v0.15.0",
+            "restart_required": true
+          }
+        ]
+      }
     },
     {
       "wiki_line": 152,
@@ -4944,7 +5031,24 @@
             }
           ]
         }
-      ]
+      ],
+      "catalog": {
+        "id": "wxt5x0",
+        "releases": [
+          {
+            "version": "0.9.0",
+            "requires_python": ">=3.10",
+            "requires_weewx": ">=5.2,<6",
+            "archive": {
+              "url": "https://github.com/weewx-packages/weewx-wxt5x0/releases/download/v0.9.0/weewx-wxt5x0-0.9.0.zip",
+              "format": "zip",
+              "sha256": "7e330ce0c01df53efd97964c8ce431be78abab933a422bb0bc27d5e1ab302db3"
+            },
+            "release_notes": "https://github.com/weewx-packages/weewx-wxt5x0/releases/tag/v0.9.0",
+            "restart_required": true
+          }
+        ]
+      }
     },
     {
       "wiki_line": 159,
@@ -6417,7 +6521,24 @@
             }
           ]
         }
-      ]
+      ],
+      "catalog": {
+        "id": "wll",
+        "releases": [
+          {
+            "version": "0.2.2",
+            "requires_python": ">=3.10",
+            "requires_weewx": ">=5.2,<6",
+            "archive": {
+              "url": "https://github.com/weewx-packages/weewx-wll/releases/download/v0.2.2/weewx-wll-0.2.2.zip",
+              "format": "zip",
+              "sha256": "43a6de22ccffe8eef842e7efff12da43605f3d943a89c4af769cf9d1e1c136fb"
+            },
+            "release_notes": "https://github.com/weewx-packages/weewx-wll/releases/tag/v0.2.2",
+            "restart_required": true
+          }
+        ]
+      }
     },
     {
       "wiki_line": 201,
@@ -7098,7 +7219,24 @@
             }
           ]
         }
-      ]
+      ],
+      "catalog": {
+        "id": "observerip",
+        "releases": [
+          {
+            "version": "0.2.1",
+            "requires_python": ">=3.10",
+            "requires_weewx": ">=5.2,<6",
+            "archive": {
+              "url": "https://github.com/weewx-packages/weewx-observerip/releases/download/v0.2.1/weewx-observerip-0.2.1.zip",
+              "format": "zip",
+              "sha256": "656b17e703b6239e4515dfaf5861d0484a611f3724c7744b883d5215d9a2b764"
+            },
+            "release_notes": "https://github.com/weewx-packages/weewx-observerip/releases/tag/v0.2.1",
+            "restart_required": true
+          }
+        ]
+      }
     },
     {
       "wiki_line": 218,
@@ -7285,7 +7423,7 @@
       "source": "https://github.com/jonathankoren/weewx-aqi",
       "reviewed_revision": "d5bf9c9f28e8da15e3a65c55bc623e56a42e3602",
       "last_commit": "2023-01-02T07:48:51Z",
-      "decision": "published_pending_tracker_comments",
+      "decision": "completed",
       "reason": "Acht alte offene Issues, unbeantwortete Crash-/Einheiten-/AQI-Meldungen seit 2022 bis 2024; letzter Commit 02.01.2023, letzte Maintainerantwort im offenen Tracker 27.07.2021. Reparaturbedarf und langjährige fehlende Reaktion zusammen belegen anhaltende Inaktivität dieses Repos.",
       "fork": "https://github.com/weewx-packages/weewx-aqi",
       "license": {
@@ -7428,46 +7566,121 @@
         {
           "upstream": "https://github.com/jonathankoren/weewx-aqi",
           "fork_url": "https://github.com/weewx-packages/weewx-aqi",
-          "decision": "published_pending_tracker_comments",
+          "decision": "completed",
           "version": "1.5.0",
           "source_revision": "d5bf9c9f28e8da15e3a65c55bc623e56a42e3602",
-          "revision": "0ae7bef4312a6903b37a26113076f792d5cc82bc",
+          "revision": "a6133a018062a02b3f1823751c17e836e5ab7dcf",
+          "limitations": [
+            "Physical AirLink/custom sensor wiring and live measurements require operator hardware. All recorded main-archive calculations use isolated SQLite fixtures.",
+            "Historical issue #13 None-temperature traceback was not reproduced at the audited revision; current missing-context behavior and custom zero-Celsius mapping were verified.",
+            "Original Indian high-end threshold assumptions remain explicitly documented and were not scientifically revalidated. No claim of full revalidation of every historical non-US standard."
+          ],
+          "test_revision": "a6133a018062a02b3f1823751c17e836e5ab7dcf",
+          "release_revision": "0ae7bef4312a6903b37a26113076f792d5cc82bc",
+          "release_immutable": true,
+          "release_url": "https://github.com/weewx-packages/weewx-aqi/releases/tag/v1.5.0",
+          "download_url": "https://github.com/weewx-packages/weewx-aqi/releases/download/v1.5.0/weewx-aqi-1.5.0.zip",
           "items": [
             {
               "number": 42,
-              "comment_url": null
+              "status": "addressed_with_public_evidence",
+              "comment_url": "https://github.com/jonathankoren/weewx-aqi/issues/42#issuecomment-6329379043",
+              "kind": "issue",
+              "fix": "Explicit EPA 2024 daily/NowCast classes and distinct standard IDs; all six PM2.5 intervals, >500 numeric extrapolation, historical table names retained.",
+              "upstream_url": "https://github.com/jonathankoren/weewx-aqi/issues/42",
+              "fix_commit": "https://github.com/weewx-packages/weewx-aqi/commit/0ae7bef4312a6903b37a26113076f792d5cc82bc",
+              "release_url": "https://github.com/weewx-packages/weewx-aqi/releases/tag/v1.5.0"
             },
             {
               "number": 41,
-              "comment_url": null
+              "status": "addressed_with_public_evidence",
+              "comment_url": "https://github.com/jonathankoren/weewx-aqi/issues/41#issuecomment-6329379219",
+              "kind": "issue",
+              "fix": "Reproduced IndexError from a 900 ug/m3 legacy PM observation through the real service; per-pollutant missing values and safe service continuation.",
+              "upstream_url": "https://github.com/jonathankoren/weewx-aqi/issues/41",
+              "fix_commit": "https://github.com/weewx-packages/weewx-aqi/commit/0ae7bef4312a6903b37a26113076f792d5cc82bc",
+              "release_url": "https://github.com/weewx-packages/weewx-aqi/releases/tag/v1.5.0"
             },
             {
               "number": 40,
-              "comment_url": null
+              "status": "addressed_with_public_evidence",
+              "comment_url": "https://github.com/jonathankoren/weewx-aqi/issues/40#issuecomment-6329379432",
+              "kind": "issue",
+              "fix": "Same reproduced IndexError path; test actual SQLite record output, including out-of-range and missing meteorology.",
+              "upstream_url": "https://github.com/jonathankoren/weewx-aqi/issues/40",
+              "fix_commit": "https://github.com/weewx-packages/weewx-aqi/commit/0ae7bef4312a6903b37a26113076f792d5cc82bc",
+              "release_url": "https://github.com/weewx-packages/weewx-aqi/releases/tag/v1.5.0"
             },
             {
               "number": 37,
-              "comment_url": null
+              "status": "addressed_with_public_evidence",
+              "comment_url": "https://github.com/jonathankoren/weewx-aqi/issues/37#issuecomment-6329379671",
+              "kind": "issue",
+              "fix": "Verify AirLink source fields pm2_5/pm10_0; main-archive configuration and real SQLite tests; physical device unavailable.",
+              "upstream_url": "https://github.com/jonathankoren/weewx-aqi/issues/37",
+              "fix_commit": "https://github.com/weewx-packages/weewx-aqi/commit/0ae7bef4312a6903b37a26113076f792d5cc82bc",
+              "release_url": "https://github.com/weewx-packages/weewx-aqi/releases/tag/v1.5.0"
             },
             {
               "number": 33,
-              "comment_url": null
+              "status": "addressed_with_public_evidence",
+              "comment_url": "https://github.com/jonathankoren/weewx-aqi/issues/33#issuecomment-6329379866",
+              "kind": "issue",
+              "fix": "Accept singular/plural and modern ppm/ppb aliases; correct factor direction and gas/mass return value; tests include 0 C and missing context.",
+              "upstream_url": "https://github.com/jonathankoren/weewx-aqi/issues/33",
+              "fix_commit": "https://github.com/weewx-packages/weewx-aqi/commit/0ae7bef4312a6903b37a26113076f792d5cc82bc",
+              "release_url": "https://github.com/weewx-packages/weewx-aqi/releases/tag/v1.5.0"
             },
             {
               "number": 23,
-              "comment_url": null
+              "status": "addressed_with_public_evidence",
+              "comment_url": "https://github.com/jonathankoren/weewx-aqi/issues/23#issuecomment-6329380043",
+              "kind": "issue",
+              "fix": "Implement EPA ozone NowCast decision tree, 336-hour full-rank model, original exponential imputation and surrogate/previous-hour logic. Compare generated fixtures with actual EPA R execution, including EPA ExampleData.",
+              "upstream_url": "https://github.com/jonathankoren/weewx-aqi/issues/23",
+              "fix_commit": "https://github.com/weewx-packages/weewx-aqi/commit/0ae7bef4312a6903b37a26113076f792d5cc82bc",
+              "release_url": "https://github.com/weewx-packages/weewx-aqi/releases/tag/v1.5.0"
             },
             {
               "number": 20,
-              "comment_url": null
+              "status": "addressed_with_public_evidence",
+              "comment_url": "https://github.com/jonathankoren/weewx-aqi/issues/20#issuecomment-6329380253",
+              "kind": "issue",
+              "fix": "Optional upper-table extrapolation for the new EPA modes; preserve numeric schema; safe missing outputs for legacy off-scale values; SO2 between-table gap fixed.",
+              "upstream_url": "https://github.com/jonathankoren/weewx-aqi/issues/20",
+              "fix_commit": "https://github.com/weewx-packages/weewx-aqi/commit/0ae7bef4312a6903b37a26113076f792d5cc82bc",
+              "release_url": "https://github.com/weewx-packages/weewx-aqi/releases/tag/v1.5.0"
             },
             {
               "number": 13,
-              "comment_url": null
+              "status": "addressed_with_public_evidence",
+              "comment_url": "https://github.com/jonathankoren/weewx-aqi/issues/13#issuecomment-6329380421",
+              "kind": "issue",
+              "fix": "Preserve NULLs, actual unit-system column, custom zero-C temperature, two-of-three-hour PM NowCast completeness, Canadian composite, extended-schema backfill, modern WeeWX installer.",
+              "upstream_url": "https://github.com/jonathankoren/weewx-aqi/issues/13",
+              "fix_commit": "https://github.com/weewx-packages/weewx-aqi/commit/0ae7bef4312a6903b37a26113076f792d5cc82bc",
+              "release_url": "https://github.com/weewx-packages/weewx-aqi/releases/tag/v1.5.0"
             }
           ]
         }
-      ]
+      ],
+      "catalog": {
+        "id": "aqi",
+        "releases": [
+          {
+            "version": "1.5.0",
+            "requires_python": ">=3.10,<3.15",
+            "requires_weewx": ">=5.5.2,<5.7",
+            "archive": {
+              "url": "https://github.com/weewx-packages/weewx-aqi/releases/download/v1.5.0/weewx-aqi-1.5.0.zip",
+              "format": "zip",
+              "sha256": "17285110bbbe66a7e64364cf4ad7b6a137b8f5a6e90e26a3a9a06eafb64176b3"
+            },
+            "release_notes": "https://github.com/weewx-packages/weewx-aqi/releases/tag/v1.5.0",
+            "restart_required": true
+          }
+        ]
+      }
     },
     {
       "wiki_line": 229,
@@ -7508,7 +7721,7 @@
       "source": "https://gitlab.com/wjcarpenter/bme280wx",
       "reviewed_revision": "b897cfc3ce2c1b981d33ef93d76d80f280c47289",
       "last_commit": "2020-05-27T16:42:57.000+00:00",
-      "decision": "published_pending_tracker_comments",
+      "decision": "completed_with_tracker_comment_blocker",
       "reason": "GitLab-Quelle mit BSD-2-Clause, Commit 27.05.2020; zwei alte offene Issues und ein offener MR von 2022. Alle öffentlichen Kommentare per GraphQL nach REST-401 gelesen. Keine Maintainerantwort; Logging-Fix liegt im MR und wird 2023 von einem Nutzer bestätigt. GitLab kann nicht als echter GitHub-Fork übernommen werden.",
       "fork": "https://github.com/weewx-packages/bme280wx",
       "license": {
@@ -7566,26 +7779,70 @@
         {
           "upstream": "https://gitlab.com/wjcarpenter/bme280wx",
           "fork_url": "https://github.com/weewx-packages/bme280wx",
-          "decision": "published_pending_tracker_comments",
-          "version": "1.1.0",
+          "decision": "completed_with_tracker_comment_blocker",
+          "version": "1.1.1",
           "source_revision": "b897cfc3ce2c1b981d33ef93d76d80f280c47289",
-          "revision": "69193fb5807f6416af3ad1f6ece51a67ec40e800",
+          "revision": "fb8e33ad37b8edf9f767a595c98d98db9ddcbf82",
+          "limitations": [
+            "Physical I2C communication requires a BME280 device. Local sensor/bus fixtures, units, logging, failure handling and shutdown were tested.",
+            "GitLab returned HTTP 401 for issue #1, issue #2 and MR !2 comment attempts; prepared replies are retained."
+          ],
+          "test_revision": "fb8e33ad37b8edf9f767a595c98d98db9ddcbf82",
+          "release_revision": "fb8e33ad37b8edf9f767a595c98d98db9ddcbf82",
+          "release_immutable": true,
+          "release_url": "https://github.com/weewx-packages/bme280wx/releases/tag/v1.1.1",
+          "download_url": "https://github.com/weewx-packages/bme280wx/releases/download/v1.1.1/bme280wx-1.1.1.zip",
           "items": [
             {
               "number": 1,
-              "comment_url": null
+              "status": "fix_published_comment_blocked_401",
+              "comment_url": null,
+              "kind": "issue",
+              "fix": "Adopt upstream MR logging history, make per-sample DEBUG output conditional; fixture tested true/false.",
+              "upstream_url": "https://gitlab.com/wjcarpenter/bme280wx/-/issues/1",
+              "fix_commit": "https://github.com/weewx-packages/bme280wx/commit/fb8e33ad37b8edf9f767a595c98d98db9ddcbf82",
+              "release_url": "https://github.com/weewx-packages/bme280wx/releases/tag/v1.1.1"
             },
             {
               "number": 2,
-              "comment_url": null
+              "status": "fix_published_comment_blocked_401",
+              "comment_url": null,
+              "kind": "issue",
+              "fix": "Reproduce KeyError from incorrect station_type BME280wx. Document data-service installation; correct WeeWX 5 installer. MR !2 changes retained; physical I2C remains unverified.",
+              "upstream_url": "https://gitlab.com/wjcarpenter/bme280wx/-/issues/2",
+              "fix_commit": "https://github.com/weewx-packages/bme280wx/commit/fb8e33ad37b8edf9f767a595c98d98db9ddcbf82",
+              "release_url": "https://github.com/weewx-packages/bme280wx/releases/tag/v1.1.1"
             },
             {
               "number": 2,
-              "comment_url": null
+              "status": "fix_published_comment_blocked_401",
+              "comment_url": null,
+              "kind": "merge_request",
+              "fix": "Preserve mfraz74 MR !2 history, optional per-sample debug logging tested true/false.",
+              "upstream_url": "https://gitlab.com/wjcarpenter/bme280wx/-/merge_requests/2",
+              "fix_commit": "https://github.com/weewx-packages/bme280wx/commit/fb8e33ad37b8edf9f767a595c98d98db9ddcbf82",
+              "release_url": "https://github.com/weewx-packages/bme280wx/releases/tag/v1.1.1"
             }
           ]
         }
-      ]
+      ],
+      "catalog": {
+        "id": "bme280wx",
+        "releases": [
+          {
+            "version": "1.1.1",
+            "requires_python": ">=3.10,<3.15",
+            "requires_weewx": ">=5.5.2,<5.7",
+            "archive": {
+              "url": "https://github.com/weewx-packages/bme280wx/releases/download/v1.1.1/bme280wx-1.1.1.zip",
+              "format": "zip",
+              "sha256": "d34a0667898321d1761bdd03fe69d8a1d0e0712151d758a208e7dc63db65686a"
+            },
+            "release_notes": "https://github.com/weewx-packages/bme280wx/releases/tag/v1.1.1",
+            "restart_required": true
+          }
+        ]
+      }
     },
     {
       "wiki_line": 231,
@@ -7595,7 +7852,7 @@
       "source": "https://github.com/matthewwall/weewx-cmon",
       "reviewed_revision": "396546b9b569bcd60a6995feecc4cdd62cac2026",
       "last_commit": "2020-01-12T09:48:49Z",
-      "decision": "published_pending_tracker_comments",
+      "decision": "completed",
       "reason": "Drei alte offene Fehler seit 2020/2024 ohne Maintainerantwort, letzter Commit 12.01.2020. Darunter ein WeeWX-5-Absturz bei nicht lesbaren Docker-Mounts. Leerer Tracker liegt ausdrücklich nicht vor.",
       "fork": "https://github.com/weewx-packages/weewx-cmon",
       "license": {
@@ -7655,26 +7912,69 @@
         {
           "upstream": "https://github.com/matthewwall/weewx-cmon",
           "fork_url": "https://github.com/weewx-packages/weewx-cmon",
-          "decision": "published_pending_tracker_comments",
+          "decision": "completed",
           "version": "0.21.0",
           "source_revision": "396546b9b569bcd60a6995feecc4cdd62cac2026",
-          "revision": "c0b1dde56c83ac0ece3c9407381e1b279bc0446e",
+          "revision": "4c8408dbc753221d4433fc491bec066b57b38675",
+          "limitations": [
+            "Historical Python 2 long failure in #3 was not reproduced; Python 3.10/3.14 large counters, actual accumulation and retained SQLite records were tested."
+          ],
+          "test_revision": "4c8408dbc753221d4433fc491bec066b57b38675",
+          "release_revision": "c0b1dde56c83ac0ece3c9407381e1b279bc0446e",
+          "release_immutable": true,
+          "release_url": "https://github.com/weewx-packages/weewx-cmon/releases/tag/v0.21.0",
+          "download_url": "https://github.com/weewx-packages/weewx-cmon/releases/download/v0.21.0/weewx-cmon-0.21.0.zip",
           "items": [
             {
               "number": 4,
-              "comment_url": "https://github.com/matthewwall/weewx-cmon/issues/4#issuecomment-6329070614"
+              "status": "addressed_with_public_evidence",
+              "comment_url": "https://github.com/matthewwall/weewx-cmon/issues/4#issuecomment-6329070614",
+              "kind": "issue",
+              "fix": "Real chmod(0) mount parent reproduces PermissionError. Skip individual inaccessible/disappeared mounts, decode mount escapes.",
+              "upstream_url": "https://github.com/matthewwall/weewx-cmon/issues/4",
+              "fix_commit": "https://github.com/weewx-packages/weewx-cmon/commit/c0b1dde56c83ac0ece3c9407381e1b279bc0446e",
+              "release_url": "https://github.com/weewx-packages/weewx-cmon/releases/tag/v0.21.0"
             },
             {
               "number": 2,
-              "comment_url": "https://github.com/matthewwall/weewx-cmon/issues/2#issuecomment-6329070765"
+              "status": "addressed_with_public_evidence",
+              "comment_url": "https://github.com/matthewwall/weewx-cmon/issues/2#issuecomment-6329070765",
+              "kind": "issue",
+              "fix": "Independent thermal_zone0 read; scan hwmon*/tempN_input and hwmon*/device/tempN_input; isolate malformed sensors.",
+              "upstream_url": "https://github.com/matthewwall/weewx-cmon/issues/2",
+              "fix_commit": "https://github.com/weewx-packages/weewx-cmon/commit/c0b1dde56c83ac0ece3c9407381e1b279bc0446e",
+              "release_url": "https://github.com/weewx-packages/weewx-cmon/releases/tag/v0.21.0"
             },
             {
               "number": 3,
-              "comment_url": "https://github.com/matthewwall/weewx-cmon/issues/3#issuecomment-6329070961"
+              "status": "addressed_with_public_evidence",
+              "comment_url": "https://github.com/matthewwall/weewx-cmon/issues/3#issuecomment-6329070961",
+              "kind": "issue",
+              "fix": "Original report concerns Python 2 long. Large integer counters accepted by actual WeeWX accumulator under Python 3.10 and 3.14. No claim of reproducing historical Python 2 failure.",
+              "upstream_url": "https://github.com/matthewwall/weewx-cmon/issues/3",
+              "fix_commit": "https://github.com/weewx-packages/weewx-cmon/commit/c0b1dde56c83ac0ece3c9407381e1b279bc0446e",
+              "release_url": "https://github.com/weewx-packages/weewx-cmon/releases/tag/v0.21.0"
             }
           ]
         }
-      ]
+      ],
+      "catalog": {
+        "id": "cmon",
+        "releases": [
+          {
+            "version": "0.21.0",
+            "requires_python": ">=3.10,<3.15",
+            "requires_weewx": ">=5.5.2,<5.7",
+            "archive": {
+              "url": "https://github.com/weewx-packages/weewx-cmon/releases/download/v0.21.0/weewx-cmon-0.21.0.zip",
+              "format": "zip",
+              "sha256": "a51309f76ecdb85bcad3926a9b18a2a5453cc195ecf4ace1073dee3a301b68a3"
+            },
+            "release_notes": "https://github.com/weewx-packages/weewx-cmon/releases/tag/v0.21.0",
+            "restart_required": true
+          }
+        ]
+      }
     },
     {
       "wiki_line": 232,
@@ -7684,7 +7984,7 @@
       "source": "https://github.com/matthewwall/weewx-csv",
       "reviewed_revision": "34a9a52e5fedb47af216c281084f03a833fd75e6",
       "last_commit": "2021-09-18T02:51:11Z",
-      "decision": "published_pending_tracker_comments",
+      "decision": "completed",
       "reason": "Zwei seit 2024/2025 unbeantwortete offene Issues, letzter Commit 18.09.2021. Bericht über zeitweilig unvollständige CSV-Dateien muss zuerst reproduziert werden, Ursache noch nicht belegt.",
       "fork": "https://github.com/weewx-packages/weewx-csv",
       "license": {
@@ -7734,22 +8034,57 @@
         {
           "upstream": "https://github.com/matthewwall/weewx-csv",
           "fork_url": "https://github.com/weewx-packages/weewx-csv",
-          "decision": "published_pending_tracker_comments",
+          "decision": "completed",
           "version": "0.12.0",
           "source_revision": "34a9a52e5fedb47af216c281084f03a833fd75e6",
-          "revision": "af9af29f147b2c1e36c616232bc95b564eff149b",
+          "revision": "4319f3f33e53e0658138e3e8260689d09aaf3b96",
+          "limitations": [],
+          "test_revision": "4319f3f33e53e0658138e3e8260689d09aaf3b96",
+          "release_revision": "af9af29f147b2c1e36c616232bc95b564eff149b",
+          "release_immutable": true,
+          "release_url": "https://github.com/weewx-packages/weewx-csv/releases/tag/v0.12.0",
+          "download_url": "https://github.com/weewx-packages/weewx-csv/releases/download/v0.12.0/weewx-csv-0.12.0.zip",
           "items": [
             {
               "number": 2,
-              "comment_url": "https://github.com/matthewwall/weewx-csv/issues/2#issuecomment-6329070426"
+              "status": "addressed_with_public_evidence",
+              "comment_url": "https://github.com/matthewwall/weewx-csv/issues/2#issuecomment-6329070426",
+              "kind": "issue",
+              "fix": "Reproduced observable in-place truncation. Atomic overwrite publication; optional fixed columns distinguish varying LOOP packet schemas from corrupted files.",
+              "upstream_url": "https://github.com/matthewwall/weewx-csv/issues/2",
+              "fix_commit": "https://github.com/weewx-packages/weewx-csv/commit/af9af29f147b2c1e36c616232bc95b564eff149b",
+              "release_url": "https://github.com/weewx-packages/weewx-csv/releases/tag/v0.12.0"
             },
             {
               "number": 1,
-              "comment_url": "https://github.com/matthewwall/weewx-csv/issues/1#issuecomment-6329070180"
+              "status": "addressed_with_public_evidence",
+              "comment_url": "https://github.com/matthewwall/weewx-csv/issues/1#issuecomment-6329070180",
+              "kind": "issue",
+              "fix": "Optional decimal_places for float output; integer timestamps unchanged.",
+              "upstream_url": "https://github.com/matthewwall/weewx-csv/issues/1",
+              "fix_commit": "https://github.com/weewx-packages/weewx-csv/commit/af9af29f147b2c1e36c616232bc95b564eff149b",
+              "release_url": "https://github.com/weewx-packages/weewx-csv/releases/tag/v0.12.0"
             }
           ]
         }
-      ]
+      ],
+      "catalog": {
+        "id": "csv",
+        "releases": [
+          {
+            "version": "0.12.0",
+            "requires_python": ">=3.10,<3.15",
+            "requires_weewx": ">=5.5.2,<5.7",
+            "archive": {
+              "url": "https://github.com/weewx-packages/weewx-csv/releases/download/v0.12.0/weewx-csv-0.12.0.zip",
+              "format": "zip",
+              "sha256": "0b5cf7ff1723125de7a0aba9e88ff6c2c2e49aaee76c316b7f414a10fec36f05"
+            },
+            "release_notes": "https://github.com/weewx-packages/weewx-csv/releases/tag/v0.12.0",
+            "restart_required": true
+          }
+        ]
+      }
     },
     {
       "wiki_line": 233,
@@ -8887,7 +9222,24 @@
         "pull_requests": 0,
         "open_items": []
       },
-      "successor": []
+      "successor": [],
+      "catalog": {
+        "id": "nova-sds011",
+        "releases": [
+          {
+            "version": "1.1.0",
+            "requires_python": ">=3.10",
+            "requires_weewx": ">=5.2,<6",
+            "archive": {
+              "url": "https://github.com/weewx-packages/weewx-NovaSDS011/releases/download/v1.1.0/weewx-NovaSDS011-1.1.0.zip",
+              "format": "zip",
+              "sha256": "f90f774907cc0708af891576fefa6a4a8e0e99ba4d4196e71e1c368e4cf14ab8"
+            },
+            "release_notes": "https://github.com/weewx-packages/weewx-NovaSDS011/releases/tag/v1.1.0",
+            "restart_required": true
+          }
+        ]
+      }
     },
     {
       "wiki_line": 264,
@@ -9661,7 +10013,7 @@
       "source": "https://github.com/teeks99/weewx-json",
       "reviewed_revision": "dd4b466644367f9f80f844fc50aa20ca9425bc3f",
       "last_commit": "2024-10-31T01:32:37Z",
-      "decision": "published_pending_tracker_comments",
+      "decision": "completed",
       "reason": "Drei alte offene Punkte, darunter unbeantworteter PR #15 vom 01.09.2025 und Installationsdokumentation #13 vom 07.06.2024. Commit 31.10.2024; letzte Maintainerantwort im offenen Tracker 10.10.2022. GPLv3 ist in LICENSE belegt.",
       "fork": "https://github.com/weewx-packages/weewx-json",
       "license": {
@@ -9727,26 +10079,67 @@
         {
           "upstream": "https://github.com/teeks99/weewx-json",
           "fork_url": "https://github.com/weewx-packages/weewx-json",
-          "decision": "published_pending_tracker_comments",
+          "decision": "completed",
           "version": "1.3.0",
           "source_revision": "dd4b466644367f9f80f844fc50aa20ca9425bc3f",
           "revision": "1b59f6d0e0bc2cadb04e5497c77bae83672c97f9",
+          "limitations": [],
+          "test_revision": "1b59f6d0e0bc2cadb04e5497c77bae83672c97f9",
+          "release_revision": "1b59f6d0e0bc2cadb04e5497c77bae83672c97f9",
+          "release_immutable": true,
+          "release_url": "https://github.com/weewx-packages/weewx-json/releases/tag/v1.3.0",
+          "download_url": "https://github.com/weewx-packages/weewx-json/releases/download/v1.3.0/weewx-json_1.3.0.tar.gz",
           "items": [
             {
               "number": 15,
-              "comment_url": "https://github.com/teeks99/weewx-json/pull/15#issuecomment-6329071476"
+              "status": "addressed_with_public_evidence",
+              "comment_url": "https://github.com/teeks99/weewx-json/pull/15#issuecomment-6329071476",
+              "kind": "pull_request",
+              "fix": "Retain upstream PR history. Optional UV/radiation in full and minimal reports; zero preserved, absent values omitted.",
+              "upstream_url": "https://github.com/teeks99/weewx-json/pull/15",
+              "fix_commit": "https://github.com/weewx-packages/weewx-json/commit/1b59f6d0e0bc2cadb04e5497c77bae83672c97f9",
+              "release_url": "https://github.com/weewx-packages/weewx-json/releases/tag/v1.3.0"
             },
             {
               "number": 13,
-              "comment_url": "https://github.com/teeks99/weewx-json/issues/13#issuecomment-6329071114"
+              "status": "addressed_with_public_evidence",
+              "comment_url": "https://github.com/teeks99/weewx-json/issues/13#issuecomment-6329071114",
+              "kind": "issue",
+              "fix": "WeeWX 5 weectl install/uninstall instructions; modern ExtensionInstaller import.",
+              "upstream_url": "https://github.com/teeks99/weewx-json/issues/13",
+              "fix_commit": "https://github.com/weewx-packages/weewx-json/commit/1b59f6d0e0bc2cadb04e5497c77bae83672c97f9",
+              "release_url": "https://github.com/weewx-packages/weewx-json/releases/tag/v1.3.0"
             },
             {
               "number": 9,
-              "comment_url": "https://github.com/teeks99/weewx-json/issues/9#issuecomment-6329071331"
+              "status": "addressed_with_public_evidence",
+              "comment_url": "https://github.com/teeks99/weewx-json/issues/9#issuecomment-6329071331",
+              "kind": "issue",
+              "fix": "Document active Cheetah #if directives; add optional particulate, CO2, soil moisture fields; real minimal/extended SQLite report rendering and JSON parsing.",
+              "upstream_url": "https://github.com/teeks99/weewx-json/issues/9",
+              "fix_commit": "https://github.com/weewx-packages/weewx-json/commit/1b59f6d0e0bc2cadb04e5497c77bae83672c97f9",
+              "release_url": "https://github.com/weewx-packages/weewx-json/releases/tag/v1.3.0"
             }
           ]
         }
-      ]
+      ],
+      "catalog": {
+        "id": "json",
+        "releases": [
+          {
+            "version": "1.3.0",
+            "requires_python": ">=3.10,<3.15",
+            "requires_weewx": ">=5.5.2,<5.7",
+            "archive": {
+              "url": "https://github.com/weewx-packages/weewx-json/releases/download/v1.3.0/weewx-json_1.3.0.tar.gz",
+              "format": "tar.gz",
+              "sha256": "36c88bc843daad49797825ddd03d2a1e59129111471f336dfadaf90d8e596f6f"
+            },
+            "release_notes": "https://github.com/weewx-packages/weewx-json/releases/tag/v1.3.0",
+            "restart_required": true
+          }
+        ]
+      }
     },
     {
       "wiki_line": 279,
@@ -10118,7 +10511,7 @@
       "source": "https://gitlab.com/ngulden/niculskin",
       "reviewed_revision": "d9741244a2a42321d3e0f5802bfeeb2952156ffb",
       "last_commit": "2021-01-04T23:00:48.000+01:00",
-      "decision": "published_pending_tracker_comments",
+      "decision": "completed_with_tracker_comment_blocker",
       "reason": "GitLab-Quelle, Commit 04.01.2021; drei alte offene Issues und konfliktbehafteter MR !10 von 2018. Maintainer erläuterte #21 zuletzt 05.04.2022, keine spätere Behebung im Default-Branch. GPLv2-Text in LICENSE und GPL-Hinweise in Quellheadern vorhanden; alle öffentlichen Notes vollständig per GraphQL gelesen.",
       "fork": "https://github.com/weewx-packages/niculskin",
       "license": {
@@ -10194,30 +10587,80 @@
         {
           "upstream": "https://gitlab.com/ngulden/niculskin",
           "fork_url": "https://github.com/weewx-packages/niculskin",
-          "decision": "published_pending_tracker_comments",
-          "version": "1.1.0",
+          "decision": "completed_with_tracker_comment_blocker",
+          "version": "1.1.1",
           "source_revision": "d9741244a2a42321d3e0f5802bfeeb2952156ffb",
-          "revision": "2a30565104975c5eb5eef3878aecf3a74cf221db",
+          "revision": "debe6801a771e509a690637930d5fb68bcfe5412",
+          "limitations": [
+            "Optional operator radar/remote image endpoints were not contacted.",
+            "GitLab returned HTTP 401 for issues #19/#20/#21 and MR !10 comment attempts; prepared replies are retained."
+          ],
+          "test_revision": "debe6801a771e509a690637930d5fb68bcfe5412",
+          "release_revision": "debe6801a771e509a690637930d5fb68bcfe5412",
+          "release_immutable": true,
+          "release_url": "https://github.com/weewx-packages/niculskin/releases/tag/v1.1.1",
+          "download_url": "https://github.com/weewx-packages/niculskin/releases/download/v1.1.1/niculskin-1.1.1.zip",
           "items": [
             {
               "number": 21,
-              "comment_url": null
+              "status": "fix_published_comment_blocked_401",
+              "comment_url": null,
+              "kind": "issue",
+              "fix": "Reproduced German day label initialized as English. Load translation before formatter creation, real German/English report tests.",
+              "upstream_url": "https://gitlab.com/ngulden/niculskin/-/issues/21",
+              "fix_commit": "https://github.com/weewx-packages/niculskin/commit/debe6801a771e509a690637930d5fb68bcfe5412",
+              "release_url": "https://github.com/weewx-packages/niculskin/releases/tag/v1.1.1"
             },
             {
               "number": 20,
-              "comment_url": null
+              "status": "fix_published_comment_blocked_401",
+              "comment_url": null,
+              "kind": "issue",
+              "fix": "Bundle Bootstrap 5.3.8 CSS and MIT license; update all templates to local URLs.",
+              "upstream_url": "https://gitlab.com/ngulden/niculskin/-/issues/20",
+              "fix_commit": "https://github.com/weewx-packages/niculskin/commit/debe6801a771e509a690637930d5fb68bcfe5412",
+              "release_url": "https://github.com/weewx-packages/niculskin/releases/tag/v1.1.1"
             },
             {
               "number": 19,
-              "comment_url": null
+              "status": "fix_published_comment_blocked_401",
+              "comment_url": null,
+              "kind": "issue",
+              "fix": "Bundle Font Awesome Free 7.3.1, v4 compatibility CSS/webfont, full licenses. Remove replaced 4.x assets.",
+              "upstream_url": "https://gitlab.com/ngulden/niculskin/-/issues/19",
+              "fix_commit": "https://github.com/weewx-packages/niculskin/commit/debe6801a771e509a690637930d5fb68bcfe5412",
+              "release_url": "https://github.com/weewx-packages/niculskin/releases/tag/v1.1.1"
             },
             {
               "number": 10,
-              "comment_url": null
+              "status": "fix_published_comment_blocked_401",
+              "comment_url": null,
+              "kind": "merge_request",
+              "fix": "Original mrbalky/more-localization history merged. Local Git merge succeeds despite stale GitLab need_rebase state. Additional English/German strings rendered.",
+              "upstream_url": "https://gitlab.com/ngulden/niculskin/-/merge_requests/10",
+              "fix_commit": "https://github.com/weewx-packages/niculskin/commit/debe6801a771e509a690637930d5fb68bcfe5412",
+              "release_url": "https://github.com/weewx-packages/niculskin/releases/tag/v1.1.1"
             }
           ]
         }
-      ]
+      ],
+      "catalog": {
+        "id": "niculskin",
+        "releases": [
+          {
+            "version": "1.1.1",
+            "requires_python": ">=3.10,<3.15",
+            "requires_weewx": ">=5.5.2,<5.7",
+            "archive": {
+              "url": "https://github.com/weewx-packages/niculskin/releases/download/v1.1.1/niculskin-1.1.1.zip",
+              "format": "zip",
+              "sha256": "3a019a18be782f50f5a49a59aac9a95c5ac6963b4d94acc719eeada816feddfa"
+            },
+            "release_notes": "https://github.com/weewx-packages/niculskin/releases/tag/v1.1.1",
+            "restart_required": true
+          }
+        ]
+      }
     },
     {
       "wiki_line": 284,

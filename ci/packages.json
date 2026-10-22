@@ -181,5 +181,165 @@
     ],
     "install_input": "\n\n\n\n\n\n\ny\nn\nn\n\n\nn\nn\nn\nn\nn\nn\nn\nn\nn\nn\nn\nn\nn\nn\nn\nn\nn\nn\nn\nn\n",
     "skin": "DivumWX"
+  },
+  "meteostick": {
+    "repository": "weewx-packages/weewx-meteostick",
+    "ref": "2345202a03892295e6ce8689a1bdc5d3eb6f8000",
+    "imports": [
+      "user.meteostick"
+    ],
+    "allowed_skips": []
+  },
+  "sdr": {
+    "repository": "weewx-packages/weewx-sdr",
+    "ref": "639bcc3bdc86a4b302e2c323f31253618c45a5ad",
+    "imports": [
+      "user.sdr"
+    ],
+    "allowed_skips": []
+  },
+  "nova-sds011": {
+    "repository": "weewx-packages/weewx-NovaSDS011",
+    "ref": "ddc78c0aab0bf60c3bef583224388cbb269648a1",
+    "imports": [
+      "user.novaSDS011"
+    ],
+    "allowed_skips": []
+  },
+  "ventusw820": {
+    "repository": "weewx-packages/ventusw820",
+    "ref": "97b41caecbf776c3039836cbd12024a03beccdba",
+    "imports": [
+      "user.ventus",
+      "user.ventusw820"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [
+      "bluepy==1.3.0"
+    ]
+  },
+  "wh23xx": {
+    "repository": "weewx-packages/weewx-wh23xx",
+    "ref": "015cd77d894c503ca3ba3581307886fc40f87151",
+    "imports": [
+      "user.wh23xx"
+    ],
+    "allowed_skips": []
+  },
+  "wxt5x0": {
+    "repository": "weewx-packages/weewx-wxt5x0",
+    "ref": "cfb1ea9822b97c8d5e9666869f924df19244dd8f",
+    "imports": [
+      "user.wxt5x0"
+    ],
+    "allowed_skips": []
+  },
+  "wll": {
+    "repository": "weewx-packages/weewx-wll",
+    "ref": "762889729053ff02121b8df0457b16a0d20dd931",
+    "imports": [
+      "user.wll"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [
+      "requests"
+    ]
+  },
+  "observerip": {
+    "repository": "weewx-packages/weewx-observerip",
+    "ref": "e08f1e8e9402668bd16a2ec4cdfaa2fb23b90207",
+    "imports": [
+      "user.observerip"
+    ],
+    "allowed_skips": []
+  },
+  "aqi": {
+    "repository": "weewx-packages/weewx-aqi",
+    "ref": "a6133a018062a02b3f1823751c17e836e5ab7dcf",
+    "imports": [
+      "user.aqi.service",
+      "user.aqi.au",
+      "user.aqi.ca",
+      "user.aqi.us",
+      "user.aqi.ozone"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [
+      "numpy>=2.2,<3"
+    ]
+  },
+  "cmon": {
+    "repository": "weewx-packages/weewx-cmon",
+    "ref": "4c8408dbc753221d4433fc491bec066b57b38675",
+    "imports": [
+      "user.cmon"
+    ],
+    "allowed_skips": [],
+    "pip_packages": []
+  },
+  "csv": {
+    "repository": "weewx-packages/weewx-csv",
+    "ref": "4319f3f33e53e0658138e3e8260689d09aaf3b96",
+    "imports": [
+      "user.csv"
+    ],
+    "allowed_skips": [],
+    "pip_packages": []
+  },
+  "json": {
+    "repository": "weewx-packages/weewx-json",
+    "ref": "1b59f6d0e0bc2cadb04e5497c77bae83672c97f9",
+    "imports": [],
+    "allowed_skips": [],
+    "pip_packages": [],
+    "report": "JSONReport",
+    "skin": "JSON",
+    "outputs": [
+      "weewx.json",
+      "current_minimal.json"
+    ]
+  },
+  "bme280wx": {
+    "repository": "weewx-packages/bme280wx",
+    "ref": "fb8e33ad37b8edf9f767a595c98d98db9ddcbf82",
+    "imports": [
+      "user.bme280wx"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [
+      "RPi.bme280==0.2.4",
+      "smbus2>=0.6.1,<1"
+    ]
+  },
+  "niculskin": {
+    "repository": "weewx-packages/niculskin",
+    "ref": "debe6801a771e509a690637930d5fb68bcfe5412",
+    "imports": [
+      "user.translategenerator",
+      "user.historygenerator"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [],
+    "kind": "skin",
+    "report": "Niculskin",
+    "skin": "niculskin",
+    "outputs": [
+      "index.html",
+      "week.html",
+      "month.html",
+      "year.html",
+      "history.html",
+      "daytempdew.png",
+      "css/bootstrap.min.css",
+      "css/font-awesome.min.css",
+      "css/v4-shims.min.css",
+      "webfonts/fa-solid-900.woff2",
+      "licenses/bootstrap-MIT.txt",
+      "licenses/font-awesome-LICENSE.txt",
+      "css/LICENSE_H5BP.md",
+      "licenses/modernizr-2.6.2-MIT.txt",
+      "licenses/normalize.css-1.1.3-MIT.txt",
+      "licenses/niculskin-GPL-2.0.txt"
+    ]
   }
 }
