@@ -29,6 +29,8 @@ Static JSON index for WeeWX clients with extension repository support.
 - `WIKI-AUDIT.md`, `ci/wiki-audit.json`: Complete wiki review and pinned license evidence.
 - `ci/mirrors.json`, `ci/mirrors.py`: Weekly source-backup groups and deploy-key handling.
 - `ci/upstream_status.py`: Private discussion snapshots and public change summaries.
+- `ci/wiki_backup.py`: Private wiki Git bundles with independent restore checks.
+- `ci/wiki-state.json`: Public wiki availability and last verified backup status.
 - `ci/source_quality.py`: Source installation checks, separate from release regression tests.
 
 ## Conventions

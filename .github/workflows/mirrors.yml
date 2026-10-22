@@ -92,16 +92,25 @@ jobs:
           gh api meta --jq '.ssh_keys[] | "github.com " + .' > "$backup_key_dir/known_hosts"
           export GIT_SSH_COMMAND="ssh -i $backup_key_dir/key -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile=$backup_key_dir/known_hosts"
           git clone --single-branch --branch "$SNAPSHOT_BRANCH" git@github.com:weewx-packages/upstream-backup.git backup
-          python3 ci/upstream_status.py capture --weekday "$WEEKDAY" --backup backup --output activity.json
+          discussion_status=0
+          wiki_status=0
+          python3 ci/upstream_status.py capture --weekday "$WEEKDAY" --backup backup --output activity.json || discussion_status=$?
+          python3 ci/wiki_backup.py --weekday "$WEEKDAY" --backup backup --output wiki-activity.json || wiki_status=$?
           git -C backup config user.name 'github-actions[bot]'
           git -C backup config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git -C backup add snapshots index.json
-          git -C backup commit -m 'Capture weekly upstream discussions'
+          git -C backup add --all
+          if ! git -C backup diff --cached --quiet; then
+            git -C backup commit -m 'Capture weekly upstream discussions and wikis'
+          fi
           git -C backup push origin "$SNAPSHOT_BRANCH"
+          test "$discussion_status" = 0 && test "$wiki_status" = 0
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
         with:
           name: activity-${{ matrix.weekday }}
-          path: activity.json
+          path: |
+            activity.json
+            wiki-activity.json
           retention-days: 90
 
   quality:
@@ -174,7 +183,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add ci/upstream-state.json ci/source-quality.json
+          git add ci/upstream-state.json ci/source-quality.json ci/wiki-state.json
           if ! git diff --cached --quiet; then
             git commit -m 'Record weekly upstream backup and installation checks'
             for attempt in 1 2 3; do

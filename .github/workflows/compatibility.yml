@@ -13,6 +13,7 @@ on:
     paths-ignore:
       - ci/upstream-state.json
       - ci/source-quality.json
+      - ci/wiki-state.json
   pull_request:
 
 permissions:

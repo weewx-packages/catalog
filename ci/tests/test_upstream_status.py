@@ -44,3 +44,33 @@ def test_missing_capture_cannot_publish_an_empty_status_issue(tmp_path, monkeypa
     with pytest.raises(ValueError, match='No complete'):
         status.report(tmp_path, 'org/catalog', 'https://run')
     api.assert_not_called()
+
+
+def test_wiki_reporting_keeps_content_private_and_does_not_notify_on_timestamp_only_changes(tmp_path, monkeypatch):
+    monkeypatch.setattr(status, 'ROOT', tmp_path)
+    (tmp_path / 'ci').mkdir()
+    group = tmp_path / 'activity-1'
+    group.mkdir()
+    (group / 'activity.json').write_text(json.dumps(dict(repositories={
+        'owner/project': dict(captured_at='now', items={}, notices={}, notice_scan_complete=True)},
+        activity={})))
+    record = dict(url='https://github.com/owner/project.wiki.git', status='saved',
+                  checked_at='2026-10-22', last_verified='2026-10-22', retained=False, digest='one')
+    path = group / 'wiki-activity.json'
+    path.write_text(json.dumps(dict(wikis={'owner/project': record})))
+    issue = dict(number=1, body=status.MARKER, user={'login': 'github-actions[bot]'})
+    api = Mock(side_effect=lambda endpoint, *args, **kwargs: [issue] if '?' in endpoint else issue)
+    monkeypatch.setattr(status, 'api', api)
+    status.report(tmp_path, 'org/catalog', 'https://run')
+    assert any('/comments' in call.args[0] for call in api.call_args_list)
+    assert '| Wiki | Status |' in api.call_args_list[1].args[1]['body']
+    api.reset_mock()
+    record['checked_at'] = record['last_verified'] = '2026-10-29'
+    path.write_text(json.dumps(dict(wikis={'owner/project': record})))
+    status.report(tmp_path, 'org/catalog', 'https://run')
+    assert not any('/comments' in call.args[0] for call in api.call_args_list)
+    api.reset_mock()
+    record.update(status='unavailable', retained=True)
+    path.write_text(json.dumps(dict(wikis={'owner/project': record})))
+    status.report(tmp_path, 'org/catalog', 'https://run')
+    assert 'last backup retained' in api.call_args_list[-1].args[1]['body']

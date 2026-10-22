@@ -193,8 +193,34 @@ inline review comments and available file patches. Full snapshots are committed
 to the private [upstream-backup](https://github.com/weewx-packages/upstream-backup)
 repository on `weekday-1` through `weekday-5`. Commit history retains earlier
 versions when a thread changes or closes. External attachments, binaries absent
-from GitHub's patch responses, pre-existing closed discussions, release assets
-and wikis are outside this discussion capture.
+from GitHub's patch responses, pre-existing closed discussions and release assets
+are outside this discussion capture.
+
+The same job backs up separate GitHub and GitLab wiki repositories. It checks
+every tracked upstream and every public repository in the organization,
+including the core mirror and its upstream. Existing mirror weekdays are kept;
+additional organization repositories receive a stable weekly assignment.
+Wiki contents stay private, without republishing them under another license.
+
+Each `wikis/OWNER/REPOSITORY.bundle` in the private backup contains all reachable
+Git refs, history and files, including deleted pages retained in that history.
+GitLab paths start with `wikis/gitlab.com/`. Before replacement, every bundle is
+cloned into a separate bare repository, checked with `git fsck --full`, and its
+refs and HEAD compared with the source. `wiki-index.json` records the verified
+SHA-256 and status. Failed, disabled or empty upstreams retain their last good
+bundle; disappearance after a successful backup makes the job fail after saving
+the other backups. Earlier bundle versions remain in the backup commit history.
+
+To restore a wiki, check out its weekday branch in the private backup, then run:
+
+```sh
+git clone --mirror wikis/OWNER/REPOSITORY.bundle restored-wiki.git
+git -C restored-wiki.git fsck --full
+```
+
+Files stored in the wiki Git repository are included. Externally linked images
+and attachments are not downloaded. The public `ci/wiki-state.json` and activity
+issue contain statuses and fingerprints, never wiki bodies or bundle files.
 
 Public artifacts contain activity summaries and fingerprints. One catalog issue
 reports newly open, changed or no-longer-open upstream items. Changed license
@@ -204,7 +230,7 @@ when something changes. The private backup job's deploy key cannot write to any
 extension repository, and no extension code runs in that job.
 
 The reporting job records the latest public activity and source-check summaries
-in `ci/upstream-state.json` and `ci/source-quality.json`. Each run updates only
+in `ci/upstream-state.json`, `ci/wiki-state.json` and `ci/source-quality.json`. Each run updates only
 its assigned groups. Discussion bodies and patches stay in the private archive.
 
 Source checks use Python 3.14 with current WeeWX `master` and `development`

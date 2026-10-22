@@ -1,6 +1,7 @@
 """Back up open upstream discussions and report changes without running extensions."""
 
 import argparse
+from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 import hashlib
@@ -148,17 +149,23 @@ def report(directory, repository, run_url):
         repository (str): Catalog receiving the status issue.
         run_url (str): Workflow containing the snapshots and quality results.
     """
-    records, activity = {}, {}
+    records, activity, wikis = {}, {}, {}
     for path in sorted(directory.glob('activity-*/activity.json')):
         data = json.loads(path.read_text())
         records.update(data['repositories'])
         activity.update(data['activity'])
+    for path in sorted(directory.glob('activity-*/wiki-activity.json')):
+        wikis.update(json.loads(path.read_text())['wikis'])
     if not records:
         raise ValueError('No complete upstream activity summaries were produced')
     state_path = ROOT / 'ci/upstream-state.json'
     state = json.loads(state_path.read_text()) if state_path.exists() else {}
     state.update(records)
     state_path.write_text(json.dumps(state, indent=2) + '\n')
+    wiki_path = ROOT / 'ci/wiki-state.json'
+    previous_wikis = json.loads(wiki_path.read_text()) if wiki_path.exists() else {}
+    wiki_state = dict(previous_wikis, **wikis)
+    wiki_path.write_text(json.dumps(wiki_state, indent=2) + '\n')
     lines = [MARKER, 'Weekly upstream activity and source-backup status.', '',
         '| Upstream | Last capture | Open issues | Open PRs | License notices |', '|---|---|---|---|---|']
     updates = []
@@ -179,12 +186,30 @@ def report(directory, repository, run_url):
                 updates.append('- %s %s: [%s](%s)' % (action, item['kind'], title, item['url']))
         if delta['license_notices_changed']:
             updates.append('- License notices changed in [source](%s).' % source_url)
+    if wiki_state:
+        counts = Counter(record['status'] for record in wiki_state.values())
+        lines.extend(['', 'Wiki checks: ' + ', '.join('%s %s' % (count, label)
+                      for label, count in sorted(counts.items())) + '.',
+                      '[All wiki statuses](https://github.com/weewx-packages/catalog/blob/main/ci/wiki-state.json)',
+                      '', '| Wiki | Status | Last verified backup |', '|---|---|---|'])
+        for source, record in sorted(wiki_state.items()):
+            url = ('https://' + source + '/-/wikis/home' if source.startswith('gitlab.com/')
+                   else 'https://github.com/' + source + '/wiki')
+            label = record['status'] + ('; last backup retained' if record['retained'] else '')
+            if record['status'] in ('saved', 'unavailable') or record['retained']:
+                lines.append('| [%s](%s) | %s | %s |' % (
+                    source, url, label, (record['last_verified'] or '-')[:10]))
+            previous = previous_wikis.get(source, {})
+            if source in wikis and (record['status'] != previous.get('status')
+                    or record['digest'] != previous.get('digest')):
+                if record['status'] == 'saved' or record['retained'] or record['status'] == 'unavailable':
+                    updates.append('- Wiki %s: [%s](%s).' % (label, source, url))
     lines.extend(['', '[Workflow and quality results](%s)' % run_url,
-                  '[Private discussion backups](https://github.com/weewx-packages/upstream-backup)', '',
+                  '[Private discussion and wiki backups](https://github.com/weewx-packages/upstream-backup)', '',
                   'The table shows each repository\'s latest capture. This run updates its assigned groups.',
                   'Full discussion bodies,',
-                  'reviews and available PR file patches are kept in the private backup.',
-                  'Attachments and external binary files remain linked, not copied.'])
+                  'reviews, available PR file patches and restorable wiki Git bundles are kept in the private backup.',
+                  'Externally hosted attachments remain linked, not copied.'])
     body = '\n'.join(lines) + '\n'
     issues = api('repos/%s/issues?state=all&per_page=100' % repository, paginate=True)
     if not isinstance(issues, list):
