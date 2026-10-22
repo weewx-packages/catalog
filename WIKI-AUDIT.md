@@ -16,8 +16,8 @@ coverage is recorded separately; presence here does not make it a tested
 catalog package. Restricted use terms are recorded individually, rather
 than treated as an automatic redistribution prohibition.
 
-DivumWX package publication is paused while restricted fonts are replaced.
-The original archive is withdrawn. Tracer 0.3.0 is published
+DivumWX 1.7.0.post1 replaces restricted fonts and retains licensed weather icons.
+Its original archive is withdrawn. Tracer 0.3.0 is published
 with regression tests; physical controller validation remains outstanding.
 
 The [machine-readable review](ci/wiki-audit.json) contains pinned license
@@ -93,7 +93,7 @@ evidence, tracker details, reasons, successor decisions and repair results.
 | 225 | [airgradient](https://github.com/chaunceygardiner/weewx-airgradient) | GPL-3.0-only | fork_created | [repository](https://github.com/weewx-packages/weewx-airgradient) |
 | 226 | [airQ](https://github.com/roe-dl/weewx-airQ) | GPL-3.0-only | fork_created | [repository](https://github.com/weewx-packages/weewx-airQ) |
 | 227 | [AirVisual](https://github.com/inguy24/weewx-airvisual) | GPL-3.0-only | defer_maintenance |  |
-| 228 | [aqi](https://github.com/jonathankoren/weewx-aqi) | GPL-3.0-only | cloned_full_history |  |
+| 228 | [aqi](https://github.com/jonathankoren/weewx-aqi) | GPL-3.0-only | published_pending_tracker_comments | [repository](https://github.com/weewx-packages/weewx-aqi) |
 | 229 | [as3935](https://github.com/matthewwall/weewx-as3935) | GPL-3.0-only | fork_created | [repository](https://github.com/weewx-packages/weewx-as3935) |
 | 230 | [bme280wx](https://gitlab.com/wjcarpenter/bme280wx) | BSD-2-Clause | published_pending_tracker_comments | [repository](https://github.com/weewx-packages/bme280wx) |
 | 231 | [cmon](https://github.com/matthewwall/weewx-cmon) | GPL-3.0-only | published_pending_tracker_comments | [repository](https://github.com/weewx-packages/weewx-cmon) |

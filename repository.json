@@ -207,6 +207,294 @@
           "restart_required": true
         }
       ]
+    },
+    {
+      "id": "crt",
+      "installer_name": "crt",
+      "name": "Cumulus realtime output",
+      "description": "Write Cumulus realtime files, optional realmore data and gauge output from WeeWX observations.",
+      "types": [
+        "service"
+      ],
+      "keywords": [
+        "cumulus",
+        "realtime",
+        "windrun"
+      ],
+      "homepage": "https://github.com/weewx-packages/weewx-crt",
+      "releases": [
+        {
+          "version": "0.24.1",
+          "requires_python": ">=3.10,<3.15",
+          "requires_weewx": ">=5.5.2,<5.7",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-crt/releases/download/v0.24.1/weewx-crt-0.24.1.tar.gz",
+            "format": "tar.gz",
+            "sha256": "799b67cfe273f10942d4874e6b1c3b8ccfac21d23a3cf7a3713fc9f67b989cd8"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-crt/releases/tag/v0.24.1",
+          "restart_required": true
+        }
+      ]
+    },
+    {
+      "id": "cwxn",
+      "installer_name": "cwxn",
+      "name": "Cumulus wxnow output",
+      "description": "Write wxnow.txt with APRS humidity and missing-value handling from WeeWX observations.",
+      "types": [
+        "service"
+      ],
+      "keywords": [
+        "cumulus",
+        "wxnow",
+        "aprs"
+      ],
+      "homepage": "https://github.com/weewx-packages/weewx-cwxn",
+      "releases": [
+        {
+          "version": "0.6.1",
+          "requires_python": ">=3.10,<3.15",
+          "requires_weewx": ">=5.5.2,<5.7",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-cwxn/releases/download/v0.6.1/weewx-cwxn-0.6.1.tar.gz",
+            "format": "tar.gz",
+            "sha256": "24f15efdcffeb66e7f4b752e444f1a1aeb6aadc5e34948090ad547ab625f3594"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-cwxn/releases/tag/v0.6.1",
+          "restart_required": true
+        }
+      ]
+    },
+    {
+      "id": "graphite",
+      "installer_name": "graphite",
+      "name": "Graphite uploader",
+      "description": "Send WeeWX observations with their original timestamps to a Carbon TCP receiver.",
+      "types": [
+        "service"
+      ],
+      "keywords": [
+        "graphite",
+        "carbon",
+        "metrics"
+      ],
+      "homepage": "https://github.com/weewx-packages/weewx-graphite",
+      "releases": [
+        {
+          "version": "2.2.0",
+          "requires_python": ">=3.10,<3.15",
+          "requires_weewx": ">=5.5.2,<5.7",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-graphite/releases/download/v2.2.0/weewx-graphite-2.2.0.tar.gz",
+            "format": "tar.gz",
+            "sha256": "f8a3bf7b73a1190b9d0953dd8b9a9b97475b06ff492ef705c350c652221833db"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-graphite/releases/tag/v2.2.0",
+          "restart_required": true
+        }
+      ]
+    },
+    {
+      "id": "influx",
+      "installer_name": "influx",
+      "name": "InfluxDB uploader",
+      "description": "Upload WeeWX observations to InfluxDB 1 or 2 with verified TLS and bounded archive replay.",
+      "types": [
+        "service"
+      ],
+      "keywords": [
+        "influxdb",
+        "database",
+        "uploader"
+      ],
+      "homepage": "https://github.com/weewx-packages/weewx-influx",
+      "releases": [
+        {
+          "version": "0.21.1",
+          "requires_python": ">=3.10,<3.15",
+          "requires_weewx": ">=5.5.2,<5.7",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-influx/releases/download/v0.21.1/weewx-influx-0.21.1.tar.gz",
+            "format": "tar.gz",
+            "sha256": "95615ffdaf3318d61035b20c3c2cff5609ff8732ab7e9a6f85398b729478e1b7"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-influx/releases/tag/v0.21.1",
+          "restart_required": true
+        }
+      ]
+    },
+    {
+      "id": "meteotemplate",
+      "installer_name": "meteotemplate",
+      "name": "Meteotemplate uploader",
+      "description": "Send WeeWX observations and configured optional sensor fields to a Meteotemplate server.",
+      "types": [
+        "service"
+      ],
+      "keywords": [
+        "meteotemplate",
+        "uploader"
+      ],
+      "homepage": "https://github.com/weewx-packages/weewx-meteotemplate",
+      "releases": [
+        {
+          "version": "0.11.0",
+          "requires_python": ">=3.10,<3.15",
+          "requires_weewx": ">=5.5.2,<5.7",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-meteotemplate/releases/download/v0.11.0/weewx-meteotemplate-0.11.0.tar.gz",
+            "format": "tar.gz",
+            "sha256": "74e4d439d016f44226da6a436d4c233c3b54ab434849f83319845371947b0dbf"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-meteotemplate/releases/tag/v0.11.0",
+          "restart_required": true
+        }
+      ]
+    },
+    {
+      "id": "owm",
+      "installer_name": "owm",
+      "name": "OpenWeatherMap uploader",
+      "description": "Upload WeeWX measurements to the OpenWeatherMap station API over HTTPS.",
+      "types": [
+        "service"
+      ],
+      "keywords": [
+        "openweathermap",
+        "uploader"
+      ],
+      "homepage": "https://github.com/weewx-packages/weewx-owm",
+      "releases": [
+        {
+          "version": "0.10.0",
+          "requires_python": ">=3.10,<3.15",
+          "requires_weewx": ">=5.5.2,<5.7",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-owm/releases/download/v0.10.0/weewx-owm-0.10.0.tar.gz",
+            "format": "tar.gz",
+            "sha256": "411cd48f827a7dc10dc25724aab4dd7af404eaa5cb90dc3e19b9c7391cbe14c5"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-owm/releases/tag/v0.10.0",
+          "restart_required": true
+        }
+      ]
+    },
+    {
+      "id": "prompush",
+      "installer_name": "PromPush",
+      "name": "Prometheus Pushgateway uploader",
+      "description": "Send WeeWX observations in Prometheus text format to a Pushgateway.",
+      "types": [
+        "service"
+      ],
+      "keywords": [
+        "prometheus",
+        "pushgateway",
+        "metrics"
+      ],
+      "homepage": "https://github.com/weewx-packages/weewx-prompush",
+      "releases": [
+        {
+          "version": "1.1.0",
+          "requires_python": ">=3.10,<3.15",
+          "requires_weewx": ">=5.5.2,<5.7",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-prompush/releases/download/v1.1.0/weewx-prompush-1.1.0.tar.gz",
+            "format": "tar.gz",
+            "sha256": "218603734fb844bd11d41c8f57bb8eb575f87e8bbde1c72509f9e2e646bff53d"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-prompush/releases/tag/v1.1.0",
+          "restart_required": true
+        }
+      ]
+    },
+    {
+      "id": "twitter",
+      "installer_name": "twitter",
+      "name": "Twitter uploader",
+      "description": "Post formatted WeeWX observations through Twython at elapsed intervals or fixed local times.",
+      "types": [
+        "service"
+      ],
+      "keywords": [
+        "twitter",
+        "twython",
+        "uploader"
+      ],
+      "homepage": "https://github.com/weewx-packages/weewx-twitter",
+      "releases": [
+        {
+          "version": "0.16.1",
+          "requires_python": ">=3.10,<3.15",
+          "requires_weewx": ">=5.5.2,<5.7",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-twitter/releases/download/v0.16.1/weewx-twitter-0.16.1.tar.gz",
+            "format": "tar.gz",
+            "sha256": "26a5f533d5ca3940e77567aadaafc076c08f30886884afa90f664c5a21deb7d9"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-twitter/releases/tag/v0.16.1",
+          "restart_required": true
+        }
+      ]
+    },
+    {
+      "id": "zabbix",
+      "installer_name": "zabbix",
+      "name": "Zabbix sender service",
+      "description": "Send WeeWX observations through zabbix_sender and provide a Zabbix 7 template for METRICWX inputs.",
+      "types": [
+        "service"
+      ],
+      "keywords": [
+        "zabbix",
+        "monitoring"
+      ],
+      "homepage": "https://github.com/weewx-packages/weewx-zabbix",
+      "releases": [
+        {
+          "version": "0.2.0",
+          "requires_python": ">=3.10,<3.15",
+          "requires_weewx": ">=5.5.2,<5.7",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-zabbix/releases/download/v0.2.0/weewx-zabbix-0.2.0.tar.gz",
+            "format": "tar.gz",
+            "sha256": "b24a57dffae5019fbd2bfc6b0eb30a448c6528d31a794883a90e67082c5d66fd"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-zabbix/releases/tag/v0.2.0",
+          "restart_required": true
+        }
+      ]
+    },
+    {
+      "id": "divumwx",
+      "installer_name": "divumwx",
+      "name": "DivumWX",
+      "description": "Live weather dashboard with charts, forecasts and astronomy pages. Cleaned font package; requires requests and skyfield.",
+      "types": [
+        "skin"
+      ],
+      "keywords": [
+        "divumwx",
+        "skin",
+        "charts",
+        "weather"
+      ],
+      "homepage": "https://github.com/weewx-packages/weewx-divumwx",
+      "releases": [
+        {
+          "version": "1.7.0.post1",
+          "requires_python": ">=3.13.5",
+          "requires_weewx": ">=5.5,<6",
+          "archive": {
+            "url": "https://github.com/weewx-packages/catalog/releases/download/divumwx/v1.7.0.post1/divumwx-1.7.0.post1.zip",
+            "format": "zip",
+            "sha256": "6c0af27b338bd00a29b07f0aa9d416c7f4e25cd3f6047762da7996ced0831d07"
+          },
+          "release_notes": "https://github.com/weewx-packages/catalog/releases/tag/divumwx/v1.7.0.post1",
+          "restart_required": true
+        }
+      ]
     }
   ]
 }

@@ -70,5 +70,116 @@
       "user.tracer"
     ],
     "allowed_skips": []
+  },
+  "crt": {
+    "repository": "weewx-packages/weewx-crt",
+    "ref": "c14373acb8bc0b0cd6a5358b9355d49cbf70eac7",
+    "imports": [
+      "user.crt"
+    ],
+    "allowed_skips": [],
+    "pip_packages": []
+  },
+  "cwxn": {
+    "repository": "weewx-packages/weewx-cwxn",
+    "ref": "8f7a2447563f2dc59ec1ec4e9ed5bfe9fee8ab28",
+    "imports": [
+      "user.cwxn"
+    ],
+    "allowed_skips": [],
+    "pip_packages": []
+  },
+  "graphite": {
+    "repository": "weewx-packages/weewx-graphite",
+    "ref": "ce6a237bd265f9dc9d8673490274ac6b32429e87",
+    "imports": [
+      "user.graphite"
+    ],
+    "allowed_skips": [
+      "WeeWX 5 creates missing service lists"
+    ],
+    "pip_packages": []
+  },
+  "influx": {
+    "repository": "weewx-packages/weewx-influx",
+    "ref": "4d58c50a8f9fa6660b00722b37e7d260de2366fe",
+    "imports": [
+      "user.influx"
+    ],
+    "allowed_skips": [],
+    "pip_packages": []
+  },
+  "meteotemplate": {
+    "repository": "weewx-packages/weewx-meteotemplate",
+    "ref": "cadb1d33bc0d51668da19e4a85c7ae25ca1c6754",
+    "imports": [
+      "user.meteotemplate"
+    ],
+    "allowed_skips": [],
+    "pip_packages": []
+  },
+  "owm": {
+    "repository": "weewx-packages/weewx-owm",
+    "ref": "5369ee8ba1b85fbb1fd0f35ea131dbeb3591752f",
+    "imports": [
+      "user.owm"
+    ],
+    "allowed_skips": [],
+    "pip_packages": []
+  },
+  "prompush": {
+    "repository": "weewx-packages/weewx-prompush",
+    "ref": "b407479f0607771c83f2f56cda5fdbf2e4811c88",
+    "imports": [
+      "user.prompush"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [
+      "requests>=2.32.5,<3",
+      "prometheus-client"
+    ]
+  },
+  "twitter": {
+    "repository": "weewx-packages/weewx-twitter",
+    "ref": "f402401df7db119e7c894c0bb9efd6aab42ade67",
+    "imports": [
+      "user.twitter"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [
+      "twython"
+    ]
+  },
+  "zabbix": {
+    "repository": "weewx-packages/weewx-zabbix",
+    "ref": "bfab1ba5c3d3fe80b67ded00f40abcfd03417e53",
+    "imports": [
+      "user.zabbix"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [
+      "PyYAML"
+    ]
+  },
+  "divumwx": {
+    "repository": "weewx-packages/weewx-divumwx",
+    "ref": "ac720ea8b52158fe099327264f02368c0a3044d0",
+    "kind": "skin",
+    "report": "DivumWXReport",
+    "imports": [
+      "user.divumwx",
+      "user.divumwx_cards"
+    ],
+    "outputs": [
+      "index.html",
+      "jsondata/archive.json",
+      "jsondata/charts.json"
+    ],
+    "allowed_skips": [],
+    "pythons": [
+      "3.14"
+    ],
+    "install_input": "\n\n\n\n\n\n\ny\nn\nn\n\n\nn\nn\nn\nn\nn\nn\nn\nn\nn\nn\nn\nn\nn\nn\nn\nn\nn\nn\nn\nn\n",
+    "skin": "DivumWX"
   }
 }

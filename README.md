@@ -25,9 +25,9 @@ weectl extension install livedata --repo packages
 
 Follow the package's configuration instructions after installation.
 
-The mirrored skins use the same catalog. DivumWX package publication is paused
-while the redistribution terms of a bundled font are clarified. The existing
-fork remains available; the catalog's original 1.7.0 archive has been withdrawn.
+The mirrored skins use the same catalog. DivumWX 1.7.0.post1 replaces restricted
+fonts with licensed fonts and Unicode symbols. The original 1.7.0 catalog
+archive is withdrawn; future upstream tags require another font review.
 NeoWX Material may require selecting `skin = neowx-material` in your
 `[[StandardReport]]` configuration and enabling that report.
 
@@ -44,6 +44,16 @@ records from different driver versions.
 | [NeoWX Material](https://github.com/weewx-packages/neowx-material) | `neowx-material` | Material-style weather website with interactive charts and live observations. |
 | [Belchertown](https://github.com/weewx-packages/weewx-belchertown) | `belchertown` | Weather website with live observations, interactive charts and forecasts. |
 | [Tracer / EPEVER](https://github.com/weewx-packages/weewx-tracer) | `tracer` | Read EPEVER and Tracer MPPT solar charge controllers over RS485 Modbus. Requires pymodbus 3.11 through 3.x and pyserial. |
+| [Cumulus realtime output](https://github.com/weewx-packages/weewx-crt) | `crt` | Write Cumulus realtime files, optional realmore data and gauge output from WeeWX observations. |
+| [Cumulus wxnow output](https://github.com/weewx-packages/weewx-cwxn) | `cwxn` | Write wxnow.txt with APRS humidity and missing-value handling from WeeWX observations. |
+| [Graphite uploader](https://github.com/weewx-packages/weewx-graphite) | `graphite` | Send WeeWX observations with their original timestamps to a Carbon TCP receiver. |
+| [InfluxDB uploader](https://github.com/weewx-packages/weewx-influx) | `influx` | Upload WeeWX observations to InfluxDB 1 or 2 with verified TLS and bounded archive replay. |
+| [Meteotemplate uploader](https://github.com/weewx-packages/weewx-meteotemplate) | `meteotemplate` | Send WeeWX observations and configured optional sensor fields to a Meteotemplate server. |
+| [OpenWeatherMap uploader](https://github.com/weewx-packages/weewx-owm) | `owm` | Upload WeeWX measurements to the OpenWeatherMap station API over HTTPS. |
+| [Prometheus Pushgateway uploader](https://github.com/weewx-packages/weewx-prompush) | `prompush` | Send WeeWX observations in Prometheus text format to a Pushgateway. |
+| [Twitter uploader](https://github.com/weewx-packages/weewx-twitter) | `twitter` | Post formatted WeeWX observations through Twython at elapsed intervals or fixed local times. |
+| [Zabbix sender service](https://github.com/weewx-packages/weewx-zabbix) | `zabbix` | Send WeeWX observations through zabbix_sender and provide a Zabbix 7 template for METRICWX inputs. |
+| [DivumWX](https://github.com/weewx-packages/weewx-divumwx) | `divumwx` | Live weather dashboard with charts, forecasts and astronomy pages. Cleaned font package; requires requests and skyfield. |
 <!-- packages:end -->
 
 New packages become available through the same registered source when its index

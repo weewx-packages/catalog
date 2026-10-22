@@ -23,8 +23,7 @@
     "local_successor_fixes_bundle_distribution_blocked": 1,
     "skip_superseded": 2,
     "defer_maintenance": 2,
-    "cloned_full_history": 1,
-    "published_pending_tracker_comments": 5,
+    "published_pending_tracker_comments": 6,
     "existing_fork_verified": 5,
     "borderline_active_old_items": 3,
     "hard_fork_plan_license_review": 1,
@@ -3560,7 +3559,24 @@
             }
           ]
         }
-      ]
+      ],
+      "catalog": {
+        "id": "tracer",
+        "releases": [
+          {
+            "version": "0.3.0",
+            "requires_python": ">=3.10",
+            "requires_weewx": ">=5,<6",
+            "archive": {
+              "url": "https://github.com/weewx-packages/weewx-tracer/releases/download/v0.3.0/tracer-0.3.0.zip",
+              "format": "zip",
+              "sha256": "af7fa689e2bbbe86d81335370bd19ef6f38cbf8dffaaed36acc47bd69391f236"
+            },
+            "release_notes": "https://github.com/weewx-packages/weewx-tracer/releases/tag/v0.3.0",
+            "restart_required": true
+          }
+        ]
+      }
     },
     {
       "wiki_line": 145,
@@ -5475,6 +5491,23 @@
       "successor": {
         "decision": "existing_hard_fork_already_selected",
         "fork_url": "https://github.com/weewx-packages/weewx-rtldavis"
+      },
+      "catalog": {
+        "id": "rtldavis",
+        "releases": [
+          {
+            "version": "0.21.1",
+            "requires_python": ">=3.7",
+            "requires_weewx": ">=5,<6",
+            "archive": {
+              "url": "https://github.com/weewx-packages/weewx-rtldavis/releases/download/v0.21.1/weewx-rtldavis-0.21.1.zip",
+              "format": "zip",
+              "sha256": "bcb7eaa901ec3e9b9b8f73294c2e7036625e70e45d5f53385c7745d003e95bba"
+            },
+            "release_notes": "https://github.com/weewx-packages/weewx-rtldavis/releases/tag/v0.21.1",
+            "restart_required": true
+          }
+        ]
       }
     },
     {
@@ -7252,9 +7285,9 @@
       "source": "https://github.com/jonathankoren/weewx-aqi",
       "reviewed_revision": "d5bf9c9f28e8da15e3a65c55bc623e56a42e3602",
       "last_commit": "2023-01-02T07:48:51Z",
-      "decision": "cloned_full_history",
+      "decision": "published_pending_tracker_comments",
       "reason": "Acht alte offene Issues, unbeantwortete Crash-/Einheiten-/AQI-Meldungen seit 2022 bis 2024; letzter Commit 02.01.2023, letzte Maintainerantwort im offenen Tracker 27.07.2021. Reparaturbedarf und langjährige fehlende Reaktion zusammen belegen anhaltende Inaktivität dieses Repos.",
-      "fork": null,
+      "fork": "https://github.com/weewx-packages/weewx-aqi",
       "license": {
         "spdx": "GPL-3.0-only",
         "evidence": [
@@ -7394,10 +7427,45 @@
       "repairs": [
         {
           "upstream": "https://github.com/jonathankoren/weewx-aqi",
-          "fork_url": null,
-          "decision": "cloned_full_history",
+          "fork_url": "https://github.com/weewx-packages/weewx-aqi",
+          "decision": "published_pending_tracker_comments",
+          "version": "1.5.0",
           "source_revision": "d5bf9c9f28e8da15e3a65c55bc623e56a42e3602",
-          "items": []
+          "revision": "0ae7bef4312a6903b37a26113076f792d5cc82bc",
+          "items": [
+            {
+              "number": 42,
+              "comment_url": null
+            },
+            {
+              "number": 41,
+              "comment_url": null
+            },
+            {
+              "number": 40,
+              "comment_url": null
+            },
+            {
+              "number": 37,
+              "comment_url": null
+            },
+            {
+              "number": 33,
+              "comment_url": null
+            },
+            {
+              "number": 23,
+              "comment_url": null
+            },
+            {
+              "number": 20,
+              "comment_url": null
+            },
+            {
+              "number": 13,
+              "comment_url": null
+            }
+          ]
         }
       ]
     },
@@ -9231,7 +9299,24 @@
         "open_items": []
       },
       "successor": [],
-      "publication": "Paused: bundled fonts include an explicit redistribution restriction and Apple Watch-only terms; licensed variant in preparation."
+      "catalog": {
+        "id": "divumwx",
+        "releases": [
+          {
+            "version": "1.7.0.post1",
+            "requires_python": ">=3.13.5",
+            "requires_weewx": ">=5.5,<6",
+            "archive": {
+              "url": "https://github.com/weewx-packages/catalog/releases/download/divumwx/v1.7.0.post1/divumwx-1.7.0.post1.zip",
+              "format": "zip",
+              "sha256": "6c0af27b338bd00a29b07f0aa9d416c7f4e25cd3f6047762da7996ced0831d07"
+            },
+            "release_notes": "https://github.com/weewx-packages/catalog/releases/tag/divumwx/v1.7.0.post1",
+            "restart_required": true
+          }
+        ]
+      },
+      "publication": "Cleaned 1.7.0.post1 package published with licensed fonts and Unicode zodiac symbols; future tags require another asset review."
     },
     {
       "wiki_line": 273,
@@ -10006,7 +10091,24 @@
           "fork_url": "https://github.com/weewx-packages/neowx-material",
           "evidence": "/home/hilman2/weewx-packages/wiki-audit-20261022/services-skins/evidence/seehase__neowx-material/audit.json"
         }
-      ]
+      ],
+      "catalog": {
+        "id": "neowx-material",
+        "releases": [
+          {
+            "version": "1.73.4",
+            "requires_python": ">=3.10",
+            "requires_weewx": ">=5,<6",
+            "archive": {
+              "url": "https://github.com/weewx-packages/catalog/releases/download/neowx-material/v1.73.4/neowx-material-1.73.4.zip",
+              "format": "zip",
+              "sha256": "5ffd2475c3656d5ef3fe3158c75c4109057dcac6292cfb61b2f673baecacca70"
+            },
+            "release_notes": "https://github.com/seehase/neowx-material/releases/tag/1.73.4",
+            "restart_required": true
+          }
+        ]
+      }
     },
     {
       "wiki_line": 283,
@@ -10993,7 +11095,24 @@
         "pull_requests": 0,
         "open_items": []
       },
-      "successor": []
+      "successor": [],
+      "catalog": {
+        "id": "belchertown",
+        "releases": [
+          {
+            "version": "3.0.0",
+            "requires_python": ">=3.10",
+            "requires_weewx": ">=5,<6",
+            "archive": {
+              "url": "https://github.com/weewx-packages/catalog/releases/download/belchertown/v3.0.0/belchertown-3.0.0.tar.gz",
+              "format": "tar",
+              "sha256": "25e7891b489e55a72a73ffc660c30f2ffceb069ced7dde9ee75853f75388a1af"
+            },
+            "release_notes": "https://github.com/poblabs/weewx-belchertown/releases/tag/weewx-belchertown-3.0.0",
+            "restart_required": true
+          }
+        ]
+      }
     },
     {
       "wiki_line": 303,
@@ -12197,7 +12316,24 @@
             }
           ]
         }
-      ]
+      ],
+      "catalog": {
+        "id": "crt",
+        "releases": [
+          {
+            "version": "0.24.1",
+            "requires_python": ">=3.10,<3.15",
+            "requires_weewx": ">=5.5.2,<5.7",
+            "archive": {
+              "url": "https://github.com/weewx-packages/weewx-crt/releases/download/v0.24.1/weewx-crt-0.24.1.tar.gz",
+              "format": "tar.gz",
+              "sha256": "799b67cfe273f10942d4874e6b1c3b8ccfac21d23a3cf7a3713fc9f67b989cd8"
+            },
+            "release_notes": "https://github.com/weewx-packages/weewx-crt/releases/tag/v0.24.1",
+            "restart_required": true
+          }
+        ]
+      }
     },
     {
       "wiki_line": 366,
@@ -12308,7 +12444,24 @@
             }
           ]
         }
-      ]
+      ],
+      "catalog": {
+        "id": "cwxn",
+        "releases": [
+          {
+            "version": "0.6.1",
+            "requires_python": ">=3.10,<3.15",
+            "requires_weewx": ">=5.5.2,<5.7",
+            "archive": {
+              "url": "https://github.com/weewx-packages/weewx-cwxn/releases/download/v0.6.1/weewx-cwxn-0.6.1.tar.gz",
+              "format": "tar.gz",
+              "sha256": "24f15efdcffeb66e7f4b752e444f1a1aeb6aadc5e34948090ad547ab625f3594"
+            },
+            "release_notes": "https://github.com/weewx-packages/weewx-cwxn/releases/tag/v0.6.1",
+            "restart_required": true
+          }
+        ]
+      }
     },
     {
       "wiki_line": 367,
@@ -12481,7 +12634,24 @@
             }
           ]
         }
-      ]
+      ],
+      "catalog": {
+        "id": "graphite",
+        "releases": [
+          {
+            "version": "2.2.0",
+            "requires_python": ">=3.10,<3.15",
+            "requires_weewx": ">=5.5.2,<5.7",
+            "archive": {
+              "url": "https://github.com/weewx-packages/weewx-graphite/releases/download/v2.2.0/weewx-graphite-2.2.0.tar.gz",
+              "format": "tar.gz",
+              "sha256": "f8a3bf7b73a1190b9d0953dd8b9a9b97475b06ff492ef705c350c652221833db"
+            },
+            "release_notes": "https://github.com/weewx-packages/weewx-graphite/releases/tag/v2.2.0",
+            "restart_required": true
+          }
+        ]
+      }
     },
     {
       "wiki_line": 369,
@@ -12865,7 +13035,24 @@
             }
           ]
         }
-      ]
+      ],
+      "catalog": {
+        "id": "influx",
+        "releases": [
+          {
+            "version": "0.21.1",
+            "requires_python": ">=3.10,<3.15",
+            "requires_weewx": ">=5.5.2,<5.7",
+            "archive": {
+              "url": "https://github.com/weewx-packages/weewx-influx/releases/download/v0.21.1/weewx-influx-0.21.1.tar.gz",
+              "format": "tar.gz",
+              "sha256": "95615ffdaf3318d61035b20c3c2cff5609ff8732ab7e9a6f85398b729478e1b7"
+            },
+            "release_notes": "https://github.com/weewx-packages/weewx-influx/releases/tag/v0.21.1",
+            "restart_required": true
+          }
+        ]
+      }
     },
     {
       "wiki_line": 371,
@@ -13116,7 +13303,24 @@
             }
           ]
         }
-      ]
+      ],
+      "catalog": {
+        "id": "meteotemplate",
+        "releases": [
+          {
+            "version": "0.11.0",
+            "requires_python": ">=3.10,<3.15",
+            "requires_weewx": ">=5.5.2,<5.7",
+            "archive": {
+              "url": "https://github.com/weewx-packages/weewx-meteotemplate/releases/download/v0.11.0/weewx-meteotemplate-0.11.0.tar.gz",
+              "format": "tar.gz",
+              "sha256": "74e4d439d016f44226da6a436d4c233c3b54ab434849f83319845371947b0dbf"
+            },
+            "release_notes": "https://github.com/weewx-packages/weewx-meteotemplate/releases/tag/v0.11.0",
+            "restart_required": true
+          }
+        ]
+      }
     },
     {
       "wiki_line": 375,
@@ -13302,7 +13506,24 @@
             }
           ]
         }
-      ]
+      ],
+      "catalog": {
+        "id": "owm",
+        "releases": [
+          {
+            "version": "0.10.0",
+            "requires_python": ">=3.10,<3.15",
+            "requires_weewx": ">=5.5.2,<5.7",
+            "archive": {
+              "url": "https://github.com/weewx-packages/weewx-owm/releases/download/v0.10.0/weewx-owm-0.10.0.tar.gz",
+              "format": "tar.gz",
+              "sha256": "411cd48f827a7dc10dc25724aab4dd7af404eaa5cb90dc3e19b9c7391cbe14c5"
+            },
+            "release_notes": "https://github.com/weewx-packages/weewx-owm/releases/tag/v0.10.0",
+            "restart_required": true
+          }
+        ]
+      }
     },
     {
       "wiki_line": 379,
@@ -13399,7 +13620,24 @@
             }
           ]
         }
-      ]
+      ],
+      "catalog": {
+        "id": "prompush",
+        "releases": [
+          {
+            "version": "1.1.0",
+            "requires_python": ">=3.10,<3.15",
+            "requires_weewx": ">=5.5.2,<5.7",
+            "archive": {
+              "url": "https://github.com/weewx-packages/weewx-prompush/releases/download/v1.1.0/weewx-prompush-1.1.0.tar.gz",
+              "format": "tar.gz",
+              "sha256": "218603734fb844bd11d41c8f57bb8eb575f87e8bbde1c72509f9e2e646bff53d"
+            },
+            "release_notes": "https://github.com/weewx-packages/weewx-prompush/releases/tag/v1.1.0",
+            "restart_required": true
+          }
+        ]
+      }
     },
     {
       "wiki_line": 381,
@@ -13704,7 +13942,24 @@
             }
           ]
         }
-      ]
+      ],
+      "catalog": {
+        "id": "twitter",
+        "releases": [
+          {
+            "version": "0.16.1",
+            "requires_python": ">=3.10,<3.15",
+            "requires_weewx": ">=5.5.2,<5.7",
+            "archive": {
+              "url": "https://github.com/weewx-packages/weewx-twitter/releases/download/v0.16.1/weewx-twitter-0.16.1.tar.gz",
+              "format": "tar.gz",
+              "sha256": "26a5f533d5ca3940e77567aadaafc076c08f30886884afa90f664c5a21deb7d9"
+            },
+            "release_notes": "https://github.com/weewx-packages/weewx-twitter/releases/tag/v0.16.1",
+            "restart_required": true
+          }
+        ]
+      }
     },
     {
       "wiki_line": 389,
@@ -15333,7 +15588,24 @@
             }
           ]
         }
-      ]
+      ],
+      "catalog": {
+        "id": "zabbix",
+        "releases": [
+          {
+            "version": "0.2.0",
+            "requires_python": ">=3.10,<3.15",
+            "requires_weewx": ">=5.5.2,<5.7",
+            "archive": {
+              "url": "https://github.com/weewx-packages/weewx-zabbix/releases/download/v0.2.0/weewx-zabbix-0.2.0.tar.gz",
+              "format": "tar.gz",
+              "sha256": "b24a57dffae5019fbd2bfc6b0eb30a448c6528d31a794883a90e67082c5d66fd"
+            },
+            "release_notes": "https://github.com/weewx-packages/weewx-zabbix/releases/tag/v0.2.0",
+            "restart_required": true
+          }
+        ]
+      }
     },
     {
       "wiki_line": 440,

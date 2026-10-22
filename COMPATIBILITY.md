@@ -101,12 +101,12 @@ runtime code is patched. Each candidate is installed and rendered against WeeWX
 and Belchertown use Python 3.10 and 3.14; DivumWX uses 3.14 because its upstream
 requires Python 3.13.5 or later and WeeWX 5.5 or later.
 
-DivumWX publication is currently paused because its bundled Dirtylane font has
-personal-use terms without a confirmed general redistribution grant. Its
-definition's `blocked` field prevents new versions from entering the catalog
-while a licensed package variant is prepared. The earlier 1.7.0 catalog archive
-has been withdrawn. A use restriction alone is not treated as a redistribution
-prohibition; each component's actual terms need review.
+DivumWX 1.7.0.post1 uses a separately versioned, cleaned archive. The recipe in
+`ci/repack_divumwx.py` verifies every input file against the audited 1.7.0 tag,
+retains freely licensed fonts with full notices and replaces AstroDot letters
+with Unicode zodiac symbols. The original archive is withdrawn. The `blocked`
+field prevents direct publication of future tags until their assets are reviewed.
+Use restrictions and redistribution grants are evaluated separately.
 
 The skin suite runs the original installer, verifies installer identity and
 imports from the installed station, fills an isolated SQLite archive, and runs
@@ -189,3 +189,7 @@ Public GitLab upstreams use the same weekly discussion backup. Merge request
 notes and available diffs are captured along with issues; the public index
 distinguishes issue and merge request numbers. Anonymous GraphQL reads provide
 notes when GitLab requires authentication for its REST notes endpoint.
+
+A test profile may list extra Python dependencies in `pip_packages`. Requirements
+are parsed before matrix creation. Direct WeeWX requirements are rejected, and
+a pip constraint preserves the installed core version for transitive dependencies.
