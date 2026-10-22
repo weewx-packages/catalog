@@ -22,6 +22,24 @@ def test_weekly_selection_and_manual_run():
         mirrors.matrix([dict(weekday=7)], '')
 
 
+def test_source_jobs_only_cover_weekdays_with_raw_installation_checks():
+    entries = [dict(weekday=1, check='catalog'), dict(weekday=2, check='installation'),
+               dict(weekday=3, check='component'), dict(weekday=4, check='external')]
+    assert mirrors.check_matrix(entries, '') == {'include': [
+        dict(weekday=2, branch=branch) for branch in ('master', 'development')]}
+    assert mirrors.check_matrix(entries, '43 3 * * 1') == {'include': []}
+    assert mirrors.matrix(entries, '') == {'include': [dict(weekday=day) for day in range(1, 5)]}
+
+
+def test_current_registry_routes_checks_to_the_project_workflow():
+    root = Path(__file__).resolve().parents[2]
+    entries = json.loads((root / 'ci/mirrors.json').read_text())
+    assert mirrors.check_matrix(entries, '') == {'include': []}
+    workflow = (root / '.github/workflows/mirrors.yml').read_text()
+    assert 'python3 ci/mirrors.py checks --schedule' in workflow
+    assert "needs.select.outputs.check_count != '0'" in workflow
+
+
 def test_failed_mirror_does_not_skip_other_repositories(monkeypatch):
     entries = [dict(weekday=day, fork='weewx-packages/' + name,
                     upstream='https://github.com/author/' + name + '.git')

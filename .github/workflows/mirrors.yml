@@ -24,6 +24,7 @@ jobs:
       matrix: ${{ steps.select.outputs.matrix }}
       count: ${{ steps.select.outputs.count }}
       checks: ${{ steps.select.outputs.checks }}
+      check_count: ${{ steps.select.outputs.check_count }}
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
@@ -34,14 +35,16 @@ jobs:
           SCHEDULE: ${{ github.event.schedule }}
         run: |
           python3 ci/mirrors.py matrix --schedule "$SCHEDULE" > matrix.json
+          python3 ci/mirrors.py checks --schedule "$SCHEDULE" > checks.json
           python3 - <<'PY' >> "$GITHUB_OUTPUT"
           import json
           from pathlib import Path
           matrix = json.loads(Path('matrix.json').read_text())
+          checks = json.loads(Path('checks.json').read_text())
           print('matrix=' + json.dumps(matrix))
           print('count=' + str(len(matrix['include'])))
-          print('checks=' + json.dumps({'include': [dict(group, branch=branch)
-              for group in matrix['include'] for branch in ('master', 'development')]}))
+          print('checks=' + json.dumps(checks))
+          print('check_count=' + str(len(checks['include'])))
           PY
 
   mirror:
@@ -103,7 +106,7 @@ jobs:
 
   quality:
     needs: [select, mirror]
-    if: ${{ !cancelled() && needs.select.result == 'success' && needs.select.outputs.count != '0' }}
+    if: ${{ !cancelled() && needs.select.result == 'success' && needs.select.outputs.check_count != '0' }}
     runs-on: ubuntu-latest
     timeout-minutes: 45
     strategy:

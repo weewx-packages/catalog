@@ -29,6 +29,23 @@ def matrix(mirrors, schedule):
     return {'include': [{'weekday': day} for day in weekdays]}
 
 
+def check_matrix(mirrors, schedule):
+    """Select raw-source checks that have not moved to project-specific CI.
+
+    Args:
+        mirrors (list[dict]): Reviewed source definitions and check routes.
+        schedule (str): Triggering cron, or an empty string for all weekly groups.
+
+    Returns:
+        dict: Weekday and WeeWX branch for each required source-check job.
+    """
+    selected = {group['weekday'] for group in matrix(mirrors, schedule)['include']}
+    weekdays = sorted({item['weekday'] for item in mirrors
+                       if item['weekday'] in selected and item['check'] == 'installation'})
+    return {'include': [dict(weekday=day, branch=branch)
+                        for day in weekdays for branch in ('master', 'development')]}
+
+
 def sync(mirrors, weekday, keys):
     """Copy one weekly group, continuing other mirrors after a failed sync.
 
@@ -74,13 +91,14 @@ def sync(mirrors, weekday, keys):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('action', choices=['matrix', 'sync'])
+    parser.add_argument('action', choices=['matrix', 'checks', 'sync'])
     parser.add_argument('--schedule', default='')
     parser.add_argument('--weekday', type=int, choices=range(1, 6))
     args = parser.parse_args()
     mirrors = json.loads((ROOT / 'ci/mirrors.json').read_text())
-    if args.action == 'matrix':
-        print(json.dumps(matrix(mirrors, args.schedule)))
+    if args.action in ('matrix', 'checks'):
+        select = matrix if args.action == 'matrix' else check_matrix
+        print(json.dumps(select(mirrors, args.schedule)))
     else:
         if args.weekday is None:
             parser.error('sync requires --weekday')

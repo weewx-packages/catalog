@@ -33,6 +33,12 @@ def coverage(mirrors, packages, external):
     missing = sorted(name for name, row in rows.items() if not row['checks'])
     if missing:
         raise ValueError('Tracked sources without checks: ' + ', '.join(missing))
+    for mirror in mirrors:
+        checks = rows[mirror['fork']]['checks']
+        expected = ('catalog' if any(item['coverage'] == 'release' for item in checks) else
+                    'component' if all(item['coverage'] == 'component' for item in checks) else 'external')
+        if 'check' in mirror and mirror['check'] != expected:
+            raise ValueError('Source-check route disagrees with project CI: ' + mirror['fork'])
     return [rows[name] for name in sorted(rows)]
 
 

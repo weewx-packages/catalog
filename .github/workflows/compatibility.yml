@@ -10,6 +10,9 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
+    paths-ignore:
+      - ci/upstream-state.json
+      - ci/source-quality.json
   pull_request:
 
 permissions:

@@ -208,13 +208,17 @@ in `ci/upstream-state.json` and `ci/source-quality.json`. Each run updates only
 its assigned groups. Discussion bodies and patches stay in the private archive.
 
 Source checks use Python 3.14 with current WeeWX `master` and `development`
-checkouts. They compile runtime Python, archive the exact fork commit and run
+checkouts for entries assigned `check: installation` in `ci/mirrors.json`.
+They compile runtime Python, archive the exact fork commit and run
 the original installer against an isolated station. Checks receive no mirror,
 backup or issue-write credentials. Unsupported layouts are recorded as
 `not-covered`, rather than passing without an installation test. Packages
-already in the catalog use their separate release tests. Hardware operation,
-API access and generated skin behavior require project-specific tests beyond
-this source-installation baseline.
+already in the catalog use their separate release tests. The coverage validator
+requires mirror check assignments to match the catalog, external or component
+profiles, so packaged source repairs are tested through their published archives.
+Historical raw-source results retain their original commits and outcomes.
+Hardware operation, API access and generated skin behavior require
+project-specific tests beyond this source-installation baseline.
 
 A separate reporting job maintains installation issues in this catalog. Missing
 branch results cannot close an existing failure. Failures identify the tested

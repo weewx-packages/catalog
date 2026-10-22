@@ -7,6 +7,7 @@ from pathlib import Path
 import pytest
 
 spec = importlib.util.spec_from_file_location('project_coverage', Path(__file__).parents[1] / 'project_coverage.py')
+assert spec is not None and spec.loader is not None
 checks = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(checks)
 
@@ -27,6 +28,13 @@ def test_component_coverage_is_explicit_and_does_not_hide_unassigned_repository(
 def test_unknown_source_cannot_claim_tracked_coverage():
     with pytest.raises(ValueError, match='no tracked source'):
         checks.coverage([], {'wrong': dict(repository='org/wrong')}, {})
+
+
+@pytest.mark.parametrize('route', ['installation', 'external', 'component'])
+def test_catalog_package_cannot_keep_an_obsolete_source_check(route):
+    mirror = dict(fork='org/extension', weekday=1, check=route)
+    with pytest.raises(ValueError, match='route disagrees'):
+        checks.coverage([mirror], {'package': dict(repository='org/extension')}, {})
 
 
 def test_real_registries_keep_every_tracked_source_under_ci():
