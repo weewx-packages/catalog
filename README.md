@@ -101,7 +101,7 @@ records from different driver versions.
 | [weewx-xtide](https://github.com/weewx-packages/weewx-xtide) | `xtide` | Fetch Tide Forecasts. |
 | [DWD](https://github.com/weewx-packages/weewx-DWD) | `dwd` | Retrieve DWD observations, forecasts and warnings. Catalog snapshot with station-local commands. |
 | [weewx-GTS](https://github.com/weewx-packages/weewx-GTS) | `gts` | Calculate growing degree sums, local solar day boundaries and pressure corrections. |
-| [airQ](https://github.com/weewx-packages/weewx-airQ) | `airq` | Read air-Q environmental sensors through encrypted HTTP replies. Prerelease. |
+| [airQ](https://github.com/weewx-packages/weewx-airQ) | `airq` | Read air-Q environmental sensors through encrypted HTTP replies. Includes the user.airq_conf configuration tool. Prerelease. |
 | [airgradient](https://github.com/weewx-packages/weewx-airgradient) | `airgradient` | Read AirGradient air quality sensors and calculate particulate AQI. |
 | [amphibian](https://github.com/weewx-packages/weewx-amphibian) | `amphibian` | Display weather history and charts in the Amphibian skin. |
 | [weewx-aqi-xtype](https://github.com/weewx-packages/weewx-aqi-xtype) | `aqi-xtype` | Calculate EPA air quality indices and NowCast through WeeWX XTypes. Prerelease. |

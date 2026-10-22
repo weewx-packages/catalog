@@ -1,0 +1,25 @@
+--- a/install.py
++++ b/install.py
+@@ -1,3 +1,5 @@
++# 2026-10-22 weewx-packages: Keep installation inside managed user roots;
++# omit the redundant bin/airq_conf wrapper and version this installer snapshot.
+ # installer airQ
+ # Copyright 2021 Johanna Roedenbeck
+ # Distributed under the terms of the GNU Public License (GPLv3)
+@@ -10,7 +12,7 @@
+ class AirqInstaller(ExtensionInstaller):
+     def __init__(self):
+         super(AirqInstaller, self).__init__(
+-            version="0.9b3",
++            version="0.9b3.post20261022",
+             name='airQ',
+             description='Service to retrieve data from the airQ device of Corant GmbH',
+             author="Johanna Roedenbeck",
+@@ -27,6 +29,5 @@
+                   '#prefix':'replace_me',
+                   '#altitude': 'set_if_not_station_altitude'
+                   }}},
+-            files=[('bin/user', ['bin/user/airQ_corant.py','bin/user/airq_conf.py']),
+-                   ('bin',      ['bin/airq_conf'])]
++            files=[('bin/user', ['bin/user/airQ_corant.py','bin/user/airq_conf.py'])]
+             )

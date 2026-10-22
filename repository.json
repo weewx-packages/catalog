@@ -1007,6 +1007,17 @@
       "homepage": "https://github.com/weewx-packages/weewx-davisconsoleapi",
       "releases": [
         {
+          "version": "0.43.post2",
+          "requires_python": ">=3.10,<3.15",
+          "requires_weewx": ">=5.5,<6",
+          "archive": {
+            "url": "https://github.com/weewx-packages/catalog/releases/download/davisconsoleapi/v0.43.post2/davisconsoleapi-0.43.post2.tar.gz",
+            "format": "tar.gz",
+            "sha256": "645b818e28f44649e26d8bccd86c9dee7d7986dfd8d914598a5e70febac76847"
+          },
+          "restart_required": true
+        },
+        {
           "version": "0.43.post1",
           "requires_python": ">=3.10,<3.15",
           "requires_weewx": ">=5.5,<6",
@@ -1015,7 +1026,8 @@
             "format": "tar.gz",
             "sha256": "d3edef310125c9962cb4f07e323ac9b45126242f732fc06bca890bb7624b49ad"
           },
-          "restart_required": true
+          "restart_required": true,
+          "yanked": true
         }
       ]
     },
@@ -1622,19 +1634,19 @@
       "id": "airq",
       "installer_name": "airQ",
       "name": "airQ",
-      "description": "Read air-Q environmental sensors through encrypted HTTP replies. Prerelease.",
+      "description": "Read air-Q environmental sensors through encrypted HTTP replies. Includes the user.airq_conf configuration tool. Prerelease.",
       "types": [
         "service"
       ],
       "homepage": "https://github.com/weewx-packages/weewx-airQ",
       "releases": [
         {
-          "version": "0.9b3",
+          "version": "0.9b3.post20261022",
           "requires_python": ">=3.10,<3.15",
           "archive": {
-            "url": "https://github.com/weewx-packages/catalog/releases/download/airq/v0.9b3/airq-0.9b3.tar.gz",
+            "url": "https://github.com/weewx-packages/catalog/releases/download/airq/v0.9b3.post20261022/airq-0.9b3.post20261022.tar.gz",
             "format": "tar.gz",
-            "sha256": "8a5293a188c25efc3a1e8f159e65af6835ea1c2d8155d5d557e9d3d07f163342"
+            "sha256": "8c314272a67eea1b75e6bea0f78f427b8b673b9ec168e02f2b26ef8a51caf940"
           },
           "requires_weewx": ">=5.5,<6",
           "restart_required": true
@@ -2000,12 +2012,12 @@
       "homepage": "https://github.com/weewx-packages/weewx-openweather_API",
       "releases": [
         {
-          "version": "1.0.0",
+          "version": "1.0.0.post20261022",
           "requires_python": ">=3.10,<3.15",
           "archive": {
-            "url": "https://github.com/weewx-packages/catalog/releases/download/openweather-api/v1.0.0/openweather-api-1.0.0.tar.gz",
+            "url": "https://github.com/weewx-packages/catalog/releases/download/openweather-api/v1.0.0.post20261022/openweather-api-1.0.0.post20261022.tar.gz",
             "format": "tar.gz",
-            "sha256": "93a51a29487ca2a2371c727355655ff6f8de64d6a9ca6ad7bc11213630043b67"
+            "sha256": "fdb3d50a63c9cd333dfd7f0a3fa5c56d162c1ba293b11939c995219607d84c46"
           },
           "requires_weewx": ">=5.5,<6",
           "restart_required": true
@@ -2162,12 +2174,12 @@
       "homepage": "https://github.com/weewx-packages/weewx-sqm",
       "releases": [
         {
-          "version": "0.1.1.post20261022",
+          "version": "0.1.1.post2026102201",
           "requires_python": ">=3.10,<3.15",
           "archive": {
-            "url": "https://github.com/weewx-packages/catalog/releases/download/sqm/v0.1.1.post20261022/sqm-0.1.1.post20261022.tar.gz",
+            "url": "https://github.com/weewx-packages/catalog/releases/download/sqm/v0.1.1.post2026102201/sqm-0.1.1.post2026102201.tar.gz",
             "format": "tar.gz",
-            "sha256": "c75a2cd124b26880e09b505175d26c93861ce3cfa326ed9a5485991204a2e9a3"
+            "sha256": "e2233f0ffd88e02e0655930152af1a0841379db903cbcb7fd654758042fbe212"
           },
           "requires_weewx": ">=5.5,<6",
           "restart_required": true
@@ -2233,12 +2245,12 @@
       "homepage": "https://github.com/weewx-packages/weewx-WXgraphic",
       "releases": [
         {
-          "version": "0.6.8",
+          "version": "0.6.8.post20261022",
           "requires_python": ">=3.10,<3.15",
           "archive": {
-            "url": "https://github.com/weewx-packages/catalog/releases/download/wxgraphic/v0.6.8/wxgraphic-0.6.8.tar.gz",
+            "url": "https://github.com/weewx-packages/catalog/releases/download/wxgraphic/v0.6.8.post20261022/wxgraphic-0.6.8.post20261022.tar.gz",
             "format": "tar.gz",
-            "sha256": "d972b5839f8ecf0731287cfb47cee50e01d66d690baa441e36989ad6732d3c90"
+            "sha256": "61c38e441c36ec91941db4226af23eb97e75989f78d79775e31cdb41c32349a5"
           },
           "requires_weewx": ">=5.5.2,<6",
           "restart_required": true

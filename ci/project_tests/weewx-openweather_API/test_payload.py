@@ -2,6 +2,9 @@
 
 import io
 import json
+import os
+import subprocess
+import sys
 import pytest
 from user.openweather import OpenWeatherDataCollector
 
@@ -19,3 +22,32 @@ def test_nested_fields_zero_and_missing(monkeypatch):
     assert result['ow_weather_timestamp'] > 0
     assert collector._extract_value_from_path({'list': [{'components': {'pm2_5': 12.3}}]},
                                              'list[0].components.pm2_5') == 12.3
+
+
+def test_installed_field_definitions(station):
+    """Load field definitions through the cached installer using only station modules."""
+    script = r'''
+import importlib.util
+from pathlib import Path
+import sys
+import weecfg
+station = Path(sys.argv[1])
+installer = station / 'bin/user/installer/OpenWeather/install.py'
+spec = importlib.util.spec_from_file_location('installed_openweather_installer', installer)
+module = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(module)
+definitions = station / 'bin/user/openweather_fields.yaml'
+assert Path(module._field_definitions_path(str(installer.parent))) == definitions
+assert definitions.is_file()
+assert not (station / 'openweather_fields.yaml').exists()
+_, config = weecfg.read_config(str(station / 'weewx.conf'))
+configurator = module.OpenWeatherConfigurator(config)
+temperature = configurator.field_definitions['ow_temperature']
+assert temperature['api_path'] == 'main.temp'
+assert temperature['unit_group'] == 'group_temperature'
+assert temperature['database_field'] == 'ow_temperature'
+'''
+    result = subprocess.run([sys.executable, '-c', script, str(station)], cwd=station,
+                            env=dict(os.environ, PYTHONPATH=str(station / 'bin')),
+                            capture_output=True, text=True, timeout=30)
+    assert result.returncode == 0, result.stdout + result.stderr

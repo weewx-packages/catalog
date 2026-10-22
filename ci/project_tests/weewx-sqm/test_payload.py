@@ -4,8 +4,8 @@ from types import SimpleNamespace
 import pytest
 import weecfg
 import weewx.manager
-from weewx_sqm_le.sqm import parse_sqm_response, SQMParseError, median
-from weewx_sqm_le.service import SQMReader
+from user.weewx_sqm_le.sqm import parse_sqm_response, SQMParseError, median
+from user.weewx_sqm_le.service import SQMReader
 
 
 def test_sqm_protocol_and_derived_values(monkeypatch):
@@ -19,7 +19,7 @@ def test_sqm_protocol_and_derived_values(monkeypatch):
             writes.append(data)
         def recv(self, length):
             return b'r,21.60m,0000573478Hz,0000000000c,0000000.000s,031.9C\r\n'
-    monkeypatch.setattr('weewx_sqm_le.service.socket.create_connection', lambda *a, **k: Connection())
+    monkeypatch.setattr('user.weewx_sqm_le.service.socket.create_connection', lambda *a, **k: Connection())
     reader = SQMReader('fixture', 10001, 10, 2, 3, None, None)
     sample = reader._poll_once()
     assert writes == [b'rx']

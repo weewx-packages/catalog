@@ -22,6 +22,21 @@ def changed_files(paths):
     return changed
 
 
+def unsupported_paths(paths, station):
+    """Find destinations outside the repository client's managed user and skin roots.
+
+    Args:
+        paths (Iterable[tuple[str, str]]): Source and destination paths from the core.
+        station (Path): Disposable station with its default user and skin directories.
+
+    Returns:
+        list[str]: Destinations that the repository client cannot manage.
+    """
+    roots = [(station / name).resolve() for name in ('bin/user', 'skins')]
+    return [destination for _, destination in paths
+            if not any(Path(destination).resolve().is_relative_to(root) for root in roots)]
+
+
 if __name__ == '__main__':
     import weecfg
     import weecfg.extension
@@ -31,8 +46,11 @@ if __name__ == '__main__':
     sys.modules['setup'] = weecfg.extension
     payload, station = map(Path, sys.argv[1:])
     _, installer = weecfg.get_extension_installer(str(payload))
-    paths = weecfg.extension.ExtensionEngine._gen_file_paths(
-        str(station), str(payload), installer.get('files', []))
+    paths = list(weecfg.extension.ExtensionEngine._gen_file_paths(
+        str(station), str(payload), installer.get('files', [])))
+    unsupported = unsupported_paths(paths, station)
+    if unsupported:
+        raise ValueError('Destinations outside repository-managed roots: ' + ', '.join(unsupported))
     changed = changed_files(paths)
     if changed:
         raise ValueError('Installed Python differs from release: ' + ', '.join(changed))

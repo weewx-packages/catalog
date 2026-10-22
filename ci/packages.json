@@ -427,7 +427,8 @@
       "user.davisconsoleapi",
       "user.sunevents",
       "user.sunrainduration",
-      "user.historygenerator3"
+      "user.historygenerator3",
+      "user.wview_davisconsoleapi"
     ],
     "allowed_skips": [],
     "tests_path": "ci/project_tests/weewx-davisconsoleapi",
@@ -1050,8 +1051,8 @@
     "ref": "fbd39b640008e39c7787595ad6ae30280357cc4d",
     "imports": [
       "user.sqmle",
-      "weewx_sqm_le.sqm",
-      "weewx_sqm_le.service"
+      "user.weewx_sqm_le.sqm",
+      "user.weewx_sqm_le.service"
     ],
     "allowed_skips": [],
     "pip_packages": [

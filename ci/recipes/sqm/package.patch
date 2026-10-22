@@ -1,9 +1,1525 @@
+--- a/.gitignore
++++ /dev/null
+@@ -1,22 +0,0 @@
+-# macOS
+-.DS_Store
+-.AppleDouble
+-.LSOverride
+-._*
+-
+-# macOS volumes
+-.DocumentRevisions-V100
+-.fseventsd
+-.Spotlight-V100
+-.TemporaryItems
+-.Trashes
+-.VolumeIcon.icns
+-.com.apple.timemachine.donotpresent
+-
+-# Python
+-__pycache__/
+-*.py[cod]
+-.pytest_cache/
+-
+-# Build artifacts
+-dist/
+--- a/CHANGELOG.md
++++ /dev/null
+@@ -1,32 +0,0 @@
+-# Changelog
+-All notable changes to weewx-sqm will be documented in this file.
+-
+-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+-
+-## [0.1.1] - 2026-02-08
+-
+-### Added
+-- `sqmTime` epoch timestamps for SQM samples, archive records, and Conditions JSON output.
+-- `max_sample_age` to suppress stale SQM values in current JSON while still reporting last `sqmTime`.
+-- Archive schema and Conditions `daily_captures` updates to include `sqmTime`.
+-
+-## [0.1.0] - 2026-02-08
+-
+-### Added
+-- SQM-LE TCP polling service with loop packet injection and median archive aggregation.
+-- Derived metrics: `cdm2`, `nsu`, `nelm`.
+-- Skyfield-based `solarAlt`, `lunarAlt`, and `lunarPhase` calculations.
+-- Daylight/twilight filtering via `solar_alt_max` (skip polling when sun is above threshold).
+-- Installer-driven DB schema updates for SQM fields (SQLite/MySQL).
+-- Interactive installer prompts for host/port and validation tests (SQM + Skyfield).
+-- Conditions skin patching (current + dataset daily_captures) to add SQM fields.
+-- Skyfield cache directory support via `skyfield_cache`.
+-
+-### Changed
+-- Extension packaging via `build_package.py` (weectl installable tarball).
+-- README expanded with configuration guidance, install steps, and troubleshooting notes.
+-
+-### Fixed
+-- Service load path and installer merging behavior for `data_services`.
+-- Installer Skyfield test and runtime cache permissions.
+--- /dev/null
++++ b/PACKAGING-NOTICE.txt
+@@ -0,0 +1 @@
++Catalog station-local installer revision of fbd39b640008e39c7787595ad6ae30280357cc4d. Installation uses the selected station database, extends its SQM columns, and writes its cache setting under the station. Hardware connectivity and ephemeris loading occur at service runtime, not while enumerating installers. Existing Conditions templates are not rewritten implicitly; SQM template integration remains an explicit configuration step. Original installer and complete source are in upstream-source.
+--- a/README.md
++++ /dev/null
+@@ -1,169 +0,0 @@
+-# weewx-sqm-le
+-
+-WeeWX SQM-LE (Ethernet) support via a custom WeeWX service. This extension polls the SQM-LE over TCP, injects
+-current readings into loop packets, and archives median values each interval. It computes derived sky metrics
+-(NELM, NSU, cd/m²) and optional solar/lunar context (solar altitude, lunar altitude, lunar phase) using Skyfield.
+-
+-## What this provides
+-
+-- TCP polling of an SQM-LE using `rx`
+-- Clean parsing of SQM responses
+-- Derived metrics: `cdm2`, `nsu`, `nelm`
+-- Loop packet augmentation
+-- Median aggregation at archive time
+-- Daytime/invalid filtering (`sqm <= 0.0` is discarded)
+-
+-## Quick Start
+-
+-1. Install this package into the same Python environment as WeeWX.
+-2. Add the service to `weewx.conf`.
+-3. Ensure archive schema includes the SQM fields.
+-
+-## Example `weewx.conf` snippet
+-
+-```
+-[SQM-LE]
+-    host = 192.168.1.119   # SQM-LE IP address or hostname
+-    port = 10001           # SQM-LE TCP port (default 10001)
+-    poll_interval = 10     # seconds between polls (10 = 10 seconds, 600 = 10 minutes, 900 = 15 minutes)
+-    socket_timeout = 2.0   # seconds to wait for SQM-LE response
+-    max_samples = 300      # max samples kept for median aggregation
+-    ephemeris = de421.bsp  # Skyfield ephemeris file
+-    skyfield_cache = /var/lib/weewx/skyfield  # Skyfield cache directory
+-    solar_alt_max = -18.0  # skip polling when sun is above this altitude (deg)
+-
+-[Engine]
+-    [[Services]]
+-        data_services = user.sqmle.Service  # add SQM-LE to data_services only
+-```
+-
+-Note: WeeWX writes archive records on the `archive_interval` (often 300 seconds / 5 minutes).
+-SQM values are stored only when an archive record is written, even if you poll more frequently.
+-Do not remove other service groups (prep/process/archive/report); only add SQM-LE to `data_services`.
+-If you want SQM values in `daily_captures`, reinstall the extension so the installer can patch the Conditions skin templates.
+-
+-## Archive Fields
+-
+-Add fields to your archive schema if they are not present:
+-
+-- `sqm`
+-- `sqmTemp`
+-- `sqmTime`
+-- `nelm`
+-- `cdm2`
+-- `nsu`
+-- `solarAlt`
+-- `lunarAlt`
+-- `lunarPhase`
+-
+-## Notes
+-
+-- This package does not bundle WeeWX; run it inside a WeeWX environment.
+-- The service is designed to avoid blocking the WeeWX engine.
+-- If `skyfield` is installed and station latitude/longitude are available, lunar and solar fields are computed.
+-- If `solar_alt_max` is set, polling is skipped whenever the sun is above that altitude.
+-- `max_sample_age` controls how long the latest SQM sample is considered fresh for loop packets (defaults to `poll_interval * 3`). Older samples are not emitted in current JSON, but the last `sqmTime` still reports when the last reading occurred.
+-- Suggested thresholds for `solar_alt_max`:
+-  - `-6.0` for civil twilight
+-  - `-12.0` for nautical twilight
+-  - `-18.0` for astronomical night (recommended for dark-sky measurements)
+-  - Example: `solar_alt_max = -18.0` starts polling when the sun drops below -18° after sunset and stops polling when the sun rises above -18° before sunrise.
+-
+-## Compatibility
+-
+-- Tested with WeeWX 5.2.
+-
+-## Dependencies
+-
+-- Install the `weewx-conditions` extension:
+-
+-```text
+-https://github.com/open-astro/weewx-conditions
+-```
+-
+-- Install `skyfield` (for lunar altitude/phase calculations):
+-
+-```bash
+-sudo -H python3 -m pip install skyfield
+-```
+-
+-## Installation (Linux)
+-
+-These steps assume WeeWX is already installed and running.
+-
+-### Option A: WeeWX extension (recommended)
+-
+-1. Build the extension tarball:
+-
+-```bash
+-cd /path/to/weewx-sqm-le
+-python3 build_package.py --set-version 0.1.1
+-```
+-
+-2. Install it with `weectl`:
+-
+-```bash
+-sudo weectl extension install weewx-sqm-le_0.1.1.tar.gz
+-```
+-
+-3. The installer will test the SQM-LE connection and Skyfield; install aborts on failure.
+-4. The installer will also patch the `weewx-conditions` skin templates under `/etc/weewx/skins/Conditions` to add SQM fields.
+-5. Restart WeeWX.
+-
+-### Option B: pip install
+-
+-1. Install into the same Python environment that WeeWX uses.
+-
+-Example using system Python:
+-
+-```bash
+-cd /path/to/weewx-sqm-le
+-python3 -m pip install .
+-```
+-
+-If WeeWX runs in a virtualenv, activate it first and then run the same `pip install .`.
+-
+-2. Update `weewx.conf` with the `SQM-LE` section and service entry (see below).
+-3. Restart the WeeWX service.
+-
+-## Quick SQM-LE Connectivity Test
+-
+-Before installing, you can verify the SQM-LE responds on the network (update IP/port):
+-
+-```bash
+-python3 - <<'PY'
+-import socket
+-s=socket.create_connection(("192.168.1.119",10001),timeout=2)
+-s.sendall(b"rx")
+-print(s.recv(1024).decode("utf-8","replace"))
+-s.close()
+-PY
+-```
+-
+-After installing you can verify the DB was updated correclty
+-
+-```bash
+-sqlite3 /var/lib/weewx/weewx.sdb \
+-"PRAGMA table_info(archive);"
+-```
+-
+-It should show the following
+-
+-```bash
+-115|sqm|REAL|0||0
+-116|sqmTemp|REAL|0||0
+-117|nelm|REAL|0||0
+-118|cdm2|REAL|0||0
+-119|nsu|REAL|0||0
+-120|solarAlt|REAL|0||0
+-121|lunarAlt|REAL|0||0
+-122|lunarPhase|REAL|0||0
+-```
+-
+-## Uninstalling
+-
+-```bash
+-weectl extension uninstall weewx-sqm-le
+-```
+-
+-Note: Uninstall does not remove archive database columns added for SQM.
+--- /dev/null
++++ b/bin/user/sqmle.py
+@@ -0,0 +1,7 @@
++# 2026-10-22 weewx-packages: Install package files inside managed bin/user roots.
++# 2026-10-22 weewx-packages: Install into the selected station, extend its SQM schema and defer device/ephemeris access to runtime.
++"""WeeWX user service entrypoint."""
++
++from user.weewx_sqm_le.service import SQMService as Service
++
++__all__ = ["Service"]
+--- /dev/null
++++ b/bin/user/weewx_sqm_le/__init__.py
+@@ -0,0 +1,6 @@
++# 2026-10-22 weewx-packages: Install package files inside managed bin/user roots.
++# 2026-10-22 weewx-packages: Install into the selected station, extend its SQM schema and defer device/ephemeris access to runtime.
++"""WeeWX SQM-LE service package."""
++
++__all__ = ["__version__"]
++__version__ = "0.1.1"
+--- /dev/null
++++ b/bin/user/weewx_sqm_le/service.py
+@@ -0,0 +1,303 @@
++# 2026-10-22 weewx-packages: Install package files inside managed bin/user roots.
++# 2026-10-22 weewx-packages: Install into the selected station, extend its SQM schema and defer device/ephemeris access to runtime.
++import os
++import socket
++import threading
++import time
++from datetime import datetime, timezone
++from typing import Optional, Tuple
++
++from .sqm import SQMSample, parse_sqm_response, median
++
++try:
++    import weewx
++    from weewx.engine import StdService
++except Exception:  # pragma: no cover - only used when WeeWX not installed
++    weewx = None
++
++    class StdService:  # type: ignore
++        def __init__(self, *args, **kwargs):
++            raise RuntimeError("WeeWX not available in this environment")
++
++
++class SkyfieldCalculator:
++    def __init__(
++        self,
++        latitude: float,
++        longitude: float,
++        altitude_m: Optional[float],
++        ephemeris: str,
++        cache_dir: str,
++    ):
++        os.makedirs(cache_dir, exist_ok=True)
++        cwd = os.getcwd()
++        try:
++            os.chdir(cache_dir)
++            from skyfield.api import Loader, wgs84
++            from skyfield import almanac
++        finally:
++            os.chdir(cwd)
++
++        self._load = Loader(cache_dir)
++        self._almanac = almanac
++        self._ts = self._load.timescale()
++        self._ephem = self._load(ephemeris)
++        self._earth = self._ephem["earth"]
++        self._sun = self._ephem["sun"]
++        self._moon = self._ephem["moon"]
++        if altitude_m is None:
++            self._location = wgs84.latlon(latitude, longitude)
++        else:
++            self._location = wgs84.latlon(latitude, longitude, elevation_m=altitude_m)
++
++    def compute(self, timestamp: float) -> Tuple[float, float, float]:
++        t = self._ts.from_datetime(datetime.fromtimestamp(timestamp, tz=timezone.utc))
++        observer = (self._earth + self._location).at(t)
++
++        moon_alt, _, _ = observer.observe(self._moon).apparent().altaz()
++        sun_alt, _, _ = observer.observe(self._sun).apparent().altaz()
++        lunar_phase = self._almanac.fraction_illuminated(self._ephem, "moon", t)
++
++        return moon_alt.degrees, lunar_phase, sun_alt.degrees
++
++
++class SQMReader:
++    def __init__(
++        self,
++        host: str,
++        port: int,
++        poll_interval: float,
++        socket_timeout: float,
++        max_samples: int,
++        skyfield: Optional[SkyfieldCalculator],
++        solar_alt_max: Optional[float],
++    ):
++        self.host = host
++        self.port = port
++        self.poll_interval = poll_interval
++        self.socket_timeout = socket_timeout
++        self.max_samples = max_samples
++        self.skyfield = skyfield
++        self.solar_alt_max = solar_alt_max
++        self._lock = threading.Lock()
++        self._latest: Optional[SQMSample] = None
++        self._samples = []
++        self._stop = threading.Event()
++        self._thread = threading.Thread(target=self._run, name="SQMReader", daemon=True)
++
++    def start(self):
++        self._thread.start()
++
++    def stop(self):
++        self._stop.set()
++        self._thread.join(timeout=self.poll_interval + 1)
++
++    def latest(self) -> Optional[SQMSample]:
++        with self._lock:
++            return self._latest
++
++    def pop_samples(self):
++        with self._lock:
++            samples = self._samples
++            self._samples = []
++            return samples
++
++    def _record(self, sample: SQMSample):
++        if not sample.valid:
++            return
++        with self._lock:
++            self._latest = sample
++            self._samples.append(sample)
++            if len(self._samples) > self.max_samples:
++                self._samples = self._samples[-self.max_samples:]
++
++    def _poll_once(self) -> Optional[SQMSample]:
++        with socket.create_connection((self.host, self.port), timeout=self.socket_timeout) as sock:
++            sock.sendall(b"rx")
++            data = sock.recv(1024)
++        if not data:
++            return None
++        response = data.decode("utf-8", errors="replace")
++        timestamp = time.time()
++        sample = parse_sqm_response(response, timestamp=timestamp)
++
++        if self.skyfield is not None:
++            try:
++                moon_alt, lunar_phase, sun_alt = self.skyfield.compute(timestamp)
++                sample = SQMSample(
++                    sqm=sample.sqm,
++                    temp_c=sample.temp_c,
++                    timestamp=sample.timestamp,
++                    lunar_alt_deg=moon_alt,
++                    lunar_phase=lunar_phase,
++                    solar_alt_deg=sun_alt,
++                )
++            except Exception:
++                # Skyfield errors should not block SQM reads
++                pass
++
++        if self.solar_alt_max is not None and sample.solar_alt_deg is not None:
++            if sample.solar_alt_deg > self.solar_alt_max:
++                return None
++
++        return sample
++
++    def _run(self):
++        while not self._stop.is_set():
++            try:
++                if self.skyfield is not None and self.solar_alt_max is not None:
++                    try:
++                        _, _, sun_alt = self.skyfield.compute(time.time())
++                        if sun_alt > self.solar_alt_max:
++                            # Skip polling SQM during daylight
++                            self._stop.wait(self.poll_interval)
++                            continue
++                    except Exception:
++                        pass
++
++                sample = self._poll_once()
++                if sample is not None:
++                    self._record(sample)
++            except Exception:
++                # Avoid crashing the thread; transient errors are expected
++                pass
++            self._stop.wait(self.poll_interval)
++
++
++class SQMService(StdService):
++    def __init__(self, engine, config_dict):
++        super().__init__(engine, config_dict)
++
++        cfg = config_dict.get("SQM-LE", {})
++        self.host = cfg.get("host", "127.0.0.1")
++        self.port = int(cfg.get("port", 10001))
++        self.poll_interval = float(cfg.get("poll_interval", 10))
++        self.socket_timeout = float(cfg.get("socket_timeout", 2.0))
++        self.max_samples = int(cfg.get("max_samples", 300))
++        self.max_sample_age = cfg.get("max_sample_age")
++        if self.max_sample_age is None:
++            self.max_sample_age = self.poll_interval * 3
++        else:
++            try:
++                self.max_sample_age = float(self.max_sample_age)
++            except ValueError:
++                self.max_sample_age = self.poll_interval * 3
++        self.solar_alt_max = cfg.get("solar_alt_max")
++        if self.solar_alt_max is not None:
++            try:
++                self.solar_alt_max = float(self.solar_alt_max)
++            except ValueError:
++                self.solar_alt_max = None
++
++        ephemeris = cfg.get("ephemeris", "de421.bsp")
++        skyfield_cache = cfg.get("skyfield_cache", "/var/lib/weewx/skyfield")
++        skyfield = self._init_skyfield(engine, config_dict, ephemeris, skyfield_cache)
++
++        self.reader = SQMReader(
++            host=self.host,
++            port=self.port,
++            poll_interval=self.poll_interval,
++            socket_timeout=self.socket_timeout,
++            max_samples=self.max_samples,
++            skyfield=skyfield,
++            solar_alt_max=self.solar_alt_max,
++        )
++        self.reader.start()
++
++        self.bind(weewx.NEW_LOOP_PACKET, self.new_loop_packet)
++        self.bind(weewx.NEW_ARCHIVE_RECORD, self.new_archive_record)
++
++    def shutDown(self):
++        self.reader.stop()
++        super().shutDown()
++
++    def _augment_packet(self, packet, sample: SQMSample):
++        packet["sqm"] = sample.sqm
++        if sample.temp_c is not None:
++            packet["sqmTemp"] = sample.temp_c
++        packet["sqmTime"] = sample.timestamp
++        packet["cdm2"] = sample.cdm2
++        packet["nsu"] = sample.nsu
++        packet["nelm"] = sample.nelm
++        if sample.lunar_alt_deg is not None:
++            packet["lunarAlt"] = sample.lunar_alt_deg
++        if sample.lunar_phase is not None:
++            packet["lunarPhase"] = sample.lunar_phase
++        if sample.solar_alt_deg is not None:
++            packet["solarAlt"] = sample.solar_alt_deg
++
++    def new_loop_packet(self, event):
++        sample = self.reader.latest()
++        if not sample:
++            return
++        event.packet["sqmTime"] = sample.timestamp
++        if not sample.valid:
++            return
++        if time.time() - sample.timestamp > self.max_sample_age:
++            return
++        self._augment_packet(event.packet, sample)
++
++    def new_archive_record(self, event):
++        samples = self.reader.pop_samples()
++        if not samples:
++            return
++        sqms = [s.sqm for s in samples if s.valid]
++        temps = [s.temp_c for s in samples if s.valid and s.temp_c is not None]
++        lunar_alts = [s.lunar_alt_deg for s in samples if s.lunar_alt_deg is not None]
++        lunar_phases = [s.lunar_phase for s in samples if s.lunar_phase is not None]
++        solar_alts = [s.solar_alt_deg for s in samples if s.solar_alt_deg is not None]
++        timestamps = [s.timestamp for s in samples if s.valid]
++        if not sqms:
++            return
++        sqm_med = median(sqms)
++        if sqm_med is None:
++            return
++        temp_med = median(temps) if temps else None
++        last_timestamp = max(timestamps) if timestamps else time.time()
++        sample = SQMSample(
++            sqm=sqm_med,
++            temp_c=temp_med,
++            timestamp=last_timestamp,
++            lunar_alt_deg=median(lunar_alts) if lunar_alts else None,
++            lunar_phase=median(lunar_phases) if lunar_phases else None,
++            solar_alt_deg=median(solar_alts) if solar_alts else None,
++        )
++        self._augment_packet(event.record, sample)
++
++    @staticmethod
++    def _init_skyfield(
++        engine, config_dict, ephemeris: str, cache_dir: str
++    ) -> Optional[SkyfieldCalculator]:
++        latitude = None
++        longitude = None
++        altitude_m = None
++
++        stn_info = getattr(engine, "stn_info", None)
++        if stn_info is not None:
++            latitude = getattr(stn_info, "latitude_f", None)
++            longitude = getattr(stn_info, "longitude_f", None)
++            alt = getattr(stn_info, "altitude", None)
++            try:
++                altitude_m = alt.meter.raw if alt is not None else None
++            except Exception:
++                altitude_m = None
++
++        station_cfg = config_dict.get("Station", {}) if config_dict else {}
++        if latitude is None:
++            try:
++                latitude = float(station_cfg.get("latitude"))
++            except Exception:
++                latitude = None
++        if longitude is None:
++            try:
++                longitude = float(station_cfg.get("longitude"))
++            except Exception:
++                longitude = None
++
++        if latitude is None or longitude is None:
++            return None
++
++        try:
++            return SkyfieldCalculator(latitude, longitude, altitude_m, ephemeris, cache_dir)
++        except Exception:
++            return None
+--- /dev/null
++++ b/bin/user/weewx_sqm_le/sqm.py
+@@ -0,0 +1,85 @@
++# 2026-10-22 weewx-packages: Install package files inside managed bin/user roots.
++# 2026-10-22 weewx-packages: Install into the selected station, extend its SQM schema and defer device/ephemeris access to runtime.
++import math
++import time
++from dataclasses import dataclass
++from typing import Optional
++
++
++@dataclass(frozen=True)
++class SQMSample:
++    sqm: float
++    temp_c: Optional[float]
++    timestamp: float
++    lunar_alt_deg: Optional[float] = None
++    lunar_phase: Optional[float] = None
++    solar_alt_deg: Optional[float] = None
++
++    @property
++    def valid(self) -> bool:
++        return self.sqm > 0.0
++
++    @property
++    def cdm2(self) -> float:
++        # 108000 * 10^(-0.4 * sqm)
++        return 108000.0 * (10 ** (-0.4 * self.sqm))
++
++    @property
++    def nsu(self) -> float:
++        # 10^(0.4 * (21.6 - sqm))
++        return 10 ** (0.4 * (21.6 - self.sqm))
++
++    @property
++    def nelm(self) -> float:
++        # 7.93 - 5 * log10(10^(4.316 - sqm/5) + 1)
++        return 7.93 - 5.0 * math.log10((10 ** (4.316 - (self.sqm / 5.0))) + 1.0)
++
++
++class SQMParseError(ValueError):
++    pass
++
++
++def _parse_float_token(token: str, suffix: str) -> float:
++    if not token.endswith(suffix):
++        raise SQMParseError(f"Expected suffix '{suffix}' in token '{token}'")
++    try:
++        return float(token[:-len(suffix)])
++    except ValueError as exc:
++        raise SQMParseError(f"Invalid float token '{token}'") from exc
++
++
++def parse_sqm_response(response: str, timestamp: Optional[float] = None) -> SQMSample:
++    """
++    Parse the SQM-LE response.
++
++    Expected format:
++        r,00.00m,0000573478Hz,0000000000c,0000000.000s,031.9C
++    """
++    parts = response.strip().split(',')
++    if len(parts) < 2:
++        raise SQMParseError(f"Unexpected response '{response}'")
++    if not parts[0].startswith('r'):
++        raise SQMParseError(f"Unexpected prefix '{parts[0]}'")
++
++    sqm = _parse_float_token(parts[1], 'm')
++    temp_c = None
++    if len(parts) >= 6:
++        try:
++            temp_c = _parse_float_token(parts[5], 'C')
++        except SQMParseError:
++            temp_c = None
++
++    if timestamp is None:
++        timestamp = time.time()
++
++    return SQMSample(sqm=sqm, temp_c=temp_c, timestamp=timestamp)
++
++
++def median(values):
++    values = sorted(values)
++    if not values:
++        return None
++    mid = len(values) // 2
++    if len(values) % 2 == 1:
++        return values[mid]
++    return (values[mid - 1] + values[mid]) / 2.0
+--- /dev/null
++++ b/bin/weewx_sqm_le/__init__.py
+@@ -0,0 +1,5 @@
++# 2026-10-22 weewx-packages: Install into the selected station, extend its SQM schema and defer device/ephemeris access to runtime.
++"""WeeWX SQM-LE service package."""
++
++__all__ = ["__version__"]
++__version__ = "0.1.1"
+--- /dev/null
++++ b/bin/weewx_sqm_le/service.py
+@@ -0,0 +1,302 @@
++# 2026-10-22 weewx-packages: Install into the selected station, extend its SQM schema and defer device/ephemeris access to runtime.
++import os
++import socket
++import threading
++import time
++from datetime import datetime, timezone
++from typing import Optional, Tuple
++
++from .sqm import SQMSample, parse_sqm_response, median
++
++try:
++    import weewx
++    from weewx.engine import StdService
++except Exception:  # pragma: no cover - only used when WeeWX not installed
++    weewx = None
++
++    class StdService:  # type: ignore
++        def __init__(self, *args, **kwargs):
++            raise RuntimeError("WeeWX not available in this environment")
++
++
++class SkyfieldCalculator:
++    def __init__(
++        self,
++        latitude: float,
++        longitude: float,
++        altitude_m: Optional[float],
++        ephemeris: str,
++        cache_dir: str,
++    ):
++        os.makedirs(cache_dir, exist_ok=True)
++        cwd = os.getcwd()
++        try:
++            os.chdir(cache_dir)
++            from skyfield.api import Loader, wgs84
++            from skyfield import almanac
++        finally:
++            os.chdir(cwd)
++
++        self._load = Loader(cache_dir)
++        self._almanac = almanac
++        self._ts = self._load.timescale()
++        self._ephem = self._load(ephemeris)
++        self._earth = self._ephem["earth"]
++        self._sun = self._ephem["sun"]
++        self._moon = self._ephem["moon"]
++        if altitude_m is None:
++            self._location = wgs84.latlon(latitude, longitude)
++        else:
++            self._location = wgs84.latlon(latitude, longitude, elevation_m=altitude_m)
++
++    def compute(self, timestamp: float) -> Tuple[float, float, float]:
++        t = self._ts.from_datetime(datetime.fromtimestamp(timestamp, tz=timezone.utc))
++        observer = (self._earth + self._location).at(t)
++
++        moon_alt, _, _ = observer.observe(self._moon).apparent().altaz()
++        sun_alt, _, _ = observer.observe(self._sun).apparent().altaz()
++        lunar_phase = self._almanac.fraction_illuminated(self._ephem, "moon", t)
++
++        return moon_alt.degrees, lunar_phase, sun_alt.degrees
++
++
++class SQMReader:
++    def __init__(
++        self,
++        host: str,
++        port: int,
++        poll_interval: float,
++        socket_timeout: float,
++        max_samples: int,
++        skyfield: Optional[SkyfieldCalculator],
++        solar_alt_max: Optional[float],
++    ):
++        self.host = host
++        self.port = port
++        self.poll_interval = poll_interval
++        self.socket_timeout = socket_timeout
++        self.max_samples = max_samples
++        self.skyfield = skyfield
++        self.solar_alt_max = solar_alt_max
++        self._lock = threading.Lock()
++        self._latest: Optional[SQMSample] = None
++        self._samples = []
++        self._stop = threading.Event()
++        self._thread = threading.Thread(target=self._run, name="SQMReader", daemon=True)
++
++    def start(self):
++        self._thread.start()
++
++    def stop(self):
++        self._stop.set()
++        self._thread.join(timeout=self.poll_interval + 1)
++
++    def latest(self) -> Optional[SQMSample]:
++        with self._lock:
++            return self._latest
++
++    def pop_samples(self):
++        with self._lock:
++            samples = self._samples
++            self._samples = []
++            return samples
++
++    def _record(self, sample: SQMSample):
++        if not sample.valid:
++            return
++        with self._lock:
++            self._latest = sample
++            self._samples.append(sample)
++            if len(self._samples) > self.max_samples:
++                self._samples = self._samples[-self.max_samples:]
++
++    def _poll_once(self) -> Optional[SQMSample]:
++        with socket.create_connection((self.host, self.port), timeout=self.socket_timeout) as sock:
++            sock.sendall(b"rx")
++            data = sock.recv(1024)
++        if not data:
++            return None
++        response = data.decode("utf-8", errors="replace")
++        timestamp = time.time()
++        sample = parse_sqm_response(response, timestamp=timestamp)
++
++        if self.skyfield is not None:
++            try:
++                moon_alt, lunar_phase, sun_alt = self.skyfield.compute(timestamp)
++                sample = SQMSample(
++                    sqm=sample.sqm,
++                    temp_c=sample.temp_c,
++                    timestamp=sample.timestamp,
++                    lunar_alt_deg=moon_alt,
++                    lunar_phase=lunar_phase,
++                    solar_alt_deg=sun_alt,
++                )
++            except Exception:
++                # Skyfield errors should not block SQM reads
++                pass
++
++        if self.solar_alt_max is not None and sample.solar_alt_deg is not None:
++            if sample.solar_alt_deg > self.solar_alt_max:
++                return None
++
++        return sample
++
++    def _run(self):
++        while not self._stop.is_set():
++            try:
++                if self.skyfield is not None and self.solar_alt_max is not None:
++                    try:
++                        _, _, sun_alt = self.skyfield.compute(time.time())
++                        if sun_alt > self.solar_alt_max:
++                            # Skip polling SQM during daylight
++                            self._stop.wait(self.poll_interval)
++                            continue
++                    except Exception:
++                        pass
++
++                sample = self._poll_once()
++                if sample is not None:
++                    self._record(sample)
++            except Exception:
++                # Avoid crashing the thread; transient errors are expected
++                pass
++            self._stop.wait(self.poll_interval)
++
++
++class SQMService(StdService):
++    def __init__(self, engine, config_dict):
++        super().__init__(engine, config_dict)
++
++        cfg = config_dict.get("SQM-LE", {})
++        self.host = cfg.get("host", "127.0.0.1")
++        self.port = int(cfg.get("port", 10001))
++        self.poll_interval = float(cfg.get("poll_interval", 10))
++        self.socket_timeout = float(cfg.get("socket_timeout", 2.0))
++        self.max_samples = int(cfg.get("max_samples", 300))
++        self.max_sample_age = cfg.get("max_sample_age")
++        if self.max_sample_age is None:
++            self.max_sample_age = self.poll_interval * 3
++        else:
++            try:
++                self.max_sample_age = float(self.max_sample_age)
++            except ValueError:
++                self.max_sample_age = self.poll_interval * 3
++        self.solar_alt_max = cfg.get("solar_alt_max")
++        if self.solar_alt_max is not None:
++            try:
++                self.solar_alt_max = float(self.solar_alt_max)
++            except ValueError:
++                self.solar_alt_max = None
++
++        ephemeris = cfg.get("ephemeris", "de421.bsp")
++        skyfield_cache = cfg.get("skyfield_cache", "/var/lib/weewx/skyfield")
++        skyfield = self._init_skyfield(engine, config_dict, ephemeris, skyfield_cache)
++
++        self.reader = SQMReader(
++            host=self.host,
++            port=self.port,
++            poll_interval=self.poll_interval,
++            socket_timeout=self.socket_timeout,
++            max_samples=self.max_samples,
++            skyfield=skyfield,
++            solar_alt_max=self.solar_alt_max,
++        )
++        self.reader.start()
++
++        self.bind(weewx.NEW_LOOP_PACKET, self.new_loop_packet)
++        self.bind(weewx.NEW_ARCHIVE_RECORD, self.new_archive_record)
++
++    def shutDown(self):
++        self.reader.stop()
++        super().shutDown()
++
++    def _augment_packet(self, packet, sample: SQMSample):
++        packet["sqm"] = sample.sqm
++        if sample.temp_c is not None:
++            packet["sqmTemp"] = sample.temp_c
++        packet["sqmTime"] = sample.timestamp
++        packet["cdm2"] = sample.cdm2
++        packet["nsu"] = sample.nsu
++        packet["nelm"] = sample.nelm
++        if sample.lunar_alt_deg is not None:
++            packet["lunarAlt"] = sample.lunar_alt_deg
++        if sample.lunar_phase is not None:
++            packet["lunarPhase"] = sample.lunar_phase
++        if sample.solar_alt_deg is not None:
++            packet["solarAlt"] = sample.solar_alt_deg
++
++    def new_loop_packet(self, event):
++        sample = self.reader.latest()
++        if not sample:
++            return
++        event.packet["sqmTime"] = sample.timestamp
++        if not sample.valid:
++            return
++        if time.time() - sample.timestamp > self.max_sample_age:
++            return
++        self._augment_packet(event.packet, sample)
++
++    def new_archive_record(self, event):
++        samples = self.reader.pop_samples()
++        if not samples:
++            return
++        sqms = [s.sqm for s in samples if s.valid]
++        temps = [s.temp_c for s in samples if s.valid and s.temp_c is not None]
++        lunar_alts = [s.lunar_alt_deg for s in samples if s.lunar_alt_deg is not None]
++        lunar_phases = [s.lunar_phase for s in samples if s.lunar_phase is not None]
++        solar_alts = [s.solar_alt_deg for s in samples if s.solar_alt_deg is not None]
++        timestamps = [s.timestamp for s in samples if s.valid]
++        if not sqms:
++            return
++        sqm_med = median(sqms)
++        if sqm_med is None:
++            return
++        temp_med = median(temps) if temps else None
++        last_timestamp = max(timestamps) if timestamps else time.time()
++        sample = SQMSample(
++            sqm=sqm_med,
++            temp_c=temp_med,
++            timestamp=last_timestamp,
++            lunar_alt_deg=median(lunar_alts) if lunar_alts else None,
++            lunar_phase=median(lunar_phases) if lunar_phases else None,
++            solar_alt_deg=median(solar_alts) if solar_alts else None,
++        )
++        self._augment_packet(event.record, sample)
++
++    @staticmethod
++    def _init_skyfield(
++        engine, config_dict, ephemeris: str, cache_dir: str
++    ) -> Optional[SkyfieldCalculator]:
++        latitude = None
++        longitude = None
++        altitude_m = None
++
++        stn_info = getattr(engine, "stn_info", None)
++        if stn_info is not None:
++            latitude = getattr(stn_info, "latitude_f", None)
++            longitude = getattr(stn_info, "longitude_f", None)
++            alt = getattr(stn_info, "altitude", None)
++            try:
++                altitude_m = alt.meter.raw if alt is not None else None
++            except Exception:
++                altitude_m = None
++
++        station_cfg = config_dict.get("Station", {}) if config_dict else {}
++        if latitude is None:
++            try:
++                latitude = float(station_cfg.get("latitude"))
++            except Exception:
++                latitude = None
++        if longitude is None:
++            try:
++                longitude = float(station_cfg.get("longitude"))
++            except Exception:
++                longitude = None
++
++        if latitude is None or longitude is None:
++            return None
++
++        try:
++            return SkyfieldCalculator(latitude, longitude, altitude_m, ephemeris, cache_dir)
++        except Exception:
++            return None
+--- /dev/null
++++ b/bin/weewx_sqm_le/sqm.py
+@@ -0,0 +1,84 @@
++# 2026-10-22 weewx-packages: Install into the selected station, extend its SQM schema and defer device/ephemeris access to runtime.
++import math
++import time
++from dataclasses import dataclass
++from typing import Optional
++
++
++@dataclass(frozen=True)
++class SQMSample:
++    sqm: float
++    temp_c: Optional[float]
++    timestamp: float
++    lunar_alt_deg: Optional[float] = None
++    lunar_phase: Optional[float] = None
++    solar_alt_deg: Optional[float] = None
++
++    @property
++    def valid(self) -> bool:
++        return self.sqm > 0.0
++
++    @property
++    def cdm2(self) -> float:
++        # 108000 * 10^(-0.4 * sqm)
++        return 108000.0 * (10 ** (-0.4 * self.sqm))
++
++    @property
++    def nsu(self) -> float:
++        # 10^(0.4 * (21.6 - sqm))
++        return 10 ** (0.4 * (21.6 - self.sqm))
++
++    @property
++    def nelm(self) -> float:
++        # 7.93 - 5 * log10(10^(4.316 - sqm/5) + 1)
++        return 7.93 - 5.0 * math.log10((10 ** (4.316 - (self.sqm / 5.0))) + 1.0)
++
++
++class SQMParseError(ValueError):
++    pass
++
++
++def _parse_float_token(token: str, suffix: str) -> float:
++    if not token.endswith(suffix):
++        raise SQMParseError(f"Expected suffix '{suffix}' in token '{token}'")
++    try:
++        return float(token[:-len(suffix)])
++    except ValueError as exc:
++        raise SQMParseError(f"Invalid float token '{token}'") from exc
++
++
++def parse_sqm_response(response: str, timestamp: Optional[float] = None) -> SQMSample:
++    """
++    Parse the SQM-LE response.
++
++    Expected format:
++        r,00.00m,0000573478Hz,0000000000c,0000000.000s,031.9C
++    """
++    parts = response.strip().split(',')
++    if len(parts) < 2:
++        raise SQMParseError(f"Unexpected response '{response}'")
++    if not parts[0].startswith('r'):
++        raise SQMParseError(f"Unexpected prefix '{parts[0]}'")
++
++    sqm = _parse_float_token(parts[1], 'm')
++    temp_c = None
++    if len(parts) >= 6:
++        try:
++            temp_c = _parse_float_token(parts[5], 'C')
++        except SQMParseError:
++            temp_c = None
++
++    if timestamp is None:
++        timestamp = time.time()
++
++    return SQMSample(sqm=sqm, temp_c=temp_c, timestamp=timestamp)
++
++
++def median(values):
++    values = sorted(values)
++    if not values:
++        return None
++    mid = len(values) // 2
++    if len(values) % 2 == 1:
++        return values[mid]
++    return (values[mid - 1] + values[mid]) / 2.0
+--- a/build_package.py
++++ /dev/null
+@@ -1,89 +0,0 @@
+-import argparse
+-import os
+-import shutil
+-import tarfile
+-
+-VERSION = "0.1.0"
+-DIST_PATH = "dist"
+-
+-
+-def package_dir(version: str) -> str:
+-    return f"weewx-sqm-le_{version}"
+-
+-
+-def clean_dist():
+-    if os.path.exists(DIST_PATH):
+-        shutil.rmtree(DIST_PATH)
+-    os.mkdir(DIST_PATH)
+-
+-
+-def copy_tree(src: str, dst: str):
+-    if os.path.exists(dst):
+-        shutil.rmtree(dst)
+-    shutil.copytree(src, dst)
+-
+-
+-def copy_files(version: str):
+-    pkg_root = os.path.join(DIST_PATH, package_dir(version))
+-
+-    # Python modules
+-    copy_tree("src/weewx_sqm_le", os.path.join(pkg_root, "bin", "weewx_sqm_le"))
+-    os.makedirs(os.path.join(pkg_root, "bin", "user"), exist_ok=True)
+-    shutil.copy2("src/user/sqmle.py", os.path.join(pkg_root, "bin", "user", "sqmle.py"))
+-
+-    # Docs and license
+-    shutil.copy2("README.md", os.path.join(pkg_root, "readme.txt"))
+-    if os.path.exists("LICENSE"):
+-        shutil.copy2("LICENSE", os.path.join(pkg_root, "LICENSE"))
+-
+-
+-def file_paths(version: str):
+-    pkg_root = os.path.join(DIST_PATH, package_dir(version))
+-    paths = []
+-
+-    def walk_paths(root):
+-        for dirpath, _, filenames in os.walk(root):
+-            for filename in filenames:
+-                rel = os.path.relpath(os.path.join(dirpath, filename), pkg_root)
+-                paths.append(rel)
+-
+-    walk_paths(os.path.join(pkg_root, "bin", "weewx_sqm_le"))
+-    walk_paths(os.path.join(pkg_root, "bin", "user"))
+-
+-    return (
+-        "bin",
+-        paths,
+-    )
+-
+-
+-def install_file(version: str):
+-    with open("dist-template/install.py.template", "r") as input_file:
+-        output_string = input_file.read()
+-
+-    output_string = output_string.replace("__VERSION__", version)
+-    output_string = output_string.replace("__FILE_PATHS__", file_paths(version).__repr__())
+-
+-    output_path = os.path.join(DIST_PATH, package_dir(version), "install.py")
+-    with open(output_path, "w") as output_file:
+-        output_file.write(output_string)
+-
+-
+-def create_zip(version: str):
+-    archive_path = os.path.join(DIST_PATH, package_dir(version) + ".tar.gz")
+-    with tarfile.open(archive_path, "w:gz") as archive:
+-        archive.add(
+-            os.path.join(DIST_PATH, package_dir(version)), arcname=package_dir(version)
+-        )
+-
+-
+-if __name__ == "__main__":
+-    parser = argparse.ArgumentParser(description="Package the SQM-LE extension")
+-    parser.add_argument("--set-version", default=VERSION, help="Version number to build")
+-
+-    args = parser.parse_args()
+-    version = args.set_version
+-
+-    clean_dist()
+-    copy_files(version)
+-    install_file(version)
+-    create_zip(version)
 --- a/dist-template/install.py.template
-+++ b/dist-template/install.py.template
-@@ -376,91 +376,28 @@
- 
- class SQM_Installer(ExtensionInstaller):
-     def __init__(self):
++++ /dev/null
+@@ -1,466 +0,0 @@
+-import os
+-import socket
+-import sys
+-
+-from setup import ExtensionInstaller
+-
+-
+-def loader():
+-    return SQM_Installer()
+-
+-
+-def _prompt(text, default):
+-    try:
+-        value = input(f"{text} [{default}]: ").strip()
+-    except EOFError:
+-        return default
+-    return value or default
+-
+-
+-def _prompt_int(text, default):
+-    while True:
+-        value = _prompt(text, str(default))
+-        try:
+-            return int(value)
+-        except ValueError:
+-            print("Please enter a valid integer.")
+-
+-
+-def _test_connection(host, port, timeout):
+-    try:
+-        with socket.create_connection((host, port), timeout=timeout) as sock:
+-            sock.sendall(b"rx")
+-            data = sock.recv(1024)
+-        if data:
+-            print("SQM-LE response:", data.decode("utf-8", errors="replace").strip())
+-        else:
+-            print("No data received from SQM-LE.")
+-        return True
+-    except Exception as exc:
+-        print("SQM-LE connection test failed:", exc)
+-        return False
+-
+-
+-def _require_skyfield(ephemeris):
+-    try:
+-        cache_dir = "/var/lib/weewx/skyfield"
+-        os.makedirs(cache_dir, exist_ok=True)
+-        cwd = os.getcwd()
+-        try:
+-            os.chdir(cache_dir)
+-            from skyfield.api import Loader
+-        finally:
+-            os.chdir(cwd)
+-        load = Loader(cache_dir)
+-        load(ephemeris)
+-        return True
+-    except Exception as exc:
+-        print("Skyfield test failed:", exc)
+-        return False
+-
+-
+-def _get_existing_sqm_config(config):
+-    sqm_cfg = config.get("SQM-LE", {})
+-    host = sqm_cfg.get("host")
+-    port = sqm_cfg.get("port")
+-    poll_interval = sqm_cfg.get("poll_interval")
+-    socket_timeout = sqm_cfg.get("socket_timeout")
+-    max_samples = sqm_cfg.get("max_samples")
+-    max_sample_age = sqm_cfg.get("max_sample_age")
+-    ephemeris = sqm_cfg.get("ephemeris")
+-    solar_alt_max = sqm_cfg.get("solar_alt_max")
+-    return host, port, poll_interval, socket_timeout, max_samples, max_sample_age, ephemeris, solar_alt_max
+-
+-
+-def _merge_data_services(config, service_name):
+-    try:
+-        services = config.get("Engine", {}).get("Services", {})
+-        existing = services.get("data_services", "")
+-    except Exception:
+-        existing = ""
+-
+-    parts = [p.strip() for p in str(existing).split(",") if p.strip()]
+-    if service_name not in parts:
+-        parts.append(service_name)
+-    return ", ".join(parts)
+-
+-
+-def _load_config():
+-    try:
+-        from configobj import ConfigObj
+-    except Exception as exc:
+-        raise SystemExit(f"Aborting install: cannot load configobj: {exc}")
+-
+-    conf_path = "/etc/weewx/weewx.conf"
+-    if not os.path.exists(conf_path):
+-        raise SystemExit(f"Aborting install: missing config {conf_path}")
+-    return ConfigObj(conf_path)
+-
+-
+-def _get_db_info(config):
+-    try:
+-        binding = config["DataBindings"]["wx_binding"]
+-        db_name = binding["database"]
+-        table = binding.get("table_name", "archive")
+-        db_cfg = config["Databases"][db_name]
+-        db_type = db_cfg["database_type"]
+-    except Exception as exc:
+-        raise SystemExit(f"Aborting install: cannot read DB settings: {exc}")
+-
+-    return db_type, db_cfg, table, config
+-
+-
+-def _ensure_sqlite_columns(db_path, table, columns):
+-    import sqlite3
+-
+-    if not os.path.exists(db_path):
+-        raise SystemExit(f"Aborting install: SQLite DB not found: {db_path}")
+-
+-    conn = sqlite3.connect(db_path)
+-    try:
+-        cur = conn.cursor()
+-        cur.execute(f"PRAGMA table_info({table})")
+-        existing = {row[1] for row in cur.fetchall()}
+-        for name, decl in columns.items():
+-            if name in existing:
+-                continue
+-            cur.execute(f"ALTER TABLE {table} ADD COLUMN {name} {decl}")
+-        conn.commit()
+-    finally:
+-        conn.close()
+-
+-
+-def _ensure_mysql_columns(db_cfg, table, columns):
+-    driver = None
+-    try:
+-        import MySQLdb as driver  # type: ignore
+-    except Exception:
+-        try:
+-            import pymysql as driver  # type: ignore
+-        except Exception:
+-            driver = None
+-
+-    if driver is None:
+-        raise SystemExit("Aborting install: MySQL driver not available (install mysqlclient or pymysql).")
+-
+-    host = db_cfg.get("host", "localhost")
+-    user = db_cfg.get("user")
+-    password = db_cfg.get("password", "")
+-    database = db_cfg.get("database_name")
+-    if not user or not database:
+-        raise SystemExit("Aborting install: MySQL config missing user or database_name.")
+-
+-    conn = driver.connect(host=host, user=user, passwd=password, db=database)
+-    try:
+-        cur = conn.cursor()
+-        cur.execute(f"SHOW COLUMNS FROM {table}")
+-        existing = {row[0] for row in cur.fetchall()}
+-        for name, decl in columns.items():
+-            if name in existing:
+-                continue
+-            cur.execute(f"ALTER TABLE {table} ADD COLUMN {name} {decl}")
+-        conn.commit()
+-    finally:
+-        conn.close()
+-
+-
+-def _update_archive_schema():
+-    columns = {
+-        "sqm": "REAL",
+-        "sqmTemp": "REAL",
+-        "sqmTime": "REAL",
+-        "nelm": "REAL",
+-        "cdm2": "REAL",
+-        "nsu": "REAL",
+-        "solarAlt": "REAL",
+-        "lunarAlt": "REAL",
+-        "lunarPhase": "REAL",
+-    }
+-
+-    config = _load_config()
+-    db_type, db_cfg, table, config = _get_db_info(config)
+-
+-    if db_type.lower() == "sqlite":
+-        sqlite_root = config["DatabaseTypes"]["SQLite"]["SQLITE_ROOT"]
+-        db_path = os.path.join(sqlite_root, db_cfg["database_name"])
+-        _ensure_sqlite_columns(db_path, table, columns)
+-        return
+-
+-    if db_type.lower() == "mysql":
+-        _ensure_mysql_columns(db_cfg, table, columns)
+-        return
+-
+-    raise SystemExit(f"Aborting install: unsupported database_type '{db_type}'")
+-
+-
+-def _ensure_skyfield_cache_dir():
+-    cache_dir = "/var/lib/weewx/skyfield"
+-    os.makedirs(cache_dir, exist_ok=True)
+-    try:
+-        import pwd
+-        import grp
+-
+-        uid = pwd.getpwnam("weewx").pw_uid
+-        gid = grp.getgrnam("weewx").gr_gid
+-        os.chown(cache_dir, uid, gid)
+-    except Exception:
+-        pass
+-
+-
+-def _inject_block(path, block, anchor):
+-    try:
+-        with open(path, "r") as f:
+-            content = f.read()
+-    except FileNotFoundError:
+-        print(f"Skin template not found: {path}")
+-        return False
+-
+-    if "\"sqmTime\"" in content:
+-        print(f"SQM fields already present in: {path}")
+-        return True
+-
+-    idx = content.find(anchor)
+-    if idx == -1:
+-        print(f"Anchor not found in template: {path}")
+-        return False
+-
+-    new_content = content[:idx] + block + content[idx:]
+-    with open(path, "w") as f:
+-        f.write(new_content)
+-    print(f"Updated template: {path}")
+-    return True
+-
+-
+-def _replace_once(path, old, new, label):
+-    try:
+-        with open(path, "r") as f:
+-            content = f.read()
+-    except FileNotFoundError:
+-        print(f"Skin template not found: {path}")
+-        return False
+-
+-    if old not in content:
+-        print(f"Pattern not found for {label} in: {path}")
+-        return False
+-
+-    content = content.replace(old, new, 1)
+-    with open(path, "w") as f:
+-        f.write(content)
+-    print(f"Updated {label}: {path}")
+-    return True
+-
+-
+-def _insert_after(path, needle, insertion, label):
+-    try:
+-        with open(path, "r") as f:
+-            content = f.read()
+-    except FileNotFoundError:
+-        print(f"Skin template not found: {path}")
+-        return False
+-
+-    if insertion in content:
+-        print(f"{label} already present in: {path}")
+-        return True
+-
+-    idx = content.find(needle)
+-    if idx == -1:
+-        print(f"Pattern not found for {label} in: {path}")
+-        return False
+-
+-    idx_end = idx + len(needle)
+-    content = content[:idx_end] + insertion + content[idx_end:]
+-    with open(path, "w") as f:
+-        f.write(content)
+-    print(f"Updated {label}: {path}")
+-    return True
+-
+-
+-def _update_skins():
+-    skin_root = "/etc/weewx/skins/Conditions"
+-    block = (
+-        "        #if $current.sqm.has_data\n"
+-        "        \"sqm\": {\"value\": $current.sqm.raw},\n"
+-        "        #end if\n"
+-        "        #if $current.sqmTemp.has_data\n"
+-        "        \"sqmTemp\": {\"value\": $current.sqmTemp.raw},\n"
+-        "        #end if\n"
+-        "        #if $current.sqmTime.has_data\n"
+-        "        \"sqmTime\": {\"value\": $current.sqmTime.raw},\n"
+-        "        #end if\n"
+-        "        #if $current.nelm.has_data\n"
+-        "        \"nelm\": {\"value\": $current.nelm.raw},\n"
+-        "        #end if\n"
+-        "        #if $current.cdm2.has_data\n"
+-        "        \"cdm2\": {\"value\": $current.cdm2.raw},\n"
+-        "        #end if\n"
+-        "        #if $current.nsu.has_data\n"
+-        "        \"nsu\": {\"value\": $current.nsu.raw},\n"
+-        "        #end if\n"
+-        "        #if $current.solarAlt.has_data\n"
+-        "        \"solarAlt\": {\"value\": $current.solarAlt.raw},\n"
+-        "        #end if\n"
+-        "        #if $current.lunarAlt.has_data\n"
+-        "        \"lunarAlt\": {\"value\": $current.lunarAlt.raw},\n"
+-        "        #end if\n"
+-        "        #if $current.lunarPhase.has_data\n"
+-        "        \"lunarPhase\": {\"value\": $current.lunarPhase.raw},\n"
+-        "        #end if\n"
+-    )
+-    block_deep = block.replace("        ", "            ")
+-
+-    templates = [
+-        (os.path.join(skin_root, "conditions_current.json.tmpl"), "        \"void_end\": null\n"),
+-        (os.path.join(skin_root, "conditions_summary.json.tmpl"), "        \"void_end\": null\n"),
+-        (os.path.join(skin_root, "conditions_dataset.json.tmpl"), "            \"void_end\": null\n"),
+-    ]
+-
+-    for path, anchor in templates:
+-        if path.endswith("conditions_dataset.json.tmpl"):
+-            _inject_block(path, block_deep, anchor)
+-        else:
+-            _inject_block(path, block, anchor)
+-
+-    dataset_path = os.path.join(skin_root, "conditions_dataset.json.tmpl")
+-    fields_old = (
+-        "                \"barometer\"\n"
+-        "            ],\n"
+-    )
+-    fields_new = (
+-        "                \"barometer\",\n"
+-        "                \"sqm\",\n"
+-        "                \"sqmTemp\",\n"
+-        "                \"sqmTime\",\n"
+-        "                \"nelm\",\n"
+-        "                \"cdm2\",\n"
+-        "                \"nsu\",\n"
+-        "                \"solarAlt\",\n"
+-        "                \"lunarAlt\",\n"
+-        "                \"lunarPhase\"\n"
+-        "            ],\n"
+-    )
+-    _replace_once(dataset_path, fields_old, fields_new, "daily_captures fields")
+-
+-    row_old = (
+-        "                    $row.windchill.raw,\n"
+-        "                    $row.barometer.raw\n"
+-        "                ]\n"
+-    )
+-    row_new = (
+-        "                    $row.windchill.raw,\n"
+-        "                    $row.barometer.raw,\n"
+-        "                    $row.sqm.raw,\n"
+-        "                    $row.sqmTemp.raw,\n"
+-        "                    $row.sqmTime.raw,\n"
+-        "                    $row.nelm.raw,\n"
+-        "                    $row.cdm2.raw,\n"
+-        "                    $row.nsu.raw,\n"
+-        "                    $row.solarAlt.raw,\n"
+-        "                    $row.lunarAlt.raw,\n"
+-        "                    $row.lunarPhase.raw\n"
+-        "                ]\n"
+-    )
+-    _replace_once(dataset_path, row_old, row_new, "daily_captures rows")
+-    _insert_after(
+-        dataset_path,
+-        "                \"sqmTemp\",\n",
+-        "                \"sqmTime\",\n",
+-        "daily_captures fields sqmTime",
+-    )
+-    _insert_after(
+-        dataset_path,
+-        "                    $row.sqmTemp.raw,\n",
+-        "                    $row.sqmTime.raw,\n",
+-        "daily_captures rows sqmTime",
+-    )
+-
+-
+-class SQM_Installer(ExtensionInstaller):
+-    def __init__(self):
 -        config = _load_config()
 -        (
 -            cfg_host,
@@ -65,12 +1581,11 @@
 -
 -        data_services = _merge_data_services(config, "user.sqmle.Service")
 -
-         super(SQM_Installer, self).__init__(
+-        super(SQM_Installer, self).__init__(
 -            version="__VERSION__",
 -            name="weewx-sqm-le",
-+            version="__VERSION__", name="weewx-sqm-le",
-             description="Add SQM-LE (Ethernet) support",
-             author="WeeWX SQM-LE Contributors",
+-            description="Add SQM-LE (Ethernet) support",
+-            author="WeeWX SQM-LE Contributors",
 -            author_email="https://example.invalid/weewx-sqm-le",
 -            config={
 -                "SQM-LE": {
@@ -93,12 +1608,400 @@
 -            },
 -            files=[__FILE_PATHS__],
 -        )
-+            data_services="user.sqmle.Service",
+--- /dev/null
++++ b/install.py
+@@ -0,0 +1,406 @@
++# 2026-10-22 weewx-packages: Install package files inside managed bin/user roots.
++# 2026-10-22 weewx-packages: Remove the installer local version label for WeeWX catalog compatibility; source SHA remains in package provenance.
++# 2026-10-22 weewx-packages: Install into the selected station, extend its SQM schema and defer device/ephemeris access to runtime.
++import os
++import socket
++import sys
++
++from setup import ExtensionInstaller
++
++
++def loader():
++    return SQM_Installer()
++
++
++def _prompt(text, default):
++    try:
++        value = input(f"{text} [{default}]: ").strip()
++    except EOFError:
++        return default
++    return value or default
++
++
++def _prompt_int(text, default):
++    while True:
++        value = _prompt(text, str(default))
++        try:
++            return int(value)
++        except ValueError:
++            print("Please enter a valid integer.")
++
++
++def _test_connection(host, port, timeout):
++    try:
++        with socket.create_connection((host, port), timeout=timeout) as sock:
++            sock.sendall(b"rx")
++            data = sock.recv(1024)
++        if data:
++            print("SQM-LE response:", data.decode("utf-8", errors="replace").strip())
++        else:
++            print("No data received from SQM-LE.")
++        return True
++    except Exception as exc:
++        print("SQM-LE connection test failed:", exc)
++        return False
++
++
++def _require_skyfield(ephemeris):
++    try:
++        cache_dir = "/var/lib/weewx/skyfield"
++        os.makedirs(cache_dir, exist_ok=True)
++        cwd = os.getcwd()
++        try:
++            os.chdir(cache_dir)
++            from skyfield.api import Loader
++        finally:
++            os.chdir(cwd)
++        load = Loader(cache_dir)
++        load(ephemeris)
++        return True
++    except Exception as exc:
++        print("Skyfield test failed:", exc)
++        return False
++
++
++def _get_existing_sqm_config(config):
++    sqm_cfg = config.get("SQM-LE", {})
++    host = sqm_cfg.get("host")
++    port = sqm_cfg.get("port")
++    poll_interval = sqm_cfg.get("poll_interval")
++    socket_timeout = sqm_cfg.get("socket_timeout")
++    max_samples = sqm_cfg.get("max_samples")
++    max_sample_age = sqm_cfg.get("max_sample_age")
++    ephemeris = sqm_cfg.get("ephemeris")
++    solar_alt_max = sqm_cfg.get("solar_alt_max")
++    return host, port, poll_interval, socket_timeout, max_samples, max_sample_age, ephemeris, solar_alt_max
++
++
++def _merge_data_services(config, service_name):
++    try:
++        services = config.get("Engine", {}).get("Services", {})
++        existing = services.get("data_services", "")
++    except Exception:
++        existing = ""
++
++    parts = [p.strip() for p in str(existing).split(",") if p.strip()]
++    if service_name not in parts:
++        parts.append(service_name)
++    return ", ".join(parts)
++
++
++def _load_config():
++    try:
++        from configobj import ConfigObj
++    except Exception as exc:
++        raise SystemExit(f"Aborting install: cannot load configobj: {exc}")
++
++    conf_path = "/etc/weewx/weewx.conf"
++    if not os.path.exists(conf_path):
++        raise SystemExit(f"Aborting install: missing config {conf_path}")
++    return ConfigObj(conf_path)
++
++
++def _get_db_info(config):
++    try:
++        binding = config["DataBindings"]["wx_binding"]
++        db_name = binding["database"]
++        table = binding.get("table_name", "archive")
++        db_cfg = config["Databases"][db_name]
++        db_type = db_cfg["database_type"]
++    except Exception as exc:
++        raise SystemExit(f"Aborting install: cannot read DB settings: {exc}")
++
++    return db_type, db_cfg, table, config
++
++
++def _ensure_sqlite_columns(db_path, table, columns):
++    import sqlite3
++
++    if not os.path.exists(db_path):
++        raise SystemExit(f"Aborting install: SQLite DB not found: {db_path}")
++
++    conn = sqlite3.connect(db_path)
++    try:
++        cur = conn.cursor()
++        cur.execute(f"PRAGMA table_info({table})")
++        existing = {row[1] for row in cur.fetchall()}
++        for name, decl in columns.items():
++            if name in existing:
++                continue
++            cur.execute(f"ALTER TABLE {table} ADD COLUMN {name} {decl}")
++        conn.commit()
++    finally:
++        conn.close()
++
++
++def _ensure_mysql_columns(db_cfg, table, columns):
++    driver = None
++    try:
++        import MySQLdb as driver  # type: ignore
++    except Exception:
++        try:
++            import pymysql as driver  # type: ignore
++        except Exception:
++            driver = None
++
++    if driver is None:
++        raise SystemExit("Aborting install: MySQL driver not available (install mysqlclient or pymysql).")
++
++    host = db_cfg.get("host", "localhost")
++    user = db_cfg.get("user")
++    password = db_cfg.get("password", "")
++    database = db_cfg.get("database_name")
++    if not user or not database:
++        raise SystemExit("Aborting install: MySQL config missing user or database_name.")
++
++    conn = driver.connect(host=host, user=user, passwd=password, db=database)
++    try:
++        cur = conn.cursor()
++        cur.execute(f"SHOW COLUMNS FROM {table}")
++        existing = {row[0] for row in cur.fetchall()}
++        for name, decl in columns.items():
++            if name in existing:
++                continue
++            cur.execute(f"ALTER TABLE {table} ADD COLUMN {name} {decl}")
++        conn.commit()
++    finally:
++        conn.close()
++
++
++def _update_archive_schema():
++    columns = {
++        "sqm": "REAL",
++        "sqmTemp": "REAL",
++        "sqmTime": "REAL",
++        "nelm": "REAL",
++        "cdm2": "REAL",
++        "nsu": "REAL",
++        "solarAlt": "REAL",
++        "lunarAlt": "REAL",
++        "lunarPhase": "REAL",
++    }
++
++    config = _load_config()
++    db_type, db_cfg, table, config = _get_db_info(config)
++
++    if db_type.lower() == "sqlite":
++        sqlite_root = config["DatabaseTypes"]["SQLite"]["SQLITE_ROOT"]
++        db_path = os.path.join(sqlite_root, db_cfg["database_name"])
++        _ensure_sqlite_columns(db_path, table, columns)
++        return
++
++    if db_type.lower() == "mysql":
++        _ensure_mysql_columns(db_cfg, table, columns)
++        return
++
++    raise SystemExit(f"Aborting install: unsupported database_type '{db_type}'")
++
++
++def _ensure_skyfield_cache_dir():
++    cache_dir = "/var/lib/weewx/skyfield"
++    os.makedirs(cache_dir, exist_ok=True)
++    try:
++        import pwd
++        import grp
++
++        uid = pwd.getpwnam("weewx").pw_uid
++        gid = grp.getgrnam("weewx").gr_gid
++        os.chown(cache_dir, uid, gid)
++    except Exception:
++        pass
++
++
++def _inject_block(path, block, anchor):
++    try:
++        with open(path, "r") as f:
++            content = f.read()
++    except FileNotFoundError:
++        print(f"Skin template not found: {path}")
++        return False
++
++    if "\"sqmTime\"" in content:
++        print(f"SQM fields already present in: {path}")
++        return True
++
++    idx = content.find(anchor)
++    if idx == -1:
++        print(f"Anchor not found in template: {path}")
++        return False
++
++    new_content = content[:idx] + block + content[idx:]
++    with open(path, "w") as f:
++        f.write(new_content)
++    print(f"Updated template: {path}")
++    return True
++
++
++def _replace_once(path, old, new, label):
++    try:
++        with open(path, "r") as f:
++            content = f.read()
++    except FileNotFoundError:
++        print(f"Skin template not found: {path}")
++        return False
++
++    if old not in content:
++        print(f"Pattern not found for {label} in: {path}")
++        return False
++
++    content = content.replace(old, new, 1)
++    with open(path, "w") as f:
++        f.write(content)
++    print(f"Updated {label}: {path}")
++    return True
++
++
++def _insert_after(path, needle, insertion, label):
++    try:
++        with open(path, "r") as f:
++            content = f.read()
++    except FileNotFoundError:
++        print(f"Skin template not found: {path}")
++        return False
++
++    if insertion in content:
++        print(f"{label} already present in: {path}")
++        return True
++
++    idx = content.find(needle)
++    if idx == -1:
++        print(f"Pattern not found for {label} in: {path}")
++        return False
++
++    idx_end = idx + len(needle)
++    content = content[:idx_end] + insertion + content[idx_end:]
++    with open(path, "w") as f:
++        f.write(content)
++    print(f"Updated {label}: {path}")
++    return True
++
++
++def _update_skins():
++    skin_root = "/etc/weewx/skins/Conditions"
++    block = (
++        "        #if $current.sqm.has_data\n"
++        "        \"sqm\": {\"value\": $current.sqm.raw},\n"
++        "        #end if\n"
++        "        #if $current.sqmTemp.has_data\n"
++        "        \"sqmTemp\": {\"value\": $current.sqmTemp.raw},\n"
++        "        #end if\n"
++        "        #if $current.sqmTime.has_data\n"
++        "        \"sqmTime\": {\"value\": $current.sqmTime.raw},\n"
++        "        #end if\n"
++        "        #if $current.nelm.has_data\n"
++        "        \"nelm\": {\"value\": $current.nelm.raw},\n"
++        "        #end if\n"
++        "        #if $current.cdm2.has_data\n"
++        "        \"cdm2\": {\"value\": $current.cdm2.raw},\n"
++        "        #end if\n"
++        "        #if $current.nsu.has_data\n"
++        "        \"nsu\": {\"value\": $current.nsu.raw},\n"
++        "        #end if\n"
++        "        #if $current.solarAlt.has_data\n"
++        "        \"solarAlt\": {\"value\": $current.solarAlt.raw},\n"
++        "        #end if\n"
++        "        #if $current.lunarAlt.has_data\n"
++        "        \"lunarAlt\": {\"value\": $current.lunarAlt.raw},\n"
++        "        #end if\n"
++        "        #if $current.lunarPhase.has_data\n"
++        "        \"lunarPhase\": {\"value\": $current.lunarPhase.raw},\n"
++        "        #end if\n"
++    )
++    block_deep = block.replace("        ", "            ")
++
++    templates = [
++        (os.path.join(skin_root, "conditions_current.json.tmpl"), "        \"void_end\": null\n"),
++        (os.path.join(skin_root, "conditions_summary.json.tmpl"), "        \"void_end\": null\n"),
++        (os.path.join(skin_root, "conditions_dataset.json.tmpl"), "            \"void_end\": null\n"),
++    ]
++
++    for path, anchor in templates:
++        if path.endswith("conditions_dataset.json.tmpl"):
++            _inject_block(path, block_deep, anchor)
++        else:
++            _inject_block(path, block, anchor)
++
++    dataset_path = os.path.join(skin_root, "conditions_dataset.json.tmpl")
++    fields_old = (
++        "                \"barometer\"\n"
++        "            ],\n"
++    )
++    fields_new = (
++        "                \"barometer\",\n"
++        "                \"sqm\",\n"
++        "                \"sqmTemp\",\n"
++        "                \"sqmTime\",\n"
++        "                \"nelm\",\n"
++        "                \"cdm2\",\n"
++        "                \"nsu\",\n"
++        "                \"solarAlt\",\n"
++        "                \"lunarAlt\",\n"
++        "                \"lunarPhase\"\n"
++        "            ],\n"
++    )
++    _replace_once(dataset_path, fields_old, fields_new, "daily_captures fields")
++
++    row_old = (
++        "                    $row.windchill.raw,\n"
++        "                    $row.barometer.raw\n"
++        "                ]\n"
++    )
++    row_new = (
++        "                    $row.windchill.raw,\n"
++        "                    $row.barometer.raw,\n"
++        "                    $row.sqm.raw,\n"
++        "                    $row.sqmTemp.raw,\n"
++        "                    $row.sqmTime.raw,\n"
++        "                    $row.nelm.raw,\n"
++        "                    $row.cdm2.raw,\n"
++        "                    $row.nsu.raw,\n"
++        "                    $row.solarAlt.raw,\n"
++        "                    $row.lunarAlt.raw,\n"
++        "                    $row.lunarPhase.raw\n"
++        "                ]\n"
++    )
++    _replace_once(dataset_path, row_old, row_new, "daily_captures rows")
++    _insert_after(
++        dataset_path,
++        "                \"sqmTemp\",\n",
++        "                \"sqmTime\",\n",
++        "daily_captures fields sqmTime",
++    )
++    _insert_after(
++        dataset_path,
++        "                    $row.sqmTemp.raw,\n",
++        "                    $row.sqmTime.raw,\n",
++        "daily_captures rows sqmTime",
++    )
++
++
++class SQM_Installer(ExtensionInstaller):
++    def __init__(self):
++        super(SQM_Installer, self).__init__(
++            version="0.1.1.post2026102201", name="weewx-sqm-le",
++            description="Add SQM-LE (Ethernet) support",
++            author="WeeWX SQM-LE Contributors",
++            data_services="user.weewx_sqm_le.service.SQMService",
 +            config={"SQM-LE": {"host": "127.0.0.1", "port": 10001,
 +                "poll_interval": 600, "socket_timeout": 2.0, "max_samples": 300,
 +                "max_sample_age": 1800, "ephemeris": "de421.bsp",
 +                "solar_alt_max": -18.0}},
-+            files=[__FILE_PATHS__])
++            files=[('bin/user', ['bin/user/sqmle.py']), ('bin/user/weewx_sqm_le', ['bin/user/weewx_sqm_le/sqm.py', 'bin/user/weewx_sqm_le/service.py', 'bin/user/weewx_sqm_le/__init__.py'])])
 +
 +    def configure(self, engine):
 +        import weewx.manager
@@ -114,19 +2017,1936 @@
 +                        manager.connection.execute(
 +                            "ALTER TABLE %s ADD COLUMN %s REAL" % (manager.table_name, field))
 +        return True
---- a/install.py
-+++ b/install.py
-@@ -1,3 +1,4 @@
-+# 2026-10-22 weewx-packages: Remove the installer local version label for WeeWX catalog compatibility; source SHA remains in package provenance.
- # 2026-10-22 weewx-packages: Install into the selected station, extend its SQM schema and defer device/ephemeris access to runtime.
- import os
- import socket
-@@ -378,7 +379,7 @@
- class SQM_Installer(ExtensionInstaller):
-     def __init__(self):
-         super(SQM_Installer, self).__init__(
--            version="0.1.1.post20261022+gfbd39b640008", name="weewx-sqm-le",
-+            version="0.1.1.post20261022", name="weewx-sqm-le",
-             description="Add SQM-LE (Ethernet) support",
-             author="WeeWX SQM-LE Contributors",
-             data_services="user.sqmle.Service",
+--- a/pyproject.toml
++++ /dev/null
+@@ -1,28 +0,0 @@
+-[build-system]
+-requires = ["setuptools>=61.0"]
+-build-backend = "setuptools.build_meta"
+-
+-[project]
+-name = "weewx-sqm-le"
+-version = "0.1.1"
+-description = "WeeWX SQM-LE (Ethernet) service"
+-readme = "README.md"
+-requires-python = ">=3.8"
+-license = {text = "MIT"}
+-authors = [{name = "WeeWX SQM-LE Contributors"}]
+-classifiers = [
+-  "Programming Language :: Python :: 3",
+-  "License :: OSI Approved :: MIT License",
+-]
+-
+-[project.urls]
+-Homepage = "https://example.invalid/weewx-sqm-le"
+-
+-[tool.setuptools]
+-package-dir = {"" = "src"}
+-
+-[tool.setuptools.packages.find]
+-where = ["src"]
+-
+-[tool.pytest.ini_options]
+-addopts = "-q"
+--- /dev/null
++++ b/readme.txt
+@@ -0,0 +1,169 @@
++# weewx-sqm-le
++
++WeeWX SQM-LE (Ethernet) support via a custom WeeWX service. This extension polls the SQM-LE over TCP, injects
++current readings into loop packets, and archives median values each interval. It computes derived sky metrics
++(NELM, NSU, cd/m²) and optional solar/lunar context (solar altitude, lunar altitude, lunar phase) using Skyfield.
++
++## What this provides
++
++- TCP polling of an SQM-LE using `rx`
++- Clean parsing of SQM responses
++- Derived metrics: `cdm2`, `nsu`, `nelm`
++- Loop packet augmentation
++- Median aggregation at archive time
++- Daytime/invalid filtering (`sqm <= 0.0` is discarded)
++
++## Quick Start
++
++1. Install this package into the same Python environment as WeeWX.
++2. Add the service to `weewx.conf`.
++3. Ensure archive schema includes the SQM fields.
++
++## Example `weewx.conf` snippet
++
++```
++[SQM-LE]
++    host = 192.168.1.119   # SQM-LE IP address or hostname
++    port = 10001           # SQM-LE TCP port (default 10001)
++    poll_interval = 10     # seconds between polls (10 = 10 seconds, 600 = 10 minutes, 900 = 15 minutes)
++    socket_timeout = 2.0   # seconds to wait for SQM-LE response
++    max_samples = 300      # max samples kept for median aggregation
++    ephemeris = de421.bsp  # Skyfield ephemeris file
++    skyfield_cache = /var/lib/weewx/skyfield  # Skyfield cache directory
++    solar_alt_max = -18.0  # skip polling when sun is above this altitude (deg)
++
++[Engine]
++    [[Services]]
++        data_services = user.sqmle.Service  # add SQM-LE to data_services only
++```
++
++Note: WeeWX writes archive records on the `archive_interval` (often 300 seconds / 5 minutes).
++SQM values are stored only when an archive record is written, even if you poll more frequently.
++Do not remove other service groups (prep/process/archive/report); only add SQM-LE to `data_services`.
++If you want SQM values in `daily_captures`, reinstall the extension so the installer can patch the Conditions skin templates.
++
++## Archive Fields
++
++Add fields to your archive schema if they are not present:
++
++- `sqm`
++- `sqmTemp`
++- `sqmTime`
++- `nelm`
++- `cdm2`
++- `nsu`
++- `solarAlt`
++- `lunarAlt`
++- `lunarPhase`
++
++## Notes
++
++- This package does not bundle WeeWX; run it inside a WeeWX environment.
++- The service is designed to avoid blocking the WeeWX engine.
++- If `skyfield` is installed and station latitude/longitude are available, lunar and solar fields are computed.
++- If `solar_alt_max` is set, polling is skipped whenever the sun is above that altitude.
++- `max_sample_age` controls how long the latest SQM sample is considered fresh for loop packets (defaults to `poll_interval * 3`). Older samples are not emitted in current JSON, but the last `sqmTime` still reports when the last reading occurred.
++- Suggested thresholds for `solar_alt_max`:
++  - `-6.0` for civil twilight
++  - `-12.0` for nautical twilight
++  - `-18.0` for astronomical night (recommended for dark-sky measurements)
++  - Example: `solar_alt_max = -18.0` starts polling when the sun drops below -18° after sunset and stops polling when the sun rises above -18° before sunrise.
++
++## Compatibility
++
++- Tested with WeeWX 5.2.
++
++## Dependencies
++
++- Install the `weewx-conditions` extension:
++
++```text
++https://github.com/open-astro/weewx-conditions
++```
++
++- Install `skyfield` (for lunar altitude/phase calculations):
++
++```bash
++sudo -H python3 -m pip install skyfield
++```
++
++## Installation (Linux)
++
++These steps assume WeeWX is already installed and running.
++
++### Option A: WeeWX extension (recommended)
++
++1. Build the extension tarball:
++
++```bash
++cd /path/to/weewx-sqm-le
++python3 build_package.py --set-version 0.1.1
++```
++
++2. Install it with `weectl`:
++
++```bash
++sudo weectl extension install weewx-sqm-le_0.1.1.tar.gz
++```
++
++3. The installer will test the SQM-LE connection and Skyfield; install aborts on failure.
++4. The installer will also patch the `weewx-conditions` skin templates under `/etc/weewx/skins/Conditions` to add SQM fields.
++5. Restart WeeWX.
++
++### Option B: pip install
++
++1. Install into the same Python environment that WeeWX uses.
++
++Example using system Python:
++
++```bash
++cd /path/to/weewx-sqm-le
++python3 -m pip install .
++```
++
++If WeeWX runs in a virtualenv, activate it first and then run the same `pip install .`.
++
++2. Update `weewx.conf` with the `SQM-LE` section and service entry (see below).
++3. Restart the WeeWX service.
++
++## Quick SQM-LE Connectivity Test
++
++Before installing, you can verify the SQM-LE responds on the network (update IP/port):
++
++```bash
++python3 - <<'PY'
++import socket
++s=socket.create_connection(("192.168.1.119",10001),timeout=2)
++s.sendall(b"rx")
++print(s.recv(1024).decode("utf-8","replace"))
++s.close()
++PY
++```
++
++After installing you can verify the DB was updated correclty
++
++```bash
++sqlite3 /var/lib/weewx/weewx.sdb \
++"PRAGMA table_info(archive);"
++```
++
++It should show the following
++
++```bash
++115|sqm|REAL|0||0
++116|sqmTemp|REAL|0||0
++117|nelm|REAL|0||0
++118|cdm2|REAL|0||0
++119|nsu|REAL|0||0
++120|solarAlt|REAL|0||0
++121|lunarAlt|REAL|0||0
++122|lunarPhase|REAL|0||0
++```
++
++## Uninstalling
++
++```bash
++weectl extension uninstall weewx-sqm-le
++```
++
++Note: Uninstall does not remove archive database columns added for SQM.
+--- a/src/user/__init__.py
++++ /dev/null
+@@ -1 +0,0 @@
+-# WeeWX user service namespace
+--- a/src/user/sqmle.py
++++ /dev/null
+@@ -1,5 +0,0 @@
+-"""WeeWX user service entrypoint."""
+-
+-from weewx_sqm_le.service import SQMService as Service
+-
+-__all__ = ["Service"]
+--- a/src/weewx_sqm_le/__init__.py
++++ /dev/null
+@@ -1,4 +0,0 @@
+-"""WeeWX SQM-LE service package."""
+-
+-__all__ = ["__version__"]
+-__version__ = "0.1.1"
+--- a/src/weewx_sqm_le/service.py
++++ /dev/null
+@@ -1,301 +0,0 @@
+-import os
+-import socket
+-import threading
+-import time
+-from datetime import datetime, timezone
+-from typing import Optional, Tuple
+-
+-from .sqm import SQMSample, parse_sqm_response, median
+-
+-try:
+-    import weewx
+-    from weewx.engine import StdService
+-except Exception:  # pragma: no cover - only used when WeeWX not installed
+-    weewx = None
+-
+-    class StdService:  # type: ignore
+-        def __init__(self, *args, **kwargs):
+-            raise RuntimeError("WeeWX not available in this environment")
+-
+-
+-class SkyfieldCalculator:
+-    def __init__(
+-        self,
+-        latitude: float,
+-        longitude: float,
+-        altitude_m: Optional[float],
+-        ephemeris: str,
+-        cache_dir: str,
+-    ):
+-        os.makedirs(cache_dir, exist_ok=True)
+-        cwd = os.getcwd()
+-        try:
+-            os.chdir(cache_dir)
+-            from skyfield.api import Loader, wgs84
+-            from skyfield import almanac
+-        finally:
+-            os.chdir(cwd)
+-
+-        self._load = Loader(cache_dir)
+-        self._almanac = almanac
+-        self._ts = self._load.timescale()
+-        self._ephem = self._load(ephemeris)
+-        self._earth = self._ephem["earth"]
+-        self._sun = self._ephem["sun"]
+-        self._moon = self._ephem["moon"]
+-        if altitude_m is None:
+-            self._location = wgs84.latlon(latitude, longitude)
+-        else:
+-            self._location = wgs84.latlon(latitude, longitude, elevation_m=altitude_m)
+-
+-    def compute(self, timestamp: float) -> Tuple[float, float, float]:
+-        t = self._ts.from_datetime(datetime.fromtimestamp(timestamp, tz=timezone.utc))
+-        observer = (self._earth + self._location).at(t)
+-
+-        moon_alt, _, _ = observer.observe(self._moon).apparent().altaz()
+-        sun_alt, _, _ = observer.observe(self._sun).apparent().altaz()
+-        lunar_phase = self._almanac.fraction_illuminated(self._ephem, "moon", t)
+-
+-        return moon_alt.degrees, lunar_phase, sun_alt.degrees
+-
+-
+-class SQMReader:
+-    def __init__(
+-        self,
+-        host: str,
+-        port: int,
+-        poll_interval: float,
+-        socket_timeout: float,
+-        max_samples: int,
+-        skyfield: Optional[SkyfieldCalculator],
+-        solar_alt_max: Optional[float],
+-    ):
+-        self.host = host
+-        self.port = port
+-        self.poll_interval = poll_interval
+-        self.socket_timeout = socket_timeout
+-        self.max_samples = max_samples
+-        self.skyfield = skyfield
+-        self.solar_alt_max = solar_alt_max
+-        self._lock = threading.Lock()
+-        self._latest: Optional[SQMSample] = None
+-        self._samples = []
+-        self._stop = threading.Event()
+-        self._thread = threading.Thread(target=self._run, name="SQMReader", daemon=True)
+-
+-    def start(self):
+-        self._thread.start()
+-
+-    def stop(self):
+-        self._stop.set()
+-        self._thread.join(timeout=self.poll_interval + 1)
+-
+-    def latest(self) -> Optional[SQMSample]:
+-        with self._lock:
+-            return self._latest
+-
+-    def pop_samples(self):
+-        with self._lock:
+-            samples = self._samples
+-            self._samples = []
+-            return samples
+-
+-    def _record(self, sample: SQMSample):
+-        if not sample.valid:
+-            return
+-        with self._lock:
+-            self._latest = sample
+-            self._samples.append(sample)
+-            if len(self._samples) > self.max_samples:
+-                self._samples = self._samples[-self.max_samples:]
+-
+-    def _poll_once(self) -> Optional[SQMSample]:
+-        with socket.create_connection((self.host, self.port), timeout=self.socket_timeout) as sock:
+-            sock.sendall(b"rx")
+-            data = sock.recv(1024)
+-        if not data:
+-            return None
+-        response = data.decode("utf-8", errors="replace")
+-        timestamp = time.time()
+-        sample = parse_sqm_response(response, timestamp=timestamp)
+-
+-        if self.skyfield is not None:
+-            try:
+-                moon_alt, lunar_phase, sun_alt = self.skyfield.compute(timestamp)
+-                sample = SQMSample(
+-                    sqm=sample.sqm,
+-                    temp_c=sample.temp_c,
+-                    timestamp=sample.timestamp,
+-                    lunar_alt_deg=moon_alt,
+-                    lunar_phase=lunar_phase,
+-                    solar_alt_deg=sun_alt,
+-                )
+-            except Exception:
+-                # Skyfield errors should not block SQM reads
+-                pass
+-
+-        if self.solar_alt_max is not None and sample.solar_alt_deg is not None:
+-            if sample.solar_alt_deg > self.solar_alt_max:
+-                return None
+-
+-        return sample
+-
+-    def _run(self):
+-        while not self._stop.is_set():
+-            try:
+-                if self.skyfield is not None and self.solar_alt_max is not None:
+-                    try:
+-                        _, _, sun_alt = self.skyfield.compute(time.time())
+-                        if sun_alt > self.solar_alt_max:
+-                            # Skip polling SQM during daylight
+-                            self._stop.wait(self.poll_interval)
+-                            continue
+-                    except Exception:
+-                        pass
+-
+-                sample = self._poll_once()
+-                if sample is not None:
+-                    self._record(sample)
+-            except Exception:
+-                # Avoid crashing the thread; transient errors are expected
+-                pass
+-            self._stop.wait(self.poll_interval)
+-
+-
+-class SQMService(StdService):
+-    def __init__(self, engine, config_dict):
+-        super().__init__(engine, config_dict)
+-
+-        cfg = config_dict.get("SQM-LE", {})
+-        self.host = cfg.get("host", "127.0.0.1")
+-        self.port = int(cfg.get("port", 10001))
+-        self.poll_interval = float(cfg.get("poll_interval", 10))
+-        self.socket_timeout = float(cfg.get("socket_timeout", 2.0))
+-        self.max_samples = int(cfg.get("max_samples", 300))
+-        self.max_sample_age = cfg.get("max_sample_age")
+-        if self.max_sample_age is None:
+-            self.max_sample_age = self.poll_interval * 3
+-        else:
+-            try:
+-                self.max_sample_age = float(self.max_sample_age)
+-            except ValueError:
+-                self.max_sample_age = self.poll_interval * 3
+-        self.solar_alt_max = cfg.get("solar_alt_max")
+-        if self.solar_alt_max is not None:
+-            try:
+-                self.solar_alt_max = float(self.solar_alt_max)
+-            except ValueError:
+-                self.solar_alt_max = None
+-
+-        ephemeris = cfg.get("ephemeris", "de421.bsp")
+-        skyfield_cache = cfg.get("skyfield_cache", "/var/lib/weewx/skyfield")
+-        skyfield = self._init_skyfield(engine, config_dict, ephemeris, skyfield_cache)
+-
+-        self.reader = SQMReader(
+-            host=self.host,
+-            port=self.port,
+-            poll_interval=self.poll_interval,
+-            socket_timeout=self.socket_timeout,
+-            max_samples=self.max_samples,
+-            skyfield=skyfield,
+-            solar_alt_max=self.solar_alt_max,
+-        )
+-        self.reader.start()
+-
+-        self.bind(weewx.NEW_LOOP_PACKET, self.new_loop_packet)
+-        self.bind(weewx.NEW_ARCHIVE_RECORD, self.new_archive_record)
+-
+-    def shutDown(self):
+-        self.reader.stop()
+-        super().shutDown()
+-
+-    def _augment_packet(self, packet, sample: SQMSample):
+-        packet["sqm"] = sample.sqm
+-        if sample.temp_c is not None:
+-            packet["sqmTemp"] = sample.temp_c
+-        packet["sqmTime"] = sample.timestamp
+-        packet["cdm2"] = sample.cdm2
+-        packet["nsu"] = sample.nsu
+-        packet["nelm"] = sample.nelm
+-        if sample.lunar_alt_deg is not None:
+-            packet["lunarAlt"] = sample.lunar_alt_deg
+-        if sample.lunar_phase is not None:
+-            packet["lunarPhase"] = sample.lunar_phase
+-        if sample.solar_alt_deg is not None:
+-            packet["solarAlt"] = sample.solar_alt_deg
+-
+-    def new_loop_packet(self, event):
+-        sample = self.reader.latest()
+-        if not sample:
+-            return
+-        event.packet["sqmTime"] = sample.timestamp
+-        if not sample.valid:
+-            return
+-        if time.time() - sample.timestamp > self.max_sample_age:
+-            return
+-        self._augment_packet(event.packet, sample)
+-
+-    def new_archive_record(self, event):
+-        samples = self.reader.pop_samples()
+-        if not samples:
+-            return
+-        sqms = [s.sqm for s in samples if s.valid]
+-        temps = [s.temp_c for s in samples if s.valid and s.temp_c is not None]
+-        lunar_alts = [s.lunar_alt_deg for s in samples if s.lunar_alt_deg is not None]
+-        lunar_phases = [s.lunar_phase for s in samples if s.lunar_phase is not None]
+-        solar_alts = [s.solar_alt_deg for s in samples if s.solar_alt_deg is not None]
+-        timestamps = [s.timestamp for s in samples if s.valid]
+-        if not sqms:
+-            return
+-        sqm_med = median(sqms)
+-        if sqm_med is None:
+-            return
+-        temp_med = median(temps) if temps else None
+-        last_timestamp = max(timestamps) if timestamps else time.time()
+-        sample = SQMSample(
+-            sqm=sqm_med,
+-            temp_c=temp_med,
+-            timestamp=last_timestamp,
+-            lunar_alt_deg=median(lunar_alts) if lunar_alts else None,
+-            lunar_phase=median(lunar_phases) if lunar_phases else None,
+-            solar_alt_deg=median(solar_alts) if solar_alts else None,
+-        )
+-        self._augment_packet(event.record, sample)
+-
+-    @staticmethod
+-    def _init_skyfield(
+-        engine, config_dict, ephemeris: str, cache_dir: str
+-    ) -> Optional[SkyfieldCalculator]:
+-        latitude = None
+-        longitude = None
+-        altitude_m = None
+-
+-        stn_info = getattr(engine, "stn_info", None)
+-        if stn_info is not None:
+-            latitude = getattr(stn_info, "latitude_f", None)
+-            longitude = getattr(stn_info, "longitude_f", None)
+-            alt = getattr(stn_info, "altitude", None)
+-            try:
+-                altitude_m = alt.meter.raw if alt is not None else None
+-            except Exception:
+-                altitude_m = None
+-
+-        station_cfg = config_dict.get("Station", {}) if config_dict else {}
+-        if latitude is None:
+-            try:
+-                latitude = float(station_cfg.get("latitude"))
+-            except Exception:
+-                latitude = None
+-        if longitude is None:
+-            try:
+-                longitude = float(station_cfg.get("longitude"))
+-            except Exception:
+-                longitude = None
+-
+-        if latitude is None or longitude is None:
+-            return None
+-
+-        try:
+-            return SkyfieldCalculator(latitude, longitude, altitude_m, ephemeris, cache_dir)
+-        except Exception:
+-            return None
+--- a/src/weewx_sqm_le/sqm.py
++++ /dev/null
+@@ -1,83 +0,0 @@
+-import math
+-import time
+-from dataclasses import dataclass
+-from typing import Optional
+-
+-
+-@dataclass(frozen=True)
+-class SQMSample:
+-    sqm: float
+-    temp_c: Optional[float]
+-    timestamp: float
+-    lunar_alt_deg: Optional[float] = None
+-    lunar_phase: Optional[float] = None
+-    solar_alt_deg: Optional[float] = None
+-
+-    @property
+-    def valid(self) -> bool:
+-        return self.sqm > 0.0
+-
+-    @property
+-    def cdm2(self) -> float:
+-        # 108000 * 10^(-0.4 * sqm)
+-        return 108000.0 * (10 ** (-0.4 * self.sqm))
+-
+-    @property
+-    def nsu(self) -> float:
+-        # 10^(0.4 * (21.6 - sqm))
+-        return 10 ** (0.4 * (21.6 - self.sqm))
+-
+-    @property
+-    def nelm(self) -> float:
+-        # 7.93 - 5 * log10(10^(4.316 - sqm/5) + 1)
+-        return 7.93 - 5.0 * math.log10((10 ** (4.316 - (self.sqm / 5.0))) + 1.0)
+-
+-
+-class SQMParseError(ValueError):
+-    pass
+-
+-
+-def _parse_float_token(token: str, suffix: str) -> float:
+-    if not token.endswith(suffix):
+-        raise SQMParseError(f"Expected suffix '{suffix}' in token '{token}'")
+-    try:
+-        return float(token[:-len(suffix)])
+-    except ValueError as exc:
+-        raise SQMParseError(f"Invalid float token '{token}'") from exc
+-
+-
+-def parse_sqm_response(response: str, timestamp: Optional[float] = None) -> SQMSample:
+-    """
+-    Parse the SQM-LE response.
+-
+-    Expected format:
+-        r,00.00m,0000573478Hz,0000000000c,0000000.000s,031.9C
+-    """
+-    parts = response.strip().split(',')
+-    if len(parts) < 2:
+-        raise SQMParseError(f"Unexpected response '{response}'")
+-    if not parts[0].startswith('r'):
+-        raise SQMParseError(f"Unexpected prefix '{parts[0]}'")
+-
+-    sqm = _parse_float_token(parts[1], 'm')
+-    temp_c = None
+-    if len(parts) >= 6:
+-        try:
+-            temp_c = _parse_float_token(parts[5], 'C')
+-        except SQMParseError:
+-            temp_c = None
+-
+-    if timestamp is None:
+-        timestamp = time.time()
+-
+-    return SQMSample(sqm=sqm, temp_c=temp_c, timestamp=timestamp)
+-
+-
+-def median(values):
+-    values = sorted(values)
+-    if not values:
+-        return None
+-    mid = len(values) // 2
+-    if len(values) % 2 == 1:
+-        return values[mid]
+-    return (values[mid - 1] + values[mid]) / 2.0
+--- a/tests/conftest.py
++++ /dev/null
+@@ -1,7 +0,0 @@
+-import os
+-import sys
+-
+-ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+-SRC = os.path.join(ROOT, "src")
+-if SRC not in sys.path:
+-    sys.path.insert(0, SRC)
+--- a/tests/test_sqm.py
++++ /dev/null
+@@ -1,19 +0,0 @@
+-from weewx_sqm_le.sqm import parse_sqm_response, SQMSample
+-
+-
+-def test_parse_response():
+-    sample = parse_sqm_response(
+-        "r,21.55m,0000573478Hz,0000000000c,0000000.000s,031.9C"
+-    )
+-    assert isinstance(sample, SQMSample)
+-    assert sample.sqm == 21.55
+-    assert sample.temp_c == 31.9
+-    assert isinstance(sample.timestamp, float)
+-
+-
+-def test_derived_metrics():
+-    sample = SQMSample(sqm=21.6, temp_c=None, timestamp=1700000000.0)
+-    # basic sanity checks
+-    assert sample.cdm2 > 0
+-    assert sample.nsu > 0
+-    assert 0 < sample.nelm < 10
+--- /dev/null
++++ b/upstream-source/.gitignore
+@@ -0,0 +1,22 @@
++# macOS
++.DS_Store
++.AppleDouble
++.LSOverride
++._*
++
++# macOS volumes
++.DocumentRevisions-V100
++.fseventsd
++.Spotlight-V100
++.TemporaryItems
++.Trashes
++.VolumeIcon.icns
++.com.apple.timemachine.donotpresent
++
++# Python
++__pycache__/
++*.py[cod]
++.pytest_cache/
++
++# Build artifacts
++dist/
+--- /dev/null
++++ b/upstream-source/CHANGELOG.md
+@@ -0,0 +1,32 @@
++# Changelog
++All notable changes to weewx-sqm will be documented in this file.
++
++The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
++and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
++
++## [0.1.1] - 2026-02-08
++
++### Added
++- `sqmTime` epoch timestamps for SQM samples, archive records, and Conditions JSON output.
++- `max_sample_age` to suppress stale SQM values in current JSON while still reporting last `sqmTime`.
++- Archive schema and Conditions `daily_captures` updates to include `sqmTime`.
++
++## [0.1.0] - 2026-02-08
++
++### Added
++- SQM-LE TCP polling service with loop packet injection and median archive aggregation.
++- Derived metrics: `cdm2`, `nsu`, `nelm`.
++- Skyfield-based `solarAlt`, `lunarAlt`, and `lunarPhase` calculations.
++- Daylight/twilight filtering via `solar_alt_max` (skip polling when sun is above threshold).
++- Installer-driven DB schema updates for SQM fields (SQLite/MySQL).
++- Interactive installer prompts for host/port and validation tests (SQM + Skyfield).
++- Conditions skin patching (current + dataset daily_captures) to add SQM fields.
++- Skyfield cache directory support via `skyfield_cache`.
++
++### Changed
++- Extension packaging via `build_package.py` (weectl installable tarball).
++- README expanded with configuration guidance, install steps, and troubleshooting notes.
++
++### Fixed
++- Service load path and installer merging behavior for `data_services`.
++- Installer Skyfield test and runtime cache permissions.
+--- /dev/null
++++ b/upstream-source/LICENSE
+@@ -0,0 +1,21 @@
++MIT License
++
++Copyright (c) 2026 WeeWX SQM-LE Contributors
++
++Permission is hereby granted, free of charge, to any person obtaining a copy
++of this software and associated documentation files (the "Software"), to deal
++in the Software without restriction, including without limitation the rights
++to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
++copies of the Software, and to permit persons to whom the Software is
++furnished to do so, subject to the following conditions:
++
++The above copyright notice and this permission notice shall be included in all
++copies or substantial portions of the Software.
++
++THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
++IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
++FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
++AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
++LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
++OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
++SOFTWARE.
+--- /dev/null
++++ b/upstream-source/README.md
+@@ -0,0 +1,169 @@
++# weewx-sqm-le
++
++WeeWX SQM-LE (Ethernet) support via a custom WeeWX service. This extension polls the SQM-LE over TCP, injects
++current readings into loop packets, and archives median values each interval. It computes derived sky metrics
++(NELM, NSU, cd/m²) and optional solar/lunar context (solar altitude, lunar altitude, lunar phase) using Skyfield.
++
++## What this provides
++
++- TCP polling of an SQM-LE using `rx`
++- Clean parsing of SQM responses
++- Derived metrics: `cdm2`, `nsu`, `nelm`
++- Loop packet augmentation
++- Median aggregation at archive time
++- Daytime/invalid filtering (`sqm <= 0.0` is discarded)
++
++## Quick Start
++
++1. Install this package into the same Python environment as WeeWX.
++2. Add the service to `weewx.conf`.
++3. Ensure archive schema includes the SQM fields.
++
++## Example `weewx.conf` snippet
++
++```
++[SQM-LE]
++    host = 192.168.1.119   # SQM-LE IP address or hostname
++    port = 10001           # SQM-LE TCP port (default 10001)
++    poll_interval = 10     # seconds between polls (10 = 10 seconds, 600 = 10 minutes, 900 = 15 minutes)
++    socket_timeout = 2.0   # seconds to wait for SQM-LE response
++    max_samples = 300      # max samples kept for median aggregation
++    ephemeris = de421.bsp  # Skyfield ephemeris file
++    skyfield_cache = /var/lib/weewx/skyfield  # Skyfield cache directory
++    solar_alt_max = -18.0  # skip polling when sun is above this altitude (deg)
++
++[Engine]
++    [[Services]]
++        data_services = user.sqmle.Service  # add SQM-LE to data_services only
++```
++
++Note: WeeWX writes archive records on the `archive_interval` (often 300 seconds / 5 minutes).
++SQM values are stored only when an archive record is written, even if you poll more frequently.
++Do not remove other service groups (prep/process/archive/report); only add SQM-LE to `data_services`.
++If you want SQM values in `daily_captures`, reinstall the extension so the installer can patch the Conditions skin templates.
++
++## Archive Fields
++
++Add fields to your archive schema if they are not present:
++
++- `sqm`
++- `sqmTemp`
++- `sqmTime`
++- `nelm`
++- `cdm2`
++- `nsu`
++- `solarAlt`
++- `lunarAlt`
++- `lunarPhase`
++
++## Notes
++
++- This package does not bundle WeeWX; run it inside a WeeWX environment.
++- The service is designed to avoid blocking the WeeWX engine.
++- If `skyfield` is installed and station latitude/longitude are available, lunar and solar fields are computed.
++- If `solar_alt_max` is set, polling is skipped whenever the sun is above that altitude.
++- `max_sample_age` controls how long the latest SQM sample is considered fresh for loop packets (defaults to `poll_interval * 3`). Older samples are not emitted in current JSON, but the last `sqmTime` still reports when the last reading occurred.
++- Suggested thresholds for `solar_alt_max`:
++  - `-6.0` for civil twilight
++  - `-12.0` for nautical twilight
++  - `-18.0` for astronomical night (recommended for dark-sky measurements)
++  - Example: `solar_alt_max = -18.0` starts polling when the sun drops below -18° after sunset and stops polling when the sun rises above -18° before sunrise.
++
++## Compatibility
++
++- Tested with WeeWX 5.2.
++
++## Dependencies
++
++- Install the `weewx-conditions` extension:
++
++```text
++https://github.com/open-astro/weewx-conditions
++```
++
++- Install `skyfield` (for lunar altitude/phase calculations):
++
++```bash
++sudo -H python3 -m pip install skyfield
++```
++
++## Installation (Linux)
++
++These steps assume WeeWX is already installed and running.
++
++### Option A: WeeWX extension (recommended)
++
++1. Build the extension tarball:
++
++```bash
++cd /path/to/weewx-sqm-le
++python3 build_package.py --set-version 0.1.1
++```
++
++2. Install it with `weectl`:
++
++```bash
++sudo weectl extension install weewx-sqm-le_0.1.1.tar.gz
++```
++
++3. The installer will test the SQM-LE connection and Skyfield; install aborts on failure.
++4. The installer will also patch the `weewx-conditions` skin templates under `/etc/weewx/skins/Conditions` to add SQM fields.
++5. Restart WeeWX.
++
++### Option B: pip install
++
++1. Install into the same Python environment that WeeWX uses.
++
++Example using system Python:
++
++```bash
++cd /path/to/weewx-sqm-le
++python3 -m pip install .
++```
++
++If WeeWX runs in a virtualenv, activate it first and then run the same `pip install .`.
++
++2. Update `weewx.conf` with the `SQM-LE` section and service entry (see below).
++3. Restart the WeeWX service.
++
++## Quick SQM-LE Connectivity Test
++
++Before installing, you can verify the SQM-LE responds on the network (update IP/port):
++
++```bash
++python3 - <<'PY'
++import socket
++s=socket.create_connection(("192.168.1.119",10001),timeout=2)
++s.sendall(b"rx")
++print(s.recv(1024).decode("utf-8","replace"))
++s.close()
++PY
++```
++
++After installing you can verify the DB was updated correclty
++
++```bash
++sqlite3 /var/lib/weewx/weewx.sdb \
++"PRAGMA table_info(archive);"
++```
++
++It should show the following
++
++```bash
++115|sqm|REAL|0||0
++116|sqmTemp|REAL|0||0
++117|nelm|REAL|0||0
++118|cdm2|REAL|0||0
++119|nsu|REAL|0||0
++120|solarAlt|REAL|0||0
++121|lunarAlt|REAL|0||0
++122|lunarPhase|REAL|0||0
++```
++
++## Uninstalling
++
++```bash
++weectl extension uninstall weewx-sqm-le
++```
++
++Note: Uninstall does not remove archive database columns added for SQM.
+--- /dev/null
++++ b/upstream-source/build_package.py
+@@ -0,0 +1,89 @@
++import argparse
++import os
++import shutil
++import tarfile
++
++VERSION = "0.1.0"
++DIST_PATH = "dist"
++
++
++def package_dir(version: str) -> str:
++    return f"weewx-sqm-le_{version}"
++
++
++def clean_dist():
++    if os.path.exists(DIST_PATH):
++        shutil.rmtree(DIST_PATH)
++    os.mkdir(DIST_PATH)
++
++
++def copy_tree(src: str, dst: str):
++    if os.path.exists(dst):
++        shutil.rmtree(dst)
++    shutil.copytree(src, dst)
++
++
++def copy_files(version: str):
++    pkg_root = os.path.join(DIST_PATH, package_dir(version))
++
++    # Python modules
++    copy_tree("src/weewx_sqm_le", os.path.join(pkg_root, "bin", "weewx_sqm_le"))
++    os.makedirs(os.path.join(pkg_root, "bin", "user"), exist_ok=True)
++    shutil.copy2("src/user/sqmle.py", os.path.join(pkg_root, "bin", "user", "sqmle.py"))
++
++    # Docs and license
++    shutil.copy2("README.md", os.path.join(pkg_root, "readme.txt"))
++    if os.path.exists("LICENSE"):
++        shutil.copy2("LICENSE", os.path.join(pkg_root, "LICENSE"))
++
++
++def file_paths(version: str):
++    pkg_root = os.path.join(DIST_PATH, package_dir(version))
++    paths = []
++
++    def walk_paths(root):
++        for dirpath, _, filenames in os.walk(root):
++            for filename in filenames:
++                rel = os.path.relpath(os.path.join(dirpath, filename), pkg_root)
++                paths.append(rel)
++
++    walk_paths(os.path.join(pkg_root, "bin", "weewx_sqm_le"))
++    walk_paths(os.path.join(pkg_root, "bin", "user"))
++
++    return (
++        "bin",
++        paths,
++    )
++
++
++def install_file(version: str):
++    with open("dist-template/install.py.template", "r") as input_file:
++        output_string = input_file.read()
++
++    output_string = output_string.replace("__VERSION__", version)
++    output_string = output_string.replace("__FILE_PATHS__", file_paths(version).__repr__())
++
++    output_path = os.path.join(DIST_PATH, package_dir(version), "install.py")
++    with open(output_path, "w") as output_file:
++        output_file.write(output_string)
++
++
++def create_zip(version: str):
++    archive_path = os.path.join(DIST_PATH, package_dir(version) + ".tar.gz")
++    with tarfile.open(archive_path, "w:gz") as archive:
++        archive.add(
++            os.path.join(DIST_PATH, package_dir(version)), arcname=package_dir(version)
++        )
++
++
++if __name__ == "__main__":
++    parser = argparse.ArgumentParser(description="Package the SQM-LE extension")
++    parser.add_argument("--set-version", default=VERSION, help="Version number to build")
++
++    args = parser.parse_args()
++    version = args.set_version
++
++    clean_dist()
++    copy_files(version)
++    install_file(version)
++    create_zip(version)
+--- /dev/null
++++ b/upstream-source/dist-template/install.py.template
+@@ -0,0 +1,466 @@
++import os
++import socket
++import sys
++
++from setup import ExtensionInstaller
++
++
++def loader():
++    return SQM_Installer()
++
++
++def _prompt(text, default):
++    try:
++        value = input(f"{text} [{default}]: ").strip()
++    except EOFError:
++        return default
++    return value or default
++
++
++def _prompt_int(text, default):
++    while True:
++        value = _prompt(text, str(default))
++        try:
++            return int(value)
++        except ValueError:
++            print("Please enter a valid integer.")
++
++
++def _test_connection(host, port, timeout):
++    try:
++        with socket.create_connection((host, port), timeout=timeout) as sock:
++            sock.sendall(b"rx")
++            data = sock.recv(1024)
++        if data:
++            print("SQM-LE response:", data.decode("utf-8", errors="replace").strip())
++        else:
++            print("No data received from SQM-LE.")
++        return True
++    except Exception as exc:
++        print("SQM-LE connection test failed:", exc)
++        return False
++
++
++def _require_skyfield(ephemeris):
++    try:
++        cache_dir = "/var/lib/weewx/skyfield"
++        os.makedirs(cache_dir, exist_ok=True)
++        cwd = os.getcwd()
++        try:
++            os.chdir(cache_dir)
++            from skyfield.api import Loader
++        finally:
++            os.chdir(cwd)
++        load = Loader(cache_dir)
++        load(ephemeris)
++        return True
++    except Exception as exc:
++        print("Skyfield test failed:", exc)
++        return False
++
++
++def _get_existing_sqm_config(config):
++    sqm_cfg = config.get("SQM-LE", {})
++    host = sqm_cfg.get("host")
++    port = sqm_cfg.get("port")
++    poll_interval = sqm_cfg.get("poll_interval")
++    socket_timeout = sqm_cfg.get("socket_timeout")
++    max_samples = sqm_cfg.get("max_samples")
++    max_sample_age = sqm_cfg.get("max_sample_age")
++    ephemeris = sqm_cfg.get("ephemeris")
++    solar_alt_max = sqm_cfg.get("solar_alt_max")
++    return host, port, poll_interval, socket_timeout, max_samples, max_sample_age, ephemeris, solar_alt_max
++
++
++def _merge_data_services(config, service_name):
++    try:
++        services = config.get("Engine", {}).get("Services", {})
++        existing = services.get("data_services", "")
++    except Exception:
++        existing = ""
++
++    parts = [p.strip() for p in str(existing).split(",") if p.strip()]
++    if service_name not in parts:
++        parts.append(service_name)
++    return ", ".join(parts)
++
++
++def _load_config():
++    try:
++        from configobj import ConfigObj
++    except Exception as exc:
++        raise SystemExit(f"Aborting install: cannot load configobj: {exc}")
++
++    conf_path = "/etc/weewx/weewx.conf"
++    if not os.path.exists(conf_path):
++        raise SystemExit(f"Aborting install: missing config {conf_path}")
++    return ConfigObj(conf_path)
++
++
++def _get_db_info(config):
++    try:
++        binding = config["DataBindings"]["wx_binding"]
++        db_name = binding["database"]
++        table = binding.get("table_name", "archive")
++        db_cfg = config["Databases"][db_name]
++        db_type = db_cfg["database_type"]
++    except Exception as exc:
++        raise SystemExit(f"Aborting install: cannot read DB settings: {exc}")
++
++    return db_type, db_cfg, table, config
++
++
++def _ensure_sqlite_columns(db_path, table, columns):
++    import sqlite3
++
++    if not os.path.exists(db_path):
++        raise SystemExit(f"Aborting install: SQLite DB not found: {db_path}")
++
++    conn = sqlite3.connect(db_path)
++    try:
++        cur = conn.cursor()
++        cur.execute(f"PRAGMA table_info({table})")
++        existing = {row[1] for row in cur.fetchall()}
++        for name, decl in columns.items():
++            if name in existing:
++                continue
++            cur.execute(f"ALTER TABLE {table} ADD COLUMN {name} {decl}")
++        conn.commit()
++    finally:
++        conn.close()
++
++
++def _ensure_mysql_columns(db_cfg, table, columns):
++    driver = None
++    try:
++        import MySQLdb as driver  # type: ignore
++    except Exception:
++        try:
++            import pymysql as driver  # type: ignore
++        except Exception:
++            driver = None
++
++    if driver is None:
++        raise SystemExit("Aborting install: MySQL driver not available (install mysqlclient or pymysql).")
++
++    host = db_cfg.get("host", "localhost")
++    user = db_cfg.get("user")
++    password = db_cfg.get("password", "")
++    database = db_cfg.get("database_name")
++    if not user or not database:
++        raise SystemExit("Aborting install: MySQL config missing user or database_name.")
++
++    conn = driver.connect(host=host, user=user, passwd=password, db=database)
++    try:
++        cur = conn.cursor()
++        cur.execute(f"SHOW COLUMNS FROM {table}")
++        existing = {row[0] for row in cur.fetchall()}
++        for name, decl in columns.items():
++            if name in existing:
++                continue
++            cur.execute(f"ALTER TABLE {table} ADD COLUMN {name} {decl}")
++        conn.commit()
++    finally:
++        conn.close()
++
++
++def _update_archive_schema():
++    columns = {
++        "sqm": "REAL",
++        "sqmTemp": "REAL",
++        "sqmTime": "REAL",
++        "nelm": "REAL",
++        "cdm2": "REAL",
++        "nsu": "REAL",
++        "solarAlt": "REAL",
++        "lunarAlt": "REAL",
++        "lunarPhase": "REAL",
++    }
++
++    config = _load_config()
++    db_type, db_cfg, table, config = _get_db_info(config)
++
++    if db_type.lower() == "sqlite":
++        sqlite_root = config["DatabaseTypes"]["SQLite"]["SQLITE_ROOT"]
++        db_path = os.path.join(sqlite_root, db_cfg["database_name"])
++        _ensure_sqlite_columns(db_path, table, columns)
++        return
++
++    if db_type.lower() == "mysql":
++        _ensure_mysql_columns(db_cfg, table, columns)
++        return
++
++    raise SystemExit(f"Aborting install: unsupported database_type '{db_type}'")
++
++
++def _ensure_skyfield_cache_dir():
++    cache_dir = "/var/lib/weewx/skyfield"
++    os.makedirs(cache_dir, exist_ok=True)
++    try:
++        import pwd
++        import grp
++
++        uid = pwd.getpwnam("weewx").pw_uid
++        gid = grp.getgrnam("weewx").gr_gid
++        os.chown(cache_dir, uid, gid)
++    except Exception:
++        pass
++
++
++def _inject_block(path, block, anchor):
++    try:
++        with open(path, "r") as f:
++            content = f.read()
++    except FileNotFoundError:
++        print(f"Skin template not found: {path}")
++        return False
++
++    if "\"sqmTime\"" in content:
++        print(f"SQM fields already present in: {path}")
++        return True
++
++    idx = content.find(anchor)
++    if idx == -1:
++        print(f"Anchor not found in template: {path}")
++        return False
++
++    new_content = content[:idx] + block + content[idx:]
++    with open(path, "w") as f:
++        f.write(new_content)
++    print(f"Updated template: {path}")
++    return True
++
++
++def _replace_once(path, old, new, label):
++    try:
++        with open(path, "r") as f:
++            content = f.read()
++    except FileNotFoundError:
++        print(f"Skin template not found: {path}")
++        return False
++
++    if old not in content:
++        print(f"Pattern not found for {label} in: {path}")
++        return False
++
++    content = content.replace(old, new, 1)
++    with open(path, "w") as f:
++        f.write(content)
++    print(f"Updated {label}: {path}")
++    return True
++
++
++def _insert_after(path, needle, insertion, label):
++    try:
++        with open(path, "r") as f:
++            content = f.read()
++    except FileNotFoundError:
++        print(f"Skin template not found: {path}")
++        return False
++
++    if insertion in content:
++        print(f"{label} already present in: {path}")
++        return True
++
++    idx = content.find(needle)
++    if idx == -1:
++        print(f"Pattern not found for {label} in: {path}")
++        return False
++
++    idx_end = idx + len(needle)
++    content = content[:idx_end] + insertion + content[idx_end:]
++    with open(path, "w") as f:
++        f.write(content)
++    print(f"Updated {label}: {path}")
++    return True
++
++
++def _update_skins():
++    skin_root = "/etc/weewx/skins/Conditions"
++    block = (
++        "        #if $current.sqm.has_data\n"
++        "        \"sqm\": {\"value\": $current.sqm.raw},\n"
++        "        #end if\n"
++        "        #if $current.sqmTemp.has_data\n"
++        "        \"sqmTemp\": {\"value\": $current.sqmTemp.raw},\n"
++        "        #end if\n"
++        "        #if $current.sqmTime.has_data\n"
++        "        \"sqmTime\": {\"value\": $current.sqmTime.raw},\n"
++        "        #end if\n"
++        "        #if $current.nelm.has_data\n"
++        "        \"nelm\": {\"value\": $current.nelm.raw},\n"
++        "        #end if\n"
++        "        #if $current.cdm2.has_data\n"
++        "        \"cdm2\": {\"value\": $current.cdm2.raw},\n"
++        "        #end if\n"
++        "        #if $current.nsu.has_data\n"
++        "        \"nsu\": {\"value\": $current.nsu.raw},\n"
++        "        #end if\n"
++        "        #if $current.solarAlt.has_data\n"
++        "        \"solarAlt\": {\"value\": $current.solarAlt.raw},\n"
++        "        #end if\n"
++        "        #if $current.lunarAlt.has_data\n"
++        "        \"lunarAlt\": {\"value\": $current.lunarAlt.raw},\n"
++        "        #end if\n"
++        "        #if $current.lunarPhase.has_data\n"
++        "        \"lunarPhase\": {\"value\": $current.lunarPhase.raw},\n"
++        "        #end if\n"
++    )
++    block_deep = block.replace("        ", "            ")
++
++    templates = [
++        (os.path.join(skin_root, "conditions_current.json.tmpl"), "        \"void_end\": null\n"),
++        (os.path.join(skin_root, "conditions_summary.json.tmpl"), "        \"void_end\": null\n"),
++        (os.path.join(skin_root, "conditions_dataset.json.tmpl"), "            \"void_end\": null\n"),
++    ]
++
++    for path, anchor in templates:
++        if path.endswith("conditions_dataset.json.tmpl"):
++            _inject_block(path, block_deep, anchor)
++        else:
++            _inject_block(path, block, anchor)
++
++    dataset_path = os.path.join(skin_root, "conditions_dataset.json.tmpl")
++    fields_old = (
++        "                \"barometer\"\n"
++        "            ],\n"
++    )
++    fields_new = (
++        "                \"barometer\",\n"
++        "                \"sqm\",\n"
++        "                \"sqmTemp\",\n"
++        "                \"sqmTime\",\n"
++        "                \"nelm\",\n"
++        "                \"cdm2\",\n"
++        "                \"nsu\",\n"
++        "                \"solarAlt\",\n"
++        "                \"lunarAlt\",\n"
++        "                \"lunarPhase\"\n"
++        "            ],\n"
++    )
++    _replace_once(dataset_path, fields_old, fields_new, "daily_captures fields")
++
++    row_old = (
++        "                    $row.windchill.raw,\n"
++        "                    $row.barometer.raw\n"
++        "                ]\n"
++    )
++    row_new = (
++        "                    $row.windchill.raw,\n"
++        "                    $row.barometer.raw,\n"
++        "                    $row.sqm.raw,\n"
++        "                    $row.sqmTemp.raw,\n"
++        "                    $row.sqmTime.raw,\n"
++        "                    $row.nelm.raw,\n"
++        "                    $row.cdm2.raw,\n"
++        "                    $row.nsu.raw,\n"
++        "                    $row.solarAlt.raw,\n"
++        "                    $row.lunarAlt.raw,\n"
++        "                    $row.lunarPhase.raw\n"
++        "                ]\n"
++    )
++    _replace_once(dataset_path, row_old, row_new, "daily_captures rows")
++    _insert_after(
++        dataset_path,
++        "                \"sqmTemp\",\n",
++        "                \"sqmTime\",\n",
++        "daily_captures fields sqmTime",
++    )
++    _insert_after(
++        dataset_path,
++        "                    $row.sqmTemp.raw,\n",
++        "                    $row.sqmTime.raw,\n",
++        "daily_captures rows sqmTime",
++    )
++
++
++class SQM_Installer(ExtensionInstaller):
++    def __init__(self):
++        config = _load_config()
++        (
++            cfg_host,
++            cfg_port,
++            cfg_poll_interval,
++            cfg_socket_timeout,
++            cfg_max_samples,
++            cfg_max_sample_age,
++            cfg_ephemeris,
++            cfg_solar_alt_max,
++        ) = _get_existing_sqm_config(config)
++        has_config = any(
++            value is not None
++            for value in (
++                cfg_host,
++                cfg_port,
++                cfg_poll_interval,
++                cfg_socket_timeout,
++                cfg_max_samples,
++                cfg_max_sample_age,
++                cfg_ephemeris,
++                cfg_solar_alt_max,
++            )
++        )
++
++        if has_config:
++            host = cfg_host or "127.0.0.1"
++            port = int(cfg_port) if cfg_port else 10001
++            poll_interval = int(cfg_poll_interval) if cfg_poll_interval else 600
++            socket_timeout = float(cfg_socket_timeout) if cfg_socket_timeout else 2.0
++            max_samples = int(cfg_max_samples) if cfg_max_samples else 300
++            try:
++                max_sample_age = (
++                    float(cfg_max_sample_age) if cfg_max_sample_age else poll_interval * 3
++                )
++            except ValueError:
++                max_sample_age = poll_interval * 3
++            ephemeris = cfg_ephemeris or "de421.bsp"
++            solar_alt_max = float(cfg_solar_alt_max) if cfg_solar_alt_max else -18.0
++        else:
++            host = _prompt("SQM-LE host", "127.0.0.1")
++            port = _prompt_int("SQM-LE port", 10001)
++            poll_interval = _prompt_int("Poll interval (seconds)", 600)
++            socket_timeout = _prompt_int("Socket timeout (seconds)", 2)
++            max_samples = _prompt_int("Max samples per archive interval", 300)
++            max_sample_age = poll_interval * 3
++            ephemeris = "de421.bsp"
++            solar_alt_max = -18.0
++
++            if not _test_connection(host, port, socket_timeout):
++                raise SystemExit("Aborting install: SQM-LE connection test failed.")
++
++        if not _require_skyfield(ephemeris):
++            raise SystemExit("Aborting install: Skyfield test failed.")
++
++        _ensure_skyfield_cache_dir()
++        _update_skins()
++        _update_archive_schema()
++
++        data_services = _merge_data_services(config, "user.sqmle.Service")
++
++        super(SQM_Installer, self).__init__(
++            version="__VERSION__",
++            name="weewx-sqm-le",
++            description="Add SQM-LE (Ethernet) support",
++            author="WeeWX SQM-LE Contributors",
++            author_email="https://example.invalid/weewx-sqm-le",
++            config={
++                "SQM-LE": {
++                    "host": host,
++                    "port": port,
++                    "poll_interval": poll_interval,
++                    "socket_timeout": float(socket_timeout),
++                    "max_samples": max_samples,
++                    "max_sample_age": max_sample_age,
++                    "ephemeris": ephemeris,
++                    "skyfield_cache": "/var/lib/weewx/skyfield",
++                    # Skip polling when sun is above this altitude (degrees)
++                    "solar_alt_max": solar_alt_max,
++                },
++                "Engine": {
++                    "Services": {
++                        "data_services": data_services,
++                    }
++                },
++            },
++            files=[__FILE_PATHS__],
++        )
+--- /dev/null
++++ b/upstream-source/pyproject.toml
+@@ -0,0 +1,28 @@
++[build-system]
++requires = ["setuptools>=61.0"]
++build-backend = "setuptools.build_meta"
++
++[project]
++name = "weewx-sqm-le"
++version = "0.1.1"
++description = "WeeWX SQM-LE (Ethernet) service"
++readme = "README.md"
++requires-python = ">=3.8"
++license = {text = "MIT"}
++authors = [{name = "WeeWX SQM-LE Contributors"}]
++classifiers = [
++  "Programming Language :: Python :: 3",
++  "License :: OSI Approved :: MIT License",
++]
++
++[project.urls]
++Homepage = "https://example.invalid/weewx-sqm-le"
++
++[tool.setuptools]
++package-dir = {"" = "src"}
++
++[tool.setuptools.packages.find]
++where = ["src"]
++
++[tool.pytest.ini_options]
++addopts = "-q"
+--- /dev/null
++++ b/upstream-source/src/user/__init__.py
+@@ -0,0 +1 @@
++# WeeWX user service namespace
+--- /dev/null
++++ b/upstream-source/src/user/sqmle.py
+@@ -0,0 +1,5 @@
++"""WeeWX user service entrypoint."""
++
++from weewx_sqm_le.service import SQMService as Service
++
++__all__ = ["Service"]
+--- /dev/null
++++ b/upstream-source/src/weewx_sqm_le/__init__.py
+@@ -0,0 +1,4 @@
++"""WeeWX SQM-LE service package."""
++
++__all__ = ["__version__"]
++__version__ = "0.1.1"
+--- /dev/null
++++ b/upstream-source/src/weewx_sqm_le/service.py
+@@ -0,0 +1,301 @@
++import os
++import socket
++import threading
++import time
++from datetime import datetime, timezone
++from typing import Optional, Tuple
++
++from .sqm import SQMSample, parse_sqm_response, median
++
++try:
++    import weewx
++    from weewx.engine import StdService
++except Exception:  # pragma: no cover - only used when WeeWX not installed
++    weewx = None
++
++    class StdService:  # type: ignore
++        def __init__(self, *args, **kwargs):
++            raise RuntimeError("WeeWX not available in this environment")
++
++
++class SkyfieldCalculator:
++    def __init__(
++        self,
++        latitude: float,
++        longitude: float,
++        altitude_m: Optional[float],
++        ephemeris: str,
++        cache_dir: str,
++    ):
++        os.makedirs(cache_dir, exist_ok=True)
++        cwd = os.getcwd()
++        try:
++            os.chdir(cache_dir)
++            from skyfield.api import Loader, wgs84
++            from skyfield import almanac
++        finally:
++            os.chdir(cwd)
++
++        self._load = Loader(cache_dir)
++        self._almanac = almanac
++        self._ts = self._load.timescale()
++        self._ephem = self._load(ephemeris)
++        self._earth = self._ephem["earth"]
++        self._sun = self._ephem["sun"]
++        self._moon = self._ephem["moon"]
++        if altitude_m is None:
++            self._location = wgs84.latlon(latitude, longitude)
++        else:
++            self._location = wgs84.latlon(latitude, longitude, elevation_m=altitude_m)
++
++    def compute(self, timestamp: float) -> Tuple[float, float, float]:
++        t = self._ts.from_datetime(datetime.fromtimestamp(timestamp, tz=timezone.utc))
++        observer = (self._earth + self._location).at(t)
++
++        moon_alt, _, _ = observer.observe(self._moon).apparent().altaz()
++        sun_alt, _, _ = observer.observe(self._sun).apparent().altaz()
++        lunar_phase = self._almanac.fraction_illuminated(self._ephem, "moon", t)
++
++        return moon_alt.degrees, lunar_phase, sun_alt.degrees
++
++
++class SQMReader:
++    def __init__(
++        self,
++        host: str,
++        port: int,
++        poll_interval: float,
++        socket_timeout: float,
++        max_samples: int,
++        skyfield: Optional[SkyfieldCalculator],
++        solar_alt_max: Optional[float],
++    ):
++        self.host = host
++        self.port = port
++        self.poll_interval = poll_interval
++        self.socket_timeout = socket_timeout
++        self.max_samples = max_samples
++        self.skyfield = skyfield
++        self.solar_alt_max = solar_alt_max
++        self._lock = threading.Lock()
++        self._latest: Optional[SQMSample] = None
++        self._samples = []
++        self._stop = threading.Event()
++        self._thread = threading.Thread(target=self._run, name="SQMReader", daemon=True)
++
++    def start(self):
++        self._thread.start()
++
++    def stop(self):
++        self._stop.set()
++        self._thread.join(timeout=self.poll_interval + 1)
++
++    def latest(self) -> Optional[SQMSample]:
++        with self._lock:
++            return self._latest
++
++    def pop_samples(self):
++        with self._lock:
++            samples = self._samples
++            self._samples = []
++            return samples
++
++    def _record(self, sample: SQMSample):
++        if not sample.valid:
++            return
++        with self._lock:
++            self._latest = sample
++            self._samples.append(sample)
++            if len(self._samples) > self.max_samples:
++                self._samples = self._samples[-self.max_samples:]
++
++    def _poll_once(self) -> Optional[SQMSample]:
++        with socket.create_connection((self.host, self.port), timeout=self.socket_timeout) as sock:
++            sock.sendall(b"rx")
++            data = sock.recv(1024)
++        if not data:
++            return None
++        response = data.decode("utf-8", errors="replace")
++        timestamp = time.time()
++        sample = parse_sqm_response(response, timestamp=timestamp)
++
++        if self.skyfield is not None:
++            try:
++                moon_alt, lunar_phase, sun_alt = self.skyfield.compute(timestamp)
++                sample = SQMSample(
++                    sqm=sample.sqm,
++                    temp_c=sample.temp_c,
++                    timestamp=sample.timestamp,
++                    lunar_alt_deg=moon_alt,
++                    lunar_phase=lunar_phase,
++                    solar_alt_deg=sun_alt,
++                )
++            except Exception:
++                # Skyfield errors should not block SQM reads
++                pass
++
++        if self.solar_alt_max is not None and sample.solar_alt_deg is not None:
++            if sample.solar_alt_deg > self.solar_alt_max:
++                return None
++
++        return sample
++
++    def _run(self):
++        while not self._stop.is_set():
++            try:
++                if self.skyfield is not None and self.solar_alt_max is not None:
++                    try:
++                        _, _, sun_alt = self.skyfield.compute(time.time())
++                        if sun_alt > self.solar_alt_max:
++                            # Skip polling SQM during daylight
++                            self._stop.wait(self.poll_interval)
++                            continue
++                    except Exception:
++                        pass
++
++                sample = self._poll_once()
++                if sample is not None:
++                    self._record(sample)
++            except Exception:
++                # Avoid crashing the thread; transient errors are expected
++                pass
++            self._stop.wait(self.poll_interval)
++
++
++class SQMService(StdService):
++    def __init__(self, engine, config_dict):
++        super().__init__(engine, config_dict)
++
++        cfg = config_dict.get("SQM-LE", {})
++        self.host = cfg.get("host", "127.0.0.1")
++        self.port = int(cfg.get("port", 10001))
++        self.poll_interval = float(cfg.get("poll_interval", 10))
++        self.socket_timeout = float(cfg.get("socket_timeout", 2.0))
++        self.max_samples = int(cfg.get("max_samples", 300))
++        self.max_sample_age = cfg.get("max_sample_age")
++        if self.max_sample_age is None:
++            self.max_sample_age = self.poll_interval * 3
++        else:
++            try:
++                self.max_sample_age = float(self.max_sample_age)
++            except ValueError:
++                self.max_sample_age = self.poll_interval * 3
++        self.solar_alt_max = cfg.get("solar_alt_max")
++        if self.solar_alt_max is not None:
++            try:
++                self.solar_alt_max = float(self.solar_alt_max)
++            except ValueError:
++                self.solar_alt_max = None
++
++        ephemeris = cfg.get("ephemeris", "de421.bsp")
++        skyfield_cache = cfg.get("skyfield_cache", "/var/lib/weewx/skyfield")
++        skyfield = self._init_skyfield(engine, config_dict, ephemeris, skyfield_cache)
++
++        self.reader = SQMReader(
++            host=self.host,
++            port=self.port,
++            poll_interval=self.poll_interval,
++            socket_timeout=self.socket_timeout,
++            max_samples=self.max_samples,
++            skyfield=skyfield,
++            solar_alt_max=self.solar_alt_max,
++        )
++        self.reader.start()
++
++        self.bind(weewx.NEW_LOOP_PACKET, self.new_loop_packet)
++        self.bind(weewx.NEW_ARCHIVE_RECORD, self.new_archive_record)
++
++    def shutDown(self):
++        self.reader.stop()
++        super().shutDown()
++
++    def _augment_packet(self, packet, sample: SQMSample):
++        packet["sqm"] = sample.sqm
++        if sample.temp_c is not None:
++            packet["sqmTemp"] = sample.temp_c
++        packet["sqmTime"] = sample.timestamp
++        packet["cdm2"] = sample.cdm2
++        packet["nsu"] = sample.nsu
++        packet["nelm"] = sample.nelm
++        if sample.lunar_alt_deg is not None:
++            packet["lunarAlt"] = sample.lunar_alt_deg
++        if sample.lunar_phase is not None:
++            packet["lunarPhase"] = sample.lunar_phase
++        if sample.solar_alt_deg is not None:
++            packet["solarAlt"] = sample.solar_alt_deg
++
++    def new_loop_packet(self, event):
++        sample = self.reader.latest()
++        if not sample:
++            return
++        event.packet["sqmTime"] = sample.timestamp
++        if not sample.valid:
++            return
++        if time.time() - sample.timestamp > self.max_sample_age:
++            return
++        self._augment_packet(event.packet, sample)
++
++    def new_archive_record(self, event):
++        samples = self.reader.pop_samples()
++        if not samples:
++            return
++        sqms = [s.sqm for s in samples if s.valid]
++        temps = [s.temp_c for s in samples if s.valid and s.temp_c is not None]
++        lunar_alts = [s.lunar_alt_deg for s in samples if s.lunar_alt_deg is not None]
++        lunar_phases = [s.lunar_phase for s in samples if s.lunar_phase is not None]
++        solar_alts = [s.solar_alt_deg for s in samples if s.solar_alt_deg is not None]
++        timestamps = [s.timestamp for s in samples if s.valid]
++        if not sqms:
++            return
++        sqm_med = median(sqms)
++        if sqm_med is None:
++            return
++        temp_med = median(temps) if temps else None
++        last_timestamp = max(timestamps) if timestamps else time.time()
++        sample = SQMSample(
++            sqm=sqm_med,
++            temp_c=temp_med,
++            timestamp=last_timestamp,
++            lunar_alt_deg=median(lunar_alts) if lunar_alts else None,
++            lunar_phase=median(lunar_phases) if lunar_phases else None,
++            solar_alt_deg=median(solar_alts) if solar_alts else None,
++        )
++        self._augment_packet(event.record, sample)
++
++    @staticmethod
++    def _init_skyfield(
++        engine, config_dict, ephemeris: str, cache_dir: str
++    ) -> Optional[SkyfieldCalculator]:
++        latitude = None
++        longitude = None
++        altitude_m = None
++
++        stn_info = getattr(engine, "stn_info", None)
++        if stn_info is not None:
++            latitude = getattr(stn_info, "latitude_f", None)
++            longitude = getattr(stn_info, "longitude_f", None)
++            alt = getattr(stn_info, "altitude", None)
++            try:
++                altitude_m = alt.meter.raw if alt is not None else None
++            except Exception:
++                altitude_m = None
++
++        station_cfg = config_dict.get("Station", {}) if config_dict else {}
++        if latitude is None:
++            try:
++                latitude = float(station_cfg.get("latitude"))
++            except Exception:
++                latitude = None
++        if longitude is None:
++            try:
++                longitude = float(station_cfg.get("longitude"))
++            except Exception:
++                longitude = None
++
++        if latitude is None or longitude is None:
++            return None
++
++        try:
++            return SkyfieldCalculator(latitude, longitude, altitude_m, ephemeris, cache_dir)
++        except Exception:
++            return None
+--- /dev/null
++++ b/upstream-source/src/weewx_sqm_le/sqm.py
+@@ -0,0 +1,83 @@
++import math
++import time
++from dataclasses import dataclass
++from typing import Optional
++
++
++@dataclass(frozen=True)
++class SQMSample:
++    sqm: float
++    temp_c: Optional[float]
++    timestamp: float
++    lunar_alt_deg: Optional[float] = None
++    lunar_phase: Optional[float] = None
++    solar_alt_deg: Optional[float] = None
++
++    @property
++    def valid(self) -> bool:
++        return self.sqm > 0.0
++
++    @property
++    def cdm2(self) -> float:
++        # 108000 * 10^(-0.4 * sqm)
++        return 108000.0 * (10 ** (-0.4 * self.sqm))
++
++    @property
++    def nsu(self) -> float:
++        # 10^(0.4 * (21.6 - sqm))
++        return 10 ** (0.4 * (21.6 - self.sqm))
++
++    @property
++    def nelm(self) -> float:
++        # 7.93 - 5 * log10(10^(4.316 - sqm/5) + 1)
++        return 7.93 - 5.0 * math.log10((10 ** (4.316 - (self.sqm / 5.0))) + 1.0)
++
++
++class SQMParseError(ValueError):
++    pass
++
++
++def _parse_float_token(token: str, suffix: str) -> float:
++    if not token.endswith(suffix):
++        raise SQMParseError(f"Expected suffix '{suffix}' in token '{token}'")
++    try:
++        return float(token[:-len(suffix)])
++    except ValueError as exc:
++        raise SQMParseError(f"Invalid float token '{token}'") from exc
++
++
++def parse_sqm_response(response: str, timestamp: Optional[float] = None) -> SQMSample:
++    """
++    Parse the SQM-LE response.
++
++    Expected format:
++        r,00.00m,0000573478Hz,0000000000c,0000000.000s,031.9C
++    """
++    parts = response.strip().split(',')
++    if len(parts) < 2:
++        raise SQMParseError(f"Unexpected response '{response}'")
++    if not parts[0].startswith('r'):
++        raise SQMParseError(f"Unexpected prefix '{parts[0]}'")
++
++    sqm = _parse_float_token(parts[1], 'm')
++    temp_c = None
++    if len(parts) >= 6:
++        try:
++            temp_c = _parse_float_token(parts[5], 'C')
++        except SQMParseError:
++            temp_c = None
++
++    if timestamp is None:
++        timestamp = time.time()
++
++    return SQMSample(sqm=sqm, temp_c=temp_c, timestamp=timestamp)
++
++
++def median(values):
++    values = sorted(values)
++    if not values:
++        return None
++    mid = len(values) // 2
++    if len(values) % 2 == 1:
++        return values[mid]
++    return (values[mid - 1] + values[mid]) / 2.0
+--- /dev/null
++++ b/upstream-source/tests/conftest.py
+@@ -0,0 +1,7 @@
++import os
++import sys
++
++ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
++SRC = os.path.join(ROOT, "src")
++if SRC not in sys.path:
++    sys.path.insert(0, SRC)
+--- /dev/null
++++ b/upstream-source/tests/test_sqm.py
+@@ -0,0 +1,19 @@
++from weewx_sqm_le.sqm import parse_sqm_response, SQMSample
++
++
++def test_parse_response():
++    sample = parse_sqm_response(
++        "r,21.55m,0000573478Hz,0000000000c,0000000.000s,031.9C"
++    )
++    assert isinstance(sample, SQMSample)
++    assert sample.sqm == 21.55
++    assert sample.temp_c == 31.9
++    assert isinstance(sample.timestamp, float)
++
++
++def test_derived_metrics():
++    sample = SQMSample(sqm=21.6, temp_c=None, timestamp=1700000000.0)
++    # basic sanity checks
++    assert sample.cdm2 > 0
++    assert sample.nsu > 0
++    assert 0 < sample.nelm < 10

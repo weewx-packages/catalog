@@ -3,6 +3,9 @@
 Publish a versioned archive containing one top-level directory with `install.py`
 and the package files. Uploaded GitHub release assets work, as do static HTTPS
 downloads on another server. The package can remain in its author's repository.
+Installer destinations must be under `bin/user` or `skins`, which the repository client manages. Additional
+Python packages and schemas belong below `bin/user`; keep their import and
+configuration paths consistent with that layout.
 
 ## Add the metadata
 
@@ -14,8 +17,10 @@ features searchable.
 
 Each release supplies its exact version, Python and WeeWX requirements, archive
 format, download URL, and SHA-256 digest. Use the publisher's documented version
-requirements. If compatibility has an unverified upper boundary, restrict the
-range rather than claiming support for future major releases.
+requirements. Versions must be PEP 440 without local labels such as `+gSHA`.
+Keep prereleases identifiable; use a separate `.post` version for catalog
+packaging changes and record the source commit in provenance. If compatibility
+has an unverified upper boundary, restrict the range rather than claiming support for future major releases.
 
 Compute the digest from the exact bytes users will download:
 
@@ -44,7 +49,10 @@ publisher's compatibility claims are correct.
 
 Before submitting, download and hash each new archive, check that its installer
 name and version match the metadata, and test installation on a disposable
-station. A successful install does not verify real hardware behavior.
+station through `weectl extension install <package> --repo <repository>`. The
+legacy URL installer alone does not exercise the repository client's managed
+paths and transaction rules. A successful install does not verify real hardware
+behavior.
 
 Submit the metadata as a pull request. Describe which package or version you
 added and which installation test you ran.

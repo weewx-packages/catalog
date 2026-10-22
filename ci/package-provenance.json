@@ -193,16 +193,17 @@
   "davisconsoleapi": {
     "status": "published",
     "source_sha": "1d312ac5faa6779a6a34e5200a535596980efdc2",
-    "archive_sha256": "d3edef310125c9962cb4f07e323ac9b45126242f732fc06bca890bb7624b49ad",
-    "release_revision": "catalog-r1",
+    "archive_sha256": "645b818e28f44649e26d8bccd86c9dee7d7986dfd8d914598a5e70febac76847",
+    "release_revision": "catalog-r2",
     "limitations": [
-      "Current and historical API signing, console sensor JSON and the HTTP boundary use public fixture credentials. No live WeatherLink account was used. Console and health skin files are byte-checked after installation; report generation is not claimed."
+      "Public credential fixtures cover current/historical API signing and console JSON. No live WeatherLink account was used; skin generation is not claimed.",
+      "The installer changes the active StdArchive binding only when it uses the unchanged WeeWX default weewx.schemas.wview_extended.schema. Custom schemas and existing database tables are retained; existing archives require the normal explicit schema-migration procedure if Davis columns are missing."
     ],
     "publication": {
-      "release_id": 420335639,
-      "asset_id": 664768649,
+      "release_id": 420359718,
+      "asset_id": 664852017,
       "immutable": true,
-      "sha256": "d3edef310125c9962cb4f07e323ac9b45126242f732fc06bca890bb7624b49ad"
+      "sha256": "645b818e28f44649e26d8bccd86c9dee7d7986dfd8d914598a5e70febac76847"
     },
     "repository": "weewx-packages/weewx-davisconsoleapi",
     "tests_path": "ci/project_tests/weewx-davisconsoleapi",
@@ -210,8 +211,8 @@
     "packaging_recipe": {
       "source_sha": "1d312ac5faa6779a6a34e5200a535596980efdc2",
       "patch": "ci/recipes/davisconsoleapi/package.patch",
-      "sha256": "376e025d2e5d7e4216b01ed69f5ad095c264c2d06936cd3b7b1fe81214a31dcd",
-      "changes": "Upstream supplies no install.py; install preserved driver/skin/schema files under canonical WeeWX locations using declared DRIVER_VERSION 0.43."
+      "sha256": "96ea5d8b0df063a8303b1f579ef625b0611930c67ca1c21d23af901e709f9b39",
+      "changes": "The repository client manages bin/user and skins. Install the preserved schema copy in bin/user, select user.wview_davisconsoleapi.schema only for the active StdArchive binding using the unchanged WeeWX default, preserve custom schemas and existing databases, and update the packaged configuration examples."
     },
     "license": "GPL-3.0-or-later AND GPL-3.0-only AND OFL-1.1",
     "license_evidence": [
@@ -221,12 +222,12 @@
       "https://github.com/WernerKr/davisconsoleapi/blob/1d312ac5faa6779a6a34e5200a535596980efdc2/skins/console/font/OFL.txt"
     ],
     "test_sha256": {
-      "ci/project_tests/weewx-davisconsoleapi/test_driver.py": "ad5fb03c8e911cb5fcdf8d5b63b9212a87b06a487998a6bccbda532cd1a06981"
+      "ci/project_tests/weewx-davisconsoleapi/test_driver.py": "8977c3129588c7b309a93a8cfdfe8723be2d3e6e785fa52c041d4e78334e5859"
     },
     "archive": {
-      "url": "https://github.com/weewx-packages/catalog/releases/download/davisconsoleapi/v0.43.post1/davisconsoleapi-0.43.post1.tar.gz",
+      "url": "https://github.com/weewx-packages/catalog/releases/download/davisconsoleapi/v0.43.post2/davisconsoleapi-0.43.post2.tar.gz",
       "format": "tar.gz",
-      "sha256": "d3edef310125c9962cb4f07e323ac9b45126242f732fc06bca890bb7624b49ad"
+      "sha256": "645b818e28f44649e26d8bccd86c9dee7d7986dfd8d914598a5e70febac76847"
     }
   },
   "ecowittgateway": {
@@ -1067,21 +1068,29 @@
   "airq": {
     "status": "published",
     "source_sha": "199698d5ba4228509b9014a313a546bfceb0cdf4",
-    "archive_sha256": "8a5293a188c25efc3a1e8f159e65af6835ea1c2d8155d5d557e9d3d07f163342",
+    "archive_sha256": "8c314272a67eea1b75e6bea0f78f427b8b673b9ec168e02f2b26ef8a51caf940",
     "limitations": [
       "Verified on official WeeWX master 2202a2f873353d926d69814570b63b0a195f6d22 and development 06b5ffb3335417132d7527e738e7eea9769c46bf with Python 3.10.22 and 3.14.4.",
       "Hardware and remote services are represented by byte, file or HTTP fixtures; no physical hardware result is claimed.",
-      "Prerelease; the catalog client requires --pre."
+      "Prerelease; the catalog client requires --pre.",
+      "The bin/airq_conf launcher is not installed; use the retained user.airq_conf module.",
+      "PYTHONPATH=station/bin python -m user.airq_conf --help"
     ],
     "publication": {
-      "release_id": 420343029,
-      "asset_id": 664794178,
+      "release_id": 420355467,
+      "asset_id": 664838399,
       "immutable": true,
-      "sha256": "8a5293a188c25efc3a1e8f159e65af6835ea1c2d8155d5d557e9d3d07f163342"
+      "sha256": "8c314272a67eea1b75e6bea0f78f427b8b673b9ec168e02f2b26ef8a51caf940"
     },
     "repository": "weewx-packages/weewx-airQ",
     "tests_path": "ci/project_tests/weewx-airQ",
     "coverage": "release",
+    "packaging_recipe": {
+      "source_sha": "199698d5ba4228509b9014a313a546bfceb0cdf4",
+      "patch": "ci/recipes/airq/package.patch",
+      "sha256": "d4b9ab51f9f9928c8c5737ad1e1d654009f20001b26343acb1d54697083d0506",
+      "changes": "The bin/airq_conf launcher is not installed; use the retained user.airq_conf module."
+    },
     "license": "GPL-3.0-only",
     "license_evidence": [
       "https://github.com/roe-dl/weewx-airQ/blob/199698d5ba4228509b9014a313a546bfceb0cdf4/LICENSE",
@@ -1092,9 +1101,9 @@
       "ci/project_tests/weewx-airQ/test_installed_hooks.py": "d46e6862749b8474bc12c848adaf1e294ad784f33d9282f395d3f2db92e70b08"
     },
     "archive": {
-      "url": "https://github.com/weewx-packages/catalog/releases/download/airq/v0.9b3/airq-0.9b3.tar.gz",
+      "url": "https://github.com/weewx-packages/catalog/releases/download/airq/v0.9b3.post20261022/airq-0.9b3.post20261022.tar.gz",
       "format": "tar.gz",
-      "sha256": "8a5293a188c25efc3a1e8f159e65af6835ea1c2d8155d5d557e9d3d07f163342"
+      "sha256": "8c314272a67eea1b75e6bea0f78f427b8b673b9ec168e02f2b26ef8a51caf940"
     }
   },
   "airgradient": {
@@ -1616,32 +1625,39 @@
   "openweather-api": {
     "status": "published",
     "source_sha": "8f1209b5b24a3dd74e685baf4e9d222ec5274223",
-    "archive_sha256": "93a51a29487ca2a2371c727355655ff6f8de64d6a9ca6ad7bc11213630043b67",
+    "archive_sha256": "fdb3d50a63c9cd333dfd7f0a3fa5c56d162c1ba293b11939c995219607d84c46",
     "limitations": [
       "Verified on official WeeWX master 2202a2f873353d926d69814570b63b0a195f6d22 and development 06b5ffb3335417132d7527e738e7eea9769c46bf with Python 3.10.22 and 3.14.4.",
-      "Hardware and remote services are represented by byte, file or HTTP fixtures; no physical hardware result is claimed."
+      "Hardware and remote services are represented by byte, file or HTTP fixtures; no physical hardware result is claimed.",
+      "Field definitions are installed as bin/user/openweather_fields.yaml. The payload installer reads that copy; its cached installer resolves the installed YAML beside user.openweather. The original root YAML remains in the archive."
     ],
     "publication": {
-      "release_id": 420343624,
-      "asset_id": 664796185,
+      "release_id": 420355507,
+      "asset_id": 664838538,
       "immutable": true,
-      "sha256": "93a51a29487ca2a2371c727355655ff6f8de64d6a9ca6ad7bc11213630043b67"
+      "sha256": "fdb3d50a63c9cd333dfd7f0a3fa5c56d162c1ba293b11939c995219607d84c46"
     },
     "repository": "weewx-packages/weewx-openweather_API",
     "tests_path": "ci/project_tests/weewx-openweather_API",
     "coverage": "release",
+    "packaging_recipe": {
+      "source_sha": "8f1209b5b24a3dd74e685baf4e9d222ec5274223",
+      "patch": "ci/recipes/openweather-api/package.patch",
+      "sha256": "753ba03e9aaae8e61a8a962d894196d7e7c17da6b092f46815e6b047aed7dd94",
+      "changes": "Field definitions are installed as bin/user/openweather_fields.yaml. The payload installer reads that copy; its cached installer resolves the installed YAML beside user.openweather. The original root YAML remains in the archive."
+    },
     "license": "GPL-3.0-only",
     "license_evidence": [
       "https://github.com/inguy24/weewx-openweather_API/blob/8f1209b5b24a3dd74e685baf4e9d222ec5274223/LICENSE"
     ],
     "test_sha256": {
-      "ci/project_tests/weewx-openweather_API/test_payload.py": "599ba4ae6e3edfe4e4de3b4ca6998335c8da61eec756a5574e8f3a554e285cad",
+      "ci/project_tests/weewx-openweather_API/test_payload.py": "88c27e7cf12b54560b073b5c895ac1024bc537d06a09a2ee3f7ec2cf72e297f7",
       "ci/project_tests/weewx-openweather_API/test_installed_hooks.py": "d46e6862749b8474bc12c848adaf1e294ad784f33d9282f395d3f2db92e70b08"
     },
     "archive": {
-      "url": "https://github.com/weewx-packages/catalog/releases/download/openweather-api/v1.0.0/openweather-api-1.0.0.tar.gz",
+      "url": "https://github.com/weewx-packages/catalog/releases/download/openweather-api/v1.0.0.post20261022/openweather-api-1.0.0.post20261022.tar.gz",
       "format": "tar.gz",
-      "sha256": "93a51a29487ca2a2371c727355655ff6f8de64d6a9ca6ad7bc11213630043b67"
+      "sha256": "fdb3d50a63c9cd333dfd7f0a3fa5c56d162c1ba293b11939c995219607d84c46"
     }
   },
   "purple": {
@@ -1855,16 +1871,17 @@
   "sqm": {
     "status": "published",
     "source_sha": "fbd39b640008e39c7787595ad6ae30280357cc4d",
-    "archive_sha256": "c75a2cd124b26880e09b505175d26c93861ce3cfa326ed9a5485991204a2e9a3",
+    "archive_sha256": "e2233f0ffd88e02e0655930152af1a0841379db903cbcb7fd654758042fbe212",
     "limitations": [
       "Verified on official WeeWX master 2202a2f873353d926d69814570b63b0a195f6d22 and development 06b5ffb3335417132d7527e738e7eea9769c46bf with Python 3.10.22 and 3.14.4.",
-      "Hardware and remote services are represented by byte, file or HTTP fixtures; no physical hardware result is claimed."
+      "Hardware and remote services are represented by byte, file or HTTP fixtures; no physical hardware result is claimed.",
+      "The configured service and imports use user.weewx_sqm_le. The old top-level package remains in the source archive and is not installed."
     ],
     "publication": {
-      "release_id": 420348032,
-      "asset_id": 664812361,
+      "release_id": 420355552,
+      "asset_id": 664838693,
       "immutable": true,
-      "sha256": "c75a2cd124b26880e09b505175d26c93861ce3cfa326ed9a5485991204a2e9a3"
+      "sha256": "e2233f0ffd88e02e0655930152af1a0841379db903cbcb7fd654758042fbe212"
     },
     "repository": "weewx-packages/weewx-sqm",
     "tests_path": "ci/project_tests/weewx-sqm",
@@ -1872,21 +1889,21 @@
     "packaging_recipe": {
       "source_sha": "fbd39b640008e39c7787595ad6ae30280357cc4d",
       "patch": "ci/recipes/sqm/package.patch",
-      "sha256": "4a2c10dbfb980bed2bea4b935b8b82fdcd47e1a80d4fe0bcd177fbb64aaa9492",
-      "changes": "python3 repair_installer_versions.py"
+      "sha256": "8bb5ccc41f7e91e81e2ddf254e1d33c845f341d9b0463e3b6297993b73579184",
+      "changes": "The configured service and imports use user.weewx_sqm_le. The old top-level package remains in the source archive and is not installed."
     },
     "license": "MIT",
     "license_evidence": [
       "https://github.com/open-astro/weewx-sqm/blob/fbd39b640008e39c7787595ad6ae30280357cc4d/LICENSE"
     ],
     "test_sha256": {
-      "ci/project_tests/weewx-sqm/test_payload.py": "7f7306ffa6695b6ec695c8ac9626022cdbedd5bba2215b345324fdbc00f92f70",
+      "ci/project_tests/weewx-sqm/test_payload.py": "4d61b90fb31fdfd93d58ae6d4d3958c06c08e98e105bb5e96fc3216f42f7b561",
       "ci/project_tests/weewx-sqm/test_installed_hooks.py": "d46e6862749b8474bc12c848adaf1e294ad784f33d9282f395d3f2db92e70b08"
     },
     "archive": {
-      "url": "https://github.com/weewx-packages/catalog/releases/download/sqm/v0.1.1.post20261022/sqm-0.1.1.post20261022.tar.gz",
+      "url": "https://github.com/weewx-packages/catalog/releases/download/sqm/v0.1.1.post2026102201/sqm-0.1.1.post2026102201.tar.gz",
       "format": "tar.gz",
-      "sha256": "c75a2cd124b26880e09b505175d26c93861ce3cfa326ed9a5485991204a2e9a3"
+      "sha256": "e2233f0ffd88e02e0655930152af1a0841379db903cbcb7fd654758042fbe212"
     }
   },
   "weather-app": {
@@ -2032,16 +2049,16 @@
   "wxgraphic": {
     "status": "published",
     "source_sha": "b46451df116eebaa687ee65322f6a4b12864b5c9",
-    "archive_sha256": "d972b5839f8ecf0731287cfb47cee50e01d66d690baa441e36989ad6732d3c90",
-    "release_revision": 1,
+    "archive_sha256": "61c38e441c36ec91941db4226af23eb97e75989f78d79775e31cdb41c32349a5",
+    "release_revision": 2,
     "limitations": [],
     "publication": {
-      "release_id": 420330159,
-      "asset_id": 664749767,
+      "release_id": 420362920,
+      "asset_id": 664863762,
       "immutable": true,
-      "sha256": "d972b5839f8ecf0731287cfb47cee50e01d66d690baa441e36989ad6732d3c90"
+      "sha256": "61c38e441c36ec91941db4226af23eb97e75989f78d79775e31cdb41c32349a5"
     },
-    "installer_version": "0.6.8",
+    "installer_version": "0.6.8.post20261022",
     "runtime_versions": {
       "bin/user/wxgraphic.py": {
         "wxgraphic_version": "0.6.8"
@@ -2053,9 +2070,9 @@
     "packaging_recipe": {
       "source_sha": "b46451df116eebaa687ee65322f6a4b12864b5c9",
       "patch": "ci/recipes/wxgraphic/package.patch",
-      "sha256": "93ba865726efca8adfca310e26e95bf794d0c34748272af8b92c73e101fb3750",
+      "sha256": "48258597b1fa674422d3f193afd45905b75febae4f37c7a6467eb271a0946a17",
       "changes": [
-        "Supply Apache-2.0 full license for bundled Open Sans fonts, based on the actual font name-table license records; preserve font binaries and embedded notices."
+        "Install the existing Apache font license and NOTICE alongside the bundled fonts; dated installer-only repair 0.6.8.post20261022. All other source, font and license bytes remain unchanged."
       ]
     },
     "license": "GPL-2.0-or-later AND GPL-3.0-only",
@@ -2066,12 +2083,12 @@
       "https://github.com/glennmckechnie/weewx-WXgraphic/blob/b46451df116eebaa687ee65322f6a4b12864b5c9/skins/WXgraphic/license.txt"
     ],
     "test_sha256": {
-      "ci/project_tests/weewx-WXgraphic/test_payload.py": "c04965ac5ab372c0ed9d62698fb7b4d56795c6bf6695e5b5346c31a071562477"
+      "ci/project_tests/weewx-WXgraphic/test_payload.py": "8a22bbe29ea59973c0835715e412de77680e8570072e5b05c6e9b8ea592d46a9"
     },
     "archive": {
-      "url": "https://github.com/weewx-packages/catalog/releases/download/wxgraphic/v0.6.8/wxgraphic-0.6.8.tar.gz",
+      "url": "https://github.com/weewx-packages/catalog/releases/download/wxgraphic/v0.6.8.post20261022/wxgraphic-0.6.8.post20261022.tar.gz",
       "format": "tar.gz",
-      "sha256": "d972b5839f8ecf0731287cfb47cee50e01d66d690baa441e36989ad6732d3c90"
+      "sha256": "61c38e441c36ec91941db4226af23eb97e75989f78d79775e31cdb41c32349a5"
     }
   },
   "aggregated-values": {

@@ -1,4 +1,4 @@
-"""Render the installed WXgraphic skin against a local SQLite archive."""
+"""Render WXgraphic and retain font terms through installation and report copying."""
 
 import importlib.util
 import logging
@@ -7,11 +7,23 @@ import sys
 from types import SimpleNamespace
 
 import configobj
+import pytest
 import weecfg
 import weewx
 import weewx.manager
 import weewx.reportengine
 import weewx.station
+
+
+FONT_TERMS = ('LICENSE-Apache-2.0.txt', 'NOTICE.txt')
+
+
+@pytest.mark.parametrize('name', FONT_TERMS)
+def test_font_terms_are_installed(payload, station, name):
+    expected = (payload / 'skins/WXgraphic/font' / name).read_bytes()
+    installed = station / 'skins/WXgraphic/font' / name
+    assert installed.is_file(), str(installed)
+    assert installed.read_bytes() == expected
 
 
 def test_station_skin_report_and_searchlist(payload, station, caplog, tmp_path):
@@ -49,3 +61,10 @@ def test_station_skin_report_and_searchlist(payload, station, caplog, tmp_path):
     assert fields[1] == '01/01/24'
     assert fields[2] == '32.0'
     assert fields[9:11] == ['0.0', 'N']
+    for name in FONT_TERMS:
+        expected = (payload / 'skins/WXgraphic/font' / name).read_bytes()
+        installed = station / 'skins/WXgraphic/font' / name
+        generated = output / 'font' / name
+        assert installed.read_bytes() == expected
+        assert generated.is_file(), str(generated)
+        assert generated.read_bytes() == expected

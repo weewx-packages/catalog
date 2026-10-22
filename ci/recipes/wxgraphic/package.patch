@@ -1,4 +1,29 @@
---- a/skins/WXgraphic/font/LICENSE-Apache-2.0.txt
+--- a/install.py
++++ b/install.py
+@@ -1,3 +1,4 @@
++# 2026-10-22 weewx-packages: Install bundled font license and notice with the skin.
+ # Installer for weewx-wxgraphic
+ # Distributed under the terms of the GNU Public License (GPLv3)
+ # Copyright 2018 - 2020 by Glenn McKechnie
+@@ -20,7 +21,7 @@
+     def __init__(self):
+ 
+         super(WXgraphicInstaller, self).__init__(
+-            version='0.6.8',
++            version='0.6.8.post20261022',
+             name='wxgraphic',
+             description='Weather Graphic image generator via a php'
+                         ' script',
+@@ -70,6 +71,8 @@
+                     'skins/WXgraphic/index.php',
+                     'skins/WXgraphic/font/OpenSans-Bold.ttf',
+                     'skins/WXgraphic/font/index.html',
++                    'skins/WXgraphic/font/LICENSE-Apache-2.0.txt',
++                    'skins/WXgraphic/font/NOTICE.txt',
+                     'skins/WXgraphic/font/OpenSans-Regular.ttf',
+                     'skins/WXgraphic/font/OpenSans.woff',
+                     'skins/WXgraphic/icons/index.html',
+--- /dev/null
 +++ b/skins/WXgraphic/font/LICENSE-Apache-2.0.txt
 @@ -0,0 +1,202 @@
 +
@@ -203,7 +228,7 @@
 +   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 +   See the License for the specific language governing permissions and
 +   limitations under the License.
---- a/skins/WXgraphic/font/NOTICE.txt
+--- /dev/null
 +++ b/skins/WXgraphic/font/NOTICE.txt
 @@ -0,0 +1,4 @@
 +Open Sans Regular and Bold: Digitized data copyright © 2010-2011, Google Corporation.

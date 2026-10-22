@@ -91,8 +91,9 @@ credentials. Prerequisite setup failures are infrastructure errors.
 
 Before importing, project checks compare every Python file declared by the
 installer with the released bytes, using the core's actual destination mapping.
-This rejects an importable but altered installed runtime. The import subprocess
-uses only the station's `bin` directory on `PYTHONPATH`.
+The same step rejects destinations outside `bin/user` and `skins`, matching the
+repository client's managed roots. This rejects an importable but altered
+installed runtime. The import subprocess uses only the station's `bin` directory on `PYTHONPATH`.
 For modules that cannot import on the runner's hardware, use `imports: []` and
 import the real payload inside functional tests, replacing only the hardware
 boundary. This does not count as physical device validation.
