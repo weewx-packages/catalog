@@ -53,17 +53,18 @@ def github(path, data=None, method=None):
     return json.loads(result.stdout)
 
 
-def latest_release(package):
-    """Select the newest non-yanked stable release, independent of array order.
+def latest_release(package, pre=False):
+    """Select the newest non-yanked release under an explicit prerelease policy.
 
     Args:
         package (dict): A catalog package with its releases.
+        pre (bool): Include prereleases. Default is False.
 
     Returns:
         dict: The selected release.
     """
     return max((r for r in package['releases']
-                if not r.get('yanked') and not Version(r['version']).is_prerelease),
+                if not r.get('yanked') and (pre or not Version(r['version']).is_prerelease)),
                key=lambda r: Version(r['version']))
 
 
@@ -89,7 +90,7 @@ def matrix(catalog, checks, external=None, selected=None):
     Args:
         catalog (dict): The published package catalog.
         checks (dict): Test source, imports and permitted skips by package ID.
-        external (dict|None): Non-extension projects with a release and check_profile.
+        external (dict|None): Non-catalog projects with a release and check_profile.
         selected (set[str]|None): Package IDs to run, or None for all projects.
 
     Returns:
@@ -101,12 +102,15 @@ def matrix(catalog, checks, external=None, selected=None):
     package_ids = [p['id'] for p in catalog['packages']]
     if len(set(package_ids)) != len(package_ids) or set(package_ids) != set(checks):
         raise ValueError('Every catalog package needs exactly one entry in ci/packages.json')
+    for package in catalog['packages']:
+        if any(Version(release['version']).local for release in package['releases']):
+            raise ValueError('Catalog versions must not contain local version labels: ' + package['id'])
     external = external or {}
     if set(external) & set(checks):
         raise ValueError('External project IDs must not collide with catalog packages')
     packages = catalog['packages'] + [dict(id=name, installer_name=name, releases=[item['release']])
                                       for name, item in external.items()]
-    checks = dict(checks, **{name: dict(item['check_profile'], kind='external')
+    checks = dict(checks, **{name: dict(item['check_profile'], kind=item['check_profile'].get('kind', 'external'))
                             for name, item in external.items()})
     upstream = {branch: revision(WEEWX_REPOSITORY, branch)
                 for branch in BRANCHES}
@@ -114,14 +118,23 @@ def matrix(catalog, checks, external=None, selected=None):
     for package in packages:
         if selected is not None and package['id'] not in selected:
             continue
-        release = latest_release(package)
         check = checks[package['id']]
+        release = (external[package['id']]['release'] if package['id'] in external
+                   else latest_release(package, check.get('allow_prereleases', False)))
         system_packages(check)
         for dependency in check.get('pip_packages', []):
             if canonicalize_name(Requirement(dependency).name) == 'weewx':
                 raise ValueError('Package dependencies must not replace the WeeWX checkout')
         ref = check['ref'].format(version=release['version'])
         source_sha = revision(check['repository'], ref)
+        if check.get('source_archive'):
+            # Source-only checks follow a branch, so their archive and checksum
+            # must be resolved together with that branch's immutable commit.
+            url = 'https://github.com/%s/archive/%s.zip' % (check['repository'], source_sha)
+            with urllib.request.urlopen(url, timeout=60) as response:
+                digest = hashlib.sha256(response.read()).hexdigest()
+            release = dict(release, version='source ' + source_sha[:12],
+                           archive=dict(url=url, format='zip', sha256=digest))
         for branch, weewx_sha in upstream.items():
             pythons = check.get('pythons', PYTHONS)
             if not pythons or not set(pythons).issubset(PYTHONS):
@@ -237,7 +250,7 @@ def test_failures(report, allowed_skips):
     return failures
 
 
-def command(args, cwd=None, env=None, input_text=None):
+def command(args, cwd=None, env=None, input_text=None, timeout=300):
     """Run a test step with its output in the workflow log.
 
     Args:
@@ -245,9 +258,10 @@ def command(args, cwd=None, env=None, input_text=None):
         cwd (Path|None): Working directory, or the current directory.
         env (dict|None): Process environment, or the inherited environment.
         input_text (str|None): Explicit fixture answers for an interactive installer.
+        timeout (int): Maximum runtime in seconds. Default is 300.
     """
     print('+ ' + ' '.join(args), flush=True)
-    subprocess.run(args, cwd=cwd, env=env, input=input_text, text=True, check=True, timeout=300)
+    subprocess.run(args, cwd=cwd, env=env, input=input_text, text=True, check=True, timeout=timeout)
 
 
 def run(case, source, work):
@@ -281,7 +295,7 @@ def run(case, source, work):
             archive.write_bytes(response.read())
         if hashlib.sha256(archive.read_bytes()).hexdigest() != release['archive']['sha256'].lower():
             raise ValueError('Release archive SHA-256 differs from the catalog')
-        external = case.get('kind') == 'external'
+        external = case.get('kind') in ('external', 'source')
         payload = unpack(archive, work / 'payload', require_installer=not external)
         # Tests come from the release's source revision. Runtime files always
         # come from the published archive, so a broken release cannot be hidden
@@ -293,7 +307,7 @@ def run(case, source, work):
         if not SpecifierSet(release['requires_python']).contains(platform.python_version()):
             raise ValueError('Python %s is outside %s' %
                              (platform.python_version(), release['requires_python']))
-        if not external and not SpecifierSet(release['requires_weewx']).contains(weewx.__version__, prereleases=True):
+        if case.get('kind') != 'external' and not SpecifierSet(release['requires_weewx']).contains(weewx.__version__, prereleases=True):
             raise ValueError('WeeWX %s is outside %s' %
                              (weewx.__version__, release['requires_weewx']))
         station = work / 'station'
@@ -326,6 +340,10 @@ def run(case, source, work):
                 command(install, input_text=case['install_input'], env=env)
             else:
                 command(install, env=env)
+            if case.get('tests_path'):
+                phase = 'installed files'
+                command([sys.executable, str(ROOT / 'ci/installed_files.py'),
+                         str(payload), str(station)], cwd=payload, env=env)
         # Import in another process so the suite cannot reuse a source module
         # already loaded by this installation check.
         phase = 'imports'
@@ -349,8 +367,9 @@ def run(case, source, work):
             env['PYTHONPATH'] = str(payload / 'bin')
         report = work / 'junit.xml'
         try:
+            options = {'timeout': case['test_timeout']} if 'test_timeout' in case else {}
             command([sys.executable, '-m', 'pytest', '-q', '-ra', tests,
-                     '--junitxml=' + str(report)], cwd=payload, env=env)
+                     '--junitxml=' + str(report)], cwd=payload, env=env, **options)
         finally:
             if not report.is_file():
                 raise ValueError('No JUnit report was produced')

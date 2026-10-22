@@ -1,0 +1,36 @@
+--- a/install.py
++++ b/install.py
+@@ -1,3 +1,4 @@
++# 2026-10-22 weewx-packages: Correct APRS humidity field width and encoding, 100% becomes h00.
+ from setup import ExtensionInstaller
+ 
+ 
+@@ -8,7 +9,7 @@
+ class WeepeInstaller(ExtensionInstaller):
+     def __init__(self):
+         super().__init__(
+-            version='2.0.2',
++            version='2.0.2.post1',
+             name='weepe',
+             description='Sends APRS formatted weather packets over a transport layer',
+             author='Mark White (W4KUS)',
+--- a/bin/user/weepe.py
++++ b/bin/user/weepe.py
+@@ -1,3 +1,4 @@
++# 2026-10-22 weewx-packages: Correct APRS humidity field width and encoding, 100% becomes h00.
+ # Copyright (c) 2026 John Mark White -- US Amateur Radio License: W4KUS
+ #
+ # Licensed under the MIT License - see LICENSE file for details.
+@@ -431,8 +432,10 @@
+         if "outHumidity" in record and record['outHumidity'] is not None:
+             # APRS defines zero to be 100%
+             percent = round(record['outHumidity'])
+-            if percent == 0:
+-                percent = 100
++            if percent >= 100:
++                percent = 0
++            else:
++                percent = max(1, percent)
+             ret += f"h{percent:02d}"
+ 
+         return ret

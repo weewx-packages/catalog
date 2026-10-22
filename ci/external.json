@@ -1,0 +1,149 @@
+{
+  "pisensehat": {
+    "release": {
+      "version": "0.1",
+      "requires_python": ">=3.10,<3.15",
+      "requires_weewx": ">=5.5,<6",
+      "archive": {
+        "url": "https://github.com/weewx-packages/weewx-PiSenseHat/archive/70bcc9b31f8e914e773b762dc345f28d849f54a6.zip",
+        "format": "zip",
+        "sha256": "582d5eaa76b1c16f1db01d86b334fda8c6e4c1130cf32926f423483c4b6c1d82"
+      }
+    },
+    "check_profile": {
+      "repository": "weewx-packages/weewx-PiSenseHat",
+      "ref": "70bcc9b31f8e914e773b762dc345f28d849f54a6",
+      "imports": [],
+      "allowed_skips": [],
+      "tests_path": "ci/project_tests/weewx-PiSenseHat",
+      "pip_packages": [
+        "smbus==1.1.post2"
+      ],
+      "kind": "source",
+      "coverage": "component",
+      "source_archive": true
+    },
+    "limitations": [
+      "The source/component CI covers real LPS22 register decoding and LOOP unit conversion only.",
+      "Original installer imports PiSense at install time and fails at RPi.GPIO on this x86 host. Original installer name contains spaces.",
+      "Runtime requires ./bin/user/SHTC3.so with init, SHTC3_Read_TH and SHTC3_Read_RH. Upstream has no such library or matching native sources.",
+      "Current vendor demo was downloaded and inspected. Its Raspberry Pi C Makefiles build executables, not the required ABI. Local build fails on absent bcm2835.h; the inspected SHTC3 components have no explicit redistribution grant.",
+      "No SHTC3 dummy was created, no native vendor file is included in any candidate archive, and no complete PiSense hardware validation is claimed."
+    ]
+  },
+  "weather-app": {
+    "release": {
+      "version": "2.1.26.post20261022+g0e6b70572cc3",
+      "requires_python": ">=3.10,<3.15",
+      "archive": {
+        "url": "https://github.com/weewx-packages/catalog/releases/download/weather-app/v2.1.26.post20261022%2Bg0e6b70572cc3/weather-app-2.1.26.post20261022%2Bg0e6b70572cc3.tar.gz",
+        "format": "tar.gz",
+        "sha256": "a0544dcf4bc1aa1a848cb6a09a047e06360559b9980d118ca83be41e36b5c4a4"
+      }
+    },
+    "check_profile": {
+      "repository": "weewx-packages/weewx-weather-app",
+      "ref": "0e6b70572cc31577ded3d1bcadd647121e9b67f9",
+      "imports": [],
+      "allowed_skips": [],
+      "pip_packages": [],
+      "tests_path": "ci/project_tests/weewx-weather-app",
+      "system_packages": [
+        "openjdk-21-jdk-headless"
+      ],
+      "test_timeout": 900,
+      "pythons": [
+        "3.14"
+      ],
+      "kind": "external"
+    },
+    "limitations": [
+      "Verified on official WeeWX master 2202a2f873353d926d69814570b63b0a195f6d22 and development 06b5ffb3335417132d7527e738e7eea9769c46bf with Python 3.10.22 and 3.14.4.",
+      "Debug APK compiled and inspected; no emulator or physical Android device run claimed.",
+      "Upstream testDebugUnitTest has no source tests; project CI separately compiles and executes the real Gson forecast parser."
+    ]
+  },
+  "weathericons": {
+    "release": {
+      "version": "0.0.0.post20261022+gc5318a0a23ef",
+      "requires_python": ">=3.10,<3.15",
+      "archive": {
+        "url": "https://github.com/weewx-packages/catalog/releases/download/weathericons/v0.0.0.post20261022%2Bgc5318a0a23ef/weathericons-0.0.0.post20261022%2Bgc5318a0a23ef.tar.gz",
+        "format": "tar.gz",
+        "sha256": "bfd109b6729b9daed7905f98df95592d02ca7cb075f6ced082e531a3e5ec67a4"
+      }
+    },
+    "check_profile": {
+      "repository": "weewx-packages/weewx-weathericons",
+      "ref": "c5318a0a23ef43bb5277ecadca90c91c49432968",
+      "imports": [],
+      "allowed_skips": [],
+      "pip_packages": [],
+      "tests_path": "ci/project_tests/weewx-weathericons",
+      "kind": "external"
+    },
+    "limitations": [
+      "Verified on official WeeWX master 2202a2f873353d926d69814570b63b0a195f6d22 and development 06b5ffb3335417132d7527e738e7eea9769c46bf with Python 3.10.22 and 3.14.4."
+    ]
+  },
+  "mqtt-publish-source": {
+    "release": {
+      "version": "source",
+      "requires_python": ">=3.10,<3.15",
+      "archive": {
+        "url": "https://github.com/weewx-packages/weewx-mqtt-publish/archive/df31bc4207eeb117100c94933d1c7a8ac47fcb75.zip",
+        "format": "zip",
+        "sha256": "35f6bdaed5f8dde967247a8bcd4a64f5a03594dbc73fe9ab5826c4fc3ef32ebd"
+      },
+      "requires_weewx": ">=5.5.2,<6",
+      "restart_required": true
+    },
+    "check_profile": {
+      "repository": "weewx-packages/weewx-mqtt-publish",
+      "ref": "master",
+      "imports": [
+        "user.mqttaggregatevalues",
+        "user.mqttarchivevalues",
+        "user.mqttconfigha",
+        "user.mqtthaconfig",
+        "user.mqttpublish"
+      ],
+      "allowed_skips": [],
+      "pip_packages": [
+        "paho-mqtt>=2,<3",
+        "mock",
+        "jsonschema"
+      ],
+      "tests_path": "ci/project_tests/weewx-mqtt-publish",
+      "source_archive": true,
+      "kind": "project",
+      "coverage": "source"
+    }
+  },
+  "wp-weewx": {
+    "release": {
+      "version": "0.5.2",
+      "requires_python": ">=3.10,<3.15",
+      "archive": {
+        "url": "https://github.com/weewx-packages/catalog/releases/download/wp-weewx/v0.5.2/wp-weewx-0.5.2.tar.gz",
+        "format": "tar.gz",
+        "sha256": "90e2224525b182382db211d2d88a07e18fdea14b750dcfe8f743e4200a81d73b"
+      }
+    },
+    "check_profile": {
+      "repository": "weewx-packages/wp-weewx",
+      "ref": "47540be593d51732f2793c7c91a0e1a80ec4f8bb",
+      "imports": [],
+      "allowed_skips": [],
+      "pip_packages": [],
+      "tests_path": "ci/project_tests/wp-weewx",
+      "system_packages": [
+        "php-cli"
+      ],
+      "kind": "external"
+    },
+    "limitations": [
+      "External WordPress plugin, not a WeeWX extension. Exact plugin tree is installed into wp-content/plugins. HTTP/options/cache boundaries use local WordPress API fixtures; full WordPress activation/database integration is not claimed."
+    ]
+  }
+}

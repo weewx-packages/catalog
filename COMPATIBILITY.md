@@ -73,7 +73,9 @@ Add an entry keyed by the catalog package ID to `ci/packages.json`. Set
 `repository` to the GitHub repository containing its pytest suite, `ref` to a
 source ref such as `v{version}`, `imports` to the installed Python modules to
 check, and `allowed_skips` to an empty list unless a specific optional feature
-is unavailable.
+is unavailable. For a project with only prereleases, set `allow_prereleases`
+to true. Its catalog version stays a prerelease and installation requires
+`weectl extension install <package> --pre`.
 
 By default, the source revision supplies `tests/`. For a suite maintained in this
 catalog, set `tests_path` to `ci/project_tests/<repository>`. Its `payload`,
@@ -87,7 +89,10 @@ rejected. An `install_prerequisites` list pins other extensions by repository
 and full `sha`; `install_input` supplies explicit installer answers without
 credentials. Prerequisite setup failures are infrastructure errors.
 
-The import subprocess uses only the station's `bin` directory on `PYTHONPATH`.
+Before importing, project checks compare every Python file declared by the
+installer with the released bytes, using the core's actual destination mapping.
+This rejects an importable but altered installed runtime. The import subprocess
+uses only the station's `bin` directory on `PYTHONPATH`.
 For modules that cannot import on the runner's hardware, use `imports: []` and
 import the real payload inside functional tests, replacing only the hardware
 boundary. This does not count as physical device validation.
@@ -96,10 +101,15 @@ Non-extension projects, such as a WordPress plugin or standalone rendering tool,
 use `ci/external.json`, keyed by ID, with `release` and `check_profile` fields.
 Their profiles use `kind: external` and the same project-test fixtures. They
 receive their own checks without a WeeWX installer or an installable catalog
-entry.
+entry. A blocked extension may use `kind: source` with `coverage: component`
+for independent payload behavior. That profile skips installation; the failed
+installation and missing prerequisites remain documented separately.
 
-Every catalog package needs a check. CI rejects missing entries so new packages
-cannot silently escape testing. Archive URLs can point to any supported host;
+Every catalog package needs a check. `ci/project_coverage.py` also matches all
+tracked sources to release, external or component profiles before planning.
+CI rejects missing entries so projects cannot silently escape testing.
+[Package provenance](ci/package-provenance.json) records exact source revisions,
+archive and patch hashes, test files and declared limits. Archive URLs can point to any supported host;
 the test source is configured separately from the download.
 
 Run `just test-ci` to test the automation locally. It needs Python 3.10 or later,
@@ -223,5 +233,13 @@ Source profiles may name `install_prerequisites` as repository/SHA pairs. Those
 extensions are installed first in the same disposable station, and their exact
 refs appear in the results. Prerequisite failures remain infrastructure errors.
 An `install_skip_reason` records an unavailable hardware platform after syntax
-checks; it never counts as a successful installation. PiSenseHat needs a
-Raspberry Pi profile because its installer imports platform-specific modules.
+checks; it never counts as a successful installation. PiSenseHat has only component coverage: its installer imports platform-specific
+modules and the required SHTC3 native ABI has no matching library or buildable
+source in the inspected archives. Its LPS22 register and LOOP conversion checks
+do not imply a working complete device installation.
+
+A non-catalog source profile can set `source_archive: true` and a branch in
+`ref`. The planner resolves its commit and archive checksum together before
+starting jobs. This follows current source independently of a stable catalog
+release. Use `coverage: source` for full source checks and `coverage: component`
+for a limited payload check; these labels appear in failure reports.

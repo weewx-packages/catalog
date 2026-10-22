@@ -68,6 +68,99 @@ records from different driver versions.
 | [JSON reports](https://github.com/weewx-packages/weewx-json) | `json` | Render current and historical weather observations as JSON with optional sensor fields. |
 | [BME280 data service](https://github.com/weewx-packages/bme280wx) | `bme280wx` | Add temperature, humidity and pressure readings from an I2C BME280 sensor to LOOP packets. |
 | [Niculskin](https://github.com/weewx-packages/niculskin) | `niculskin` | Render translated weather reports, historical tables and weather graphs. |
+| [weewx-airlink](https://github.com/weewx-packages/weewx-airlink) | `airlink` | Record air quality as provided by a Davis AirLink sensor. |
+| [weewx-airlink-extended](https://github.com/weewx-packages/weewx-airlink-extended) | `airlink-extended` | Record air quality as provided by a Davis AirLink sensor. |
+| [weewx-as3935](https://github.com/weewx-packages/weewx-as3935) | `as3935` | Capture lightning data from AS3935 hardware |
+| [weewx-atmocom-udp](https://github.com/weewx-packages/weewx-atmocom-udp) | `atmocom-udp` | Capture data from Atmocom interceptor via UDP broadcast packets of Weather Underground updates |
+| [weewx-cm1](https://github.com/weewx-packages/weewx-cm1) | `cm1` | Collect data from Dyacon weather station using CM1 |
+| [weewx-columbia-ms](https://github.com/weewx-packages/weewx-columbia-ms) | `columbia-ms` | Capture weather data from a Columbia Weather Systems MicroServer |
+| [weewx-davisconsoleapi](https://github.com/weewx-packages/weewx-davisconsoleapi) | `davisconsoleapi` | Install davisconsoleapi driver |
+| [weewx-ecowittGateway](https://github.com/weewx-packages/weewx-ecowittGateway) | `ecowittgateway` | WeeWX driver/service for Ecowitt gateways and consoles (local HTTP API, or TCP API for the GW1000). |
+| [weewx-envoy](https://github.com/weewx-packages/weewx-envoy) | `envoy` | Capture data from Enphase Envoy |
+| [weewx-gill-metconnect](https://github.com/weewx-packages/weewx-gill-metconnect) | `gill-metconnect` | WeewX driver for Gill MetConnect Stations. |
+| [weewx-id5001](https://github.com/weewx-packages/weewx-id5001) | `id5001` | Install id5001 driver |
+| [weewx-interceptor](https://github.com/weewx-packages/weewx-interceptor) | `interceptor` | Capture weather data from HTTP requests |
+| [weewx-ip100](https://github.com/weewx-packages/weewx-ip100) | `ip100` | Capture weather data from Rainwise IP-100 |
+| [weewx-luxtronik](https://github.com/weewx-packages/weewx-luxtronik) | `luxtronik` | Augment station data with data from Luxtronik heatpump controller. |
+| [weewx-maxbotix](https://github.com/weewx-packages/weewx-maxbotix) | `maxbotix` | driver for maxbotix range-finding sensors |
+| [weewx-modbus-tcp](https://github.com/weewx-packages/weewx-modbus-tcp) | `modbus-tcp` | ModbusTcp driver for weewx. |
+| [weewx-netatmo](https://github.com/weewx-packages/weewx-netatmo) | `netatmo` | Driver for netatmo weather stations. |
+| [weewx-nmea-xdr](https://github.com/weewx-packages/weewx-nmea-xdr) | `nmea-xdr` | Augment WeeWX records with data NMEA0183 XDR sentences. |
+| [weewx-owfs](https://github.com/weewx-packages/weewx-owfs) | `owfs` | driver for one-wire devices connected via owfs |
+| [weewx-photovoltaics](https://github.com/weewx-packages/weewx-photovoltaics) | `photovoltaics` | Service to retrieve data from PV system E3/DC |
+| [weewx-precipmeter](https://github.com/weewx-packages/weewx-precipmeter) | `precipmeter` | WeeWX-Service to fetch and process disdrometer data |
+| [weewx-reservoir](https://github.com/weewx-packages/weewx-reservoir) | `reservoir` | Add USGS reservoir level and precipitation data to WeeWX archive records |
+| [weewx-snmp](https://github.com/weewx-packages/weewx-snmp) | `snmp` | fetch data by SNMP |
+| [weewx-tempest-ws](https://github.com/weewx-packages/weewx-tempest-ws) | `tempest-ws` | Weatherflow Tempest Websocket Driver installer |
+| [weewx-tfrc](https://github.com/weewx-packages/weewx-tfrc) | `tfrc` | Capture data from tfrc |
+| [weewx-ultimate-push](https://github.com/weewx-packages/weewx-ultimate-push) | `ultimate-push` | Collect data from weather hardware that uploads to a custom server: Ecowitt, Weather Underground, Ambient Weather, WeatherFlow, Acurite and LaCrosse. |
+| [weewx-uradmon](https://github.com/weewx-packages/weewx-uradmon) | `uradmon` | A service that collects data and generatesa weewx report that displays the valuesreturned from a uradmonitor unithttps://www.uradmonitor.com |
+| [weewx-vedirect](https://github.com/weewx-packages/weewx-vedirect) | `vedirect` | Collect data from Victron VEDirect devices |
+| [weewx-wmr89](https://github.com/weewx-packages/weewx-wmr89) | `wmr89` | Driver for the Oregon Scientific WMR89 |
+| [weewx-ws6in1](https://github.com/weewx-packages/weewx-ws6in1) | `ws6in1` | Collect data from WS6in1 PC connected console |
+| [weewx-xtide](https://github.com/weewx-packages/weewx-xtide) | `xtide` | Fetch Tide Forecasts. |
+| [DWD](https://github.com/weewx-packages/weewx-DWD) | `dwd` | Retrieve DWD observations, forecasts and warnings. Catalog snapshot with station-local commands. |
+| [weewx-GTS](https://github.com/weewx-packages/weewx-GTS) | `gts` | Calculate growing degree sums, local solar day boundaries and pressure corrections. |
+| [airQ](https://github.com/weewx-packages/weewx-airQ) | `airq` | Read air-Q environmental sensors through encrypted HTTP replies. Prerelease. |
+| [airgradient](https://github.com/weewx-packages/weewx-airgradient) | `airgradient` | Read AirGradient air quality sensors and calculate particulate AQI. |
+| [amphibian](https://github.com/weewx-packages/weewx-amphibian) | `amphibian` | Display weather history and charts in the Amphibian skin. |
+| [weewx-aqi-xtype](https://github.com/weewx-packages/weewx-aqi-xtype) | `aqi-xtype` | Calculate EPA air quality indices and NowCast through WeeWX XTypes. Prerelease. |
+| [carbonsteel-series](https://github.com/weewx-packages/weewx-carbonsteel-series) | `carbonsteel-series` | Display weather gauges with CarbonSteelSeries and publish converted realtime observations. |
+| [weewx-climate](https://github.com/weewx-packages/weewx-climate) | `climate` | Download and query historical ACIS climate statistics. |
+| [Conditions](https://github.com/weewx-packages/weewx-conditions) | `conditions` | Generate JSON weather summaries, current observations and archive datasets. |
+| [Ecowitt Console Emulator](https://github.com/weewx-packages/weewx-ecowitt_console_emulator) | `ecowitt-console-emulator` | Display an Ecowitt console dashboard and store its weather observations. |
+| [exfoliation](https://github.com/weewx-packages/weewx-exfoliation) | `exfoliation` | Display weather reports with the Exfoliation skin. |
+| [filepile](https://github.com/weewx-packages/weewx-filepile) | `filepile` | Merge named readings from a text file into archive records with unit conversion. |
+| [forecasting](https://github.com/weewx-packages/weewx-forecast) | `forecast` | Generate Zambretti forecasts and retrieve forecast data from weather services. |
+| [jas](https://github.com/weewx-packages/weewx-jas) | `jas` | Generate interactive weather charts and pages with the JAS skin. Prerelease. |
+| [weewx-meteoalarm](https://github.com/weewx-packages/weewx-meteoalarm) | `meteoalarm` | Read CAP weather warning feeds and generate local warning reports. |
+| [Metrics](https://github.com/weewx-packages/weewx-metrics) | `metrics` | Generate Prometheus metrics from WeeWX weather observations. |
+| [MQTTSubscribe](https://github.com/weewx-packages/weewx-mqtt-subscribe) | `mqtt-subscribe` | Collect MQTT observations with field conversion, aggregation and expiring caches. Prerelease. |
+| [weewx-nws](https://github.com/weewx-packages/weewx-nws) | `nws` | Retrieve NWS forecasts and warnings for local weather reports. |
+| [OpenWeather API](https://github.com/weewx-packages/weewx-openweather_API) | `openweather-api` | Retrieve configured weather and air-quality fields from OpenWeather APIs. |
+| [purple](https://github.com/weewx-packages/weewx-purple) | `purple` | Read PurpleAir measurements and calculate air quality indices. |
+| [WeeWX-WD](https://github.com/weewx-packages/weewx-saratoga) | `saratoga` | Generate Saratoga weather data and calculate derived observations. |
+| [sds011](https://github.com/weewx-packages/weewx-sds011) | `sds011` | Read particulate measurements from an SDS011 serial sensor. |
+| [SetProcessName](https://github.com/weewx-packages/weewx-setprocessname) | `setprocessname` | Set the WeeWX daemon process title from configuration. |
+| [Since Last Archive Accumulator](https://github.com/weewx-packages/weewx-since-last-archive-accumulator) | `since-last-archive-accumulator` | Accumulate rain and evapotranspiration between archive records. |
+| [SQL](https://github.com/weewx-packages/weewx-sqlupload) | `sqlupload` | Split generated HTML and publish report data through SQL-backed PHP pages. |
+| [SQM](https://github.com/weewx-packages/weewx-sqm) | `sqm` | Read SQM-LE TCP sky brightness measurements and calculate derived sky metrics. |
+| [weewx-weatherboard](https://github.com/weewx-packages/weewx-weatherboard) | `weatherboard` | Display live weather observations with the WeatherBoard skin. |
+| [weewx-xaggs](https://github.com/weewx-packages/weewx-xaggs) | `xaggs` | Calculate historical and threshold aggregations from daily weather summaries. |
+| [WXgraphic](https://github.com/weewx-packages/weewx-WXgraphic) | `wxgraphic` | Weather Graphic image generator via a php script |
+| [Aggregated Values](https://github.com/weewx-packages/weewx-aggregated-values) | `aggregated-values` | Calculate aggregated values that other extensions can then use without duplicating functionality and database lookups |
+| [aprs](https://github.com/weewx-packages/weewx-aprs) | `aprs` | Write archive data in APRS positionless format. |
+| [weewx-celestial](https://github.com/weewx-packages/weewx-celestial) | `celestial` | A live celestial report driven by weewx-loopdata almanac fields. |
+| [weewx-easter-almanac-example](https://github.com/weewx-packages/weewx-easter-almanac-example) | `easter-almanac-example` | almanac extension example that calculates easter date |
+| [emoncms](https://github.com/weewx-packages/weewx-emoncms) | `emoncms` | Upload weather data to EmonCMS. |
+| [Healthchecks](https://github.com/weewx-packages/weewx-healthchecks) | `healthchecks` | Monitor WeeWX using Healthchecks.io. |
+| [import-wlk](https://github.com/weewx-packages/weewx-import-wlk) | `import-wlk` | Pseudo-driver for importing WLK files |
+| [knx](https://github.com/weewx-packages/weewx-knx) | `knx` | Write weather information to knx bus |
+| [loopdata](https://github.com/weewx-packages/weewx-loopdata) | `loopdata` | Loop statistics for real time reporting. |
+| [MQTTConfigHA](https://github.com/weewx-packages/weewx-mqtt-publish) | `mqtt-publish` | Publish WeeWX data to a MQTT broker. |
+| [MQTTPublishV2](https://github.com/weewx-packages/weewx-mqtt-publish-v2) | `mqtt-publish-v2` | Publish WeeWX data to a MQTT broker. |
+| [notifier](https://github.com/weewx-packages/weewx-notify) | `notify` | Notification to remote server Alternative installations: shares installer Notify and user/notify.py with Pushover; do not install together. |
+| [grid voltage monitoring project uploader](https://github.com/weewx-packages/weewx-ortsnetz-auslastung) | `ortsnetz-auslastung` | upload grid voltages and frequency to the Ortsnetz-Auslastung project |
+| [weewx-postgresql](https://github.com/weewx-packages/weewx-postgresql) | `postgresql` | WeeWX driver for the PostgreSQL database |
+| [pusher](https://github.com/weewx-packages/weewx-pusher) | `pusher` | Send realtime weather data to Pusher. |
+| [Pushover](https://github.com/weewx-packages/weewx-pushover) | `pushover` | Monitor observation values and send alerts. Alternative installations: shares installer Notify and user/notify.py with the webhook Notify extension; do not install together. |
+| [RTSP Image](https://github.com/weewx-packages/weewx-rtsp-image) | `rtsp-image` | Capture still images from RTSP camera feeds using ffmpeg. |
+| [Regionalwetter Sachsen-Anhalt](https://github.com/weewx-packages/weewx-rwsa) | `rwsa` | Upload weather data to Regionalwetter Sachsen-Anhalt. |
+| [sftp (continuation fork)](https://github.com/weewx-packages/weewx-sftp) | `sftp` | Upload data using the sftp protocol |
+| [weewx-skyfield](https://github.com/weewx-packages/weewx-skyfield) | `skyfield` | Replaces WeeWX's built-in almanac with a Skyfield based almanac for report generation. |
+| [weewx-skyfield-almanac](https://github.com/weewx-packages/weewx-skyfield-almanac) | `skyfield-almanac` | almanac extension using Skyfield mdule |
+| [weewx-skymap-almanac](https://github.com/weewx-packages/weewx-skymap-almanac) | `skymap-almanac` | almanac extension using Skyfield mdule |
+| [Skyvex](https://github.com/weewx-packages/weewx-skyvex) | `skyvex` | Upload weather data to Skyvex (https://skyvex.org). |
+| [weewx-svg2png](https://github.com/weewx-packages/weewx-svg2png) | `svg2png` | convert SVG to PNG files |
+| [thingspeak](https://github.com/weewx-packages/weewx-thingspeak) | `thingspeak` | Upload weather data to ThingSpeak. |
+| [weatherbug](https://github.com/weewx-packages/weewx-wbug) | `wbug` | Upload weather data to WeatherBug. |
+| [weepe](https://github.com/weewx-packages/weewx-weepe) | `weepe` | Sends APRS formatted weather packets over a transport layer |
+| [wetter](https://github.com/weewx-packages/weewx-wetter) | `wetter` | Upload weather data to wetter.com. |
+| [windfinder](https://github.com/weewx-packages/weewx-windfinder) | `windfinder` | Upload weather data to WindFinder. |
+| [windy](https://github.com/weewx-packages/weewx-windy) | `windy` | Upload weather data to Windy. |
+| [wlip-emulator](https://github.com/weewx-packages/weewx-wlip-emulator) | `wlip-emulator` | WeatherLinkIP Emulator |
+| [Wetternetz Sachsen](https://github.com/weewx-packages/weewx-wns) | `wns` | Upload weather data to WNS. |
+| [wundergroundLike](https://github.com/weewx-packages/weewx-wundergroundlike) | `wundergroundlike` | Post to a custom server_url that uses Weather Underground formatting |
 <!-- packages:end -->
 
 New packages become available through the same registered source when its index

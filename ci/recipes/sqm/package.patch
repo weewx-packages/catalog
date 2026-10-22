@@ -1,0 +1,132 @@
+--- a/dist-template/install.py.template
++++ b/dist-template/install.py.template
+@@ -376,91 +376,28 @@
+ 
+ class SQM_Installer(ExtensionInstaller):
+     def __init__(self):
+-        config = _load_config()
+-        (
+-            cfg_host,
+-            cfg_port,
+-            cfg_poll_interval,
+-            cfg_socket_timeout,
+-            cfg_max_samples,
+-            cfg_max_sample_age,
+-            cfg_ephemeris,
+-            cfg_solar_alt_max,
+-        ) = _get_existing_sqm_config(config)
+-        has_config = any(
+-            value is not None
+-            for value in (
+-                cfg_host,
+-                cfg_port,
+-                cfg_poll_interval,
+-                cfg_socket_timeout,
+-                cfg_max_samples,
+-                cfg_max_sample_age,
+-                cfg_ephemeris,
+-                cfg_solar_alt_max,
+-            )
+-        )
+-
+-        if has_config:
+-            host = cfg_host or "127.0.0.1"
+-            port = int(cfg_port) if cfg_port else 10001
+-            poll_interval = int(cfg_poll_interval) if cfg_poll_interval else 600
+-            socket_timeout = float(cfg_socket_timeout) if cfg_socket_timeout else 2.0
+-            max_samples = int(cfg_max_samples) if cfg_max_samples else 300
+-            try:
+-                max_sample_age = (
+-                    float(cfg_max_sample_age) if cfg_max_sample_age else poll_interval * 3
+-                )
+-            except ValueError:
+-                max_sample_age = poll_interval * 3
+-            ephemeris = cfg_ephemeris or "de421.bsp"
+-            solar_alt_max = float(cfg_solar_alt_max) if cfg_solar_alt_max else -18.0
+-        else:
+-            host = _prompt("SQM-LE host", "127.0.0.1")
+-            port = _prompt_int("SQM-LE port", 10001)
+-            poll_interval = _prompt_int("Poll interval (seconds)", 600)
+-            socket_timeout = _prompt_int("Socket timeout (seconds)", 2)
+-            max_samples = _prompt_int("Max samples per archive interval", 300)
+-            max_sample_age = poll_interval * 3
+-            ephemeris = "de421.bsp"
+-            solar_alt_max = -18.0
+-
+-            if not _test_connection(host, port, socket_timeout):
+-                raise SystemExit("Aborting install: SQM-LE connection test failed.")
+-
+-        if not _require_skyfield(ephemeris):
+-            raise SystemExit("Aborting install: Skyfield test failed.")
+-
+-        _ensure_skyfield_cache_dir()
+-        _update_skins()
+-        _update_archive_schema()
+-
+-        data_services = _merge_data_services(config, "user.sqmle.Service")
+-
+         super(SQM_Installer, self).__init__(
+-            version="__VERSION__",
+-            name="weewx-sqm-le",
++            version="__VERSION__", name="weewx-sqm-le",
+             description="Add SQM-LE (Ethernet) support",
+             author="WeeWX SQM-LE Contributors",
+-            author_email="https://example.invalid/weewx-sqm-le",
+-            config={
+-                "SQM-LE": {
+-                    "host": host,
+-                    "port": port,
+-                    "poll_interval": poll_interval,
+-                    "socket_timeout": float(socket_timeout),
+-                    "max_samples": max_samples,
+-                    "max_sample_age": max_sample_age,
+-                    "ephemeris": ephemeris,
+-                    "skyfield_cache": "/var/lib/weewx/skyfield",
+-                    # Skip polling when sun is above this altitude (degrees)
+-                    "solar_alt_max": solar_alt_max,
+-                },
+-                "Engine": {
+-                    "Services": {
+-                        "data_services": data_services,
+-                    }
+-                },
+-            },
+-            files=[__FILE_PATHS__],
+-        )
++            data_services="user.sqmle.Service",
++            config={"SQM-LE": {"host": "127.0.0.1", "port": 10001,
++                "poll_interval": 600, "socket_timeout": 2.0, "max_samples": 300,
++                "max_sample_age": 1800, "ephemeris": "de421.bsp",
++                "solar_alt_max": -18.0}},
++            files=[__FILE_PATHS__])
++
++    def configure(self, engine):
++        import weewx.manager
++        config = engine.config_dict
++        self["config"]["SQM-LE"]["skyfield_cache"] = os.path.join(
++            config["WEEWX_ROOT"], "archive", "skyfield")
++        if not engine.dry_run:
++            with weewx.manager.open_manager_with_config(
++                    config, "wx_binding", initialize=True) as manager:
++                for field in ("sqm", "sqmTemp", "sqmTime", "nelm", "cdm2", "nsu",
++                              "solarAlt", "lunarAlt", "lunarPhase"):
++                    if field not in manager.sqlkeys:
++                        manager.connection.execute(
++                            "ALTER TABLE %s ADD COLUMN %s REAL" % (manager.table_name, field))
++        return True
+--- a/install.py
++++ b/install.py
+@@ -1,3 +1,4 @@
++# 2026-10-22 weewx-packages: Remove the installer local version label for WeeWX catalog compatibility; source SHA remains in package provenance.
+ # 2026-10-22 weewx-packages: Install into the selected station, extend its SQM schema and defer device/ephemeris access to runtime.
+ import os
+ import socket
+@@ -378,7 +379,7 @@
+ class SQM_Installer(ExtensionInstaller):
+     def __init__(self):
+         super(SQM_Installer, self).__init__(
+-            version="0.1.1.post20261022+gfbd39b640008", name="weewx-sqm-le",
++            version="0.1.1.post20261022", name="weewx-sqm-le",
+             description="Add SQM-LE (Ethernet) support",
+             author="WeeWX SQM-LE Contributors",
+             data_services="user.sqmle.Service",

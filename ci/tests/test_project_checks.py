@@ -106,12 +106,13 @@ def test_central_tests_read_archive_even_with_fixed_checkout_and_no_source_tests
     assert not (work / 'payload/package/tests').exists()
 
 
-def test_external_archive_needs_no_installer_and_never_runs_weectl(project, tmp_path, monkeypatch):
+@pytest.mark.parametrize('kind', ['external', 'source'])
+def test_external_archive_needs_no_installer_and_never_runs_weectl(project, tmp_path, monkeypatch, kind):
     source, case = project
     archive = tmp_path / 'external.zip'
     with zipfile.ZipFile(archive, 'w') as bundle:
         bundle.writestr('package/module.py', 'answer = 42\n')
-    case.update(kind='external', initialize_archive=True)
+    case.update(kind=kind, initialize_archive=True)
     case['release']['archive'].update(url=archive.as_uri(), sha256=hashlib.sha256(archive.read_bytes()).hexdigest())
     real_command = compat.command
 
@@ -147,3 +148,44 @@ def test_project_test_path_cannot_escape_registry(project, tmp_path, monkeypatch
     assert compat.run(case, source, tmp_path / 'work') == 1
     result = json.loads((tmp_path / 'work/result.json').read_text())
     assert any('under ci/project_tests' in detail for detail in result['details'])
+
+
+def test_prerelease_only_package_requires_an_explicit_profile_policy(monkeypatch):
+    package = dict(id='beta', installer_name='beta', releases=[{'version': '0.9b3'}])
+    check = dict(repository='owner/beta', ref='pinned', imports=[], allowed_skips=[])
+    monkeypatch.setattr(compat, 'revision', Mock(return_value='sha'))
+    with pytest.raises(ValueError):
+        compat.matrix({'packages': [package]}, {'beta': check})
+    plan = compat.matrix({'packages': [package]}, {'beta': dict(check, allow_prereleases=True)})
+    assert {case['release']['version'] for case in plan['include']} == {'0.9b3'}
+
+
+def test_source_checks_pin_archive_bytes_to_resolved_branch_not_stale_release(monkeypatch):
+    import io
+    calls = []
+    monkeypatch.setattr(compat, 'revision', Mock(return_value='a' * 40))
+
+    def download(url, timeout):
+        calls.append(url)
+        return io.BytesIO(b'new source archive')
+
+    monkeypatch.setattr(compat.urllib.request, 'urlopen', download)
+    checks = {'head': dict(release={'version': 'source'}, check_profile=dict(
+        kind='project', coverage='source', source_archive=True, ref='main',
+        repository='owner/project', imports=[], allowed_skips=[]))}
+    plan = compat.matrix({'packages': []}, {}, checks)
+    assert calls == ['https://github.com/owner/project/archive/' + 'a' * 40 + '.zip']
+    assert {case['release']['archive']['sha256'] for case in plan['include']} == {
+        hashlib.sha256(b'new source archive').hexdigest()}
+    assert {case['kind'] for case in plan['include']} == {'project'}
+    assert {case['source_sha'] for case in plan['include']} == {'a' * 40}
+
+
+def test_catalog_local_version_labels_are_rejected_before_publication(monkeypatch):
+    package = dict(id='snapshot', installer_name='snapshot', releases=[{'version': '1.0.post20261022+gabc'}])
+    check = dict(repository='owner/snapshot', ref='sha', imports=[], allowed_skips=[])
+    with pytest.raises(ValueError, match='local version labels'):
+        compat.matrix({'packages': [package]}, {'snapshot': check})
+    monkeypatch.setattr(compat, 'revision', Mock(return_value='sha'))
+    plan = compat.matrix({'packages': []}, {}, {'external': dict(release=package['releases'][0], check_profile=check)})
+    assert len(plan['include']) == 4

@@ -1,0 +1,260 @@
+--- a/CATALOG-PACKAGING.json
++++ b/CATALOG-PACKAGING.json
+@@ -0,0 +1,11 @@
++{
++  "source_sha": "840b9628dab0cd56a93bbc83c2bfcb06416d2d75",
++  "distribution_revision": "catalog-r1",
++  "changed_on": "2026-10-22",
++  "changed_files": [
++    "bin/user/atmocomudp.py",
++    "install.py"
++  ],
++  "reason": "Python 3 syntax/import/iteration compatibility; original import raises SyntaxError. Atmocom also decodes the actual socket recvfrom bytes before parsing.",
++  "licensing": "Original copyright notices, source grants and license files are preserved."
++}
+--- a/bin/user/atmocomudp.py
++++ b/bin/user/atmocomudp.py
+@@ -1,8 +1,9 @@
+ #!/usr/bin/env python
++# Catalog compatibility revision, 2026-10-22. See CATALOG-PACKAGING.json.
+ # Copyright 2017-2019 Arthur Emerson, vreihen@yahoo.com
+ # Distributed under the terms of the GNU Public License (GPLv3)
+ 
+-from __future__ import with_statement
++
+ import math
+ import time
+ import weewx.units
+@@ -19,7 +20,7 @@
+ #import json
+ #from collections import namedtuple
+ import datetime
+-import urlparse
++import urllib.parse
+ 
+ # Default settings...
+ DRIVER_VERSION = "1.20"
+@@ -75,90 +76,90 @@
+     def prompt_for_settings(self):
+         settings = dict()
+         settings['sensor_map'] = dict()
+-        print "\nConfiguring AtmocomUDP station settings...\n"
+-        print "This is the broadcast address that we should be listening"
+-        print "on for packets.  If the driver throws an error on start,"
+-        print "try one of the other listed common values (in order)."
+-        print "This seems to be platform-specific.  All three work on"
+-        print "Debian Linux and my Raspberry Pi, but only 0.0.0.0 works"
+-        print "on my Macbook running OS-X or MacOS.  Don't ask about"
+-        print "Windows, since I don't have a test platform to see"
+-        print "if it will even work."
+-        print "\n(Common values: <broadcast> , 0.0.0.0 , 255.255.255.255)"
++        print("\nConfiguring AtmocomUDP station settings...\n")
++        print("This is the broadcast address that we should be listening")
++        print("on for packets.  If the driver throws an error on start,")
++        print("try one of the other listed common values (in order).")
++        print("This seems to be platform-specific.  All three work on")
++        print("Debian Linux and my Raspberry Pi, but only 0.0.0.0 works")
++        print("on my Macbook running OS-X or MacOS.  Don't ask about")
++        print("Windows, since I don't have a test platform to see")
++        print("if it will even work.")
++        print("\n(Common values: <broadcast> , 0.0.0.0 , 255.255.255.255)")
+         #settings['udp_address'] = self._prompt('udp_address', '<broadcast>', ['<broadcast>', '0.0.0.0', '255.255.255.255'])
+         settings['udp_address'] = self._prompt('udp_address', '<broadcast>', None)
+ 
+-        print "\nThe IP port that we should be listening for UDP packets"
+-        print "from.  Atmocom\'s default is 12000.\n"
++        print("\nThe IP port that we should be listening for UDP packets")
++        print("from.  Atmocom\'s default is 12000.\n")
+         settings['udp_port'] = self._prompt('udp_port', '12000', None)
+ 
+-        print "\nThe number of seconds that we should wait for an incoming"
+-        print "packet on the UDP socket before we give up and log an"
+-        print "error into syslog.  I cannot determine whether or not"
+-        print "weewx cares whether a station driver is non-blocking or"
+-        print "blocking, but encountered a situation in testing the"
+-        print "WeatherFlow driver that this is based on where the Hub"
+-        print "rebooted for a firmware update and it caused the driver to"
+-        print "throw a timeout error and exit.  I have no idea what the"
+-        print "default timeout value even is, but decided to make it"
+-        print "configurable in case it is important to someone else.  My"
+-        print "default of 90 seconds seems reasonable, with most PWS devices"
+-        print "sending Weather Underground \"rapid fire\" observations every"
+-        print "15-60 seconds.  If you are an old-school programmer like me"
+-        print "who thinks that computers should wait forever until they"
+-        print "receive data, the Python value \"None\" should disable the"
+-        print "timeout.  In any case, the driver will just log an error"
+-        print "into syslog and keep on processing.  It isn't like it is"
+-        print "the end of the world if you pick a wrong value, but you may"
+-        print "have a better chance of missing packets during the brief"
+-        print "error trapping time with a really short duration.\n"
++        print("\nThe number of seconds that we should wait for an incoming")
++        print("packet on the UDP socket before we give up and log an")
++        print("error into syslog.  I cannot determine whether or not")
++        print("weewx cares whether a station driver is non-blocking or")
++        print("blocking, but encountered a situation in testing the")
++        print("WeatherFlow driver that this is based on where the Hub")
++        print("rebooted for a firmware update and it caused the driver to")
++        print("throw a timeout error and exit.  I have no idea what the")
++        print("default timeout value even is, but decided to make it")
++        print("configurable in case it is important to someone else.  My")
++        print("default of 90 seconds seems reasonable, with most PWS devices")
++        print("sending Weather Underground \"rapid fire\" observations every")
++        print("15-60 seconds.  If you are an old-school programmer like me")
++        print("who thinks that computers should wait forever until they")
++        print("receive data, the Python value \"None\" should disable the")
++        print("timeout.  In any case, the driver will just log an error")
++        print("into syslog and keep on processing.  It isn't like it is")
++        print("the end of the world if you pick a wrong value, but you may")
++        print("have a better chance of missing packets during the brief")
++        print("error trapping time with a really short duration.\n")
+         settings['udp_timeout'] = self._prompt('udp_timeout (1-65535, None)', '90', None)
+ 
+-        print "\nWhether or not the UDP socket should be shared with other"
+-        print "local programs also listening for Atmocom UDP packets.  Default"
+-        print "is True with some hesitation, because I suspect that some obscure"
+-        print "Python implementation will have problems sharing the socket.  Feel"
+-        print "free to set it to False if it creates any problems on your platform.\n"
++        print("\nWhether or not the UDP socket should be shared with other")
++        print("local programs also listening for Atmocom UDP packets.  Default")
++        print("is True with some hesitation, because I suspect that some obscure")
++        print("Python implementation will have problems sharing the socket.  Feel")
++        print("free to set it to False if it creates any problems on your platform.\n")
+         settings['share_socket'] = self._prompt('share_socket (True/False)', 'True', ['True', 'False'])
+ 
+-        print "\nEnable writing all raw UDP packets received to syslog,"
+-        print "or wherever weewx is configured to send log info.  Will"
+-        print "fill up your logs pretty quickly, so only use it as"
+-        print "a debugging tool or to identify sensors.\n"
++        print("\nEnable writing all raw UDP packets received to syslog,")
++        print("or wherever weewx is configured to send log info.  Will")
++        print("fill up your logs pretty quickly, so only use it as")
++        print("a debugging tool or to identify sensors.\n")
+         settings['log_raw_packets'] = self._prompt('log_raw_packets (True/False)', 'False', ['True', 'False'])
+ 
+-        print "\nSpecify what measurement units are being used by the attached station."
+-        print "Weather Underground apparently *only* accepts input in imperial units,"
+-        print "but other intercepted services may send metric units.  This setting"
+-        print "just tells weewx what units you are sending...your sensor_map entries"
+-        print "(defined later) will need to handle the actual mapping of the URL-encoded"
+-        print "variable names to weewx database field names."
+-        print "Set to weewx.US by default, with a footnote that I\'m a US citizen where"
+-        print "metric is still treated as a dirty word, and apologize to the world for"
+-        print "WU apparently not having any metric upload options.\n"
+-        print "References:  http://www.weewx.com/docs/customizing.htm#units"
+-        print "https://web.archive.org/web/20130430065507/http://wiki.wunderground.com/index.php/PWS_-_Upload_Protocol\n"
+-        print "weewx.METRICWX = mm+m/s\nweewx.METRIC = cm+km/hr\nweewx.US = in/mph\n"
++        print("\nSpecify what measurement units are being used by the attached station.")
++        print("Weather Underground apparently *only* accepts input in imperial units,")
++        print("but other intercepted services may send metric units.  This setting")
++        print("just tells weewx what units you are sending...your sensor_map entries")
++        print("(defined later) will need to handle the actual mapping of the URL-encoded")
++        print("variable names to weewx database field names.")
++        print("Set to weewx.US by default, with a footnote that I\'m a US citizen where")
++        print("metric is still treated as a dirty word, and apologize to the world for")
++        print("WU apparently not having any metric upload options.\n")
++        print("References:  http://www.weewx.com/docs/customizing.htm#units")
++        print("https://web.archive.org/web/20130430065507/http://wiki.wunderground.com/index.php/PWS_-_Upload_Protocol\n")
++        print("weewx.METRICWX = mm+m/s\nweewx.METRIC = cm+km/hr\nweewx.US = in/mph\n")
+         settings['station_units'] = self._prompt('station_units (Weather Underground protocol requires weewx.US)', 'weewx.US', ['weewx.US', 'weewx.METRIC', 'weewx.METRICWX'])
+-        wu_key = raw_input("\nEnter your Weather Underground station ID (or another supported unique identifier being emitted by your station): ")
+-
+-        print "\nBuilding default sensor_map...\n"
++        wu_key = input("\nEnter your Weather Underground station ID (or another supported unique identifier being emitted by your station): ")
++
++        print("\nBuilding default sensor_map...\n")
+ 
+         if settings['station_units'] == 'weewx.US':
+             wu_sensors = { 'outTemp': 'tempf', 'outHumidity': 'humidity', 'inTemp': 'indoortempf', 'inHumidity': 'indoorhumidity', 'pressure': 'absbaromin', 'windDir': 'winddir', 'windSpeed': 'windspeedmph', 'windGust': 'windgustmph', 'UV': 'UV', 'rain': 'rainindelta', 'radiation': 'solarradiation' }
+         else:
+             wu_sensors = { 'outTemp': 'tempc', 'outHumidity': 'humidity', 'inTemp': 'indoortempc', 'inHumidity': 'indoorhumidity', 'pressure': 'absbaromin', 'windDir': 'winddir', 'windSpeed': 'windspeedmps', 'windGust': 'windgustmps', 'UV': 'UV', 'rain': 'rainmmdelta', 'radiation': 'solarradiation' }
+-            print "\n***** ALERT!  weewx.METRIC and weewx.METRICWX station units will require manually *****"
+-            print "***** editing the sensor_map after this process completes.  Building a bogus map. *****\n"
++            print("\n***** ALERT!  weewx.METRIC and weewx.METRICWX station units will require manually *****")
++            print("***** editing the sensor_map after this process completes.  Building a bogus map. *****\n")
+ 
+         weewx_sensor = ''
+-        for weewx_sensor in wu_sensors.keys():
++        for weewx_sensor in list(wu_sensors.keys()):
+             settings['sensor_map'][weewx_sensor] = wu_sensors[weewx_sensor] + "." + wu_key
+-            print "     " + weewx_sensor + " = " + wu_sensors[weewx_sensor] + "." + wu_key
+-
+-        print "\nTo make changes to the default sensor_map above for more complex"
+-        print "scenarios, you will need to manually edit weewx.conf at the path below."
+-        print "Please see the readme file for details.\n"
++            print("     " + weewx_sensor + " = " + wu_sensors[weewx_sensor] + "." + wu_key)
++
++        print("\nTo make changes to the default sensor_map above for more complex")
++        print("scenarios, you will need to manually edit weewx.conf at the path below.")
++        print("Please see the readme file for details.\n")
+         return settings 
+ 
+ class AtmocomUDPDriver(weewx.drivers.AbstractDevice):
+@@ -173,16 +174,11 @@
+             obs_type="Ambient"
+ 
+         if obs_type in ["WU", "Ambient"]:
+-            message=''
+-            try:
+-                message=eval(str(pkt))[0]
+-            except SyntaxError:
+-                logerr('Packet parse error: %s' % pkt)
+-
+-            # Cheap URL hack to make decode also grab station ID
+-            message = message.replace("?","&")
+-
+-            obs=dict(urlparse.parse_qsl(message.decode("utf-8")))
++            message = pkt[0] if isinstance(pkt, tuple) else pkt
++            if isinstance(message, bytes):
++                message = message.decode('utf-8')
++            message = message.replace("?", "&")
++            obs = dict(urllib.parse.parse_qsl(message))
+ 
+             # Handle utcdate=now packets, from stations without clocks
+             if obs['dateutc'].lower() == 'now':
+@@ -197,7 +193,7 @@
+                 obs_label = obs['PASSKEY']
+             packet['ID'] = obs_label
+             packet['time_epoch'] = time_epoch
+-            obs_keys = obs.keys()
++            obs_keys = list(obs.keys())
+             for i in obs_keys:
+                 obs_item = i + "." + obs_label
+                 packet[obs_item] = obs[i]
+@@ -231,7 +227,7 @@
+             packet = {'dateTime': pkt['time_epoch'],
+                 'usUnits' : station_units}
+ 
+-        for pkt_weewx, pkt_label in sensor_map.iteritems():
++        for pkt_weewx, pkt_label in sensor_map.items():
+             if pkt_label in pkt:
+                 packet[pkt_weewx] = eval(pkt[pkt_label])
+ 
+@@ -248,9 +244,9 @@
+         self._sensor_map = stn_dict.get('sensor_map', {})
+         if not self._sensor_map:
+             logerr('*** ERROR!  sensor_map is empty!  Terminating, since it would be silly to continue when we are not receiving data...')
+-            print "\nERROR!  sensor_map is empty!  Please check your weewx.conf file to ensure that your sensor_map is present and in the correct syntax/spacing."
+-            print "See the readme file for details on creating a sensor_map."
+-            print "\nTerminating, since it would be silly to continue when we are not receiving data...\n"
++            print("\nERROR!  sensor_map is empty!  Please check your weewx.conf file to ensure that your sensor_map is present and in the correct syntax/spacing.")
++            print("See the readme file for details on creating a sensor_map.")
++            print("\nTerminating, since it would be silly to continue when we are not receiving data...\n")
+             exit()
+         else:
+             loginf('sensor map is %s' % self._sensor_map)
+--- a/install.py
++++ b/install.py
+@@ -1,3 +1,4 @@
++# Catalog compatibility revision, 2026-10-22. See CATALOG-PACKAGING.json.
+ # installer for the atmocom-udp driver
+ # Copyright 2017-2019 Arthur Emerson, vreihen@yahoo.com
+ # Distributed under the terms of the GNU Public License (GPLv3)
+@@ -10,7 +11,7 @@
+ class AtmocomUDPInstaller(ExtensionInstaller):
+     def __init__(self):
+         super(AtmocomUDPInstaller, self).__init__(
+-            version="1.20",
++            version="1.20.post1",
+             name='atmocomudp',
+             description='Capture data from Atmocom interceptor via UDP broadcast packets of Weather Underground updates',
+             author="Arthur Emerson",

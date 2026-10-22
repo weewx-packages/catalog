@@ -1,0 +1,33 @@
+--- a/install.py
++++ b/install.py
+@@ -1,3 +1,4 @@
++# 2026-10-22 weewx-packages: Use ISO offset +00:00 for datetime.fromisoformat compatibility with Python 3.10, proved through a real Almanac ValueHelper. Installer version 0.1.post1.
+ # installer almanac extension example
+ # Copyright 2025 Johanna Roedenbeck
+ # Distributed under the terms of the GNU Public License (GPLv3)
+@@ -10,7 +11,7 @@
+ class EasterExampleInstaller(ExtensionInstaller):
+     def __init__(self):
+         super(EasterExampleInstaller, self).__init__(
+-            version="0.1",
++            version="0.1.post1",
+             name='EasterExample',
+             description='almanac extension example that calculates easter date',
+             author="Johanna Roedenbeck",
+--- a/bin/user/easteralmanac.py
++++ b/bin/user/easteralmanac.py
+@@ -1,4 +1,5 @@
+ #!/usr/bin/python3
++# 2026-10-22 weewx-packages: Use ISO offset +00:00 for datetime.fromisoformat compatibility with Python 3.10, proved through a real Almanac ValueHelper. Installer version 0.1.post1.
+ # Almanac extension to WeeWX for calculating easter date
+ # Copyright (C) 2025 Johanna Roedenbeck
+ 
+@@ -102,7 +103,7 @@
+                 easter_mon += 1
+             # Make a timestamp out of it
+             easter = datetime.datetime.fromisoformat(
+-              '%04d-%02d-%02dT12:00:00Z' % (ti.tm_year,easter_mon,easter_mday))
++              '%04d-%02d-%02dT12:00:00+00:00' % (ti.tm_year,easter_mon,easter_mday))
+             # Convert to ValueTuple
+             vt = ValueTuple(easter.timestamp(),'unix_epoch','group_time')
+             # Embed in ValueHelper

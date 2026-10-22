@@ -1,0 +1,26 @@
+--- a/CATALOG-PACKAGING.json
++++ b/CATALOG-PACKAGING.json
+@@ -0,0 +1,10 @@
++{
++  "source_sha": "1d312ac5faa6779a6a34e5200a535596980efdc2",
++  "distribution_revision": "catalog-r1",
++  "changed_on": "2026-10-22",
++  "changed_files": [
++    "install.py"
++  ],
++  "reason": "Upstream supplies no install.py; install preserved driver/skin/schema files under canonical WeeWX locations using declared DRIVER_VERSION 0.43.",
++  "licensing": "Original copyright notices, source grants and license files are preserved."
++}
+--- a/install.py
++++ b/install.py
+@@ -0,0 +1,10 @@
++# Catalog compatibility revision, 2026-10-22. See CATALOG-PACKAGING.json.
++"""Install the preserved upstream payload using its declared driver version."""
++
++from weecfg.extension import ExtensionInstaller
++
++def loader():
++    return ExtensionInstaller(
++        name='davisconsoleapi', version='0.43.post1',
++        description='Install davisconsoleapi driver',
++        files=[('bin/user', ['bin/user/davisconsoleapi.py', 'bin/user/historygenerator3.py', 'bin/user/sunevents.py', 'bin/user/sunrainduration.py']), ('bin/schemas', ['bin/schemas/wview_davisconsoleapi.py']), ('skins/console', ['skins/console/about.inc', 'skins/console/analytics.inc', 'skins/console/celestial.html.tmpl', 'skins/console/celestial.inc', 'skins/console/console.css', 'skins/console/console.js', 'skins/console/current.inc', 'skins/console/favicon.ico', 'skins/console/healthc.inc', 'skins/console/hilo.inc', 'skins/console/identifier.inc', 'skins/console/index.html.tmpl', 'skins/console/map.inc', 'skins/console/radar.inc', 'skins/console/rss.xml.tmpl', 'skins/console/satellite.inc', 'skins/console/sensors.inc', 'skins/console/skin.conf', 'skins/console/statistics.html.tmpl', 'skins/console/statistics.inc', 'skins/console/sunmoon.inc', 'skins/console/tabular.html.tmpl', 'skins/console/telemetry.html.tmpl', 'skins/console/titlebar.inc']), ('skins/console/NOAA', ['skins/console/NOAA/NOAA-%Y-%m.txt.tmpl', 'skins/console/NOAA/NOAA-%Y.txt.tmpl']), ('skins/console/font', ['skins/console/font/Kanit-Bold.ttf', 'skins/console/font/Kanit-Regular.ttf', 'skins/console/font/OFL.txt', 'skins/console/font/OpenSans-Bold.ttf', 'skins/console/font/OpenSans-Regular.ttf', 'skins/console/font/OpenSans.woff', 'skins/console/font/OpenSans.woff2', 'skins/console/font/license.txt']), ('skins/console/lang', ['skins/console/lang/de.conf', 'skins/console/lang/en.conf']), ('skins/healthc', ['skins/healthc/about.inc', 'skins/healthc/favicon.ico', 'skins/healthc/healthc.css', 'skins/healthc/healthc.js', 'skins/healthc/identifier.inc', 'skins/healthc/index.html.tmpl', 'skins/healthc/sensors.inc', 'skins/healthc/sensorsair.inc', 'skins/healthc/skin.conf', 'skins/healthc/titlebar.inc']), ('skins/healthc/lang', ['skins/healthc/lang/de.conf', 'skins/healthc/lang/en.conf'])])

@@ -1,0 +1,47 @@
+--- a/CATALOG-PACKAGING.json
++++ b/CATALOG-PACKAGING.json
+@@ -0,0 +1,11 @@
++{
++  "source_sha": "89e4b613377295f434abcf6a482f0fbcb27cf19c",
++  "distribution_revision": "catalog-r1",
++  "changed_on": "2026-10-22",
++  "changed_files": [
++    "bin/user/snmp.py",
++    "install.py"
++  ],
++  "reason": "Pinned synchronous PySNMP 4.4.12 needs importlib.util imported explicitly on Python 3.14; otherwise fallback imports removed imp. Current PySNMP 6/7 remove synchronous hlapi names; pin API plus pyasn1 and asyncore compatibility dependencies.",
++  "licensing": "Original copyright notices, source grants and license files are preserved."
++}
+--- a/bin/user/snmp.py
++++ b/bin/user/snmp.py
+@@ -1,4 +1,5 @@
+ #!/usr/bin/python3
++# Catalog compatibility revision, 2026-10-22. See CATALOG-PACKAGING.json.
+ # SNMP Service for WeeWX
+ # Copyright (C) 2022, 2023 Johanna Roedenbeck
+ 
+@@ -37,6 +38,8 @@
+     * https://computer2know.de/monitoring-riello-usv-with-netman-204-adapter-using-snmp-:::657.html
+     
+ """
++
++import importlib.util
+ 
+ from pysnmp import __version__ as PYSNMPVERSION
+ from pysnmp.hlapi import *
+--- a/install.py
++++ b/install.py
+@@ -1,3 +1,4 @@
++# Catalog compatibility revision, 2026-10-22. See CATALOG-PACKAGING.json.
+ # installer SNMP
+ # Copyright 2022, 2023 Johanna Roedenbeck
+ # Distributed under the terms of the GNU Public License (GPLv3)
+@@ -10,7 +11,7 @@
+ class SNMPInstaller(ExtensionInstaller):
+     def __init__(self):
+         super(SNMPInstaller, self).__init__(
+-            version="0.4",
++            version="0.4.post1",
+             name='SNMP',
+             description='fetch data by SNMP',
+             author="Johanna Roedenbeck",

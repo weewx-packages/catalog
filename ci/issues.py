@@ -37,8 +37,11 @@ def issue_body(package, cases, results, run_url):
         str: Issue body, including the automation's stable ownership marker.
     """
     first = cases[0]
-    description = ('Source installation checks failed for %s %s.' if first.get('coverage') == 'installation'
-                   else 'The published %s %s fails compatibility checks.')
+    descriptions = {'installation': 'Source installation checks failed for %s %s.',
+                    'source': 'Current source checks failed for %s %s.',
+                    'component': 'Component checks failed for %s %s.'}
+    description = descriptions.get(first.get('coverage') or '',
+                                   'The published %s %s fails compatibility checks.')
     rows = ['<!-- weewx-compatibility:%s -->' % package,
             description % (package, first['release']['version']), '',
             '| WeeWX branch | Commit | Python | Result |', '|---|---|---|---|']

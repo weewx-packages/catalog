@@ -350,5 +350,1165 @@
       "licenses/normalize.css-1.1.3-MIT.txt",
       "licenses/niculskin-GPL-2.0.txt"
     ]
+  },
+  "airlink": {
+    "repository": "weewx-packages/weewx-airlink",
+    "ref": "5f3fb6338fdbcaf15e22ba582b8c50693d95c0ec",
+    "imports": [
+      "user.airlink"
+    ],
+    "allowed_skips": [],
+    "tests_path": "ci/project_tests/weewx-airlink",
+    "pip_packages": [
+      "requests==2.34.2"
+    ]
+  },
+  "airlink-extended": {
+    "repository": "weewx-packages/weewx-airlink-extended",
+    "ref": "2d484aa701371b75b40db87e11bfb43531548b0d",
+    "imports": [
+      "user.airlink"
+    ],
+    "allowed_skips": [],
+    "tests_path": "ci/project_tests/weewx-airlink-extended",
+    "pip_packages": [
+      "requests==2.34.2"
+    ]
+  },
+  "as3935": {
+    "repository": "weewx-packages/weewx-as3935",
+    "ref": "769a63f102e5367d3032263a21641bc238b4038b",
+    "imports": [],
+    "allowed_skips": [],
+    "tests_path": "ci/project_tests/weewx-as3935",
+    "pip_packages": [
+      "RPi_AS3935==0.2.0",
+      "RPi.GPIO==0.7.1",
+      "smbus==1.1.post2"
+    ]
+  },
+  "atmocom-udp": {
+    "repository": "weewx-packages/weewx-atmocom-udp",
+    "ref": "840b9628dab0cd56a93bbc83c2bfcb06416d2d75",
+    "imports": [
+      "user.atmocomudp"
+    ],
+    "allowed_skips": [],
+    "tests_path": "ci/project_tests/weewx-atmocom-udp",
+    "pip_packages": []
+  },
+  "cm1": {
+    "repository": "weewx-packages/weewx-cm1",
+    "ref": "eaa97792a57da9d4c45a900c28e0a7f7e6ebcff4",
+    "imports": [
+      "user.cm1"
+    ],
+    "allowed_skips": [],
+    "tests_path": "ci/project_tests/weewx-cm1",
+    "pip_packages": [
+      "minimalmodbus==2.1.1",
+      "pyserial==3.5"
+    ]
+  },
+  "columbia-ms": {
+    "repository": "weewx-packages/weewx-columbia-ms",
+    "ref": "d68cc508b2538fd36452ea4d5e9d78a3afd32263",
+    "imports": [
+      "user.columbia_ms"
+    ],
+    "allowed_skips": [],
+    "tests_path": "ci/project_tests/weewx-columbia-ms",
+    "pip_packages": []
+  },
+  "davisconsoleapi": {
+    "repository": "weewx-packages/weewx-davisconsoleapi",
+    "ref": "1d312ac5faa6779a6a34e5200a535596980efdc2",
+    "imports": [
+      "user.davisconsoleapi",
+      "user.sunevents",
+      "user.sunrainduration",
+      "user.historygenerator3"
+    ],
+    "allowed_skips": [],
+    "tests_path": "ci/project_tests/weewx-davisconsoleapi",
+    "pip_packages": [
+      "requests==2.34.2"
+    ]
+  },
+  "ecowittgateway": {
+    "repository": "weewx-packages/weewx-ecowittGateway",
+    "ref": "089ec6a63219166bfad6275a82be21e5bf6f9b3b",
+    "imports": [
+      "user.weewx-EcowittGateway"
+    ],
+    "allowed_skips": [],
+    "tests_path": "ci/project_tests/weewx-ecowittGateway",
+    "pip_packages": []
+  },
+  "envoy": {
+    "repository": "weewx-packages/weewx-envoy",
+    "ref": "c6dc859cc65f880bf433331353f9130c56b56d8b",
+    "imports": [
+      "user.envoy"
+    ],
+    "allowed_skips": [],
+    "tests_path": "ci/project_tests/weewx-envoy",
+    "pip_packages": []
+  },
+  "gill-metconnect": {
+    "repository": "weewx-packages/weewx-gill-metconnect",
+    "ref": "52ff5dd589e03178faac6f2cfda1fc8bba7bb133",
+    "imports": [
+      "user.gill"
+    ],
+    "allowed_skips": [],
+    "tests_path": "ci/project_tests/weewx-gill-metconnect",
+    "pip_packages": []
+  },
+  "id5001": {
+    "repository": "weewx-packages/weewx-id5001",
+    "ref": "16b07c40a3861b48cc8f6712db6d0238be839453",
+    "imports": [
+      "user.id5001"
+    ],
+    "allowed_skips": [],
+    "tests_path": "ci/project_tests/weewx-id5001",
+    "pip_packages": [
+      "pyserial==3.5"
+    ]
+  },
+  "interceptor": {
+    "repository": "weewx-packages/weewx-interceptor",
+    "ref": "16d87044c8d7eba69d3b3cd8bf12a8cb7a0f2393",
+    "imports": [
+      "user.interceptor"
+    ],
+    "allowed_skips": [],
+    "tests_path": "ci/project_tests/weewx-interceptor",
+    "pip_packages": []
+  },
+  "ip100": {
+    "repository": "weewx-packages/weewx-ip100",
+    "ref": "6126a818dff13ff45824a90b251a5c7c5e7cecf1",
+    "imports": [
+      "user.ip100"
+    ],
+    "allowed_skips": [],
+    "tests_path": "ci/project_tests/weewx-ip100",
+    "pip_packages": [
+      "six==1.17.0"
+    ]
+  },
+  "luxtronik": {
+    "repository": "weewx-packages/weewx-luxtronik",
+    "ref": "1268ca671cdd930b610af6b0d8ae6fe508627275",
+    "imports": [
+      "user.luxtronik"
+    ],
+    "allowed_skips": [],
+    "tests_path": "ci/project_tests/weewx-luxtronik",
+    "pip_packages": []
+  },
+  "maxbotix": {
+    "repository": "weewx-packages/weewx-maxbotix",
+    "ref": "31050c6c729cc214edf703d2eddf89a76de070e7",
+    "imports": [
+      "user.maxbotix"
+    ],
+    "allowed_skips": [],
+    "tests_path": "ci/project_tests/weewx-maxbotix",
+    "pip_packages": [
+      "pyserial==3.5"
+    ]
+  },
+  "modbus-tcp": {
+    "repository": "weewx-packages/weewx-modbus-tcp",
+    "ref": "9f85c17265e9be08018ee1001c14356170192b37",
+    "imports": [
+      "user.ModbusTcp"
+    ],
+    "allowed_skips": [],
+    "tests_path": "ci/project_tests/weewx-modbus-tcp",
+    "pip_packages": [
+      "pymodbus==3.16.1"
+    ]
+  },
+  "netatmo": {
+    "repository": "weewx-packages/weewx-netatmo",
+    "ref": "132ce8562c969a88ebc1fc455a9d3106851a5c64",
+    "imports": [
+      "user.netatmo"
+    ],
+    "allowed_skips": [],
+    "tests_path": "ci/project_tests/weewx-netatmo",
+    "pip_packages": []
+  },
+  "nmea-xdr": {
+    "repository": "weewx-packages/weewx-nmea-xdr",
+    "ref": "9f95b283580f420ac6e1bd8641b66c0088c0753d",
+    "imports": [
+      "user.nmea-xdr"
+    ],
+    "allowed_skips": [],
+    "tests_path": "ci/project_tests/weewx-nmea-xdr",
+    "pip_packages": [
+      "pyserial==3.5"
+    ]
+  },
+  "owfs": {
+    "repository": "weewx-packages/weewx-owfs",
+    "ref": "886c8d8bcd7e8bd5ffcc98faf17af0f4545561c2",
+    "imports": [
+      "user.owfs"
+    ],
+    "allowed_skips": [],
+    "tests_path": "ci/project_tests/weewx-owfs",
+    "pip_packages": [
+      "pyownet==0.10.0.post1"
+    ]
+  },
+  "photovoltaics": {
+    "repository": "weewx-packages/weewx-photovoltaics",
+    "ref": "5611cb37adf756288dd255f63164bb24d0d8fb7e",
+    "imports": [
+      "user.photovoltaics"
+    ],
+    "allowed_skips": [],
+    "tests_path": "ci/project_tests/weewx-photovoltaics",
+    "pip_packages": [
+      "pye3dc==0.10.0"
+    ]
+  },
+  "precipmeter": {
+    "repository": "weewx-packages/weewx-precipmeter",
+    "ref": "73d389789213d10ff3890735cc00d68bdb3ec081",
+    "imports": [
+      "user.precipmeter"
+    ],
+    "allowed_skips": [],
+    "tests_path": "ci/project_tests/weewx-precipmeter",
+    "pip_packages": []
+  },
+  "reservoir": {
+    "repository": "weewx-packages/weewx-reservoir",
+    "ref": "e64b6741e74d143fe86c23c20429503f5106d8a6",
+    "imports": [
+      "user.reservoir"
+    ],
+    "allowed_skips": [],
+    "tests_path": "ci/project_tests/weewx-reservoir",
+    "pip_packages": [
+      "requests==2.34.2"
+    ]
+  },
+  "snmp": {
+    "repository": "weewx-packages/weewx-snmp",
+    "ref": "89e4b613377295f434abcf6a482f0fbcb27cf19c",
+    "imports": [
+      "user.snmp"
+    ],
+    "allowed_skips": [],
+    "tests_path": "ci/project_tests/weewx-snmp",
+    "pip_packages": [
+      "pysnmp==4.4.12",
+      "pyasn1==0.4.8",
+      "pysmi==1.6.3",
+      "pyasyncore==1.0.5",
+      "pyasynchat==1.0.5"
+    ]
+  },
+  "tempest-ws": {
+    "repository": "weewx-packages/weewx-tempest-ws",
+    "ref": "4c27e0d51c3e355976241acc12661dfe2f1546de",
+    "imports": [
+      "user.tempestWS"
+    ],
+    "allowed_skips": [],
+    "tests_path": "ci/project_tests/weewx-tempest-ws",
+    "pip_packages": [
+      "websocket-client==1.9.2"
+    ]
+  },
+  "tfrc": {
+    "repository": "weewx-packages/weewx-tfrc",
+    "ref": "eb1a52630f6eeff53ab3ede9ef2528825db38d7f",
+    "imports": [
+      "user.tfrc"
+    ],
+    "allowed_skips": [],
+    "tests_path": "ci/project_tests/weewx-tfrc",
+    "pip_packages": []
+  },
+  "ultimate-push": {
+    "repository": "weewx-packages/weewx-ultimate-push",
+    "ref": "3732d498150bfe6c9217e2169bbf27cb47395b87",
+    "imports": [
+      "user.ultimatepush",
+      "user.listener"
+    ],
+    "allowed_skips": [],
+    "tests_path": "ci/project_tests/weewx-ultimate-push",
+    "pip_packages": []
+  },
+  "uradmon": {
+    "repository": "weewx-packages/weewx-uradmon",
+    "ref": "c3070167a454dff6e6ebf4844667a404fb75af23",
+    "imports": [
+      "user.uradmon"
+    ],
+    "allowed_skips": [],
+    "tests_path": "ci/project_tests/weewx-uradmon",
+    "pip_packages": []
+  },
+  "vedirect": {
+    "repository": "weewx-packages/weewx-vedirect",
+    "ref": "8882de6e6cf52f1f418e020319e9965bb835aa1b",
+    "imports": [
+      "user.vedirect"
+    ],
+    "allowed_skips": [],
+    "tests_path": "ci/project_tests/weewx-vedirect",
+    "pip_packages": [
+      "pyserial==3.5"
+    ]
+  },
+  "wmr89": {
+    "repository": "weewx-packages/weewx-wmr89",
+    "ref": "ad55ccbd58f57ae76f9f7d530c9ca570dcfc7326",
+    "imports": [
+      "user.wmr89"
+    ],
+    "allowed_skips": [],
+    "tests_path": "ci/project_tests/weewx-wmr89",
+    "pip_packages": [
+      "pyserial==3.5"
+    ]
+  },
+  "ws6in1": {
+    "repository": "weewx-packages/weewx-ws6in1",
+    "ref": "1fb840239a1bbc2caee2e663208ea0c7bffe54cb",
+    "imports": [
+      "user.ws6in1"
+    ],
+    "allowed_skips": [],
+    "tests_path": "ci/project_tests/weewx-ws6in1",
+    "pip_packages": [
+      "crcmod==1.7",
+      "pyusb==1.3.1"
+    ]
+  },
+  "xtide": {
+    "repository": "weewx-packages/weewx-xtide",
+    "ref": "84454b19a8b14180384bf15ba7a301619312a636",
+    "imports": [
+      "user.xtide"
+    ],
+    "allowed_skips": [],
+    "tests_path": "ci/project_tests/weewx-xtide",
+    "pip_packages": []
+  },
+  "dwd": {
+    "repository": "weewx-packages/weewx-DWD",
+    "ref": "dc8dfaec5a12b082d61c53738abb38c7d1daeeae",
+    "imports": [
+      "user.weatherservices",
+      "user.weatherservicesutil",
+      "user.weatherservicesdb",
+      "user.weatherservicesradar",
+      "user.weatherserviceshealth",
+      "user.weathercodes",
+      "user.wildfire",
+      "user.capwarnings"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [
+      "requests"
+    ],
+    "tests_path": "ci/project_tests/weewx-DWD"
+  },
+  "gts": {
+    "repository": "weewx-packages/weewx-GTS",
+    "ref": "202b1546156b892c6baa4482ed6cc169a0f0a077",
+    "imports": [
+      "user.GTS",
+      "user.dayboundarystats",
+      "user.barometer"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [],
+    "tests_path": "ci/project_tests/weewx-GTS"
+  },
+  "airq": {
+    "repository": "weewx-packages/weewx-airQ",
+    "ref": "199698d5ba4228509b9014a313a546bfceb0cdf4",
+    "imports": [
+      "user.airQ_corant",
+      "user.airq_conf"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [
+      "pycryptodomex",
+      "six"
+    ],
+    "tests_path": "ci/project_tests/weewx-airQ",
+    "allow_prereleases": true
+  },
+  "airgradient": {
+    "repository": "weewx-packages/weewx-airgradient",
+    "ref": "b03cb8ba6b02daa4f1fc3740face83a6086b631f",
+    "imports": [
+      "user.airgradient"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [
+      "requests",
+      "python-dateutil"
+    ],
+    "tests_path": "ci/project_tests/weewx-airgradient"
+  },
+  "amphibian": {
+    "repository": "weewx-packages/weewx-amphibian",
+    "ref": "60c14f51900d3923ec6f91c911efffb3761c9293",
+    "imports": [],
+    "allowed_skips": [],
+    "pip_packages": [],
+    "tests_path": "ci/project_tests/weewx-amphibian",
+    "kind": "skin",
+    "report": "amphibian",
+    "skin": "amphibian",
+    "outputs": [
+      "index.html",
+      "day.html"
+    ]
+  },
+  "aqi-xtype": {
+    "repository": "weewx-packages/weewx-aqi-xtype",
+    "ref": "dcf1f58562fd756c8beb42ce97580f376acc7ff2",
+    "imports": [
+      "user.aqitype"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [],
+    "tests_path": "ci/project_tests/weewx-aqi-xtype",
+    "allow_prereleases": true
+  },
+  "carbonsteel-series": {
+    "repository": "weewx-packages/weewx-carbonsteel-series",
+    "ref": "218a6e2b2f13ac826897a8661ce5cd4aec4d3423",
+    "imports": [
+      "user.carbonsteelseries"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [],
+    "tests_path": "ci/project_tests/weewx-carbonsteel-series",
+    "install_input": "y\nn\nn\n"
+  },
+  "climate": {
+    "repository": "weewx-packages/weewx-climate",
+    "ref": "6e642b2be72511eab26f4226e567a128fd11e73c",
+    "imports": [
+      "user.climate.acis",
+      "user.climate.climate",
+      "user.climate.clsle"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [],
+    "tests_path": "ci/project_tests/weewx-climate"
+  },
+  "conditions": {
+    "repository": "weewx-packages/weewx-conditions",
+    "ref": "2928ab42c77b378e9dab2f89480adeb3cec33cac",
+    "imports": [],
+    "allowed_skips": [],
+    "pip_packages": [],
+    "tests_path": "ci/project_tests/weewx-conditions",
+    "kind": "skin",
+    "report": "ConditionsReport",
+    "skin": "Conditions",
+    "outputs": [
+      "conditions_current.json",
+      "conditions_dataset.json"
+    ]
+  },
+  "ecowitt-console-emulator": {
+    "repository": "weewx-packages/weewx-ecowitt_console_emulator",
+    "ref": "d431c2f41f37af87cfbc355b26c27ac76d54d9ac",
+    "imports": [
+      "user.ecowitt_console_emulator"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [],
+    "tests_path": "ci/project_tests/weewx-ecowitt_console_emulator",
+    "install_input": "skin\nen\n"
+  },
+  "exfoliation": {
+    "repository": "weewx-packages/weewx-exfoliation",
+    "ref": "19ec9af514b2b32076713967911a9e5baffb6930",
+    "imports": [],
+    "allowed_skips": [],
+    "pip_packages": [],
+    "tests_path": "ci/project_tests/weewx-exfoliation",
+    "kind": "skin",
+    "report": "exfoliation",
+    "skin": "exfoliation",
+    "outputs": [
+      "index.html",
+      "history.html"
+    ]
+  },
+  "filepile": {
+    "repository": "weewx-packages/weewx-filepile",
+    "ref": "e58503e018b0ee7c34c09d41f254b1d81e783f23",
+    "imports": [
+      "user.filepile"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [],
+    "tests_path": "ci/project_tests/weewx-filepile"
+  },
+  "forecast": {
+    "repository": "weewx-packages/weewx-forecast",
+    "ref": "30af440fd2a1dcbe80d98ba31aa7667023cd45ec",
+    "imports": [
+      "user.forecast"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [],
+    "tests_path": "ci/project_tests/weewx-forecast"
+  },
+  "jas": {
+    "repository": "weewx-packages/weewx-jas",
+    "ref": "fd0e841eedbd98ec6eeb16d47b2cb28c18f936a8",
+    "imports": [
+      "user.jas",
+      "user.jas_templates"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [],
+    "tests_path": "ci/project_tests/weewx-jas",
+    "allow_prereleases": true,
+    "kind": "skin",
+    "report": "jas",
+    "skin": "jas",
+    "outputs": [
+      "index.html"
+    ]
+  },
+  "meteoalarm": {
+    "repository": "weewx-packages/weewx-meteoalarm",
+    "ref": "3b31e8afcff3203989f32304472189c9f0a346a3",
+    "imports": [
+      "user.meteoalarm"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [],
+    "tests_path": "ci/project_tests/weewx-meteoalarm",
+    "install_input": "MA1:AT008:2:\nn\n"
+  },
+  "metrics": {
+    "repository": "weewx-packages/weewx-metrics",
+    "ref": "930ba14ef09d84dd13afc5899849b4ed06ac71a7",
+    "imports": [],
+    "allowed_skips": [],
+    "pip_packages": [],
+    "tests_path": "ci/project_tests/weewx-metrics",
+    "kind": "skin",
+    "report": "MetricsReport",
+    "skin": "Metrics",
+    "outputs": [
+      "metrics",
+      "metrics_minimal"
+    ]
+  },
+  "mqtt-subscribe": {
+    "repository": "weewx-packages/weewx-mqtt-subscribe",
+    "ref": "35068866003ab045dcf721fbccdd6dc82fb60b57",
+    "imports": [
+      "user.mqttsubscribe"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [
+      "paho-mqtt"
+    ],
+    "tests_path": "ci/project_tests/weewx-mqtt-subscribe",
+    "allow_prereleases": true
+  },
+  "nws": {
+    "repository": "weewx-packages/weewx-nws",
+    "ref": "3e3ee4406ce5e8e2c8d26c848a814e7cee72171e",
+    "imports": [
+      "user.nws",
+      "user.nwsicons",
+      "user.nwsskin"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [
+      "requests",
+      "python-dateutil"
+    ],
+    "tests_path": "ci/project_tests/weewx-nws"
+  },
+  "openweather-api": {
+    "repository": "weewx-packages/weewx-openweather_API",
+    "ref": "8f1209b5b24a3dd74e685baf4e9d222ec5274223",
+    "imports": [
+      "user.openweather"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [
+      "PyYAML"
+    ],
+    "tests_path": "ci/project_tests/weewx-openweather_API",
+    "install_input": "CI_FIXTURE_NOT_A_REAL_KEY_00000000\ny\ny\nn\n1\ny\n"
+  },
+  "purple": {
+    "repository": "weewx-packages/weewx-purple",
+    "ref": "0b677a510ca8bb04efde32e48e00d4724dbb5dd6",
+    "imports": [
+      "user.purple"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [
+      "requests",
+      "python-dateutil"
+    ],
+    "tests_path": "ci/project_tests/weewx-purple"
+  },
+  "saratoga": {
+    "repository": "weewx-packages/weewx-saratoga",
+    "ref": "be1ed762fa093dd440bbc80dbe15ef6cadbf18be",
+    "imports": [
+      "user.rtcr",
+      "user.stackedwindrose",
+      "user.ws",
+      "user.wsastro",
+      "user.wsschema",
+      "user.wssearchlist",
+      "user.wstaggedstats",
+      "user.wsxtypes"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [
+      "six"
+    ],
+    "tests_path": "ci/project_tests/weewx-saratoga"
+  },
+  "sds011": {
+    "repository": "weewx-packages/weewx-sds011",
+    "ref": "f8eabb43782be587047fd61af20a9c573a6ed489",
+    "imports": [
+      "user.sds011"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [
+      "pyserial"
+    ],
+    "tests_path": "ci/project_tests/weewx-sds011"
+  },
+  "setprocessname": {
+    "repository": "weewx-packages/weewx-setprocessname",
+    "ref": "1f2889a67b6688dfb44cc69a371ba183eaeeebb9",
+    "imports": [
+      "user.SetProcessName"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [
+      "setproctitle"
+    ],
+    "tests_path": "ci/project_tests/weewx-setprocessname"
+  },
+  "since-last-archive-accumulator": {
+    "repository": "weewx-packages/weewx-since-last-archive-accumulator",
+    "ref": "c38eaa4118abe36ff938acc02afb7ba5497836a4",
+    "imports": [
+      "user.SinceLastArchiveAccumulator"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [],
+    "tests_path": "ci/project_tests/weewx-since-last-archive-accumulator"
+  },
+  "sqlupload": {
+    "repository": "weewx-packages/weewx-sqlupload",
+    "ref": "86d0200c91ba1ba59e18845f6163b94f03fdb199",
+    "imports": [
+      "user.sqlupload"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [
+      "mysqlclient",
+      "six"
+    ],
+    "tests_path": "ci/project_tests/weewx-sqlupload",
+    "system_packages": [
+      "default-libmysqlclient-dev",
+      "build-essential",
+      "pkg-config"
+    ]
+  },
+  "sqm": {
+    "repository": "weewx-packages/weewx-sqm",
+    "ref": "fbd39b640008e39c7787595ad6ae30280357cc4d",
+    "imports": [
+      "user.sqmle",
+      "weewx_sqm_le.sqm",
+      "weewx_sqm_le.service"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [
+      "skyfield"
+    ],
+    "tests_path": "ci/project_tests/weewx-sqm",
+    "initialize_archive": true
+  },
+  "weatherboard": {
+    "repository": "weewx-packages/weewx-weatherboard",
+    "ref": "1c57e19861099cac1c042b0c776b07e8d79632cf",
+    "imports": [],
+    "allowed_skips": [],
+    "pip_packages": [],
+    "tests_path": "ci/project_tests/weewx-weatherboard",
+    "install_prerequisites": [
+      {
+        "repository": "weewx-packages/weewx-loopdata",
+        "sha": "fe52a7944703584f02912f1b1c1ac4b3abaf6933"
+      }
+    ],
+    "system_packages": [
+      "nodejs"
+    ],
+    "kind": "skin",
+    "report": "WeatherBoardReport",
+    "skin": "WeatherBoard",
+    "outputs": [
+      "index.html",
+      "splitflap.html"
+    ]
+  },
+  "xaggs": {
+    "repository": "weewx-packages/weewx-xaggs",
+    "ref": "d36145689b6d4bd363a792432df94215d69f5026",
+    "imports": [
+      "user.xaggs"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [],
+    "tests_path": "ci/project_tests/weewx-xaggs"
+  },
+  "wxgraphic": {
+    "repository": "weewx-packages/weewx-WXgraphic",
+    "ref": "b46451df116eebaa687ee65322f6a4b12864b5c9",
+    "imports": [
+      "user.wxgraphic"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [
+      "ephem"
+    ],
+    "tests_path": "ci/project_tests/weewx-WXgraphic"
+  },
+  "aggregated-values": {
+    "repository": "weewx-packages/weewx-aggregated-values",
+    "ref": "2bda26d4be4f5f5b7372e7477bc64a3fc87b7313",
+    "imports": [
+      "user.AggregatedValues"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [],
+    "tests_path": "ci/project_tests/weewx-aggregated-values"
+  },
+  "aprs": {
+    "repository": "weewx-packages/weewx-aprs",
+    "ref": "c732569694ec60c1b2cb9c2a174c68cebb7b5357",
+    "imports": [
+      "user.aprs-formatter"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [],
+    "tests_path": "ci/project_tests/weewx-aprs"
+  },
+  "celestial": {
+    "repository": "weewx-packages/weewx-celestial",
+    "ref": "63b6d781f9d065f8f9d7ff0cce9a90c538c0df55",
+    "imports": [
+      "user.celestial",
+      "user.celestial_page",
+      "user.celestial_sky"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [
+      "ephem"
+    ],
+    "tests_path": "ci/project_tests/weewx-celestial",
+    "install_prerequisites": [
+      {
+        "repository": "weewx-packages/weewx-loopdata",
+        "sha": "fe52a7944703584f02912f1b1c1ac4b3abaf6933"
+      }
+    ]
+  },
+  "easter-almanac-example": {
+    "repository": "weewx-packages/weewx-easter-almanac-example",
+    "ref": "139e21fe58a1b06a41d82771b13e839fbb853986",
+    "imports": [
+      "user.easteralmanac"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [],
+    "tests_path": "ci/project_tests/weewx-easter-almanac-example"
+  },
+  "emoncms": {
+    "repository": "weewx-packages/weewx-emoncms",
+    "ref": "7c041135a485bbea9f8ffaf6784fe08dee37a41f",
+    "imports": [
+      "user.emoncms"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [],
+    "tests_path": "ci/project_tests/weewx-emoncms"
+  },
+  "healthchecks": {
+    "repository": "weewx-packages/weewx-healthchecks",
+    "ref": "35cd38ae245d5c84f871b7aeaa52c5e9699650d1",
+    "imports": [
+      "user.healthchecks"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [],
+    "tests_path": "ci/project_tests/weewx-healthchecks"
+  },
+  "import-wlk": {
+    "repository": "weewx-packages/weewx-import-wlk",
+    "ref": "ceafd8e59ca569c954b914d3f8339500edd96d5b",
+    "imports": [
+      "user.import-wlk"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [],
+    "tests_path": "ci/project_tests/weewx-import-wlk"
+  },
+  "knx": {
+    "repository": "weewx-packages/weewx-knx",
+    "ref": "a5dc631519ed7295fa3e707a3d1c51404c91a08a",
+    "imports": [
+      "user.knx"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [
+      "knxip==0.5",
+      "setuptools"
+    ],
+    "tests_path": "ci/project_tests/weewx-knx"
+  },
+  "loopdata": {
+    "repository": "weewx-packages/weewx-loopdata",
+    "ref": "fe52a7944703584f02912f1b1c1ac4b3abaf6933",
+    "imports": [
+      "user.loopdata"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [
+      "ephem"
+    ],
+    "tests_path": "ci/project_tests/weewx-loopdata"
+  },
+  "mqtt-publish": {
+    "repository": "weewx-packages/weewx-mqtt-publish",
+    "ref": "21478c8ab88a93980e036a449b6b33bf775a2afc",
+    "imports": [
+      "user.mqttpublish",
+      "user.mqtthaconfig",
+      "user.mqttaggregatevalues"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [
+      "paho-mqtt>=2,<3",
+      "mock",
+      "jsonschema"
+    ],
+    "tests_path": "ci/project_tests/weewx-mqtt-publish"
+  },
+  "mqtt-publish-v2": {
+    "repository": "weewx-packages/weewx-mqtt-publish-v2",
+    "ref": "14cc2f6ce3c6b4566ac8f3decbf753eb53e718bd",
+    "imports": [
+      "user.MQTTPublishV2"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [
+      "paho-mqtt>=2,<3",
+      "mock"
+    ],
+    "tests_path": "ci/project_tests/weewx-mqtt-publish-v2"
+  },
+  "notify": {
+    "repository": "weewx-packages/weewx-notify",
+    "ref": "1467c156a192f3e1017a0b4dbc2b9efb1e2690ac",
+    "imports": [
+      "user.notify"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [
+      "six"
+    ],
+    "tests_path": "ci/project_tests/weewx-notify"
+  },
+  "ortsnetz-auslastung": {
+    "repository": "weewx-packages/weewx-ortsnetz-auslastung",
+    "ref": "41bdcf8faeac787dfb2efb2e5dd8a78e6c5fcde2",
+    "imports": [
+      "user.ortsnetzauslastunguploader"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [],
+    "tests_path": "ci/project_tests/weewx-ortsnetz-auslastung"
+  },
+  "postgresql": {
+    "repository": "weewx-packages/weewx-postgresql",
+    "ref": "d2b31a024779a5a15a89df32b7e1566cb3c15a5c",
+    "imports": [
+      "user.postgresql"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [
+      "psycopg[binary]>=3,<4"
+    ],
+    "tests_path": "ci/project_tests/weewx-postgresql",
+    "system_packages": [
+      "postgresql"
+    ]
+  },
+  "pusher": {
+    "repository": "weewx-packages/weewx-pusher",
+    "ref": "e3da95906316c88bc67eab4028909dd0a0a61af9",
+    "imports": [
+      "user.wxpusher"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [
+      "pusher>=3,<4"
+    ],
+    "tests_path": "ci/project_tests/weewx-pusher"
+  },
+  "pushover": {
+    "repository": "weewx-packages/weewx-pushover",
+    "ref": "cb49dc9d23d1542b494194b2bdec3c6896802075",
+    "imports": [
+      "user.notify",
+      "user.pushover"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [
+      "mock"
+    ],
+    "tests_path": "ci/project_tests/weewx-pushover"
+  },
+  "rtsp-image": {
+    "repository": "weewx-packages/weewx-rtsp-image",
+    "ref": "7ef9f47cb8a3979576c5a784a35da4ef2c7dbfd6",
+    "imports": [
+      "user.rtspimage"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [
+      "Pillow"
+    ],
+    "tests_path": "ci/project_tests/weewx-rtsp-image",
+    "system_packages": [
+      "ffmpeg"
+    ]
+  },
+  "rwsa": {
+    "repository": "weewx-packages/weewx-rwsa",
+    "ref": "d14a2e21e3f1c58a71b2c40d869e2d2803165dc7",
+    "imports": [
+      "user.regionalwetterSachsenAnhalt"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [
+      "six",
+      "setuptools"
+    ],
+    "tests_path": "ci/project_tests/weewx-rwsa"
+  },
+  "sftp": {
+    "repository": "weewx-packages/weewx-sftp",
+    "ref": "1c1e8b6d1670ff1041d7044918ba380293536ea3",
+    "imports": [
+      "user.sftp"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [
+      "paramiko>=3,<6"
+    ],
+    "tests_path": "ci/project_tests/weewx-sftp"
+  },
+  "skyfield": {
+    "repository": "weewx-packages/weewx-skyfield",
+    "ref": "c3496bbad09f1393e5e8427d3425b063d596882a",
+    "imports": [
+      "user.wxskyfield",
+      "user.wxskyfield_sky"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [
+      "skyfield>=1.55,<2",
+      "numpy",
+      "ephem"
+    ],
+    "tests_path": "ci/project_tests/weewx-skyfield"
+  },
+  "skyfield-almanac": {
+    "repository": "weewx-packages/weewx-skyfield-almanac",
+    "ref": "5e7d0a55b13b3334d8bf0f7c98d2ec577b57e457",
+    "imports": [
+      "user.skyfieldalmanac"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [
+      "skyfield>=1.55,<2",
+      "numpy",
+      "requests"
+    ],
+    "tests_path": "ci/project_tests/weewx-skyfield-almanac"
+  },
+  "skymap-almanac": {
+    "repository": "weewx-packages/weewx-skymap-almanac",
+    "ref": "deb71735f700d2e6c5b611dd8ee33d3d30b97c1d",
+    "imports": [
+      "user.skymapalmanac"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [
+      "skyfield>=1.55,<2",
+      "numpy",
+      "requests"
+    ],
+    "tests_path": "ci/project_tests/weewx-skymap-almanac",
+    "install_prerequisites": [
+      {
+        "repository": "weewx-packages/weewx-skyfield-almanac",
+        "sha": "5e7d0a55b13b3334d8bf0f7c98d2ec577b57e457"
+      }
+    ]
+  },
+  "skyvex": {
+    "repository": "weewx-packages/weewx-skyvex",
+    "ref": "87380266f44f7d4657e10e41877bab5bdeffdd93",
+    "imports": [
+      "user.skyvex"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [],
+    "tests_path": "ci/project_tests/weewx-skyvex"
+  },
+  "svg2png": {
+    "repository": "weewx-packages/weewx-svg2png",
+    "ref": "5d56f968fed7920d0e1e3ed22672fc71c9c750a5",
+    "imports": [
+      "user.svg2png"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [
+      "CairoSVG",
+      "Pillow"
+    ],
+    "tests_path": "ci/project_tests/weewx-svg2png",
+    "system_packages": [
+      "libcairo2"
+    ]
+  },
+  "thingspeak": {
+    "repository": "weewx-packages/weewx-thingspeak",
+    "ref": "a1ffa8ec672c217fed413eaa3e91618b3fb0b363",
+    "imports": [
+      "user.thingspeak"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [],
+    "tests_path": "ci/project_tests/weewx-thingspeak"
+  },
+  "wbug": {
+    "repository": "weewx-packages/weewx-wbug",
+    "ref": "4992114511b14fce1a507d76b81e026b67886854",
+    "imports": [
+      "user.wbug"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [],
+    "tests_path": "ci/project_tests/weewx-wbug"
+  },
+  "weepe": {
+    "repository": "weewx-packages/weewx-weepe",
+    "ref": "2a9b42fda7e6b181c5064e7586c2e1a6e1037e16",
+    "imports": [
+      "user.weepe"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [
+      "pyham-pe>=1,<2"
+    ],
+    "tests_path": "ci/project_tests/weewx-weepe"
+  },
+  "wetter": {
+    "repository": "weewx-packages/weewx-wetter",
+    "ref": "50a7f68d5f83ca639de056cdedf7b6a0370d6c1f",
+    "imports": [
+      "user.wetter"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [],
+    "tests_path": "ci/project_tests/weewx-wetter"
+  },
+  "windfinder": {
+    "repository": "weewx-packages/weewx-windfinder",
+    "ref": "07ccbc36b2a0c13cc3f72db4d7ff873182119fdf",
+    "imports": [
+      "user.windfinder"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [],
+    "tests_path": "ci/project_tests/weewx-windfinder"
+  },
+  "windy": {
+    "repository": "weewx-packages/weewx-windy",
+    "ref": "032fee9173c4ad5c2000313ff4b75107e7c7bad9",
+    "imports": [
+      "user.windy"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [],
+    "tests_path": "ci/project_tests/weewx-windy"
+  },
+  "wlip-emulator": {
+    "repository": "weewx-packages/weewx-wlip-emulator",
+    "ref": "170e77f4f8043da36924a428d341389e049f85c6",
+    "imports": [
+      "user.wlip_emulator"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [],
+    "tests_path": "ci/project_tests/weewx-wlip-emulator"
+  },
+  "wns": {
+    "repository": "weewx-packages/weewx-wns",
+    "ref": "5f9d3fda59a7bc328c814fc3479b63c97067b8fa",
+    "imports": [
+      "user.wns"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [
+      "setuptools"
+    ],
+    "tests_path": "ci/project_tests/weewx-wns"
+  },
+  "wundergroundlike": {
+    "repository": "weewx-packages/weewx-wundergroundlike",
+    "ref": "bc688eef06546b9f1a04e04b0effd2f631af22aa",
+    "imports": [
+      "user.wundergroundLike"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [],
+    "tests_path": "ci/project_tests/weewx-wundergroundlike"
   }
 }

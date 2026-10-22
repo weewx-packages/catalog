@@ -1,0 +1,155 @@
+--- a/install.py
++++ b/install.py
+@@ -1,3 +1,4 @@
++# 2026-10-22 weewx-packages: Version this catalog snapshot, keep commands in the station and tolerate imports without __main__.__file__.
+ # installer DWD
+ # Copyright 2023 Johanna Roedenbeck
+ # Distributed under the terms of the GNU Public License (GPLv3)
+@@ -28,7 +29,7 @@
+ class DWDInstaller(ExtensionInstaller):
+     def __init__(self):
+         super(DWDInstaller, self).__init__(
+-            version="0.x",
++            version="0.0.0.post20261022+gdc8dfaec5a12",
+             name='weatherforecasts',
+             description='Service to retrieve data from weather services',
+             author="Johanna Roedenbeck",
+@@ -86,7 +87,9 @@
+             print('user directory not found. Create links manually.')
+             return False
+         # path for system wide commands
+-        bin = '/usr/local/bin'
++        bin = os.path.join(os.path.dirname(user_root), 'commands')
++        if not engine.dry_run:
++            os.makedirs(bin, exist_ok=True)
+         # links to create and files to copy
+         links = ['dwd-cap-warnings','bbk-warnings','msc-warnings']
+         # complete path of capwarnings.py
+--- a/bin/user/weatherservicesdb.py
++++ b/bin/user/weatherservicesdb.py
+@@ -1,4 +1,5 @@
+ #!/usr/bin/python3
++# 2026-10-22 weewx-packages: Version this catalog snapshot, keep commands in the station and tolerate imports without __main__.__file__.
+ # Copyright (C) 2023, 2024 Johanna Roedenbeck
+ 
+ """
+@@ -55,7 +56,7 @@
+     sys.path.append('/usr/share/weewx')
+ 
+ import __main__
+-if __name__ == '__main__' or __main__.__file__.endswith('weatherservices.py'):
++if __name__ == '__main__' or getattr(__main__, '__file__', '').endswith('weatherservices.py'):
+ 
+     def logdbg(x):
+         print('DEBUG',x)
+--- a/bin/user/weatherservices.py
++++ b/bin/user/weatherservices.py
+@@ -1,4 +1,5 @@
+ #!/usr/bin/python3
++# 2026-10-22 weewx-packages: Version this catalog snapshot, keep commands in the station and tolerate imports without __main__.__file__.
+ # Copyright (C) 2022, 2023, 2024 Johanna Roedenbeck
+ 
+ """
+@@ -187,7 +188,7 @@
+     import sys
+     import __main__
+     sys.path.append('/usr/share/weewx')
+-    x = os.path.dirname(os.path.abspath(os.path.dirname(__main__.__file__)))
++    x = os.path.dirname(os.path.abspath(os.path.dirname(getattr(__main__, '__file__', ''))))
+     if x not in sys.path:
+         sys.path.append(x)
+ 
+--- a/bin/user/weatherservicesutil.py
++++ b/bin/user/weatherservicesutil.py
+@@ -1,4 +1,5 @@
+ #!/usr/bin/python3
++# 2026-10-22 weewx-packages: Version this catalog snapshot, keep commands in the station and tolerate imports without __main__.__file__.
+ # Copyright (C) 2022, 2023, 2024 Johanna Roedenbeck
+ 
+ """
+@@ -38,7 +39,7 @@
+     sys.path.append('/usr/share/weewx')
+ 
+ import __main__
+-if __name__ == '__main__' or __main__.__file__.endswith('weatherservices.py'):
++if __name__ == '__main__' or getattr(__main__, '__file__', '').endswith('weatherservices.py'):
+ 
+     def logdbg(x):
+         print('DEBUG',x)
+--- a/bin/user/weatherservicesradar.py
++++ b/bin/user/weatherservicesradar.py
+@@ -1,4 +1,5 @@
+ #!/usr/bin/python3
++# 2026-10-22 weewx-packages: Version this catalog snapshot, keep commands in the station and tolerate imports without __main__.__file__.
+ # Copyright (C) 2023, 2024 Johanna Roedenbeck
+ 
+ """
+@@ -85,11 +86,11 @@
+     import json
+     import sys
+     sys.path.append('/usr/share/weewx')
+-    x = os.path.dirname(os.path.abspath(os.path.dirname(__main__.__file__)))
++    x = os.path.dirname(os.path.abspath(os.path.dirname(getattr(__main__, '__file__', ''))))
+     if x not in sys.path:
+         sys.path.append(x)
+ 
+-if __name__ == '__main__' or __main__.__file__.endswith('weatherservices.py'):
++if __name__ == '__main__' or getattr(__main__, '__file__', '').endswith('weatherservices.py'):
+ 
+     def logdbg(x):
+         print('DEBUG radar',x)
+--- a/bin/user/weatherserviceshealth.py
++++ b/bin/user/weatherserviceshealth.py
+@@ -1,4 +1,5 @@
+ #!/usr/bin/python3
++# 2026-10-22 weewx-packages: Version this catalog snapshot, keep commands in the station and tolerate imports without __main__.__file__.
+ # Copyright (C) 2024 Johanna Roedenbeck
+ 
+ """
+@@ -39,11 +40,11 @@
+     import optparse
+     import sys
+     sys.path.append('/usr/share/weewx')
+-    x = os.path.dirname(os.path.abspath(os.path.dirname(__main__.__file__)))
++    x = os.path.dirname(os.path.abspath(os.path.dirname(getattr(__main__, '__file__', ''))))
+     if x not in sys.path:
+         sys.path.append(x)
+ 
+-if __name__ == '__main__' or __main__.__file__.endswith('weatherservices.py'):
++if __name__ == '__main__' or getattr(__main__, '__file__', '').endswith('weatherservices.py'):
+ 
+     def logdbg(x):
+         print('DEBUG health',x)
+--- a/bin/user/wildfire.py
++++ b/bin/user/wildfire.py
+@@ -1,4 +1,5 @@
+ #!/usr/bin/python3
++# 2026-10-22 weewx-packages: Version this catalog snapshot, keep commands in the station and tolerate imports without __main__.__file__.
+ # Copyright (C) 2023 Johanna Roedenbeck
+ 
+ """
+@@ -115,7 +116,7 @@
+     import sys
+     import __main__
+     sys.path.append('/usr/share/weewx')
+-    x = os.path.dirname(os.path.abspath(os.path.dirname(__main__.__file__)))
++    x = os.path.dirname(os.path.abspath(os.path.dirname(getattr(__main__, '__file__', ''))))
+     if x not in sys.path:
+         sys.path.append(x)
+ 
+--- a/install.py
++++ b/install.py
+@@ -1,3 +1,4 @@
++# 2026-10-22 weewx-packages: Remove the installer local version label for WeeWX catalog compatibility; source SHA remains in package provenance.
+ # 2026-10-22 weewx-packages: Version this catalog snapshot, keep commands in the station and tolerate imports without __main__.__file__.
+ # installer DWD
+ # Copyright 2023 Johanna Roedenbeck
+@@ -29,7 +30,7 @@
+ class DWDInstaller(ExtensionInstaller):
+     def __init__(self):
+         super(DWDInstaller, self).__init__(
+-            version="0.0.0.post20261022+gdc8dfaec5a12",
++            version="0.0.0.post20261022",
+             name='weatherforecasts',
+             description='Service to retrieve data from weather services',
+             author="Johanna Roedenbeck",

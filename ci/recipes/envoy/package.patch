@@ -1,0 +1,121 @@
+--- a/CATALOG-PACKAGING.json
++++ b/CATALOG-PACKAGING.json
+@@ -0,0 +1,11 @@
++{
++  "source_sha": "c6dc859cc65f880bf433331353f9130c56b56d8b",
++  "distribution_revision": "catalog-r1",
++  "changed_on": "2026-10-22",
++  "changed_files": [
++    "bin/user/envoy.py",
++    "install.py"
++  ],
++  "reason": "Python 3 syntax/import/iteration compatibility; original import raises SyntaxError. Atmocom also decodes the actual socket recvfrom bytes before parsing.",
++  "licensing": "Original copyright notices, source grants and license files are preserved."
++}
+--- a/bin/user/envoy.py
++++ b/bin/user/envoy.py
+@@ -1,4 +1,5 @@
+ #!/usr/bin/env python
++# Catalog compatibility revision, 2026-10-22. See CATALOG-PACKAGING.json.
+ # Copyright 2017 Matthew Wall
+ # Distributed under the terms of the GNU Public License (GPLv3)
+ """
+@@ -86,11 +87,11 @@
+ https://github.com/Ghawken/IndigoEnphaseEnvoy
+ """
+ 
+-from __future__ import with_statement
++
+ import json
+ import syslog
+ import time
+-import urllib
++import urllib.request, urllib.parse, urllib.error
+ 
+ import weewx.drivers
+ import weewx.units
+@@ -161,9 +162,9 @@
+ """
+ 
+     def prompt_for_settings(self):
+-        print "Specify the hostname or address of the Envoy"
++        print("Specify the hostname or address of the Envoy")
+         host = self._prompt('host', '0.0.0.0')
+-        print "Specify the Envoy serial number"
++        print("Specify the Envoy serial number")
+         serial = self._prompt('serial', '00000000')
+         return {'host': host, 'serial': serial}
+ 
+@@ -177,7 +178,7 @@
+         try:
+             host = stn_dict['host']
+             serial = stn_dict['serial']
+-        except KeyError, e:
++        except KeyError as e:
+             raise Exception("unspecified parameter %s" % e)
+         self.model = stn_dict.get("model", "Envoy-S")
+         self.max_tries = int(stn_dict.get('max_tries', 5))
+@@ -207,7 +208,7 @@
+                 ntries = 0
+                 yield packet
+                 time.sleep(self.polling_interval)
+-            except IOError, e:
++            except IOError as e:
+                 logerr("Failed attempt %d of %d to get LOOP data: %s" %
+                        (ntries, self.max_tries, e))
+                 logdbg("Waiting %d seconds before retry" % self.retry_wait)
+@@ -251,12 +252,12 @@
+         for u in ['/home.json', '/inventory.json', '/production.json',
+                   '/inv', '/info']:
+             url = "http://%s%s" % (self.host, u)
+-            resp = urllib.urlopen(url)
++            resp = urllib.request.urlopen(url)
+             data.append(resp.read())
+         return '\n'.join(data)
+ 
+     def get_data(self):
+-        resp = urllib.urlopen(self.url)
++        resp = urllib.request.urlopen(self.url)
+         data = json.loads(resp.read())
+         return data
+ 
+@@ -281,7 +282,7 @@
+     (options, args) = parser.parse_args()
+ 
+     if options.version:
+-        print "%s driver version %s" % (DRIVER_NAME, DRIVER_VERSION)
++        print("%s driver version %s" % (DRIVER_NAME, DRIVER_VERSION))
+         exit(1)
+ 
+     if options.debug:
+@@ -290,11 +291,11 @@
+     envoy = Envoy(options.host)
+     if options.info:
+         info = envoy.get_info()
+-        print info
++        print(info)
+         exit(0)
+ 
+-    print "query: %s" % envoy.url
++    print("query: %s" % envoy.url)
+     while True:
+         data = envoy.get_data()
+-        print "%s: %s" % (int(time.time()), data)
++        print("%s: %s" % (int(time.time()), data))
+         time.sleep(30)
+--- a/install.py
++++ b/install.py
+@@ -1,3 +1,4 @@
++# Catalog compatibility revision, 2026-10-22. See CATALOG-PACKAGING.json.
+ # installer for the weewx-envoy driver
+ # Copyright 2017 Matthew Wall
+ # Distributed under the terms of the GNU Public License (GPLv3)
+@@ -10,7 +11,7 @@
+ class SWBInstaller(ExtensionInstaller):
+     def __init__(self):
+         super(SWBInstaller, self).__init__(
+-            version="0.1",
++            version="0.1.post1",
+             name='envoy',
+             description='Capture data from Enphase Envoy',
+             author="Matthew Wall",

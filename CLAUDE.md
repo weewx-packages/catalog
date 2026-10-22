@@ -15,7 +15,11 @@ Static JSON index for WeeWX clients with extension repository support.
 - `schemas/repository-v1.schema.json`: Version 1 structural contract.
 - `CONTRIBUTING.md`: Package publication and validation procedure.
 - `ci/packages.json`: Test source refs, installed imports and explicit skip reasons.
+- `ci/external.json`: Non-catalog projects and explicitly limited component checks.
+- `ci/project_tests/`: Functional suites against verified payloads and installed stations.
+- `ci/project_coverage.py`: Require a declared check for every tracked repository.
 - `ci/compatibility.py`: Resolve commits, install release archives and run tests.
+- `ci/installed_files.py`: Compare installed Python with the verified release payload.
 - `ci/issues.py`: Maintain compatibility issues from matrix artifacts.
 - `ci/sync-weewx.sh`: Copy upstream branches and tags without executing source.
 - `ci/upstreams.json`: Skin sources, release policy and test profiles.

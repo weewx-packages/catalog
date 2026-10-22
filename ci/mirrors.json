@@ -109,7 +109,7 @@
     "license_evidence": [
       "https://github.com/sbsrouteur/weewx-PiSenseHat/blob/70bcc9b31f8e914e773b762dc345f28d849f54a6/LICENSE"
     ],
-    "install_skip_reason": "The installer imports smbus, RPi.GPIO and a Raspberry Pi sensor module. Installation requires a Raspberry Pi hardware profile; runtime syntax is checked here."
+    "install_skip_reason": "Original installer imports Raspberry Pi runtime during installation. A compatible SHTC3.so with init, SHTC3_Read_TH and SHTC3_Read_RH is absent, and no matching buildable source was found in the inspected upstream/vendor archives. Separate component checks cover LPS22 decoding only."
   },
   {
     "upstream": "https://github.com/glennmckechnie/weewx-WXgraphic.git",

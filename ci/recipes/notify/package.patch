@@ -1,0 +1,27 @@
+--- a/install.py
++++ b/install.py
+@@ -0,0 +1,24 @@
++# 2026-10-22 weewx-packages: Generate upstream installer template with existing CHANGELOG 1.0 release version.
++from setup import ExtensionInstaller
++
++def loader():
++    return NotifyInstaller()
++
++class NotifyInstaller(ExtensionInstaller):
++    def __init__(self):
++        super(NotifyInstaller, self).__init__(
++            version="1.0.post1",
++            name='Notify',
++            description='Notification to remote server',
++            author="Thomas Kent",
++            author_email="tom@teeks99.com",
++            restful_services='user.notify.Notify',
++            config={
++                'StdRESTful': {
++                    'Notify': {
++                        'url': 'https://hc-ping.com'
++                    }
++                }
++            },
++            files=[('bin/user', ['bin/user/notify.py'])]
++        )

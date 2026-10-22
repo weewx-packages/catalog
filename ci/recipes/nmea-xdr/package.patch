@@ -1,0 +1,64 @@
+--- a/CATALOG-PACKAGING.json
++++ b/CATALOG-PACKAGING.json
+@@ -0,0 +1,11 @@
++{
++  "source_sha": "9f95b283580f420ac6e1bd8641b66c0088c0753d",
++  "distribution_revision": "catalog-r1",
++  "changed_on": "2026-10-22",
++  "changed_files": [
++    "bin/user/nmea-xdr.py",
++    "install.py"
++  ],
++  "reason": "Serial checksum fails with TypeError on Python 3 because bytearray(str) needs encoding. Preserve timeout as no data and use current Thread.is_alive spelling.",
++  "licensing": "Original copyright notices, source grants and license files are preserved."
++}
+--- a/bin/user/nmea-xdr.py
++++ b/bin/user/nmea-xdr.py
+@@ -1,3 +1,4 @@
++# Catalog compatibility revision, 2026-10-22. See CATALOG-PACKAGING.json.
+ #
+ #    Copyright (c) 2019-2020 Tom Keffer <tkeffer@gmail.com>
+ #
+@@ -194,7 +195,7 @@
+                 self.thread.keep_running = False
+             # Wait up to 5 seconds for the thread to exit.
+             self.thread.join(5.0)
+-            if self.thread.isAlive():
++            if self.thread.is_alive():
+                 log.error("Unable to shut down XDRThread")
+             else:
+                 log.debug("XDRThread has been terminated")
+@@ -229,7 +230,7 @@
+                 line = device.readline().strip().decode('ascii')
+ 
+                 # Look for the '$' symbol which marks the start of an NMEA 0183 sentence.
+-                if line[0] != u'$':
++                if not line or line[0] != u'$':
+                     # No '$'. Ignore the line.
+                     continue
+ 
+@@ -248,7 +249,7 @@
+                     continue
+                 # Calculate the actual checksum by XORing everything together between the dollar
+                 # sign and the asterisk. The following works under both Python 2 and 3.
+-                actual_cs = reduce(operator.xor, bytearray(line[1:asterisk]), 0)
++                actual_cs = reduce(operator.xor, bytearray(line[1:asterisk], 'ascii'), 0)
+                 # If they don't match, ignore the line
+                 if expected_cs != actual_cs:
+                     continue
+--- a/install.py
++++ b/install.py
+@@ -1,3 +1,4 @@
++# Catalog compatibility revision, 2026-10-22. See CATALOG-PACKAGING.json.
+ #
+ #    Copyright (c) 2019 Tom Keffer <tkeffer@gmail.com>
+ #
+@@ -43,7 +44,7 @@
+ class XDRInstaller(ExtensionInstaller):
+     def __init__(self):
+         super(XDRInstaller, self).__init__(
+-            version="0.10",
++            version="0.10.post1",
+             name='xdr',
+             description='Augment WeeWX records with data NMEA0183 XDR sentences.',
+             author="Thomas Keffer",

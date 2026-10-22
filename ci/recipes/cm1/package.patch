@@ -1,0 +1,133 @@
+--- a/CATALOG-PACKAGING.json
++++ b/CATALOG-PACKAGING.json
+@@ -0,0 +1,11 @@
++{
++  "source_sha": "eaa97792a57da9d4c45a900c28e0a7f7e6ebcff4",
++  "distribution_revision": "catalog-r1",
++  "changed_on": "2026-10-22",
++  "changed_files": [
++    "bin/user/cm1.py",
++    "install.py"
++  ],
++  "reason": "Python 3 syntax/import/iteration compatibility; original import raises SyntaxError. Atmocom also decodes the actual socket recvfrom bytes before parsing.",
++  "licensing": "Original copyright notices, source grants and license files are preserved."
++}
+--- a/bin/user/cm1.py
++++ b/bin/user/cm1.py
+@@ -1,4 +1,5 @@
+ #!/usr/bin/env python
++# Catalog compatibility revision, 2026-10-22. See CATALOG-PACKAGING.json.
+ # Copyright 2016 Matthew Wall
+ # Distributed under the terms of the GNU Public License (GPLv3)
+ 
+@@ -86,8 +87,8 @@
+ """
+ 
+     def prompt_for_settings(self):
+-        print "Specify the serial port on which the station is connected, for"
+-        print "example /dev/ttyUSB0 or /dev/ttyS0 or /dev/tty.usbserial"
++        print("Specify the serial port on which the station is connected, for")
++        print("example /dev/ttyUSB0 or /dev/ttyS0 or /dev/tty.usbserial")
+         port = self._prompt('port', '/dev/ttyUSB0')
+         return {'port': port}
+ 
+@@ -188,7 +189,7 @@
+         for n in range(self.max_tries):
+             try:
+                 return getattr(self.station, method)()
+-            except (IOError, ValueError, TypeError), e:
++            except (IOError, ValueError, TypeError) as e:
+                 loginf("failed attempt %s of %s: %s" %
+                        (n + 1, self.max_tries, e))
+                 time.sleep(self.retry_wait)
+@@ -512,7 +513,7 @@
+         (options, _) = parser.parse_args()
+ 
+         if options.version:
+-            print "cm1 driver version %s" % DRIVER_VERSION
++            print("cm1 driver version %s" % DRIVER_VERSION)
+             exit(1)
+ 
+         if options.debug is not None:
+@@ -535,36 +536,36 @@
+         station = CM1(port, address, baud_rate, timeout)
+         station.debug = debug
+         if gettime:
+-            print "epoch:", station.get_clock()
+-            print "date:", station.get_date()
+-            print "time:", station.get_time()
++            print("epoch:", station.get_clock())
++            print("date:", station.get_date())
++            print("time:", station.get_time())
+             exit(0)
+         if settime:
+-            print "epoch before:", station.get_clock()
++            print("epoch before:", station.get_clock())
+             station.set_clock()
+-            print "epoch after:", station.get_clock()
+-            print "date:", station.get_date()
+-            print "time:", station.get_time()
++            print("epoch after:", station.get_clock())
++            print("date:", station.get_date())
++            print("time:", station.get_time())
+             exit(0)
+         data = station.get_system_parameters()
+-        print "system parameters: ", data
++        print("system parameters: ", data)
+         data = station.get_current()
+-        print "current values: ", data
++        print("current values: ", data)
+ 
+     def test_mmb(port, address, baud_rate, timeout, debug):
+-        print "\n\nminimalmodbus"
++        print("\n\nminimalmodbus")
+         import minimalmodbus
+         instrument = minimalmodbus.Instrument(port, address)
+         instrument.serial.baudrate = baud_rate
+         instrument.serial.timeout = timeout
+         instrument.debug = debug
+-        print instrument.read_register(100, 1)
+-        print instrument.read_registers(100, 11)
+-        print instrument.read_register(200, 1)
+-        print instrument.read_registers(200, 92)
++        print(instrument.read_register(100, 1))
++        print(instrument.read_registers(100, 11))
++        print(instrument.read_register(200, 1))
++        print(instrument.read_registers(200, 92))
+ 
+     def test_mbtk(port, address, baud_rate, timeout, debug):
+-        print "\n\nmodbus-tk"
++        print("\n\nmodbus-tk")
+         import modbus_tk
+         import modbus_tk.defines as cst
+         from modbus_tk import modbus_rtu
+@@ -577,9 +578,9 @@
+         master.set_timeout(timeout)
+         if debug:
+             master.set_verbose(True)
+-        print master.execute(address, cst.READ_HOLDING_REGISTERS, 100, 1)
+-        print master.execute(address, cst.READ_HOLDING_REGISTERS, 100, 11)
+-        print master.execute(address, cst.READ_HOLDING_REGISTERS, 200, 1)
+-        print master.execute(address, cst.READ_HOLDING_REGISTERS, 200, 92)
++        print(master.execute(address, cst.READ_HOLDING_REGISTERS, 100, 1))
++        print(master.execute(address, cst.READ_HOLDING_REGISTERS, 100, 11))
++        print(master.execute(address, cst.READ_HOLDING_REGISTERS, 200, 1))
++        print(master.execute(address, cst.READ_HOLDING_REGISTERS, 200, 92))
+ 
+     main()
+--- a/install.py
++++ b/install.py
+@@ -1,3 +1,4 @@
++# Catalog compatibility revision, 2026-10-22. See CATALOG-PACKAGING.json.
+ # installer for dyacon cm1 driver
+ # Copyright 2016 Matthew Wall
+ # Distributed under the terms of the GNU Public License (GPLv3)
+@@ -10,7 +11,7 @@
+ class CM1Installer(ExtensionInstaller):
+     def __init__(self):
+         super(CM1Installer, self).__init__(
+-            version="0.5",
++            version="0.5.post1",
+             name='cm1',
+             description='Collect data from Dyacon weather station using CM1',
+             author="Matthew Wall",

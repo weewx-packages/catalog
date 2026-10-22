@@ -1,0 +1,18 @@
+--- a/install.py
++++ b/install.py
+@@ -1,3 +1,4 @@
++# 2026-10-22 weewx-packages: Normalize whitespace-containing installer identity to the catalog installer_name grammar.
+ # installer almanac extension
+ # Copyright 2025 Johanna Roedenbeck
+ # Distributed under the terms of the GNU Public License (GPLv3)
+@@ -10,8 +11,8 @@
+ class SkymapInstaller(ExtensionInstaller):
+     def __init__(self):
+         super(SkymapInstaller, self).__init__(
+-            version="0.7",
+-            name='Skymap almanac',
++            version="0.7.post1",
++            name='skymap-almanac',
+             description='almanac extension using Skyfield mdule',
+             author="Johanna Roedenbeck",
+             author_email="",

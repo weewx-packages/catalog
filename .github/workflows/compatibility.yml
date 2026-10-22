@@ -68,6 +68,8 @@ jobs:
           jsonschema.validate(json.loads(Path('repository.json').read_text()),
                               json.loads(Path('schemas/repository-v1.schema.json').read_text()))
           PY
+      - name: Verify coverage of every tracked project
+        run: python ci/project_coverage.py > coverage.json
       - name: Resolve release tests and mirrored WeeWX commits
         id: plan
         env:
@@ -83,7 +85,9 @@ jobs:
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: plan
-          path: matrix.json
+          path: |
+            matrix.json
+            coverage.json
           retention-days: 30
 
   test:
@@ -91,6 +95,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix: ${{ fromJSON(needs.prepare.outputs.matrix) }}
+    name: Group ${{ matrix.group }}
     uses: ./.github/workflows/compatibility-group.yml
     with:
       matrix: ${{ toJSON(matrix.cases) }}

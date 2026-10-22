@@ -1,0 +1,32 @@
+--- a/install.py
++++ b/install.py
+@@ -1,3 +1,4 @@
++# 2026-10-22 weewx-packages: Pass configured PostgreSQL port to the second create() connection, proved with a real isolated PostgreSQL server on Unix socket port 55432. Installer version 1.0.1.post2.
+ #
+ #    Copyright (c) 2026 Tom Keffer <tkeffer@gmail.com>
+ #
+@@ -48,7 +49,7 @@
+ class PostgreSQLInstaller(ExtensionInstaller):
+     def __init__(self):
+         super(PostgreSQLInstaller, self).__init__(
+-            version="1.0.1",
++            version="1.0.1.post2",
+             name='PostgreSQL',
+             description='WeeWX driver for the PostgreSQL database',
+             author="Thomas Keffer",
+--- a/bin/user/postgresql.py
++++ b/bin/user/postgresql.py
+@@ -1,3 +1,4 @@
++# 2026-10-22 weewx-packages: Pass configured PostgreSQL port to the second create() connection, proved with a real isolated PostgreSQL server on Unix socket port 55432. Installer version 1.0.1.post2.
+ #
+ #    Copyright (c) 2009-2026 Tom Keffer <tkeffer@gmail.com>
+ #
+@@ -117,7 +118,7 @@
+         conn.execute(f"CREATE DATABASE {database_name};")
+     # Now connect to the new database and create the metadata table:
+     with psycopg.connect(host=host or None, user=user or None, password=password or None,
+-                         dbname=database_name) as conn:
++                         dbname=database_name, port=int(port) if port else None) as conn:
+         conn.autocommit = True
+         conn.execute("CREATE TABLE weewx_db__metadata (table_name TEXT, column_name TEXT);")
+ 

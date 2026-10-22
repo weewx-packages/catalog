@@ -1,0 +1,35 @@
+--- a/bin/icons.py
++++ b/bin/icons.py
+@@ -1,4 +1,5 @@
+ #!/usr/bin/python3
++# 2026-10-22 weewx-packages: Generated Python string literals preserve the SVG newline; generated exception clauses spell ValueError correctly.
+ # Create weather icon SVG files
+ # Copyright (C) 2023 Johanna Roedenbeck
+ 
+@@ -898,7 +899,7 @@
+ if options.writepy:
+ 
+     s =  "SVG_ICON_START = '%s'\n" % WW_SVG1
+-    s += "SVG_ICON_END = '%s'\n" % WW_SVG2
++    s += "SVG_ICON_END = %r\n" % WW_SVG2
+     s += "SVG_ICON_UNKNOWN = '%s'\n" % unknown()
+     s += "SVG_ICON_CLOUDY = '%s'\n" % bewoelkt(4,gefuellt=options.filled)
+     s += "SVG_ICON_CLOUDY_WIND = '%s'\n" % bewoelkt(4,mit_wind=3,gefuellt=options.filled)
+@@ -962,7 +963,7 @@
+     s += '        return ((SVG_ICON_START % (width,height))+\n'
+     s += '            icon[idx][night]+\n'
+     s += '            SVG_ICON_END)\n'
+-    s += '    except (ArithmeticError,LookupError,TypeError,ValuError):\n'
++    s += '    except (ArithmeticError,LookupError,TypeError,ValueError):\n'
+     s += '        return ""\n\n'
+     s += 'SVG_ICON_WW = [\n'
+     for idx in range(100):
+@@ -980,7 +981,7 @@
+     s += '        return ((SVG_ICON_START % (width,height))+\n'
+     s += '            SVG_ICON_WW[ww]+\n'
+     s += '            SVG_ICON_END)\n'
+-    s += '    except (ArithmeticError,LookupError,TypeError,ValuError):\n'
++    s += '    except (ArithmeticError,LookupError,TypeError,ValueError):\n'
+     s += '        return ""\n\n'
+     print(s)
+ 

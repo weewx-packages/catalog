@@ -1,0 +1,49 @@
+--- a/install.py
++++ b/install.py
+@@ -1,3 +1,4 @@
++# 2026-10-22 weewx-packages: Version this compatibility package and preserve serial protocol octets under Python 3.
+ # installer for SDS011 driver
+ # Copyright 2019 Matthew Wall
+ # Distributed under the terms of the GNU Public License (GPLv3)
+@@ -10,7 +11,7 @@
+ class SDS011Installer(ExtensionInstaller):
+     def __init__(self):
+         super(SDS011Installer, self).__init__(
+-            version="0.2",
++            version="0.2.post20261022+gf8eabb43782b",
+             name='sds011',
+             description='Collect data from SDS011 particulate sensor',
+             author="Matthew Wall",
+--- a/bin/user/sds011.py
++++ b/bin/user/sds011.py
+@@ -1,4 +1,5 @@
+ #!/usr/bin/env python
++# 2026-10-22 weewx-packages: Version this compatibility package and preserve serial protocol octets under Python 3.
+ # Copyright 2019 Matthew Wall
+ # Distributed under the terms of the GNU Public License (GPLv3)
+ 
+@@ -319,7 +320,7 @@
+     def write_command(self, cmd, data=[]):
+         x = SDS011._cmd(cmd, data)
+         logdbg("write: %s" % _fmt(x))
+-        self.serial_port.write(x.encode())
++        self.serial_port.write(x.encode('latin-1'))
+ 
+     def read_bytes(self):
+         x = 0
+--- a/install.py
++++ b/install.py
+@@ -1,3 +1,4 @@
++# 2026-10-22 weewx-packages: Remove the installer local version label for WeeWX catalog compatibility; source SHA remains in package provenance.
+ # 2026-10-22 weewx-packages: Version this compatibility package and preserve serial protocol octets under Python 3.
+ # installer for SDS011 driver
+ # Copyright 2019 Matthew Wall
+@@ -11,7 +12,7 @@
+ class SDS011Installer(ExtensionInstaller):
+     def __init__(self):
+         super(SDS011Installer, self).__init__(
+-            version="0.2.post20261022+gf8eabb43782b",
++            version="0.2.post20261022",
+             name='sds011',
+             description='Collect data from SDS011 particulate sensor',
+             author="Matthew Wall",

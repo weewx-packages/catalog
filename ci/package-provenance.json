@@ -1,0 +1,3383 @@
+{
+  "airlink": {
+    "status": "published",
+    "source_sha": "5f3fb6338fdbcaf15e22ba582b8c50693d95c0ec",
+    "archive_sha256": "501d0f06e7a82777e2d254604f1fb0591001c75bbb9ecf4d933b0645ef387cd3",
+    "limitations": [],
+    "publication": {
+      "release_id": 420335444,
+      "asset_id": 664768052,
+      "immutable": true,
+      "sha256": "501d0f06e7a82777e2d254604f1fb0591001c75bbb9ecf4d933b0645ef387cd3"
+    },
+    "repository": "weewx-packages/weewx-airlink",
+    "tests_path": "ci/project_tests/weewx-airlink",
+    "coverage": "release",
+    "license": "GPL-3.0-or-later AND GPL-3.0-only AND OFL-1.1",
+    "license_evidence": [
+      "https://github.com/chaunceygardiner/weewx-airlink/blob/5f3fb6338fdbcaf15e22ba582b8c50693d95c0ec/LICENSE",
+      "https://github.com/chaunceygardiner/weewx-airlink/blob/5f3fb6338fdbcaf15e22ba582b8c50693d95c0ec/bin/user/airlink.py",
+      "https://github.com/chaunceygardiner/weewx-airlink/blob/5f3fb6338fdbcaf15e22ba582b8c50693d95c0ec/skins/airlink/skin.conf",
+      "https://github.com/chaunceygardiner/weewx-airlink/blob/5f3fb6338fdbcaf15e22ba582b8c50693d95c0ec/skins/airlink/font/license.txt"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-airlink/test_driver.py": "07d5de5ffb5293aff1ca6742b46ceb16375008a5b40ad3411e3a8365b549016b"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/airlink/v4.1.1/airlink-4.1.1.tar.gz",
+      "format": "tar.gz",
+      "sha256": "501d0f06e7a82777e2d254604f1fb0591001c75bbb9ecf4d933b0645ef387cd3"
+    }
+  },
+  "airlink-extended": {
+    "status": "published",
+    "source_sha": "2d484aa701371b75b40db87e11bfb43531548b0d",
+    "archive_sha256": "28521263eb772034add678ae7f6c492b13366156d24de69b5c62cd24eb2e3ce2",
+    "limitations": [
+      "Parallel AirLink variant uses the legacy 2018 PM2.5 AQI table. It installs the same user.airlink module and installer name as the primary variant, so the two must be selected separately."
+    ],
+    "publication": {
+      "release_id": 420335479,
+      "asset_id": 664768161,
+      "immutable": true,
+      "sha256": "28521263eb772034add678ae7f6c492b13366156d24de69b5c62cd24eb2e3ce2"
+    },
+    "repository": "weewx-packages/weewx-airlink-extended",
+    "tests_path": "ci/project_tests/weewx-airlink-extended",
+    "coverage": "release",
+    "license": "GPL-3.0-or-later AND GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/evilbunny2008/weewx-airlink/blob/2d484aa701371b75b40db87e11bfb43531548b0d/LICENSE",
+      "https://github.com/evilbunny2008/weewx-airlink/blob/2d484aa701371b75b40db87e11bfb43531548b0d/bin/user/airlink.py"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-airlink-extended/test_driver.py": "a3c3730f79de9395004e06306ecb08af5e213bb18b0c08554353ad7109ad3348"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/airlink-extended/v1.4/airlink-extended-1.4.tar.gz",
+      "format": "tar.gz",
+      "sha256": "28521263eb772034add678ae7f6c492b13366156d24de69b5c62cd24eb2e3ce2"
+    }
+  },
+  "as3935": {
+    "status": "published",
+    "source_sha": "769a63f102e5367d3032263a21641bc238b4038b",
+    "archive_sha256": "4117c211e533b8539abb25e12ce037bb91d003f9d02e325836b084daba067fd7",
+    "limitations": [
+      "RPi.GPIO and I2C sensor I/O are fixtures; actual Raspberry Pi hardware was not attached. The real installed service processes interrupt causes, strike accumulation and unit conversion."
+    ],
+    "publication": {
+      "release_id": 420335512,
+      "asset_id": 664768270,
+      "immutable": true,
+      "sha256": "4117c211e533b8539abb25e12ce037bb91d003f9d02e325836b084daba067fd7"
+    },
+    "repository": "weewx-packages/weewx-as3935",
+    "tests_path": "ci/project_tests/weewx-as3935",
+    "coverage": "release",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/matthewwall/weewx-as3935/blob/769a63f102e5367d3032263a21641bc238b4038b/license",
+      "https://github.com/matthewwall/weewx-as3935/blob/769a63f102e5367d3032263a21641bc238b4038b/install.py"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-as3935/test_driver.py": "6c611396e0079a223602147be04f0e5952512022e47cce652055c98d138af0d5"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/as3935/v0.7/as3935-0.7.tar.gz",
+      "format": "tar.gz",
+      "sha256": "4117c211e533b8539abb25e12ce037bb91d003f9d02e325836b084daba067fd7"
+    }
+  },
+  "atmocom-udp": {
+    "status": "published",
+    "source_sha": "840b9628dab0cd56a93bbc83c2bfcb06416d2d75",
+    "archive_sha256": "a6bb2d520500e3b42b57b80084e5a7cbe570136bd6303b99c4dfe7c6742ac5e5",
+    "release_revision": "catalog-r1",
+    "limitations": [],
+    "publication": {
+      "release_id": 420335547,
+      "asset_id": 664768372,
+      "immutable": true,
+      "sha256": "a6bb2d520500e3b42b57b80084e5a7cbe570136bd6303b99c4dfe7c6742ac5e5"
+    },
+    "repository": "weewx-packages/weewx-atmocom-udp",
+    "tests_path": "ci/project_tests/weewx-atmocom-udp",
+    "coverage": "release",
+    "packaging_recipe": {
+      "source_sha": "840b9628dab0cd56a93bbc83c2bfcb06416d2d75",
+      "patch": "ci/recipes/atmocom-udp/package.patch",
+      "sha256": "9be3663d85948758f598ceb86cb0fee44ebd6a2ef9d820ec0bd606cd1e1f23e1",
+      "changes": "Python 3 syntax/import/iteration compatibility; original import raises SyntaxError. Atmocom also decodes the actual socket recvfrom bytes before parsing."
+    },
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/captain-coredump/weewx-atmocom-udp/blob/840b9628dab0cd56a93bbc83c2bfcb06416d2d75/LICENSE",
+      "https://github.com/captain-coredump/weewx-atmocom-udp/blob/840b9628dab0cd56a93bbc83c2bfcb06416d2d75/README",
+      "https://github.com/captain-coredump/weewx-atmocom-udp/blob/840b9628dab0cd56a93bbc83c2bfcb06416d2d75/bin/user/atmocomudp.py"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-atmocom-udp/test_driver.py": "f29fc4b9680dfce76d7e21f85ac67764517bfab8c56be7e5b041284306c939e0"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/atmocom-udp/v1.20.post1/atmocom-udp-1.20.post1.tar.gz",
+      "format": "tar.gz",
+      "sha256": "a6bb2d520500e3b42b57b80084e5a7cbe570136bd6303b99c4dfe7c6742ac5e5"
+    }
+  },
+  "cm1": {
+    "status": "published",
+    "source_sha": "eaa97792a57da9d4c45a900c28e0a7f7e6ebcff4",
+    "archive_sha256": "824d9a43974d8feb21409a8c07a6036ac103bf3f94b3b7124670b105542d2baf",
+    "release_revision": "catalog-r1",
+    "limitations": [],
+    "publication": {
+      "release_id": 420335582,
+      "asset_id": 664768436,
+      "immutable": true,
+      "sha256": "824d9a43974d8feb21409a8c07a6036ac103bf3f94b3b7124670b105542d2baf"
+    },
+    "repository": "weewx-packages/weewx-cm1",
+    "tests_path": "ci/project_tests/weewx-cm1",
+    "coverage": "release",
+    "packaging_recipe": {
+      "source_sha": "eaa97792a57da9d4c45a900c28e0a7f7e6ebcff4",
+      "patch": "ci/recipes/cm1/package.patch",
+      "sha256": "708094f7fb2b87c32a7d161503c92517f34c5a6edae3483100211854965f641d",
+      "changes": "Python 3 syntax/import/iteration compatibility; original import raises SyntaxError. Atmocom also decodes the actual socket recvfrom bytes before parsing."
+    },
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/matthewwall/weewx-cm1/blob/eaa97792a57da9d4c45a900c28e0a7f7e6ebcff4/license",
+      "https://github.com/matthewwall/weewx-cm1/blob/eaa97792a57da9d4c45a900c28e0a7f7e6ebcff4/readme",
+      "https://github.com/matthewwall/weewx-cm1/blob/eaa97792a57da9d4c45a900c28e0a7f7e6ebcff4/bin/user/cm1.py"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-cm1/test_driver.py": "b69d09f929e16ec938a2e20e2a56848a843fc707ef8f9d8317cd3c734a7e2dab"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/cm1/v0.5.post1/cm1-0.5.post1.tar.gz",
+      "format": "tar.gz",
+      "sha256": "824d9a43974d8feb21409a8c07a6036ac103bf3f94b3b7124670b105542d2baf"
+    }
+  },
+  "columbia-ms": {
+    "status": "published",
+    "source_sha": "d68cc508b2538fd36452ea4d5e9d78a3afd32263",
+    "archive_sha256": "85adfeed05d660e0744c8352e8eddc1489e06db5933242a0a34c0c136cd44223",
+    "limitations": [],
+    "publication": {
+      "release_id": 420335607,
+      "asset_id": 664768535,
+      "immutable": true,
+      "sha256": "85adfeed05d660e0744c8352e8eddc1489e06db5933242a0a34c0c136cd44223"
+    },
+    "repository": "weewx-packages/weewx-columbia-ms",
+    "tests_path": "ci/project_tests/weewx-columbia-ms",
+    "coverage": "release",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/bburton/weewx-columbia-ms/blob/d68cc508b2538fd36452ea4d5e9d78a3afd32263/license",
+      "https://github.com/bburton/weewx-columbia-ms/blob/d68cc508b2538fd36452ea4d5e9d78a3afd32263/README.md",
+      "https://github.com/bburton/weewx-columbia-ms/blob/d68cc508b2538fd36452ea4d5e9d78a3afd32263/bin/user/columbia_ms.py"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-columbia-ms/test_driver.py": "6e1a1f37e3385b4e9f8182c3b13e724eb3606a51fd00e8d46790da64c174bad0"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/columbia-ms/v1.0.0/columbia-ms-1.0.0.tar.gz",
+      "format": "tar.gz",
+      "sha256": "85adfeed05d660e0744c8352e8eddc1489e06db5933242a0a34c0c136cd44223"
+    }
+  },
+  "davisconsoleapi": {
+    "status": "published",
+    "source_sha": "1d312ac5faa6779a6a34e5200a535596980efdc2",
+    "archive_sha256": "d3edef310125c9962cb4f07e323ac9b45126242f732fc06bca890bb7624b49ad",
+    "release_revision": "catalog-r1",
+    "limitations": [
+      "Current and historical API signing, console sensor JSON and the HTTP boundary use public fixture credentials. No live WeatherLink account was used. Console and health skin files are byte-checked after installation; report generation is not claimed."
+    ],
+    "publication": {
+      "release_id": 420335639,
+      "asset_id": 664768649,
+      "immutable": true,
+      "sha256": "d3edef310125c9962cb4f07e323ac9b45126242f732fc06bca890bb7624b49ad"
+    },
+    "repository": "weewx-packages/weewx-davisconsoleapi",
+    "tests_path": "ci/project_tests/weewx-davisconsoleapi",
+    "coverage": "release",
+    "packaging_recipe": {
+      "source_sha": "1d312ac5faa6779a6a34e5200a535596980efdc2",
+      "patch": "ci/recipes/davisconsoleapi/package.patch",
+      "sha256": "376e025d2e5d7e4216b01ed69f5ad095c264c2d06936cd3b7b1fe81214a31dcd",
+      "changes": "Upstream supplies no install.py; install preserved driver/skin/schema files under canonical WeeWX locations using declared DRIVER_VERSION 0.43."
+    },
+    "license": "GPL-3.0-or-later AND GPL-3.0-only AND OFL-1.1",
+    "license_evidence": [
+      "https://github.com/WernerKr/davisconsoleapi/blob/1d312ac5faa6779a6a34e5200a535596980efdc2/LICENSE",
+      "https://github.com/WernerKr/davisconsoleapi/blob/1d312ac5faa6779a6a34e5200a535596980efdc2/bin/user/davisconsoleapi.py",
+      "https://github.com/WernerKr/davisconsoleapi/blob/1d312ac5faa6779a6a34e5200a535596980efdc2/skins/console/font/license.txt",
+      "https://github.com/WernerKr/davisconsoleapi/blob/1d312ac5faa6779a6a34e5200a535596980efdc2/skins/console/font/OFL.txt"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-davisconsoleapi/test_driver.py": "ad5fb03c8e911cb5fcdf8d5b63b9212a87b06a487998a6bccbda532cd1a06981"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/davisconsoleapi/v0.43.post1/davisconsoleapi-0.43.post1.tar.gz",
+      "format": "tar.gz",
+      "sha256": "d3edef310125c9962cb4f07e323ac9b45126242f732fc06bca890bb7624b49ad"
+    }
+  },
+  "ecowittgateway": {
+    "status": "published",
+    "source_sha": "089ec6a63219166bfad6275a82be21e5bf6f9b3b",
+    "archive_sha256": "9d83e961c031e512bde2b59933de21e0405cf7ec42627c900a7b5ae93a6bd908",
+    "limitations": [],
+    "publication": {
+      "release_id": 420335664,
+      "asset_id": 664768773,
+      "immutable": true,
+      "sha256": "9d83e961c031e512bde2b59933de21e0405cf7ec42627c900a7b5ae93a6bd908"
+    },
+    "repository": "weewx-packages/weewx-ecowittGateway",
+    "tests_path": "ci/project_tests/weewx-ecowittGateway",
+    "coverage": "release",
+    "license": "GPL-3.0-or-later",
+    "license_evidence": [
+      "https://github.com/Millardiang/weewx-ecowittGateway/blob/089ec6a63219166bfad6275a82be21e5bf6f9b3b/LICENSE",
+      "https://github.com/Millardiang/weewx-ecowittGateway/blob/089ec6a63219166bfad6275a82be21e5bf6f9b3b/install.py",
+      "https://github.com/Millardiang/weewx-ecowittGateway/blob/089ec6a63219166bfad6275a82be21e5bf6f9b3b/bin/user/weewx-EcowittGateway.py",
+      "https://github.com/Millardiang/weewx-ecowittGateway/blob/089ec6a63219166bfad6275a82be21e5bf6f9b3b/README.md"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-ecowittGateway/test_driver.py": "149cb10366c2a6c8119264124b3e138136ac2b9d8aad7d3617fd800b6363cf2a"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/ecowittgateway/v1.0.1/ecowittgateway-1.0.1.tar.gz",
+      "format": "tar.gz",
+      "sha256": "9d83e961c031e512bde2b59933de21e0405cf7ec42627c900a7b5ae93a6bd908"
+    }
+  },
+  "envoy": {
+    "status": "published",
+    "source_sha": "c6dc859cc65f880bf433331353f9130c56b56d8b",
+    "archive_sha256": "bffe698574b454e99a42cc832285a889180f577268d123a4c55a6113699754da",
+    "release_revision": "catalog-r1",
+    "limitations": [],
+    "publication": {
+      "release_id": 420335702,
+      "asset_id": 664768893,
+      "immutable": true,
+      "sha256": "bffe698574b454e99a42cc832285a889180f577268d123a4c55a6113699754da"
+    },
+    "repository": "weewx-packages/weewx-envoy",
+    "tests_path": "ci/project_tests/weewx-envoy",
+    "coverage": "release",
+    "packaging_recipe": {
+      "source_sha": "c6dc859cc65f880bf433331353f9130c56b56d8b",
+      "patch": "ci/recipes/envoy/package.patch",
+      "sha256": "6863e9df4e7011c8db74775dd92bc229fddf08f9fc7e6c122a3855fd8101afa5",
+      "changes": "Python 3 syntax/import/iteration compatibility; original import raises SyntaxError. Atmocom also decodes the actual socket recvfrom bytes before parsing."
+    },
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/matthewwall/weewx-envoy/blob/c6dc859cc65f880bf433331353f9130c56b56d8b/license",
+      "https://github.com/matthewwall/weewx-envoy/blob/c6dc859cc65f880bf433331353f9130c56b56d8b/readme.txt",
+      "https://github.com/matthewwall/weewx-envoy/blob/c6dc859cc65f880bf433331353f9130c56b56d8b/bin/user/envoy.py"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-envoy/test_driver.py": "53e01923dcacbfba39a03865a35d67afd5b67af08ef6607d9a567a16ce1dd994"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/envoy/v0.1.post1/envoy-0.1.post1.tar.gz",
+      "format": "tar.gz",
+      "sha256": "bffe698574b454e99a42cc832285a889180f577268d123a4c55a6113699754da"
+    }
+  },
+  "gill-metconnect": {
+    "status": "published",
+    "source_sha": "52ff5dd589e03178faac6f2cfda1fc8bba7bb133",
+    "archive_sha256": "a32355a6d44b31976797c9fec020682c0fd7d80f5c68a7845c8bce4ffa8da113",
+    "limitations": [],
+    "publication": {
+      "release_id": 420335728,
+      "asset_id": 664768985,
+      "immutable": true,
+      "sha256": "a32355a6d44b31976797c9fec020682c0fd7d80f5c68a7845c8bce4ffa8da113"
+    },
+    "repository": "weewx-packages/weewx-gill-metconnect",
+    "tests_path": "ci/project_tests/weewx-gill-metconnect",
+    "coverage": "release",
+    "license": "MIT",
+    "license_evidence": [
+      "https://github.com/Cosmospacedog/Gill-WeeWX/blob/52ff5dd589e03178faac6f2cfda1fc8bba7bb133/LICENSE"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-gill-metconnect/test_driver.py": "2ea188688761d7790f78c9828e524219ac7867256d7a7c78888826b506ad5ccc"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/gill-metconnect/v1.4/gill-metconnect-1.4.tar.gz",
+      "format": "tar.gz",
+      "sha256": "a32355a6d44b31976797c9fec020682c0fd7d80f5c68a7845c8bce4ffa8da113"
+    }
+  },
+  "id5001": {
+    "status": "published",
+    "source_sha": "16b07c40a3861b48cc8f6712db6d0238be839453",
+    "archive_sha256": "9c6dbec294222ec14a1414e5b9e4fd458d38dc3c435bc24ddbbf21bd915f4373",
+    "release_revision": "catalog-r1",
+    "limitations": [],
+    "publication": {
+      "release_id": 420335761,
+      "asset_id": 664769102,
+      "immutable": true,
+      "sha256": "9c6dbec294222ec14a1414e5b9e4fd458d38dc3c435bc24ddbbf21bd915f4373"
+    },
+    "repository": "weewx-packages/weewx-id5001",
+    "tests_path": "ci/project_tests/weewx-id5001",
+    "coverage": "release",
+    "packaging_recipe": {
+      "source_sha": "16b07c40a3861b48cc8f6712db6d0238be839453",
+      "patch": "ci/recipes/id5001/package.patch",
+      "sha256": "8e533ffaebac3fafe43a4fe2c50389ab71da6ac00de6c973beac8297b04e6cad",
+      "changes": "Upstream supplies no install.py; install preserved driver/skin/schema files under canonical WeeWX locations using declared DRIVER_VERSION 0.1."
+    },
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/n2ee/weewx-id5001/blob/16b07c40a3861b48cc8f6712db6d0238be839453/LICENSE",
+      "https://github.com/n2ee/weewx-id5001/blob/16b07c40a3861b48cc8f6712db6d0238be839453/README.md",
+      "https://github.com/n2ee/weewx-id5001/blob/16b07c40a3861b48cc8f6712db6d0238be839453/id5001.py"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-id5001/test_driver.py": "8eb2896ae3f862425bd78e9cb1764d8c0ae2f436fa8e6ebaa0fa054ee12d03bf"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/id5001/v0.1.post1/id5001-0.1.post1.tar.gz",
+      "format": "tar.gz",
+      "sha256": "9c6dbec294222ec14a1414e5b9e4fd458d38dc3c435bc24ddbbf21bd915f4373"
+    }
+  },
+  "interceptor": {
+    "status": "published",
+    "source_sha": "16d87044c8d7eba69d3b3cd8bf12a8cb7a0f2393",
+    "archive_sha256": "41eb9fea5979a24b48275a2c5b61e02578c4a8ad77fcabf80e07d9e6d81ba538",
+    "limitations": [],
+    "publication": {
+      "release_id": 420335797,
+      "asset_id": 664769257,
+      "immutable": true,
+      "sha256": "41eb9fea5979a24b48275a2c5b61e02578c4a8ad77fcabf80e07d9e6d81ba538"
+    },
+    "repository": "weewx-packages/weewx-interceptor",
+    "tests_path": "ci/project_tests/weewx-interceptor",
+    "coverage": "release",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/tfilo/weewx-interceptor/blob/16d87044c8d7eba69d3b3cd8bf12a8cb7a0f2393/license",
+      "https://github.com/tfilo/weewx-interceptor/blob/16d87044c8d7eba69d3b3cd8bf12a8cb7a0f2393/readme",
+      "https://github.com/tfilo/weewx-interceptor/blob/16d87044c8d7eba69d3b3cd8bf12a8cb7a0f2393/bin/user/interceptor.py",
+      "https://github.com/tfilo/weewx-interceptor/blob/16d87044c8d7eba69d3b3cd8bf12a8cb7a0f2393/install.py"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-interceptor/test_driver.py": "491562072dd7c9743f8e78de81f4fa7ebc931570c744677091676883c8a7fd0b"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/interceptor/v1.0.2/interceptor-1.0.2.tar.gz",
+      "format": "tar.gz",
+      "sha256": "41eb9fea5979a24b48275a2c5b61e02578c4a8ad77fcabf80e07d9e6d81ba538"
+    }
+  },
+  "ip100": {
+    "status": "published",
+    "source_sha": "6126a818dff13ff45824a90b251a5c7c5e7cecf1",
+    "archive_sha256": "7d9db1672df88793cad4c78897c60976c076ebc750fd9f5e643bc64714dc694c",
+    "limitations": [],
+    "publication": {
+      "release_id": 420335829,
+      "asset_id": 664769418,
+      "immutable": true,
+      "sha256": "7d9db1672df88793cad4c78897c60976c076ebc750fd9f5e643bc64714dc694c"
+    },
+    "repository": "weewx-packages/weewx-ip100",
+    "tests_path": "ci/project_tests/weewx-ip100",
+    "coverage": "release",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/chaunceygardiner/weewx-ip100/blob/6126a818dff13ff45824a90b251a5c7c5e7cecf1/license",
+      "https://github.com/chaunceygardiner/weewx-ip100/blob/6126a818dff13ff45824a90b251a5c7c5e7cecf1/readme",
+      "https://github.com/chaunceygardiner/weewx-ip100/blob/6126a818dff13ff45824a90b251a5c7c5e7cecf1/bin/user/ip100.py"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-ip100/test_driver.py": "d22783633df7442db168ddb86b7ff592c80813f2967767fda0c566ff6b4dcf53"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/ip100/v0.5/ip100-0.5.tar.gz",
+      "format": "tar.gz",
+      "sha256": "7d9db1672df88793cad4c78897c60976c076ebc750fd9f5e643bc64714dc694c"
+    }
+  },
+  "luxtronik": {
+    "status": "published",
+    "source_sha": "1268ca671cdd930b610af6b0d8ae6fe508627275",
+    "archive_sha256": "88c4731e9c8ddf751ef011334e9dc182f99a253164bf1252eaab2b1a084cfbc9",
+    "limitations": [],
+    "publication": {
+      "release_id": 420335873,
+      "asset_id": 664769583,
+      "immutable": true,
+      "sha256": "88c4731e9c8ddf751ef011334e9dc182f99a253164bf1252eaab2b1a084cfbc9"
+    },
+    "repository": "weewx-packages/weewx-luxtronik",
+    "tests_path": "ci/project_tests/weewx-luxtronik",
+    "coverage": "release",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/tsoodla/weewx-luxtronik/blob/1268ca671cdd930b610af6b0d8ae6fe508627275/LICENSE"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-luxtronik/test_driver.py": "671c7a0d101a6ceecf5643570693a809b0724304588dba8e7c9334cc04f39f9e"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/luxtronik/v0.2/luxtronik-0.2.tar.gz",
+      "format": "tar.gz",
+      "sha256": "88c4731e9c8ddf751ef011334e9dc182f99a253164bf1252eaab2b1a084cfbc9"
+    }
+  },
+  "maxbotix": {
+    "status": "published",
+    "source_sha": "31050c6c729cc214edf703d2eddf89a76de070e7",
+    "archive_sha256": "fbda8d5b7cf0bbb2e0794dffe7188af5d37e06b8dee8b66475d1d5607f9e987c",
+    "limitations": [],
+    "publication": {
+      "release_id": 420335905,
+      "asset_id": 664769703,
+      "immutable": true,
+      "sha256": "fbda8d5b7cf0bbb2e0794dffe7188af5d37e06b8dee8b66475d1d5607f9e987c"
+    },
+    "repository": "weewx-packages/weewx-maxbotix",
+    "tests_path": "ci/project_tests/weewx-maxbotix",
+    "coverage": "release",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/matthewwall/weewx-maxbotix/blob/31050c6c729cc214edf703d2eddf89a76de070e7/license",
+      "https://github.com/matthewwall/weewx-maxbotix/blob/31050c6c729cc214edf703d2eddf89a76de070e7/install.py"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-maxbotix/test_driver.py": "dffb0be727e080337b617083f6c5949bce51b6fdb0aad8d236a3982a83172d83"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/maxbotix/v0.9/maxbotix-0.9.tar.gz",
+      "format": "tar.gz",
+      "sha256": "fbda8d5b7cf0bbb2e0794dffe7188af5d37e06b8dee8b66475d1d5607f9e987c"
+    }
+  },
+  "modbus-tcp": {
+    "status": "published",
+    "source_sha": "9f85c17265e9be08018ee1001c14356170192b37",
+    "archive_sha256": "5300b95cab22cf543d33481c060420b98166af343a83e9a5c86e6cb5ba1b220f",
+    "limitations": [],
+    "publication": {
+      "release_id": 420335942,
+      "asset_id": 664769846,
+      "immutable": true,
+      "sha256": "5300b95cab22cf543d33481c060420b98166af343a83e9a5c86e6cb5ba1b220f"
+    },
+    "repository": "weewx-packages/weewx-modbus-tcp",
+    "tests_path": "ci/project_tests/weewx-modbus-tcp",
+    "coverage": "release",
+    "license": "MIT",
+    "license_evidence": [
+      "https://github.com/FColinet/WeeWX-ModbusTCP-driver/blob/9f85c17265e9be08018ee1001c14356170192b37/LICENSE",
+      "https://github.com/FColinet/WeeWX-ModbusTCP-driver/blob/9f85c17265e9be08018ee1001c14356170192b37/bin/user/ModbusTcp.py"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-modbus-tcp/test_driver.py": "2baf252fa68858022832dfe252edc66fde2d4f8f6c917ae4347597ace3e1e898"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/modbus-tcp/v1.2/modbus-tcp-1.2.tar.gz",
+      "format": "tar.gz",
+      "sha256": "5300b95cab22cf543d33481c060420b98166af343a83e9a5c86e6cb5ba1b220f"
+    }
+  },
+  "netatmo": {
+    "status": "published",
+    "source_sha": "132ce8562c969a88ebc1fc455a9d3106851a5c64",
+    "archive_sha256": "657fea01006bd3b8c88b34d564c576682586fed7232d323af231af50026b166a",
+    "limitations": [],
+    "publication": {
+      "release_id": 420335988,
+      "asset_id": 664769980,
+      "immutable": true,
+      "sha256": "657fea01006bd3b8c88b34d564c576682586fed7232d323af231af50026b166a"
+    },
+    "repository": "weewx-packages/weewx-netatmo",
+    "tests_path": "ci/project_tests/weewx-netatmo",
+    "coverage": "release",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/Buco7854/weewx-netatmo/blob/132ce8562c969a88ebc1fc455a9d3106851a5c64/LICENSE",
+      "https://github.com/Buco7854/weewx-netatmo/blob/132ce8562c969a88ebc1fc455a9d3106851a5c64/README.md",
+      "https://github.com/Buco7854/weewx-netatmo/blob/132ce8562c969a88ebc1fc455a9d3106851a5c64/bin/user/netatmo.py",
+      "https://github.com/Buco7854/weewx-netatmo/blob/132ce8562c969a88ebc1fc455a9d3106851a5c64/install.py"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-netatmo/test_driver.py": "d7086ad8448958e13c407826e72929c378afd82c7b31f0398257765ba86d6e6e"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/netatmo/v0.17/netatmo-0.17.tar.gz",
+      "format": "tar.gz",
+      "sha256": "657fea01006bd3b8c88b34d564c576682586fed7232d323af231af50026b166a"
+    }
+  },
+  "nmea-xdr": {
+    "status": "published",
+    "source_sha": "9f95b283580f420ac6e1bd8641b66c0088c0753d",
+    "archive_sha256": "c6bf09c34fa9f7ab138925c23a7ab4195316c0560107beb301f1c2418527f507",
+    "release_revision": "catalog-r1",
+    "limitations": [],
+    "publication": {
+      "release_id": 420336032,
+      "asset_id": 664770103,
+      "immutable": true,
+      "sha256": "c6bf09c34fa9f7ab138925c23a7ab4195316c0560107beb301f1c2418527f507"
+    },
+    "repository": "weewx-packages/weewx-nmea-xdr",
+    "tests_path": "ci/project_tests/weewx-nmea-xdr",
+    "coverage": "release",
+    "packaging_recipe": {
+      "source_sha": "9f95b283580f420ac6e1bd8641b66c0088c0753d",
+      "patch": "ci/recipes/nmea-xdr/package.patch",
+      "sha256": "626a3bd1dd881ac45269aa490d560656a4ad23c07b99bd9205e7423be4dff3b5",
+      "changes": "Serial checksum fails with TypeError on Python 3 because bytearray(str) needs encoding. Preserve timeout as no data and use current Thread.is_alive spelling."
+    },
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/tkeffer/weewx-nmea-xdr/blob/9f95b283580f420ac6e1bd8641b66c0088c0753d/LICENSE.txt"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-nmea-xdr/test_driver.py": "298fade2df3bf7adfec58c64bd599e24d6767111f0abe1fa6e5bf3d1e49db9c1"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/nmea-xdr/v0.10.post1/nmea-xdr-0.10.post1.tar.gz",
+      "format": "tar.gz",
+      "sha256": "c6bf09c34fa9f7ab138925c23a7ab4195316c0560107beb301f1c2418527f507"
+    }
+  },
+  "owfs": {
+    "status": "published",
+    "source_sha": "886c8d8bcd7e8bd5ffcc98faf17af0f4545561c2",
+    "archive_sha256": "6c558b59895ed8bb48a4a3e2f923ab011b161d9a0709ce41eb800e7f8d9b1332",
+    "limitations": [],
+    "publication": {
+      "release_id": 420336064,
+      "asset_id": 664770207,
+      "immutable": true,
+      "sha256": "6c558b59895ed8bb48a4a3e2f923ab011b161d9a0709ce41eb800e7f8d9b1332"
+    },
+    "repository": "weewx-packages/weewx-owfs",
+    "tests_path": "ci/project_tests/weewx-owfs",
+    "coverage": "release",
+    "license": "GPL-3.0-or-later",
+    "license_evidence": [
+      "https://github.com/glennmckechnie/weewx-owfs/blob/886c8d8bcd7e8bd5ffcc98faf17af0f4545561c2/bin/user/owfs-dallas.py",
+      "https://github.com/glennmckechnie/weewx-owfs/blob/886c8d8bcd7e8bd5ffcc98faf17af0f4545561c2/bin/user/owfs.py",
+      "https://github.com/glennmckechnie/weewx-owfs/blob/886c8d8bcd7e8bd5ffcc98faf17af0f4545561c2/install.py"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-owfs/test_driver.py": "4b57f51d4003a50b8e6a0d7e07980dd0ab8f22bae0548d5770952ee9d1da1719"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/owfs/v0.23.8/owfs-0.23.8.tar.gz",
+      "format": "tar.gz",
+      "sha256": "6c558b59895ed8bb48a4a3e2f923ab011b161d9a0709ce41eb800e7f8d9b1332"
+    }
+  },
+  "photovoltaics": {
+    "status": "published",
+    "source_sha": "5611cb37adf756288dd255f63164bb24d0d8fb7e",
+    "archive_sha256": "a0605a50850a9eb4919375d9d5dc9936855b85fd7d1d72f642e13946bccf2dc2",
+    "limitations": [],
+    "publication": {
+      "release_id": 420336106,
+      "asset_id": 664770322,
+      "immutable": true,
+      "sha256": "a0605a50850a9eb4919375d9d5dc9936855b85fd7d1d72f642e13946bccf2dc2"
+    },
+    "repository": "weewx-packages/weewx-photovoltaics",
+    "tests_path": "ci/project_tests/weewx-photovoltaics",
+    "coverage": "release",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/roe-dl/weewx-photovoltaics/blob/5611cb37adf756288dd255f63164bb24d0d8fb7e/LICENSE",
+      "https://github.com/roe-dl/weewx-photovoltaics/blob/5611cb37adf756288dd255f63164bb24d0d8fb7e/install.py"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-photovoltaics/test_driver.py": "5eaaea66816f2a7bbdf0919e507dffcef74c346e3216554e49a44505a301fb96"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/photovoltaics/v0.8/photovoltaics-0.8.tar.gz",
+      "format": "tar.gz",
+      "sha256": "a0605a50850a9eb4919375d9d5dc9936855b85fd7d1d72f642e13946bccf2dc2"
+    }
+  },
+  "precipmeter": {
+    "status": "published",
+    "source_sha": "73d389789213d10ff3890735cc00d68bdb3ec081",
+    "archive_sha256": "853b09a6ed716854145162ee9912d29de375cd72f37e1ceb0d2a43c8f5dd4046",
+    "limitations": [],
+    "publication": {
+      "release_id": 420336131,
+      "asset_id": 664770419,
+      "immutable": true,
+      "sha256": "853b09a6ed716854145162ee9912d29de375cd72f37e1ceb0d2a43c8f5dd4046"
+    },
+    "repository": "weewx-packages/weewx-precipmeter",
+    "tests_path": "ci/project_tests/weewx-precipmeter",
+    "coverage": "release",
+    "license": "GPL-3.0-or-later",
+    "license_evidence": [
+      "https://github.com/roe-dl/weewx-precipmeter/blob/73d389789213d10ff3890735cc00d68bdb3ec081/LICENSE",
+      "https://github.com/roe-dl/weewx-precipmeter/blob/73d389789213d10ff3890735cc00d68bdb3ec081/bin/user/precipmeter.py",
+      "https://github.com/roe-dl/weewx-precipmeter/blob/73d389789213d10ff3890735cc00d68bdb3ec081/install.py"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-precipmeter/test_driver.py": "b347f68dbd9069b8ea1aba781453b8a5746b2b5d80a280037f9ae925862108c2"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/precipmeter/v0.8/precipmeter-0.8.tar.gz",
+      "format": "tar.gz",
+      "sha256": "853b09a6ed716854145162ee9912d29de375cd72f37e1ceb0d2a43c8f5dd4046"
+    }
+  },
+  "reservoir": {
+    "status": "published",
+    "source_sha": "e64b6741e74d143fe86c23c20429503f5106d8a6",
+    "archive_sha256": "e6f43fe201cfe10f21d9935ba734791b37658dd1ec7fba0644361a0a8f6182cd",
+    "limitations": [],
+    "publication": {
+      "release_id": 420336171,
+      "asset_id": 664770539,
+      "immutable": true,
+      "sha256": "e6f43fe201cfe10f21d9935ba734791b37658dd1ec7fba0644361a0a8f6182cd"
+    },
+    "repository": "weewx-packages/weewx-reservoir",
+    "tests_path": "ci/project_tests/weewx-reservoir",
+    "coverage": "release",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/ziti/weewx-reservoir/blob/e64b6741e74d143fe86c23c20429503f5106d8a6/LICENSE",
+      "https://github.com/ziti/weewx-reservoir/blob/e64b6741e74d143fe86c23c20429503f5106d8a6/install.py"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-reservoir/test_driver.py": "3dbabedfc0dbaa3990b298a3ab41a91087062cece2c518476543288be536d243"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/reservoir/v1.1.0/reservoir-1.1.0.tar.gz",
+      "format": "tar.gz",
+      "sha256": "e6f43fe201cfe10f21d9935ba734791b37658dd1ec7fba0644361a0a8f6182cd"
+    }
+  },
+  "snmp": {
+    "status": "published",
+    "source_sha": "89e4b613377295f434abcf6a482f0fbcb27cf19c",
+    "archive_sha256": "bf740742d9074f1b0b4725085de4642416988a22465a3a390f824f56ff2e0ceb",
+    "release_revision": "catalog-r1",
+    "limitations": [
+      "Uses the synchronous PySNMP 4.4.12 API with pinned pyasn1/pysmi and asyncore compatibility packages. PySNMP 6/7 are incompatible. ASN.1 reply is real; only network response is a fixture."
+    ],
+    "publication": {
+      "release_id": 420336209,
+      "asset_id": 664770629,
+      "immutable": true,
+      "sha256": "bf740742d9074f1b0b4725085de4642416988a22465a3a390f824f56ff2e0ceb"
+    },
+    "repository": "weewx-packages/weewx-snmp",
+    "tests_path": "ci/project_tests/weewx-snmp",
+    "coverage": "release",
+    "packaging_recipe": {
+      "source_sha": "89e4b613377295f434abcf6a482f0fbcb27cf19c",
+      "patch": "ci/recipes/snmp/package.patch",
+      "sha256": "1afc367cb29035c54af64e335d3e1bdc87b091eb4358094dcf10d6f27acf45bd",
+      "changes": "Pinned synchronous PySNMP 4.4.12 needs importlib.util imported explicitly on Python 3.14; otherwise fallback imports removed imp. Current PySNMP 6/7 remove synchronous hlapi names; pin API plus pyasn1 and asyncore compatibility dependencies."
+    },
+    "license": "GPL-3.0-or-later",
+    "license_evidence": [
+      "https://github.com/roe-dl/weewx-snmp/blob/89e4b613377295f434abcf6a482f0fbcb27cf19c/LICENSE",
+      "https://github.com/roe-dl/weewx-snmp/blob/89e4b613377295f434abcf6a482f0fbcb27cf19c/bin/user/snmp.py",
+      "https://github.com/roe-dl/weewx-snmp/blob/89e4b613377295f434abcf6a482f0fbcb27cf19c/install.py"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-snmp/test_driver.py": "89d88306b0a8459024ef7e3a26360cc8e063088d83cf4bb8f91249ee52dc914b"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/snmp/v0.4.post1/snmp-0.4.post1.tar.gz",
+      "format": "tar.gz",
+      "sha256": "bf740742d9074f1b0b4725085de4642416988a22465a3a390f824f56ff2e0ceb"
+    }
+  },
+  "tempest-ws": {
+    "status": "published",
+    "source_sha": "4c27e0d51c3e355976241acc12661dfe2f1546de",
+    "archive_sha256": "c3193b35654254f15418cf4c6078520eee15e022eb29a3ab64dd6f5033a11be1",
+    "limitations": [],
+    "publication": {
+      "release_id": 420336244,
+      "asset_id": 664770720,
+      "immutable": true,
+      "sha256": "c3193b35654254f15418cf4c6078520eee15e022eb29a3ab64dd6f5033a11be1"
+    },
+    "repository": "weewx-packages/weewx-tempest-ws",
+    "tests_path": "ci/project_tests/weewx-tempest-ws",
+    "coverage": "release",
+    "license": "GPL-3.0-or-later",
+    "license_evidence": [
+      "https://github.com/livysdad27/tempestWS/blob/4c27e0d51c3e355976241acc12661dfe2f1546de/LICENSE",
+      "https://github.com/livysdad27/tempestWS/blob/4c27e0d51c3e355976241acc12661dfe2f1546de/bin/user/tempestWS.py"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-tempest-ws/test_driver.py": "50e33c2f8549319266e253763230010efbc08246cec08a5f0219ed262e8be753"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/tempest-ws/v1.0.2/tempest-ws-1.0.2.tar.gz",
+      "format": "tar.gz",
+      "sha256": "c3193b35654254f15418cf4c6078520eee15e022eb29a3ab64dd6f5033a11be1"
+    }
+  },
+  "tfrc": {
+    "status": "published",
+    "source_sha": "eb1a52630f6eeff53ab3ede9ef2528825db38d7f",
+    "archive_sha256": "f54725662c355368eddeabc9db60444af0b3bb0209ff18bb6e9c6070eb09c9d8",
+    "limitations": [
+      "TFA_1 decoder is covered. Upstream TFA_2, TFA_3 and TX22 decoders remain explicitly unimplemented. Requires a separately installed tfrec receiver executable for live collection."
+    ],
+    "publication": {
+      "release_id": 420336274,
+      "asset_id": 664770797,
+      "immutable": true,
+      "sha256": "f54725662c355368eddeabc9db60444af0b3bb0209ff18bb6e9c6070eb09c9d8"
+    },
+    "repository": "weewx-packages/weewx-tfrc",
+    "tests_path": "ci/project_tests/weewx-tfrc",
+    "coverage": "release",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/matthewwall/weewx-tfrc/blob/eb1a52630f6eeff53ab3ede9ef2528825db38d7f/license",
+      "https://github.com/matthewwall/weewx-tfrc/blob/eb1a52630f6eeff53ab3ede9ef2528825db38d7f/readme",
+      "https://github.com/matthewwall/weewx-tfrc/blob/eb1a52630f6eeff53ab3ede9ef2528825db38d7f/bin/user/tfrc.py"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-tfrc/test_driver.py": "0cca93430e8ef4e4ef00eebb27c6d231977d5f45698e64b47f26d673ed6f558b"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/tfrc/v0.5/tfrc-0.5.tar.gz",
+      "format": "tar.gz",
+      "sha256": "f54725662c355368eddeabc9db60444af0b3bb0209ff18bb6e9c6070eb09c9d8"
+    }
+  },
+  "ultimate-push": {
+    "status": "published",
+    "source_sha": "3732d498150bfe6c9217e2169bbf27cb47395b87",
+    "archive_sha256": "cfc6b5cc97e4766d74bccf5b5df51b66ff9c2c911b74b7043d864ec2dc7a54ca",
+    "limitations": [],
+    "publication": {
+      "release_id": 420336310,
+      "asset_id": 664770920,
+      "immutable": true,
+      "sha256": "cfc6b5cc97e4766d74bccf5b5df51b66ff9c2c911b74b7043d864ec2dc7a54ca"
+    },
+    "repository": "weewx-packages/weewx-ultimate-push",
+    "tests_path": "ci/project_tests/weewx-ultimate-push",
+    "coverage": "release",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/hilman2/weewx-ultimate-push/blob/3732d498150bfe6c9217e2169bbf27cb47395b87/LICENSE",
+      "https://github.com/hilman2/weewx-ultimate-push/blob/3732d498150bfe6c9217e2169bbf27cb47395b87/bin/user/ultimatepush/catalogs/ambient.py",
+      "https://github.com/hilman2/weewx-ultimate-push/blob/3732d498150bfe6c9217e2169bbf27cb47395b87/bin/user/ultimatepush/catalogs/ecowitt.py"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-ultimate-push/test_driver.py": "a6785f2337e9a43de338c123a57cc7bea0427ab86d8f8ddb5443393900c104bd"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/ultimate-push/v0.21.0/ultimate-push-0.21.0.tar.gz",
+      "format": "tar.gz",
+      "sha256": "cfc6b5cc97e4766d74bccf5b5df51b66ff9c2c911b74b7043d864ec2dc7a54ca"
+    }
+  },
+  "uradmon": {
+    "status": "published",
+    "source_sha": "c3070167a454dff6e6ebf4844667a404fb75af23",
+    "archive_sha256": "dc412d7ed732fb698300c806c54f795025d164b42ae58a473bc74d278ef6eea6",
+    "limitations": [],
+    "publication": {
+      "release_id": 420336350,
+      "asset_id": 664771087,
+      "immutable": true,
+      "sha256": "dc412d7ed732fb698300c806c54f795025d164b42ae58a473bc74d278ef6eea6"
+    },
+    "repository": "weewx-packages/weewx-uradmon",
+    "tests_path": "ci/project_tests/weewx-uradmon",
+    "coverage": "release",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/glennmckechnie/weewx-uradmon/blob/c3070167a454dff6e6ebf4844667a404fb75af23/LICENSE",
+      "https://github.com/glennmckechnie/weewx-uradmon/blob/c3070167a454dff6e6ebf4844667a404fb75af23/install.py",
+      "https://github.com/glennmckechnie/weewx-uradmon/blob/c3070167a454dff6e6ebf4844667a404fb75af23/skins/uradmon/index.html.tmpl"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-uradmon/test_driver.py": "15b955207f48456ab582af0f8beb335ffe6a646e0be308e52f3cf8f6ffc9d352"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/uradmon/v0.2.9/uradmon-0.2.9.tar.gz",
+      "format": "tar.gz",
+      "sha256": "dc412d7ed732fb698300c806c54f795025d164b42ae58a473bc74d278ef6eea6"
+    }
+  },
+  "vedirect": {
+    "status": "published",
+    "source_sha": "8882de6e6cf52f1f418e020319e9965bb835aa1b",
+    "archive_sha256": "45aaa640400d5da81d3d7af19690a9f7b358ea325119dd534ee437edb5f3e9dc",
+    "release_revision": "catalog-r1",
+    "limitations": [],
+    "publication": {
+      "release_id": 420336385,
+      "asset_id": 664771221,
+      "immutable": true,
+      "sha256": "45aaa640400d5da81d3d7af19690a9f7b358ea325119dd534ee437edb5f3e9dc"
+    },
+    "repository": "weewx-packages/weewx-vedirect",
+    "tests_path": "ci/project_tests/weewx-vedirect",
+    "coverage": "release",
+    "packaging_recipe": {
+      "source_sha": "8882de6e6cf52f1f418e020319e9965bb835aa1b",
+      "patch": "ci/recipes/vedirect/package.patch",
+      "sha256": "c3580231d12e5fb8d648cf1eeac94b3e760fed0d6c455721d1e3a6411b53d3a4",
+      "changes": "pyserial returns bytes on Python 3, but parser compares text delimiters. Decode each byte as Latin-1 so the checksum still includes all 8 bits and complete serial frames can be parsed."
+    },
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/matthewwall/weewx-vedirect/blob/8882de6e6cf52f1f418e020319e9965bb835aa1b/license",
+      "https://github.com/matthewwall/weewx-vedirect/blob/8882de6e6cf52f1f418e020319e9965bb835aa1b/install.py",
+      "https://github.com/matthewwall/weewx-vedirect/blob/8882de6e6cf52f1f418e020319e9965bb835aa1b/bin/user/vedirect.py"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-vedirect/test_driver.py": "3c4ad6ca6f6dbd06a8212fbf8c051e1fc5df6a9fe2f82a7af731c3afd699ff92"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/vedirect/v0.2.post1/vedirect-0.2.post1.tar.gz",
+      "format": "tar.gz",
+      "sha256": "45aaa640400d5da81d3d7af19690a9f7b358ea325119dd534ee437edb5f3e9dc"
+    }
+  },
+  "wmr89": {
+    "status": "published",
+    "source_sha": "ad55ccbd58f57ae76f9f7d530c9ca570dcfc7326",
+    "archive_sha256": "52a3dfb3839020e3214e7b962212ae534b1e35d15a1a1c235aa019aab63f366e",
+    "limitations": [],
+    "publication": {
+      "release_id": 420336415,
+      "asset_id": 664771326,
+      "immutable": true,
+      "sha256": "52a3dfb3839020e3214e7b962212ae534b1e35d15a1a1c235aa019aab63f366e"
+    },
+    "repository": "weewx-packages/weewx-wmr89",
+    "tests_path": "ci/project_tests/weewx-wmr89",
+    "coverage": "release",
+    "license": "LGPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/tkeffer/weewx-wmr89/blob/ad55ccbd58f57ae76f9f7d530c9ca570dcfc7326/LICENSE.txt",
+      "https://github.com/tkeffer/weewx-wmr89/blob/ad55ccbd58f57ae76f9f7d530c9ca570dcfc7326/install.py",
+      "https://github.com/tkeffer/weewx-wmr89/blob/ad55ccbd58f57ae76f9f7d530c9ca570dcfc7326/bin/user/wmr89.py"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-wmr89/test_driver.py": "91e03d5b010ef212302bffe9b35ea4660e15bf5f85cf2997fb37a5bea065b741"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/wmr89/v1.0.1/wmr89-1.0.1.tar.gz",
+      "format": "tar.gz",
+      "sha256": "52a3dfb3839020e3214e7b962212ae534b1e35d15a1a1c235aa019aab63f366e"
+    }
+  },
+  "ws6in1": {
+    "status": "published",
+    "source_sha": "1fb840239a1bbc2caee2e663208ea0c7bffe54cb",
+    "archive_sha256": "bce87938f723748331f40ac4f2170d81206f26b42d92653e5caad120ced56bd3",
+    "limitations": [],
+    "publication": {
+      "release_id": 420336449,
+      "asset_id": 664771454,
+      "immutable": true,
+      "sha256": "bce87938f723748331f40ac4f2170d81206f26b42d92653e5caad120ced56bd3"
+    },
+    "repository": "weewx-packages/weewx-ws6in1",
+    "tests_path": "ci/project_tests/weewx-ws6in1",
+    "coverage": "release",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/BobAtchley/weewx-ws6in1/blob/1fb840239a1bbc2caee2e663208ea0c7bffe54cb/LICENSE",
+      "https://github.com/BobAtchley/weewx-ws6in1/blob/1fb840239a1bbc2caee2e663208ea0c7bffe54cb/bin/user/ws6in1.py"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-ws6in1/test_driver.py": "4971b68860fecd732fe2e78cf566726875dac03bddae922e26a85f1d9f960f22"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/ws6in1/v1.03/ws6in1-1.03.tar.gz",
+      "format": "tar.gz",
+      "sha256": "bce87938f723748331f40ac4f2170d81206f26b42d92653e5caad120ced56bd3"
+    }
+  },
+  "xtide": {
+    "status": "published",
+    "source_sha": "84454b19a8b14180384bf15ba7a301619312a636",
+    "archive_sha256": "9f6fc9cf9dc715554e62b057f9703c1bc1c4a3b83a1a99b72c19ff8df1b24587",
+    "limitations": [
+      "Tide executable is exercised through recorded CLI CSV fixture output. Real harmonics and installed XTide program are deployment dependencies; upstream real-tide integration tests are reported separately."
+    ],
+    "publication": {
+      "release_id": 420336483,
+      "asset_id": 664771559,
+      "immutable": true,
+      "sha256": "9f6fc9cf9dc715554e62b057f9703c1bc1c4a3b83a1a99b72c19ff8df1b24587"
+    },
+    "repository": "weewx-packages/weewx-xtide",
+    "tests_path": "ci/project_tests/weewx-xtide",
+    "coverage": "release",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/chaunceygardiner/weewx-xtide/blob/84454b19a8b14180384bf15ba7a301619312a636/LICENSE",
+      "https://github.com/chaunceygardiner/weewx-xtide/blob/84454b19a8b14180384bf15ba7a301619312a636/bin/user/xtide.py",
+      "https://github.com/chaunceygardiner/weewx-xtide/blob/84454b19a8b14180384bf15ba7a301619312a636/install.py",
+      "https://github.com/chaunceygardiner/weewx-xtide/blob/84454b19a8b14180384bf15ba7a301619312a636/tests/test_american_english.py",
+      "https://github.com/chaunceygardiner/weewx-xtide/blob/84454b19a8b14180384bf15ba7a301619312a636/tests/test_xtide.py",
+      "https://github.com/chaunceygardiner/weewx-xtide/blob/84454b19a8b14180384bf15ba7a301619312a636/tools/verify_page.py"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-xtide/test_driver.py": "bff84616e831a1808b10cb5e9d7e4007306e3c1624bda512f09b82afafa70c7a"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/xtide/v3.3/xtide-3.3.tar.gz",
+      "format": "tar.gz",
+      "sha256": "9f6fc9cf9dc715554e62b057f9703c1bc1c4a3b83a1a99b72c19ff8df1b24587"
+    }
+  },
+  "pisensehat": {
+    "status": "blocked_catalog",
+    "source_sha": "70bcc9b31f8e914e773b762dc345f28d849f54a6",
+    "archive_sha256": "582d5eaa76b1c16f1db01d86b334fda8c6e4c1130cf32926f423483c4b6c1d82",
+    "limitations": [
+      "The source/component CI covers real LPS22 register decoding and LOOP unit conversion only.",
+      "Original installer imports PiSense at install time and fails at RPi.GPIO on this x86 host. Original installer name contains spaces.",
+      "Runtime requires ./bin/user/SHTC3.so with init, SHTC3_Read_TH and SHTC3_Read_RH. Upstream has no such library or matching native sources.",
+      "Current vendor demo was downloaded and inspected. Its Raspberry Pi C Makefiles build executables, not the required ABI. Local build fails on absent bcm2835.h; the inspected SHTC3 components have no explicit redistribution grant.",
+      "No SHTC3 dummy was created, no native vendor file is included in any candidate archive, and no complete PiSense hardware validation is claimed."
+    ],
+    "repository": "weewx-packages/weewx-PiSenseHat",
+    "tests_path": "ci/project_tests/weewx-PiSenseHat",
+    "coverage": "component",
+    "license": "MIT",
+    "license_evidence": [
+      "https://github.com/sbsrouteur/weewx-PiSenseHat/blob/70bcc9b31f8e914e773b762dc345f28d849f54a6/LICENSE"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-PiSenseHat/test_driver.py": "274b904c1cb48a8210dc546ca490920f04ed3e76aa4e48888d83e04704046e48"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/weewx-PiSenseHat/archive/70bcc9b31f8e914e773b762dc345f28d849f54a6.zip",
+      "format": "zip",
+      "sha256": "582d5eaa76b1c16f1db01d86b334fda8c6e4c1130cf32926f423483c4b6c1d82"
+    }
+  },
+  "dwd": {
+    "status": "published",
+    "source_sha": "dc8dfaec5a12b082d61c53738abb38c7d1daeeae",
+    "archive_sha256": "d96449256f5c9cdc57fe2ba44d7094f574aaf8572b459a4135941ec092879559",
+    "limitations": [
+      "Verified on official WeeWX master 2202a2f873353d926d69814570b63b0a195f6d22 and development 06b5ffb3335417132d7527e738e7eea9769c46bf with Python 3.10.22 and 3.14.4.",
+      "Hardware and remote services are represented by byte, file or HTTP fixtures; no physical hardware result is claimed."
+    ],
+    "publication": {
+      "release_id": 420347706,
+      "asset_id": 664810852,
+      "immutable": true,
+      "sha256": "d96449256f5c9cdc57fe2ba44d7094f574aaf8572b459a4135941ec092879559"
+    },
+    "repository": "weewx-packages/weewx-DWD",
+    "tests_path": "ci/project_tests/weewx-DWD",
+    "coverage": "release",
+    "packaging_recipe": {
+      "source_sha": "dc8dfaec5a12b082d61c53738abb38c7d1daeeae",
+      "patch": "ci/recipes/dwd/package.patch",
+      "sha256": "08ad8086115a528b86b798180e3f14492ccac1e51b112a94f9a0fa041060bce7",
+      "changes": "python3 repair_installer_versions.py"
+    },
+    "license": "GPL-3.0-or-later",
+    "license_evidence": [
+      "https://github.com/roe-dl/weewx-DWD/blob/dc8dfaec5a12b082d61c53738abb38c7d1daeeae/LICENSE",
+      "https://github.com/roe-dl/weewx-DWD/blob/dc8dfaec5a12b082d61c53738abb38c7d1daeeae/bin/user/capwarnings.py",
+      "https://github.com/roe-dl/weewx-DWD/blob/dc8dfaec5a12b082d61c53738abb38c7d1daeeae/bin/user/weathercodes.py",
+      "https://github.com/roe-dl/weewx-DWD/blob/dc8dfaec5a12b082d61c53738abb38c7d1daeeae/bin/user/weatherservices.py",
+      "https://github.com/roe-dl/weewx-DWD/blob/dc8dfaec5a12b082d61c53738abb38c7d1daeeae/bin/user/weatherservicesdb.py",
+      "https://github.com/roe-dl/weewx-DWD/blob/dc8dfaec5a12b082d61c53738abb38c7d1daeeae/bin/user/weatherserviceshealth.py",
+      "https://github.com/roe-dl/weewx-DWD/blob/dc8dfaec5a12b082d61c53738abb38c7d1daeeae/bin/user/weatherservicesradar.py",
+      "https://github.com/roe-dl/weewx-DWD/blob/dc8dfaec5a12b082d61c53738abb38c7d1daeeae/bin/user/weatherservicesutil.py",
+      "https://github.com/roe-dl/weewx-DWD/blob/dc8dfaec5a12b082d61c53738abb38c7d1daeeae/bin/user/wildfire.py"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-DWD/test_payload.py": "16bb7e923e6051008f15b0a8b3d8f692b45bc58decad5d832818971b31a8269d",
+      "ci/project_tests/weewx-DWD/test_installed_hooks.py": "d46e6862749b8474bc12c848adaf1e294ad784f33d9282f395d3f2db92e70b08"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/dwd/v0.0.0.post20261022/dwd-0.0.0.post20261022.tar.gz",
+      "format": "tar.gz",
+      "sha256": "d96449256f5c9cdc57fe2ba44d7094f574aaf8572b459a4135941ec092879559"
+    }
+  },
+  "gts": {
+    "status": "published",
+    "source_sha": "202b1546156b892c6baa4482ed6cc169a0f0a077",
+    "archive_sha256": "662666b09453cdab35121bfcdec669c47f87419b4cd2127f57b2c0e130b2137d",
+    "limitations": [
+      "Verified on official WeeWX master 2202a2f873353d926d69814570b63b0a195f6d22 and development 06b5ffb3335417132d7527e738e7eea9769c46bf with Python 3.10.22 and 3.14.4.",
+      "Hardware and remote services are represented by byte, file or HTTP fixtures; no physical hardware result is claimed."
+    ],
+    "publication": {
+      "release_id": 420342999,
+      "asset_id": 664794071,
+      "immutable": true,
+      "sha256": "662666b09453cdab35121bfcdec669c47f87419b4cd2127f57b2c0e130b2137d"
+    },
+    "repository": "weewx-packages/weewx-GTS",
+    "tests_path": "ci/project_tests/weewx-GTS",
+    "coverage": "release",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/roe-dl/weewx-GTS/blob/202b1546156b892c6baa4482ed6cc169a0f0a077/LICENSE",
+      "https://github.com/roe-dl/weewx-GTS/blob/202b1546156b892c6baa4482ed6cc169a0f0a077/install.py"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-GTS/test_payload.py": "8cd39a94120e8045b1c4cacb154616834bca4e28b2ec4d146933226a9be229e8",
+      "ci/project_tests/weewx-GTS/test_installed_hooks.py": "d46e6862749b8474bc12c848adaf1e294ad784f33d9282f395d3f2db92e70b08"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/gts/v1.2/gts-1.2.tar.gz",
+      "format": "tar.gz",
+      "sha256": "662666b09453cdab35121bfcdec669c47f87419b4cd2127f57b2c0e130b2137d"
+    }
+  },
+  "airq": {
+    "status": "published",
+    "source_sha": "199698d5ba4228509b9014a313a546bfceb0cdf4",
+    "archive_sha256": "8a5293a188c25efc3a1e8f159e65af6835ea1c2d8155d5d557e9d3d07f163342",
+    "limitations": [
+      "Verified on official WeeWX master 2202a2f873353d926d69814570b63b0a195f6d22 and development 06b5ffb3335417132d7527e738e7eea9769c46bf with Python 3.10.22 and 3.14.4.",
+      "Hardware and remote services are represented by byte, file or HTTP fixtures; no physical hardware result is claimed.",
+      "Prerelease; the catalog client requires --pre."
+    ],
+    "publication": {
+      "release_id": 420343029,
+      "asset_id": 664794178,
+      "immutable": true,
+      "sha256": "8a5293a188c25efc3a1e8f159e65af6835ea1c2d8155d5d557e9d3d07f163342"
+    },
+    "repository": "weewx-packages/weewx-airQ",
+    "tests_path": "ci/project_tests/weewx-airQ",
+    "coverage": "release",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/roe-dl/weewx-airQ/blob/199698d5ba4228509b9014a313a546bfceb0cdf4/LICENSE",
+      "https://github.com/roe-dl/weewx-airQ/blob/199698d5ba4228509b9014a313a546bfceb0cdf4/install.py"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-airQ/test_payload.py": "3a7d2f8f92d414ae6c8fa8f85e22731139658ff3d59efb45b2dd1aba55a6210c",
+      "ci/project_tests/weewx-airQ/test_installed_hooks.py": "d46e6862749b8474bc12c848adaf1e294ad784f33d9282f395d3f2db92e70b08"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/airq/v0.9b3/airq-0.9b3.tar.gz",
+      "format": "tar.gz",
+      "sha256": "8a5293a188c25efc3a1e8f159e65af6835ea1c2d8155d5d557e9d3d07f163342"
+    }
+  },
+  "airgradient": {
+    "status": "published",
+    "source_sha": "b03cb8ba6b02daa4f1fc3740face83a6086b631f",
+    "archive_sha256": "9106b7024fc35f72a32bea2eda8bfa820f97606d9a16db4ca05cb99a681cb99d",
+    "limitations": [
+      "Verified on official WeeWX master 2202a2f873353d926d69814570b63b0a195f6d22 and development 06b5ffb3335417132d7527e738e7eea9769c46bf with Python 3.10.22 and 3.14.4.",
+      "Hardware and remote services are represented by byte, file or HTTP fixtures; no physical hardware result is claimed."
+    ],
+    "publication": {
+      "release_id": 420343080,
+      "asset_id": 664794322,
+      "immutable": true,
+      "sha256": "9106b7024fc35f72a32bea2eda8bfa820f97606d9a16db4ca05cb99a681cb99d"
+    },
+    "repository": "weewx-packages/weewx-airgradient",
+    "tests_path": "ci/project_tests/weewx-airgradient",
+    "coverage": "release",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/chaunceygardiner/weewx-airgradient/blob/b03cb8ba6b02daa4f1fc3740face83a6086b631f/LICENSE",
+      "https://github.com/chaunceygardiner/weewx-airgradient/blob/b03cb8ba6b02daa4f1fc3740face83a6086b631f/bin/user/airgradient.py",
+      "https://github.com/chaunceygardiner/weewx-airgradient/blob/b03cb8ba6b02daa4f1fc3740face83a6086b631f/install.py"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-airgradient/test_payload.py": "843137cdcc7a0dd31cb5e8eb0c1d0bc9868a39f3a29e9cecde9672ceb4f9209b",
+      "ci/project_tests/weewx-airgradient/test_installed_hooks.py": "d46e6862749b8474bc12c848adaf1e294ad784f33d9282f395d3f2db92e70b08"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/airgradient/v4.0/airgradient-4.0.tar.gz",
+      "format": "tar.gz",
+      "sha256": "9106b7024fc35f72a32bea2eda8bfa820f97606d9a16db4ca05cb99a681cb99d"
+    }
+  },
+  "amphibian": {
+    "status": "published",
+    "source_sha": "60c14f51900d3923ec6f91c911efffb3761c9293",
+    "archive_sha256": "faec86ac357ed2e8e4c80d864b5342c883c704387e0b7f04ec797899d8be0f87",
+    "limitations": [
+      "Verified on official WeeWX master 2202a2f873353d926d69814570b63b0a195f6d22 and development 06b5ffb3335417132d7527e738e7eea9769c46bf with Python 3.10.22 and 3.14.4.",
+      "Hardware and remote services are represented by byte, file or HTTP fixtures; no physical hardware result is claimed."
+    ],
+    "publication": {
+      "release_id": 420343113,
+      "asset_id": 664794473,
+      "immutable": true,
+      "sha256": "faec86ac357ed2e8e4c80d864b5342c883c704387e0b7f04ec797899d8be0f87"
+    },
+    "repository": "weewx-packages/weewx-amphibian",
+    "tests_path": "ci/project_tests/weewx-amphibian",
+    "coverage": "release",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/matthewwall/weewx-amphibian/blob/60c14f51900d3923ec6f91c911efffb3761c9293/license",
+      "https://github.com/matthewwall/weewx-amphibian/blob/60c14f51900d3923ec6f91c911efffb3761c9293/install.py"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-amphibian/test_payload.py": "95333ac1123f623481992b575127c67b299b36d93145863f0c9e5b9a3e5a114e",
+      "ci/project_tests/weewx-amphibian/test_installed_hooks.py": "d46e6862749b8474bc12c848adaf1e294ad784f33d9282f395d3f2db92e70b08"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/amphibian/v0.12/amphibian-0.12.tar.gz",
+      "format": "tar.gz",
+      "sha256": "faec86ac357ed2e8e4c80d864b5342c883c704387e0b7f04ec797899d8be0f87"
+    }
+  },
+  "aqi-xtype": {
+    "status": "published",
+    "source_sha": "dcf1f58562fd756c8beb42ce97580f376acc7ff2",
+    "archive_sha256": "f160572a6dd076c0553c35ac2475a2c95d410376f19624ebd62472b082921c44",
+    "limitations": [
+      "Verified on official WeeWX master 2202a2f873353d926d69814570b63b0a195f6d22 and development 06b5ffb3335417132d7527e738e7eea9769c46bf with Python 3.10.22 and 3.14.4.",
+      "Hardware and remote services are represented by byte, file or HTTP fixtures; no physical hardware result is claimed.",
+      "Prerelease; the catalog client requires --pre."
+    ],
+    "publication": {
+      "release_id": 420343150,
+      "asset_id": 664794575,
+      "immutable": true,
+      "sha256": "f160572a6dd076c0553c35ac2475a2c95d410376f19624ebd62472b082921c44"
+    },
+    "repository": "weewx-packages/weewx-aqi-xtype",
+    "tests_path": "ci/project_tests/weewx-aqi-xtype",
+    "coverage": "release",
+    "license": "AGPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/weewx-extensions/aqi-xtype/blob/dcf1f58562fd756c8beb42ce97580f376acc7ff2/LICENSE"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-aqi-xtype/test_payload.py": "f894400b41da9f5097a199424a50ee9ddb3e73b325d5a8b132eec8c74697806b",
+      "ci/project_tests/weewx-aqi-xtype/test_installed_hooks.py": "d46e6862749b8474bc12c848adaf1e294ad784f33d9282f395d3f2db92e70b08"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/aqi-xtype/v2.1.0rc1/aqi-xtype-2.1.0rc1.tar.gz",
+      "format": "tar.gz",
+      "sha256": "f160572a6dd076c0553c35ac2475a2c95d410376f19624ebd62472b082921c44"
+    }
+  },
+  "carbonsteel-series": {
+    "status": "published",
+    "source_sha": "218a6e2b2f13ac826897a8661ce5cd4aec4d3423",
+    "archive_sha256": "ddc4b45b20baacf83482ced06a735ae810cc8a96462330380275657256f02d40",
+    "limitations": [
+      "Verified on official WeeWX master 2202a2f873353d926d69814570b63b0a195f6d22 and development 06b5ffb3335417132d7527e738e7eea9769c46bf with Python 3.10.22 and 3.14.4.",
+      "Hardware and remote services are represented by byte, file or HTTP fixtures; no physical hardware result is claimed."
+    ],
+    "publication": {
+      "release_id": 420343196,
+      "asset_id": 664794711,
+      "immutable": true,
+      "sha256": "ddc4b45b20baacf83482ced06a735ae810cc8a96462330380275657256f02d40"
+    },
+    "repository": "weewx-packages/weewx-carbonsteel-series",
+    "tests_path": "ci/project_tests/weewx-carbonsteel-series",
+    "coverage": "release",
+    "license": "GPL-3.0-or-later",
+    "license_evidence": [
+      "https://github.com/Millardiang/weewx-carbonsteel-series/blob/218a6e2b2f13ac826897a8661ce5cd4aec4d3423/LICENSE",
+      "https://github.com/Millardiang/weewx-carbonsteel-series/blob/218a6e2b2f13ac826897a8661ce5cd4aec4d3423/bin/user/carbonsteelseries.py",
+      "https://github.com/Millardiang/weewx-carbonsteel-series/blob/218a6e2b2f13ac826897a8661ce5cd4aec4d3423/install.py"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-carbonsteel-series/test_payload.py": "f1eb8ce722acca6f62e02eca4fd6f99e1f49c61e2e23c82b9cf2d9f1fcd93067",
+      "ci/project_tests/weewx-carbonsteel-series/test_dashboard.py": "95d886931a77c8462f4aca70eb740ade3b25411cdfc1a758ba5b57d58d1c8728",
+      "ci/project_tests/weewx-carbonsteel-series/test_installed_hooks.py": "d46e6862749b8474bc12c848adaf1e294ad784f33d9282f395d3f2db92e70b08"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/carbonsteel-series/v1.0.0/carbonsteel-series-1.0.0.tar.gz",
+      "format": "tar.gz",
+      "sha256": "ddc4b45b20baacf83482ced06a735ae810cc8a96462330380275657256f02d40"
+    }
+  },
+  "climate": {
+    "status": "published",
+    "source_sha": "6e642b2be72511eab26f4226e567a128fd11e73c",
+    "archive_sha256": "f7ccb07f475cdc9bb0426f542f6be65812271712b12a75ebe27bddfafec9b750",
+    "limitations": [
+      "Verified on official WeeWX master 2202a2f873353d926d69814570b63b0a195f6d22 and development 06b5ffb3335417132d7527e738e7eea9769c46bf with Python 3.10.22 and 3.14.4.",
+      "Hardware and remote services are represented by byte, file or HTTP fixtures; no physical hardware result is claimed."
+    ],
+    "publication": {
+      "release_id": 420343233,
+      "asset_id": 664794849,
+      "immutable": true,
+      "sha256": "f7ccb07f475cdc9bb0426f542f6be65812271712b12a75ebe27bddfafec9b750"
+    },
+    "repository": "weewx-packages/weewx-climate",
+    "tests_path": "ci/project_tests/weewx-climate",
+    "coverage": "release",
+    "license": "LGPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/tkeffer/weewx-climate/blob/6e642b2be72511eab26f4226e567a128fd11e73c/LICENSE.txt"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-climate/test_payload.py": "11e45a3b771f5db3e265c827f95f1e29bbab2c76ccab83aa96d09b7b46cf8161",
+      "ci/project_tests/weewx-climate/test_installed_hooks.py": "d46e6862749b8474bc12c848adaf1e294ad784f33d9282f395d3f2db92e70b08"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/climate/v1.3.1/climate-1.3.1.tar.gz",
+      "format": "tar.gz",
+      "sha256": "f7ccb07f475cdc9bb0426f542f6be65812271712b12a75ebe27bddfafec9b750"
+    }
+  },
+  "conditions": {
+    "status": "published",
+    "source_sha": "2928ab42c77b378e9dab2f89480adeb3cec33cac",
+    "archive_sha256": "fe0960f984e51e162254acbae714fe88db050ba9df445f0ebaab5049fe6679d5",
+    "limitations": [
+      "Verified on official WeeWX master 2202a2f873353d926d69814570b63b0a195f6d22 and development 06b5ffb3335417132d7527e738e7eea9769c46bf with Python 3.10.22 and 3.14.4.",
+      "Hardware and remote services are represented by byte, file or HTTP fixtures; no physical hardware result is claimed."
+    ],
+    "publication": {
+      "release_id": 420347782,
+      "asset_id": 664811153,
+      "immutable": true,
+      "sha256": "fe0960f984e51e162254acbae714fe88db050ba9df445f0ebaab5049fe6679d5"
+    },
+    "repository": "weewx-packages/weewx-conditions",
+    "tests_path": "ci/project_tests/weewx-conditions",
+    "coverage": "release",
+    "packaging_recipe": {
+      "source_sha": "2928ab42c77b378e9dab2f89480adeb3cec33cac",
+      "patch": "ci/recipes/conditions/package.patch",
+      "sha256": "cc7553e2fe056a3191507d66636d14bd484fdcc689744b3375121840d2721aef",
+      "changes": "python3 repair_installer_versions.py"
+    },
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/open-astro/weewx-conditions/blob/2928ab42c77b378e9dab2f89480adeb3cec33cac/LICENSE"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-conditions/test_payload.py": "5829f719730bc24459fdfa4262d8cfc9fb00dbfa0740a88b5c7bbf0811ceb8c5",
+      "ci/project_tests/weewx-conditions/test_installed_hooks.py": "d46e6862749b8474bc12c848adaf1e294ad784f33d9282f395d3f2db92e70b08"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/conditions/v1.5.post20261022/conditions-1.5.post20261022.tar.gz",
+      "format": "tar.gz",
+      "sha256": "fe0960f984e51e162254acbae714fe88db050ba9df445f0ebaab5049fe6679d5"
+    }
+  },
+  "ecowitt-console-emulator": {
+    "status": "published",
+    "source_sha": "d431c2f41f37af87cfbc355b26c27ac76d54d9ac",
+    "archive_sha256": "3d0c83569d5cc382fb3114d516a1b57014d830a623ae4c29e85bf3f01708e999",
+    "limitations": [
+      "Verified on official WeeWX master 2202a2f873353d926d69814570b63b0a195f6d22 and development 06b5ffb3335417132d7527e738e7eea9769c46bf with Python 3.10.22 and 3.14.4.",
+      "Hardware and remote services are represented by byte, file or HTTP fixtures; no physical hardware result is claimed."
+    ],
+    "publication": {
+      "release_id": 420343303,
+      "asset_id": 664795097,
+      "immutable": true,
+      "sha256": "3d0c83569d5cc382fb3114d516a1b57014d830a623ae4c29e85bf3f01708e999"
+    },
+    "repository": "weewx-packages/weewx-ecowitt_console_emulator",
+    "tests_path": "ci/project_tests/weewx-ecowitt_console_emulator",
+    "coverage": "release",
+    "license": "GPL-3.0-or-later",
+    "license_evidence": [
+      "https://github.com/Millardiang/weewx-ecowitt_console_emulator/blob/d431c2f41f37af87cfbc355b26c27ac76d54d9ac/LICENSE",
+      "https://github.com/Millardiang/weewx-ecowitt_console_emulator/blob/d431c2f41f37af87cfbc355b26c27ac76d54d9ac/bin/user/ecowitt_console_emulator.py",
+      "https://github.com/Millardiang/weewx-ecowitt_console_emulator/blob/d431c2f41f37af87cfbc355b26c27ac76d54d9ac/install.py"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-ecowitt_console_emulator/test_payload.py": "acef6dff726427fda5a12f4a30f8fe5298118f332b7128f454a11ca222d84f49",
+      "ci/project_tests/weewx-ecowitt_console_emulator/test_dashboard.py": "8c0ad09169deb3238a12a59da86e0a4b80e539687ac67297e4700fd3ef77853d",
+      "ci/project_tests/weewx-ecowitt_console_emulator/test_installed_hooks.py": "d46e6862749b8474bc12c848adaf1e294ad784f33d9282f395d3f2db92e70b08"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/ecowitt-console-emulator/v1.1.2/ecowitt-console-emulator-1.1.2.tar.gz",
+      "format": "tar.gz",
+      "sha256": "3d0c83569d5cc382fb3114d516a1b57014d830a623ae4c29e85bf3f01708e999"
+    }
+  },
+  "exfoliation": {
+    "status": "published",
+    "source_sha": "19ec9af514b2b32076713967911a9e5baffb6930",
+    "archive_sha256": "8ba84fb0e964da0b882ddd2e97568b256cd4f57f02f70c68e35ac355d61fe519",
+    "limitations": [
+      "Verified on official WeeWX master 2202a2f873353d926d69814570b63b0a195f6d22 and development 06b5ffb3335417132d7527e738e7eea9769c46bf with Python 3.10.22 and 3.14.4.",
+      "Hardware and remote services are represented by byte, file or HTTP fixtures; no physical hardware result is claimed."
+    ],
+    "publication": {
+      "release_id": 420343342,
+      "asset_id": 664795211,
+      "immutable": true,
+      "sha256": "8ba84fb0e964da0b882ddd2e97568b256cd4f57f02f70c68e35ac355d61fe519"
+    },
+    "repository": "weewx-packages/weewx-exfoliation",
+    "tests_path": "ci/project_tests/weewx-exfoliation",
+    "coverage": "release",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/chaunceygardiner/weewx-exfoliation/blob/19ec9af514b2b32076713967911a9e5baffb6930/license",
+      "https://github.com/chaunceygardiner/weewx-exfoliation/blob/19ec9af514b2b32076713967911a9e5baffb6930/install.py"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-exfoliation/test_payload.py": "6731166760140a007d1b7f71f9fa163abb3a5e8a6b8e6d88158108afe33fbf5c",
+      "ci/project_tests/weewx-exfoliation/test_installed_hooks.py": "d46e6862749b8474bc12c848adaf1e294ad784f33d9282f395d3f2db92e70b08"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/exfoliation/v0.46/exfoliation-0.46.tar.gz",
+      "format": "tar.gz",
+      "sha256": "8ba84fb0e964da0b882ddd2e97568b256cd4f57f02f70c68e35ac355d61fe519"
+    }
+  },
+  "filepile": {
+    "status": "published",
+    "source_sha": "e58503e018b0ee7c34c09d41f254b1d81e783f23",
+    "archive_sha256": "d3699338c473b7d8836129f2dfae707e30c50fd124393b09e148925000585254",
+    "limitations": [
+      "Verified on official WeeWX master 2202a2f873353d926d69814570b63b0a195f6d22 and development 06b5ffb3335417132d7527e738e7eea9769c46bf with Python 3.10.22 and 3.14.4.",
+      "Hardware and remote services are represented by byte, file or HTTP fixtures; no physical hardware result is claimed."
+    ],
+    "publication": {
+      "release_id": 420343376,
+      "asset_id": 664795319,
+      "immutable": true,
+      "sha256": "d3699338c473b7d8836129f2dfae707e30c50fd124393b09e148925000585254"
+    },
+    "repository": "weewx-packages/weewx-filepile",
+    "tests_path": "ci/project_tests/weewx-filepile",
+    "coverage": "release",
+    "license": "LGPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/tkeffer/filepile/blob/e58503e018b0ee7c34c09d41f254b1d81e783f23/LICENSE.txt"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-filepile/test_payload.py": "0a77115f53357d2476aefa9c35c58bbb63c3b91bc768b7f41f65d48724241fc0",
+      "ci/project_tests/weewx-filepile/test_installed_hooks.py": "d46e6862749b8474bc12c848adaf1e294ad784f33d9282f395d3f2db92e70b08"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/filepile/v0.4/filepile-0.4.tar.gz",
+      "format": "tar.gz",
+      "sha256": "d3699338c473b7d8836129f2dfae707e30c50fd124393b09e148925000585254"
+    }
+  },
+  "forecast": {
+    "status": "published",
+    "source_sha": "30af440fd2a1dcbe80d98ba31aa7667023cd45ec",
+    "archive_sha256": "8374db43ff953fb08f0ce75d071f8a68beced3ac361f933046247febe4dafc35",
+    "limitations": [
+      "Verified on official WeeWX master 2202a2f873353d926d69814570b63b0a195f6d22 and development 06b5ffb3335417132d7527e738e7eea9769c46bf with Python 3.10.22 and 3.14.4.",
+      "Hardware and remote services are represented by byte, file or HTTP fixtures; no physical hardware result is claimed."
+    ],
+    "publication": {
+      "release_id": 420343418,
+      "asset_id": 664795448,
+      "immutable": true,
+      "sha256": "8374db43ff953fb08f0ce75d071f8a68beced3ac361f933046247febe4dafc35"
+    },
+    "repository": "weewx-packages/weewx-forecast",
+    "tests_path": "ci/project_tests/weewx-forecast",
+    "coverage": "release",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/chaunceygardiner/weewx-forecast/blob/30af440fd2a1dcbe80d98ba31aa7667023cd45ec/license",
+      "https://github.com/chaunceygardiner/weewx-forecast/blob/30af440fd2a1dcbe80d98ba31aa7667023cd45ec/bin/user/forecast.py",
+      "https://github.com/chaunceygardiner/weewx-forecast/blob/30af440fd2a1dcbe80d98ba31aa7667023cd45ec/bin/user/test/test_cmp.py",
+      "https://github.com/chaunceygardiner/weewx-forecast/blob/30af440fd2a1dcbe80d98ba31aa7667023cd45ec/bin/user/test/test_forecast.py",
+      "https://github.com/chaunceygardiner/weewx-forecast/blob/30af440fd2a1dcbe80d98ba31aa7667023cd45ec/install.py"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-forecast/test_payload.py": "7ce525dd38fe3b9fc1a5d8b83ee2cae8165c392f12a46faeaa6061edcbd3f9e3",
+      "ci/project_tests/weewx-forecast/test_installed_hooks.py": "d46e6862749b8474bc12c848adaf1e294ad784f33d9282f395d3f2db92e70b08"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/forecast/v5.4/forecast-5.4.tar.gz",
+      "format": "tar.gz",
+      "sha256": "8374db43ff953fb08f0ce75d071f8a68beced3ac361f933046247febe4dafc35"
+    }
+  },
+  "jas": {
+    "status": "published",
+    "source_sha": "fd0e841eedbd98ec6eeb16d47b2cb28c18f936a8",
+    "archive_sha256": "4e22a94827a4190427497f9a9b638c790beebc024e490dcf6c55237b0637c255",
+    "limitations": [
+      "Verified on official WeeWX master 2202a2f873353d926d69814570b63b0a195f6d22 and development 06b5ffb3335417132d7527e738e7eea9769c46bf with Python 3.10.22 and 3.14.4.",
+      "Hardware and remote services are represented by byte, file or HTTP fixtures; no physical hardware result is claimed.",
+      "Prerelease; the catalog client requires --pre."
+    ],
+    "publication": {
+      "release_id": 420347848,
+      "asset_id": 664811432,
+      "immutable": true,
+      "sha256": "4e22a94827a4190427497f9a9b638c790beebc024e490dcf6c55237b0637c255"
+    },
+    "repository": "weewx-packages/weewx-jas",
+    "tests_path": "ci/project_tests/weewx-jas",
+    "coverage": "release",
+    "packaging_recipe": {
+      "source_sha": "fd0e841eedbd98ec6eeb16d47b2cb28c18f936a8",
+      "patch": "ci/recipes/jas/package.patch",
+      "sha256": "8f67e835242b1373b75fcc9a86df4f080fe7878c031af1311d29bf33d3089e48",
+      "changes": "python3 repair_installer_versions.py"
+    },
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/weewx-extensions/jas/blob/fd0e841eedbd98ec6eeb16d47b2cb28c18f936a8/LICENSE"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-jas/test_payload.py": "61ecff53afde13fa0838c3b3c4de9643faa9e81e66576de63f15b8e6e189140f",
+      "ci/project_tests/weewx-jas/test_installed_hooks.py": "d46e6862749b8474bc12c848adaf1e294ad784f33d9282f395d3f2db92e70b08"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/jas/v1.2.0rc3.post20261022/jas-1.2.0rc3.post20261022.tar.gz",
+      "format": "tar.gz",
+      "sha256": "4e22a94827a4190427497f9a9b638c790beebc024e490dcf6c55237b0637c255"
+    }
+  },
+  "meteoalarm": {
+    "status": "published",
+    "source_sha": "3b31e8afcff3203989f32304472189c9f0a346a3",
+    "archive_sha256": "1c372c0baa73a769467bb3c91db043e1ced01edd7ee97c16146322a3bde4a649",
+    "limitations": [
+      "Verified on official WeeWX master 2202a2f873353d926d69814570b63b0a195f6d22 and development 06b5ffb3335417132d7527e738e7eea9769c46bf with Python 3.10.22 and 3.14.4.",
+      "Hardware and remote services are represented by byte, file or HTTP fixtures; no physical hardware result is claimed."
+    ],
+    "publication": {
+      "release_id": 420343478,
+      "asset_id": 664795701,
+      "immutable": true,
+      "sha256": "1c372c0baa73a769467bb3c91db043e1ced01edd7ee97c16146322a3bde4a649"
+    },
+    "repository": "weewx-packages/weewx-meteoalarm",
+    "tests_path": "ci/project_tests/weewx-meteoalarm",
+    "coverage": "release",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/Millardiang/weewx-meteoalarm/blob/3b31e8afcff3203989f32304472189c9f0a346a3/LICENSE",
+      "https://github.com/Millardiang/weewx-meteoalarm/blob/3b31e8afcff3203989f32304472189c9f0a346a3/bin/user/meteoalarm.py"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-meteoalarm/test_payload.py": "dc0a69e265a08ec600c33726bb5b9e74658307d8208fc742f1ffab972a7f3f0e",
+      "ci/project_tests/weewx-meteoalarm/test_installed_hooks.py": "d46e6862749b8474bc12c848adaf1e294ad784f33d9282f395d3f2db92e70b08"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/meteoalarm/v1.0.0/meteoalarm-1.0.0.tar.gz",
+      "format": "tar.gz",
+      "sha256": "1c372c0baa73a769467bb3c91db043e1ced01edd7ee97c16146322a3bde4a649"
+    }
+  },
+  "metrics": {
+    "status": "published",
+    "source_sha": "930ba14ef09d84dd13afc5899849b4ed06ac71a7",
+    "archive_sha256": "3230545f50ae0c1a4dbc966c6a080eaa610e7e6320c2f020fe5b2bde7a893319",
+    "limitations": [
+      "Verified on official WeeWX master 2202a2f873353d926d69814570b63b0a195f6d22 and development 06b5ffb3335417132d7527e738e7eea9769c46bf with Python 3.10.22 and 3.14.4.",
+      "Hardware and remote services are represented by byte, file or HTTP fixtures; no physical hardware result is claimed."
+    ],
+    "publication": {
+      "release_id": 420347895,
+      "asset_id": 664811602,
+      "immutable": true,
+      "sha256": "3230545f50ae0c1a4dbc966c6a080eaa610e7e6320c2f020fe5b2bde7a893319"
+    },
+    "repository": "weewx-packages/weewx-metrics",
+    "tests_path": "ci/project_tests/weewx-metrics",
+    "coverage": "release",
+    "packaging_recipe": {
+      "source_sha": "930ba14ef09d84dd13afc5899849b4ed06ac71a7",
+      "patch": "ci/recipes/metrics/package.patch",
+      "sha256": "42bc14109074ecdc91f84ebefb22a138a2b02cd4afbb902b96ccafb72fcf3925",
+      "changes": "python3 repair_installer_versions.py"
+    },
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/Cosmospacedog/weewx-metrics/blob/930ba14ef09d84dd13afc5899849b4ed06ac71a7/LICENSE"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-metrics/test_payload.py": "ff1ae25354d8c9064a00e36f3097d4387b2423f5d6ca67f1748730d9a62a8cb3",
+      "ci/project_tests/weewx-metrics/test_installed_hooks.py": "d46e6862749b8474bc12c848adaf1e294ad784f33d9282f395d3f2db92e70b08"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/metrics/v0.0.0.post20261022/metrics-0.0.0.post20261022.tar.gz",
+      "format": "tar.gz",
+      "sha256": "3230545f50ae0c1a4dbc966c6a080eaa610e7e6320c2f020fe5b2bde7a893319"
+    }
+  },
+  "mqtt-subscribe": {
+    "status": "published",
+    "source_sha": "35068866003ab045dcf721fbccdd6dc82fb60b57",
+    "archive_sha256": "db86defb7cc0ae480e146dc0abc78beb56cfa6471d3bb72b24d42aceeac37f68",
+    "limitations": [
+      "Verified on official WeeWX master 2202a2f873353d926d69814570b63b0a195f6d22 and development 06b5ffb3335417132d7527e738e7eea9769c46bf with Python 3.10.22 and 3.14.4.",
+      "Hardware and remote services are represented by byte, file or HTTP fixtures; no physical hardware result is claimed.",
+      "Prerelease; the catalog client requires --pre."
+    ],
+    "publication": {
+      "release_id": 420347918,
+      "asset_id": 664811764,
+      "immutable": true,
+      "sha256": "db86defb7cc0ae480e146dc0abc78beb56cfa6471d3bb72b24d42aceeac37f68"
+    },
+    "repository": "weewx-packages/weewx-mqtt-subscribe",
+    "tests_path": "ci/project_tests/weewx-mqtt-subscribe",
+    "coverage": "release",
+    "packaging_recipe": {
+      "source_sha": "35068866003ab045dcf721fbccdd6dc82fb60b57",
+      "patch": "ci/recipes/mqtt-subscribe/package.patch",
+      "sha256": "26213197e5be0805463c89cfde80dc080698048407026922c0f5f27bcfdbcffe",
+      "changes": "python3 repair_installer_versions.py"
+    },
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/weewx-mqtt/subscribe/blob/35068866003ab045dcf721fbccdd6dc82fb60b57/LICENSE",
+      "https://github.com/weewx-mqtt/subscribe/blob/35068866003ab045dcf721fbccdd6dc82fb60b57/docs/readme.md"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-mqtt-subscribe/test_payload.py": "d15b8d8f37a4e879362038239e2430d033a0975f5696a35dd6ebd3818035cdea",
+      "ci/project_tests/weewx-mqtt-subscribe/test_installed_hooks.py": "d46e6862749b8474bc12c848adaf1e294ad784f33d9282f395d3f2db92e70b08"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/mqtt-subscribe/v3.2.1rc1.post20261022/mqtt-subscribe-3.2.1rc1.post20261022.tar.gz",
+      "format": "tar.gz",
+      "sha256": "db86defb7cc0ae480e146dc0abc78beb56cfa6471d3bb72b24d42aceeac37f68"
+    }
+  },
+  "nws": {
+    "status": "published",
+    "source_sha": "3e3ee4406ce5e8e2c8d26c848a814e7cee72171e",
+    "archive_sha256": "45642fe9afa5f469fc8b5d7abed70457958cf1977c71b2118e9201f7cfd2514b",
+    "limitations": [
+      "Verified on official WeeWX master 2202a2f873353d926d69814570b63b0a195f6d22 and development 06b5ffb3335417132d7527e738e7eea9769c46bf with Python 3.10.22 and 3.14.4.",
+      "Hardware and remote services are represented by byte, file or HTTP fixtures; no physical hardware result is claimed."
+    ],
+    "publication": {
+      "release_id": 420343589,
+      "asset_id": 664796067,
+      "immutable": true,
+      "sha256": "45642fe9afa5f469fc8b5d7abed70457958cf1977c71b2118e9201f7cfd2514b"
+    },
+    "repository": "weewx-packages/weewx-nws",
+    "tests_path": "ci/project_tests/weewx-nws",
+    "coverage": "release",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/chaunceygardiner/weewx-nws/blob/3e3ee4406ce5e8e2c8d26c848a814e7cee72171e/LICENSE",
+      "https://github.com/chaunceygardiner/weewx-nws/blob/3e3ee4406ce5e8e2c8d26c848a814e7cee72171e/bin/user/nws.py",
+      "https://github.com/chaunceygardiner/weewx-nws/blob/3e3ee4406ce5e8e2c8d26c848a814e7cee72171e/bin/user/nwsicons.py",
+      "https://github.com/chaunceygardiner/weewx-nws/blob/3e3ee4406ce5e8e2c8d26c848a814e7cee72171e/bin/user/nwsskin.py",
+      "https://github.com/chaunceygardiner/weewx-nws/blob/3e3ee4406ce5e8e2c8d26c848a814e7cee72171e/install.py",
+      "https://github.com/chaunceygardiner/weewx-nws/blob/3e3ee4406ce5e8e2c8d26c848a814e7cee72171e/tests/test_american_english.py",
+      "https://github.com/chaunceygardiner/weewx-nws/blob/3e3ee4406ce5e8e2c8d26c848a814e7cee72171e/tests/test_install.py",
+      "https://github.com/chaunceygardiner/weewx-nws/blob/3e3ee4406ce5e8e2c8d26c848a814e7cee72171e/tests/test_nws.py",
+      "https://github.com/chaunceygardiner/weewx-nws/blob/3e3ee4406ce5e8e2c8d26c848a814e7cee72171e/tests/test_nws_css.py"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-nws/test_payload.py": "87d4ab827fd15e5ff7289514d4bb5eb5e0871a23af20df5d6d46dcd97b2ab43b",
+      "ci/project_tests/weewx-nws/test_installed_hooks.py": "d46e6862749b8474bc12c848adaf1e294ad784f33d9282f395d3f2db92e70b08"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/nws/v6.1.2/nws-6.1.2.tar.gz",
+      "format": "tar.gz",
+      "sha256": "45642fe9afa5f469fc8b5d7abed70457958cf1977c71b2118e9201f7cfd2514b"
+    }
+  },
+  "openweather-api": {
+    "status": "published",
+    "source_sha": "8f1209b5b24a3dd74e685baf4e9d222ec5274223",
+    "archive_sha256": "93a51a29487ca2a2371c727355655ff6f8de64d6a9ca6ad7bc11213630043b67",
+    "limitations": [
+      "Verified on official WeeWX master 2202a2f873353d926d69814570b63b0a195f6d22 and development 06b5ffb3335417132d7527e738e7eea9769c46bf with Python 3.10.22 and 3.14.4.",
+      "Hardware and remote services are represented by byte, file or HTTP fixtures; no physical hardware result is claimed."
+    ],
+    "publication": {
+      "release_id": 420343624,
+      "asset_id": 664796185,
+      "immutable": true,
+      "sha256": "93a51a29487ca2a2371c727355655ff6f8de64d6a9ca6ad7bc11213630043b67"
+    },
+    "repository": "weewx-packages/weewx-openweather_API",
+    "tests_path": "ci/project_tests/weewx-openweather_API",
+    "coverage": "release",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/inguy24/weewx-openweather_API/blob/8f1209b5b24a3dd74e685baf4e9d222ec5274223/LICENSE"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-openweather_API/test_payload.py": "599ba4ae6e3edfe4e4de3b4ca6998335c8da61eec756a5574e8f3a554e285cad",
+      "ci/project_tests/weewx-openweather_API/test_installed_hooks.py": "d46e6862749b8474bc12c848adaf1e294ad784f33d9282f395d3f2db92e70b08"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/openweather-api/v1.0.0/openweather-api-1.0.0.tar.gz",
+      "format": "tar.gz",
+      "sha256": "93a51a29487ca2a2371c727355655ff6f8de64d6a9ca6ad7bc11213630043b67"
+    }
+  },
+  "purple": {
+    "status": "published",
+    "source_sha": "0b677a510ca8bb04efde32e48e00d4724dbb5dd6",
+    "archive_sha256": "84e80797b492773f82820cccfdb7abf0ed9ffba55c640edcb0fa8711341c9e77",
+    "limitations": [
+      "Verified on official WeeWX master 2202a2f873353d926d69814570b63b0a195f6d22 and development 06b5ffb3335417132d7527e738e7eea9769c46bf with Python 3.10.22 and 3.14.4.",
+      "Hardware and remote services are represented by byte, file or HTTP fixtures; no physical hardware result is claimed."
+    ],
+    "publication": {
+      "release_id": 420343651,
+      "asset_id": 664796302,
+      "immutable": true,
+      "sha256": "84e80797b492773f82820cccfdb7abf0ed9ffba55c640edcb0fa8711341c9e77"
+    },
+    "repository": "weewx-packages/weewx-purple",
+    "tests_path": "ci/project_tests/weewx-purple",
+    "coverage": "release",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/chaunceygardiner/weewx-purple/blob/0b677a510ca8bb04efde32e48e00d4724dbb5dd6/LICENSE",
+      "https://github.com/chaunceygardiner/weewx-purple/blob/0b677a510ca8bb04efde32e48e00d4724dbb5dd6/bin/user/purple.py",
+      "https://github.com/chaunceygardiner/weewx-purple/blob/0b677a510ca8bb04efde32e48e00d4724dbb5dd6/install.py"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-purple/test_payload.py": "4525a3bf97ddc7c6fec83a3fa4eb1c84b3985ff4f5e116d52bddf8571634602a",
+      "ci/project_tests/weewx-purple/test_installed_hooks.py": "d46e6862749b8474bc12c848adaf1e294ad784f33d9282f395d3f2db92e70b08"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/purple/v7.2.2/purple-7.2.2.tar.gz",
+      "format": "tar.gz",
+      "sha256": "84e80797b492773f82820cccfdb7abf0ed9ffba55c640edcb0fa8711341c9e77"
+    }
+  },
+  "saratoga": {
+    "status": "published",
+    "source_sha": "be1ed762fa093dd440bbc80dbe15ef6cadbf18be",
+    "archive_sha256": "397f286c2e2da135b0e3791f679a9d35d7d23536a7fa4735e5a05bb9fd7fddce",
+    "limitations": [
+      "Verified on official WeeWX master 2202a2f873353d926d69814570b63b0a195f6d22 and development 06b5ffb3335417132d7527e738e7eea9769c46bf with Python 3.10.22 and 3.14.4.",
+      "Hardware and remote services are represented by byte, file or HTTP fixtures; no physical hardware result is claimed."
+    ],
+    "publication": {
+      "release_id": 420343680,
+      "asset_id": 664796445,
+      "immutable": true,
+      "sha256": "397f286c2e2da135b0e3791f679a9d35d7d23536a7fa4735e5a05bb9fd7fddce"
+    },
+    "repository": "weewx-packages/weewx-saratoga",
+    "tests_path": "ci/project_tests/weewx-saratoga",
+    "coverage": "release",
+    "license": "AGPL-3.0-only AND GPL-3.0-or-later AND GPL-2.0-or-later AND Apache-2.0",
+    "license_evidence": [
+      "https://github.com/ktrue/weewx-saratoga/blob/be1ed762fa093dd440bbc80dbe15ef6cadbf18be/LICENSE",
+      "https://github.com/ktrue/weewx-saratoga/blob/be1ed762fa093dd440bbc80dbe15ef6cadbf18be/bin/user/rtcr.py",
+      "https://github.com/ktrue/weewx-saratoga/blob/be1ed762fa093dd440bbc80dbe15ef6cadbf18be/bin/user/stackedwindrose.py",
+      "https://github.com/ktrue/weewx-saratoga/blob/be1ed762fa093dd440bbc80dbe15ef6cadbf18be/bin/user/ws.py",
+      "https://github.com/ktrue/weewx-saratoga/blob/be1ed762fa093dd440bbc80dbe15ef6cadbf18be/bin/user/wsastro.py",
+      "https://github.com/ktrue/weewx-saratoga/blob/be1ed762fa093dd440bbc80dbe15ef6cadbf18be/bin/user/wsschema.py",
+      "https://github.com/ktrue/weewx-saratoga/blob/be1ed762fa093dd440bbc80dbe15ef6cadbf18be/bin/user/wssearchlist.py",
+      "https://github.com/ktrue/weewx-saratoga/blob/be1ed762fa093dd440bbc80dbe15ef6cadbf18be/bin/user/wstaggedstats.py",
+      "https://github.com/ktrue/weewx-saratoga/blob/be1ed762fa093dd440bbc80dbe15ef6cadbf18be/bin/user/wsxtypes.py"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-saratoga/test_payload.py": "c8bd16321cbd799bae54281fda9aec4d9aba6ac03fe31aabee1f4999da777913",
+      "ci/project_tests/weewx-saratoga/test_installed_hooks.py": "d46e6862749b8474bc12c848adaf1e294ad784f33d9282f395d3f2db92e70b08"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/saratoga/v0.1.11/saratoga-0.1.11.tar.gz",
+      "format": "tar.gz",
+      "sha256": "397f286c2e2da135b0e3791f679a9d35d7d23536a7fa4735e5a05bb9fd7fddce"
+    }
+  },
+  "sds011": {
+    "status": "published",
+    "source_sha": "f8eabb43782be587047fd61af20a9c573a6ed489",
+    "archive_sha256": "d21e17f25f305a32b301c4fe138883cdb251b8841f88048e24ca7cff1f86afad",
+    "limitations": [
+      "Verified on official WeeWX master 2202a2f873353d926d69814570b63b0a195f6d22 and development 06b5ffb3335417132d7527e738e7eea9769c46bf with Python 3.10.22 and 3.14.4.",
+      "Hardware and remote services are represented by byte, file or HTTP fixtures; no physical hardware result is claimed."
+    ],
+    "publication": {
+      "release_id": 420347974,
+      "asset_id": 664812065,
+      "immutable": true,
+      "sha256": "d21e17f25f305a32b301c4fe138883cdb251b8841f88048e24ca7cff1f86afad"
+    },
+    "repository": "weewx-packages/weewx-sds011",
+    "tests_path": "ci/project_tests/weewx-sds011",
+    "coverage": "release",
+    "packaging_recipe": {
+      "source_sha": "f8eabb43782be587047fd61af20a9c573a6ed489",
+      "patch": "ci/recipes/sds011/package.patch",
+      "sha256": "e182b1cb7ef710b8acab8afb8e7b40fd52b72837dfa5c215d695cfbbbeadbadd",
+      "changes": "python3 repair_installer_versions.py"
+    },
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/sbsrouteur/weewx-sds011/blob/f8eabb43782be587047fd61af20a9c573a6ed489/license",
+      "https://github.com/sbsrouteur/weewx-sds011/blob/f8eabb43782be587047fd61af20a9c573a6ed489/bin/user/sds011.py",
+      "https://github.com/sbsrouteur/weewx-sds011/blob/f8eabb43782be587047fd61af20a9c573a6ed489/install.py"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-sds011/test_payload.py": "3e31da9f67564a3da5f751b226568eab3c44730e24b609f759904935cccf4069",
+      "ci/project_tests/weewx-sds011/test_installed_hooks.py": "d46e6862749b8474bc12c848adaf1e294ad784f33d9282f395d3f2db92e70b08"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/sds011/v0.2.post20261022/sds011-0.2.post20261022.tar.gz",
+      "format": "tar.gz",
+      "sha256": "d21e17f25f305a32b301c4fe138883cdb251b8841f88048e24ca7cff1f86afad"
+    }
+  },
+  "setprocessname": {
+    "status": "published",
+    "source_sha": "1f2889a67b6688dfb44cc69a371ba183eaeeebb9",
+    "archive_sha256": "95c02ba244647eeb11740e6abc19dc25b24e6a046190eff8188e85860634f260",
+    "limitations": [
+      "Verified on official WeeWX master 2202a2f873353d926d69814570b63b0a195f6d22 and development 06b5ffb3335417132d7527e738e7eea9769c46bf with Python 3.10.22 and 3.14.4.",
+      "Hardware and remote services are represented by byte, file or HTTP fixtures; no physical hardware result is claimed."
+    ],
+    "publication": {
+      "release_id": 420343750,
+      "asset_id": 664796707,
+      "immutable": true,
+      "sha256": "95c02ba244647eeb11740e6abc19dc25b24e6a046190eff8188e85860634f260"
+    },
+    "repository": "weewx-packages/weewx-setprocessname",
+    "tests_path": "ci/project_tests/weewx-setprocessname",
+    "coverage": "release",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/knight-of-ni/WeeWX-SetProcessName/blob/1f2889a67b6688dfb44cc69a371ba183eaeeebb9/LICENSE",
+      "https://github.com/knight-of-ni/WeeWX-SetProcessName/blob/1f2889a67b6688dfb44cc69a371ba183eaeeebb9/bin/user/SetProcessName.py",
+      "https://github.com/knight-of-ni/WeeWX-SetProcessName/blob/1f2889a67b6688dfb44cc69a371ba183eaeeebb9/install.py"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-setprocessname/test_payload.py": "062b42f27411241a8f901617049a396e7837418fa1f42918792001d322110dce",
+      "ci/project_tests/weewx-setprocessname/test_installed_hooks.py": "d46e6862749b8474bc12c848adaf1e294ad784f33d9282f395d3f2db92e70b08"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/setprocessname/v0.1/setprocessname-0.1.tar.gz",
+      "format": "tar.gz",
+      "sha256": "95c02ba244647eeb11740e6abc19dc25b24e6a046190eff8188e85860634f260"
+    }
+  },
+  "since-last-archive-accumulator": {
+    "status": "published",
+    "source_sha": "c38eaa4118abe36ff938acc02afb7ba5497836a4",
+    "archive_sha256": "36a38392067ac2d5ef98f79424263d4eb751f7f14088eb2f7d20dff3a59b5122",
+    "limitations": [
+      "Verified on official WeeWX master 2202a2f873353d926d69814570b63b0a195f6d22 and development 06b5ffb3335417132d7527e738e7eea9769c46bf with Python 3.10.22 and 3.14.4.",
+      "Hardware and remote services are represented by byte, file or HTTP fixtures; no physical hardware result is claimed."
+    ],
+    "publication": {
+      "release_id": 420343779,
+      "asset_id": 664796815,
+      "immutable": true,
+      "sha256": "36a38392067ac2d5ef98f79424263d4eb751f7f14088eb2f7d20dff3a59b5122"
+    },
+    "repository": "weewx-packages/weewx-since-last-archive-accumulator",
+    "tests_path": "ci/project_tests/weewx-since-last-archive-accumulator",
+    "coverage": "release",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/evilbunny2008/SinceLastArchiveAccumulator/blob/c38eaa4118abe36ff938acc02afb7ba5497836a4/LICENSE"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-since-last-archive-accumulator/test_payload.py": "cb564e519f5b7d3283e7581130282cf05e7da7d180711135776fe5e2b6258efd",
+      "ci/project_tests/weewx-since-last-archive-accumulator/test_installed_hooks.py": "d46e6862749b8474bc12c848adaf1e294ad784f33d9282f395d3f2db92e70b08"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/since-last-archive-accumulator/v0.0.2/since-last-archive-accumulator-0.0.2.tar.gz",
+      "format": "tar.gz",
+      "sha256": "36a38392067ac2d5ef98f79424263d4eb751f7f14088eb2f7d20dff3a59b5122"
+    }
+  },
+  "sqlupload": {
+    "status": "published",
+    "source_sha": "86d0200c91ba1ba59e18845f6163b94f03fdb199",
+    "archive_sha256": "3e796220432f6e38b61984d00ed6731da48bb47017c5738089f48188e931ca22",
+    "limitations": [
+      "Verified on official WeeWX master 2202a2f873353d926d69814570b63b0a195f6d22 and development 06b5ffb3335417132d7527e738e7eea9769c46bf with Python 3.10.22 and 3.14.4.",
+      "Hardware and remote services are represented by byte, file or HTTP fixtures; no physical hardware result is claimed."
+    ],
+    "publication": {
+      "release_id": 420343813,
+      "asset_id": 664796965,
+      "immutable": true,
+      "sha256": "3e796220432f6e38b61984d00ed6731da48bb47017c5738089f48188e931ca22"
+    },
+    "repository": "weewx-packages/weewx-sqlupload",
+    "tests_path": "ci/project_tests/weewx-sqlupload",
+    "coverage": "release",
+    "license": "GPL-3.0-or-later",
+    "license_evidence": [
+      "https://github.com/roe-dl/weewx-sqlupload/blob/86d0200c91ba1ba59e18845f6163b94f03fdb199/LICENSE",
+      "https://github.com/roe-dl/weewx-sqlupload/blob/86d0200c91ba1ba59e18845f6163b94f03fdb199/bin/user/sqlupload.py",
+      "https://github.com/roe-dl/weewx-sqlupload/blob/86d0200c91ba1ba59e18845f6163b94f03fdb199/install.py"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-sqlupload/test_payload.py": "233ef66bc4b488bc22af3fb174804a453986250d575d33f886ecfa54bfedd602",
+      "ci/project_tests/weewx-sqlupload/test_installed_hooks.py": "d46e6862749b8474bc12c848adaf1e294ad784f33d9282f395d3f2db92e70b08"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/sqlupload/v0.5/sqlupload-0.5.tar.gz",
+      "format": "tar.gz",
+      "sha256": "3e796220432f6e38b61984d00ed6731da48bb47017c5738089f48188e931ca22"
+    }
+  },
+  "sqm": {
+    "status": "published",
+    "source_sha": "fbd39b640008e39c7787595ad6ae30280357cc4d",
+    "archive_sha256": "c75a2cd124b26880e09b505175d26c93861ce3cfa326ed9a5485991204a2e9a3",
+    "limitations": [
+      "Verified on official WeeWX master 2202a2f873353d926d69814570b63b0a195f6d22 and development 06b5ffb3335417132d7527e738e7eea9769c46bf with Python 3.10.22 and 3.14.4.",
+      "Hardware and remote services are represented by byte, file or HTTP fixtures; no physical hardware result is claimed."
+    ],
+    "publication": {
+      "release_id": 420348032,
+      "asset_id": 664812361,
+      "immutable": true,
+      "sha256": "c75a2cd124b26880e09b505175d26c93861ce3cfa326ed9a5485991204a2e9a3"
+    },
+    "repository": "weewx-packages/weewx-sqm",
+    "tests_path": "ci/project_tests/weewx-sqm",
+    "coverage": "release",
+    "packaging_recipe": {
+      "source_sha": "fbd39b640008e39c7787595ad6ae30280357cc4d",
+      "patch": "ci/recipes/sqm/package.patch",
+      "sha256": "4a2c10dbfb980bed2bea4b935b8b82fdcd47e1a80d4fe0bcd177fbb64aaa9492",
+      "changes": "python3 repair_installer_versions.py"
+    },
+    "license": "MIT",
+    "license_evidence": [
+      "https://github.com/open-astro/weewx-sqm/blob/fbd39b640008e39c7787595ad6ae30280357cc4d/LICENSE"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-sqm/test_payload.py": "7f7306ffa6695b6ec695c8ac9626022cdbedd5bba2215b345324fdbc00f92f70",
+      "ci/project_tests/weewx-sqm/test_installed_hooks.py": "d46e6862749b8474bc12c848adaf1e294ad784f33d9282f395d3f2db92e70b08"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/sqm/v0.1.1.post20261022/sqm-0.1.1.post20261022.tar.gz",
+      "format": "tar.gz",
+      "sha256": "c75a2cd124b26880e09b505175d26c93861ce3cfa326ed9a5485991204a2e9a3"
+    }
+  },
+  "weather-app": {
+    "status": "published",
+    "source_sha": "0e6b70572cc31577ded3d1bcadd647121e9b67f9",
+    "archive_sha256": "a0544dcf4bc1aa1a848cb6a09a047e06360559b9980d118ca83be41e36b5c4a4",
+    "limitations": [
+      "Verified on official WeeWX master 2202a2f873353d926d69814570b63b0a195f6d22 and development 06b5ffb3335417132d7527e738e7eea9769c46bf with Python 3.10.22 and 3.14.4.",
+      "Debug APK compiled and inspected; no emulator or physical Android device run claimed.",
+      "Upstream testDebugUnitTest has no source tests; project CI separately compiles and executes the real Gson forecast parser."
+    ],
+    "publication": {
+      "release_id": 420343879,
+      "asset_id": 664797310,
+      "immutable": true,
+      "sha256": "a0544dcf4bc1aa1a848cb6a09a047e06360559b9980d118ca83be41e36b5c4a4"
+    },
+    "repository": "weewx-packages/weewx-weather-app",
+    "tests_path": "ci/project_tests/weewx-weather-app",
+    "coverage": "external",
+    "packaging_recipe": {
+      "source_sha": "0e6b70572cc31577ded3d1bcadd647121e9b67f9",
+      "patch": "ci/recipes/weather-app/package.patch",
+      "sha256": "bda92c290156c50530fd4f44623d94975f61fc1af1fcd7332d2267a759bfad67",
+      "changes": "copy full pinned archive, apply packaging.patch, add PACKAGING-NOTICE.txt, tar one top directory"
+    },
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/evilbunny2008/WeeWXWeatherApp/blob/0e6b70572cc31577ded3d1bcadd647121e9b67f9/LICENSE"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-weather-app/test_payload.py": "f25e5350c438964bde687150f14b5e73746adb151b786c775ca01bf32f484072"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/weather-app/v2.1.26.post20261022%2Bg0e6b70572cc3/weather-app-2.1.26.post20261022%2Bg0e6b70572cc3.tar.gz",
+      "format": "tar.gz",
+      "sha256": "a0544dcf4bc1aa1a848cb6a09a047e06360559b9980d118ca83be41e36b5c4a4"
+    }
+  },
+  "weatherboard": {
+    "status": "published",
+    "source_sha": "1c57e19861099cac1c042b0c776b07e8d79632cf",
+    "archive_sha256": "b97a61bf88abbb948281bbce181f07783b1e56bf1d3fc1f8297ee7ac13d2fedb",
+    "limitations": [
+      "Verified on official WeeWX master 2202a2f873353d926d69814570b63b0a195f6d22 and development 06b5ffb3335417132d7527e738e7eea9769c46bf with Python 3.10.22 and 3.14.4.",
+      "Hardware and remote services are represented by byte, file or HTTP fixtures; no physical hardware result is claimed."
+    ],
+    "publication": {
+      "release_id": 420343925,
+      "asset_id": 664797584,
+      "immutable": true,
+      "sha256": "b97a61bf88abbb948281bbce181f07783b1e56bf1d3fc1f8297ee7ac13d2fedb"
+    },
+    "repository": "weewx-packages/weewx-weatherboard",
+    "tests_path": "ci/project_tests/weewx-weatherboard",
+    "coverage": "release",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/chaunceygardiner/weewx-weatherboard/blob/1c57e19861099cac1c042b0c776b07e8d79632cf/LICENSE",
+      "https://github.com/chaunceygardiner/weewx-weatherboard/blob/1c57e19861099cac1c042b0c776b07e8d79632cf/install.py",
+      "https://github.com/chaunceygardiner/weewx-weatherboard/blob/1c57e19861099cac1c042b0c776b07e8d79632cf/tests/browser_check.py",
+      "https://github.com/chaunceygardiner/weewx-weatherboard/blob/1c57e19861099cac1c042b0c776b07e8d79632cf/tests/check_templates.py"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-weatherboard/test_payload.py": "42606f0c2ead7664ce654bebc8c7b934dd8c2e95457a48414a85d6709b4b9308",
+      "ci/project_tests/weewx-weatherboard/test_installed_hooks.py": "d46e6862749b8474bc12c848adaf1e294ad784f33d9282f395d3f2db92e70b08"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/weatherboard/v5.2.2/weatherboard-5.2.2.tar.gz",
+      "format": "tar.gz",
+      "sha256": "b97a61bf88abbb948281bbce181f07783b1e56bf1d3fc1f8297ee7ac13d2fedb"
+    }
+  },
+  "weathericons": {
+    "status": "published",
+    "source_sha": "c5318a0a23ef43bb5277ecadca90c91c49432968",
+    "archive_sha256": "bfd109b6729b9daed7905f98df95592d02ca7cb075f6ced082e531a3e5ec67a4",
+    "limitations": [
+      "Verified on official WeeWX master 2202a2f873353d926d69814570b63b0a195f6d22 and development 06b5ffb3335417132d7527e738e7eea9769c46bf with Python 3.10.22 and 3.14.4."
+    ],
+    "publication": {
+      "release_id": 420343967,
+      "asset_id": 664797764,
+      "immutable": true,
+      "sha256": "bfd109b6729b9daed7905f98df95592d02ca7cb075f6ced082e531a3e5ec67a4"
+    },
+    "repository": "weewx-packages/weewx-weathericons",
+    "tests_path": "ci/project_tests/weewx-weathericons",
+    "coverage": "external",
+    "packaging_recipe": {
+      "source_sha": "c5318a0a23ef43bb5277ecadca90c91c49432968",
+      "patch": "ci/recipes/weathericons/package.patch",
+      "sha256": "3dade0856dce12c0293bbad670395a3a41313aa9710d2316f9456cbff13d1204",
+      "changes": "copy full pinned archive, apply packaging.patch, add PACKAGING-NOTICE.txt, tar one top directory"
+    },
+    "license": "GPL-3.0-or-later",
+    "license_evidence": [
+      "https://github.com/roe-dl/weathericons/blob/c5318a0a23ef43bb5277ecadca90c91c49432968/LICENSE",
+      "https://github.com/roe-dl/weathericons/blob/c5318a0a23ef43bb5277ecadca90c91c49432968/bin/icons.py",
+      "https://github.com/roe-dl/weathericons/blob/c5318a0a23ef43bb5277ecadca90c91c49432968/bin/seasons.py",
+      "https://github.com/roe-dl/weathericons/blob/c5318a0a23ef43bb5277ecadca90c91c49432968/bin/uvicons.py"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-weathericons/test_payload.py": "b360b38abbf8038eb1699bb1432a9722969409b004901e02f3caf801de7b7526"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/weathericons/v0.0.0.post20261022%2Bgc5318a0a23ef/weathericons-0.0.0.post20261022%2Bgc5318a0a23ef.tar.gz",
+      "format": "tar.gz",
+      "sha256": "bfd109b6729b9daed7905f98df95592d02ca7cb075f6ced082e531a3e5ec67a4"
+    }
+  },
+  "xaggs": {
+    "status": "published",
+    "source_sha": "d36145689b6d4bd363a792432df94215d69f5026",
+    "archive_sha256": "1da27a0b0c0cc8806e1b38a54aa2fda9486746dfd610fe18d515974f1e9456d1",
+    "limitations": [
+      "Verified on official WeeWX master 2202a2f873353d926d69814570b63b0a195f6d22 and development 06b5ffb3335417132d7527e738e7eea9769c46bf with Python 3.10.22 and 3.14.4.",
+      "Hardware and remote services are represented by byte, file or HTTP fixtures; no physical hardware result is claimed."
+    ],
+    "publication": {
+      "release_id": 420343997,
+      "asset_id": 664797926,
+      "immutable": true,
+      "sha256": "1da27a0b0c0cc8806e1b38a54aa2fda9486746dfd610fe18d515974f1e9456d1"
+    },
+    "repository": "weewx-packages/weewx-xaggs",
+    "tests_path": "ci/project_tests/weewx-xaggs",
+    "coverage": "release",
+    "license": "LGPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/tkeffer/weewx-xaggs/blob/d36145689b6d4bd363a792432df94215d69f5026/LICENSE.txt"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-xaggs/test_payload.py": "c60aa0b9ada6976e5ef39431ed82ff5fe6c3306df5b28e9483bc98dba12ffac7",
+      "ci/project_tests/weewx-xaggs/test_installed_hooks.py": "d46e6862749b8474bc12c848adaf1e294ad784f33d9282f395d3f2db92e70b08"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/xaggs/v1.0/xaggs-1.0.tar.gz",
+      "format": "tar.gz",
+      "sha256": "1da27a0b0c0cc8806e1b38a54aa2fda9486746dfd610fe18d515974f1e9456d1"
+    }
+  },
+  "wxgraphic": {
+    "status": "published",
+    "source_sha": "b46451df116eebaa687ee65322f6a4b12864b5c9",
+    "archive_sha256": "d972b5839f8ecf0731287cfb47cee50e01d66d690baa441e36989ad6732d3c90",
+    "release_revision": 1,
+    "limitations": [],
+    "publication": {
+      "release_id": 420330159,
+      "asset_id": 664749767,
+      "immutable": true,
+      "sha256": "d972b5839f8ecf0731287cfb47cee50e01d66d690baa441e36989ad6732d3c90"
+    },
+    "installer_version": "0.6.8",
+    "runtime_versions": {
+      "bin/user/wxgraphic.py": {
+        "wxgraphic_version": "0.6.8"
+      }
+    },
+    "repository": "weewx-packages/weewx-WXgraphic",
+    "tests_path": "ci/project_tests/weewx-WXgraphic",
+    "coverage": "release",
+    "packaging_recipe": {
+      "source_sha": "b46451df116eebaa687ee65322f6a4b12864b5c9",
+      "patch": "ci/recipes/wxgraphic/package.patch",
+      "sha256": "93ba865726efca8adfca310e26e95bf794d0c34748272af8b92c73e101fb3750",
+      "changes": [
+        "Supply Apache-2.0 full license for bundled Open Sans fonts, based on the actual font name-table license records; preserve font binaries and embedded notices."
+      ]
+    },
+    "license": "GPL-2.0-or-later AND GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/glennmckechnie/weewx-WXgraphic/blob/b46451df116eebaa687ee65322f6a4b12864b5c9/LICENSE",
+      "https://github.com/glennmckechnie/weewx-WXgraphic/blob/b46451df116eebaa687ee65322f6a4b12864b5c9/install.py",
+      "https://github.com/glennmckechnie/weewx-WXgraphic/blob/b46451df116eebaa687ee65322f6a4b12864b5c9/skins/WXgraphic/README.txt",
+      "https://github.com/glennmckechnie/weewx-WXgraphic/blob/b46451df116eebaa687ee65322f6a4b12864b5c9/skins/WXgraphic/license.txt"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-WXgraphic/test_payload.py": "c04965ac5ab372c0ed9d62698fb7b4d56795c6bf6695e5b5346c31a071562477"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/wxgraphic/v0.6.8/wxgraphic-0.6.8.tar.gz",
+      "format": "tar.gz",
+      "sha256": "d972b5839f8ecf0731287cfb47cee50e01d66d690baa441e36989ad6732d3c90"
+    }
+  },
+  "aggregated-values": {
+    "status": "published",
+    "source_sha": "2bda26d4be4f5f5b7372e7477bc64a3fc87b7313",
+    "archive_sha256": "92586ce13396ca89d048ec5e05da1b6dc7c23f883b2290490124e62c6c4f8bc4",
+    "release_revision": 0,
+    "limitations": [],
+    "publication": {
+      "release_id": 420330200,
+      "asset_id": 664749900,
+      "immutable": true,
+      "sha256": "92586ce13396ca89d048ec5e05da1b6dc7c23f883b2290490124e62c6c4f8bc4"
+    },
+    "installer_version": "1.1.7",
+    "runtime_versions": {
+      "bin/user/AggregatedValues.py": {
+        "VERSION": "1.0.0"
+      }
+    },
+    "repository": "weewx-packages/weewx-aggregated-values",
+    "tests_path": "ci/project_tests/weewx-aggregated-values",
+    "coverage": "release",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/evilbunny2008/AggregatedValues/blob/2bda26d4be4f5f5b7372e7477bc64a3fc87b7313/LICENSE"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-aggregated-values/test_payload.py": "33140bdd28cb3bc31286e2c8bd4920a786cb00fb2c96566e5d6d5ad0d95f6f07"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/aggregated-values/v1.1.7/aggregated-values-1.1.7.tar.gz",
+      "format": "tar.gz",
+      "sha256": "92586ce13396ca89d048ec5e05da1b6dc7c23f883b2290490124e62c6c4f8bc4"
+    }
+  },
+  "aprs": {
+    "status": "published",
+    "source_sha": "c732569694ec60c1b2cb9c2a174c68cebb7b5357",
+    "archive_sha256": "8bb8077fa9394a56b5e2da8c9296937b1acfe4dc0498145e6976a0f94ad216fc",
+    "release_revision": 0,
+    "limitations": [
+      "The released formatter consumes US-unit archive records; the packet fixture exercises that documented wire-unit boundary. No radio or online APRS account was used."
+    ],
+    "publication": {
+      "release_id": 420330242,
+      "asset_id": 664750044,
+      "immutable": true,
+      "sha256": "8bb8077fa9394a56b5e2da8c9296937b1acfe4dc0498145e6976a0f94ad216fc"
+    },
+    "installer_version": "0.2",
+    "runtime_versions": {},
+    "repository": "weewx-packages/weewx-aprs",
+    "tests_path": "ci/project_tests/weewx-aprs",
+    "coverage": "release",
+    "license": "MIT",
+    "license_evidence": [
+      "https://github.com/cavedon/weewx-aprs/blob/c732569694ec60c1b2cb9c2a174c68cebb7b5357/license.txt"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-aprs/test_payload.py": "288eed2ad9bc6174b0dda10fe91248ab8d021abab0068ab9c6171a761f3e3151"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/aprs/v0.2/aprs-0.2.tar.gz",
+      "format": "tar.gz",
+      "sha256": "8bb8077fa9394a56b5e2da8c9296937b1acfe4dc0498145e6976a0f94ad216fc"
+    }
+  },
+  "celestial": {
+    "status": "published",
+    "source_sha": "63b6d781f9d065f8f9d7ff0cce9a90c538c0df55",
+    "archive_sha256": "0d1985059790b2e0304880ca74a5a1bfe55d24a5099d831f5eb16cc14c4d70d2",
+    "release_revision": 0,
+    "limitations": [
+      "Real WeeWX almanac and live-page configuration tested. No browser automation, external satellite feed or downloaded ephemeris is claimed."
+    ],
+    "publication": {
+      "release_id": 420330283,
+      "asset_id": 664750170,
+      "immutable": true,
+      "sha256": "0d1985059790b2e0304880ca74a5a1bfe55d24a5099d831f5eb16cc14c4d70d2"
+    },
+    "installer_version": "9.7.2",
+    "runtime_versions": {
+      "bin/user/celestial.py": {
+        "CELESTIAL_VERSION": "9.7.2"
+      }
+    },
+    "repository": "weewx-packages/weewx-celestial",
+    "tests_path": "ci/project_tests/weewx-celestial",
+    "coverage": "release",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/chaunceygardiner/weewx-celestial/blob/63b6d781f9d065f8f9d7ff0cce9a90c538c0df55/LICENSE",
+      "https://github.com/chaunceygardiner/weewx-celestial/blob/63b6d781f9d065f8f9d7ff0cce9a90c538c0df55/README.md",
+      "https://github.com/chaunceygardiner/weewx-celestial/blob/63b6d781f9d065f8f9d7ff0cce9a90c538c0df55/bin/user/celestial.py",
+      "https://github.com/chaunceygardiner/weewx-celestial/blob/63b6d781f9d065f8f9d7ff0cce9a90c538c0df55/bin/user/celestial_page.py",
+      "https://github.com/chaunceygardiner/weewx-celestial/blob/63b6d781f9d065f8f9d7ff0cce9a90c538c0df55/bin/user/celestial_sky.py",
+      "https://github.com/chaunceygardiner/weewx-celestial/blob/63b6d781f9d065f8f9d7ff0cce9a90c538c0df55/skins/Celestial/celestial.js",
+      "https://github.com/chaunceygardiner/weewx-celestial/blob/63b6d781f9d065f8f9d7ff0cce9a90c538c0df55/tests/test_celestial.py"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-celestial/test_payload.py": "174e07afdc15a622a785c487cc1bc5e3fe9845e47daf81d5dcc13e54cb8f8df5"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/celestial/v9.7.2/celestial-9.7.2.tar.gz",
+      "format": "tar.gz",
+      "sha256": "0d1985059790b2e0304880ca74a5a1bfe55d24a5099d831f5eb16cc14c4d70d2"
+    }
+  },
+  "easter-almanac-example": {
+    "status": "published",
+    "source_sha": "139e21fe58a1b06a41d82771b13e839fbb853986",
+    "archive_sha256": "df63551a96559ca943e5eba0eddd092d03a8fb7abda1f2c279852c3e096263c6",
+    "release_revision": 1,
+    "limitations": [],
+    "publication": {
+      "release_id": 420333740,
+      "asset_id": 664762743,
+      "immutable": true,
+      "sha256": "df63551a96559ca943e5eba0eddd092d03a8fb7abda1f2c279852c3e096263c6"
+    },
+    "installer_version": "0.1.post1",
+    "runtime_versions": {
+      "bin/user/easteralmanac.py": {
+        "VERSION": "0.1"
+      }
+    },
+    "repository": "weewx-packages/weewx-easter-almanac-example",
+    "tests_path": "ci/project_tests/weewx-easter-almanac-example",
+    "coverage": "release",
+    "packaging_recipe": {
+      "source_sha": "139e21fe58a1b06a41d82771b13e839fbb853986",
+      "patch": "ci/recipes/easter-almanac-example/package.patch",
+      "sha256": "618e6fcbaf3cf905dc4167830ee21b423966641f8462b50c2f0db3393b3435cf",
+      "changes": [
+        "Use ISO offset +00:00 for datetime.fromisoformat compatibility with Python 3.10, proved through a real Almanac ValueHelper. Installer version 0.1.post1; runtime VERSION remains 0.1."
+      ]
+    },
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/roe-dl/weewx-easter-almanac-example/blob/139e21fe58a1b06a41d82771b13e839fbb853986/LICENSE",
+      "https://github.com/roe-dl/weewx-easter-almanac-example/blob/139e21fe58a1b06a41d82771b13e839fbb853986/install.py"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-easter-almanac-example/test_payload.py": "c83873fd3fa431a15f35d13aca9ef002dab47a1d1ec15e960d6fc6206878217a"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/easter-almanac-example/v0.1.post1/easter-almanac-example-0.1.post1.tar.gz",
+      "format": "tar.gz",
+      "sha256": "df63551a96559ca943e5eba0eddd092d03a8fb7abda1f2c279852c3e096263c6"
+    }
+  },
+  "emoncms": {
+    "status": "published",
+    "source_sha": "7c041135a485bbea9f8ffaf6784fe08dee37a41f",
+    "archive_sha256": "5468c222f0e5b9cdce447ddc3c2261dddd61772ab03fbbf83b67022a19cce7e2",
+    "release_revision": 1,
+    "limitations": [],
+    "publication": {
+      "release_id": 420330425,
+      "asset_id": 664750690,
+      "immutable": true,
+      "sha256": "5468c222f0e5b9cdce447ddc3c2261dddd61772ab03fbbf83b67022a19cce7e2"
+    },
+    "installer_version": "0.17",
+    "runtime_versions": {
+      "bin/user/emoncms.py": {
+        "VERSION": "0.17"
+      }
+    },
+    "repository": "weewx-packages/weewx-emoncms",
+    "tests_path": "ci/project_tests/weewx-emoncms",
+    "coverage": "release",
+    "packaging_recipe": {
+      "source_sha": "7c041135a485bbea9f8ffaf6784fe08dee37a41f",
+      "patch": "ci/recipes/emoncms/package.patch",
+      "sha256": "d2728afd7e63db64091d10868f4bf7eba48e440d54e8fdad49d8810938e92f6d",
+      "changes": [
+        "Supply the complete GPL-3.0 license text required by the existing explicit install.py/readme source grant; retain every original copyright and source byte."
+      ]
+    },
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/matthewwall/weewx-emoncms/blob/7c041135a485bbea9f8ffaf6784fe08dee37a41f/bin/user/emoncms.py",
+      "https://github.com/matthewwall/weewx-emoncms/blob/7c041135a485bbea9f8ffaf6784fe08dee37a41f/install.py",
+      "https://github.com/matthewwall/weewx-emoncms/blob/7c041135a485bbea9f8ffaf6784fe08dee37a41f/readme.txt"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-emoncms/test_payload.py": "a4562486c0db61b26b42d80c67602a9dd054224f0fcfc9b863fd875e2b24f25f"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/emoncms/v0.17/emoncms-0.17.tar.gz",
+      "format": "tar.gz",
+      "sha256": "5468c222f0e5b9cdce447ddc3c2261dddd61772ab03fbbf83b67022a19cce7e2"
+    }
+  },
+  "healthchecks": {
+    "status": "published",
+    "source_sha": "35cd38ae245d5c84f871b7aeaa52c5e9699650d1",
+    "archive_sha256": "1178ddb4fc993dd4cc4592065cff2b962c454d569ce9cf26efca8e82d509b2c5",
+    "release_revision": 0,
+    "limitations": [],
+    "publication": {
+      "release_id": 420330461,
+      "asset_id": 664750832,
+      "immutable": true,
+      "sha256": "1178ddb4fc993dd4cc4592065cff2b962c454d569ce9cf26efca8e82d509b2c5"
+    },
+    "installer_version": "0.2.0",
+    "runtime_versions": {
+      "bin/user/healthchecks.py": {
+        "VERSION": "0.2.1"
+      }
+    },
+    "repository": "weewx-packages/weewx-healthchecks",
+    "tests_path": "ci/project_tests/weewx-healthchecks",
+    "coverage": "release",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/weewx-extensions/healthchecks/blob/35cd38ae245d5c84f871b7aeaa52c5e9699650d1/LICENSE"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-healthchecks/test_payload.py": "9a7ca6010eec6399a8fc180cd7ca119be3df999215e7f3d45b795e6dfbde74f7"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/healthchecks/v0.2.0/healthchecks-0.2.0.tar.gz",
+      "format": "tar.gz",
+      "sha256": "1178ddb4fc993dd4cc4592065cff2b962c454d569ce9cf26efca8e82d509b2c5"
+    }
+  },
+  "import-wlk": {
+    "status": "published",
+    "source_sha": "ceafd8e59ca569c954b914d3f8339500edd96d5b",
+    "archive_sha256": "d09116dc4df6177a04a65538e04c6fc70999d5969c6c1c8620d9b811a07e36a9",
+    "release_revision": 0,
+    "limitations": [],
+    "publication": {
+      "release_id": 420330494,
+      "asset_id": 664750975,
+      "immutable": true,
+      "sha256": "d09116dc4df6177a04a65538e04c6fc70999d5969c6c1c8620d9b811a07e36a9"
+    },
+    "installer_version": "1.3",
+    "runtime_versions": {},
+    "repository": "weewx-packages/weewx-import-wlk",
+    "tests_path": "ci/project_tests/weewx-import-wlk",
+    "coverage": "release",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/tkeffer/import-wlk/blob/ceafd8e59ca569c954b914d3f8339500edd96d5b/LICENSE.txt",
+      "https://github.com/tkeffer/import-wlk/blob/ceafd8e59ca569c954b914d3f8339500edd96d5b/README.md"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-import-wlk/test_payload.py": "44e5088d2f8bd93813d685f80a1f2a901b42beae151e87ce94e3ecc43925f84c"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/import-wlk/v1.3/import-wlk-1.3.tar.gz",
+      "format": "tar.gz",
+      "sha256": "d09116dc4df6177a04a65538e04c6fc70999d5969c6c1c8620d9b811a07e36a9"
+    }
+  },
+  "knx": {
+    "status": "published",
+    "source_sha": "a5dc631519ed7295fa3e707a3d1c51404c91a08a",
+    "archive_sha256": "05b97900c39968fbe6e4a38ef5223eb3e835aa181c1c00828d529e1ef96ad697",
+    "release_revision": 0,
+    "limitations": [
+      "KNX/IP gateway connection is recorded by a fixture; actual knxip==0.5 encoding is exercised. No physical bus was used."
+    ],
+    "publication": {
+      "release_id": 420330524,
+      "asset_id": 664751096,
+      "immutable": true,
+      "sha256": "05b97900c39968fbe6e4a38ef5223eb3e835aa181c1c00828d529e1ef96ad697"
+    },
+    "installer_version": "0.1",
+    "runtime_versions": {
+      "bin/user/knx.py": {
+        "VERSION": "1.0"
+      }
+    },
+    "repository": "weewx-packages/weewx-knx",
+    "tests_path": "ci/project_tests/weewx-knx",
+    "coverage": "release",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/AZAZ78/weewx-knx/blob/a5dc631519ed7295fa3e707a3d1c51404c91a08a/LICENSE",
+      "https://github.com/AZAZ78/weewx-knx/blob/a5dc631519ed7295fa3e707a3d1c51404c91a08a/install.py",
+      "https://github.com/AZAZ78/weewx-knx/blob/a5dc631519ed7295fa3e707a3d1c51404c91a08a/readme.txt"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-knx/test_payload.py": "8f00d5350400914541acf150d43f1dd033762e7da206cc9a612ace3b5a122f60"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/knx/v0.1/knx-0.1.tar.gz",
+      "format": "tar.gz",
+      "sha256": "05b97900c39968fbe6e4a38ef5223eb3e835aa181c1c00828d529e1ef96ad697"
+    }
+  },
+  "loopdata": {
+    "status": "published",
+    "source_sha": "fe52a7944703584f02912f1b1c1ac4b3abaf6933",
+    "archive_sha256": "862b3a954a107b58f0c43a4fc078e1388320defae6b1385834b4edf6cbab0910",
+    "release_revision": 0,
+    "limitations": [],
+    "publication": {
+      "release_id": 420330551,
+      "asset_id": 664751214,
+      "immutable": true,
+      "sha256": "862b3a954a107b58f0c43a4fc078e1388320defae6b1385834b4edf6cbab0910"
+    },
+    "installer_version": "8.0.3",
+    "runtime_versions": {
+      "bin/user/loopdata.py": {
+        "LOOP_DATA_VERSION": "8.0.3"
+      }
+    },
+    "repository": "weewx-packages/weewx-loopdata",
+    "tests_path": "ci/project_tests/weewx-loopdata",
+    "coverage": "release",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/chaunceygardiner/weewx-loopdata/blob/fe52a7944703584f02912f1b1c1ac4b3abaf6933/LICENSE",
+      "https://github.com/chaunceygardiner/weewx-loopdata/blob/fe52a7944703584f02912f1b1c1ac4b3abaf6933/README.md",
+      "https://github.com/chaunceygardiner/weewx-loopdata/blob/fe52a7944703584f02912f1b1c1ac4b3abaf6933/bin/user/loopdata.py"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-loopdata/test_payload.py": "9bd7393162ecf65914bba5d0bcb22fb0e1b4735261d36932dbaee6ad3e237cfa"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/loopdata/v8.0.3/loopdata-8.0.3.tar.gz",
+      "format": "tar.gz",
+      "sha256": "862b3a954a107b58f0c43a4fc078e1388320defae6b1385834b4edf6cbab0910"
+    }
+  },
+  "mqtt-publish": {
+    "status": "published",
+    "source_sha": "21478c8ab88a93980e036a449b6b33bf775a2afc",
+    "archive_sha256": "9ca3015b15ddbe3ca0f13f515e9a563df4e1ad39d691ae5ec0fa0aa013303527",
+    "release_revision": 0,
+    "limitations": [],
+    "publication": {
+      "release_id": 420330612,
+      "asset_id": 664751512,
+      "immutable": true,
+      "sha256": "9ca3015b15ddbe3ca0f13f515e9a563df4e1ad39d691ae5ec0fa0aa013303527"
+    },
+    "installer_version": "1.2.0",
+    "runtime_versions": {
+      "bin/user/mqttpublish.py": {
+        "VERSION": "1.2.0"
+      }
+    },
+    "repository": "weewx-packages/weewx-mqtt-publish",
+    "tests_path": "ci/project_tests/weewx-mqtt-publish",
+    "coverage": "release",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/weewx-mqtt/publish/blob/df31bc4207eeb117100c94933d1c7a8ac47fcb75/LICENSE",
+      "https://github.com/weewx-mqtt/publish/blob/df31bc4207eeb117100c94933d1c7a8ac47fcb75/bin/user/mqttconfigha.py"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-mqtt-publish/test_payload.py": "58ec8b204bd0314414ae800b088a89558c2bb5b1f5dae9006230aa162dfd73ef"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/mqtt-publish/v1.2.0/mqtt-publish-1.2.0.tar.gz",
+      "format": "tar.gz",
+      "sha256": "9ca3015b15ddbe3ca0f13f515e9a563df4e1ad39d691ae5ec0fa0aa013303527"
+    }
+  },
+  "mqtt-publish-v2": {
+    "status": "published",
+    "source_sha": "14cc2f6ce3c6b4566ac8f3decbf753eb53e718bd",
+    "archive_sha256": "915067008a98fdff7f08946207f4830a2b386c789d4cbfb2c9d4c4aba769a144",
+    "release_revision": 0,
+    "limitations": [
+      "The complete bundled suite has six stale tests using superseded service/thread signatures. The current publisher APIs are covered by the selected 90+ protocol tests with no skips."
+    ],
+    "publication": {
+      "release_id": 420330649,
+      "asset_id": 664751628,
+      "immutable": true,
+      "sha256": "915067008a98fdff7f08946207f4830a2b386c789d4cbfb2c9d4c4aba769a144"
+    },
+    "installer_version": "2.1.2",
+    "runtime_versions": {},
+    "repository": "weewx-packages/weewx-mqtt-publish-v2",
+    "tests_path": "ci/project_tests/weewx-mqtt-publish-v2",
+    "coverage": "release",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/evilbunny2008/MQTTPublishV2/blob/14cc2f6ce3c6b4566ac8f3decbf753eb53e718bd/LICENSE"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-mqtt-publish-v2/test_payload.py": "9bbb6d02beba348009a1eca25d8601f782af3890680e3f153db5256d4d98ea09"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/mqtt-publish-v2/v2.1.2/mqtt-publish-v2-2.1.2.tar.gz",
+      "format": "tar.gz",
+      "sha256": "915067008a98fdff7f08946207f4830a2b386c789d4cbfb2c9d4c4aba769a144"
+    }
+  },
+  "notify": {
+    "status": "published",
+    "source_sha": "1467c156a192f3e1017a0b4dbc2b9efb1e2690ac",
+    "archive_sha256": "1a5da4702d66f9394d0e11a6fdff6b341e6afb56b0cfb7be6bf9466965f52241",
+    "release_revision": 1,
+    "limitations": [
+      "Alternative to Pushover: both installers are named Notify and install different user/notify.py files. Do not install together."
+    ],
+    "publication": {
+      "release_id": 420333813,
+      "asset_id": 664762965,
+      "immutable": true,
+      "sha256": "1a5da4702d66f9394d0e11a6fdff6b341e6afb56b0cfb7be6bf9466965f52241"
+    },
+    "installer_version": "1.0.post1",
+    "runtime_versions": {},
+    "repository": "weewx-packages/weewx-notify",
+    "tests_path": "ci/project_tests/weewx-notify",
+    "coverage": "release",
+    "packaging_recipe": {
+      "source_sha": "1467c156a192f3e1017a0b4dbc2b9efb1e2690ac",
+      "patch": "ci/recipes/notify/package.patch",
+      "sha256": "303c2026d7cc203c4dd22b78a73a1909ee323149025108bcf217692af627c8fa",
+      "changes": [
+        "Generate upstream installer template with existing CHANGELOG 1.0 release version; preserve all upstream files.",
+        "Independent installer version 1.0.post1 supersedes the earlier immutable packaging candidate; original upstream installer/template is retained."
+      ]
+    },
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/teeks99/weewx-notify/blob/1467c156a192f3e1017a0b4dbc2b9efb1e2690ac/LICENSE"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-notify/test_payload.py": "e303d638af981b2efd25f17cba51c9757572e138313e86d94eb2d79d6423a2b1"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/notify/v1.0.post1/notify-1.0.post1.tar.gz",
+      "format": "tar.gz",
+      "sha256": "1a5da4702d66f9394d0e11a6fdff6b341e6afb56b0cfb7be6bf9466965f52241"
+    }
+  },
+  "ortsnetz-auslastung": {
+    "status": "published",
+    "source_sha": "41bdcf8faeac787dfb2efb2e5dd8a78e6c5fcde2",
+    "archive_sha256": "2b99f6c341799727dceff195e215994538fd68dea729c2617a257e0dd3fb2196",
+    "release_revision": 1,
+    "limitations": [],
+    "publication": {
+      "release_id": 420333847,
+      "asset_id": 664763062,
+      "immutable": true,
+      "sha256": "2b99f6c341799727dceff195e215994538fd68dea729c2617a257e0dd3fb2196"
+    },
+    "installer_version": "0.1.post1",
+    "runtime_versions": {
+      "weewx-ortsnetz-auslastung/bin/user/ortsnetzauslastunguploader.py": {
+        "VERSION": "0.1"
+      }
+    },
+    "repository": "weewx-packages/weewx-ortsnetz-auslastung",
+    "tests_path": "ci/project_tests/weewx-ortsnetz-auslastung",
+    "coverage": "release",
+    "packaging_recipe": {
+      "source_sha": "41bdcf8faeac787dfb2efb2e5dd8a78e6c5fcde2",
+      "patch": "ci/recipes/ortsnetz-auslastung/package.patch",
+      "sha256": "8acd787b7a6129a726456be17f6ffbb59afc42057413f205cbc506270e54017f",
+      "changes": [
+        "Expose existing subproject installer and bin directory at archive root; retain complete upstream tree and license.",
+        "Independent installer version 0.1.post1 supersedes the earlier immutable packaging candidate; original upstream installer/template is retained."
+      ]
+    },
+    "license": "MIT AND GPL-3.0-or-later",
+    "license_evidence": [
+      "https://github.com/thomaslehmann1234/datenerfassung-ortsnetz-auslastung/blob/41bdcf8faeac787dfb2efb2e5dd8a78e6c5fcde2/LICENSE",
+      "https://github.com/thomaslehmann1234/datenerfassung-ortsnetz-auslastung/blob/41bdcf8faeac787dfb2efb2e5dd8a78e6c5fcde2/weewx-ortsnetz-auslastung/install.py"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-ortsnetz-auslastung/test_payload.py": "84b5cd5c797973cca0b906d8c46c71d4ecc3446a71d0d68e6bf78f71e301385b"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/ortsnetz-auslastung/v0.1.post1/ortsnetz-auslastung-0.1.post1.tar.gz",
+      "format": "tar.gz",
+      "sha256": "2b99f6c341799727dceff195e215994538fd68dea729c2617a257e0dd3fb2196"
+    }
+  },
+  "postgresql": {
+    "status": "published",
+    "source_sha": "d2b31a024779a5a15a89df32b7e1566cb3c15a5c",
+    "archive_sha256": "c5e73c35f0385469db8156504321dd864552f62408b0ab7f13b1caf38d55d9eb",
+    "release_revision": 2,
+    "limitations": [],
+    "publication": {
+      "release_id": 420333880,
+      "asset_id": 664763152,
+      "immutable": true,
+      "sha256": "c5e73c35f0385469db8156504321dd864552f62408b0ab7f13b1caf38d55d9eb"
+    },
+    "installer_version": "1.0.1.post2",
+    "runtime_versions": {
+      "bin/user/postgresql.py": {
+        "VERSION": "1.0.1"
+      }
+    },
+    "repository": "weewx-packages/weewx-postgresql",
+    "tests_path": "ci/project_tests/weewx-postgresql",
+    "coverage": "release",
+    "packaging_recipe": {
+      "source_sha": "d2b31a024779a5a15a89df32b7e1566cb3c15a5c",
+      "patch": "ci/recipes/postgresql/package.patch",
+      "sha256": "e398e744720063805dff948f333cd228f3e830b2d7af9c679a608da8cd2e2a6c",
+      "changes": [
+        "Pass configured PostgreSQL port to the second create() connection, proved with a real isolated PostgreSQL server on Unix socket port 55432. Installer version 1.0.1.post2; runtime VERSION remains 1.0.1."
+      ]
+    },
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/tkeffer/weewx-postgresql/blob/d2b31a024779a5a15a89df32b7e1566cb3c15a5c/LICENSE.txt"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-postgresql/test_payload.py": "b7fa762f2c7c29be64c2db23b90c93fccaa2f612e498c06f767c170b3af36cf2"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/postgresql/v1.0.1.post2/postgresql-1.0.1.post2.tar.gz",
+      "format": "tar.gz",
+      "sha256": "c5e73c35f0385469db8156504321dd864552f62408b0ab7f13b1caf38d55d9eb"
+    }
+  },
+  "pusher": {
+    "status": "published",
+    "source_sha": "e3da95906316c88bc67eab4028909dd0a0a61af9",
+    "archive_sha256": "ab3600a45497aa6ae9c9ba2c3c2007581b0c2f877797333c2078ff658700bd57",
+    "release_revision": 0,
+    "limitations": [],
+    "publication": {
+      "release_id": 420330780,
+      "asset_id": 664752251,
+      "immutable": true,
+      "sha256": "ab3600a45497aa6ae9c9ba2c3c2007581b0c2f877797333c2078ff658700bd57"
+    },
+    "installer_version": "2.0.1",
+    "runtime_versions": {},
+    "repository": "weewx-packages/weewx-pusher",
+    "tests_path": "ci/project_tests/weewx-pusher",
+    "coverage": "release",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/raymondelooff/weewx-pusher/blob/e3da95906316c88bc67eab4028909dd0a0a61af9/LICENSE",
+      "https://github.com/raymondelooff/weewx-pusher/blob/e3da95906316c88bc67eab4028909dd0a0a61af9/README.md",
+      "https://github.com/raymondelooff/weewx-pusher/blob/e3da95906316c88bc67eab4028909dd0a0a61af9/bin/user/wxpusher.py",
+      "https://github.com/raymondelooff/weewx-pusher/blob/e3da95906316c88bc67eab4028909dd0a0a61af9/install.py"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-pusher/test_payload.py": "4d967596310eb5920b6cbeb7477dcefd1166903b2817f28db6be4c7bb505727e"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/pusher/v2.0.1/pusher-2.0.1.tar.gz",
+      "format": "tar.gz",
+      "sha256": "ab3600a45497aa6ae9c9ba2c3c2007581b0c2f877797333c2078ff658700bd57"
+    }
+  },
+  "pushover": {
+    "status": "published",
+    "source_sha": "cb49dc9d23d1542b494194b2bdec3c6896802075",
+    "archive_sha256": "ad96091a1dddb18f3e515d9e60c3191dafb12ea708e72e889bfb306450c62c16",
+    "release_revision": 0,
+    "limitations": [
+      "Alternative to the webhook Notify extension: both installers are named Notify and install different user/notify.py files. Do not install together."
+    ],
+    "publication": {
+      "release_id": 420330822,
+      "asset_id": 664752373,
+      "immutable": true,
+      "sha256": "ad96091a1dddb18f3e515d9e60c3191dafb12ea708e72e889bfb306450c62c16"
+    },
+    "installer_version": "0.3.0",
+    "runtime_versions": {
+      "bin/user/notify.py": {
+        "VERSION": "0.3.0"
+      }
+    },
+    "repository": "weewx-packages/weewx-pushover",
+    "tests_path": "ci/project_tests/weewx-pushover",
+    "coverage": "release",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/weewx-extensions/pushover/blob/cb49dc9d23d1542b494194b2bdec3c6896802075/LICENSE"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-pushover/test_payload.py": "f4f3fce7536a8545a9b506b47035c16c6e10c51688c8d737f6ed13fb18c08e49"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/pushover/v0.3.0/pushover-0.3.0.tar.gz",
+      "format": "tar.gz",
+      "sha256": "ad96091a1dddb18f3e515d9e60c3191dafb12ea708e72e889bfb306450c62c16"
+    }
+  },
+  "rtsp-image": {
+    "status": "published",
+    "source_sha": "7ef9f47cb8a3979576c5a784a35da4ef2c7dbfd6",
+    "archive_sha256": "0dd5d9ac4d3c06ba5aa50050f862025818a9d21ae139279128b49a475e10f674",
+    "release_revision": 0,
+    "limitations": [],
+    "publication": {
+      "release_id": 420330869,
+      "asset_id": 664752523,
+      "immutable": true,
+      "sha256": "0dd5d9ac4d3c06ba5aa50050f862025818a9d21ae139279128b49a475e10f674"
+    },
+    "installer_version": "0.1.0",
+    "runtime_versions": {
+      "bin/user/rtspimage.py": {
+        "VERSION": "0.1.0"
+      }
+    },
+    "repository": "weewx-packages/weewx-rtsp-image",
+    "tests_path": "ci/project_tests/weewx-rtsp-image",
+    "coverage": "release",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/ziti/weewx-rtsp-image/blob/7ef9f47cb8a3979576c5a784a35da4ef2c7dbfd6/LICENSE",
+      "https://github.com/ziti/weewx-rtsp-image/blob/7ef9f47cb8a3979576c5a784a35da4ef2c7dbfd6/README.md",
+      "https://github.com/ziti/weewx-rtsp-image/blob/7ef9f47cb8a3979576c5a784a35da4ef2c7dbfd6/bin/user/rtspimage.py",
+      "https://github.com/ziti/weewx-rtsp-image/blob/7ef9f47cb8a3979576c5a784a35da4ef2c7dbfd6/install.py"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-rtsp-image/test_payload.py": "30fab7fb8fb1676537825be47400791891488fb94c20f5c0a2c01b3829ebcaf2"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/rtsp-image/v0.1.0/rtsp-image-0.1.0.tar.gz",
+      "format": "tar.gz",
+      "sha256": "0dd5d9ac4d3c06ba5aa50050f862025818a9d21ae139279128b49a475e10f674"
+    }
+  },
+  "rwsa": {
+    "status": "published",
+    "source_sha": "d14a2e21e3f1c58a71b2c40d869e2d2803165dc7",
+    "archive_sha256": "c6996ffbc8b3d75e59d79d9b46b19b8a2a0c91ab50206f3f358f8f902e6a1064",
+    "release_revision": 0,
+    "limitations": [],
+    "publication": {
+      "release_id": 420333918,
+      "asset_id": 664763320,
+      "immutable": true,
+      "sha256": "c6996ffbc8b3d75e59d79d9b46b19b8a2a0c91ab50206f3f358f8f902e6a1064"
+    },
+    "installer_version": "0.7",
+    "runtime_versions": {
+      "bin/user/regionalwetterSachsenAnhalt.py": {
+        "VERSION": "0.7"
+      }
+    },
+    "repository": "weewx-packages/weewx-rwsa",
+    "tests_path": "ci/project_tests/weewx-rwsa",
+    "coverage": "release",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/roe-dl/weewx-rwsa/blob/d14a2e21e3f1c58a71b2c40d869e2d2803165dc7/install.py",
+      "https://github.com/roe-dl/weewx-rwsa/blob/d14a2e21e3f1c58a71b2c40d869e2d2803165dc7/license",
+      "https://github.com/roe-dl/weewx-rwsa/blob/d14a2e21e3f1c58a71b2c40d869e2d2803165dc7/readme.txt"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-rwsa/test_payload.py": "942663afba43188b56b45a881fea22115564ddd9544857da901bda8042556651"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/rwsa/v0.7/rwsa-0.7.tar.gz",
+      "format": "tar.gz",
+      "sha256": "c6996ffbc8b3d75e59d79d9b46b19b8a2a0c91ab50206f3f358f8f902e6a1064"
+    }
+  },
+  "sftp": {
+    "status": "published",
+    "source_sha": "1c1e8b6d1670ff1041d7044918ba380293536ea3",
+    "archive_sha256": "1329bf3bbcc718b426a4867faed6564e88d563843187d2cafb00c565458e2c9f",
+    "release_revision": 0,
+    "limitations": [],
+    "publication": {
+      "release_id": 420333955,
+      "asset_id": 664763473,
+      "immutable": true,
+      "sha256": "1329bf3bbcc718b426a4867faed6564e88d563843187d2cafb00c565458e2c9f"
+    },
+    "installer_version": "0.9.0",
+    "runtime_versions": {
+      "bin/user/sftp.py": {
+        "VERSION": "0.9.0"
+      }
+    },
+    "repository": "weewx-packages/weewx-sftp",
+    "tests_path": "ci/project_tests/weewx-sftp",
+    "coverage": "release",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/ziti/weewx-sftp/blob/1c1e8b6d1670ff1041d7044918ba380293536ea3/README.md",
+      "https://github.com/ziti/weewx-sftp/blob/1c1e8b6d1670ff1041d7044918ba380293536ea3/install.py",
+      "https://github.com/ziti/weewx-sftp/blob/1c1e8b6d1670ff1041d7044918ba380293536ea3/license"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-sftp/test_payload.py": "95abbca58a8cdecdce9a98badab8cbef466d7017196945ff599fb1c7b71934b4"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/sftp/v0.9.0/sftp-0.9.0.tar.gz",
+      "format": "tar.gz",
+      "sha256": "1329bf3bbcc718b426a4867faed6564e88d563843187d2cafb00c565458e2c9f"
+    }
+  },
+  "skyfield": {
+    "status": "published",
+    "source_sha": "c3496bbad09f1393e5e8427d3425b063d596882a",
+    "archive_sha256": "175e5d786b691d2c77d5640d35f91ad7751569930b2330916d3a9681a5531a86",
+    "release_revision": 0,
+    "limitations": [
+      "Offline phase geometry, polar daylight and actual TLE parsing are tested. Downloaded JPL ephemeris and live satellite/comet feed integration are outside this fixture."
+    ],
+    "publication": {
+      "release_id": 420333990,
+      "asset_id": 664763635,
+      "immutable": true,
+      "sha256": "175e5d786b691d2c77d5640d35f91ad7751569930b2330916d3a9681a5531a86"
+    },
+    "installer_version": "2.10",
+    "runtime_versions": {
+      "bin/user/wxskyfield.py": {
+        "WXSKYFIELD_VERSION": "2.10"
+      }
+    },
+    "repository": "weewx-packages/weewx-skyfield",
+    "tests_path": "ci/project_tests/weewx-skyfield",
+    "coverage": "release",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/chaunceygardiner/weewx-skyfield/blob/c3496bbad09f1393e5e8427d3425b063d596882a/LICENSE",
+      "https://github.com/chaunceygardiner/weewx-skyfield/blob/c3496bbad09f1393e5e8427d3425b063d596882a/README.md",
+      "https://github.com/chaunceygardiner/weewx-skyfield/blob/c3496bbad09f1393e5e8427d3425b063d596882a/bin/user/wxskyfield.py",
+      "https://github.com/chaunceygardiner/weewx-skyfield/blob/c3496bbad09f1393e5e8427d3425b063d596882a/bin/user/wxskyfield_sky.py",
+      "https://github.com/chaunceygardiner/weewx-skyfield/blob/c3496bbad09f1393e5e8427d3425b063d596882a/tests/test_almanac.py",
+      "https://github.com/chaunceygardiner/weewx-skyfield/blob/c3496bbad09f1393e5e8427d3425b063d596882a/tests/test_american_english.py",
+      "https://github.com/chaunceygardiner/weewx-skyfield/blob/c3496bbad09f1393e5e8427d3425b063d596882a/tests/test_installer.py",
+      "https://github.com/chaunceygardiner/weewx-skyfield/blob/c3496bbad09f1393e5e8427d3425b063d596882a/tests/test_sky_page.py"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-skyfield/test_payload.py": "0dacbbbd1f0944e53af9871408ea4d9ac255339b57c23e50efda7af5f6e2cd05"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/skyfield/v2.10/skyfield-2.10.tar.gz",
+      "format": "tar.gz",
+      "sha256": "175e5d786b691d2c77d5640d35f91ad7751569930b2330916d3a9681a5531a86"
+    }
+  },
+  "skyfield-almanac": {
+    "status": "published",
+    "source_sha": "5e7d0a55b13b3334d8bf0f7c98d2ec577b57e457",
+    "archive_sha256": "551f31b1c1c88bfb05b754b882c7d566515edd064145be383d3fd4fd0500f702",
+    "release_revision": 1,
+    "limitations": [
+      "Horizon geometry and NumPy value conversion are tested offline. No downloaded ephemeris or live location feed is claimed."
+    ],
+    "publication": {
+      "release_id": 420334139,
+      "asset_id": 664764086,
+      "immutable": true,
+      "sha256": "551f31b1c1c88bfb05b754b882c7d566515edd064145be383d3fd4fd0500f702"
+    },
+    "installer_version": "0.7.post1",
+    "runtime_versions": {
+      "bin/user/skyfieldalmanac.py": {
+        "VERSION": "0.7"
+      }
+    },
+    "repository": "weewx-packages/weewx-skyfield-almanac",
+    "tests_path": "ci/project_tests/weewx-skyfield-almanac",
+    "coverage": "release",
+    "packaging_recipe": {
+      "source_sha": "5e7d0a55b13b3334d8bf0f7c98d2ec577b57e457",
+      "patch": "ci/recipes/skyfield-almanac/package.patch",
+      "sha256": "f5407cccdeff41d096ef071dae5571f845963131a1dd1a006b0fdf9cc438336a",
+      "changes": [
+        "Normalize whitespace-containing installer identity to the catalog installer_name grammar; installer version 0.7.post1 identifies this packaging change, runtime module VERSION remains 0.7."
+      ]
+    },
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/roe-dl/weewx-skyfield-almanac/blob/5e7d0a55b13b3334d8bf0f7c98d2ec577b57e457/LICENSE",
+      "https://github.com/roe-dl/weewx-skyfield-almanac/blob/5e7d0a55b13b3334d8bf0f7c98d2ec577b57e457/install.py"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-skyfield-almanac/test_payload.py": "e96de323ea7a4ce70ee1f0ea827d8de27115d6424c01523bca158529bb7104a1"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/skyfield-almanac/v0.7.post1/skyfield-almanac-0.7.post1.tar.gz",
+      "format": "tar.gz",
+      "sha256": "551f31b1c1c88bfb05b754b882c7d566515edd064145be383d3fd4fd0500f702"
+    }
+  },
+  "skymap-almanac": {
+    "status": "published",
+    "source_sha": "deb71735f700d2e6c5b611dd8ee33d3d30b97c1d",
+    "archive_sha256": "0f3f315f7d4fbf07a696875a995043c391a7d16e1377fe82ac16c4a350b13b0c",
+    "release_revision": 1,
+    "limitations": [
+      "Real Skyfield dependency, star SVG geometry and option parsing tested. No downloaded ephemeris or star-catalog feed is claimed."
+    ],
+    "publication": {
+      "release_id": 420334170,
+      "asset_id": 664764170,
+      "immutable": true,
+      "sha256": "0f3f315f7d4fbf07a696875a995043c391a7d16e1377fe82ac16c4a350b13b0c"
+    },
+    "installer_version": "0.7.post1",
+    "runtime_versions": {
+      "bin/user/skymapalmanac.py": {
+        "VERSION": "0.7"
+      }
+    },
+    "repository": "weewx-packages/weewx-skymap-almanac",
+    "tests_path": "ci/project_tests/weewx-skymap-almanac",
+    "coverage": "release",
+    "packaging_recipe": {
+      "source_sha": "deb71735f700d2e6c5b611dd8ee33d3d30b97c1d",
+      "patch": "ci/recipes/skymap-almanac/package.patch",
+      "sha256": "cad53e6808402efe18ac16b99775dfd8719898aa7dbd8c218f1a393539eca5b5",
+      "changes": [
+        "Normalize whitespace-containing installer identity to the catalog installer_name grammar; installer version 0.7.post1 identifies this packaging change, runtime module VERSION remains 0.7."
+      ]
+    },
+    "license": "GPL-3.0-or-later",
+    "license_evidence": [
+      "https://github.com/roe-dl/weewx-skymap-almanac/blob/deb71735f700d2e6c5b611dd8ee33d3d30b97c1d/LICENSE",
+      "https://github.com/roe-dl/weewx-skymap-almanac/blob/deb71735f700d2e6c5b611dd8ee33d3d30b97c1d/bin/user/skymapalmanac.py",
+      "https://github.com/roe-dl/weewx-skymap-almanac/blob/deb71735f700d2e6c5b611dd8ee33d3d30b97c1d/install.py"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-skymap-almanac/test_payload.py": "3e8656bcab94d70d8592746810fec6949f0dc47ae07f00d0f176d32f0e16c17c"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/skymap-almanac/v0.7.post1/skymap-almanac-0.7.post1.tar.gz",
+      "format": "tar.gz",
+      "sha256": "0f3f315f7d4fbf07a696875a995043c391a7d16e1377fe82ac16c4a350b13b0c"
+    }
+  },
+  "skyvex": {
+    "status": "published",
+    "source_sha": "87380266f44f7d4657e10e41877bab5bdeffdd93",
+    "archive_sha256": "b48849f03ccca5ec83b6a555c48d28c065dd3359e2a09109fda695ea5740cc97",
+    "release_revision": 0,
+    "limitations": [],
+    "publication": {
+      "release_id": 420334202,
+      "asset_id": 664764255,
+      "immutable": true,
+      "sha256": "b48849f03ccca5ec83b6a555c48d28c065dd3359e2a09109fda695ea5740cc97"
+    },
+    "installer_version": "0.1.0",
+    "runtime_versions": {
+      "bin/user/skyvex.py": {
+        "VERSION": "0.1.0"
+      }
+    },
+    "repository": "weewx-packages/weewx-skyvex",
+    "tests_path": "ci/project_tests/weewx-skyvex",
+    "coverage": "release",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/MichaelStrommer-dreiS/weewx-skyvex/blob/87380266f44f7d4657e10e41877bab5bdeffdd93/LICENSE",
+      "https://github.com/MichaelStrommer-dreiS/weewx-skyvex/blob/87380266f44f7d4657e10e41877bab5bdeffdd93/bin/user/skyvex.py",
+      "https://github.com/MichaelStrommer-dreiS/weewx-skyvex/blob/87380266f44f7d4657e10e41877bab5bdeffdd93/install.py",
+      "https://github.com/MichaelStrommer-dreiS/weewx-skyvex/blob/87380266f44f7d4657e10e41877bab5bdeffdd93/readme.md"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-skyvex/test_payload.py": "246ff161968dc16dde3875e3850c956200fd81399ad0efb3ff31c4c1e9b56be8"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/skyvex/v0.1.0/skyvex-0.1.0.tar.gz",
+      "format": "tar.gz",
+      "sha256": "b48849f03ccca5ec83b6a555c48d28c065dd3359e2a09109fda695ea5740cc97"
+    }
+  },
+  "svg2png": {
+    "status": "published",
+    "source_sha": "5d56f968fed7920d0e1e3ed22672fc71c9c750a5",
+    "archive_sha256": "b51df1479b4c638d565b565ec7d9df70462fd95840deae887f7575beea84e6e4",
+    "release_revision": 0,
+    "limitations": [],
+    "publication": {
+      "release_id": 420334225,
+      "asset_id": 664764334,
+      "immutable": true,
+      "sha256": "b51df1479b4c638d565b565ec7d9df70462fd95840deae887f7575beea84e6e4"
+    },
+    "installer_version": "0.4",
+    "runtime_versions": {
+      "bin/user/svg2png.py": {
+        "VERSION": "0.4"
+      }
+    },
+    "repository": "weewx-packages/weewx-svg2png",
+    "tests_path": "ci/project_tests/weewx-svg2png",
+    "coverage": "release",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/roe-dl/weewx-svg2png/blob/5d56f968fed7920d0e1e3ed22672fc71c9c750a5/LICENSE",
+      "https://github.com/roe-dl/weewx-svg2png/blob/5d56f968fed7920d0e1e3ed22672fc71c9c750a5/install.py"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-svg2png/test_payload.py": "5edfb6b75103459455041b2d11c186dbae698fa722ac35ed507940ac10f83fd7"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/svg2png/v0.4/svg2png-0.4.tar.gz",
+      "format": "tar.gz",
+      "sha256": "b51df1479b4c638d565b565ec7d9df70462fd95840deae887f7575beea84e6e4"
+    }
+  },
+  "thingspeak": {
+    "status": "published",
+    "source_sha": "a1ffa8ec672c217fed413eaa3e91618b3fb0b363",
+    "archive_sha256": "a9a5196fa2a5b8c26c46b5ec70b8943cdd6a03f3e3c1a2ae45f3dad2daf2621e",
+    "release_revision": 1,
+    "limitations": [],
+    "publication": {
+      "release_id": 420334272,
+      "asset_id": 664764472,
+      "immutable": true,
+      "sha256": "a9a5196fa2a5b8c26c46b5ec70b8943cdd6a03f3e3c1a2ae45f3dad2daf2621e"
+    },
+    "installer_version": "0.9.post1",
+    "runtime_versions": {
+      "bin/user/thingspeak.py": {
+        "VERSION": "0.8"
+      }
+    },
+    "repository": "weewx-packages/weewx-thingspeak",
+    "tests_path": "ci/project_tests/weewx-thingspeak",
+    "coverage": "release",
+    "packaging_recipe": {
+      "source_sha": "a1ffa8ec672c217fed413eaa3e91618b3fb0b363",
+      "patch": "ci/recipes/thingspeak/package.patch",
+      "sha256": "52030acf3a191370596217bf083ecc351fe4fff04243d9a1b4646749ca1b88dd",
+      "changes": [
+        "Supply the complete GPL-3.0 license text required by the existing explicit install.py/readme source grant; retain every original copyright and source byte.",
+        "Decode HTTP response bytes so ThingSpeak failure body 0 raises FailedPost. Runtime version remains upstream; the independent installer version is recorded separately.",
+        "Installer version 0.9.post1 identifies this independent repaired archive; module runtime VERSION remains upstream and is recorded separately."
+      ]
+    },
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/matthewwall/weewx-thingspeak/blob/a1ffa8ec672c217fed413eaa3e91618b3fb0b363/install.py",
+      "https://github.com/matthewwall/weewx-thingspeak/blob/a1ffa8ec672c217fed413eaa3e91618b3fb0b363/readme.txt"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-thingspeak/test_payload.py": "524493adeb4a7f9baf4ea4dcbe0cf997dcd6cfc53253635ea0277a148b8f2d2d"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/thingspeak/v0.9.post1/thingspeak-0.9.post1.tar.gz",
+      "format": "tar.gz",
+      "sha256": "a9a5196fa2a5b8c26c46b5ec70b8943cdd6a03f3e3c1a2ae45f3dad2daf2621e"
+    }
+  },
+  "wbug": {
+    "status": "published",
+    "source_sha": "4992114511b14fce1a507d76b81e026b67886854",
+    "archive_sha256": "98396975b38f987aa179c5f64f5d5443ae53bd324752f865bae6a01e54a44ce9",
+    "release_revision": 1,
+    "limitations": [],
+    "publication": {
+      "release_id": 420334301,
+      "asset_id": 664764543,
+      "immutable": true,
+      "sha256": "98396975b38f987aa179c5f64f5d5443ae53bd324752f865bae6a01e54a44ce9"
+    },
+    "installer_version": "0.8.post1",
+    "runtime_versions": {
+      "bin/user/wbug.py": {
+        "VERSION": "0.8"
+      }
+    },
+    "repository": "weewx-packages/weewx-wbug",
+    "tests_path": "ci/project_tests/weewx-wbug",
+    "coverage": "release",
+    "packaging_recipe": {
+      "source_sha": "4992114511b14fce1a507d76b81e026b67886854",
+      "patch": "ci/recipes/wbug/package.patch",
+      "sha256": "ea35576cf0a0c92521664cc93122bc157150dbd0561fa7d76db6bb4354d60a8f",
+      "changes": [
+        "Supply the complete GPL-3.0 license text required by the existing explicit install.py/readme source grant; retain every original copyright and source byte.",
+        "Decode HTTP response bytes before evaluating WeatherBug acknowledgement. Runtime version remains upstream; the independent installer version is recorded separately.",
+        "Installer version 0.8.post1 identifies this independent repaired archive; module runtime VERSION remains upstream and is recorded separately."
+      ]
+    },
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/matthewwall/weewx-wbug/blob/4992114511b14fce1a507d76b81e026b67886854/install.py",
+      "https://github.com/matthewwall/weewx-wbug/blob/4992114511b14fce1a507d76b81e026b67886854/readme.txt"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-wbug/test_payload.py": "4462cfb05f1eda9ae07c601dca44995b9ef8a06e64781da67ecbfabbf2cebe51"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/wbug/v0.8.post1/wbug-0.8.post1.tar.gz",
+      "format": "tar.gz",
+      "sha256": "98396975b38f987aa179c5f64f5d5443ae53bd324752f865bae6a01e54a44ce9"
+    }
+  },
+  "weepe": {
+    "status": "published",
+    "source_sha": "2a9b42fda7e6b181c5064e7586c2e1a6e1037e16",
+    "archive_sha256": "1ed7994f4eb2266aa56840d0d5a5ac9740b8faebba2d4dd1beba501d149b78c7",
+    "release_revision": 1,
+    "limitations": [],
+    "publication": {
+      "release_id": 420334329,
+      "asset_id": 664764636,
+      "immutable": true,
+      "sha256": "1ed7994f4eb2266aa56840d0d5a5ac9740b8faebba2d4dd1beba501d149b78c7"
+    },
+    "installer_version": "2.0.2.post1",
+    "runtime_versions": {},
+    "repository": "weewx-packages/weewx-weepe",
+    "tests_path": "ci/project_tests/weewx-weepe",
+    "coverage": "release",
+    "packaging_recipe": {
+      "source_sha": "2a9b42fda7e6b181c5064e7586c2e1a6e1037e16",
+      "patch": "ci/recipes/weepe/package.patch",
+      "sha256": "99e252db53340b895b57ef51753432f1264a81307b7b49a553e4f15528e6c660",
+      "changes": [
+        "Correct APRS humidity field width and encoding: 100% becomes h00; values below 1% become h01. Runtime version remains upstream; the independent installer version is recorded separately.",
+        "Installer version 2.0.2.post1 identifies this independent repaired archive; module runtime VERSION remains upstream and is recorded separately."
+      ]
+    },
+    "license": "MIT",
+    "license_evidence": [
+      "https://github.com/w4kus/weewx-weepe/blob/2a9b42fda7e6b181c5064e7586c2e1a6e1037e16/LICENSE.txt",
+      "https://github.com/w4kus/weewx-weepe/blob/2a9b42fda7e6b181c5064e7586c2e1a6e1037e16/bin/user/weepe.py"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-weepe/test_payload.py": "f4fad49c377325c3ed1342e928d925387876bcd63d0f8ebfb6d25c326d0c4ec1"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/weepe/v2.0.2.post1/weepe-2.0.2.post1.tar.gz",
+      "format": "tar.gz",
+      "sha256": "1ed7994f4eb2266aa56840d0d5a5ac9740b8faebba2d4dd1beba501d149b78c7"
+    }
+  },
+  "wetter": {
+    "status": "published",
+    "source_sha": "50a7f68d5f83ca639de056cdedf7b6a0370d6c1f",
+    "archive_sha256": "b14c62e919ede3e46f6ce8b6b06ab79e1b4380418ad86307e30acd9cf7d85aca",
+    "release_revision": 1,
+    "limitations": [],
+    "publication": {
+      "release_id": 420334362,
+      "asset_id": 664764724,
+      "immutable": true,
+      "sha256": "b14c62e919ede3e46f6ce8b6b06ab79e1b4380418ad86307e30acd9cf7d85aca"
+    },
+    "installer_version": "0.7",
+    "runtime_versions": {
+      "bin/user/wetter.py": {
+        "API_VERSION": "5.0.2 - 2015/06/01"
+      }
+    },
+    "repository": "weewx-packages/weewx-wetter",
+    "tests_path": "ci/project_tests/weewx-wetter",
+    "coverage": "release",
+    "packaging_recipe": {
+      "source_sha": "50a7f68d5f83ca639de056cdedf7b6a0370d6c1f",
+      "patch": "ci/recipes/wetter/package.patch",
+      "sha256": "d2728afd7e63db64091d10868f4bf7eba48e440d54e8fdad49d8810938e92f6d",
+      "changes": [
+        "Supply the complete GPL-3.0 license text required by the existing explicit install.py/readme source grant; retain every original copyright and source byte."
+      ]
+    },
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/matthewwall/weewx-wetter/blob/50a7f68d5f83ca639de056cdedf7b6a0370d6c1f/install.py",
+      "https://github.com/matthewwall/weewx-wetter/blob/50a7f68d5f83ca639de056cdedf7b6a0370d6c1f/readme.txt"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-wetter/test_payload.py": "249e0e3e3fcc35330311f90ddb0402c8e6d0726a2268d6688d65756db8731083"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/wetter/v0.7/wetter-0.7.tar.gz",
+      "format": "tar.gz",
+      "sha256": "b14c62e919ede3e46f6ce8b6b06ab79e1b4380418ad86307e30acd9cf7d85aca"
+    }
+  },
+  "windfinder": {
+    "status": "published",
+    "source_sha": "07ccbc36b2a0c13cc3f72db4d7ff873182119fdf",
+    "archive_sha256": "617d2b0a87587db8687561b0f9eeed331fca565649904ee5597e0ca78ab747a6",
+    "release_revision": 1,
+    "limitations": [],
+    "publication": {
+      "release_id": 420334385,
+      "asset_id": 664764839,
+      "immutable": true,
+      "sha256": "617d2b0a87587db8687561b0f9eeed331fca565649904ee5597e0ca78ab747a6"
+    },
+    "installer_version": "0.12",
+    "runtime_versions": {
+      "bin/user/windfinder.py": {
+        "VERSION": "0.12"
+      }
+    },
+    "repository": "weewx-packages/weewx-windfinder",
+    "tests_path": "ci/project_tests/weewx-windfinder",
+    "coverage": "release",
+    "packaging_recipe": {
+      "source_sha": "07ccbc36b2a0c13cc3f72db4d7ff873182119fdf",
+      "patch": "ci/recipes/windfinder/package.patch",
+      "sha256": "d2728afd7e63db64091d10868f4bf7eba48e440d54e8fdad49d8810938e92f6d",
+      "changes": [
+        "Supply the complete GPL-3.0 license text required by the existing explicit install.py/readme source grant; retain every original copyright and source byte."
+      ]
+    },
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/matthewwall/weewx-windfinder/blob/07ccbc36b2a0c13cc3f72db4d7ff873182119fdf/install.py",
+      "https://github.com/matthewwall/weewx-windfinder/blob/07ccbc36b2a0c13cc3f72db4d7ff873182119fdf/readme.txt"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-windfinder/test_payload.py": "4e4bc692ae08c85ac468e0aca55bc5d5b36896f613acb263e50fc5aa5de7bc04"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/windfinder/v0.12/windfinder-0.12.tar.gz",
+      "format": "tar.gz",
+      "sha256": "617d2b0a87587db8687561b0f9eeed331fca565649904ee5597e0ca78ab747a6"
+    }
+  },
+  "windy": {
+    "status": "published",
+    "source_sha": "032fee9173c4ad5c2000313ff4b75107e7c7bad9",
+    "archive_sha256": "9d0b3be855b8c407b71ae59bbe7708c608eb3873da27a893f7abc489aec93807",
+    "release_revision": 1,
+    "limitations": [],
+    "publication": {
+      "release_id": 420334418,
+      "asset_id": 664764917,
+      "immutable": true,
+      "sha256": "9d0b3be855b8c407b71ae59bbe7708c608eb3873da27a893f7abc489aec93807"
+    },
+    "installer_version": "0.8.post1",
+    "runtime_versions": {
+      "bin/user/windy.py": {
+        "VERSION": "0.8"
+      }
+    },
+    "repository": "weewx-packages/weewx-windy",
+    "tests_path": "ci/project_tests/weewx-windy",
+    "coverage": "release",
+    "packaging_recipe": {
+      "source_sha": "032fee9173c4ad5c2000313ff4b75107e7c7bad9",
+      "patch": "ci/recipes/windy/package.patch",
+      "sha256": "b72688aa85282000661c8ad89e3e90bba5e17b692df0cdd96472e0264c876882",
+      "changes": [
+        "Omit absent sensor values from Windy query rather than transmitting the literal None; preserve numeric zero. Runtime version remains upstream; the independent installer version is recorded separately.",
+        "Installer version 0.8.post1 identifies this independent repaired archive; module runtime VERSION remains upstream and is recorded separately."
+      ]
+    },
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/Jterrettaz/weewx-windy/blob/032fee9173c4ad5c2000313ff4b75107e7c7bad9/install.py",
+      "https://github.com/Jterrettaz/weewx-windy/blob/032fee9173c4ad5c2000313ff4b75107e7c7bad9/license",
+      "https://github.com/Jterrettaz/weewx-windy/blob/032fee9173c4ad5c2000313ff4b75107e7c7bad9/readme.txt"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-windy/test_payload.py": "5acc0346b0d64a10e73990c7e32734b57d4088ff696498e35a8da1128f971bbb"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/windy/v0.8.post1/windy-0.8.post1.tar.gz",
+      "format": "tar.gz",
+      "sha256": "9d0b3be855b8c407b71ae59bbe7708c608eb3873da27a893f7abc489aec93807"
+    }
+  },
+  "wlip-emulator": {
+    "status": "published",
+    "source_sha": "170e77f4f8043da36924a428d341389e049f85c6",
+    "archive_sha256": "89ec841bcf7bc9945f43865197c17b66d512590ab9f82d67dea185260b007409",
+    "release_revision": 0,
+    "limitations": [],
+    "publication": {
+      "release_id": 420334450,
+      "asset_id": 664765032,
+      "immutable": true,
+      "sha256": "89ec841bcf7bc9945f43865197c17b66d512590ab9f82d67dea185260b007409"
+    },
+    "installer_version": "89",
+    "runtime_versions": {},
+    "repository": "weewx-packages/weewx-wlip-emulator",
+    "tests_path": "ci/project_tests/weewx-wlip-emulator",
+    "coverage": "release",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/iiseppi/wlip-emulator/blob/170e77f4f8043da36924a428d341389e049f85c6/LICENSE",
+      "https://github.com/iiseppi/wlip-emulator/blob/170e77f4f8043da36924a428d341389e049f85c6/README.md"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-wlip-emulator/test_payload.py": "0fd56e333968578a900502a562f0f590d329b436710fa686296bad0dd623a80e"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/wlip-emulator/v89/wlip-emulator-89.tar.gz",
+      "format": "tar.gz",
+      "sha256": "89ec841bcf7bc9945f43865197c17b66d512590ab9f82d67dea185260b007409"
+    }
+  },
+  "wns": {
+    "status": "published",
+    "source_sha": "5f9d3fda59a7bc328c814fc3479b63c97067b8fa",
+    "archive_sha256": "335212c08d3e14a163b3fc692cc720b70edaadedd33acf128d60548b2202a1dc",
+    "release_revision": 0,
+    "limitations": [],
+    "publication": {
+      "release_id": 420334489,
+      "asset_id": 664765173,
+      "immutable": true,
+      "sha256": "335212c08d3e14a163b3fc692cc720b70edaadedd33acf128d60548b2202a1dc"
+    },
+    "installer_version": "0.8",
+    "runtime_versions": {
+      "bin/user/wns.py": {
+        "VERSION": "0.8"
+      }
+    },
+    "repository": "weewx-packages/weewx-wns",
+    "tests_path": "ci/project_tests/weewx-wns",
+    "coverage": "release",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/roe-dl/weewx-wns/blob/5f9d3fda59a7bc328c814fc3479b63c97067b8fa/README.md",
+      "https://github.com/roe-dl/weewx-wns/blob/5f9d3fda59a7bc328c814fc3479b63c97067b8fa/install.py",
+      "https://github.com/roe-dl/weewx-wns/blob/5f9d3fda59a7bc328c814fc3479b63c97067b8fa/license",
+      "https://github.com/roe-dl/weewx-wns/blob/5f9d3fda59a7bc328c814fc3479b63c97067b8fa/readme.txt"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-wns/test_payload.py": "acac7f17382e50014e9693b53cba19f5259444200a42926690e89ef748065bb2"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/wns/v0.8/wns-0.8.tar.gz",
+      "format": "tar.gz",
+      "sha256": "335212c08d3e14a163b3fc692cc720b70edaadedd33acf128d60548b2202a1dc"
+    }
+  },
+  "wundergroundlike": {
+    "status": "published",
+    "source_sha": "bc688eef06546b9f1a04e04b0effd2f631af22aa",
+    "archive_sha256": "a0db86254a0fd45f347dc366f8911b4db0fbd6c3105b5487dc6e4077be51d75c",
+    "release_revision": 0,
+    "limitations": [],
+    "publication": {
+      "release_id": 420334519,
+      "asset_id": 664765260,
+      "immutable": true,
+      "sha256": "a0db86254a0fd45f347dc366f8911b4db0fbd6c3105b5487dc6e4077be51d75c"
+    },
+    "installer_version": "1.0.1",
+    "runtime_versions": {},
+    "repository": "weewx-packages/weewx-wundergroundlike",
+    "tests_path": "ci/project_tests/weewx-wundergroundlike",
+    "coverage": "release",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/smeisens/weewx-wundergroundlike/blob/bc688eef06546b9f1a04e04b0effd2f631af22aa/LICENSE.txt",
+      "https://github.com/smeisens/weewx-wundergroundlike/blob/bc688eef06546b9f1a04e04b0effd2f631af22aa/README.md"
+    ],
+    "test_sha256": {
+      "ci/project_tests/weewx-wundergroundlike/test_payload.py": "706a62d3cb36f3e7cfafdcab7f6c46baab1d7fd451d4ae02c3337fdbd7253b3f"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/wundergroundlike/v1.0.1/wundergroundlike-1.0.1.tar.gz",
+      "format": "tar.gz",
+      "sha256": "a0db86254a0fd45f347dc366f8911b4db0fbd6c3105b5487dc6e4077be51d75c"
+    }
+  },
+  "wp-weewx": {
+    "status": "published",
+    "source_sha": "47540be593d51732f2793c7c91a0e1a80ec4f8bb",
+    "archive_sha256": "90e2224525b182382db211d2d88a07e18fdea14b750dcfe8f743e4200a81d73b",
+    "release_revision": 0,
+    "limitations": [
+      "External WordPress plugin, not a WeeWX extension. Exact plugin tree is installed into wp-content/plugins. HTTP/options/cache boundaries use local WordPress API fixtures; full WordPress activation/database integration is not claimed."
+    ],
+    "publication": {
+      "release_id": 420334559,
+      "asset_id": 664765360,
+      "immutable": true,
+      "sha256": "90e2224525b182382db211d2d88a07e18fdea14b750dcfe8f743e4200a81d73b"
+    },
+    "installer_version": "0.5.2",
+    "runtime_versions": {},
+    "repository": "weewx-packages/wp-weewx",
+    "tests_path": "ci/project_tests/wp-weewx",
+    "coverage": "external",
+    "license": "GPL-3.0",
+    "license_evidence": [
+      "https://github.com/open-astro/wp-weewx/blob/47540be593d51732f2793c7c91a0e1a80ec4f8bb/LICENSE.md",
+      "https://github.com/open-astro/wp-weewx/blob/47540be593d51732f2793c7c91a0e1a80ec4f8bb/README.md"
+    ],
+    "test_sha256": {
+      "ci/project_tests/wp-weewx/test_payload.py": "27f224959301cbe34b204c55c5e649a214017dda3fa5fd1135f1c89113e80d4c",
+      "ci/project_tests/wp-weewx/fixture.php": "294e12ec142a94a0aa47ecc595bae50a6f218a82aebf5b17f495b99cb27766fe"
+    },
+    "archive": {
+      "url": "https://github.com/weewx-packages/catalog/releases/download/wp-weewx/v0.5.2/wp-weewx-0.5.2.tar.gz",
+      "format": "tar.gz",
+      "sha256": "90e2224525b182382db211d2d88a07e18fdea14b750dcfe8f743e4200a81d73b"
+    }
+  }
+}
