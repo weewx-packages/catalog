@@ -2035,5 +2035,171 @@
       "https://github.com/felddy/weewx-home-assistant/blob/67d5a3e0463c2e9ef594623acee0a160a3622895/README.md",
       "https://github.com/felddy/weewx-home-assistant/blob/67d5a3e0463c2e9ef594623acee0a160a3622895/pyproject.toml"
     ]
+  },
+  {
+    "upstream": "https://github.com/jardiamj/BYOWS_RPi.git",
+    "fork": "weewx-packages/BYOWS_RPi",
+    "weekday": 1,
+    "sync": true,
+    "check": "external",
+    "reviewed_revision": "57e70e7b37cd65de3c0af0101d84ddbb1f8ee0dd",
+    "license": "GPL-3.0-or-later",
+    "license_evidence": [
+      "https://github.com/jardiamj/BYOWS_RPi/blob/57e70e7b37cd65de3c0af0101d84ddbb1f8ee0dd/LICENSE"
+    ]
+  },
+  {
+    "upstream": "https://github.com/captain-coredump/weatherflow-udp.git",
+    "fork": "weewx-packages/weatherflow-udp",
+    "weekday": 1,
+    "sync": true,
+    "check": "external",
+    "reviewed_revision": "eedfaf7b1ee1d0eb51513966b7a09e7622858791",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/captain-coredump/weatherflow-udp/blob/eedfaf7b1ee1d0eb51513966b7a09e7622858791/license"
+    ]
+  },
+  {
+    "upstream": "https://github.com/michael-slx/weewx-weatherlink-live.git",
+    "fork": "weewx-packages/weewx-weatherlink-live",
+    "weekday": 1,
+    "sync": true,
+    "check": "external",
+    "reviewed_revision": "da5fdac55a6363437768922196ae5e780326acf4",
+    "license": "MIT",
+    "license_evidence": [
+      "https://github.com/michael-slx/weewx-weatherlink-live/blob/da5fdac55a6363437768922196ae5e780326acf4/LICENSE"
+    ]
+  },
+  {
+    "upstream": "https://github.com/Drealine/weatherlinklive-driver-weewx.git",
+    "fork": "weewx-packages/weatherlinklive-driver-weewx",
+    "weekday": 2,
+    "sync": true,
+    "check": "external",
+    "reviewed_revision": "2fc184279208df99cdec03ac0fb2590912a80982",
+    "license": "Apache-2.0",
+    "license_evidence": [
+      "https://github.com/Drealine/weatherlinklive-driver-weewx/blob/2fc184279208df99cdec03ac0fb2590912a80982/LICENSE"
+    ]
+  },
+  {
+    "upstream": "https://github.com/inguy24/weewx-airvisual.git",
+    "fork": "weewx-packages/weewx-airvisual",
+    "weekday": 2,
+    "sync": true,
+    "check": "component",
+    "reviewed_revision": "3ca148f8146f5fe0046d2f837ebb933c28cc33e6",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/inguy24/weewx-airvisual/blob/3ca148f8146f5fe0046d2f837ebb933c28cc33e6/LICENSE",
+      "https://github.com/inguy24/weewx-airvisual/blob/3ca148f8146f5fe0046d2f837ebb933c28cc33e6/bin/user/airvisual.py"
+    ]
+  },
+  {
+    "upstream": "https://github.com/inguy24/weewx-noaa_marine_API.git",
+    "fork": "weewx-packages/weewx-noaa_marine_API",
+    "weekday": 2,
+    "sync": true,
+    "check": "external",
+    "reviewed_revision": "51db84c9b93116c52f009c0aad70dfb634abb8de",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/inguy24/weewx-noaa_marine_API/blob/51db84c9b93116c52f009c0aad70dfb634abb8de/LICENSE"
+    ]
+  },
+  {
+    "upstream": "https://github.com/bakerkj/weewx-purpleair.git",
+    "fork": "weewx-packages/weewx-purpleair",
+    "weekday": 3,
+    "sync": true,
+    "check": "external",
+    "reviewed_revision": "104363ffac5d8d3479abc26369bba15ed347466d",
+    "license": "GPL-2.0-or-later",
+    "license_evidence": [
+      "https://github.com/bakerkj/weewx-purpleair/blob/104363ffac5d8d3479abc26369bba15ed347466d/LICENSE",
+      "https://github.com/bakerkj/weewx-purpleair/blob/104363ffac5d8d3479abc26369bba15ed347466d/bin/user/purpleair.py"
+    ]
+  },
+  {
+    "upstream": "https://github.com/brewster76/fuzzy-archer.git",
+    "fork": "weewx-packages/fuzzy-archer",
+    "weekday": 3,
+    "sync": true,
+    "check": "external",
+    "reviewed_revision": "34750f3a4058dac8f10bfa719b32c11527fa452a",
+    "license": "GPL-2.0-only",
+    "license_evidence": [
+      "https://github.com/brewster76/fuzzy-archer/blob/34750f3a4058dac8f10bfa719b32c11527fa452a/LICENSE",
+      "https://github.com/brewster76/fuzzy-archer/blob/34750f3a4058dac8f10bfa719b32c11527fa452a/bin/user/historygenerator.py"
+    ]
+  },
+  {
+    "upstream": "https://github.com/mcrossley/SteelSeries-Weather-Gauges.git",
+    "fork": "weewx-packages/SteelSeries-Weather-Gauges",
+    "weekday": 4,
+    "sync": true,
+    "check": "component",
+    "reviewed_revision": "2a39b3cb442dc84bdcc79513732184edce9ff892",
+    "license": "GPL-2.0-only",
+    "license_evidence": [
+      "https://github.com/mcrossley/SteelSeries-Weather-Gauges/blob/2a39b3cb442dc84bdcc79513732184edce9ff892/LICENSE",
+      "https://github.com/mcrossley/SteelSeries-Weather-Gauges/blob/2a39b3cb442dc84bdcc79513732184edce9ff892/web_server/fonts/LICENSE.TXT"
+    ]
+  },
+  {
+    "upstream": "https://github.com/Daveiano/weewx-wdc.git",
+    "fork": "weewx-packages/weewx-wdc",
+    "weekday": 4,
+    "sync": true,
+    "check": "component",
+    "reviewed_revision": "4634c248fefa6d68d90ccbb723a84a0ba24fa655",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/Daveiano/weewx-wdc/blob/4634c248fefa6d68d90ccbb723a84a0ba24fa655/LICENSE",
+      "https://github.com/Daveiano/weewx-wdc/blob/4634c248fefa6d68d90ccbb723a84a0ba24fa655/bin/user/weewx_wdc.py",
+      "https://github.com/Daveiano/weewx-wdc/blob/4634c248fefa6d68d90ccbb723a84a0ba24fa655/install.py"
+    ]
+  },
+  {
+    "upstream": "https://github.com/glennmckechnie/weewx-wxobs.git",
+    "fork": "weewx-packages/weewx-wxobs",
+    "weekday": 4,
+    "sync": true,
+    "check": "external",
+    "reviewed_revision": "73a505cc46207806c1fe8aa1202b0ea39d8ffd28",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/glennmckechnie/weewx-wxobs/blob/73a505cc46207806c1fe8aa1202b0ea39d8ffd28/LICENSE",
+      "https://github.com/glennmckechnie/weewx-wxobs/blob/73a505cc46207806c1fe8aa1202b0ea39d8ffd28/install.py"
+    ]
+  },
+  {
+    "upstream": "https://github.com/glennmckechnie/weewx-mastodon.git",
+    "fork": "weewx-packages/weewx-mastodon",
+    "weekday": 5,
+    "sync": true,
+    "check": "external",
+    "reviewed_revision": "37b2c785e6e5ae406d3c02d6d24f06914211a7c8",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/glennmckechnie/weewx-mastodon/blob/37b2c785e6e5ae406d3c02d6d24f06914211a7c8/LICENCE",
+      "https://github.com/glennmckechnie/weewx-mastodon/blob/37b2c785e6e5ae406d3c02d6d24f06914211a7c8/README.md",
+      "https://github.com/glennmckechnie/weewx-mastodon/blob/37b2c785e6e5ae406d3c02d6d24f06914211a7c8/install.py"
+    ]
+  },
+  {
+    "upstream": "https://github.com/sbsrouteur/weewx-opensensemap.git",
+    "fork": "weewx-packages/weewx-opensensemap",
+    "weekday": 5,
+    "sync": true,
+    "check": "external",
+    "reviewed_revision": "f9046c8274571ee87c9c2b306a10a4dcffbe9b32",
+    "license": "MIT",
+    "license_evidence": [
+      "https://github.com/sbsrouteur/weewx-opensensemap/blob/f9046c8274571ee87c9c2b306a10a4dcffbe9b32/README.md",
+      "https://github.com/sbsrouteur/weewx-opensensemap/blob/f9046c8274571ee87c9c2b306a10a4dcffbe9b32/install.py"
+    ]
   }
 ]

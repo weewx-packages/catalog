@@ -11,7 +11,9 @@ import pytest
 
 LICENSE_FILE = re.compile(r'^(LICENSE|LICENCE|COPYING)', re.I)
 LICENSE_TEXT = re.compile(r'General Public License|Permission is hereby granted|'
-                          r'Redistribution and use in source and binary forms', re.I)
+                          r'Redistribution and use in source and binary forms|'
+                          r'under the terms of the MIT License', re.I)
+README_FILE = re.compile(r'^README', re.I)
 
 
 @pytest.fixture
@@ -30,12 +32,16 @@ def test_python_sources_parse(payload):
 
 
 def test_license_is_present(payload):
-    """Require a license file, or a license grant in a source header."""
+    """Require a license file, or a license grant in a source header or the README."""
     if any(LICENSE_FILE.match(path.name) for path in payload.iterdir()):
         return
-    granted = [path for path in python_files(payload)
+    # Some projects grant their license only in the README, e.g. "Distributed
+    # under the terms of the MIT License". The wiki audit accepts that as
+    # evidence, so the top-level README is searched along with the Python headers.
+    readmes = [path for path in payload.iterdir() if path.is_file() and README_FILE.match(path.name)]
+    granted = [path for path in python_files(payload) + readmes
                if LICENSE_TEXT.search(path.read_text(encoding='utf-8', errors='replace')[:4000])]
-    assert granted, 'No license file and no license grant in any Python header'
+    assert granted, 'No license file and no license grant in any Python header or README'
 
 
 def test_installer_parses(payload):

@@ -310,5 +310,333 @@
       "kind": "source",
       "coverage": "component"
     }
+  },
+  "byows-rpi-source": {
+    "release": {
+      "version": "source",
+      "requires_python": ">=3.10,<3.15",
+      "archive": {
+        "url": "https://github.com/weewx-packages/BYOWS_RPi/archive/57e70e7b37cd65de3c0af0101d84ddbb1f8ee0dd.zip",
+        "format": "zip",
+        "sha256": "37979d4893a426209c4162bcc4e2aaa0f26c4a3d291a6c584d26806f77f1d52a"
+      },
+      "requires_weewx": ">=5.5.2,<6"
+    },
+    "check_profile": {
+      "repository": "weewx-packages/BYOWS_RPi",
+      "ref": "master",
+      "imports": [
+        "user.byows_rpi"
+      ],
+      "allowed_skips": [],
+      "pip_packages": [
+        "gpiozero",
+        "RPi.bme280",
+        "smbus2"
+      ],
+      "tests_path": "ci/project_tests/weewx-source-smoke",
+      "source_archive": true,
+      "kind": "project",
+      "coverage": "source"
+    }
+  },
+  "weatherflow-udp-source": {
+    "release": {
+      "version": "source",
+      "requires_python": ">=3.10,<3.15",
+      "archive": {
+        "url": "https://github.com/weewx-packages/weatherflow-udp/archive/eedfaf7b1ee1d0eb51513966b7a09e7622858791.zip",
+        "format": "zip",
+        "sha256": "7513cd4ed16e4b1b6a17af51da993984cc4408332f8e414653a3dc2dfc90ea7d"
+      },
+      "requires_weewx": ">=5.5.2,<6"
+    },
+    "check_profile": {
+      "repository": "weewx-packages/weatherflow-udp",
+      "ref": "master",
+      "imports": [
+        "user.weatherflowudp"
+      ],
+      "allowed_skips": [],
+      "pip_packages": [],
+      "tests_path": "ci/project_tests/weewx-source-smoke",
+      "source_archive": true,
+      "kind": "project",
+      "coverage": "source"
+    }
+  },
+  "weatherlink-live-source": {
+    "release": {
+      "version": "source",
+      "requires_python": ">=3.10,<3.15",
+      "archive": {
+        "url": "https://github.com/weewx-packages/weewx-weatherlink-live/archive/da5fdac55a6363437768922196ae5e780326acf4.zip",
+        "format": "zip",
+        "sha256": "95590096c440ec96deb58bfebc8dc4a225b997afaae4978d32539de345c1509d"
+      },
+      "requires_weewx": ">=5.5.2,<6"
+    },
+    "check_profile": {
+      "repository": "weewx-packages/weewx-weatherlink-live",
+      "ref": "release",
+      "imports": [
+        "user.weatherlink_live_driver"
+      ],
+      "allowed_skips": [],
+      "pip_packages": [],
+      "tests_path": "ci/project_tests/weewx-source-smoke",
+      "source_archive": true,
+      "kind": "project",
+      "coverage": "source"
+    }
+  },
+  "weatherlinklive-driver-source": {
+    "release": {
+      "version": "source",
+      "requires_python": ">=3.10,<3.15",
+      "archive": {
+        "url": "https://github.com/weewx-packages/weatherlinklive-driver-weewx/archive/2fc184279208df99cdec03ac0fb2590912a80982.zip",
+        "format": "zip",
+        "sha256": "3204da15fb44192acabe244a78dca245a7923661304e8338c869d5cf9da1c5b6"
+      },
+      "requires_weewx": ">=5.5.2,<6"
+    },
+    "check_profile": {
+      "repository": "weewx-packages/weatherlinklive-driver-weewx",
+      "ref": "master",
+      "imports": [
+        "user.WLLDriver"
+      ],
+      "allowed_skips": [],
+      "pip_packages": [],
+      "tests_path": "ci/project_tests/weewx-source-smoke",
+      "source_archive": true,
+      "kind": "project",
+      "coverage": "source"
+    }
+  },
+  "airvisual-source": {
+    "release": {
+      "version": "source",
+      "requires_python": ">=3.10,<3.15",
+      "archive": {
+        "url": "https://github.com/weewx-packages/weewx-airvisual/archive/3ca148f8146f5fe0046d2f837ebb933c28cc33e6.zip",
+        "format": "zip",
+        "sha256": "b2faf846e091254fee6aef395957f64561a13ae79c59cab2cf47e4f35ed6ff8f"
+      },
+      "requires_weewx": ">=5.5.2,<6"
+    },
+    "check_profile": {
+      "repository": "weewx-packages/weewx-airvisual",
+      "ref": "main",
+      "imports": [],
+      "allowed_skips": [],
+      "pip_packages": [],
+      "tests_path": "ci/project_tests/weewx-source-smoke",
+      "source_archive": true,
+      "kind": "source",
+      "coverage": "component"
+    }
+  },
+  "noaa-marine-source": {
+    "release": {
+      "version": "source",
+      "requires_python": ">=3.10,<3.15",
+      "archive": {
+        "url": "https://github.com/weewx-packages/weewx-noaa_marine_API/archive/51db84c9b93116c52f009c0aad70dfb634abb8de.zip",
+        "format": "zip",
+        "sha256": "caf2cd0b744ea0f10c4504b2310b2a820b634b3db9ac1a66db67573189e6bff9"
+      },
+      "requires_weewx": ">=5.5.2,<6"
+    },
+    "check_profile": {
+      "repository": "weewx-packages/weewx-noaa_marine_API",
+      "ref": "main",
+      "imports": [
+        "user.marine_data"
+      ],
+      "allowed_skips": [],
+      "pip_packages": [],
+      "tests_path": "ci/project_tests/weewx-source-smoke",
+      "source_archive": true,
+      "kind": "project",
+      "coverage": "source"
+    }
+  },
+  "purpleair-source": {
+    "release": {
+      "version": "source",
+      "requires_python": ">=3.10,<3.15",
+      "archive": {
+        "url": "https://github.com/weewx-packages/weewx-purpleair/archive/104363ffac5d8d3479abc26369bba15ed347466d.zip",
+        "format": "zip",
+        "sha256": "74c6c772ab0edb4e16ee8c1cee9c735acd3644dfc2d177558cae7bf98815b52e"
+      },
+      "requires_weewx": ">=5.5.2,<6"
+    },
+    "check_profile": {
+      "repository": "weewx-packages/weewx-purpleair",
+      "ref": "master",
+      "imports": [
+        "user.purpleair"
+      ],
+      "allowed_skips": [],
+      "pip_packages": [],
+      "tests_path": "ci/project_tests/weewx-source-smoke",
+      "source_archive": true,
+      "kind": "project",
+      "coverage": "source"
+    }
+  },
+  "bootstrap-source": {
+    "release": {
+      "version": "source",
+      "requires_python": ">=3.10,<3.15",
+      "archive": {
+        "url": "https://github.com/weewx-packages/fuzzy-archer/archive/34750f3a4058dac8f10bfa719b32c11527fa452a.zip",
+        "format": "zip",
+        "sha256": "1b0d1640eddf74b5a4050483abf771b1b3326cada451100b88fa7fe304edd645"
+      },
+      "requires_weewx": ">=5.5.2,<6"
+    },
+    "check_profile": {
+      "repository": "weewx-packages/fuzzy-archer",
+      "ref": "master",
+      "imports": [
+        "user.historygenerator",
+        "user.jsonengine"
+      ],
+      "allowed_skips": [],
+      "pip_packages": [],
+      "tests_path": "ci/project_tests/weewx-source-smoke",
+      "source_archive": true,
+      "kind": "project",
+      "coverage": "source"
+    }
+  },
+  "steelseries-gauges-source": {
+    "release": {
+      "version": "source",
+      "requires_python": ">=3.10,<3.15",
+      "archive": {
+        "url": "https://github.com/weewx-packages/SteelSeries-Weather-Gauges/archive/2a39b3cb442dc84bdcc79513732184edce9ff892.zip",
+        "format": "zip",
+        "sha256": "bedc645bc52ed09566c5240607559b70dd21b5fabdff5b1fc80ae5bda7523928"
+      },
+      "requires_weewx": ">=5.5.2,<6"
+    },
+    "check_profile": {
+      "repository": "weewx-packages/SteelSeries-Weather-Gauges",
+      "ref": "master",
+      "imports": [],
+      "allowed_skips": [],
+      "pip_packages": [],
+      "tests_path": "ci/project_tests/weewx-source-smoke",
+      "source_archive": true,
+      "kind": "source",
+      "coverage": "component"
+    }
+  },
+  "wdc-source": {
+    "release": {
+      "version": "source",
+      "requires_python": ">=3.10,<3.15",
+      "archive": {
+        "url": "https://github.com/weewx-packages/weewx-wdc/archive/4634c248fefa6d68d90ccbb723a84a0ba24fa655.zip",
+        "format": "zip",
+        "sha256": "3b18ac8e4bc04a82f0d1c162646a6b2fd502e91f6db64afa186f2af2709831cb"
+      },
+      "requires_weewx": ">=5.5.2,<6"
+    },
+    "check_profile": {
+      "repository": "weewx-packages/weewx-wdc",
+      "ref": "3.x",
+      "imports": [],
+      "allowed_skips": [],
+      "pip_packages": [],
+      "tests_path": "ci/project_tests/weewx-source-smoke",
+      "source_archive": true,
+      "kind": "source",
+      "coverage": "component"
+    }
+  },
+  "wxobs-source": {
+    "release": {
+      "version": "source",
+      "requires_python": ">=3.10,<3.15",
+      "archive": {
+        "url": "https://github.com/weewx-packages/weewx-wxobs/archive/73a505cc46207806c1fe8aa1202b0ea39d8ffd28.zip",
+        "format": "zip",
+        "sha256": "f48bdfe91017ea1c762921885658f33709024879f9ac0d99cdfbde0349cbe962"
+      },
+      "requires_weewx": ">=5.5.2,<6"
+    },
+    "check_profile": {
+      "repository": "weewx-packages/weewx-wxobs",
+      "ref": "master",
+      "imports": [
+        "user.wxobs"
+      ],
+      "allowed_skips": [],
+      "pip_packages": [],
+      "tests_path": "ci/project_tests/weewx-source-smoke",
+      "source_archive": true,
+      "kind": "project",
+      "coverage": "source"
+    }
+  },
+  "mastodon-source": {
+    "release": {
+      "version": "source",
+      "requires_python": ">=3.10,<3.15",
+      "archive": {
+        "url": "https://github.com/weewx-packages/weewx-mastodon/archive/37b2c785e6e5ae406d3c02d6d24f06914211a7c8.zip",
+        "format": "zip",
+        "sha256": "36a448d6ac379fefc6005a245c77adbe40d8643cbb8e933ad3729d1f1f56befd"
+      },
+      "requires_weewx": ">=5.5.2,<6"
+    },
+    "check_profile": {
+      "repository": "weewx-packages/weewx-mastodon",
+      "ref": "main",
+      "imports": [
+        "user.wxtoot"
+      ],
+      "allowed_skips": [],
+      "pip_packages": [
+        "Mastodon.py"
+      ],
+      "tests_path": "ci/project_tests/weewx-source-smoke",
+      "source_archive": true,
+      "kind": "project",
+      "coverage": "source"
+    }
+  },
+  "opensensemap-source": {
+    "release": {
+      "version": "source",
+      "requires_python": ">=3.10,<3.15",
+      "archive": {
+        "url": "https://github.com/weewx-packages/weewx-opensensemap/archive/f9046c8274571ee87c9c2b306a10a4dcffbe9b32.zip",
+        "format": "zip",
+        "sha256": "8a2bf7355b57b9cccd4eeb3cf82023505319ea25667b722bc38d8c6401cee214"
+      },
+      "requires_weewx": ">=5.5.2,<6"
+    },
+    "check_profile": {
+      "repository": "weewx-packages/weewx-opensensemap",
+      "ref": "master",
+      "imports": [
+        "user.opensensemap"
+      ],
+      "allowed_skips": [],
+      "pip_packages": [
+        "six"
+      ],
+      "tests_path": "ci/project_tests/weewx-source-smoke",
+      "source_archive": true,
+      "kind": "project",
+      "coverage": "source"
+    }
   }
 }

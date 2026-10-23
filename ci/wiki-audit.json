@@ -7,9 +7,8 @@
   "counts": {
     "blocked_license_assets": 1,
     "blocked_license": 17,
-    "fork_created": 61,
+    "fork_created": 74,
     "blocked_distribution_rights": 4,
-    "hold_maintenance_borderline": 4,
     "defer_external_import": 3,
     "blocked_source_unavailable": 1,
     "local_driver_fixes_distribution_blocked": 1,
@@ -22,28 +21,23 @@
     "skip_deprecated_unavailable": 1,
     "local_successor_fixes_bundle_distribution_blocked": 1,
     "skip_superseded": 2,
-    "defer_maintenance": 2,
     "completed": 4,
     "completed_with_tracker_comment_blocker": 2,
     "existing_fork_verified": 5,
-    "borderline_active_old_items": 3,
     "hard_fork_plan_license_review": 1,
     "existing_fork": 2,
     "superseded": 8,
     "blocked_license_borderline": 1,
     "existing_successor_fork": 1,
     "blocked_license_hard_fork_plan": 1,
-    "missing_wrapper_borderline_upstream": 1,
     "superseded_license_restricted": 1,
     "true_fork_created": 38,
     "external_archive_no_git": 1,
     "license_blocked": 6,
-    "hold_aged_responded": 2,
     "license_scope_unclear": 1,
     "completed_available_work": 9,
     "external_license_scope_unclear": 1,
     "organization_index_resolved_duplicates": 1,
-    "hold_recent_fix": 1,
     "license_blocked_repair_candidate": 3,
     "component_covered_by_fork": 1,
     "true_fork_existing": 1
@@ -611,9 +605,9 @@
       "source": "https://github.com/jardiamj/BYOWS_RPi",
       "reviewed_revision": "57e70e7b37cd65de3c0af0101d84ddbb1f8ee0dd",
       "last_commit": "2025-04-03T19:40:22Z",
-      "decision": "hold_maintenance_borderline",
-      "reason": "Owner hat bis Dezember 2024 Versions-/Installationspunkte geschlossen und im April 2025 die Version korrigiert. Alte Supportthreads sind beantwortet, aber #13 hat Folgefragen 2024/2025 ohne weitere Antwort. Owner erklärt fehlende Hardware. Wartungsstatus ist ein Grenzfall, keine belegte Aufgabe.",
-      "fork": null,
+      "decision": "fork_created",
+      "reason": "Owner hat bis Dezember 2024 Versions-/Installationspunkte geschlossen und im April 2025 die Version korrigiert. Alte Supportthreads sind beantwortet, aber #13 hat Folgefragen 2024/2025 ohne weitere Antwort. Owner erklärt fehlende Hardware. Wartungsstatus ist ein Grenzfall, keine belegte Aufgabe. Am 23.10.2026 als reiner Spiegel (sync: true) aufgenommen: Ein Backup schadet auch im Grenzfall nicht. Entwicklung bleibt beim Upstream.",
+      "fork": "https://github.com/weewx-packages/BYOWS_RPi",
       "license": {
         "spdx": "GPL-3.0-or-later",
         "evidence": [
@@ -4043,9 +4037,9 @@
       "source": "https://github.com/captain-coredump/weatherflow-udp",
       "reviewed_revision": "eedfaf7b1ee1d0eb51513966b7a09e7622858791",
       "last_commit": "2024-02-19T00:11:28Z",
-      "decision": "hold_maintenance_borderline",
-      "reason": "Owner beantwortet #30 und schließt weitere Punkte im Dezember 2025. Gleichzeitig sind PR #12 von 2020, PR #21 von 2022 und mehrere alte Bugs unbeantwortet. Aktuelle #32/#33 betreffen eval-Verwendung. Kein Beleg für offensichtliche Aufgabe; ordinary Fork zurückgestellt.",
-      "fork": null,
+      "decision": "fork_created",
+      "reason": "Owner beantwortet #30 und schließt weitere Punkte im Dezember 2025. Gleichzeitig sind PR #12 von 2020, PR #21 von 2022 und mehrere alte Bugs unbeantwortet. Aktuelle #32/#33 betreffen eval-Verwendung. Kein Beleg für offensichtliche Aufgabe; ordinary Fork zurückgestellt. Am 23.10.2026 als reiner Spiegel (sync: true) aufgenommen: Ein Backup schadet auch im Grenzfall nicht. Entwicklung bleibt beim Upstream.",
+      "fork": "https://github.com/weewx-packages/weatherflow-udp",
       "license": {
         "spdx": "GPL-3.0-only",
         "evidence": [
@@ -5872,9 +5866,9 @@
       "source": "https://github.com/michael-slx/weewx-weatherlink-live",
       "reviewed_revision": "da5fdac55a6363437768922196ae5e780326acf4",
       "last_commit": "2026-01-23T11:07:02Z",
-      "decision": "hold_maintenance_borderline",
-      "reason": "Maintainer veröffentlichte Januar 2026 v1.1.8 und antwortete auf #59. Alte Punkte #33 und PR #26 haben dagegen keine Maintainerantwort. Aktiv gepflegt mit altem Rückstand, daher als Grenzfall separat zurückgestellt.",
-      "fork": null,
+      "decision": "fork_created",
+      "reason": "Maintainer veröffentlichte Januar 2026 v1.1.8 und antwortete auf #59. Alte Punkte #33 und PR #26 haben dagegen keine Maintainerantwort. Aktiv gepflegt mit altem Rückstand, daher als Grenzfall separat zurückgestellt. Am 23.10.2026 als reiner Spiegel (sync: true) aufgenommen: Ein Backup schadet auch im Grenzfall nicht. Entwicklung bleibt beim Upstream.",
+      "fork": "https://github.com/weewx-packages/weewx-weatherlink-live",
       "license": {
         "spdx": "MIT",
         "evidence": [
@@ -6183,9 +6177,9 @@
       "source": "https://github.com/Drealine/weatherlinklive-driver-weewx",
       "reviewed_revision": "2fc184279208df99cdec03ac0fb2590912a80982",
       "last_commit": "2022-02-27T14:50:59Z",
-      "decision": "hold_maintenance_borderline",
-      "reason": "Letzter Code 2022, aber Owner antwortet im Februar 2024 auf #30 und wartet auf Debuglogs. #19/#24 sind eigene offene Aufgaben aus 2020. Kein belastbarer Beleg für Aufgabe; keine pauschale Einordnung aus dem Commitdatum.",
-      "fork": null,
+      "decision": "fork_created",
+      "reason": "Letzter Code 2022, aber Owner antwortet im Februar 2024 auf #30 und wartet auf Debuglogs. #19/#24 sind eigene offene Aufgaben aus 2020. Kein belastbarer Beleg für Aufgabe; keine pauschale Einordnung aus dem Commitdatum. Am 23.10.2026 als reiner Spiegel (sync: true) aufgenommen: Ein Backup schadet auch im Grenzfall nicht. Entwicklung bleibt beim Upstream.",
+      "fork": "https://github.com/weewx-packages/weatherlinklive-driver-weewx",
       "license": {
         "spdx": "Apache-2.0",
         "evidence": [
@@ -7380,9 +7374,9 @@
       "source": "https://github.com/inguy24/weewx-airvisual",
       "reviewed_revision": "3ca148f8146f5fe0046d2f837ebb933c28cc33e6",
       "last_commit": "2025-08-01T05:41:23Z",
-      "decision": "defer_maintenance",
-      "reason": "Ein unbeantworteter Installationsfehler vom 04.02.2026; letzter Commit 01.08.2025. Punkt noch keine zwölf Monate alt, Aufgabe nicht belegt, Pflege derzeit nicht eindeutig.",
-      "fork": null,
+      "decision": "fork_created",
+      "reason": "Ein unbeantworteter Installationsfehler vom 04.02.2026; letzter Commit 01.08.2025. Punkt noch keine zwölf Monate alt, Aufgabe nicht belegt, Pflege derzeit nicht eindeutig. Am 23.10.2026 als reiner Spiegel (sync: true) aufgenommen: Ein Backup schadet auch im Grenzfall nicht. Entwicklung bleibt beim Upstream.",
+      "fork": "https://github.com/weewx-packages/weewx-airvisual",
       "license": {
         "spdx": "GPL-3.0-only",
         "evidence": [
@@ -8326,9 +8320,9 @@
       "source": "https://github.com/inguy24/weewx-noaa_marine_API",
       "reviewed_revision": "51db84c9b93116c52f009c0aad70dfb634abb8de",
       "last_commit": "2025-08-15T07:09:48Z",
-      "decision": "defer_maintenance",
-      "reason": "Unbeantworteter Installationsbericht vom 12.03.2026, Commit 15.08.2025. Fehlendes yaml-Modul wird gemeldet, Ursache und Pflegezustand nicht abschließend belegt; noch kein alter offener Punkt.",
-      "fork": null,
+      "decision": "fork_created",
+      "reason": "Unbeantworteter Installationsbericht vom 12.03.2026, Commit 15.08.2025. Fehlendes yaml-Modul wird gemeldet, Ursache und Pflegezustand nicht abschließend belegt; noch kein alter offener Punkt. Am 23.10.2026 als reiner Spiegel (sync: true) aufgenommen: Ein Backup schadet auch im Grenzfall nicht. Entwicklung bleibt beim Upstream.",
+      "fork": "https://github.com/weewx-packages/weewx-noaa_marine_API",
       "license": {
         "spdx": "GPL-3.0-only",
         "evidence": [
@@ -8777,9 +8771,9 @@
       "source": "https://github.com/bakerkj/weewx-purpleair",
       "reviewed_revision": "104363ffac5d8d3479abc26369bba15ed347466d",
       "last_commit": "2026-06-13T18:22:39Z",
-      "decision": "borderline_active_old_items",
-      "reason": "Commit 13.06.2026 und Maintainerantwort 05.06.2026 in #33 zeigen Pflege. #30 seit 2024 unbeantwortet; alte PRs #7/#21 wurden vom Maintainer geprüft und warten teils auf Beitragende. Grenzfall, kein Beleg für Aufgabe und vorerst kein Fork.",
-      "fork": null,
+      "decision": "fork_created",
+      "reason": "Commit 13.06.2026 und Maintainerantwort 05.06.2026 in #33 zeigen Pflege. #30 seit 2024 unbeantwortet; alte PRs #7/#21 wurden vom Maintainer geprüft und warten teils auf Beitragende. Grenzfall, kein Beleg für Aufgabe und vorerst kein Fork. Am 23.10.2026 als reiner Spiegel (sync: true) aufgenommen: Ein Backup schadet auch im Grenzfall nicht. Entwicklung bleibt beim Upstream.",
+      "fork": "https://github.com/weewx-packages/weewx-purpleair",
       "license": {
         "spdx": "GPL-2.0-or-later",
         "evidence": [
@@ -9359,9 +9353,9 @@
       "source": "https://github.com/brewster76/fuzzy-archer",
       "reviewed_revision": "34750f3a4058dac8f10bfa719b32c11527fa452a",
       "last_commit": "2026-09-04T12:09:51Z",
-      "decision": "borderline_active_old_items",
-      "reason": "Commit 04.09.2026 und Collaborator-Antworten 2026 belegen Pflege. Unbeantwortete alte Nutzerpunkte #197/#114 und eigener Backlog #162 bleiben offen; neue PRs #204/#205 sind erst zwei Tage alt. Grenzfall, keine Aufgabe behaupten.",
-      "fork": null,
+      "decision": "fork_created",
+      "reason": "Commit 04.09.2026 und Collaborator-Antworten 2026 belegen Pflege. Unbeantwortete alte Nutzerpunkte #197/#114 und eigener Backlog #162 bleiben offen; neue PRs #204/#205 sind erst zwei Tage alt. Grenzfall, keine Aufgabe behaupten. Am 23.10.2026 als reiner Spiegel (sync: true) aufgenommen: Ein Backup schadet auch im Grenzfall nicht. Entwicklung bleibt beim Upstream.",
+      "fork": "https://github.com/weewx-packages/fuzzy-archer",
       "license": {
         "spdx": "GPL-2.0-only",
         "evidence": [
@@ -10777,9 +10771,9 @@
       "source": "https://github.com/mcrossley/SteelSeries-Weather-Gauges",
       "reviewed_revision": "2a39b3cb442dc84bdcc79513732184edce9ff892",
       "last_commit": "2023-09-01T15:49:08Z",
-      "decision": "missing_wrapper_borderline_upstream",
-      "reason": "Wiki-Verweis gjr80/weewx-steelseries liefert 404. Über Wiki/README den eigentlichen Quellhersteller mcrossley/SteelSeries-Weather-Gauges aufgelöst und vollständig geprüft. Maintainer antwortet am 28.01.2026 in #24, aber #20 ist seit 13.02.2023 unbeantwortet; letzter Default-Branch-Commit 01.09.2023. Grenzfall, keine Aufgabe behaupten und kein sofortiger Fork. Alte g-vidal-Packagerkopie von 2018 nur als Herkunftsbeleg. Carbonsteel ist eine eigene Implementierung, keine belegte direkte Codefortsetzung.",
-      "fork": null,
+      "decision": "fork_created",
+      "reason": "Wiki-Verweis gjr80/weewx-steelseries liefert 404. Über Wiki/README den eigentlichen Quellhersteller mcrossley/SteelSeries-Weather-Gauges aufgelöst und vollständig geprüft. Maintainer antwortet am 28.01.2026 in #24, aber #20 ist seit 13.02.2023 unbeantwortet; letzter Default-Branch-Commit 01.09.2023. Grenzfall, keine Aufgabe behaupten und kein sofortiger Fork. Alte g-vidal-Packagerkopie von 2018 nur als Herkunftsbeleg. Carbonsteel ist eine eigene Implementierung, keine belegte direkte Codefortsetzung. Am 23.10.2026 als reiner Spiegel (sync: true) aufgenommen: Ein Backup schadet auch im Grenzfall nicht. Entwicklung bleibt beim Upstream.",
+      "fork": "https://github.com/weewx-packages/SteelSeries-Weather-Gauges",
       "license": {
         "spdx": "GPL-2.0-only",
         "evidence": [
@@ -11085,9 +11079,9 @@
       "source": "https://github.com/Daveiano/weewx-wdc",
       "reviewed_revision": "4634c248fefa6d68d90ccbb723a84a0ba24fa655",
       "last_commit": "2026-01-25T13:22:41Z",
-      "decision": "borderline_active_old_items",
-      "reason": "WDC neu bewertet: Commit 25.01.2026, Maintainerantworten bis 25.01.2026 und ausdrückliche Rückkehr nach Pause in #275. 23 offene Punkte, davon mehrere alte unbeantwortete Meldungen und Dependency-PRs. Weder eindeutig aufgegeben noch eindeutig für automatische Übernahme geeignet; vorerst gesondert zurückgestellt.",
-      "fork": null,
+      "decision": "fork_created",
+      "reason": "WDC neu bewertet: Commit 25.01.2026, Maintainerantworten bis 25.01.2026 und ausdrückliche Rückkehr nach Pause in #275. 23 offene Punkte, davon mehrere alte unbeantwortete Meldungen und Dependency-PRs. Weder eindeutig aufgegeben noch eindeutig für automatische Übernahme geeignet; vorerst gesondert zurückgestellt. Am 23.10.2026 als reiner Spiegel (sync: true) aufgenommen: Ein Backup schadet auch im Grenzfall nicht. Entwicklung bleibt beim Upstream.",
+      "fork": "https://github.com/weewx-packages/weewx-wdc",
       "license": {
         "spdx": "GPL-3.0-only",
         "evidence": [
@@ -12545,9 +12539,9 @@
       "source": "https://github.com/glennmckechnie/weewx-wxobs",
       "reviewed_revision": "73a505cc46207806c1fe8aa1202b0ea39d8ffd28",
       "last_commit": "2025-06-17T15:25:45+10:00",
-      "decision": "hold_aged_responded",
-      "reason": "Owner hat #9 mit konkreter Lösung beantwortet und diese im Juni 2024 dokumentiert; weitere Installationspflege Juni 2025. #10 wartet nach Rückfrage auf Daten. Alte offene Punkte, aber kein belastbarer Nachweis für Aufgabe.",
-      "fork": null,
+      "decision": "fork_created",
+      "reason": "Owner hat #9 mit konkreter Lösung beantwortet und diese im Juni 2024 dokumentiert; weitere Installationspflege Juni 2025. #10 wartet nach Rückfrage auf Daten. Alte offene Punkte, aber kein belastbarer Nachweis für Aufgabe. Am 23.10.2026 als reiner Spiegel (sync: true) aufgenommen: Ein Backup schadet auch im Grenzfall nicht. Entwicklung bleibt beim Upstream.",
+      "fork": "https://github.com/weewx-packages/weewx-wxobs",
       "license": {
         "spdx": "GPL-3.0-only",
         "evidence": [
@@ -13562,9 +13556,9 @@
       "source": "https://github.com/glennmckechnie/weewx-mastodon",
       "reviewed_revision": "37b2c785e6e5ae406d3c02d6d24f06914211a7c8",
       "last_commit": "2024-03-02T09:00:34+11:00",
-      "decision": "hold_aged_responded",
-      "reason": "Alte offene #1/#2 wurden vom Owner mit ExactTimes- und useragent-Branches beantwortet, zuletzt 24.07.2024. Ohne Nutzerbestätigung ist weder leerer Tracker noch eindeutige Aufgabe belegt. Branches vor einer Übernahme abgleichen.",
-      "fork": null,
+      "decision": "fork_created",
+      "reason": "Alte offene #1/#2 wurden vom Owner mit ExactTimes- und useragent-Branches beantwortet, zuletzt 24.07.2024. Ohne Nutzerbestätigung ist weder leerer Tracker noch eindeutige Aufgabe belegt. Branches vor einer Übernahme abgleichen. Am 23.10.2026 als reiner Spiegel (sync: true) aufgenommen: Ein Backup schadet auch im Grenzfall nicht. Entwicklung bleibt beim Upstream.",
+      "fork": "https://github.com/weewx-packages/weewx-mastodon",
       "license": {
         "spdx": "GPL-3.0-only",
         "evidence": [
@@ -13839,9 +13833,9 @@
       "source": "https://github.com/sbsrouteur/weewx-opensensemap",
       "reviewed_revision": "f9046c8274571ee87c9c2b306a10a4dcffbe9b32",
       "last_commit": "2024-02-22T07:15:34+01:00",
-      "decision": "hold_recent_fix",
-      "reason": "MIT-Grant im README und install.py. Einzige offene PR #3 ist vom 13.10.2026; darin wird ein aktueller Konvertierungsabbruch gemeldet. Kein alter Tracker-Rückstand und kein Beleg für Aufgabe, Übernahme nach Klärung des frischen Fixes.",
-      "fork": null,
+      "decision": "fork_created",
+      "reason": "MIT-Grant im README und install.py. Einzige offene PR #3 ist vom 13.10.2026; darin wird ein aktueller Konvertierungsabbruch gemeldet. Kein alter Tracker-Rückstand und kein Beleg für Aufgabe, Übernahme nach Klärung des frischen Fixes. Am 23.10.2026 als reiner Spiegel (sync: true) aufgenommen: Ein Backup schadet auch im Grenzfall nicht. Entwicklung bleibt beim Upstream.",
+      "fork": "https://github.com/weewx-packages/weewx-opensensemap",
       "license": {
         "spdx": "MIT",
         "evidence": [
