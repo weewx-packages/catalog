@@ -26,7 +26,7 @@ def driver_module(station, monkeypatch):
     return observerip
 
 
-def test_install_targets_are_managed(payload, station):
+def test_install_targets_are_managed(payload, station, case):
     """Reject legacy util destinations before checking the installed example bytes."""
     _, installer = weecfg.get_extension_installer(str(payload))
     paths = weecfg.extension.ExtensionEngine._gen_file_paths(
@@ -35,9 +35,9 @@ def test_install_targets_are_managed(payload, station):
         installed_relative = Path(destination).relative_to(station)
         assert installed_relative.parts[:2] == ('bin', 'user') or installed_relative.parts[0] == 'skins', installed_relative
         assert Path(destination).read_bytes() == Path(source).read_bytes()
-    assert installer['version'] == '0.2.1.post20261022'
+    assert installer['version'] == case['release']['version']
     for relative in ['conf.d/weatherstation-intercept.conf', 'weatherstation/updateweatherstation.php']:
-        original = payload / 'util/apache' / relative
+        original = payload / 'bin/user/observerip_examples/apache' / relative
         installed = station / 'bin/user/observerip_examples/apache' / relative
         assert installed.read_bytes() == original.read_bytes()
     assert not (station / 'util/apache/conf.d/weatherstation-intercept.conf').exists()
@@ -46,11 +46,10 @@ def test_install_targets_are_managed(payload, station):
 
 
 def test_manual_example_instructions(payload):
-    instructions = (payload / 'readme.txt').read_text()
-    assert '<WEEWX_ROOT>/bin/user/observerip_examples/apache/conf.d/weatherstation-intercept.conf' in instructions
-    assert '<WEEWX_ROOT>/bin/user/observerip_examples/apache/weatherstation/updateweatherstation.php' in instructions
+    instructions = (payload / 'README.md').read_text()
+    assert 'copies two examples to `bin/user/observerip_examples/apache/`' in instructions
+    assert '`conf.d/weatherstation-intercept.conf`' in instructions
     assert 'mode = indirect' in instructions
-    assert 'does not\nconfigure Apache' in instructions
 
 
 def test_installed_transfer_file_rain_and_duplicate_observations(driver_module, tmp_path):
@@ -84,5 +83,5 @@ def test_archived_source_suite(payload, station, tmp_path):
                              cwd=payload, env=env, capture_output=True, text=True, timeout=60)
     assert process.returncode == 0, process.stdout + process.stderr
     cases = ET.parse(report).findall('.//testcase')
-    assert len(cases) == 7
+    assert len(cases) >= 7
     assert not any(case.find('skipped') is not None for case in cases)

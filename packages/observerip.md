@@ -11,9 +11,10 @@ dependencies and settings.
 
 | | |
 |---|---|
-| Version | 0.2.1.post20261022 |
+| Version | 0.2.2 |
 | WeeWX | `>=5.2,<6` |
 | Python | `>=3.10` |
+| Release notes | [0.2.2](https://github.com/weewx-packages/weewx-observerip/releases/tag/v0.2.2) |
 
 ## Install with stock WeeWX
 
@@ -21,7 +22,7 @@ Install the dependencies named in the guide first. Then use the `weectl`
 of the Python environment running WeeWX:
 
 ```shell
-weectl extension install https://github.com/weewx-packages/catalog/releases/download/observerip/v0.2.1.post20261022/observerip-0.2.1.post20261022.tar.gz
+weectl extension install https://github.com/weewx-packages/weewx-observerip/releases/download/v0.2.2/weewx-observerip-0.2.2.zip
 ```
 
 Add `--config /path/to/weewx.conf` if your station uses another configuration file.
@@ -50,4 +51,5 @@ weectl extension uninstall observerip
 
 | Version | WeeWX | Python | Archive |
 |---|---|---|---|
+| 0.2.1.post20261022 | `>=5.2,<6` | `>=3.10` | [Download](https://github.com/weewx-packages/catalog/releases/download/observerip/v0.2.1.post20261022/observerip-0.2.1.post20261022.tar.gz) |
 | 0.2.1 | `>=5.2,<6` | `>=3.10` | Withdrawn |

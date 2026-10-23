@@ -76,7 +76,7 @@
   },
   "crt": {
     "repository": "weewx-packages/weewx-crt",
-    "ref": "c14373acb8bc0b0cd6a5358b9355d49cbf70eac7",
+    "ref": "v{version}",
     "imports": [
       "user.crt"
     ],
@@ -94,7 +94,7 @@
   },
   "graphite": {
     "repository": "weewx-packages/weewx-graphite",
-    "ref": "ce6a237bd265f9dc9d8673490274ac6b32429e87",
+    "ref": "v{version}",
     "imports": [
       "user.graphite"
     ],
@@ -105,7 +105,7 @@
   },
   "influx": {
     "repository": "weewx-packages/weewx-influx",
-    "ref": "4d58c50a8f9fa6660b00722b37e7d260de2366fe",
+    "ref": "v{version}",
     "imports": [
       "user.influx"
     ],
@@ -114,7 +114,7 @@
   },
   "meteotemplate": {
     "repository": "weewx-packages/weewx-meteotemplate",
-    "ref": "cadb1d33bc0d51668da19e4a85c7ae25ca1c6754",
+    "ref": "v{version}",
     "imports": [
       "user.meteotemplate"
     ],
@@ -123,7 +123,7 @@
   },
   "owm": {
     "repository": "weewx-packages/weewx-owm",
-    "ref": "5369ee8ba1b85fbb1fd0f35ea131dbeb3591752f",
+    "ref": "v{version}",
     "imports": [
       "user.owm"
     ],
@@ -132,7 +132,7 @@
   },
   "prompush": {
     "repository": "weewx-packages/weewx-prompush",
-    "ref": "b407479f0607771c83f2f56cda5fdbf2e4811c88",
+    "ref": "v{version}",
     "imports": [
       "user.prompush"
     ],
@@ -144,7 +144,7 @@
   },
   "twitter": {
     "repository": "weewx-packages/weewx-twitter",
-    "ref": "f402401df7db119e7c894c0bb9efd6aab42ade67",
+    "ref": "v{version}",
     "imports": [
       "user.twitter"
     ],
@@ -155,7 +155,7 @@
   },
   "zabbix": {
     "repository": "weewx-packages/weewx-zabbix",
-    "ref": "bfab1ba5c3d3fe80b67ded00f40abcfd03417e53",
+    "ref": "v{version}",
     "imports": [
       "user.zabbix"
     ],
@@ -195,7 +195,7 @@
   },
   "sdr": {
     "repository": "weewx-packages/weewx-sdr",
-    "ref": "639bcc3bdc86a4b302e2c323f31253618c45a5ad",
+    "ref": "v{version}",
     "imports": [
       "user.sdr"
     ],
@@ -237,7 +237,7 @@
   },
   "wxt5x0": {
     "repository": "weewx-packages/weewx-wxt5x0",
-    "ref": "cfb1ea9822b97c8d5e9666869f924df19244dd8f",
+    "ref": "v{version}",
     "imports": [
       "user.wxt5x0"
     ],
@@ -245,7 +245,7 @@
   },
   "wll": {
     "repository": "weewx-packages/weewx-wll",
-    "ref": "762889729053ff02121b8df0457b16a0d20dd931",
+    "ref": "v{version}",
     "imports": [
       "user.wll"
     ],
@@ -256,7 +256,7 @@
   },
   "observerip": {
     "repository": "weewx-packages/weewx-observerip",
-    "ref": "e08f1e8e9402668bd16a2ec4cdfaa2fb23b90207",
+    "ref": "v{version}",
     "imports": [
       "user.observerip"
     ],
@@ -283,7 +283,7 @@
   },
   "cmon": {
     "repository": "weewx-packages/weewx-cmon",
-    "ref": "4c8408dbc753221d4433fc491bec066b57b38675",
+    "ref": "v{version}",
     "imports": [
       "user.cmon"
     ],
@@ -326,7 +326,7 @@
   },
   "niculskin": {
     "repository": "weewx-packages/niculskin",
-    "ref": "debe6801a771e509a690637930d5fb68bcfe5412",
+    "ref": "v{version}",
     "imports": [
       "user.translategenerator",
       "user.historygenerator"
