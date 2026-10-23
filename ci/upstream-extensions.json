@@ -325,5 +325,184 @@
       "tests_path": "ci/project_tests/weewx-source-smoke"
     },
     "external_source": "stackedwindrose-source"
+  },
+  {
+    "id": "temperaturnu",
+    "weekday": 5,
+    "upstream": "LapplandsCohan/weewx-temperaturnu",
+    "fork": "weewx-packages/weewx-temperaturnu",
+    "branch": "main",
+    "name": "weewx-temperaturnu",
+    "description": "Upload outdoor temperature to temperatur.nu.",
+    "types": [
+      "service"
+    ],
+    "category": "uploader",
+    "installer_name": "temperaturnu",
+    "requires_python": ">=3.10,<3.15",
+    "requires_weewx": ">=5.5.2,<6",
+    "restart_required": true,
+    "version_file": "bin/user/temperaturnu.py",
+    "version_regex": "^VERSION\\s*=\\s*\"([^\"]+)\"",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/LapplandsCohan/weewx-temperaturnu/blob/e7d831bf477ef362b53410bcc289347b2261a52b/LICENSE",
+      "https://github.com/LapplandsCohan/weewx-temperaturnu/blob/e7d831bf477ef362b53410bcc289347b2261a52b/install.py",
+      "https://github.com/LapplandsCohan/weewx-temperaturnu/blob/e7d831bf477ef362b53410bcc289347b2261a52b/bin/user/temperaturnu.py"
+    ],
+    "check": {
+      "repository": "weewx-packages/weewx-temperaturnu",
+      "ref": "main",
+      "imports": [
+        "user.temperaturnu"
+      ],
+      "allowed_skips": [],
+      "pip_packages": []
+    },
+    "external_source": "temperaturnu-source"
+  },
+  {
+    "id": "hubitat",
+    "weekday": 2,
+    "upstream": "dennypage/weewx-hubitat",
+    "fork": "weewx-packages/weewx-hubitat",
+    "branch": "master",
+    "name": "weewx-hubitat",
+    "description": "Post observations to a Hubitat hub.",
+    "types": [
+      "service"
+    ],
+    "category": "uploader",
+    "installer_name": "hubitat",
+    "requires_python": ">=3.10,<3.15",
+    "requires_weewx": ">=5.5.2,<6",
+    "restart_required": true,
+    "version_file": "bin/user/hubitat.py",
+    "version_regex": "^VERSION\\s*=\\s*\"([^\"]+)\"",
+    "license": "BSD-2-Clause (source header, no LICENSE file)",
+    "license_evidence": [
+      "https://github.com/dennypage/weewx-hubitat/blob/afffbdf0dd67b3a3e3bb3529f66c368708ff5dbf/bin/user/hubitat.py",
+      "https://github.com/dennypage/weewx-hubitat/blob/afffbdf0dd67b3a3e3bb3529f66c368708ff5dbf/install.py",
+      "https://github.com/dennypage/weewx-hubitat/blob/afffbdf0dd67b3a3e3bb3529f66c368708ff5dbf/README.md"
+    ],
+    "check": {
+      "repository": "weewx-packages/weewx-hubitat",
+      "ref": "master",
+      "imports": [
+        "user.hubitat"
+      ],
+      "allowed_skips": [],
+      "pip_packages": []
+    },
+    "external_source": "hubitat-source"
+  },
+  {
+    "id": "xcumulative",
+    "weekday": 1,
+    "upstream": "Millardiang/weewx-xcumulative",
+    "fork": "weewx-packages/weewx-xcumulative",
+    "branch": "main",
+    "name": "weewx-xcumulative",
+    "description": "XType for cumulative series such as rain since a reset time.",
+    "types": [
+      "service"
+    ],
+    "category": "other",
+    "installer_name": "XCumulative",
+    "requires_python": ">=3.10,<3.15",
+    "requires_weewx": ">=5.5.2,<6",
+    "restart_required": true,
+    "version_file": "bin/user/xcumulative.py",
+    "version_regex": "^XCUM_VERSION\\s*=\\s*'([^']+)'",
+    "license": "GPL-3.0-or-later",
+    "license_evidence": [
+      "https://github.com/Millardiang/weewx-xcumulative/blob/a5e412d22464b95d74d2cada02efb9bddda0db64/LICENSE",
+      "https://github.com/Millardiang/weewx-xcumulative/blob/a5e412d22464b95d74d2cada02efb9bddda0db64/bin/user/xcumulative.py",
+      "https://github.com/Millardiang/weewx-xcumulative/blob/a5e412d22464b95d74d2cada02efb9bddda0db64/install.py"
+    ],
+    "check": {
+      "repository": "weewx-packages/weewx-xcumulative",
+      "ref": "main",
+      "imports": [
+        "user.xcumulative"
+      ],
+      "allowed_skips": [],
+      "pip_packages": []
+    },
+    "external_source": "xcumulative-source"
+  },
+  {
+    "id": "time-since",
+    "weekday": 3,
+    "upstream": "tkeffer/weewx-time_since",
+    "fork": "weewx-packages/weewx-time_since",
+    "branch": "master",
+    "name": "weewx-time_since",
+    "description": "Search list extension: time since an SQL condition last held.",
+    "types": [
+      "search-list"
+    ],
+    "category": "other",
+    "installer_name": "time_since",
+    "requires_python": ">=3.10,<3.15",
+    "requires_weewx": ">=5.5.2,<6",
+    "restart_required": true,
+    "version_file": "bin/user/time_since.py",
+    "version_regex": "^VERSION\\s*=\\s*\"([^\"]+)\"",
+    "license": "LGPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/Millardiang/weewx-time_since/blob/20d0bbf86668b049dc784c7c021c95f16b25b147/LICENSE.txt",
+      "https://github.com/Millardiang/weewx-time_since/blob/20d0bbf86668b049dc784c7c021c95f16b25b147/README.md"
+    ],
+    "check": {
+      "repository": "weewx-packages/weewx-time_since",
+      "ref": "master",
+      "imports": [
+        "user.time_since"
+      ],
+      "allowed_skips": [],
+      "pip_packages": []
+    },
+    "external_source": "time-since-source"
+  },
+  {
+    "id": "home-assistant",
+    "weekday": 4,
+    "upstream": "felddy/weewx-home-assistant",
+    "fork": "weewx-packages/weewx-home-assistant",
+    "branch": "develop",
+    "name": "weewx-home-assistant",
+    "description": "Publish WeeWX observations to Home Assistant over MQTT discovery.",
+    "types": [
+      "service"
+    ],
+    "category": "other",
+    "installer_name": "home-assistant",
+    "requires_python": ">=3.10,<3.15",
+    "requires_weewx": ">=5.5.2,<6",
+    "restart_required": true,
+    "version_file": "bin/user/weewx_ha/_version.py",
+    "version_regex": "__version__\\s*=\\s*\"([^\"]+)\"",
+    "license": "MIT",
+    "license_evidence": [
+      "https://github.com/felddy/weewx-home-assistant/blob/67d5a3e0463c2e9ef594623acee0a160a3622895/LICENSE",
+      "https://github.com/felddy/weewx-home-assistant/blob/67d5a3e0463c2e9ef594623acee0a160a3622895/README.md",
+      "https://github.com/felddy/weewx-home-assistant/blob/67d5a3e0463c2e9ef594623acee0a160a3622895/pyproject.toml"
+    ],
+    "check": {
+      "repository": "weewx-packages/weewx-home-assistant",
+      "ref": "develop",
+      "imports": [
+        "user.weewx_ha"
+      ],
+      "allowed_skips": [
+        "this is not a release"
+      ],
+      "pip_packages": [
+        "paho-mqtt>=2,<3",
+        "pydantic>=2.7"
+      ]
+    },
+    "external_source": "home-assistant-source"
   }
 ]

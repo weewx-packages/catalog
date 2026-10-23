@@ -140,6 +140,12 @@ jobs:
           ref: ${{ matrix.weewx_sha }}
           path: weewx
           persist-credentials: false
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: ${{ matrix.repository }}
+          ref: ${{ matrix.source_sha }}
+          path: extension
+          persist-credentials: false
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with:
           python-version: ${{ matrix.python }}
@@ -164,7 +170,7 @@ jobs:
           spec = next(s for s in specs if s['id'] == matrix['package'])
           case = compatibility_case(spec, receipt, Path('candidate') / receipt['filename'],
                                     matrix['branch'], matrix['python'], matrix['weewx_sha'])
-          sys.exit(run(case, Path('.').resolve(), Path('result').resolve()))
+          sys.exit(run(case, Path('extension').resolve(), Path('result').resolve()))
           PY
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()

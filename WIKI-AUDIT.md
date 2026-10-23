@@ -261,7 +261,7 @@ become independent continuations (`sync: false`). Projects without a license gra
 | [temperaturnu](https://github.com/LapplandsCohan/weewx-temperaturnu) | GPL-3.0-only | hard_fork_created | [repository](https://github.com/weewx-packages/weewx-temperaturnu) |
 | [xcumulative](https://github.com/Millardiang/weewx-xcumulative) | GPL-3.0-or-later | hard_fork_created | [repository](https://github.com/weewx-packages/weewx-xcumulative) |
 | [hubitat](https://github.com/dennypage/weewx-hubitat) | BSD-2-Clause (source header, no LICENSE file) | hard_fork_created | [repository](https://github.com/weewx-packages/weewx-hubitat) |
-| [time_since](https://github.com/Millardiang/weewx-time_since) | LGPL-3.0-only | hard_fork_created | [repository](https://github.com/weewx-packages/weewx-time_since) |
+| [time_since](https://github.com/tkeffer/weewx-time_since) | LGPL-3.0-only | hard_fork_created | [repository](https://github.com/weewx-packages/weewx-time_since) |
 | [home-assistant](https://github.com/felddy/weewx-home-assistant) | MIT | hard_fork_created | [repository](https://github.com/weewx-packages/weewx-home-assistant) |
 | [rsync-metrics](https://github.com/n7qnm/weewx-rsync-metrics) | Not established | blocked_license |  |
 | [mem-extension](https://github.com/weewx-contrib/mem-extension) | Not established | blocked_license |  |

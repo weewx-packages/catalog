@@ -16766,17 +16766,16 @@
       },
       {
         "name": "time_since",
-        "source": "https://github.com/Millardiang/weewx-time_since",
-        "reviewed_revision": "20d0bbf86668b049dc784c7c021c95f16b25b147",
+        "source": "https://github.com/tkeffer/weewx-time_since",
+        "reviewed_revision": "0b13ab3d5fef511da2698c4ed97011201ac266ee",
         "last_commit": "2023-02-04T13:42:22Z",
         "decision": "hard_fork_created",
-        "reason": "Letzter Commit 2023, Issues abgeschaltet. Search-List-Extension ohne Installer. Verwaist: Hard Fork.",
+        "reason": "Tom Keffers Original (Commit März 2026) hat keinen Installer und keine Tests. Die Kopie von Millardiang lag zwei Commits zurück. Der Original-Stand ist per fast-forward übernommen, install.py, Tests und README sind ergänzt. Der Fork trägt eigene Commits und kann deshalb nicht spiegeln; neue Commits des Originals werden von Hand nachgezogen.",
         "fork": "https://github.com/weewx-packages/weewx-time_since",
         "license": {
           "spdx": "LGPL-3.0-only",
           "evidence": [
-            "https://github.com/Millardiang/weewx-time_since/blob/20d0bbf86668b049dc784c7c021c95f16b25b147/LICENSE.txt",
-            "https://github.com/Millardiang/weewx-time_since/blob/20d0bbf86668b049dc784c7c021c95f16b25b147/README.md"
+            "https://github.com/tkeffer/weewx-time_since/blob/0b13ab3d5fef511da2698c4ed97011201ac266ee/LICENSE.txt"
           ],
           "obligations": [
             "Copyright-, Lizenz- und Haftungshinweise vollständig erhalten; Quelltext und vorhandene Lizenztexte unverändert erhalten.",
