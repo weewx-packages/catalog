@@ -232,3 +232,36 @@ evidence, tracker details, reasons, successor decisions and repair results.
 | 436 | [zabbix](https://github.com/RandomReaper/weewx-zabbix) | Apache-2.0 | completed_available_work | [repository](https://github.com/weewx-packages/weewx-zabbix) |
 | 440 | [SetProcessName](https://github.com/knight-of-ni/WeeWX-SetProcessName) | GPL-3.0-only | true_fork_created | [repository](https://github.com/weewx-packages/weewx-setprocessname) |
 | 449 | [WPWeeWX](https://github.com/open-astro/wp-weewx) | GPL-3.0 | fork_created | [repository](https://github.com/weewx-packages/wp-weewx) |
+
+## Additions from the weewx-user group and weewx-contrib
+
+Reviewed on 23 October 2026. These projects appear in the [weewx-user group](https://groups.google.com/g/weewx-user/)
+or in the [weewx-contrib](https://github.com/weewx-contrib) organization, but not in the wiki snapshot above.
+Actively maintained projects are mirrored (`sync: true`) and packaged from upstream. Orphaned projects
+become independent continuations (`sync: false`). Projects without a license grant are not taken over.
+
+| Project | License | Decision | Organization copy |
+|---|---|---|---|
+| [realtime_gauge-data](https://github.com/weewx-contrib/weewx-realtime_gauge-data) | GPL-3.0-only (LICENSE); GPL-2.0-or-later (installer header) | fork_created | [repository](https://github.com/weewx-packages/weewx-realtime_gauge-data) |
+| [stackedwindrose26](https://github.com/Millardiang/weewx-stackedwindrose26) | GPL-3.0-or-later | fork_created | [repository](https://github.com/weewx-packages/weewx-stackedwindrose26) |
+| [data-ingest](https://github.com/Millardiang/weewx-data-ingest) | GPL-3.0-only | fork_created | [repository](https://github.com/weewx-packages/weewx-data-ingest) |
+| [mqtt-replicate](https://github.com/weewx-mqtt/replicate) | GPL-3.0-only | fork_created | [repository](https://github.com/weewx-packages/weewx-mqtt-replicate) |
+| [mqtt-plugin-loopdata](https://github.com/weewx-mqtt/plugin-loopdata) | GPL-3.0-only | fork_created | [repository](https://github.com/weewx-packages/weewx-mqtt-plugin-loopdata) |
+| [sds011-mqtt](https://github.com/weewx-contrib/sds011-mqtt) | GPL-3.0-only | fork_created | [repository](https://github.com/weewx-packages/weewx-sds011-mqtt) |
+| [ecowitt_local_http](https://github.com/weewx-contrib/weewx-ecowitt_local_http) | GPL-3.0-only (LICENSE); GPL-2.0-or-later (installer header) | fork_created | [repository](https://github.com/weewx-packages/weewx-ecowitt_local_http) |
+| [gw1000](https://github.com/weewx-contrib/weewx-gw1000) | GPL-3.0-only (LICENSE); GPL-2.0-or-later (installer header) | fork_created | [repository](https://github.com/weewx-packages/weewx-gw1000) |
+| [dark](https://github.com/dieseld23/weewx-dark) | MIT | fork_created | [repository](https://github.com/weewx-packages/weewx-dark) |
+| [extras](https://github.com/bellrichm/WeeWX-Extras) | GPL-3.0-only | fork_created | [repository](https://github.com/weewx-packages/weewx-extras) |
+| [utilities](https://github.com/CameronD73/weewx-utilities) | GPL-3.0-only | fork_created | [repository](https://github.com/weewx-packages/weewx-utilities) |
+| [taptap](https://github.com/matthewwall/weewx-taptap) | GPL-3.0-only (license file and source header) | fork_created | [repository](https://github.com/weewx-packages/weewx-taptap) |
+| [Cloud_coverage](https://github.com/Millardiang/weewx-Cloud_coverage) | GPL-3.0-only (LICENSE file and source header) | fork_created | [repository](https://github.com/weewx-packages/weewx-Cloud_coverage) |
+| [Belchertown-MQTT-Cloudflare-Tunnel](https://github.com/Millardiang/weewx-Belchertown-MQTT-Cloudflare-Tunnel) | GPL-3.0-only | fork_created | [repository](https://github.com/weewx-packages/weewx-Belchertown-MQTT-Cloudflare-Tunnel) |
+| [stackedwindrose](https://github.com/weewx-contrib/stackedwindrose-extension) | GPL-3.0-or-later (source header, no LICENSE file) | fork_created | [repository](https://github.com/weewx-packages/weewx-stackedwindrose) |
+| [brultech](https://github.com/tkeffer/weewx-brultech) | GPL-3.0-only | hard_fork_created | [repository](https://github.com/weewx-packages/weewx-brultech) |
+| [temperaturnu](https://github.com/LapplandsCohan/weewx-temperaturnu) | GPL-3.0-only | hard_fork_created | [repository](https://github.com/weewx-packages/weewx-temperaturnu) |
+| [xcumulative](https://github.com/Millardiang/weewx-xcumulative) | GPL-3.0-or-later | hard_fork_created | [repository](https://github.com/weewx-packages/weewx-xcumulative) |
+| [hubitat](https://github.com/dennypage/weewx-hubitat) | BSD-2-Clause (source header, no LICENSE file) | hard_fork_created | [repository](https://github.com/weewx-packages/weewx-hubitat) |
+| [time_since](https://github.com/Millardiang/weewx-time_since) | LGPL-3.0-only | hard_fork_created | [repository](https://github.com/weewx-packages/weewx-time_since) |
+| [home-assistant](https://github.com/felddy/weewx-home-assistant) | MIT | hard_fork_created | [repository](https://github.com/weewx-packages/weewx-home-assistant) |
+| [rsync-metrics](https://github.com/n7qnm/weewx-rsync-metrics) | Not established | blocked_license |  |
+| [mem-extension](https://github.com/weewx-contrib/mem-extension) | Not established | blocked_license |  |
