@@ -11,10 +11,10 @@ dependencies and settings.
 
 | | |
 |---|---|
-| Version | 0.2.1 |
+| Version | 0.2.2 |
 | WeeWX | `>=5.2,<6` |
 | Python | `>=3.10` |
-| Release notes | [0.2.1](https://github.com/weewx-packages/ventusw820/releases/tag/v0.2.1) |
+| Release notes | [0.2.2](https://github.com/weewx-packages/ventusw820/releases/tag/v0.2.2) |
 
 ## Install with stock WeeWX
 
@@ -22,7 +22,7 @@ Install the dependencies named in the guide first. Then use the `weectl`
 of the Python environment running WeeWX:
 
 ```shell
-weectl extension install https://github.com/weewx-packages/ventusw820/releases/download/v0.2.1/ventusw820-0.2.1.zip
+weectl extension install https://github.com/weewx-packages/ventusw820/releases/download/v0.2.2/ventusw820-0.2.2.zip
 ```
 
 Add `--config /path/to/weewx.conf` if your station uses another configuration file.
@@ -46,3 +46,9 @@ The second command installs a later release when the catalog lists one.
 ```shell
 weectl extension uninstall ventusw820
 ```
+
+## Other releases
+
+| Version | WeeWX | Python | Archive |
+|---|---|---|---|
+| 0.2.1 | `>=5.2,<6` | `>=3.10` | [Download](https://github.com/weewx-packages/ventusw820/releases/download/v0.2.1/ventusw820-0.2.1.zip) |

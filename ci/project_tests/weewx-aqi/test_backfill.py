@@ -22,7 +22,7 @@ def run_installed(station, arguments):
 def test_installed_module_and_help(payload, station):
     """Require the complete original tool at its managed module entry point."""
     installed = station / 'bin/user/aqi/backfill.py'
-    assert installed.read_bytes() == (payload / 'bin/aqi_backfill').read_bytes()
+    assert installed.read_bytes() == (payload / 'bin/user/aqi/backfill.py').read_bytes()
     assert not (station / 'bin/aqi_backfill').exists()
     script = ('import sys; from pathlib import Path; from user.aqi import backfill; '
               'assert Path(backfill.__file__).resolve() == Path(sys.argv[1]).resolve()')

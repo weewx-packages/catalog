@@ -11,10 +11,10 @@ dependencies and settings.
 
 | | |
 |---|---|
-| Version | 1.5.0.post20261022 |
+| Version | 1.5.1 |
 | WeeWX | `>=5.5.2,<5.7` |
 | Python | `>=3.10,<3.15` |
-| Release notes | [1.5.0.post20261022](https://github.com/weewx-packages/weewx-aqi/releases/tag/v1.5.0) |
+| Release notes | [1.5.1](https://github.com/weewx-packages/weewx-aqi/releases/tag/v1.5.1) |
 
 ## Install with stock WeeWX
 
@@ -22,7 +22,7 @@ Install the dependencies named in the guide first. Then use the `weectl`
 of the Python environment running WeeWX:
 
 ```shell
-weectl extension install https://github.com/weewx-packages/catalog/releases/download/aqi/v1.5.0.post20261022/aqi-1.5.0.post20261022.tar.gz
+weectl extension install https://github.com/weewx-packages/weewx-aqi/releases/download/v1.5.1/weewx-aqi-1.5.1.zip
 ```
 
 Add `--config /path/to/weewx.conf` if your station uses another configuration file.
@@ -51,4 +51,5 @@ weectl extension uninstall aqi
 
 | Version | WeeWX | Python | Archive |
 |---|---|---|---|
+| 1.5.0.post20261022 | `>=5.5.2,<5.7` | `>=3.10,<3.15` | [Download](https://github.com/weewx-packages/catalog/releases/download/aqi/v1.5.0.post20261022/aqi-1.5.0.post20261022.tar.gz) |
 | 1.5.0 | `>=5.5.2,<5.7` | `>=3.10,<3.15` | Withdrawn |
