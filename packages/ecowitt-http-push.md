@@ -11,10 +11,10 @@ dependencies and settings.
 
 | | |
 |---|---|
-| Version | 0.3.2 |
+| Version | 0.3.3 |
 | WeeWX | `>=5,<6` |
 | Python | `>=3.7` |
-| Release notes | [0.3.2](https://github.com/weewx-packages/weewx-ecowitt-http-push/releases/tag/v0.3.2) |
+| Release notes | [0.3.3](https://github.com/weewx-packages/weewx-ecowitt-http-push/releases/tag/v0.3.3) |
 
 ## Install with stock WeeWX
 
@@ -22,7 +22,7 @@ Install the dependencies named in the guide first. Then use the `weectl`
 of the Python environment running WeeWX:
 
 ```shell
-weectl extension install https://github.com/weewx-packages/weewx-ecowitt-http-push/releases/download/v0.3.2/weewx-ecowitt-http-push-0.3.2.zip
+weectl extension install https://github.com/weewx-packages/weewx-ecowitt-http-push/releases/download/v0.3.3/weewx-ecowitt-http-push-0.3.3.zip
 ```
 
 Add `--config /path/to/weewx.conf` if your station uses another configuration file.
@@ -46,3 +46,9 @@ The second command installs a later release when the catalog lists one.
 ```shell
 weectl extension uninstall ecowitt
 ```
+
+## Other releases
+
+| Version | WeeWX | Python | Archive |
+|---|---|---|---|
+| 0.3.2 | `>=5,<6` | `>=3.7` | [Download](https://github.com/weewx-packages/weewx-ecowitt-http-push/releases/download/v0.3.2/weewx-ecowitt-http-push-0.3.2.zip) |

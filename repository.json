@@ -91,6 +91,18 @@
           },
           "release_notes": "https://github.com/weewx-packages/weewx-ecowitt-http-push/releases/tag/v0.3.2",
           "restart_required": true
+        },
+        {
+          "version": "0.3.3",
+          "requires_python": ">=3.7",
+          "requires_weewx": ">=5,<6",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-ecowitt-http-push/releases/download/v0.3.3/weewx-ecowitt-http-push-0.3.3.zip",
+            "format": "zip",
+            "sha256": "e6508b39f810b22995ee6fd039548d324b41409a3561f974ad91dd3ea776ef6f"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-ecowitt-http-push/releases/tag/v0.3.3",
+          "restart_required": true
         }
       ]
     },
@@ -277,6 +289,18 @@
           },
           "release_notes": "https://github.com/weewx-packages/weewx-crt/releases/tag/v0.24.1",
           "restart_required": true
+        },
+        {
+          "version": "0.24.2",
+          "requires_python": ">=3.10,<3.15",
+          "requires_weewx": ">=5.5.2,<5.7",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-crt/releases/download/v0.24.2/weewx-crt-0.24.2.tar.gz",
+            "format": "tar.gz",
+            "sha256": "5db91f77d4b228db443062a6962fb749944bb4e381c5721926ad5de7c08abc91"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-crt/releases/tag/v0.24.2",
+          "restart_required": true
         }
       ]
     },
@@ -337,6 +361,18 @@
           },
           "release_notes": "https://github.com/weewx-packages/weewx-graphite/releases/tag/v2.2.0",
           "restart_required": true
+        },
+        {
+          "version": "2.2.1",
+          "requires_python": ">=3.10,<3.15",
+          "requires_weewx": ">=5.5.2,<5.7",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-graphite/releases/download/v2.2.1/weewx-graphite-2.2.1.tar.gz",
+            "format": "tar.gz",
+            "sha256": "eb0652207c0ccece581a45d7daa958f066e45b6ae4373916137d3f4b676ae12b"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-graphite/releases/tag/v2.2.1",
+          "restart_required": true
         }
       ]
     },
@@ -367,6 +403,18 @@
           },
           "release_notes": "https://github.com/weewx-packages/weewx-influx/releases/tag/v0.21.1",
           "restart_required": true
+        },
+        {
+          "version": "0.21.2",
+          "requires_python": ">=3.10,<3.15",
+          "requires_weewx": ">=5.5.2,<5.7",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-influx/releases/download/v0.21.2/weewx-influx-0.21.2.tar.gz",
+            "format": "tar.gz",
+            "sha256": "0dd2c21c228bab604bbdcf50f8524a6ac82f7a9ddfcde5f54db13b6d8ad7f4dd"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-influx/releases/tag/v0.21.2",
+          "restart_required": true
         }
       ]
     },
@@ -396,6 +444,18 @@
           },
           "release_notes": "https://github.com/weewx-packages/weewx-meteotemplate/releases/tag/v0.11.0",
           "restart_required": true
+        },
+        {
+          "version": "0.11.1",
+          "requires_python": ">=3.10,<3.15",
+          "requires_weewx": ">=5.5.2,<5.7",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-meteotemplate/releases/download/v0.11.1/weewx-meteotemplate-0.11.1.tar.gz",
+            "format": "tar.gz",
+            "sha256": "12aec207ad3635917d9b16f8e16ea7d02386ed9453b7b2ccbb3b3d73dc533562"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-meteotemplate/releases/tag/v0.11.1",
+          "restart_required": true
         }
       ]
     },
@@ -424,6 +484,18 @@
             "sha256": "411cd48f827a7dc10dc25724aab4dd7af404eaa5cb90dc3e19b9c7391cbe14c5"
           },
           "release_notes": "https://github.com/weewx-packages/weewx-owm/releases/tag/v0.10.0",
+          "restart_required": true
+        },
+        {
+          "version": "0.10.1",
+          "requires_python": ">=3.10,<3.15",
+          "requires_weewx": ">=5.5.2,<5.7",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-owm/releases/download/v0.10.1/weewx-owm-0.10.1.tar.gz",
+            "format": "tar.gz",
+            "sha256": "050d8dd89e7fb56a33bd81653c426c0ada393efa43c0d1e8afffcf748a69b454"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-owm/releases/tag/v0.10.1",
           "restart_required": true
         }
       ]
@@ -455,6 +527,18 @@
           },
           "release_notes": "https://github.com/weewx-packages/weewx-prompush/releases/tag/v1.1.0",
           "restart_required": true
+        },
+        {
+          "version": "1.1.1",
+          "requires_python": ">=3.10,<3.15",
+          "requires_weewx": ">=5.5.2,<5.7",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-prompush/releases/download/v1.1.1/weewx-prompush-1.1.1.tar.gz",
+            "format": "tar.gz",
+            "sha256": "bf2bfdcd348867ed874c3066a903062d0281903119be69999a545ef2ede0cc3c"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-prompush/releases/tag/v1.1.1",
+          "restart_required": true
         }
       ]
     },
@@ -485,6 +569,18 @@
           },
           "release_notes": "https://github.com/weewx-packages/weewx-twitter/releases/tag/v0.16.1",
           "restart_required": true
+        },
+        {
+          "version": "0.16.2",
+          "requires_python": ">=3.10,<3.15",
+          "requires_weewx": ">=5.5.2,<5.7",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-twitter/releases/download/v0.16.2/weewx-twitter-0.16.2.tar.gz",
+            "format": "tar.gz",
+            "sha256": "adbb44001a5dbd929491049abda84e104759e08397c88bc3477b72d9f78ceede"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-twitter/releases/tag/v0.16.2",
+          "restart_required": true
         }
       ]
     },
@@ -513,6 +609,18 @@
             "sha256": "b24a57dffae5019fbd2bfc6b0eb30a448c6528d31a794883a90e67082c5d66fd"
           },
           "release_notes": "https://github.com/weewx-packages/weewx-zabbix/releases/tag/v0.2.0",
+          "restart_required": true
+        },
+        {
+          "version": "0.2.1",
+          "requires_python": ">=3.10,<3.15",
+          "requires_weewx": ">=5.5.2,<5.7",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-zabbix/releases/download/v0.2.1/weewx-zabbix-0.2.1.tar.gz",
+            "format": "tar.gz",
+            "sha256": "d724642d1c3ff88a12a09c7b7d4fb6884556ae2128269989639360c751d205da"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-zabbix/releases/tag/v0.2.1",
           "restart_required": true
         }
       ]
@@ -619,6 +727,18 @@
             "sha256": "a3dda70377d2b42c4db197f1acb5932703537b6afcf341453cfe36a95d0ac5c6"
           },
           "release_notes": "https://github.com/weewx-packages/weewx-sdr/releases/tag/v0.99.1",
+          "restart_required": true
+        },
+        {
+          "version": "0.99.2",
+          "requires_python": ">=3.10",
+          "requires_weewx": ">=5.2,<6",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-sdr/releases/download/v0.99.2/weewx-sdr-0.99.2.zip",
+            "format": "zip",
+            "sha256": "67d999219d44359a1ad2dc152673cbcd56c3230a99afe16ba6b4ad1d03cf318b"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-sdr/releases/tag/v0.99.2",
           "restart_required": true
         }
       ]
@@ -744,6 +864,18 @@
           },
           "release_notes": "https://github.com/weewx-packages/weewx-wxt5x0/releases/tag/v0.9.0",
           "restart_required": true
+        },
+        {
+          "version": "0.9.1",
+          "requires_python": ">=3.10",
+          "requires_weewx": ">=5.2,<6",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-wxt5x0/releases/download/v0.9.1/weewx-wxt5x0-0.9.1.zip",
+            "format": "zip",
+            "sha256": "06d0122b831e6aef10697885df0e7d97dda379cec6e95bbce75a8c84326b54e9"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-wxt5x0/releases/tag/v0.9.1",
+          "restart_required": true
         }
       ]
     },
@@ -768,6 +900,18 @@
             "sha256": "43a6de22ccffe8eef842e7efff12da43605f3d943a89c4af769cf9d1e1c136fb"
           },
           "release_notes": "https://github.com/weewx-packages/weewx-wll/releases/tag/v0.2.2",
+          "restart_required": true
+        },
+        {
+          "version": "0.2.3",
+          "requires_python": ">=3.10",
+          "requires_weewx": ">=5.2,<6",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-wll/releases/download/v0.2.3/weewx-wll-0.2.3.zip",
+            "format": "zip",
+            "sha256": "eaad02d6287614cd8911d713769a2fa28eefcd5ef5ea0688d8e536f6d5676c33"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-wll/releases/tag/v0.2.3",
           "restart_required": true
         }
       ]
@@ -806,6 +950,18 @@
           "release_notes": "https://github.com/weewx-packages/weewx-observerip/releases/tag/v0.2.1",
           "restart_required": true,
           "yanked": true
+        },
+        {
+          "version": "0.2.2",
+          "requires_python": ">=3.10",
+          "requires_weewx": ">=5.2,<6",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-observerip/releases/download/v0.2.2/weewx-observerip-0.2.2.zip",
+            "format": "zip",
+            "sha256": "067faa841976bfb42c6e79a31f383dd0a6d3899ea8f66b9fc51f0faaf7fd1fb3"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-observerip/releases/tag/v0.2.2",
+          "restart_required": true
         }
       ]
     },
@@ -890,6 +1046,18 @@
             "sha256": "a51309f76ecdb85bcad3926a9b18a2a5453cc195ecf4ace1073dee3a301b68a3"
           },
           "release_notes": "https://github.com/weewx-packages/weewx-cmon/releases/tag/v0.21.0",
+          "restart_required": true
+        },
+        {
+          "version": "0.21.1",
+          "requires_python": ">=3.10,<3.15",
+          "requires_weewx": ">=5.5.2,<5.7",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-cmon/releases/download/v0.21.1/weewx-cmon-0.21.1.zip",
+            "format": "zip",
+            "sha256": "92daf183e3d8e77631627a1a614db8840c0ad05032bfda88de8c02386b049ef7"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-cmon/releases/tag/v0.21.1",
           "restart_required": true
         }
       ]
@@ -1042,6 +1210,18 @@
             "sha256": "3a019a18be782f50f5a49a59aac9a95c5ac6963b4d94acc719eeada816feddfa"
           },
           "release_notes": "https://github.com/weewx-packages/niculskin/releases/tag/v1.1.1",
+          "restart_required": true
+        },
+        {
+          "version": "1.1.2",
+          "requires_python": ">=3.10,<3.15",
+          "requires_weewx": ">=5.5.2,<5.7",
+          "archive": {
+            "url": "https://github.com/weewx-packages/niculskin/releases/download/v1.1.2/niculskin-1.1.2.zip",
+            "format": "zip",
+            "sha256": "c06a129714b7be660ecf86859fadc44c581c80fe62f5a95da6155cff6ec28d9f"
+          },
+          "release_notes": "https://github.com/weewx-packages/niculskin/releases/tag/v1.1.2",
           "restart_required": true
         }
       ]

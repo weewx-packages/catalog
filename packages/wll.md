@@ -11,10 +11,10 @@ dependencies and settings.
 
 | | |
 |---|---|
-| Version | 0.2.2 |
+| Version | 0.2.3 |
 | WeeWX | `>=5.2,<6` |
 | Python | `>=3.10` |
-| Release notes | [0.2.2](https://github.com/weewx-packages/weewx-wll/releases/tag/v0.2.2) |
+| Release notes | [0.2.3](https://github.com/weewx-packages/weewx-wll/releases/tag/v0.2.3) |
 
 ## Install with stock WeeWX
 
@@ -22,7 +22,7 @@ Install the dependencies named in the guide first. Then use the `weectl`
 of the Python environment running WeeWX:
 
 ```shell
-weectl extension install https://github.com/weewx-packages/weewx-wll/releases/download/v0.2.2/weewx-wll-0.2.2.zip
+weectl extension install https://github.com/weewx-packages/weewx-wll/releases/download/v0.2.3/weewx-wll-0.2.3.zip
 ```
 
 Add `--config /path/to/weewx.conf` if your station uses another configuration file.
@@ -46,3 +46,9 @@ The second command installs a later release when the catalog lists one.
 ```shell
 weectl extension uninstall wll
 ```
+
+## Other releases
+
+| Version | WeeWX | Python | Archive |
+|---|---|---|---|
+| 0.2.2 | `>=5.2,<6` | `>=3.10` | [Download](https://github.com/weewx-packages/weewx-wll/releases/download/v0.2.2/weewx-wll-0.2.2.zip) |

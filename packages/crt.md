@@ -11,10 +11,10 @@ dependencies and settings.
 
 | | |
 |---|---|
-| Version | 0.24.1 |
+| Version | 0.24.2 |
 | WeeWX | `>=5.5.2,<5.7` |
 | Python | `>=3.10,<3.15` |
-| Release notes | [0.24.1](https://github.com/weewx-packages/weewx-crt/releases/tag/v0.24.1) |
+| Release notes | [0.24.2](https://github.com/weewx-packages/weewx-crt/releases/tag/v0.24.2) |
 
 ## Install with stock WeeWX
 
@@ -22,7 +22,7 @@ Install the dependencies named in the guide first. Then use the `weectl`
 of the Python environment running WeeWX:
 
 ```shell
-weectl extension install https://github.com/weewx-packages/weewx-crt/releases/download/v0.24.1/weewx-crt-0.24.1.tar.gz
+weectl extension install https://github.com/weewx-packages/weewx-crt/releases/download/v0.24.2/weewx-crt-0.24.2.tar.gz
 ```
 
 Add `--config /path/to/weewx.conf` if your station uses another configuration file.
@@ -46,3 +46,9 @@ The second command installs a later release when the catalog lists one.
 ```shell
 weectl extension uninstall crt
 ```
+
+## Other releases
+
+| Version | WeeWX | Python | Archive |
+|---|---|---|---|
+| 0.24.1 | `>=5.5.2,<5.7` | `>=3.10,<3.15` | [Download](https://github.com/weewx-packages/weewx-crt/releases/download/v0.24.1/weewx-crt-0.24.1.tar.gz) |
