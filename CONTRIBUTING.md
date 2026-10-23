@@ -70,7 +70,10 @@ New packages also need a [compatibility check](COMPATIBILITY.md#add-a-package-ch
 The README package table and the package pages under [packages/](packages) are
 generated from `repository.json`, including manually maintained packages. Each
 page shows the current release and its install commands, so package READMEs
-link to it instead of naming versions or archive URLs. After editing the index, run:
+link to it instead of naming versions or archive URLs. The table groups skins
+and drivers by their `types`. Name uploaders, forecasts and services that read
+sensors or remote data in [ci/categories.json](ci/categories.json); other
+packages appear under Other. After editing the index, run:
 
 ```shell
 python3 ci/upstreams.py readme

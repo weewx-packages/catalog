@@ -15,6 +15,7 @@ Static JSON index for WeeWX clients with extension repository support.
 
 - `repository.json`: Published package index.
 - `packages/`: Generated page per package with current release and install commands.
+- `ci/categories.json`: README sections for uploaders, forecasts and sensor services.
 - `schemas/repository-v1.schema.json`: Version 1 structural contract.
 - `CONTRIBUTING.md`: Package publication and validation procedure.
 - `ci/packages.json`: Test source refs, installed imports and explicit skip reasons.

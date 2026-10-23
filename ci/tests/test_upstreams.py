@@ -93,6 +93,7 @@ def publication(spec, tmp_path, monkeypatch):
     (tmp_path/'ci').mkdir()
     (tmp_path/'repository.json').write_text('{"packages": []}')
     (tmp_path/'ci/packages.json').write_text('{}')
+    (tmp_path/'ci/categories.json').write_text('{}')
     (tmp_path/'README.md').write_text('Intro\n<!-- packages:start -->\nold table\n<!-- packages:end -->\nHelp\n')
     artifacts=tmp_path/'artifacts'
     folder=artifacts/'candidate-example'
@@ -151,7 +152,7 @@ def test_publication_keeps_tested_revision_and_digest(spec, publication, tmp_pat
 def test_readme_uses_catalog_and_preserves_surrounding_text(tmp_path):
     path = tmp_path / 'README.md'
     path.write_text('Introduction\n<!-- packages:start -->\nOld table\n<!-- packages:end -->\nInstall instructions\n')
-    package = dict(id='skin', name='A skin', description='One | two', homepage='https://example.test')
+    package = dict(id='skin', name='A skin', description='One | two', homepage='https://example.test', types=['skin'])
     upstreams.update_readme({'packages': [package]}, path)
     text = path.read_text()
     assert '[A skin](https://example.test) | [`skin`](packages/skin.md) | One \\| two' in text
@@ -197,6 +198,22 @@ def test_pages_follow_the_index_and_check_is_read_only(tmp_path):
     assert (folder / 'removed.md').exists()
     upstreams.update_pages({'packages': [package]}, folder)
     assert sorted(path.name for path in folder.iterdir()) == ['pkg.md']
+
+
+def test_readme_groups_packages_by_type_and_override(tmp_path):
+    path = tmp_path / 'README.md'
+    path.write_text('<!-- packages:start -->\n<!-- packages:end -->\n')
+    entry = lambda id, *types: dict(id=id, name=id.title(), description='Text', homepage='https://example.test',
+                                     types=list(types))
+    catalog = {'packages': [entry('zeta', 'skin'), entry('alpha', 'skin', 'service'), entry('probe', 'driver'),
+                            entry('upload', 'service'), entry('misc', 'service')]}
+    upstreams.update_readme(catalog, path, overrides={'upload': 'uploaders'})
+    text = path.read_text()
+    assert text.index('### Skins') < text.index('`alpha`') < text.index('`zeta`') < text.index('### Drivers')
+    assert text.index('### Drivers') < text.index('`probe`') < text.index('### Uploaders') < text.index('`upload`')
+    assert text.index('### Other') < text.index('`misc`') and 'Forecasts' not in text
+    with pytest.raises(ValueError, match='Unknown package categories'):
+        upstreams.update_readme(catalog, path, overrides={'upload': 'uploader'})
 
 
 def test_readme_check_is_read_only(tmp_path):

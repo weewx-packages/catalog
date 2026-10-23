@@ -248,24 +248,63 @@ def update_pages(catalog, folder, check=False):
             (folder / name).write_text(text)
 
 
-def update_readme(catalog, path, check=False):
-    """Generate the package table from the same metadata used by WeeWX clients.
+CATEGORIES = (('skins', 'Skins'), ('drivers', 'Drivers and data sources'), ('uploaders', 'Uploaders'),
+              ('forecasts', 'Forecasts and warnings'), ('other', 'Other'))
+
+
+def category(package, overrides):
+    """Choose the README section for a package.
+
+    The index types cannot express uploaders or forecasts, and changing their
+    enumeration would change the client contract. ci/categories.json therefore
+    names those packages, and services that read sensors or remote data.
+
+    Args:
+        package (dict): Catalog package entry.
+        overrides (dict): Package ID to category key, from ci/categories.json.
+
+    Returns:
+        str: One of the keys in CATEGORIES.
+    """
+    if package['id'] in overrides:
+        return overrides[package['id']]
+    if 'skin' in package['types']:
+        return 'skins'
+    if 'driver' in package['types']:
+        return 'drivers'
+    return 'other'
+
+
+def update_readme(catalog, path, check=False, overrides=None):
+    """Generate the package tables from the same metadata used by WeeWX clients.
 
     Args:
         catalog (dict): Complete package index, including manual entries.
         path (Path): README with explicit package-table markers.
-        check (bool): Raise instead of writing if the generated table differs.
+        check (bool): Raise instead of writing if the generated tables differ.
+        overrides (dict|None): Package ID to category key. Default is none.
     """
+    overrides = overrides or {}
+    keys = [key for key, _ in CATEGORIES]
+    unknown = sorted(set(overrides.values()) - set(keys))
+    if unknown:
+        raise ValueError('Unknown package categories: ' + ', '.join(unknown))
     text = path.read_text()
     start, end = '<!-- packages:start -->', '<!-- packages:end -->'
     before, table = text.split(start)
     _, after = table.split(end)
-    rows = ['| Package | Install | Purpose |', '|---|---|---|']
-    for package in catalog['packages']:
-        rows.append('| [%s](%s) | [`%s`](%s/%s.md) | %s |' %
-                    (cell(package['name']), package['homepage'], package['id'],
-                     PAGE_FOLDER, package['id'], cell(package['description'])))
-    replacement = before + start + '\n' + '\n'.join(rows) + '\n' + end + after
+    rows = []
+    for key, title in CATEGORIES:
+        members = sorted((package for package in catalog['packages'] if category(package, overrides) == key),
+                         key=lambda package: package['name'].lower())
+        if not members:
+            continue
+        rows += ['', '### ' + title, '', '| Package | Install | Purpose |', '|---|---|---|']
+        for package in members:
+            rows.append('| [%s](%s) | [`%s`](%s/%s.md) | %s |' %
+                        (cell(package['name']), package['homepage'], package['id'],
+                         PAGE_FOLDER, package['id'], cell(package['description'])))
+    replacement = before + start + '\n' + '\n'.join(rows).lstrip('\n') + '\n' + end + after
     if check and replacement != text:
         raise ValueError('README package table is stale; run python ci/upstreams.py readme')
     if not check:
@@ -279,7 +318,8 @@ def update_listing(catalog, check=False):
         catalog (dict): Complete package index, including manual entries.
         check (bool): Raise instead of writing if anything generated differs.
     """
-    update_readme(catalog, ROOT / 'README.md', check)
+    overrides = json.loads((ROOT / 'ci/categories.json').read_text())
+    update_readme(catalog, ROOT / 'README.md', check, overrides)
     update_pages(catalog, ROOT / PAGE_FOLDER, check)
 
 
