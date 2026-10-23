@@ -130,7 +130,7 @@
         "charts",
         "weather"
       ],
-      "homepage": "https://github.com/weewx-packages/neowx-material",
+      "homepage": "https://github.com/weewx-packages/neowx-material/blob/weewx-packages-docs/README.md",
       "releases": [
         {
           "version": "1.73.4",
@@ -160,7 +160,7 @@
         "charts",
         "weather"
       ],
-      "homepage": "https://github.com/weewx-packages/weewx-belchertown",
+      "homepage": "https://github.com/weewx-packages/weewx-belchertown/blob/weewx-packages-docs/README.md",
       "releases": [
         {
           "version": "3.0.0",
@@ -480,7 +480,7 @@
         "charts",
         "weather"
       ],
-      "homepage": "https://github.com/weewx-packages/weewx-divumwx",
+      "homepage": "https://github.com/weewx-packages/weewx-divumwx/blob/weewx-packages-docs/README.md",
       "releases": [
         {
           "version": "1.7.0.post1",
@@ -565,7 +565,7 @@
       "types": [
         "service"
       ],
-      "homepage": "https://github.com/weewx-packages/weewx-NovaSDS011",
+      "homepage": "https://github.com/weewx-packages/weewx-NovaSDS011/blob/weewx-packages-docs/README.md",
       "releases": [
         {
           "version": "1.1.0",
@@ -973,7 +973,7 @@
       "types": [
         "driver"
       ],
-      "homepage": "https://github.com/weewx-packages/weewx-atmocom-udp",
+      "homepage": "https://github.com/weewx-packages/weewx-atmocom-udp/blob/weewx-packages-docs/README.md",
       "releases": [
         {
           "version": "1.20.post1",
@@ -996,7 +996,7 @@
       "types": [
         "driver"
       ],
-      "homepage": "https://github.com/weewx-packages/weewx-cm1",
+      "homepage": "https://github.com/weewx-packages/weewx-cm1/blob/weewx-packages-docs/README.md",
       "releases": [
         {
           "version": "0.5.post1",
@@ -1042,7 +1042,7 @@
       "types": [
         "driver"
       ],
-      "homepage": "https://github.com/weewx-packages/weewx-davisconsoleapi",
+      "homepage": "https://github.com/weewx-packages/weewx-davisconsoleapi/blob/weewx-packages-docs/README.md",
       "releases": [
         {
           "version": "0.43.post2",
@@ -1100,7 +1100,7 @@
       "types": [
         "driver"
       ],
-      "homepage": "https://github.com/weewx-packages/weewx-envoy",
+      "homepage": "https://github.com/weewx-packages/weewx-envoy/blob/weewx-packages-docs/README.md",
       "releases": [
         {
           "version": "0.1.post1",
@@ -1146,7 +1146,7 @@
       "types": [
         "driver"
       ],
-      "homepage": "https://github.com/weewx-packages/weewx-id5001",
+      "homepage": "https://github.com/weewx-packages/weewx-id5001/blob/weewx-packages-docs/README.md",
       "releases": [
         {
           "version": "0.1.post1",
@@ -1169,7 +1169,7 @@
       "types": [
         "driver"
       ],
-      "homepage": "https://github.com/weewx-packages/weewx-interceptor",
+      "homepage": "https://github.com/weewx-packages/weewx-interceptor/blob/weewx-packages-docs/README.md",
       "releases": [
         {
           "version": "1.0.2",
@@ -1307,7 +1307,7 @@
       "types": [
         "service"
       ],
-      "homepage": "https://github.com/weewx-packages/weewx-nmea-xdr",
+      "homepage": "https://github.com/weewx-packages/weewx-nmea-xdr/blob/weewx-packages-docs/README.md",
       "releases": [
         {
           "version": "0.10.post1",
@@ -1422,7 +1422,7 @@
       "types": [
         "service"
       ],
-      "homepage": "https://github.com/weewx-packages/weewx-snmp",
+      "homepage": "https://github.com/weewx-packages/weewx-snmp/blob/weewx-packages-docs/README.md",
       "releases": [
         {
           "version": "0.4.post1",
@@ -1537,7 +1537,7 @@
       "types": [
         "driver"
       ],
-      "homepage": "https://github.com/weewx-packages/weewx-vedirect",
+      "homepage": "https://github.com/weewx-packages/weewx-vedirect/blob/weewx-packages-docs/README.md",
       "releases": [
         {
           "version": "0.2.post1",
@@ -1630,7 +1630,7 @@
       "types": [
         "service"
       ],
-      "homepage": "https://github.com/weewx-packages/weewx-DWD",
+      "homepage": "https://github.com/weewx-packages/weewx-DWD/blob/weewx-packages-docs/README.md",
       "releases": [
         {
           "version": "0.0.0.post20261022",
@@ -1676,7 +1676,7 @@
       "types": [
         "service"
       ],
-      "homepage": "https://github.com/weewx-packages/weewx-airQ",
+      "homepage": "https://github.com/weewx-packages/weewx-airQ/blob/weewx-packages-docs/README.md",
       "releases": [
         {
           "version": "0.9b3.post20261022",
@@ -1816,7 +1816,7 @@
       "types": [
         "generator"
       ],
-      "homepage": "https://github.com/weewx-packages/weewx-conditions",
+      "homepage": "https://github.com/weewx-packages/weewx-conditions/blob/weewx-packages-docs/README.md",
       "releases": [
         {
           "version": "1.5.post20261022",
@@ -1932,7 +1932,7 @@
       "types": [
         "skin"
       ],
-      "homepage": "https://github.com/weewx-packages/weewx-jas",
+      "homepage": "https://github.com/weewx-packages/weewx-jas/blob/weewx-packages-docs/README.md",
       "releases": [
         {
           "version": "1.2.0rc3.post20261022",
@@ -1978,7 +1978,7 @@
       "types": [
         "generator"
       ],
-      "homepage": "https://github.com/weewx-packages/weewx-metrics",
+      "homepage": "https://github.com/weewx-packages/weewx-metrics/blob/weewx-packages-docs/README.md",
       "releases": [
         {
           "version": "0.0.0.post20261022",
@@ -2001,7 +2001,7 @@
       "types": [
         "service"
       ],
-      "homepage": "https://github.com/weewx-packages/weewx-mqtt-subscribe",
+      "homepage": "https://github.com/weewx-packages/weewx-mqtt-subscribe/blob/weewx-packages-docs/README.md",
       "releases": [
         {
           "version": "3.2.1rc1.post20261022",
@@ -2047,7 +2047,7 @@
       "types": [
         "service"
       ],
-      "homepage": "https://github.com/weewx-packages/weewx-openweather_API",
+      "homepage": "https://github.com/weewx-packages/weewx-openweather_API/blob/weewx-packages-docs/README.md",
       "releases": [
         {
           "version": "1.0.0.post2026102201",
@@ -2129,7 +2129,7 @@
         "driver",
         "service"
       ],
-      "homepage": "https://github.com/weewx-packages/weewx-sds011",
+      "homepage": "https://github.com/weewx-packages/weewx-sds011/blob/weewx-packages-docs/readme",
       "releases": [
         {
           "version": "0.2.post20261022",
@@ -2221,7 +2221,7 @@
       "types": [
         "service"
       ],
-      "homepage": "https://github.com/weewx-packages/weewx-sqm",
+      "homepage": "https://github.com/weewx-packages/weewx-sqm/blob/weewx-packages-docs/README.md",
       "releases": [
         {
           "version": "0.1.1.post2026102201",
@@ -2292,7 +2292,7 @@
         "skin",
         "search-list"
       ],
-      "homepage": "https://github.com/weewx-packages/weewx-WXgraphic",
+      "homepage": "https://github.com/weewx-packages/weewx-WXgraphic/blob/weewx-packages-docs/README.md",
       "releases": [
         {
           "version": "0.6.8.post20261022",
@@ -2385,7 +2385,7 @@
         "service",
         "search-list"
       ],
-      "homepage": "https://github.com/weewx-packages/weewx-easter-almanac-example",
+      "homepage": "https://github.com/weewx-packages/weewx-easter-almanac-example/blob/weewx-packages-docs/README.md",
       "releases": [
         {
           "version": "0.1.post1",
@@ -2408,7 +2408,7 @@
       "types": [
         "service"
       ],
-      "homepage": "https://github.com/weewx-packages/weewx-emoncms",
+      "homepage": "https://github.com/weewx-packages/weewx-emoncms/blob/weewx-packages-docs/README.md",
       "releases": [
         {
           "version": "0.17",
@@ -2569,7 +2569,7 @@
       "types": [
         "service"
       ],
-      "homepage": "https://github.com/weewx-packages/weewx-notify",
+      "homepage": "https://github.com/weewx-packages/weewx-notify/blob/weewx-packages-docs/README.md",
       "releases": [
         {
           "version": "1.0.post1",
@@ -2592,7 +2592,7 @@
       "types": [
         "service"
       ],
-      "homepage": "https://github.com/weewx-packages/weewx-ortsnetz-auslastung",
+      "homepage": "https://github.com/weewx-packages/weewx-ortsnetz-auslastung/blob/weewx-packages-docs/README.md",
       "releases": [
         {
           "version": "0.1.post1",
@@ -2615,7 +2615,7 @@
       "types": [
         "other"
       ],
-      "homepage": "https://github.com/weewx-packages/weewx-postgresql",
+      "homepage": "https://github.com/weewx-packages/weewx-postgresql/blob/weewx-packages-docs/README.md",
       "releases": [
         {
           "version": "1.0.1.post2",
@@ -2778,7 +2778,7 @@
         "service",
         "search-list"
       ],
-      "homepage": "https://github.com/weewx-packages/weewx-skyfield-almanac",
+      "homepage": "https://github.com/weewx-packages/weewx-skyfield-almanac/blob/weewx-packages-docs/README.md",
       "releases": [
         {
           "version": "0.7.post1",
@@ -2802,7 +2802,7 @@
         "service",
         "search-list"
       ],
-      "homepage": "https://github.com/weewx-packages/weewx-skymap-almanac",
+      "homepage": "https://github.com/weewx-packages/weewx-skymap-almanac/blob/weewx-packages-docs/README.md",
       "releases": [
         {
           "version": "0.7.post1",
@@ -2871,7 +2871,7 @@
       "types": [
         "service"
       ],
-      "homepage": "https://github.com/weewx-packages/weewx-thingspeak",
+      "homepage": "https://github.com/weewx-packages/weewx-thingspeak/blob/weewx-packages-docs/README.md",
       "releases": [
         {
           "version": "0.9.post1",
@@ -2894,7 +2894,7 @@
       "types": [
         "service"
       ],
-      "homepage": "https://github.com/weewx-packages/weewx-wbug",
+      "homepage": "https://github.com/weewx-packages/weewx-wbug/blob/weewx-packages-docs/README.md",
       "releases": [
         {
           "version": "0.8.post1",
@@ -2917,7 +2917,7 @@
       "types": [
         "service"
       ],
-      "homepage": "https://github.com/weewx-packages/weewx-weepe",
+      "homepage": "https://github.com/weewx-packages/weewx-weepe/blob/weewx-packages-docs/readme.md",
       "releases": [
         {
           "version": "2.0.2.post1",
@@ -2940,7 +2940,7 @@
       "types": [
         "service"
       ],
-      "homepage": "https://github.com/weewx-packages/weewx-wetter",
+      "homepage": "https://github.com/weewx-packages/weewx-wetter/blob/weewx-packages-docs/README.md",
       "releases": [
         {
           "version": "0.7",
@@ -2963,7 +2963,7 @@
       "types": [
         "service"
       ],
-      "homepage": "https://github.com/weewx-packages/weewx-windfinder",
+      "homepage": "https://github.com/weewx-packages/weewx-windfinder/blob/weewx-packages-docs/README.md",
       "releases": [
         {
           "version": "0.12",
@@ -2986,7 +2986,7 @@
       "types": [
         "service"
       ],
-      "homepage": "https://github.com/weewx-packages/weewx-windy",
+      "homepage": "https://github.com/weewx-packages/weewx-windy/blob/weewx-packages-docs/README.md",
       "releases": [
         {
           "version": "0.8.post1",
