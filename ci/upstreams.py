@@ -248,45 +248,20 @@ def update_pages(catalog, folder, check=False):
             (folder / name).write_text(text)
 
 
-CATEGORIES = (('skins', 'Skins'), ('drivers', 'Drivers and data sources'), ('uploaders', 'Uploaders'),
-              ('forecasts', 'Forecasts and warnings'), ('other', 'Other'))
+CATEGORIES = (('skin', 'Skins'), ('driver', 'Drivers and data sources'), ('uploader', 'Uploaders'),
+              ('forecast', 'Forecasts and warnings'), ('other', 'Other'))
 
 
-def category(package, overrides):
-    """Choose the README section for a package.
-
-    The index types cannot express uploaders or forecasts, and changing their
-    enumeration would change the client contract. ci/categories.json therefore
-    names those packages, and services that read sensors or remote data.
-
-    Args:
-        package (dict): Catalog package entry.
-        overrides (dict): Package ID to category key, from ci/categories.json.
-
-    Returns:
-        str: One of the keys in CATEGORIES.
-    """
-    if package['id'] in overrides:
-        return overrides[package['id']]
-    if 'skin' in package['types']:
-        return 'skins'
-    if 'driver' in package['types']:
-        return 'drivers'
-    return 'other'
-
-
-def update_readme(catalog, path, check=False, overrides=None):
-    """Generate the package tables from the same metadata used by WeeWX clients.
+def update_readme(catalog, path, check=False):
+    """Generate one package table per category from the index used by WeeWX clients.
 
     Args:
         catalog (dict): Complete package index, including manual entries.
         path (Path): README with explicit package-table markers.
         check (bool): Raise instead of writing if the generated tables differ.
-        overrides (dict|None): Package ID to category key. Default is none.
     """
-    overrides = overrides or {}
     keys = [key for key, _ in CATEGORIES]
-    unknown = sorted(set(overrides.values()) - set(keys))
+    unknown = sorted({package['category'] for package in catalog['packages']} - set(keys))
     if unknown:
         raise ValueError('Unknown package categories: ' + ', '.join(unknown))
     text = path.read_text()
@@ -295,7 +270,7 @@ def update_readme(catalog, path, check=False, overrides=None):
     _, after = table.split(end)
     rows = []
     for key, title in CATEGORIES:
-        members = sorted((package for package in catalog['packages'] if category(package, overrides) == key),
+        members = sorted((package for package in catalog['packages'] if package['category'] == key),
                          key=lambda package: package['name'].lower())
         if not members:
             continue
@@ -318,8 +293,7 @@ def update_listing(catalog, check=False):
         catalog (dict): Complete package index, including manual entries.
         check (bool): Raise instead of writing if anything generated differs.
     """
-    overrides = json.loads((ROOT / 'ci/categories.json').read_text())
-    update_readme(catalog, ROOT / 'README.md', check, overrides)
+    update_readme(catalog, ROOT / 'README.md', check)
     update_pages(catalog, ROOT / PAGE_FOLDER, check)
 
 
@@ -376,7 +350,8 @@ def publish(specs, plan_data, artifacts):
         entry = next((p for p in catalog['packages'] if p['id'] == spec['id']), None)
         if entry is None:
             entry = dict(id=spec['id'], installer_name=spec['installer_name'], name=spec['name'],
-                description=spec['description'], types=['skin'], keywords=[spec['id'], 'skin', 'charts', 'weather'],
+                description=spec['description'], types=['skin'], category='skin',
+                keywords=[spec['id'], 'skin', 'charts', 'weather'],
                 homepage='https://github.com/' + spec['fork'], releases=[])
             catalog['packages'].append(entry)
         if not any(r['version'] == receipt['version'] for r in entry['releases']):

@@ -12,8 +12,11 @@ configuration paths consistent with that layout.
 Add a package entry to [repository.json](repository.json), using an existing
 entry as a template. Choose a stable lowercase package ID and copy
 `installer_name` from the installer's `name`. Each package needs a description,
-one or more types, and at least one release. Keywords make hardware models and
-features searchable.
+one or more types, a category and at least one release. `types` names the WeeWX
+components the installer adds. `category` names the package's purpose:
+`skin`, `driver` (including services that read sensors or remote data),
+`uploader`, `forecast` (forecasts and warnings) or `other`. Keywords make
+hardware models and features searchable.
 
 Each release supplies its exact version, Python and WeeWX requirements, archive
 format, download URL, and SHA-256 digest. Use the publisher's documented version
@@ -70,10 +73,8 @@ New packages also need a [compatibility check](COMPATIBILITY.md#add-a-package-ch
 The README package table and the package pages under [packages/](packages) are
 generated from `repository.json`, including manually maintained packages. Each
 page shows the current release and its install commands, so package READMEs
-link to it instead of naming versions or archive URLs. The table groups skins
-and drivers by their `types`. Name uploaders, forecasts and services that read
-sensors or remote data in [ci/categories.json](ci/categories.json); other
-packages appear under Other. After editing the index, run:
+link to it instead of naming versions or archive URLs. The table has one
+section per package `category`. After editing the index, run:
 
 ```shell
 python3 ci/upstreams.py readme
