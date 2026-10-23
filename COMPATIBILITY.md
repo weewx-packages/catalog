@@ -173,6 +173,30 @@ published bytes. Adding a skin requires a definition, a test profile and a
 separate mirror deploy key. Failed candidate tests leave the published catalog
 at its previous version; inspect the candidate workflow logs before retrying.
 
+## Mirrored extensions
+
+[Upstream extensions](.github/workflows/extensions.yml) runs at 04:43 UTC, one weekday
+group per day, an hour after the mirror sync. It covers actively maintained
+extensions whose authors publish no tags or releases. The definitions are in
+`ci/upstream-extensions.json`; the weekday matches the repository's entry in
+`ci/mirrors.json`.
+
+Each run reads the version constant named by `version_file` and `version_regex`
+from the fork, without executing it. A version above the newest catalog release
+becomes a candidate. The exact commit is archived, then installed and checked
+against WeeWX `master` and `development` on Python 3.10 and 3.14. Only a fully
+passing matrix publishes an immutable release `ID/vVERSION` and updates
+`repository.json`, `ci/packages.json` and the package pages. A source
+change without a version bump is not released.
+
+A definition may carry a catalog patch (`patch`, `post`) for a defect that
+upstream has not fixed. The patch lives in `ci/recipes/ID/package.patch`, the
+release gets a `.postN` version, and a patch that no longer applies fails the run.
+Prerelease versions need `allow_prereleases` in the check profile.
+
+The first release of a package also moves its mirror to `check: catalog` and
+removes its source-only profile from `ci/external.json`.
+
 ## Source backups and upstream activity
 
 The [Extension mirrors workflow](.github/workflows/mirrors.yml) handles the

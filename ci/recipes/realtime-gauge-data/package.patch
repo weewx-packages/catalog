@@ -1,0 +1,42 @@
+diff --git a/bin/user/rtgd.py b/bin/user/rtgd.py
+index 0ce0a9a..83f8625 100644
+--- a/bin/user/rtgd.py
++++ b/bin/user/rtgd.py
+@@ -298,10 +298,11 @@ import time
+ from operator import itemgetter
+ 
+ # Python 2/3 compatibility shims
+-import six
+-from six.moves import http_client
+-from six.moves import queue
+-from six.moves import urllib
++import http.client as http_client
++import queue
++import urllib.error
++import urllib.parse
++import urllib.request
+ 
+ # WeeWX imports
+ import weewx
+@@ -1283,7 +1284,7 @@ class RealtimeGaugeDataThread(threading.Thread):
+         updated_field_map = copy.deepcopy(_field_map)
+         # iterate over each field map config entry and convert any default
+         # values in the field map to ValueTuples
+-        for field, field_config in six.iteritems(_field_map):
++        for field, field_config in _field_map.items():
+             # obtain the unit group for this field
+             _group = self.get_unit_group(field_config['source'],
+                                          field_config.get('aggregate'))
+diff --git a/install.py b/install.py
+index e403af7..ae7d374 100644
+--- a/install.py
++++ b/install.py
+@@ -112,7 +112,7 @@ import configobj
+ from weecfg.extension import ExtensionInstaller
+ 
+ # import StringIO, use six.moves due to python2/python3 differences
+-from six.moves import StringIO
++from io import StringIO
+ 
+ # WeeWX imports
+ import weewx

@@ -2010,16 +2010,16 @@
     ]
   },
   {
-    "upstream": "https://github.com/Millardiang/weewx-time_since.git",
+    "upstream": "https://github.com/tkeffer/weewx-time_since.git",
     "fork": "weewx-packages/weewx-time_since",
     "weekday": 3,
     "sync": false,
     "check": "component",
-    "reviewed_revision": "20d0bbf86668b049dc784c7c021c95f16b25b147",
+    "reviewed_revision": "0b13ab3d5fef511da2698c4ed97011201ac266ee",
     "license": "LGPL-3.0-only",
     "license_evidence": [
-      "https://github.com/Millardiang/weewx-time_since/blob/20d0bbf86668b049dc784c7c021c95f16b25b147/LICENSE.txt",
-      "https://github.com/Millardiang/weewx-time_since/blob/20d0bbf86668b049dc784c7c021c95f16b25b147/README.md"
+      "https://github.com/tkeffer/weewx-time_since/blob/0b13ab3d5fef511da2698c4ed97011201ac266ee/LICENSE.txt",
+      "https://github.com/tkeffer/weewx-time_since/blob/0b13ab3d5fef511da2698c4ed97011201ac266ee/README.md"
     ]
   },
   {
