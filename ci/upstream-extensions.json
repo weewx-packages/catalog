@@ -504,5 +504,42 @@
       ]
     },
     "external_source": "home-assistant-source"
+  },
+  {
+    "id": "brultech",
+    "weekday": 4,
+    "upstream": "tkeffer/weewx-brultech",
+    "fork": "weewx-packages/weewx-brultech",
+    "branch": "master",
+    "name": "weewx-brultech",
+    "description": "Driver and Seasons-style power skin for Brultech GEM and ECM energy monitors.",
+    "types": [
+      "driver",
+      "skin"
+    ],
+    "category": "driver",
+    "installer_name": "weewx-brultech",
+    "requires_python": ">=3.10,<3.15",
+    "requires_weewx": ">=5.5.2,<6",
+    "restart_required": true,
+    "version_file": "bin/user/brultech.py",
+    "version_regex": "^DRIVER_VERSION\\s*=\\s*'([^']+)'",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/tkeffer/weewx-brultech/blob/81ffcba8d983b145f072d072245357cea3b117e1/LICENSE.txt",
+      "https://github.com/tkeffer/weewx-brultech/blob/81ffcba8d983b145f072d072245357cea3b117e1/install.py",
+      "https://github.com/tkeffer/weewx-brultech/blob/81ffcba8d983b145f072d072245357cea3b117e1/README.md"
+    ],
+    "check": {
+      "repository": "weewx-packages/weewx-brultech",
+      "ref": "master",
+      "imports": [
+        "user.brultech",
+        "user.gem_schema"
+      ],
+      "allowed_skips": [],
+      "pip_packages": []
+    },
+    "external_source": "brultech-source"
   }
 ]
