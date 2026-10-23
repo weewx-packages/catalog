@@ -75,7 +75,8 @@ source ref such as `v{version}`, `imports` to the installed Python modules to
 check, and `allowed_skips` to an empty list unless a specific optional feature
 is unavailable. For a project with only prereleases, set `allow_prereleases`
 to true. Its catalog version stays a prerelease and installation requires
-`weectl extension install <package> --pre`.
+`python -m user.packages install PACKAGE_ID --pre` with the separate experimental
+repository client. Stock WeeWX can install its explicit archive URL directly.
 
 By default, the source revision supplies `tests/`. For a suite maintained in this
 catalog, set `tests_path` to `ci/project_tests/<repository>`. Its `payload`,

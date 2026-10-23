@@ -1,29 +1,46 @@
 # WeeWX packages
 
-A shared catalog of WeeWX extensions, drivers, and skins. Register this catalog
-once to search, install and update all packages it lists. Packages stay with
-their publishers. This repository lists versioned downloads and the Python and
-WeeWX versions each release supports.
+A shared catalog of WeeWX extensions, drivers, and skins. It lists versioned
+downloads and the Python and WeeWX versions each release supports. Packages
+stay with their publishers.
 
-## Add the catalog
+## Install with stock WeeWX
 
-These commands require a WeeWX build with extension repository support. They
-are not available in an unmodified WeeWX 5.5.2 installation.
-
-```shell
-weectl extension repo add packages https://raw.githubusercontent.com/weewx-packages/catalog/main/repository.json
-weectl extension search php
-weectl extension install livedata
-```
-
-If another source publishes the same package ID, installation asks which source
-to use. To select this catalog explicitly:
+Open a package's project page below and follow its installation and configuration
+instructions. Stock WeeWX installs extension archives by URL or local filename.
+For example, to install the published LiveData archive:
 
 ```shell
-weectl extension install livedata --repo packages
+weectl extension install https://github.com/weewx-packages/weewx-livedata/releases/download/v0.2.0/weewx-livedata-0.2.0.zip
 ```
 
-Follow the package's configuration instructions after installation.
+Add `--config /path/to/weewx.conf` when needed. Install any additional dependencies
+listed by that package and complete its configuration before restarting WeeWX.
+
+## Use repository search and updates
+
+Repository support is currently provided by the experimental
+[standalone package manager](https://github.com/weewx-packages/weewx-package-manager#install).
+There is no core integration. Stock `weectl extension` does not accept catalog
+package IDs or provide `repo`, `search`, `check-updates` or `update` actions.
+
+Install the standalone manager using its instructions. It is a source-built
+prerelease without a published release archive. After a WeeWX extension
+installation, put your station's `bin` directory on `PYTHONPATH` and use the
+same Python interpreter as WeeWX:
+
+```shell
+export PYTHONPATH=/path/to/station/bin
+python -m user.packages repo add packages https://raw.githubusercontent.com/weewx-packages/catalog/main/repository.json
+python -m user.packages search php
+python -m user.packages install livedata --repo packages
+```
+
+The explicit `--repo` selects this source if another registered repository
+publishes the same package ID. A Python-package installation of the manager
+also provides `weectl-packages` with the same actions.
+
+Follow the individual package's configuration instructions after installation.
 
 NeoWX Material, Belchertown and DivumWX mirror the original upstream source,
 including fonts and bundled license notices. Their catalog archives preserve
@@ -165,19 +182,23 @@ records from different driver versions.
 | [Davis WeatherLink Cloud (pre-release)](https://github.com/weewx-packages/weewx-davis-cloud) | `davis-cloud` | Unified Davis cloud current conditions, archives and optional health service. Pre-release; legacy package migration is incomplete. |
 <!-- packages:end -->
 
-New packages become available through the same registered source when its index
-refreshes. Use `weectl extension repo refresh packages` to refresh it explicitly.
+With the standalone manager, new packages become available when the registered
+index refreshes. Use `python -m user.packages repo refresh packages` to refresh it
+explicitly in the environment configured above.
 
 ## Check and update
 
 ```shell
-weectl extension check-updates
-weectl extension update
+python -m user.packages check-updates
+python -m user.packages update
 ```
 
-The selected source remains bound to the installed extension. Updates check its
+These are standalone-manager commands. The selected source remains bound to the
+installed extension. Updates check its
 compatibility and archive digest, and ask before replacing local changes.
 Updates run when requested; this catalog sets up no background updater.
+For a stock WeeWX installation without the manager, follow the package's
+documented archive upgrade procedure.
 
 ## Publish a package
 

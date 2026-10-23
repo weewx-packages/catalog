@@ -36,20 +36,26 @@ listed. To withdraw a release from selection, set its `yanked` field to `true`.
 
 ## Validate the index
 
-Using a WeeWX build with repository support:
+Install the experimental [standalone repository client](https://github.com/weewx-packages/weewx-package-manager#install)
+in a WeeWX Python environment. Stock WeeWX has no repository validation command.
+With the client importable in that environment:
 
 ```shell
-weectl extension repo validate repository.json
+python -m user.packages repo validate repository.json
 ```
 
-Or run `just fast` when `weectl` is on PATH. Validation checks the whole index,
+Or run `just fast` in the same environment. Validation checks the whole index,
 including identifiers, duplicate versions, requirements, and URL rules. The
 schema alone checks structure; it cannot check archive bytes or whether a
 publisher's compatibility claims are correct.
 
 Before submitting, download and hash each new archive, check that its installer
 name and version match the metadata, and test installation on a disposable
-station through `weectl extension install <package> --repo <repository>`. The
+station through `python -m user.packages install PACKAGE_ID --repo ALIAS`. First
+register its index with `python -m user.packages repo add ALIAS INDEX_URL`.
+Use the station's `bin` directory on `PYTHONPATH` for an extension-installed client.
+Also verify the normal archive installation with
+`weectl extension install VERSIONED_ARCHIVE_URL`. The
 legacy URL installer alone does not exercise the repository client's managed
 paths and transaction rules. A successful install does not verify real hardware
 behavior.

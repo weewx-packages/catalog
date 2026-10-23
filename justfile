@@ -1,7 +1,7 @@
 default: fast
 
 fast:
-    weectl extension repo validate repository.json
+    python3 -m user.packages repo validate repository.json
     python3 ci/upstreams.py readme --check
 
 test-ci:
