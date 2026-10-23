@@ -160,8 +160,8 @@ Only a complete passing candidate matrix can publish. A separate job uploads
 archives and provenance receipts to this catalog's GitHub releases under
 `PACKAGE/vVERSION`. That job executes catalog code only. Existing release bytes
 are never replaced. It appends the release to `repository.json`, pins its test
-source in `ci/packages.json`, and regenerates the README package table from the
-index. All three files are committed together. The weekly compatibility workflow
+source in `ci/packages.json`, and regenerates the README package table and the
+package pages from the index. All of them are committed together. The weekly compatibility workflow
 checks the published downloads, maintaining issues for regressions in catalog
 releases. It also runs on catalog pushes and pull requests and can be started
 manually.

@@ -136,6 +136,118 @@ def compatibility_case(spec, receipt, archive, branch, python, weewx_sha):
                 'url': archive.resolve().as_uri(), 'format': receipt['format'], 'sha256': receipt['sha256']}})
 
 
+PAGE_FOLDER = 'packages'
+PAGE_MARKER = '<!-- Generated from repository.json by ci/upstreams.py readme. Do not edit. -->'
+
+
+def cell(text):
+    """Escape text for a single Markdown table cell.
+
+    Args:
+        text (str): Plain catalog text.
+
+    Returns:
+        str: Text without line breaks or unescaped column separators.
+    """
+    return text.replace('|', r'\|').replace('\n', ' ')
+
+
+def current_release(package):
+    """Select the release a new installation receives.
+
+    Args:
+        package (dict): Catalog package entry.
+
+    Returns:
+        dict|None: Newest listed stable release, else the newest listed
+            prerelease. None if every release is yanked.
+    """
+    listed = [release for release in package['releases'] if not release.get('yanked')]
+    stable = [release for release in listed if not Version(release['version']).is_prerelease]
+    candidates = stable or listed
+    return max(candidates, key=lambda release: Version(release['version'])) if candidates else None
+
+
+def package_page(package):
+    """Render the catalog page that package guides link to for installation.
+
+    Package READMEs carry no version numbers or archive URLs. This page is the
+    single place where the current release and its install command appear.
+
+    Args:
+        package (dict): Catalog package entry.
+
+    Returns:
+        str: Complete Markdown page.
+    """
+    lines = [PAGE_MARKER, '', '# ' + package['name'], '', package['description'], '',
+             'Package ID `%s`. The [installation and configuration guide](%s) lists its' % (
+                 package['id'], package['homepage']),
+             'dependencies and settings.', '']
+    release = current_release(package)
+    if release is None:
+        lines += ['All releases of this package are withdrawn. It cannot be installed from the catalog.', '']
+        return '\n'.join(lines)
+    prerelease = Version(release['version']).is_prerelease
+    lines += ['## Current release', '', '| | |', '|---|---|',
+              '| Version | %s%s |' % (release['version'], ' (prerelease)' if prerelease else ''),
+              '| WeeWX | `%s` |' % release['requires_weewx'],
+              '| Python | `%s` |' % release['requires_python']]
+    if release.get('release_notes'):
+        lines.append('| Release notes | [%s](%s) |' % (release['version'], release['release_notes']))
+    lines.append('')
+    restart = ' Then restart WeeWX.' if release.get('restart_required') else ''
+    lines += ['## Install with stock WeeWX', '',
+              'Install the dependencies named in the guide first. Then use the `weectl`',
+              'of the Python environment running WeeWX:', '',
+              '```shell', 'weectl extension install ' + release['archive']['url'], '```', '',
+              'Add `--config /path/to/weewx.conf` if your station uses another configuration file.',
+              'Complete the configuration described in the guide.' + restart, '',
+              '## Install with the package manager', '',
+              'The experimental [standalone package manager](https://github.com/weewx-packages/weewx-package-manager#install)',
+              'installs by package ID and keeps track of updates. Register this catalog',
+              'as `packages` [once](../README.md#use-repository-search-and-updates), then run:', '',
+              '```shell',
+              'python -m user.packages install %s --repo packages%s' % (package['id'], ' --pre' if prerelease else ''),
+              'python -m user.packages update %s%s' % (package['installer_name'], ' --pre' if prerelease else ''),
+              '```', '',
+              'The second command installs a later release when the catalog lists one.', '',
+              '## Remove', '',
+              '```shell', 'weectl extension uninstall ' + package['installer_name'], '```', '']
+    others = [entry for entry in package['releases'] if entry is not release]
+    if others:
+        lines += ['## Other releases', '',
+                  '| Version | WeeWX | Python | Archive |', '|---|---|---|---|']
+        for entry in sorted(others, key=lambda entry: Version(entry['version']), reverse=True):
+            archive = 'Withdrawn' if entry.get('yanked') else '[Download](%s)' % entry['archive']['url']
+            lines.append('| %s | `%s` | `%s` | %s |' % (entry['version'], entry['requires_weewx'],
+                                                       entry['requires_python'], archive))
+        lines.append('')
+    return '\n'.join(lines)
+
+
+def update_pages(catalog, folder, check=False):
+    """Write one page per package and remove pages of packages no longer listed.
+
+    Args:
+        catalog (dict): Complete package index, including manual entries.
+        folder (Path): Directory holding only generated package pages.
+        check (bool): Raise instead of writing if any page differs.
+    """
+    wanted = {package['id'] + '.md': package_page(package) for package in catalog['packages']}
+    existing = {path.name: path.read_text() for path in folder.glob('*.md')} if folder.is_dir() else {}
+    if check:
+        if existing != wanted:
+            raise ValueError('Package pages are stale; run python ci/upstreams.py readme')
+        return
+    folder.mkdir(exist_ok=True)
+    for name in set(existing) - set(wanted):
+        (folder / name).unlink()
+    for name, text in wanted.items():
+        if existing.get(name) != text:
+            (folder / name).write_text(text)
+
+
 def update_readme(catalog, path, check=False):
     """Generate the package table from the same metadata used by WeeWX clients.
 
@@ -148,17 +260,27 @@ def update_readme(catalog, path, check=False):
     start, end = '<!-- packages:start -->', '<!-- packages:end -->'
     before, table = text.split(start)
     _, after = table.split(end)
-    rows = ['| Package | ID | Purpose |', '|---|---|---|']
+    rows = ['| Package | Install | Purpose |', '|---|---|---|']
     for package in catalog['packages']:
-        name = package['name'].replace('|', r'\|').replace('\n', ' ')
-        description = package['description'].replace('|', r'\|').replace('\n', ' ')
-        rows.append('| [%s](%s) | `%s` | %s |' %
-                    (name, package['homepage'], package['id'], description))
+        rows.append('| [%s](%s) | [`%s`](%s/%s.md) | %s |' %
+                    (cell(package['name']), package['homepage'], package['id'],
+                     PAGE_FOLDER, package['id'], cell(package['description'])))
     replacement = before + start + '\n' + '\n'.join(rows) + '\n' + end + after
     if check and replacement != text:
         raise ValueError('README package table is stale; run python ci/upstreams.py readme')
     if not check:
         path.write_text(replacement)
+
+
+def update_listing(catalog, check=False):
+    """Regenerate the README table and every package page from one index.
+
+    Args:
+        catalog (dict): Complete package index, including manual entries.
+        check (bool): Raise instead of writing if anything generated differs.
+    """
+    update_readme(catalog, ROOT / 'README.md', check)
+    update_pages(catalog, ROOT / PAGE_FOLDER, check)
 
 
 def publish(specs, plan_data, artifacts):
@@ -224,7 +346,7 @@ def publish(specs, plan_data, artifacts):
         checks[spec['id']] = dict(spec['check'], ref=receipt['source_sha'])
     catalog_path.write_text(json.dumps(catalog, indent=2) + '\n')
     checks_path.write_text(json.dumps(checks, indent=2) + '\n')
-    update_readme(catalog, ROOT / 'README.md')
+    update_listing(catalog)
 
 
 if __name__ == '__main__':
@@ -244,6 +366,6 @@ if __name__ == '__main__':
         spec = next(s for s in specs if s['id'] == candidate['package'])
         package(spec, candidate, args.source, args.output)
     elif args.action == 'readme':
-        update_readme(json.loads((ROOT / 'repository.json').read_text()), ROOT / 'README.md', args.check)
+        update_listing(json.loads((ROOT / 'repository.json').read_text()), args.check)
     else:
         publish(specs, json.loads(args.plan.read_text()), args.output)

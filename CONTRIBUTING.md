@@ -65,17 +65,19 @@ added and which installation test you ran.
 
 New packages also need a [compatibility check](COMPATIBILITY.md#add-a-package-check).
 
-## Keep the package table in sync
+## Keep the package table and pages in sync
 
-The README package table is generated from `repository.json`, including manually
-maintained packages. After editing the index, run:
+The README package table and the package pages under [packages/](packages) are
+generated from `repository.json`, including manually maintained packages. Each
+page shows the current release and its install commands, so package READMEs
+link to it instead of naming versions or archive URLs. After editing the index, run:
 
 ```shell
 python3 ci/upstreams.py readme
 just fast
 ```
 
-Validation rejects a stale table. The upstream skin publishing workflow updates
-the index, test profile and README in one commit. See
+Validation rejects a stale table or page. The upstream skin publishing workflow
+updates the index, test profile, README and pages in one commit. See
 [mirrored skin packaging](COMPATIBILITY.md#mirrored-skins-and-release-packaging)
 for its release selection and tests.

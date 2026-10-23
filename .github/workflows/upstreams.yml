@@ -228,7 +228,7 @@ jobs:
           python ci/upstreams.py publish --plan artifacts/upstream-plan/upstream-plan.json --output artifacts
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add repository.json ci/packages.json README.md
+          git add repository.json ci/packages.json README.md packages
           if ! git diff --cached --quiet; then
             git commit -m 'Publish tested upstream skin releases'
             git push origin HEAD:main

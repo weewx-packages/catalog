@@ -14,6 +14,7 @@ Static JSON index for WeeWX clients with extension repository support.
 ## Structure
 
 - `repository.json`: Published package index.
+- `packages/`: Generated page per package with current release and install commands.
 - `schemas/repository-v1.schema.json`: Version 1 structural contract.
 - `CONTRIBUTING.md`: Package publication and validation procedure.
 - `ci/packages.json`: Test source refs, installed imports and explicit skip reasons.
@@ -48,8 +49,11 @@ Static JSON index for WeeWX clients with extension repository support.
   atomic, preserve deleted upstream refs and reject divergent history.
 - Skin mirror jobs receive only their own deploy key. Publishing credentials
   remain separate from upstream installers and report generators.
-- Generate the README package table from repository.json; run
-  `python3 ci/upstreams.py readme` after manual index changes.
+- Generate the README package table and `packages/<id>.md` from repository.json;
+  run `python3 ci/upstreams.py readme` after manual index changes. Never edit
+  the pages by hand.
+- Package READMEs link to `packages/<id>.md` for installation. Versions and
+  archive URLs appear only in the index and the generated pages.
 - Keep independent continuations at `sync: false`; their fixes must never be
   replaced by a routine upstream copy.
 - Source, discussion backup, test and reporting jobs have separate credentials.
