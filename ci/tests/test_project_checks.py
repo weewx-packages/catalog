@@ -2,8 +2,11 @@
 
 import hashlib
 import json
+import os
 from pathlib import Path
+import subprocess
 import sys
+import textwrap
 from unittest.mock import Mock
 import zipfile
 
@@ -38,6 +41,29 @@ def test_invalid_group_size_cannot_bypass_github_limit(limit):
 def test_system_dependencies_cannot_supply_commands_or_options(packages):
     with pytest.raises(ValueError, match='system package'):
         compat.system_packages({'system_packages': packages})
+
+
+def test_dependency_setup_allows_slow_installation_but_propagates_failure(monkeypatch):
+    """A failed apt step remains an infrastructure failure, with its longer budget."""
+    def execute(args, timeout=300):
+        if 'install' in args:
+            # Model a download exceeding the old limit before apt reports a
+            # genuine failure. Increasing the budget must not hide that failure.
+            if timeout < 301:
+                raise subprocess.TimeoutExpired(args, timeout)
+            raise subprocess.CalledProcessError(100, args)
+
+    monkeypatch.setattr(compat, 'command', execute)
+    with pytest.raises(subprocess.CalledProcessError) as failure:
+        compat.install_system_packages({'system_packages': ['ffmpeg']})
+    assert failure.value.returncode == 100
+
+
+def test_no_dependencies_does_not_run_apt(monkeypatch):
+    execute = Mock()
+    monkeypatch.setattr(compat, 'command', execute)
+    compat.install_system_packages({})
+    execute.assert_not_called()
 
 
 def test_external_project_gets_both_core_branches_without_becoming_catalog_package(monkeypatch):
@@ -104,6 +130,38 @@ def test_central_tests_read_archive_even_with_fixed_checkout_and_no_source_tests
     imported = next(env for args, env in recorded if '-c' in args)
     assert imported['PYTHONPATH'] == str(work / 'station/bin')
     assert not (work / 'payload/package/tests').exists()
+
+
+def test_workflow_setup_leaves_runner_directory_fresh(project, tmp_path, monkeypatch):
+    """Execute the setup shell without network or root access, then run the real payload check."""
+    source, case = project
+    workflow = (Path(__file__).resolve().parents[2] /
+                '.github/workflows/compatibility-group.yml').read_text()
+    step = workflow.split('      - name: Install test dependencies\n', 1)[1]
+    script = textwrap.dedent(step.split('        run: |\n', 1)[1].split('\n      - ', 1)[0])
+    # Replace only dependency installers. The actual compatibility runner below
+    # must still create its own fresh directory and execute the archive tests.
+    binaries = tmp_path / 'binaries'
+    binaries.mkdir()
+    for name, contents in [('python', 'exit 0'), ('sudo', 'cat > /dev/null')]:
+        path = binaries / name
+        path.write_text('#!/bin/sh\n' + contents + '\n')
+        path.chmod(0o755)
+    script = script.replace('${{ matrix.case_id }}', '0')
+    subprocess.run(['bash', '-e', '-c', script], cwd=tmp_path, check=True,
+                   env=dict(os.environ, PATH=str(binaries) + os.pathsep + os.environ['PATH']))
+    real_command = compat.command
+
+    def execute(args, cwd=None, env=None, input_text=None):
+        if 'pytest' in args:
+            real_command(args, cwd=cwd, env=env, input_text=input_text)
+
+    monkeypatch.setattr(compat, 'command', execute)
+    work = tmp_path / 'result'
+    assert compat.run(case, source, work) == 1
+    result = json.loads((work / 'result.json').read_text())
+    assert result['status'] == 'failed'
+    assert any('13 == 42' in detail for detail in result['details'])
 
 
 @pytest.mark.parametrize('kind', ['external', 'source'])

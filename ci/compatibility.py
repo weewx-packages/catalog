@@ -184,6 +184,23 @@ def system_packages(case):
     return packages
 
 
+def install_system_packages(case):
+    """Install declared dependencies, allowing up to ten minutes for downloads.
+
+    Args:
+        case (dict): Profile containing optional Debian system package names.
+    """
+    packages = system_packages(case)
+    if not packages:
+        return
+    # A stalled mirror should retry within the installation budget, rather than
+    # consume the whole step waiting for a single download.
+    apt = ['sudo', 'apt-get', '-o', 'Acquire::Retries=3',
+           '-o', 'Acquire::http::Timeout=30', '-o', 'Acquire::https::Timeout=30']
+    command(apt + ['update', '-qq'])
+    command(apt + ['install', '-y', '--no-install-recommends', '--', *packages], timeout=600)
+
+
 def unpack(archive, destination, require_installer=True):
     """Extract regular files under one package directory, rejecting links and escapes.
 
@@ -413,9 +430,6 @@ if __name__ == '__main__':
         case = (json.loads(args.plan.read_text())['include'][args.case_id]
                 if args.plan else json.loads(os.environ['CASE_JSON']))
         if args.action == 'system':
-            packages = system_packages(case)
-            if packages:
-                command(['sudo', 'apt-get', 'update', '-qq'])
-                command(['sudo', 'apt-get', 'install', '-y', '--', *packages])
+            install_system_packages(case)
         else:
             sys.exit(run(case, args.source.resolve(), args.work.resolve()))

@@ -96,6 +96,9 @@ jobs:
 
   test:
     needs: prepare
+    # PRs skip the mirror. Override implicit success() so that skipped ancestor
+    # cannot suppress the matrix after preparation has succeeded.
+    if: ${{ !cancelled() && needs.prepare.result == 'success' }}
     strategy:
       fail-fast: false
       matrix: ${{ fromJSON(needs.prepare.outputs.matrix) }}
