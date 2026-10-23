@@ -368,7 +368,7 @@
   "weatherlink-live-source": {
     "release": {
       "version": "source",
-      "requires_python": ">=3.10,<3.15",
+      "requires_python": ">=3.11,<3.15",
       "archive": {
         "url": "https://github.com/weewx-packages/weewx-weatherlink-live/archive/da5fdac55a6363437768922196ae5e780326acf4.zip",
         "format": "zip",
@@ -387,7 +387,10 @@
       "tests_path": "ci/project_tests/weewx-source-smoke",
       "source_archive": true,
       "kind": "project",
-      "coverage": "source"
+      "coverage": "source",
+      "pythons": [
+        "3.14"
+      ]
     }
   },
   "weatherlinklive-driver-source": {
@@ -456,7 +459,9 @@
         "user.marine_data"
       ],
       "allowed_skips": [],
-      "pip_packages": [],
+      "pip_packages": [
+        "PyYAML"
+      ],
       "tests_path": "ci/project_tests/weewx-source-smoke",
       "source_archive": true,
       "kind": "project",
