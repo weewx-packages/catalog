@@ -25,9 +25,10 @@ weectl extension install livedata --repo packages
 
 Follow the package's configuration instructions after installation.
 
-The mirrored skins use the same catalog. DivumWX 1.7.0.post1 replaces restricted
-fonts with licensed fonts and Unicode symbols. The original 1.7.0 catalog
-archive is withdrawn; future upstream tags require another font review.
+NeoWX Material, Belchertown and DivumWX mirror the original upstream source,
+including fonts and bundled license notices. Their catalog archives preserve
+the upstream release files. DivumWX uses the original 1.7.0 package; the modified
+1.7.0.post1 package is withdrawn from new installations.
 NeoWX Material may require selecting `skin = neowx-material` in your
 `[[StandardReport]]` configuration and enabling that report.
 
@@ -53,7 +54,7 @@ records from different driver versions.
 | [Prometheus Pushgateway uploader](https://github.com/weewx-packages/weewx-prompush) | `prompush` | Send WeeWX observations in Prometheus text format to a Pushgateway. |
 | [Twitter uploader](https://github.com/weewx-packages/weewx-twitter) | `twitter` | Post formatted WeeWX observations through Twython at elapsed intervals or fixed local times. |
 | [Zabbix sender service](https://github.com/weewx-packages/weewx-zabbix) | `zabbix` | Send WeeWX observations through zabbix_sender and provide a Zabbix 7 template for METRICWX inputs. |
-| [DivumWX](https://github.com/weewx-packages/weewx-divumwx) | `divumwx` | Live weather dashboard with charts, forecasts and astronomy pages. Cleaned font package; requires requests and skyfield. |
+| [DivumWX](https://github.com/weewx-packages/weewx-divumwx) | `divumwx` | Live weather dashboard with charts, forecasts and astronomy pages. Requires requests and skyfield. |
 | [Meteostick](https://github.com/weewx-packages/weewx-meteostick) | `meteostick` | Read Meteostick weather observations over a serial connection. |
 | [SDR](https://github.com/weewx-packages/weewx-sdr) | `sdr` | Read weather sensors through rtl_433. Requires a separately installed rtl_433 executable. |
 | [Nova SDS011](https://github.com/weewx-packages/weewx-NovaSDS011) | `nova-sds011` | Add SDS011 particulate concentrations through a serial sensor or a local Sensor.Community HTTP endpoint. |

@@ -17,8 +17,9 @@ coverage is recorded separately; presence here does not make it a tested
 catalog package. Restricted use terms are recorded individually, rather
 than treated as an automatic redistribution prohibition.
 
-DivumWX 1.7.0.post1 replaces restricted fonts and retains licensed weather icons.
-Its original archive is withdrawn. Tracer 0.3.0 is published
+DivumWX uses the unchanged upstream 1.7.0 release, including its original fonts
+and notices. The modified 1.7.0.post1 package is withdrawn from new installations.
+Tracer 0.3.0 is published
 with regression tests; physical controller validation remains outstanding.
 
 The [machine-readable review](ci/wiki-audit.json) contains pinned license

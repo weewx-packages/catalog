@@ -96,7 +96,6 @@
       "skin": "DivumWX"
     },
     "installer_name": "divumwx",
-    "description": "Live weather dashboard with charts, forecasts and astronomy pages. Requires requests and skyfield; installation asks for station settings.",
-    "blocked": "New upstream tags require a font-license review and a separately versioned cleaned archive; direct package publication is disabled."
+    "description": "Live weather dashboard with charts, forecasts and astronomy pages. Requires requests and skyfield; installation asks for station settings."
   }
 ]
