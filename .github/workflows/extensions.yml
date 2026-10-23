@@ -1,0 +1,206 @@
+name: Upstream extensions
+
+on:
+  schedule:
+    - cron: '43 4 * * 1'
+    - cron: '43 4 * * 2'
+    - cron: '43 4 * * 3'
+    - cron: '43 4 * * 4'
+    - cron: '43 4 * * 5'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+concurrency:
+  group: upstream-extensions
+  cancel-in-progress: false
+
+jobs:
+  select:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    outputs:
+      packages: ${{ steps.select.outputs.packages }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Select this weekday's extensions
+        id: select
+        env:
+          SCHEDULE: ${{ github.event.schedule }}
+        run: |
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json, os
+          from pathlib import Path
+          schedule = os.environ['SCHEDULE']
+          specs = json.loads(Path('ci/upstream-extensions.json').read_text())
+          # Manual runs include every extension; schedules select one weekly group.
+          if schedule:
+              specs = [s for s in specs if s['weekday'] == int(schedule.split()[-1])]
+          print('packages=' + json.dumps([s['id'] for s in specs]))
+          PY
+
+  plan:
+    needs: select
+    runs-on: ubuntu-latest
+    outputs:
+      candidates: ${{ steps.plan.outputs.candidates }}
+      matrix: ${{ steps.plan.outputs.matrix }}
+      count: ${{ steps.plan.outputs.count }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.14'
+      - run: python -m pip install packaging pytest
+      - run: python -m pytest -q ci/tests
+      - name: Pin new upstream versions
+        id: plan
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PACKAGES: ${{ needs.select.outputs.packages }}
+        run: |
+          python - <<'PY' > upstream-plan.json
+          import json, os, sys
+          from pathlib import Path
+          sys.path.insert(0, 'ci')
+          from extensions import plan
+          packages = json.loads(os.environ['PACKAGES'])
+          specs = json.loads(Path('ci/upstream-extensions.json').read_text())
+          selected = [s for s in specs if s['id'] in packages]
+          print(json.dumps(plan(selected, json.loads(Path('repository.json').read_text()))))
+          PY
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          import json
+          from pathlib import Path
+          plan = json.loads(Path('upstream-plan.json').read_text())
+          print('candidates=' + json.dumps({'include': plan['candidates']}))
+          print('matrix=' + json.dumps(plan['matrix']))
+          print('count=' + str(len(plan['candidates'])))
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: upstream-plan
+          path: upstream-plan.json
+
+  package:
+    needs: plan
+    if: needs.plan.outputs.count != '0'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJSON(needs.plan.outputs.candidates) }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Read mirror source
+        env:
+          CANDIDATE: ${{ toJSON(matrix) }}
+        run: |
+          python - <<'PY'
+          import json, os, subprocess
+          from pathlib import Path
+          candidate = json.loads(os.environ['CANDIDATE'])
+          specs = json.loads(Path('ci/upstream-extensions.json').read_text())
+          spec = next(s for s in specs if s['id'] == candidate['package'])
+          subprocess.run(['git', 'clone', '--bare', 'https://github.com/' + spec['fork'] + '.git', 'source.git'], check=True)
+          PY
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.14'
+      - run: python -m pip install packaging
+      - name: Archive the exact source and apply the catalog patch
+        env:
+          CANDIDATE: ${{ toJSON(matrix) }}
+        run: python ci/extensions.py package --candidate "$CANDIDATE" --source source.git --output candidate
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: candidate-${{ matrix.package }}
+          path: candidate/
+
+  test:
+    needs: [plan, package]
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJSON(needs.plan.outputs.matrix) }}
+    name: candidate ${{ matrix.package }} / ${{ matrix.branch }} / Python ${{ matrix.python }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: ${{ matrix.weewx_repository }}
+          ref: ${{ matrix.weewx_sha }}
+          path: weewx
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m pip install ./weewx pytest packaging requests
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: candidate-${{ matrix.package }}
+          path: candidate
+      - name: Install and test the extension
+        env:
+          MATRIX_CASE: ${{ toJSON(matrix) }}
+        run: |
+          python - <<'PY'
+          import json, os, sys
+          from pathlib import Path
+          sys.path.insert(0, 'ci')
+          from compatibility import run
+          from upstreams import compatibility_case
+          matrix = json.loads(os.environ['MATRIX_CASE'])
+          receipt = json.loads(Path('candidate/receipt.json').read_text())
+          specs = json.loads(Path('ci/upstream-extensions.json').read_text())
+          spec = next(s for s in specs if s['id'] == matrix['package'])
+          case = compatibility_case(spec, receipt, Path('candidate') / receipt['filename'],
+                                    matrix['branch'], matrix['python'], matrix['weewx_sha'])
+          sys.exit(run(case, Path('.').resolve(), Path('result').resolve()))
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: candidate-result-${{ matrix.package }}-${{ matrix.branch }}-${{ matrix.python }}
+          path: |
+            result/result.json
+            result/junit.xml
+
+  publish:
+    needs: [plan, test]
+    if: github.ref == 'refs/heads/main' && needs.test.result == 'success'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      # Only catalog code runs with this token. Upstream Python is never imported.
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: main
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.14'
+      - run: python -m pip install packaging
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          path: artifacts
+      - name: Publish immutable packages and catalog entries
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python ci/extensions.py publish --plan artifacts/upstream-plan/upstream-plan.json --output artifacts
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add repository.json ci/packages.json ci/mirrors.json ci/external.json README.md packages
+          if ! git diff --cached --quiet; then
+            git commit -m 'Publish tested upstream extension releases'
+            git push origin HEAD:main
+          fi

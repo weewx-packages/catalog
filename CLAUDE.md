@@ -29,6 +29,7 @@ extension (weewx-package-manager).
 - `ci/sync-weewx.sh`: Copy upstream branches and tags without executing source.
 - `ci/upstreams.json`: Skin sources, release policy and test profiles.
 - `ci/upstreams.py`: Select, package and publish tested upstream skin releases.
+- `ci/extensions.py`, `ci/upstream-extensions.json`: Same for mirrored extensions without tags, keyed on the installer's version constant. Patches live in `ci/recipes/`.
 - `ci/skin_tests/`: Installed-skin report generation with an isolated archive.
 - `COMPATIBILITY.md`: Check coverage, issue handling and adding package tests.
 - `WIKI-AUDIT.md`, `ci/wiki-audit.json`: Complete wiki review and pinned license evidence.

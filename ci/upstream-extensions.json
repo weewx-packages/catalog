@@ -1,0 +1,329 @@
+[
+  {
+    "id": "realtime-gauge-data",
+    "weekday": 2,
+    "upstream": "weewx-contrib/weewx-realtime_gauge-data",
+    "fork": "weewx-packages/weewx-realtime_gauge-data",
+    "branch": "master",
+    "name": "weewx-realtime_gauge-data",
+    "description": "Near real time data for the SteelSeries Weather Gauges.",
+    "types": [
+      "service"
+    ],
+    "category": "other",
+    "installer_name": "Rtgd",
+    "requires_python": ">=3.10,<3.15",
+    "requires_weewx": ">=5.5.2,<6",
+    "restart_required": true,
+    "version_file": "install.py",
+    "version_regex": "^RTGD_VERSION\\s*=\\s*[\"\\']([^\"\\']+)[\"\\']",
+    "license": "GPL-3.0-only (LICENSE); GPL-2.0-or-later (installer header)",
+    "license_evidence": [
+      "https://github.com/weewx-contrib/weewx-realtime_gauge-data/blob/df86d26a6d82c247c40b1b1f5c9a1f87e1d28b27/LICENSE",
+      "https://github.com/weewx-contrib/weewx-realtime_gauge-data/blob/df86d26a6d82c247c40b1b1f5c9a1f87e1d28b27/install.py",
+      "https://github.com/weewx-contrib/weewx-realtime_gauge-data/blob/df86d26a6d82c247c40b1b1f5c9a1f87e1d28b27/bin/user/rtgd.py"
+    ],
+    "check": {
+      "repository": "weewx-packages/weewx-realtime_gauge-data",
+      "ref": "master",
+      "imports": [
+        "user.rtgd"
+      ],
+      "allowed_skips": [],
+      "pip_packages": [],
+      "tests_path": "ci/project_tests/weewx-source-smoke"
+    },
+    "patch": "ci/recipes/realtime-gauge-data/package.patch",
+    "post": 1,
+    "external_source": "realtime-gauge-data-source"
+  },
+  {
+    "id": "stackedwindrose26",
+    "weekday": 3,
+    "upstream": "Millardiang/weewx-stackedwindrose26",
+    "fork": "weewx-packages/weewx-stackedwindrose26",
+    "branch": "main",
+    "name": "weewx-stackedwindrose26",
+    "description": "Stacked wind rose for WeeWX 5, drawn in the browser with D3.",
+    "types": [
+      "skin"
+    ],
+    "category": "skin",
+    "installer_name": "weewx-stackedwindrose26",
+    "requires_python": ">=3.10,<3.15",
+    "requires_weewx": ">=5.5.2,<6",
+    "restart_required": true,
+    "version_file": "bin/user/stackedwindrose26.py",
+    "version_regex": "^VERSION\\s*=\\s*'([^']+)'",
+    "license": "GPL-3.0-or-later",
+    "license_evidence": [
+      "https://github.com/Millardiang/weewx-stackedwindrose26/blob/e626d53d446ebc35b365a9665d9b2cc10e851672/LICENSE",
+      "https://github.com/Millardiang/weewx-stackedwindrose26/blob/e626d53d446ebc35b365a9665d9b2cc10e851672/bin/user/stackedwindrose26.py",
+      "https://github.com/Millardiang/weewx-stackedwindrose26/blob/e626d53d446ebc35b365a9665d9b2cc10e851672/install.py"
+    ],
+    "check": {
+      "repository": "weewx-packages/weewx-stackedwindrose26",
+      "ref": "main",
+      "imports": [
+        "user.stackedwindrose26"
+      ],
+      "allowed_skips": [],
+      "pip_packages": [],
+      "tests_path": "ci/project_tests/weewx-source-smoke"
+    },
+    "external_source": "stackedwindrose26-source"
+  },
+  {
+    "id": "data-ingest",
+    "weekday": 5,
+    "upstream": "Millardiang/weewx-data-ingest",
+    "fork": "weewx-packages/weewx-data-ingest",
+    "branch": "main",
+    "name": "weewx-data-ingest",
+    "description": "Inject data from external JSON, XML or text files into the archive.",
+    "types": [
+      "service"
+    ],
+    "category": "other",
+    "installer_name": "dataingest",
+    "requires_python": ">=3.10,<3.15",
+    "requires_weewx": ">=5.5.2,<6",
+    "restart_required": true,
+    "version_file": "install.py",
+    "version_regex": "^VERSION\\s*=\\s*\"([^\"]+)\"",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/Millardiang/weewx-data-ingest/blob/bce4c677fcb2285a7f76cba114fa916792122e7b/LICENSE",
+      "https://github.com/Millardiang/weewx-data-ingest/blob/bce4c677fcb2285a7f76cba114fa916792122e7b/bin/user/dataingest.py",
+      "https://github.com/Millardiang/weewx-data-ingest/blob/bce4c677fcb2285a7f76cba114fa916792122e7b/install.py"
+    ],
+    "check": {
+      "repository": "weewx-packages/weewx-data-ingest",
+      "ref": "main",
+      "imports": [
+        "user.dataingest"
+      ],
+      "allowed_skips": [],
+      "pip_packages": [
+        "defusedxml"
+      ],
+      "tests_path": "ci/project_tests/weewx-source-smoke",
+      "install_input": "new\ndataingest\n"
+    },
+    "external_source": "data-ingest-source"
+  },
+  {
+    "id": "mqtt-replicate",
+    "weekday": 1,
+    "upstream": "weewx-mqtt/replicate",
+    "fork": "weewx-packages/weewx-mqtt-replicate",
+    "branch": "master",
+    "name": "weewx-mqtt-replicate",
+    "description": "Replicate WeeWX databases over MQTT 5 request and response.",
+    "types": [
+      "driver",
+      "service"
+    ],
+    "category": "other",
+    "installer_name": "MQTTReplicate",
+    "requires_python": ">=3.10,<3.15",
+    "requires_weewx": ">=5.5.2,<6",
+    "restart_required": true,
+    "version_file": "install.py",
+    "version_regex": "^VERSION\\s*=\\s*\"([^\"]+)\"",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/weewx-mqtt/replicate/blob/4a9daf090b8cad85273759d6381d9041947d7da6/LICENSE",
+      "https://github.com/weewx-mqtt/replicate/blob/4a9daf090b8cad85273759d6381d9041947d7da6/install.py",
+      "https://github.com/weewx-mqtt/replicate/blob/4a9daf090b8cad85273759d6381d9041947d7da6/bin/user/mqttreplicate.py"
+    ],
+    "check": {
+      "repository": "weewx-packages/weewx-mqtt-replicate",
+      "ref": "master",
+      "imports": [
+        "user.mqttreplicate"
+      ],
+      "allowed_skips": [],
+      "pip_packages": [
+        "paho-mqtt>=2,<3"
+      ],
+      "tests_path": "ci/project_tests/weewx-source-smoke",
+      "allow_prereleases": true
+    },
+    "version_sub": [
+      [
+        "-rc0*(\\d+)([a-z]?)$",
+        "rc\\1\\2"
+      ]
+    ],
+    "letter_post": true,
+    "external_source": "mqtt-replicate-source"
+  },
+  {
+    "id": "mqtt-loopdata",
+    "weekday": 2,
+    "upstream": "weewx-mqtt/plugin-loopdata",
+    "fork": "weewx-packages/weewx-mqtt-plugin-loopdata",
+    "branch": "master",
+    "name": "weewx-mqtt-plugin-loopdata",
+    "description": "MQTTPublish plugin that publishes weewx-loopdata observations.",
+    "types": [
+      "skin",
+      "service"
+    ],
+    "category": "other",
+    "installer_name": "MQTTLoopData",
+    "requires_python": ">=3.10,<3.15",
+    "requires_weewx": ">=5.5.2,<6",
+    "restart_required": true,
+    "version_file": "install.py",
+    "version_regex": "^VERSION\\s*=\\s*\"([^\"]+)\"",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/weewx-mqtt/plugin-loopdata/blob/0a51c8678d666eee43ad6a22ee0d9af9c67b8282/LICENSE",
+      "https://github.com/weewx-mqtt/plugin-loopdata/blob/0a51c8678d666eee43ad6a22ee0d9af9c67b8282/install.py",
+      "https://github.com/weewx-mqtt/plugin-loopdata/blob/0a51c8678d666eee43ad6a22ee0d9af9c67b8282/bin/user/mqttloopdata.py"
+    ],
+    "check": {
+      "repository": "weewx-packages/weewx-mqtt-plugin-loopdata",
+      "ref": "master",
+      "imports": [
+        "user.mqttloopdata"
+      ],
+      "allowed_skips": [],
+      "pip_packages": [
+        "paho-mqtt>=2,<3",
+        "ephem"
+      ],
+      "tests_path": "ci/project_tests/weewx-source-smoke",
+      "install_prerequisites": [
+        {
+          "repository": "weewx-packages/weewx-mqtt-publish",
+          "sha": "df31bc4207eeb117100c94933d1c7a8ac47fcb75"
+        },
+        {
+          "repository": "weewx-packages/weewx-loopdata",
+          "sha": "fe52a7944703584f02912f1b1c1ac4b3abaf6933"
+        }
+      ],
+      "allow_prereleases": true
+    },
+    "external_source": "mqtt-plugin-loopdata-source"
+  },
+  {
+    "id": "ecowitt-local-http",
+    "weekday": 5,
+    "upstream": "weewx-contrib/weewx-ecowitt_local_http",
+    "fork": "weewx-packages/weewx-ecowitt_local_http",
+    "branch": "main",
+    "name": "weewx-ecowitt_local_http",
+    "description": "Driver for devices that support the Ecowitt local HTTP API.",
+    "types": [
+      "driver"
+    ],
+    "category": "driver",
+    "installer_name": "Ecowitt_HTTP",
+    "requires_python": ">=3.10,<3.15",
+    "requires_weewx": ">=5.5.2,<6",
+    "restart_required": true,
+    "version_file": "install.py",
+    "version_regex": "^DRIVER_VERSION\\s*=\\s*\"([^\"]+)\"",
+    "license": "GPL-3.0-only (LICENSE); GPL-2.0-or-later (installer header)",
+    "license_evidence": [
+      "https://github.com/weewx-contrib/weewx-ecowitt_local_http/blob/6876b2ecbab88f825dde1b0b7c5874cb5fd3c25e/LICENSE",
+      "https://github.com/weewx-contrib/weewx-ecowitt_local_http/blob/6876b2ecbab88f825dde1b0b7c5874cb5fd3c25e/install.py",
+      "https://github.com/weewx-contrib/weewx-ecowitt_local_http/blob/6876b2ecbab88f825dde1b0b7c5874cb5fd3c25e/bin/user/ecowitt_http.py"
+    ],
+    "check": {
+      "repository": "weewx-packages/weewx-ecowitt_local_http",
+      "ref": "main",
+      "imports": [
+        "user.ecowitt_http"
+      ],
+      "allowed_skips": [],
+      "pip_packages": [
+        "configobj"
+      ],
+      "tests_path": "ci/project_tests/weewx-source-smoke",
+      "allow_prereleases": true
+    },
+    "external_source": "ecowitt-local-http-source"
+  },
+  {
+    "id": "cloud-coverage",
+    "weekday": 1,
+    "upstream": "Millardiang/weewx-Cloud_coverage",
+    "fork": "weewx-packages/weewx-Cloud_coverage",
+    "branch": "main",
+    "name": "weewx-Cloud_coverage",
+    "description": "Estimate cloud coverage from a region of a sky camera image.",
+    "types": [
+      "service"
+    ],
+    "category": "other",
+    "installer_name": "cloudcoverage",
+    "requires_python": ">=3.10,<3.15",
+    "requires_weewx": ">=5.5.2,<6",
+    "restart_required": true,
+    "version_file": "install.py",
+    "version_regex": "version=\"([^\"]+)\"",
+    "license": "GPL-3.0-only (LICENSE file and source header)",
+    "license_evidence": [
+      "https://github.com/Millardiang/weewx-Cloud_coverage/blob/e893a7ec7b162b96013ccaa01eebe060adcafc8e/LICENSE",
+      "https://github.com/Millardiang/weewx-Cloud_coverage/blob/e893a7ec7b162b96013ccaa01eebe060adcafc8e/bin/user/cloudcoverage.py",
+      "https://github.com/Millardiang/weewx-Cloud_coverage/blob/e893a7ec7b162b96013ccaa01eebe060adcafc8e/install.py"
+    ],
+    "check": {
+      "repository": "weewx-packages/weewx-Cloud_coverage",
+      "ref": "main",
+      "imports": [
+        "user.cloudcoverage"
+      ],
+      "allowed_skips": [],
+      "pip_packages": [
+        "pillow",
+        "numpy"
+      ],
+      "tests_path": "ci/project_tests/weewx-source-smoke"
+    },
+    "external_source": "cloud-coverage-source"
+  },
+  {
+    "id": "stackedwindrose",
+    "weekday": 3,
+    "upstream": "weewx-contrib/stackedwindrose-extension",
+    "fork": "weewx-packages/weewx-stackedwindrose",
+    "branch": "main",
+    "name": "weewx-stackedwindrose",
+    "description": "Stacked wind rose image generator for WeeWX.",
+    "types": [
+      "skin"
+    ],
+    "category": "skin",
+    "installer_name": "StackedWindRose",
+    "requires_python": ">=3.10,<3.15",
+    "requires_weewx": ">=5.5.2,<6",
+    "restart_required": true,
+    "version_file": "bin/user/stackedwindrose.py",
+    "version_regex": "^STACKED_WINDROSE_VERSION\\s*=\\s*'([^']+)'",
+    "license": "GPL-3.0-or-later (source header, no LICENSE file)",
+    "license_evidence": [
+      "https://github.com/weewx-contrib/stackedwindrose-extension/blob/e955167c4e83297268c6e54c06130f95418da1d2/bin/user/stackedwindrose.py",
+      "https://github.com/weewx-contrib/stackedwindrose-extension/blob/e955167c4e83297268c6e54c06130f95418da1d2/install.py",
+      "https://github.com/weewx-contrib/stackedwindrose-extension/blob/e955167c4e83297268c6e54c06130f95418da1d2/README.md"
+    ],
+    "check": {
+      "repository": "weewx-packages/weewx-stackedwindrose",
+      "ref": "main",
+      "imports": [
+        "user.stackedwindrose"
+      ],
+      "allowed_skips": [],
+      "pip_packages": [
+        "pillow"
+      ],
+      "tests_path": "ci/project_tests/weewx-source-smoke"
+    },
+    "external_source": "stackedwindrose-source"
+  }
+]
