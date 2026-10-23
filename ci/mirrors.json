@@ -1750,7 +1750,7 @@
     "fork": "weewx-packages/weewx-realtime_gauge-data",
     "weekday": 2,
     "sync": true,
-    "check": "external",
+    "check": "catalog",
     "reviewed_revision": "df86d26a6d82c247c40b1b1f5c9a1f87e1d28b27",
     "license": "GPL-3.0-only (LICENSE); GPL-2.0-or-later (installer header)",
     "license_evidence": [
@@ -1764,7 +1764,7 @@
     "fork": "weewx-packages/weewx-stackedwindrose26",
     "weekday": 3,
     "sync": true,
-    "check": "external",
+    "check": "catalog",
     "reviewed_revision": "e626d53d446ebc35b365a9665d9b2cc10e851672",
     "license": "GPL-3.0-or-later",
     "license_evidence": [
@@ -1778,7 +1778,7 @@
     "fork": "weewx-packages/weewx-data-ingest",
     "weekday": 5,
     "sync": true,
-    "check": "external",
+    "check": "catalog",
     "reviewed_revision": "bce4c677fcb2285a7f76cba114fa916792122e7b",
     "license": "GPL-3.0-only",
     "license_evidence": [
@@ -1792,7 +1792,7 @@
     "fork": "weewx-packages/weewx-mqtt-replicate",
     "weekday": 1,
     "sync": true,
-    "check": "external",
+    "check": "catalog",
     "reviewed_revision": "4a9daf090b8cad85273759d6381d9041947d7da6",
     "license": "GPL-3.0-only",
     "license_evidence": [
@@ -1806,7 +1806,7 @@
     "fork": "weewx-packages/weewx-mqtt-plugin-loopdata",
     "weekday": 2,
     "sync": true,
-    "check": "external",
+    "check": "catalog",
     "reviewed_revision": "0a51c8678d666eee43ad6a22ee0d9af9c67b8282",
     "license": "GPL-3.0-only",
     "license_evidence": [
@@ -1834,7 +1834,7 @@
     "fork": "weewx-packages/weewx-ecowitt_local_http",
     "weekday": 5,
     "sync": true,
-    "check": "external",
+    "check": "catalog",
     "reviewed_revision": "6876b2ecbab88f825dde1b0b7c5874cb5fd3c25e",
     "license": "GPL-3.0-only (LICENSE); GPL-2.0-or-later (installer header)",
     "license_evidence": [
@@ -1917,7 +1917,7 @@
     "fork": "weewx-packages/weewx-Cloud_coverage",
     "weekday": 1,
     "sync": true,
-    "check": "external",
+    "check": "catalog",
     "reviewed_revision": "e893a7ec7b162b96013ccaa01eebe060adcafc8e",
     "license": "GPL-3.0-only (LICENSE file and source header)",
     "license_evidence": [
@@ -1944,7 +1944,7 @@
     "fork": "weewx-packages/weewx-stackedwindrose",
     "weekday": 3,
     "sync": true,
-    "check": "external",
+    "check": "catalog",
     "reviewed_revision": "e955167c4e83297268c6e54c06130f95418da1d2",
     "license": "GPL-3.0-or-later (source header, no LICENSE file)",
     "license_evidence": [
@@ -1958,7 +1958,7 @@
     "fork": "weewx-packages/weewx-brultech",
     "weekday": 4,
     "sync": false,
-    "check": "component",
+    "check": "catalog",
     "reviewed_revision": "81ffcba8d983b145f072d072245357cea3b117e1",
     "license": "GPL-3.0-only",
     "license_evidence": [
@@ -1972,7 +1972,7 @@
     "fork": "weewx-packages/weewx-temperaturnu",
     "weekday": 5,
     "sync": false,
-    "check": "external",
+    "check": "catalog",
     "reviewed_revision": "e7d831bf477ef362b53410bcc289347b2261a52b",
     "license": "GPL-3.0-only",
     "license_evidence": [
@@ -1986,7 +1986,7 @@
     "fork": "weewx-packages/weewx-xcumulative",
     "weekday": 1,
     "sync": false,
-    "check": "component",
+    "check": "catalog",
     "reviewed_revision": "a5e412d22464b95d74d2cada02efb9bddda0db64",
     "license": "GPL-3.0-or-later",
     "license_evidence": [
@@ -2000,7 +2000,7 @@
     "fork": "weewx-packages/weewx-hubitat",
     "weekday": 2,
     "sync": false,
-    "check": "external",
+    "check": "catalog",
     "reviewed_revision": "afffbdf0dd67b3a3e3bb3529f66c368708ff5dbf",
     "license": "BSD-2-Clause (source header, no LICENSE file)",
     "license_evidence": [
@@ -2014,7 +2014,7 @@
     "fork": "weewx-packages/weewx-time_since",
     "weekday": 3,
     "sync": false,
-    "check": "component",
+    "check": "catalog",
     "reviewed_revision": "0b13ab3d5fef511da2698c4ed97011201ac266ee",
     "license": "LGPL-3.0-only",
     "license_evidence": [
@@ -2027,7 +2027,7 @@
     "fork": "weewx-packages/weewx-home-assistant",
     "weekday": 4,
     "sync": false,
-    "check": "component",
+    "check": "catalog",
     "reviewed_revision": "67d5a3e0463c2e9ef594623acee0a160a3622895",
     "license": "MIT",
     "license_evidence": [

@@ -1531,5 +1531,173 @@
       "six"
     ],
     "tests_path": "ci/project_tests/weewx-davis-cloud"
+  },
+  "realtime-gauge-data": {
+    "repository": "weewx-packages/weewx-realtime_gauge-data",
+    "ref": "df86d26a6d82c247c40b1b1f5c9a1f87e1d28b27",
+    "imports": [
+      "user.rtgd"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [],
+    "tests_path": "ci/project_tests/weewx-source-smoke"
+  },
+  "stackedwindrose26": {
+    "repository": "weewx-packages/weewx-stackedwindrose26",
+    "ref": "e626d53d446ebc35b365a9665d9b2cc10e851672",
+    "imports": [
+      "user.stackedwindrose26"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [],
+    "tests_path": "ci/project_tests/weewx-source-smoke"
+  },
+  "data-ingest": {
+    "repository": "weewx-packages/weewx-data-ingest",
+    "ref": "bce4c677fcb2285a7f76cba114fa916792122e7b",
+    "imports": [
+      "user.dataingest"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [
+      "defusedxml"
+    ],
+    "tests_path": "ci/project_tests/weewx-source-smoke",
+    "install_input": "new\ndataingest\n"
+  },
+  "mqtt-replicate": {
+    "repository": "weewx-packages/weewx-mqtt-replicate",
+    "ref": "4a9daf090b8cad85273759d6381d9041947d7da6",
+    "imports": [
+      "user.mqttreplicate"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [
+      "paho-mqtt>=2,<3"
+    ],
+    "tests_path": "ci/project_tests/weewx-source-smoke",
+    "allow_prereleases": true
+  },
+  "mqtt-loopdata": {
+    "repository": "weewx-packages/weewx-mqtt-plugin-loopdata",
+    "ref": "0a51c8678d666eee43ad6a22ee0d9af9c67b8282",
+    "imports": [
+      "user.mqttloopdata"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [
+      "paho-mqtt>=2,<3",
+      "ephem"
+    ],
+    "tests_path": "ci/project_tests/weewx-source-smoke",
+    "install_prerequisites": [
+      {
+        "repository": "weewx-packages/weewx-mqtt-publish",
+        "sha": "df31bc4207eeb117100c94933d1c7a8ac47fcb75"
+      },
+      {
+        "repository": "weewx-packages/weewx-loopdata",
+        "sha": "fe52a7944703584f02912f1b1c1ac4b3abaf6933"
+      }
+    ],
+    "allow_prereleases": true
+  },
+  "ecowitt-local-http": {
+    "repository": "weewx-packages/weewx-ecowitt_local_http",
+    "ref": "6876b2ecbab88f825dde1b0b7c5874cb5fd3c25e",
+    "imports": [
+      "user.ecowitt_http"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [
+      "configobj"
+    ],
+    "tests_path": "ci/project_tests/weewx-source-smoke",
+    "allow_prereleases": true
+  },
+  "cloud-coverage": {
+    "repository": "weewx-packages/weewx-Cloud_coverage",
+    "ref": "e893a7ec7b162b96013ccaa01eebe060adcafc8e",
+    "imports": [
+      "user.cloudcoverage"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [
+      "pillow",
+      "numpy"
+    ],
+    "tests_path": "ci/project_tests/weewx-source-smoke"
+  },
+  "stackedwindrose": {
+    "repository": "weewx-packages/weewx-stackedwindrose",
+    "ref": "e955167c4e83297268c6e54c06130f95418da1d2",
+    "imports": [
+      "user.stackedwindrose"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [
+      "pillow"
+    ],
+    "tests_path": "ci/project_tests/weewx-source-smoke"
+  },
+  "temperaturnu": {
+    "repository": "weewx-packages/weewx-temperaturnu",
+    "ref": "0834dcf1c650e709a788d402ed403bbe9ccf4cca",
+    "imports": [
+      "user.temperaturnu"
+    ],
+    "allowed_skips": [],
+    "pip_packages": []
+  },
+  "hubitat": {
+    "repository": "weewx-packages/weewx-hubitat",
+    "ref": "d4cfb88f9d6c9a594c1f32ff0369f7118cd7762f",
+    "imports": [
+      "user.hubitat"
+    ],
+    "allowed_skips": [],
+    "pip_packages": []
+  },
+  "xcumulative": {
+    "repository": "weewx-packages/weewx-xcumulative",
+    "ref": "ffb68c286afbac5d37d902b9b6dda169597f63bd",
+    "imports": [
+      "user.xcumulative"
+    ],
+    "allowed_skips": [],
+    "pip_packages": []
+  },
+  "time-since": {
+    "repository": "weewx-packages/weewx-time_since",
+    "ref": "d1b179d634e696294033ee0e9327e50218cdc1e8",
+    "imports": [
+      "user.time_since"
+    ],
+    "allowed_skips": [],
+    "pip_packages": []
+  },
+  "home-assistant": {
+    "repository": "weewx-packages/weewx-home-assistant",
+    "ref": "ea84f7aff9ba0c3d6f69bd71d107fab7a7a220d0",
+    "imports": [
+      "user.weewx_ha"
+    ],
+    "allowed_skips": [
+      "this is not a release"
+    ],
+    "pip_packages": [
+      "paho-mqtt>=2,<3",
+      "pydantic>=2.7"
+    ]
+  },
+  "brultech": {
+    "repository": "weewx-packages/weewx-brultech",
+    "ref": "a7e7b95b8031e202961078687e2d74fe834a50d7",
+    "imports": [
+      "user.brultech",
+      "user.gem_schema"
+    ],
+    "allowed_skips": [],
+    "pip_packages": []
   }
 }

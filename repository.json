@@ -3538,6 +3538,345 @@
           "restart_required": true
         }
       ]
+    },
+    {
+      "id": "realtime-gauge-data",
+      "installer_name": "Rtgd",
+      "name": "weewx-realtime_gauge-data",
+      "description": "Near real time data for the SteelSeries Weather Gauges.",
+      "types": [
+        "service"
+      ],
+      "category": "other",
+      "homepage": "https://github.com/weewx-packages/weewx-realtime_gauge-data",
+      "releases": [
+        {
+          "version": "0.6.7.post1",
+          "requires_python": ">=3.10,<3.15",
+          "archive": {
+            "url": "https://github.com/weewx-packages/catalog/releases/download/realtime-gauge-data/v0.6.7.post1/realtime-gauge-data-0.6.7.post1.tar.gz",
+            "format": "tar.gz",
+            "sha256": "bdd169b50e48bc938b366ae8bba2bdcce64a1ee926947fec3a36226d59148618"
+          },
+          "requires_weewx": ">=5.5.2,<6",
+          "restart_required": true
+        }
+      ]
+    },
+    {
+      "id": "stackedwindrose26",
+      "installer_name": "weewx-stackedwindrose26",
+      "name": "weewx-stackedwindrose26",
+      "description": "Stacked wind rose for WeeWX 5, drawn in the browser with D3.",
+      "types": [
+        "skin"
+      ],
+      "category": "skin",
+      "homepage": "https://github.com/weewx-packages/weewx-stackedwindrose26",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "requires_python": ">=3.10,<3.15",
+          "archive": {
+            "url": "https://github.com/weewx-packages/catalog/releases/download/stackedwindrose26/v1.0.0/stackedwindrose26-1.0.0.tar.gz",
+            "format": "tar.gz",
+            "sha256": "bee100198a1f50d29ed42d89110ebe1364271e454f5f4062b1ecf3e47421cd06"
+          },
+          "requires_weewx": ">=5.5.2,<6",
+          "restart_required": true
+        }
+      ]
+    },
+    {
+      "id": "data-ingest",
+      "installer_name": "dataingest",
+      "name": "weewx-data-ingest",
+      "description": "Inject data from external JSON, XML or text files into the archive.",
+      "types": [
+        "service"
+      ],
+      "category": "other",
+      "homepage": "https://github.com/weewx-packages/weewx-data-ingest",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "requires_python": ">=3.10,<3.15",
+          "archive": {
+            "url": "https://github.com/weewx-packages/catalog/releases/download/data-ingest/v1.0.0/data-ingest-1.0.0.tar.gz",
+            "format": "tar.gz",
+            "sha256": "89a7acd59cbc0133fa2780a53d5d4336b19d06815ca5a28155ec828e85e80944"
+          },
+          "requires_weewx": ">=5.5.2,<6",
+          "restart_required": true
+        }
+      ]
+    },
+    {
+      "id": "mqtt-replicate",
+      "installer_name": "MQTTReplicate",
+      "name": "weewx-mqtt-replicate",
+      "description": "Replicate WeeWX databases over MQTT 5 request and response.",
+      "types": [
+        "driver",
+        "service"
+      ],
+      "category": "other",
+      "homepage": "https://github.com/weewx-packages/weewx-mqtt-replicate",
+      "releases": [
+        {
+          "version": "1.0.0rc3.post3",
+          "requires_python": ">=3.10,<3.15",
+          "archive": {
+            "url": "https://github.com/weewx-packages/catalog/releases/download/mqtt-replicate/v1.0.0rc3.post3/mqtt-replicate-1.0.0rc3.post3.tar.gz",
+            "format": "tar.gz",
+            "sha256": "d7ad6ba520f6bffeeac0ef9a2cf81750a9f957a98ced7798f62623a91f30589b"
+          },
+          "requires_weewx": ">=5.5.2,<6",
+          "restart_required": true
+        }
+      ]
+    },
+    {
+      "id": "mqtt-loopdata",
+      "installer_name": "MQTTLoopData",
+      "name": "weewx-mqtt-plugin-loopdata",
+      "description": "MQTTPublish plugin that publishes weewx-loopdata observations.",
+      "types": [
+        "skin",
+        "service"
+      ],
+      "category": "other",
+      "homepage": "https://github.com/weewx-packages/weewx-mqtt-plugin-loopdata",
+      "releases": [
+        {
+          "version": "0.1.0rc1",
+          "requires_python": ">=3.10,<3.15",
+          "archive": {
+            "url": "https://github.com/weewx-packages/catalog/releases/download/mqtt-loopdata/v0.1.0rc1/mqtt-loopdata-0.1.0rc1.tar.gz",
+            "format": "tar.gz",
+            "sha256": "accbd3301aa052fc1b174cefeec7eae6fbd8b754c5e7c3377c29a553fd013024"
+          },
+          "requires_weewx": ">=5.5.2,<6",
+          "restart_required": true
+        }
+      ]
+    },
+    {
+      "id": "ecowitt-local-http",
+      "installer_name": "Ecowitt_HTTP",
+      "name": "weewx-ecowitt_local_http",
+      "description": "Driver for devices that support the Ecowitt local HTTP API.",
+      "types": [
+        "driver"
+      ],
+      "category": "driver",
+      "homepage": "https://github.com/weewx-packages/weewx-ecowitt_local_http",
+      "releases": [
+        {
+          "version": "0.1.0a28",
+          "requires_python": ">=3.10,<3.15",
+          "archive": {
+            "url": "https://github.com/weewx-packages/catalog/releases/download/ecowitt-local-http/v0.1.0a28/ecowitt-local-http-0.1.0a28.tar.gz",
+            "format": "tar.gz",
+            "sha256": "14c8cdbc92d8cb64ab1c03a809387f1f625b35819fefbab044956c862603649f"
+          },
+          "requires_weewx": ">=5.5.2,<6",
+          "restart_required": true
+        }
+      ]
+    },
+    {
+      "id": "cloud-coverage",
+      "installer_name": "cloudcoverage",
+      "name": "weewx-Cloud_coverage",
+      "description": "Estimate cloud coverage from a region of a sky camera image.",
+      "types": [
+        "service"
+      ],
+      "category": "other",
+      "homepage": "https://github.com/weewx-packages/weewx-Cloud_coverage",
+      "releases": [
+        {
+          "version": "1.0",
+          "requires_python": ">=3.10,<3.15",
+          "archive": {
+            "url": "https://github.com/weewx-packages/catalog/releases/download/cloud-coverage/v1.0/cloud-coverage-1.0.tar.gz",
+            "format": "tar.gz",
+            "sha256": "51f0fadd4f1e49bedbb78c83ffcc6db26c1a72d9313f6bd5f153399dea4431d5"
+          },
+          "requires_weewx": ">=5.5.2,<6",
+          "restart_required": true
+        }
+      ]
+    },
+    {
+      "id": "stackedwindrose",
+      "installer_name": "StackedWindRose",
+      "name": "weewx-stackedwindrose",
+      "description": "Stacked wind rose image generator for WeeWX.",
+      "types": [
+        "skin"
+      ],
+      "category": "skin",
+      "homepage": "https://github.com/weewx-packages/weewx-stackedwindrose",
+      "releases": [
+        {
+          "version": "3.2.0",
+          "requires_python": ">=3.10,<3.15",
+          "archive": {
+            "url": "https://github.com/weewx-packages/catalog/releases/download/stackedwindrose/v3.2.0/stackedwindrose-3.2.0.tar.gz",
+            "format": "tar.gz",
+            "sha256": "4ac696bf6e7d0f3063ced19a358530b1ee4cc2769048e164e0a51da4d8fbdcba"
+          },
+          "requires_weewx": ">=5.5.2,<6",
+          "restart_required": true
+        }
+      ]
+    },
+    {
+      "id": "temperaturnu",
+      "installer_name": "temperaturnu",
+      "name": "weewx-temperaturnu",
+      "description": "Upload outdoor temperature to temperatur.nu.",
+      "types": [
+        "service"
+      ],
+      "category": "uploader",
+      "homepage": "https://github.com/weewx-packages/weewx-temperaturnu",
+      "releases": [
+        {
+          "version": "0.2",
+          "requires_python": ">=3.10,<3.15",
+          "archive": {
+            "url": "https://github.com/weewx-packages/catalog/releases/download/temperaturnu/v0.2/temperaturnu-0.2.tar.gz",
+            "format": "tar.gz",
+            "sha256": "c648924f1009cfd81e4a614be85d79cfabf66a9befa3e11a4f5194c3b6646422"
+          },
+          "requires_weewx": ">=5.5.2,<6",
+          "restart_required": true
+        }
+      ]
+    },
+    {
+      "id": "hubitat",
+      "installer_name": "hubitat",
+      "name": "weewx-hubitat",
+      "description": "Post observations to a Hubitat hub.",
+      "types": [
+        "service"
+      ],
+      "category": "uploader",
+      "homepage": "https://github.com/weewx-packages/weewx-hubitat",
+      "releases": [
+        {
+          "version": "1.1",
+          "requires_python": ">=3.10,<3.15",
+          "archive": {
+            "url": "https://github.com/weewx-packages/catalog/releases/download/hubitat/v1.1/hubitat-1.1.tar.gz",
+            "format": "tar.gz",
+            "sha256": "1d33ae1f1085fc97293a033df57ac78f7058e1da86936fc4d846bfec555cd830"
+          },
+          "requires_weewx": ">=5.5.2,<6",
+          "restart_required": true
+        }
+      ]
+    },
+    {
+      "id": "xcumulative",
+      "installer_name": "XCumulative",
+      "name": "weewx-xcumulative",
+      "description": "XType for cumulative series such as rain since a reset time.",
+      "types": [
+        "service"
+      ],
+      "category": "other",
+      "homepage": "https://github.com/weewx-packages/weewx-xcumulative",
+      "releases": [
+        {
+          "version": "0.1.1",
+          "requires_python": ">=3.10,<3.15",
+          "archive": {
+            "url": "https://github.com/weewx-packages/catalog/releases/download/xcumulative/v0.1.1/xcumulative-0.1.1.tar.gz",
+            "format": "tar.gz",
+            "sha256": "440e8368df74d7e14c4ffe656c0d271812db061aff47c7cfd4c2d3e89f75d02e"
+          },
+          "requires_weewx": ">=5.5.2,<6",
+          "restart_required": true
+        }
+      ]
+    },
+    {
+      "id": "time-since",
+      "installer_name": "time_since",
+      "name": "weewx-time_since",
+      "description": "Search list extension: time since an SQL condition last held.",
+      "types": [
+        "search-list"
+      ],
+      "category": "other",
+      "homepage": "https://github.com/weewx-packages/weewx-time_since",
+      "releases": [
+        {
+          "version": "1.0.1",
+          "requires_python": ">=3.10,<3.15",
+          "archive": {
+            "url": "https://github.com/weewx-packages/catalog/releases/download/time-since/v1.0.1/time-since-1.0.1.tar.gz",
+            "format": "tar.gz",
+            "sha256": "9b3491c878453ec4c98c745421f5bb406940d123cf7684462c273b0733f4769c"
+          },
+          "requires_weewx": ">=5.5.2,<6",
+          "restart_required": true
+        }
+      ]
+    },
+    {
+      "id": "home-assistant",
+      "installer_name": "home-assistant",
+      "name": "weewx-home-assistant",
+      "description": "Publish WeeWX observations to Home Assistant over MQTT discovery.",
+      "types": [
+        "service"
+      ],
+      "category": "other",
+      "homepage": "https://github.com/weewx-packages/weewx-home-assistant",
+      "releases": [
+        {
+          "version": "1.1.0",
+          "requires_python": ">=3.10,<3.15",
+          "archive": {
+            "url": "https://github.com/weewx-packages/catalog/releases/download/home-assistant/v1.1.0/home-assistant-1.1.0.tar.gz",
+            "format": "tar.gz",
+            "sha256": "7cfdb07376004efc276156efa1a870c86784dca7254c4ad7c1d491701b2eb6a1"
+          },
+          "requires_weewx": ">=5.5.2,<6",
+          "restart_required": true
+        }
+      ]
+    },
+    {
+      "id": "brultech",
+      "installer_name": "weewx-brultech",
+      "name": "weewx-brultech",
+      "description": "Driver and Seasons-style power skin for Brultech GEM and ECM energy monitors.",
+      "types": [
+        "driver",
+        "skin"
+      ],
+      "category": "driver",
+      "homepage": "https://github.com/weewx-packages/weewx-brultech",
+      "releases": [
+        {
+          "version": "2.3.0",
+          "requires_python": ">=3.10,<3.15",
+          "archive": {
+            "url": "https://github.com/weewx-packages/catalog/releases/download/brultech/v2.3.0/brultech-2.3.0.tar.gz",
+            "format": "tar.gz",
+            "sha256": "8abe92981d5311d8fea6c3e944a58278a466a8903bfb12a098d21b551206e705"
+          },
+          "requires_weewx": ">=5.5.2,<6",
+          "restart_required": true
+        }
+      ]
     }
   ]
 }
