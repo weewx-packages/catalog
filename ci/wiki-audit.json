@@ -16121,5 +16121,871 @@
       },
       "successor": []
     }
-  ]
+  ],
+  "group_additions": {
+    "review_date": "2026-10-23",
+    "source": "weewx-user Google Group and the weewx-contrib organization; neither is listed in the wiki snapshot",
+    "rule": "Actively maintained projects are mirrored and packaged by the upstream workflow. Orphaned projects become independent continuations.",
+    "entries": [
+      {
+        "name": "realtime_gauge-data",
+        "source": "https://github.com/weewx-contrib/weewx-realtime_gauge-data",
+        "reviewed_revision": "df86d26a6d82c247c40b1b1f5c9a1f87e1d28b27",
+        "last_commit": "2026-08-18T23:38:14Z",
+        "decision": "fork_created",
+        "reason": "Aktiv gepflegte Fortführung in weewx-contrib (Commit August 2026), leerer Tracker. Original von gjr80 ist gelöscht, der hoetzgit-Fork archiviert. Enthält OpenSans-TTF ohne Lizenztext; vor einem Katalog-Release klären.",
+        "fork": "https://github.com/weewx-packages/weewx-realtime_gauge-data",
+        "license": {
+          "spdx": "GPL-3.0-only (LICENSE); GPL-2.0-or-later (installer header)",
+          "evidence": [
+            "https://github.com/weewx-contrib/weewx-realtime_gauge-data/blob/df86d26a6d82c247c40b1b1f5c9a1f87e1d28b27/LICENSE",
+            "https://github.com/weewx-contrib/weewx-realtime_gauge-data/blob/df86d26a6d82c247c40b1b1f5c9a1f87e1d28b27/install.py",
+            "https://github.com/weewx-contrib/weewx-realtime_gauge-data/blob/df86d26a6d82c247c40b1b1f5c9a1f87e1d28b27/bin/user/rtgd.py"
+          ],
+          "obligations": [
+            "Copyright-, Lizenz- und Haftungshinweise vollständig erhalten; Quelltext und vorhandene Lizenztexte unverändert erhalten.",
+            "Unterlizenzen von eingebetteten Bibliotheken, Fonts, Bildern und Daten gelten zusätzlich."
+          ],
+          "component_terms": []
+        },
+        "tracker": {
+          "issues": null,
+          "pull_requests": null,
+          "open_items": []
+        },
+        "mode": "mirror"
+      },
+      {
+        "name": "stackedwindrose26",
+        "source": "https://github.com/Millardiang/weewx-stackedwindrose26",
+        "reviewed_revision": "e626d53d446ebc35b365a9665d9b2cc10e851672",
+        "last_commit": "2026-10-02T21:21:22Z",
+        "decision": "fork_created",
+        "reason": "Aktiv gepflegt (Oktober 2026), leerer Tracker. D3 (ISC) liegt mit Lizenzdatei bei. Neufassung der Windrose, die alte Variante ist getrennt erfasst.",
+        "fork": "https://github.com/weewx-packages/weewx-stackedwindrose26",
+        "license": {
+          "spdx": "GPL-3.0-or-later",
+          "evidence": [
+            "https://github.com/Millardiang/weewx-stackedwindrose26/blob/e626d53d446ebc35b365a9665d9b2cc10e851672/LICENSE",
+            "https://github.com/Millardiang/weewx-stackedwindrose26/blob/e626d53d446ebc35b365a9665d9b2cc10e851672/bin/user/stackedwindrose26.py",
+            "https://github.com/Millardiang/weewx-stackedwindrose26/blob/e626d53d446ebc35b365a9665d9b2cc10e851672/install.py"
+          ],
+          "obligations": [
+            "Copyright-, Lizenz- und Haftungshinweise vollständig erhalten; Quelltext und vorhandene Lizenztexte unverändert erhalten.",
+            "Unterlizenzen von eingebetteten Bibliotheken, Fonts, Bildern und Daten gelten zusätzlich."
+          ],
+          "component_terms": []
+        },
+        "tracker": {
+          "issues": 0,
+          "pull_requests": 0,
+          "open_items": []
+        },
+        "mode": "mirror"
+      },
+      {
+        "name": "data-ingest",
+        "source": "https://github.com/Millardiang/weewx-data-ingest",
+        "reviewed_revision": "bce4c677fcb2285a7f76cba114fa916792122e7b",
+        "last_commit": "2026-10-21T10:13:02Z",
+        "decision": "fork_created",
+        "reason": "Aktiv gepflegt (Oktober 2026), leerer Tracker, mit Tests.",
+        "fork": "https://github.com/weewx-packages/weewx-data-ingest",
+        "license": {
+          "spdx": "GPL-3.0-only",
+          "evidence": [
+            "https://github.com/Millardiang/weewx-data-ingest/blob/bce4c677fcb2285a7f76cba114fa916792122e7b/LICENSE",
+            "https://github.com/Millardiang/weewx-data-ingest/blob/bce4c677fcb2285a7f76cba114fa916792122e7b/bin/user/dataingest.py",
+            "https://github.com/Millardiang/weewx-data-ingest/blob/bce4c677fcb2285a7f76cba114fa916792122e7b/install.py"
+          ],
+          "obligations": [
+            "Copyright-, Lizenz- und Haftungshinweise vollständig erhalten; Quelltext und vorhandene Lizenztexte unverändert erhalten.",
+            "Unterlizenzen von eingebetteten Bibliotheken, Fonts, Bildern und Daten gelten zusätzlich."
+          ],
+          "component_terms": []
+        },
+        "tracker": {
+          "issues": 0,
+          "pull_requests": 0,
+          "open_items": []
+        },
+        "mode": "mirror"
+      },
+      {
+        "name": "mqtt-replicate",
+        "source": "https://github.com/weewx-mqtt/replicate",
+        "reviewed_revision": "4a9daf090b8cad85273759d6381d9041947d7da6",
+        "last_commit": "2026-10-19T19:48:37Z",
+        "decision": "fork_created",
+        "reason": "Aktiv gepflegt (Oktober 2026) von der Organisation weewx-mqtt, die auch MQTTPublish betreut. Acht offene Punkte, der Maintainer antwortet.",
+        "fork": "https://github.com/weewx-packages/weewx-mqtt-replicate",
+        "license": {
+          "spdx": "GPL-3.0-only",
+          "evidence": [
+            "https://github.com/weewx-mqtt/replicate/blob/4a9daf090b8cad85273759d6381d9041947d7da6/LICENSE",
+            "https://github.com/weewx-mqtt/replicate/blob/4a9daf090b8cad85273759d6381d9041947d7da6/install.py",
+            "https://github.com/weewx-mqtt/replicate/blob/4a9daf090b8cad85273759d6381d9041947d7da6/bin/user/mqttreplicate.py"
+          ],
+          "obligations": [
+            "Copyright-, Lizenz- und Haftungshinweise vollständig erhalten; Quelltext und vorhandene Lizenztexte unverändert erhalten.",
+            "Unterlizenzen von eingebetteten Bibliotheken, Fonts, Bildern und Daten gelten zusätzlich."
+          ],
+          "component_terms": []
+        },
+        "tracker": {
+          "issues": 8,
+          "pull_requests": 0,
+          "open_items": [
+            {
+              "number": 18,
+              "type": "issue",
+              "url": "https://github.com/weewx-mqtt/replicate/issues/18",
+              "title": "When querying for catchup data, add ability to limit number of records",
+              "created_at": "2026-03-03T13:21:05Z",
+              "updated_at": "2026-03-03T13:21:05Z"
+            },
+            {
+              "number": 17,
+              "type": "issue",
+              "url": "https://github.com/weewx-mqtt/replicate/issues/17",
+              "title": "Add a final ‘metadata’ message that is returned when processing catchup records",
+              "created_at": "2026-03-03T13:17:11Z",
+              "updated_at": "2026-03-03T13:17:11Z"
+            },
+            {
+              "number": 16,
+              "type": "issue",
+              "url": "https://github.com/weewx-mqtt/replicate/issues/16",
+              "title": "Rework requester's processing of 'catchup' data",
+              "created_at": "2026-03-02T12:48:19Z",
+              "updated_at": "2026-03-02T12:48:19Z"
+            },
+            {
+              "number": 14,
+              "type": "issue",
+              "url": "https://github.com/weewx-mqtt/replicate/issues/14",
+              "title": "Handle large number of records when performing catchup",
+              "created_at": "2026-03-01T16:53:36Z",
+              "updated_at": "2026-03-02T15:25:38Z"
+            },
+            {
+              "number": 7,
+              "type": "issue",
+              "url": "https://github.com/weewx-mqtt/replicate/issues/7",
+              "title": "Support tls and other missing MQTT options",
+              "created_at": "2026-02-22T16:40:25Z",
+              "updated_at": "2026-02-22T16:40:25Z"
+            },
+            {
+              "number": 5,
+              "type": "issue",
+              "url": "https://github.com/weewx-mqtt/replicate/issues/5",
+              "title": "Create utilities to run standalone",
+              "created_at": "2026-02-22T14:27:06Z",
+              "updated_at": "2026-02-28T20:54:41Z"
+            },
+            {
+              "number": 4,
+              "type": "issue",
+              "url": "https://github.com/weewx-mqtt/replicate/issues/4",
+              "title": "Support renaming and replicating a subset of database fields",
+              "created_at": "2026-02-22T14:25:55Z",
+              "updated_at": "2026-02-22T14:25:55Z"
+            },
+            {
+              "number": 1,
+              "type": "issue",
+              "url": "https://github.com/weewx-mqtt/replicate/issues/1",
+              "title": "Implement my own threadpool",
+              "created_at": "2025-09-21T20:17:09Z",
+              "updated_at": "2025-09-21T20:17:09Z"
+            }
+          ]
+        },
+        "mode": "mirror"
+      },
+      {
+        "name": "mqtt-plugin-loopdata",
+        "source": "https://github.com/weewx-mqtt/plugin-loopdata",
+        "reviewed_revision": "0a51c8678d666eee43ad6a22ee0d9af9c67b8282",
+        "last_commit": "2026-10-22T18:46:15Z",
+        "decision": "fork_created",
+        "reason": "Aktiv gepflegt (Oktober 2026), leerer Tracker. Verbindet MQTTPublish mit weewx-loopdata.",
+        "fork": "https://github.com/weewx-packages/weewx-mqtt-plugin-loopdata",
+        "license": {
+          "spdx": "GPL-3.0-only",
+          "evidence": [
+            "https://github.com/weewx-mqtt/plugin-loopdata/blob/0a51c8678d666eee43ad6a22ee0d9af9c67b8282/LICENSE",
+            "https://github.com/weewx-mqtt/plugin-loopdata/blob/0a51c8678d666eee43ad6a22ee0d9af9c67b8282/install.py",
+            "https://github.com/weewx-mqtt/plugin-loopdata/blob/0a51c8678d666eee43ad6a22ee0d9af9c67b8282/bin/user/mqttloopdata.py"
+          ],
+          "obligations": [
+            "Copyright-, Lizenz- und Haftungshinweise vollständig erhalten; Quelltext und vorhandene Lizenztexte unverändert erhalten.",
+            "Unterlizenzen von eingebetteten Bibliotheken, Fonts, Bildern und Daten gelten zusätzlich."
+          ],
+          "component_terms": []
+        },
+        "tracker": {
+          "issues": 0,
+          "pull_requests": 0,
+          "open_items": []
+        },
+        "mode": "mirror"
+      },
+      {
+        "name": "sds011-mqtt",
+        "source": "https://github.com/weewx-contrib/sds011-mqtt",
+        "reviewed_revision": "49a166db0fe5527faf4abfb38d7b03a3b95f0532",
+        "last_commit": "2026-01-02T22:17:24Z",
+        "decision": "fork_created",
+        "reason": "Gepflegt in weewx-contrib, Skript ohne Installer. Nur als Quelle gesichert.",
+        "fork": "https://github.com/weewx-packages/weewx-sds011-mqtt",
+        "license": {
+          "spdx": "GPL-3.0-only",
+          "evidence": [
+            "https://github.com/weewx-contrib/sds011-mqtt/blob/49a166db0fe5527faf4abfb38d7b03a3b95f0532/LICENSE",
+            "https://github.com/weewx-contrib/sds011-mqtt/blob/49a166db0fe5527faf4abfb38d7b03a3b95f0532/README.md",
+            "https://github.com/weewx-contrib/sds011-mqtt/blob/49a166db0fe5527faf4abfb38d7b03a3b95f0532/sds011.py"
+          ],
+          "obligations": [
+            "Copyright-, Lizenz- und Haftungshinweise vollständig erhalten; Quelltext und vorhandene Lizenztexte unverändert erhalten.",
+            "Unterlizenzen von eingebetteten Bibliotheken, Fonts, Bildern und Daten gelten zusätzlich."
+          ],
+          "component_terms": []
+        },
+        "tracker": {
+          "issues": 0,
+          "pull_requests": 0,
+          "open_items": []
+        },
+        "mode": "mirror"
+      },
+      {
+        "name": "ecowitt_local_http",
+        "source": "https://github.com/weewx-contrib/weewx-ecowitt_local_http",
+        "reviewed_revision": "6876b2ecbab88f825dde1b0b7c5874cb5fd3c25e",
+        "last_commit": "2026-01-02T22:02:58Z",
+        "decision": "fork_created",
+        "reason": "In weewx-contrib weitergepflegt (Februar 2026) und in der Gruppe noch im Einsatz. Der Autor nennt weewx-ecowittGateway als Ersatz. Beide bleiben im Bestand.",
+        "fork": "https://github.com/weewx-packages/weewx-ecowitt_local_http",
+        "license": {
+          "spdx": "GPL-3.0-only (LICENSE); GPL-2.0-or-later (installer header)",
+          "evidence": [
+            "https://github.com/weewx-contrib/weewx-ecowitt_local_http/blob/6876b2ecbab88f825dde1b0b7c5874cb5fd3c25e/LICENSE",
+            "https://github.com/weewx-contrib/weewx-ecowitt_local_http/blob/6876b2ecbab88f825dde1b0b7c5874cb5fd3c25e/install.py",
+            "https://github.com/weewx-contrib/weewx-ecowitt_local_http/blob/6876b2ecbab88f825dde1b0b7c5874cb5fd3c25e/bin/user/ecowitt_http.py"
+          ],
+          "obligations": [
+            "Copyright-, Lizenz- und Haftungshinweise vollständig erhalten; Quelltext und vorhandene Lizenztexte unverändert erhalten.",
+            "Unterlizenzen von eingebetteten Bibliotheken, Fonts, Bildern und Daten gelten zusätzlich."
+          ],
+          "component_terms": []
+        },
+        "tracker": {
+          "issues": null,
+          "pull_requests": null,
+          "open_items": []
+        },
+        "mode": "mirror"
+      },
+      {
+        "name": "gw1000",
+        "source": "https://github.com/weewx-contrib/weewx-gw1000",
+        "reviewed_revision": "a01a4b47ce3b39fab39d4e364f1f9ac1324cb89c",
+        "last_commit": "2026-01-02T21:58:01Z",
+        "decision": "fork_created",
+        "reason": "In weewx-contrib weitergepflegt (Januar 2026). Frühere Entscheidung skip_superseded wird auf Nutzerwunsch vom 23.10.2026 aufgehoben, weil Stationen den Treiber weiter einsetzen. weewx-ecowittGateway bleibt der empfohlene Nachfolger.",
+        "fork": "https://github.com/weewx-packages/weewx-gw1000",
+        "license": {
+          "spdx": "GPL-3.0-only (LICENSE); GPL-2.0-or-later (installer header)",
+          "evidence": [
+            "https://github.com/weewx-contrib/weewx-gw1000/blob/a01a4b47ce3b39fab39d4e364f1f9ac1324cb89c/LICENSE",
+            "https://github.com/weewx-contrib/weewx-gw1000/blob/a01a4b47ce3b39fab39d4e364f1f9ac1324cb89c/install.py",
+            "https://github.com/weewx-contrib/weewx-gw1000/blob/a01a4b47ce3b39fab39d4e364f1f9ac1324cb89c/bin/user/gw1000.py"
+          ],
+          "obligations": [
+            "Copyright-, Lizenz- und Haftungshinweise vollständig erhalten; Quelltext und vorhandene Lizenztexte unverändert erhalten.",
+            "Unterlizenzen von eingebetteten Bibliotheken, Fonts, Bildern und Daten gelten zusätzlich."
+          ],
+          "component_terms": []
+        },
+        "tracker": {
+          "issues": null,
+          "pull_requests": null,
+          "open_items": []
+        },
+        "mode": "mirror"
+      },
+      {
+        "name": "dark",
+        "source": "https://github.com/dieseld23/weewx-dark",
+        "reviewed_revision": "2af6d5ed4c3aebe22ee6cf96a0ddf645f63c5ee2",
+        "last_commit": "2026-10-13T22:25:56Z",
+        "decision": "fork_created",
+        "reason": "Neu in der Gruppe angekündigt (14.10.2026), aktiv, MIT. THIRD-PARTY-NOTICES.md benennt mitgelieferte Bootstrap-, Chart.js- und Font-Awesome-Dateien. Kein Python-Installer, nur ein Shell-Installer.",
+        "fork": "https://github.com/weewx-packages/weewx-dark",
+        "license": {
+          "spdx": "MIT",
+          "evidence": [
+            "https://github.com/dieseld23/weewx-dark/blob/2af6d5ed4c3aebe22ee6cf96a0ddf645f63c5ee2/LICENSE",
+            "https://github.com/dieseld23/weewx-dark/blob/2af6d5ed4c3aebe22ee6cf96a0ddf645f63c5ee2/THIRD-PARTY-NOTICES.md",
+            "https://github.com/dieseld23/weewx-dark/blob/2af6d5ed4c3aebe22ee6cf96a0ddf645f63c5ee2/README.md"
+          ],
+          "obligations": [
+            "Copyright-, Lizenz- und Haftungshinweise vollständig erhalten; Quelltext und vorhandene Lizenztexte unverändert erhalten.",
+            "Unterlizenzen von eingebetteten Bibliotheken, Fonts, Bildern und Daten gelten zusätzlich."
+          ],
+          "component_terms": []
+        },
+        "tracker": {
+          "issues": 0,
+          "pull_requests": 0,
+          "open_items": []
+        },
+        "mode": "mirror"
+      },
+      {
+        "name": "extras",
+        "source": "https://github.com/bellrichm/WeeWX-Extras",
+        "reviewed_revision": "d59b79b3a66e87cf74dace53c57dfc12879d79bd",
+        "last_commit": "2026-10-03T11:40:12Z",
+        "decision": "fork_created",
+        "reason": "Aktiv gepflegte Sammlung kleiner Erweiterungen von Rich Bell (Oktober 2026). Kein Installer für das Gesamtpaket.",
+        "fork": "https://github.com/weewx-packages/weewx-extras",
+        "license": {
+          "spdx": "GPL-3.0-only",
+          "evidence": [
+            "https://github.com/bellrichm/WeeWX-Extras/blob/d59b79b3a66e87cf74dace53c57dfc12879d79bd/LICENSE",
+            "https://github.com/bellrichm/WeeWX-Extras/blob/d59b79b3a66e87cf74dace53c57dfc12879d79bd/bin/user/s3upload.py"
+          ],
+          "obligations": [
+            "Copyright-, Lizenz- und Haftungshinweise vollständig erhalten; Quelltext und vorhandene Lizenztexte unverändert erhalten.",
+            "Unterlizenzen von eingebetteten Bibliotheken, Fonts, Bildern und Daten gelten zusätzlich."
+          ],
+          "component_terms": []
+        },
+        "tracker": {
+          "issues": 3,
+          "pull_requests": 0,
+          "open_items": [
+            {
+              "number": 4,
+              "type": "issue",
+              "url": "https://github.com/bellrichm/WeeWX-Extras/issues/4",
+              "title": "[observationtime] Support a configurable dateTime field",
+              "created_at": "2024-09-19T19:03:25Z",
+              "updated_at": "2024-09-19T19:04:38Z"
+            },
+            {
+              "number": 3,
+              "type": "issue",
+              "url": "https://github.com/bellrichm/WeeWX-Extras/issues/3",
+              "title": "[observationtime] 'Caught' values and times bleed into next archive record",
+              "created_at": "2024-09-19T14:37:25Z",
+              "updated_at": "2024-09-23T19:20:05Z"
+            },
+            {
+              "number": 2,
+              "type": "issue",
+              "url": "https://github.com/bellrichm/WeeWX-Extras/issues/2",
+              "title": "Update field cache to support loop data",
+              "created_at": "2022-06-17T15:28:43Z",
+              "updated_at": "2022-06-17T15:29:02Z"
+            }
+          ]
+        },
+        "mode": "mirror"
+      },
+      {
+        "name": "utilities",
+        "source": "https://github.com/CameronD73/weewx-utilities",
+        "reviewed_revision": "f48d1974d91284b5f99008e7519909525bfeb0a0",
+        "last_commit": "2025-10-03T05:02:33Z",
+        "decision": "fork_created",
+        "reason": "Sammlung von Cameron D mit geändertem GW1000-Treiber und Seasons-Varianten (letzter Commit Oktober 2025, leerer Tracker). Kein Installer. Seasons-Schriften ohne eigene Lizenzdatei.",
+        "fork": "https://github.com/weewx-packages/weewx-utilities",
+        "license": {
+          "spdx": "GPL-3.0-only",
+          "evidence": [
+            "https://github.com/CameronD73/weewx-utilities/blob/f48d1974d91284b5f99008e7519909525bfeb0a0/LICENSE",
+            "https://github.com/CameronD73/weewx-utilities/blob/f48d1974d91284b5f99008e7519909525bfeb0a0/README.md",
+            "https://github.com/CameronD73/weewx-utilities/blob/f48d1974d91284b5f99008e7519909525bfeb0a0/drivers/gw1000/gw1000.py"
+          ],
+          "obligations": [
+            "Copyright-, Lizenz- und Haftungshinweise vollständig erhalten; Quelltext und vorhandene Lizenztexte unverändert erhalten.",
+            "Unterlizenzen von eingebetteten Bibliotheken, Fonts, Bildern und Daten gelten zusätzlich."
+          ],
+          "component_terms": []
+        },
+        "tracker": {
+          "issues": 0,
+          "pull_requests": 0,
+          "open_items": []
+        },
+        "mode": "mirror"
+      },
+      {
+        "name": "taptap",
+        "source": "https://github.com/matthewwall/weewx-taptap",
+        "reviewed_revision": "6d4631e7767266b7b5d2aeaaf0c6d0b45752f3ed",
+        "last_commit": "2026-09-06T18:01:54Z",
+        "decision": "fork_created",
+        "reason": "Aktiv gepflegt von Matthew Wall (September 2026), leerer Tracker. Tigo-Optimizer über taptap, in der Gruppe im Einsatz. Hardware nicht geprüft.",
+        "fork": "https://github.com/weewx-packages/weewx-taptap",
+        "license": {
+          "spdx": "GPL-3.0-only (license file and source header)",
+          "evidence": [
+            "https://github.com/matthewwall/weewx-taptap/blob/6d4631e7767266b7b5d2aeaaf0c6d0b45752f3ed/license",
+            "https://github.com/matthewwall/weewx-taptap/blob/6d4631e7767266b7b5d2aeaaf0c6d0b45752f3ed/install.py",
+            "https://github.com/matthewwall/weewx-taptap/blob/6d4631e7767266b7b5d2aeaaf0c6d0b45752f3ed/bin/user/tigo.py"
+          ],
+          "obligations": [
+            "Copyright-, Lizenz- und Haftungshinweise vollständig erhalten; Quelltext und vorhandene Lizenztexte unverändert erhalten.",
+            "Unterlizenzen von eingebetteten Bibliotheken, Fonts, Bildern und Daten gelten zusätzlich."
+          ],
+          "component_terms": []
+        },
+        "tracker": {
+          "issues": 0,
+          "pull_requests": 0,
+          "open_items": []
+        },
+        "mode": "mirror"
+      },
+      {
+        "name": "Cloud_coverage",
+        "source": "https://github.com/Millardiang/weewx-Cloud_coverage",
+        "reviewed_revision": "e893a7ec7b162b96013ccaa01eebe060adcafc8e",
+        "last_commit": "2026-08-31T14:38:34Z",
+        "decision": "fork_created",
+        "reason": "Aktiv gepflegt (August 2026), leerer Tracker. Schätzt Bewölkung aus einem Himmelsbild.",
+        "fork": "https://github.com/weewx-packages/weewx-Cloud_coverage",
+        "license": {
+          "spdx": "GPL-3.0-only (LICENSE file and source header)",
+          "evidence": [
+            "https://github.com/Millardiang/weewx-Cloud_coverage/blob/e893a7ec7b162b96013ccaa01eebe060adcafc8e/LICENSE",
+            "https://github.com/Millardiang/weewx-Cloud_coverage/blob/e893a7ec7b162b96013ccaa01eebe060adcafc8e/bin/user/cloudcoverage.py",
+            "https://github.com/Millardiang/weewx-Cloud_coverage/blob/e893a7ec7b162b96013ccaa01eebe060adcafc8e/install.py"
+          ],
+          "obligations": [
+            "Copyright-, Lizenz- und Haftungshinweise vollständig erhalten; Quelltext und vorhandene Lizenztexte unverändert erhalten.",
+            "Unterlizenzen von eingebetteten Bibliotheken, Fonts, Bildern und Daten gelten zusätzlich."
+          ],
+          "component_terms": []
+        },
+        "tracker": {
+          "issues": 0,
+          "pull_requests": 0,
+          "open_items": []
+        },
+        "mode": "mirror"
+      },
+      {
+        "name": "Belchertown-MQTT-Cloudflare-Tunnel",
+        "source": "https://github.com/Millardiang/weewx-Belchertown-MQTT-Cloudflare-Tunnel",
+        "reviewed_revision": "d0d07c5c83ff6909e61f2e847f9da3247818915e",
+        "last_commit": "2026-06-12T22:41:01Z",
+        "decision": "fork_created",
+        "reason": "Dokumentation ohne Code (Juni 2026), GPL-3.0 in LICENSE. Nur als Quelle gesichert.",
+        "fork": "https://github.com/weewx-packages/weewx-Belchertown-MQTT-Cloudflare-Tunnel",
+        "license": {
+          "spdx": "GPL-3.0-only",
+          "evidence": [
+            "https://github.com/Millardiang/weewx-Belchertown-MQTT-Cloudflare-Tunnel/blob/d0d07c5c83ff6909e61f2e847f9da3247818915e/LICENSE",
+            "https://github.com/Millardiang/weewx-Belchertown-MQTT-Cloudflare-Tunnel/blob/d0d07c5c83ff6909e61f2e847f9da3247818915e/README.md"
+          ],
+          "obligations": [
+            "Copyright-, Lizenz- und Haftungshinweise vollständig erhalten; Quelltext und vorhandene Lizenztexte unverändert erhalten.",
+            "Unterlizenzen von eingebetteten Bibliotheken, Fonts, Bildern und Daten gelten zusätzlich."
+          ],
+          "component_terms": []
+        },
+        "tracker": {
+          "issues": 0,
+          "pull_requests": 0,
+          "open_items": []
+        },
+        "mode": "mirror"
+      },
+      {
+        "name": "stackedwindrose",
+        "source": "https://github.com/weewx-contrib/stackedwindrose-extension",
+        "reviewed_revision": "e955167c4e83297268c6e54c06130f95418da1d2",
+        "last_commit": "2026-08-18T22:26:41Z",
+        "decision": "fork_created",
+        "reason": "Aktiv gepflegt in weewx-contrib (v3.2.0, August 2026). Lizenzgrant steht im Quelltext (GPL-3.0 oder später), es gibt keine LICENSE-Datei. Der Lizenztext muss bei jeder Weitergabe mitgegeben werden.",
+        "fork": "https://github.com/weewx-packages/weewx-stackedwindrose",
+        "license": {
+          "spdx": "GPL-3.0-or-later (source header, no LICENSE file)",
+          "evidence": [
+            "https://github.com/weewx-contrib/stackedwindrose-extension/blob/e955167c4e83297268c6e54c06130f95418da1d2/bin/user/stackedwindrose.py",
+            "https://github.com/weewx-contrib/stackedwindrose-extension/blob/e955167c4e83297268c6e54c06130f95418da1d2/install.py",
+            "https://github.com/weewx-contrib/stackedwindrose-extension/blob/e955167c4e83297268c6e54c06130f95418da1d2/README.md"
+          ],
+          "obligations": [
+            "Copyright-, Lizenz- und Haftungshinweise vollständig erhalten; Quelltext und vorhandene Lizenztexte unverändert erhalten.",
+            "Unterlizenzen von eingebetteten Bibliotheken, Fonts, Bildern und Daten gelten zusätzlich."
+          ],
+          "component_terms": []
+        },
+        "tracker": {
+          "issues": 0,
+          "pull_requests": 0,
+          "open_items": []
+        },
+        "mode": "mirror"
+      },
+      {
+        "name": "brultech",
+        "source": "https://github.com/tkeffer/weewx-brultech",
+        "reviewed_revision": "81ffcba8d983b145f072d072245357cea3b117e1",
+        "last_commit": "2022-11-02T18:25:08Z",
+        "decision": "hard_fork_created",
+        "reason": "Letzter Commit 2022, zwei seit Jahren unbeantwortete Punkte. Autor ist Tom Keffer. Verwaist: Hard Fork, Python-3-Anpassung und Bearbeitung der offenen Punkte.",
+        "fork": "https://github.com/weewx-packages/weewx-brultech",
+        "license": {
+          "spdx": "GPL-3.0-only",
+          "evidence": [
+            "https://github.com/tkeffer/weewx-brultech/blob/81ffcba8d983b145f072d072245357cea3b117e1/LICENSE.txt",
+            "https://github.com/tkeffer/weewx-brultech/blob/81ffcba8d983b145f072d072245357cea3b117e1/install.py",
+            "https://github.com/tkeffer/weewx-brultech/blob/81ffcba8d983b145f072d072245357cea3b117e1/README.md"
+          ],
+          "obligations": [
+            "Copyright-, Lizenz- und Haftungshinweise vollständig erhalten; Quelltext und vorhandene Lizenztexte unverändert erhalten.",
+            "Unterlizenzen von eingebetteten Bibliotheken, Fonts, Bildern und Daten gelten zusätzlich."
+          ],
+          "component_terms": []
+        },
+        "tracker": {
+          "issues": 1,
+          "pull_requests": 1,
+          "open_items": [
+            {
+              "number": 3,
+              "type": "issue",
+              "url": "https://github.com/tkeffer/weewx-brultech/issues/3",
+              "title": "Handling old previous records",
+              "created_at": "2024-03-02T14:12:08Z",
+              "updated_at": "2024-03-11T21:28:17Z"
+            },
+            {
+              "number": 2,
+              "type": "pull_request",
+              "url": "https://github.com/tkeffer/weewx-brultech/pull/2",
+              "title": "Newskin",
+              "created_at": "2022-01-25T15:42:55Z",
+              "updated_at": "2022-08-10T21:50:55Z"
+            }
+          ]
+        },
+        "mode": "independent_continuation"
+      },
+      {
+        "name": "temperaturnu",
+        "source": "https://github.com/LapplandsCohan/weewx-temperaturnu",
+        "reviewed_revision": "e7d831bf477ef362b53410bcc289347b2261a52b",
+        "last_commit": "2021-08-09T14:42:33Z",
+        "decision": "hard_fork_created",
+        "reason": "Einzelner Commit von 2021, kein Maintainer-Kontakt. Verwaist: Hard Fork.",
+        "fork": "https://github.com/weewx-packages/weewx-temperaturnu",
+        "license": {
+          "spdx": "GPL-3.0-only",
+          "evidence": [
+            "https://github.com/LapplandsCohan/weewx-temperaturnu/blob/e7d831bf477ef362b53410bcc289347b2261a52b/LICENSE",
+            "https://github.com/LapplandsCohan/weewx-temperaturnu/blob/e7d831bf477ef362b53410bcc289347b2261a52b/install.py",
+            "https://github.com/LapplandsCohan/weewx-temperaturnu/blob/e7d831bf477ef362b53410bcc289347b2261a52b/bin/user/temperaturnu.py"
+          ],
+          "obligations": [
+            "Copyright-, Lizenz- und Haftungshinweise vollständig erhalten; Quelltext und vorhandene Lizenztexte unverändert erhalten.",
+            "Unterlizenzen von eingebetteten Bibliotheken, Fonts, Bildern und Daten gelten zusätzlich."
+          ],
+          "component_terms": []
+        },
+        "tracker": {
+          "issues": 0,
+          "pull_requests": 0,
+          "open_items": []
+        },
+        "mode": "independent_continuation"
+      },
+      {
+        "name": "xcumulative",
+        "source": "https://github.com/Millardiang/weewx-xcumulative",
+        "reviewed_revision": "a5e412d22464b95d74d2cada02efb9bddda0db64",
+        "last_commit": "2025-08-19T11:54:00Z",
+        "decision": "hard_fork_created",
+        "reason": "Original von gjr80 ist gelöscht. Die Kopie von Millardiang ist seit August 2025 unverändert und hat die Issues abgeschaltet. Verwaist: Hard Fork.",
+        "fork": "https://github.com/weewx-packages/weewx-xcumulative",
+        "license": {
+          "spdx": "GPL-3.0-or-later",
+          "evidence": [
+            "https://github.com/Millardiang/weewx-xcumulative/blob/a5e412d22464b95d74d2cada02efb9bddda0db64/LICENSE",
+            "https://github.com/Millardiang/weewx-xcumulative/blob/a5e412d22464b95d74d2cada02efb9bddda0db64/bin/user/xcumulative.py",
+            "https://github.com/Millardiang/weewx-xcumulative/blob/a5e412d22464b95d74d2cada02efb9bddda0db64/install.py"
+          ],
+          "obligations": [
+            "Copyright-, Lizenz- und Haftungshinweise vollständig erhalten; Quelltext und vorhandene Lizenztexte unverändert erhalten.",
+            "Unterlizenzen von eingebetteten Bibliotheken, Fonts, Bildern und Daten gelten zusätzlich."
+          ],
+          "component_terms": []
+        },
+        "tracker": {
+          "issues": null,
+          "pull_requests": null,
+          "open_items": []
+        },
+        "mode": "independent_continuation"
+      },
+      {
+        "name": "hubitat",
+        "source": "https://github.com/dennypage/weewx-hubitat",
+        "reviewed_revision": "afffbdf0dd67b3a3e3bb3529f66c368708ff5dbf",
+        "last_commit": "2020-07-10T01:04:08Z",
+        "decision": "hard_fork_created",
+        "reason": "Letzter Commit 2020. Der Lizenzgrant (BSD-2-Clause) steht nur im Quelltext, ohne LICENSE-Datei. Verwaist: Hard Fork, LICENSE-Datei wird ergänzt.",
+        "fork": "https://github.com/weewx-packages/weewx-hubitat",
+        "license": {
+          "spdx": "BSD-2-Clause (source header, no LICENSE file)",
+          "evidence": [
+            "https://github.com/dennypage/weewx-hubitat/blob/afffbdf0dd67b3a3e3bb3529f66c368708ff5dbf/bin/user/hubitat.py",
+            "https://github.com/dennypage/weewx-hubitat/blob/afffbdf0dd67b3a3e3bb3529f66c368708ff5dbf/install.py",
+            "https://github.com/dennypage/weewx-hubitat/blob/afffbdf0dd67b3a3e3bb3529f66c368708ff5dbf/README.md"
+          ],
+          "obligations": [
+            "Copyright-, Lizenz- und Haftungshinweise vollständig erhalten; Quelltext und vorhandene Lizenztexte unverändert erhalten.",
+            "Unterlizenzen von eingebetteten Bibliotheken, Fonts, Bildern und Daten gelten zusätzlich."
+          ],
+          "component_terms": []
+        },
+        "tracker": {
+          "issues": 0,
+          "pull_requests": 0,
+          "open_items": []
+        },
+        "mode": "independent_continuation"
+      },
+      {
+        "name": "time_since",
+        "source": "https://github.com/Millardiang/weewx-time_since",
+        "reviewed_revision": "20d0bbf86668b049dc784c7c021c95f16b25b147",
+        "last_commit": "2023-02-04T13:42:22Z",
+        "decision": "hard_fork_created",
+        "reason": "Letzter Commit 2023, Issues abgeschaltet. Search-List-Extension ohne Installer. Verwaist: Hard Fork.",
+        "fork": "https://github.com/weewx-packages/weewx-time_since",
+        "license": {
+          "spdx": "LGPL-3.0-only",
+          "evidence": [
+            "https://github.com/Millardiang/weewx-time_since/blob/20d0bbf86668b049dc784c7c021c95f16b25b147/LICENSE.txt",
+            "https://github.com/Millardiang/weewx-time_since/blob/20d0bbf86668b049dc784c7c021c95f16b25b147/README.md"
+          ],
+          "obligations": [
+            "Copyright-, Lizenz- und Haftungshinweise vollständig erhalten; Quelltext und vorhandene Lizenztexte unverändert erhalten.",
+            "Unterlizenzen von eingebetteten Bibliotheken, Fonts, Bildern und Daten gelten zusätzlich."
+          ],
+          "component_terms": []
+        },
+        "tracker": {
+          "issues": null,
+          "pull_requests": null,
+          "open_items": []
+        },
+        "mode": "independent_continuation"
+      },
+      {
+        "name": "home-assistant",
+        "source": "https://github.com/felddy/weewx-home-assistant",
+        "reviewed_revision": "67d5a3e0463c2e9ef594623acee0a160a3622895",
+        "last_commit": "2024-12-28T22:56:21Z",
+        "decision": "hard_fork_created",
+        "reason": "Letzter Code-Commit Dezember 2024. Fünfzehn offene Punkte, zuletzt vom August 2026, ohne Reaktion des Maintainers. Verwaist: Hard Fork.",
+        "fork": "https://github.com/weewx-packages/weewx-home-assistant",
+        "license": {
+          "spdx": "MIT",
+          "evidence": [
+            "https://github.com/felddy/weewx-home-assistant/blob/67d5a3e0463c2e9ef594623acee0a160a3622895/LICENSE",
+            "https://github.com/felddy/weewx-home-assistant/blob/67d5a3e0463c2e9ef594623acee0a160a3622895/README.md",
+            "https://github.com/felddy/weewx-home-assistant/blob/67d5a3e0463c2e9ef594623acee0a160a3622895/pyproject.toml"
+          ],
+          "obligations": [
+            "Copyright-, Lizenz- und Haftungshinweise vollständig erhalten; Quelltext und vorhandene Lizenztexte unverändert erhalten.",
+            "Unterlizenzen von eingebetteten Bibliotheken, Fonts, Bildern und Daten gelten zusätzlich."
+          ],
+          "component_terms": []
+        },
+        "tracker": {
+          "issues": 9,
+          "pull_requests": 6,
+          "open_items": [
+            {
+              "number": 42,
+              "type": "issue",
+              "url": "https://github.com/felddy/weewx-home-assistant/issues/42",
+              "title": "Race condition in config_publisher.py: RuntimeError: dictionary changed size during iteration",
+              "created_at": "2026-08-07T12:39:36Z",
+              "updated_at": "2026-08-26T09:41:40Z"
+            },
+            {
+              "number": 40,
+              "type": "issue",
+              "url": "https://github.com/felddy/weewx-home-assistant/issues/40",
+              "title": "Add state_class on sensors so we can use statistics entities in Home Assistant.",
+              "created_at": "2026-04-23T04:29:15Z",
+              "updated_at": "2026-04-23T04:29:15Z"
+            },
+            {
+              "number": 39,
+              "type": "pull_request",
+              "url": "https://github.com/felddy/weewx-home-assistant/pull/39",
+              "title": "feat: add retain=True and state_class to MQTT publishes",
+              "created_at": "2026-04-22T05:15:32Z",
+              "updated_at": "2026-04-22T05:15:32Z"
+            },
+            {
+              "number": 38,
+              "type": "pull_request",
+              "url": "https://github.com/felddy/weewx-home-assistant/pull/38",
+              "title": "Bump weewx from 5.1.0 to 5.3.1",
+              "created_at": "2026-03-09T10:34:19Z",
+              "updated_at": "2026-03-09T10:34:20Z"
+            },
+            {
+              "number": 36,
+              "type": "pull_request",
+              "url": "https://github.com/felddy/weewx-home-assistant/pull/36",
+              "title": "Bump actions/upload-artifact from 4 to 7",
+              "created_at": "2026-03-02T10:44:24Z",
+              "updated_at": "2026-03-02T10:44:25Z"
+            },
+            {
+              "number": 35,
+              "type": "pull_request",
+              "url": "https://github.com/felddy/weewx-home-assistant/pull/35",
+              "title": "Bump actions/download-artifact from 4 to 8",
+              "created_at": "2026-03-02T10:44:20Z",
+              "updated_at": "2026-03-02T10:44:21Z"
+            },
+            {
+              "number": 33,
+              "type": "issue",
+              "url": "https://github.com/felddy/weewx-home-assistant/issues/33",
+              "title": "Add missing metadata for `inch_per_hour`",
+              "created_at": "2026-01-28T20:23:49Z",
+              "updated_at": "2026-01-28T20:36:59Z"
+            },
+            {
+              "number": 32,
+              "type": "issue",
+              "url": "https://github.com/felddy/weewx-home-assistant/issues/32",
+              "title": "Documentation Error w/timezone",
+              "created_at": "2026-01-28T19:24:21Z",
+              "updated_at": "2026-04-23T04:23:51Z"
+            },
+            {
+              "number": 29,
+              "type": "issue",
+              "url": "https://github.com/felddy/weewx-home-assistant/issues/29",
+              "title": "No module named 'weewx_ha'",
+              "created_at": "2025-11-02T19:59:13Z",
+              "updated_at": "2025-11-25T16:05:20Z"
+            },
+            {
+              "number": 25,
+              "type": "pull_request",
+              "url": "https://github.com/felddy/weewx-home-assistant/pull/25",
+              "title": "Bump github/codeql-action from 3 to 4",
+              "created_at": "2025-10-13T09:55:43Z",
+              "updated_at": "2025-10-13T09:59:56Z"
+            },
+            {
+              "number": 24,
+              "type": "issue",
+              "url": "https://github.com/felddy/weewx-home-assistant/issues/24",
+              "title": "How to install on HA?",
+              "created_at": "2025-09-11T04:00:40Z",
+              "updated_at": "2025-10-03T21:35:05Z"
+            },
+            {
+              "number": 22,
+              "type": "pull_request",
+              "url": "https://github.com/felddy/weewx-home-assistant/pull/22",
+              "title": "Fix: Create a shallow copy of loop packet",
+              "created_at": "2025-06-28T18:10:47Z",
+              "updated_at": "2025-09-23T08:20:45Z"
+            },
+            {
+              "number": 19,
+              "type": "issue",
+              "url": "https://github.com/felddy/weewx-home-assistant/issues/19",
+              "title": "Add optional retain parameter for Home Assistant discovery messages",
+              "created_at": "2025-05-26T13:43:37Z",
+              "updated_at": "2026-04-23T04:25:37Z"
+            },
+            {
+              "number": 18,
+              "type": "issue",
+              "url": "https://github.com/felddy/weewx-home-assistant/issues/18",
+              "title": "Support non-containerized WeeWX install",
+              "created_at": "2025-04-01T00:04:41Z",
+              "updated_at": "2026-03-12T03:00:48Z"
+            },
+            {
+              "number": 15,
+              "type": "issue",
+              "url": "https://github.com/felddy/weewx-home-assistant/issues/15",
+              "title": "Sensors as JSON entry rather than individual MQTT message",
+              "created_at": "2025-02-26T17:27:28Z",
+              "updated_at": "2025-02-26T20:22:45Z"
+            }
+          ]
+        },
+        "mode": "independent_continuation"
+      },
+      {
+        "name": "rsync-metrics",
+        "source": "https://github.com/n7qnm/weewx-rsync-metrics",
+        "reviewed_revision": "e0acbcdbd35a38674dff6b722b948b5683435d6d",
+        "last_commit": "2026-04-28T02:23:08Z",
+        "decision": "blocked_license",
+        "reason": "Quelltext verweist auf LICENSE.txt, das Repository enthält keine Lizenzdatei und keinen Lizenzgrant. Nicht übernommen, bis der Autor eine Lizenz hinzufügt.",
+        "fork": null,
+        "license": {
+          "spdx": null,
+          "evidence": [
+            "https://github.com/n7qnm/weewx-rsync-metrics/tree/e0acbcdbd35a38674dff6b722b948b5683435d6d"
+          ],
+          "obligations": [],
+          "component_terms": []
+        },
+        "tracker": {
+          "issues": 0,
+          "pull_requests": 0,
+          "open_items": []
+        },
+        "mode": "none"
+      },
+      {
+        "name": "mem-extension",
+        "source": "https://github.com/weewx-contrib/mem-extension",
+        "reviewed_revision": "d117a52b405573bf9cdab3f9d4e4ea0ef3c33ae6",
+        "last_commit": "2026-08-18T22:36:46Z",
+        "decision": "blocked_license",
+        "reason": "Franken-Extension aus Tom Keffers mem-Code und Matthew Walls pmon, ohne Lizenzdatei und ohne Lizenzhinweis im Quelltext. Nicht übernommen.",
+        "fork": null,
+        "license": {
+          "spdx": null,
+          "evidence": [
+            "https://github.com/weewx-contrib/mem-extension/tree/d117a52b405573bf9cdab3f9d4e4ea0ef3c33ae6"
+          ],
+          "obligations": [],
+          "component_terms": []
+        },
+        "tracker": {
+          "issues": 0,
+          "pull_requests": 0,
+          "open_items": []
+        },
+        "mode": "none"
+      }
+    ]
+  }
 }

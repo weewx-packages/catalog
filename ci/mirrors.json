@@ -1744,5 +1744,296 @@
     "license_evidence": [
       "https://github.com/weewx-packages/weewx-davis-cloud/blob/e77582deacc0187eab7b4f24cc20b0edcd28ab0f/LICENSE"
     ]
+  },
+  {
+    "upstream": "https://github.com/weewx-contrib/weewx-realtime_gauge-data.git",
+    "fork": "weewx-packages/weewx-realtime_gauge-data",
+    "weekday": 2,
+    "sync": true,
+    "check": "external",
+    "reviewed_revision": "df86d26a6d82c247c40b1b1f5c9a1f87e1d28b27",
+    "license": "GPL-3.0-only (LICENSE); GPL-2.0-or-later (installer header)",
+    "license_evidence": [
+      "https://github.com/weewx-contrib/weewx-realtime_gauge-data/blob/df86d26a6d82c247c40b1b1f5c9a1f87e1d28b27/LICENSE",
+      "https://github.com/weewx-contrib/weewx-realtime_gauge-data/blob/df86d26a6d82c247c40b1b1f5c9a1f87e1d28b27/install.py",
+      "https://github.com/weewx-contrib/weewx-realtime_gauge-data/blob/df86d26a6d82c247c40b1b1f5c9a1f87e1d28b27/bin/user/rtgd.py"
+    ]
+  },
+  {
+    "upstream": "https://github.com/Millardiang/weewx-stackedwindrose26.git",
+    "fork": "weewx-packages/weewx-stackedwindrose26",
+    "weekday": 3,
+    "sync": true,
+    "check": "external",
+    "reviewed_revision": "e626d53d446ebc35b365a9665d9b2cc10e851672",
+    "license": "GPL-3.0-or-later",
+    "license_evidence": [
+      "https://github.com/Millardiang/weewx-stackedwindrose26/blob/e626d53d446ebc35b365a9665d9b2cc10e851672/LICENSE",
+      "https://github.com/Millardiang/weewx-stackedwindrose26/blob/e626d53d446ebc35b365a9665d9b2cc10e851672/bin/user/stackedwindrose26.py",
+      "https://github.com/Millardiang/weewx-stackedwindrose26/blob/e626d53d446ebc35b365a9665d9b2cc10e851672/install.py"
+    ]
+  },
+  {
+    "upstream": "https://github.com/Millardiang/weewx-data-ingest.git",
+    "fork": "weewx-packages/weewx-data-ingest",
+    "weekday": 5,
+    "sync": true,
+    "check": "external",
+    "reviewed_revision": "bce4c677fcb2285a7f76cba114fa916792122e7b",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/Millardiang/weewx-data-ingest/blob/bce4c677fcb2285a7f76cba114fa916792122e7b/LICENSE",
+      "https://github.com/Millardiang/weewx-data-ingest/blob/bce4c677fcb2285a7f76cba114fa916792122e7b/bin/user/dataingest.py",
+      "https://github.com/Millardiang/weewx-data-ingest/blob/bce4c677fcb2285a7f76cba114fa916792122e7b/install.py"
+    ]
+  },
+  {
+    "upstream": "https://github.com/weewx-mqtt/replicate.git",
+    "fork": "weewx-packages/weewx-mqtt-replicate",
+    "weekday": 1,
+    "sync": true,
+    "check": "external",
+    "reviewed_revision": "4a9daf090b8cad85273759d6381d9041947d7da6",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/weewx-mqtt/replicate/blob/4a9daf090b8cad85273759d6381d9041947d7da6/LICENSE",
+      "https://github.com/weewx-mqtt/replicate/blob/4a9daf090b8cad85273759d6381d9041947d7da6/install.py",
+      "https://github.com/weewx-mqtt/replicate/blob/4a9daf090b8cad85273759d6381d9041947d7da6/bin/user/mqttreplicate.py"
+    ]
+  },
+  {
+    "upstream": "https://github.com/weewx-mqtt/plugin-loopdata.git",
+    "fork": "weewx-packages/weewx-mqtt-plugin-loopdata",
+    "weekday": 2,
+    "sync": true,
+    "check": "external",
+    "reviewed_revision": "0a51c8678d666eee43ad6a22ee0d9af9c67b8282",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/weewx-mqtt/plugin-loopdata/blob/0a51c8678d666eee43ad6a22ee0d9af9c67b8282/LICENSE",
+      "https://github.com/weewx-mqtt/plugin-loopdata/blob/0a51c8678d666eee43ad6a22ee0d9af9c67b8282/install.py",
+      "https://github.com/weewx-mqtt/plugin-loopdata/blob/0a51c8678d666eee43ad6a22ee0d9af9c67b8282/bin/user/mqttloopdata.py"
+    ]
+  },
+  {
+    "upstream": "https://github.com/weewx-contrib/sds011-mqtt.git",
+    "fork": "weewx-packages/weewx-sds011-mqtt",
+    "weekday": 3,
+    "sync": true,
+    "check": "component",
+    "reviewed_revision": "49a166db0fe5527faf4abfb38d7b03a3b95f0532",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/weewx-contrib/sds011-mqtt/blob/49a166db0fe5527faf4abfb38d7b03a3b95f0532/LICENSE",
+      "https://github.com/weewx-contrib/sds011-mqtt/blob/49a166db0fe5527faf4abfb38d7b03a3b95f0532/README.md",
+      "https://github.com/weewx-contrib/sds011-mqtt/blob/49a166db0fe5527faf4abfb38d7b03a3b95f0532/sds011.py"
+    ]
+  },
+  {
+    "upstream": "https://github.com/weewx-contrib/weewx-ecowitt_local_http.git",
+    "fork": "weewx-packages/weewx-ecowitt_local_http",
+    "weekday": 5,
+    "sync": true,
+    "check": "external",
+    "reviewed_revision": "6876b2ecbab88f825dde1b0b7c5874cb5fd3c25e",
+    "license": "GPL-3.0-only (LICENSE); GPL-2.0-or-later (installer header)",
+    "license_evidence": [
+      "https://github.com/weewx-contrib/weewx-ecowitt_local_http/blob/6876b2ecbab88f825dde1b0b7c5874cb5fd3c25e/LICENSE",
+      "https://github.com/weewx-contrib/weewx-ecowitt_local_http/blob/6876b2ecbab88f825dde1b0b7c5874cb5fd3c25e/install.py",
+      "https://github.com/weewx-contrib/weewx-ecowitt_local_http/blob/6876b2ecbab88f825dde1b0b7c5874cb5fd3c25e/bin/user/ecowitt_http.py"
+    ]
+  },
+  {
+    "upstream": "https://github.com/weewx-contrib/weewx-gw1000.git",
+    "fork": "weewx-packages/weewx-gw1000",
+    "weekday": 1,
+    "sync": true,
+    "check": "component",
+    "reviewed_revision": "a01a4b47ce3b39fab39d4e364f1f9ac1324cb89c",
+    "license": "GPL-3.0-only (LICENSE); GPL-2.0-or-later (installer header)",
+    "license_evidence": [
+      "https://github.com/weewx-contrib/weewx-gw1000/blob/a01a4b47ce3b39fab39d4e364f1f9ac1324cb89c/LICENSE",
+      "https://github.com/weewx-contrib/weewx-gw1000/blob/a01a4b47ce3b39fab39d4e364f1f9ac1324cb89c/install.py",
+      "https://github.com/weewx-contrib/weewx-gw1000/blob/a01a4b47ce3b39fab39d4e364f1f9ac1324cb89c/bin/user/gw1000.py"
+    ]
+  },
+  {
+    "upstream": "https://github.com/dieseld23/weewx-dark.git",
+    "fork": "weewx-packages/weewx-dark",
+    "weekday": 2,
+    "sync": true,
+    "check": "component",
+    "reviewed_revision": "2af6d5ed4c3aebe22ee6cf96a0ddf645f63c5ee2",
+    "license": "MIT",
+    "license_evidence": [
+      "https://github.com/dieseld23/weewx-dark/blob/2af6d5ed4c3aebe22ee6cf96a0ddf645f63c5ee2/LICENSE",
+      "https://github.com/dieseld23/weewx-dark/blob/2af6d5ed4c3aebe22ee6cf96a0ddf645f63c5ee2/THIRD-PARTY-NOTICES.md",
+      "https://github.com/dieseld23/weewx-dark/blob/2af6d5ed4c3aebe22ee6cf96a0ddf645f63c5ee2/README.md"
+    ]
+  },
+  {
+    "upstream": "https://github.com/bellrichm/WeeWX-Extras.git",
+    "fork": "weewx-packages/weewx-extras",
+    "weekday": 3,
+    "sync": true,
+    "check": "component",
+    "reviewed_revision": "d59b79b3a66e87cf74dace53c57dfc12879d79bd",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/bellrichm/WeeWX-Extras/blob/d59b79b3a66e87cf74dace53c57dfc12879d79bd/LICENSE",
+      "https://github.com/bellrichm/WeeWX-Extras/blob/d59b79b3a66e87cf74dace53c57dfc12879d79bd/bin/user/s3upload.py"
+    ]
+  },
+  {
+    "upstream": "https://github.com/CameronD73/weewx-utilities.git",
+    "fork": "weewx-packages/weewx-utilities",
+    "weekday": 4,
+    "sync": true,
+    "check": "component",
+    "reviewed_revision": "f48d1974d91284b5f99008e7519909525bfeb0a0",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/CameronD73/weewx-utilities/blob/f48d1974d91284b5f99008e7519909525bfeb0a0/LICENSE",
+      "https://github.com/CameronD73/weewx-utilities/blob/f48d1974d91284b5f99008e7519909525bfeb0a0/README.md",
+      "https://github.com/CameronD73/weewx-utilities/blob/f48d1974d91284b5f99008e7519909525bfeb0a0/drivers/gw1000/gw1000.py"
+    ]
+  },
+  {
+    "upstream": "https://github.com/matthewwall/weewx-taptap.git",
+    "fork": "weewx-packages/weewx-taptap",
+    "weekday": 5,
+    "sync": true,
+    "check": "component",
+    "reviewed_revision": "6d4631e7767266b7b5d2aeaaf0c6d0b45752f3ed",
+    "license": "GPL-3.0-only (license file and source header)",
+    "license_evidence": [
+      "https://github.com/matthewwall/weewx-taptap/blob/6d4631e7767266b7b5d2aeaaf0c6d0b45752f3ed/license",
+      "https://github.com/matthewwall/weewx-taptap/blob/6d4631e7767266b7b5d2aeaaf0c6d0b45752f3ed/install.py",
+      "https://github.com/matthewwall/weewx-taptap/blob/6d4631e7767266b7b5d2aeaaf0c6d0b45752f3ed/bin/user/tigo.py"
+    ]
+  },
+  {
+    "upstream": "https://github.com/Millardiang/weewx-Cloud_coverage.git",
+    "fork": "weewx-packages/weewx-Cloud_coverage",
+    "weekday": 1,
+    "sync": true,
+    "check": "external",
+    "reviewed_revision": "e893a7ec7b162b96013ccaa01eebe060adcafc8e",
+    "license": "GPL-3.0-only (LICENSE file and source header)",
+    "license_evidence": [
+      "https://github.com/Millardiang/weewx-Cloud_coverage/blob/e893a7ec7b162b96013ccaa01eebe060adcafc8e/LICENSE",
+      "https://github.com/Millardiang/weewx-Cloud_coverage/blob/e893a7ec7b162b96013ccaa01eebe060adcafc8e/bin/user/cloudcoverage.py",
+      "https://github.com/Millardiang/weewx-Cloud_coverage/blob/e893a7ec7b162b96013ccaa01eebe060adcafc8e/install.py"
+    ]
+  },
+  {
+    "upstream": "https://github.com/Millardiang/weewx-Belchertown-MQTT-Cloudflare-Tunnel.git",
+    "fork": "weewx-packages/weewx-Belchertown-MQTT-Cloudflare-Tunnel",
+    "weekday": 2,
+    "sync": true,
+    "check": "component",
+    "reviewed_revision": "d0d07c5c83ff6909e61f2e847f9da3247818915e",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/Millardiang/weewx-Belchertown-MQTT-Cloudflare-Tunnel/blob/d0d07c5c83ff6909e61f2e847f9da3247818915e/LICENSE",
+      "https://github.com/Millardiang/weewx-Belchertown-MQTT-Cloudflare-Tunnel/blob/d0d07c5c83ff6909e61f2e847f9da3247818915e/README.md"
+    ]
+  },
+  {
+    "upstream": "https://github.com/weewx-contrib/stackedwindrose-extension.git",
+    "fork": "weewx-packages/weewx-stackedwindrose",
+    "weekday": 3,
+    "sync": true,
+    "check": "external",
+    "reviewed_revision": "e955167c4e83297268c6e54c06130f95418da1d2",
+    "license": "GPL-3.0-or-later (source header, no LICENSE file)",
+    "license_evidence": [
+      "https://github.com/weewx-contrib/stackedwindrose-extension/blob/e955167c4e83297268c6e54c06130f95418da1d2/bin/user/stackedwindrose.py",
+      "https://github.com/weewx-contrib/stackedwindrose-extension/blob/e955167c4e83297268c6e54c06130f95418da1d2/install.py",
+      "https://github.com/weewx-contrib/stackedwindrose-extension/blob/e955167c4e83297268c6e54c06130f95418da1d2/README.md"
+    ]
+  },
+  {
+    "upstream": "https://github.com/tkeffer/weewx-brultech.git",
+    "fork": "weewx-packages/weewx-brultech",
+    "weekday": 4,
+    "sync": false,
+    "check": "component",
+    "reviewed_revision": "81ffcba8d983b145f072d072245357cea3b117e1",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/tkeffer/weewx-brultech/blob/81ffcba8d983b145f072d072245357cea3b117e1/LICENSE.txt",
+      "https://github.com/tkeffer/weewx-brultech/blob/81ffcba8d983b145f072d072245357cea3b117e1/install.py",
+      "https://github.com/tkeffer/weewx-brultech/blob/81ffcba8d983b145f072d072245357cea3b117e1/README.md"
+    ]
+  },
+  {
+    "upstream": "https://github.com/LapplandsCohan/weewx-temperaturnu.git",
+    "fork": "weewx-packages/weewx-temperaturnu",
+    "weekday": 5,
+    "sync": false,
+    "check": "external",
+    "reviewed_revision": "e7d831bf477ef362b53410bcc289347b2261a52b",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/LapplandsCohan/weewx-temperaturnu/blob/e7d831bf477ef362b53410bcc289347b2261a52b/LICENSE",
+      "https://github.com/LapplandsCohan/weewx-temperaturnu/blob/e7d831bf477ef362b53410bcc289347b2261a52b/install.py",
+      "https://github.com/LapplandsCohan/weewx-temperaturnu/blob/e7d831bf477ef362b53410bcc289347b2261a52b/bin/user/temperaturnu.py"
+    ]
+  },
+  {
+    "upstream": "https://github.com/Millardiang/weewx-xcumulative.git",
+    "fork": "weewx-packages/weewx-xcumulative",
+    "weekday": 1,
+    "sync": false,
+    "check": "component",
+    "reviewed_revision": "a5e412d22464b95d74d2cada02efb9bddda0db64",
+    "license": "GPL-3.0-or-later",
+    "license_evidence": [
+      "https://github.com/Millardiang/weewx-xcumulative/blob/a5e412d22464b95d74d2cada02efb9bddda0db64/LICENSE",
+      "https://github.com/Millardiang/weewx-xcumulative/blob/a5e412d22464b95d74d2cada02efb9bddda0db64/bin/user/xcumulative.py",
+      "https://github.com/Millardiang/weewx-xcumulative/blob/a5e412d22464b95d74d2cada02efb9bddda0db64/install.py"
+    ]
+  },
+  {
+    "upstream": "https://github.com/dennypage/weewx-hubitat.git",
+    "fork": "weewx-packages/weewx-hubitat",
+    "weekday": 2,
+    "sync": false,
+    "check": "external",
+    "reviewed_revision": "afffbdf0dd67b3a3e3bb3529f66c368708ff5dbf",
+    "license": "BSD-2-Clause (source header, no LICENSE file)",
+    "license_evidence": [
+      "https://github.com/dennypage/weewx-hubitat/blob/afffbdf0dd67b3a3e3bb3529f66c368708ff5dbf/bin/user/hubitat.py",
+      "https://github.com/dennypage/weewx-hubitat/blob/afffbdf0dd67b3a3e3bb3529f66c368708ff5dbf/install.py",
+      "https://github.com/dennypage/weewx-hubitat/blob/afffbdf0dd67b3a3e3bb3529f66c368708ff5dbf/README.md"
+    ]
+  },
+  {
+    "upstream": "https://github.com/Millardiang/weewx-time_since.git",
+    "fork": "weewx-packages/weewx-time_since",
+    "weekday": 3,
+    "sync": false,
+    "check": "component",
+    "reviewed_revision": "20d0bbf86668b049dc784c7c021c95f16b25b147",
+    "license": "LGPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/Millardiang/weewx-time_since/blob/20d0bbf86668b049dc784c7c021c95f16b25b147/LICENSE.txt",
+      "https://github.com/Millardiang/weewx-time_since/blob/20d0bbf86668b049dc784c7c021c95f16b25b147/README.md"
+    ]
+  },
+  {
+    "upstream": "https://github.com/felddy/weewx-home-assistant.git",
+    "fork": "weewx-packages/weewx-home-assistant",
+    "weekday": 4,
+    "sync": false,
+    "check": "component",
+    "reviewed_revision": "67d5a3e0463c2e9ef594623acee0a160a3622895",
+    "license": "MIT",
+    "license_evidence": [
+      "https://github.com/felddy/weewx-home-assistant/blob/67d5a3e0463c2e9ef594623acee0a160a3622895/LICENSE",
+      "https://github.com/felddy/weewx-home-assistant/blob/67d5a3e0463c2e9ef594623acee0a160a3622895/README.md",
+      "https://github.com/felddy/weewx-home-assistant/blob/67d5a3e0463c2e9ef594623acee0a160a3622895/pyproject.toml"
+    ]
   }
 ]
