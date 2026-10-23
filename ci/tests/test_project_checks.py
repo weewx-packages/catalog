@@ -3,6 +3,7 @@
 import hashlib
 import json
 from pathlib import Path
+import subprocess
 import sys
 from unittest.mock import Mock
 import zipfile
@@ -38,6 +39,29 @@ def test_invalid_group_size_cannot_bypass_github_limit(limit):
 def test_system_dependencies_cannot_supply_commands_or_options(packages):
     with pytest.raises(ValueError, match='system package'):
         compat.system_packages({'system_packages': packages})
+
+
+def test_dependency_setup_allows_slow_installation_but_propagates_failure(monkeypatch):
+    """A failed apt step remains an infrastructure failure, with its longer budget."""
+    def execute(args, timeout=300):
+        if 'install' in args:
+            # Model a download exceeding the old limit before apt reports a
+            # genuine failure. Increasing the budget must not hide that failure.
+            if timeout < 301:
+                raise subprocess.TimeoutExpired(args, timeout)
+            raise subprocess.CalledProcessError(100, args)
+
+    monkeypatch.setattr(compat, 'command', execute)
+    with pytest.raises(subprocess.CalledProcessError) as failure:
+        compat.install_system_packages({'system_packages': ['ffmpeg']})
+    assert failure.value.returncode == 100
+
+
+def test_no_dependencies_does_not_run_apt(monkeypatch):
+    execute = Mock()
+    monkeypatch.setattr(compat, 'command', execute)
+    compat.install_system_packages({})
+    execute.assert_not_called()
 
 
 def test_external_project_gets_both_core_branches_without_becoming_catalog_package(monkeypatch):

@@ -13,7 +13,8 @@ permissions:
 jobs:
   test:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    # Leave room for dependency downloads and the Android profile's 15-minute build limit.
+    timeout-minutes: 30
     strategy:
       fail-fast: false
       matrix: ${{ fromJSON(inputs.matrix) }}
@@ -44,6 +45,13 @@ jobs:
           path: plan
       - name: Install test dependencies
         run: |
+          mkdir -p result
+          printf '%s\n' '{"status":"error","phase":"setup","details":["Job stopped before producing a test result. See the dependency setup and job logs."]}' > result/result.json
+          # The hosted runner's Azure mirror can take several minutes per package.
+          # Keep Ubuntu's signed repositories, using its HTTPS archive directly.
+          if [ -f /etc/apt/apt-mirrors.txt ]; then
+            printf '%s\n' 'https://archive.ubuntu.com/ubuntu' | sudo tee /etc/apt/apt-mirrors.txt
+          fi
           python -m pip install packaging
           python catalog/ci/compatibility.py system --plan plan/matrix.json --case-id "${{ matrix.case_id }}"
           python -m pip install ./weewx pytest packaging requests skyfield "pymodbus>=3.11,<4" pyserial
