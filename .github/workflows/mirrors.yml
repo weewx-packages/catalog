@@ -23,6 +23,8 @@ jobs:
     outputs:
       matrix: ${{ steps.select.outputs.matrix }}
       count: ${{ steps.select.outputs.count }}
+      repositories: ${{ steps.select.outputs.repositories }}
+      repository_count: ${{ steps.select.outputs.repository_count }}
       checks: ${{ steps.select.outputs.checks }}
       check_count: ${{ steps.select.outputs.check_count }}
     steps:
@@ -35,35 +37,47 @@ jobs:
           SCHEDULE: ${{ github.event.schedule }}
         run: |
           python3 ci/mirrors.py matrix --schedule "$SCHEDULE" > matrix.json
+          python3 ci/mirrors.py repositories --schedule "$SCHEDULE" > repositories.json
           python3 ci/mirrors.py checks --schedule "$SCHEDULE" > checks.json
           python3 - <<'PY' >> "$GITHUB_OUTPUT"
           import json
           from pathlib import Path
           matrix = json.loads(Path('matrix.json').read_text())
           checks = json.loads(Path('checks.json').read_text())
+          repositories = json.loads(Path('repositories.json').read_text())
           print('matrix=' + json.dumps(matrix))
           print('count=' + str(len(matrix['include'])))
+          print('repositories=' + json.dumps(repositories))
+          print('repository_count=' + str(len(repositories['include'])))
           print('checks=' + json.dumps(checks))
           print('check_count=' + str(len(checks['include'])))
           PY
 
   mirror:
     needs: select
-    if: needs.select.outputs.count != '0'
+    if: needs.select.outputs.repository_count != '0'
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 15
+    # One job per fork. Each weekday environment holds one deploy key per fork,
+    # and a job reads only the secret of its own fork. Adding a mirror adds one
+    # secret without touching the keys of the others (ci/mirror_keys.py).
+    environment:
+      name: mirrors-${{ matrix.weekday }}
+      deployment: false
     strategy:
       fail-fast: false
-      matrix: ${{ fromJSON(needs.select.outputs.matrix) }}
+      max-parallel: 4
+      matrix: ${{ fromJSON(needs.select.outputs.repositories) }}
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           persist-credentials: false
-      - name: Synchronize this weekday's forks
+      - name: Synchronize ${{ matrix.fork }}
         env:
           GH_TOKEN: ${{ github.token }}
-          MIRROR_SSH_KEYS: ${{ secrets[format('WEEKLY_MIRROR_KEYS_{0}', matrix.weekday)] }}
-        run: python3 ci/mirrors.py sync --weekday '${{ matrix.weekday }}'
+          FORK: ${{ matrix.fork }}
+          MIRROR_SSH_KEY: ${{ secrets[matrix.secret] }}
+        run: python3 ci/mirrors.py sync --fork "$FORK"
 
   snapshot:
     needs: select

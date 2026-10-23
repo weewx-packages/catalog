@@ -33,7 +33,8 @@ extension (weewx-package-manager).
 - `ci/skin_tests/`: Installed-skin report generation with an isolated archive.
 - `COMPATIBILITY.md`: Check coverage, issue handling and adding package tests.
 - `WIKI-AUDIT.md`, `ci/wiki-audit.json`: Complete wiki review and pinned license evidence.
-- `ci/mirrors.json`, `ci/mirrors.py`: Weekly source-backup groups and deploy-key handling.
+- `ci/mirrors.json`, `ci/mirrors.py`: Weekly source-backup groups and one sync job per fork.
+- `ci/mirror_keys.py`: Local tool that gives a fork its own deploy key and weekday environment secret.
 - `ci/upstream_status.py`: Private discussion snapshots and public change summaries.
 - `ci/wiki_backup.py`: Private wiki Git bundles with independent restore checks.
 - `ci/wiki-state.json`: Public wiki availability and last verified backup status.

@@ -206,9 +206,13 @@ Friday at 03:43 UTC. Manual runs include every group. The three skin mirrors
 retain their separate release workflow; independent continuations are never
 overwritten by upstream synchronization.
 
-Each synchronized repository has its own write deploy key. The keys are stored
-in five weekday bundles to stay within the catalog's secret-count limit. Only
-the trusted mirror job receives them. Ref updates preserve history, reject
+Each synchronized repository has its own write deploy key, stored as one
+secret in the catalog environment of its weekday, `mirrors-1` through
+`mirrors-5`. The environments only serve the `main` branch. Every fork syncs in
+a job of its own, which reads only that fork's secret. To give a new mirror its
+key, run `python3 ci/mirror_keys.py add FORK` with an organization admin login;
+the other mirrors keep their keys. Moving a mirror to another weekday needs the
+same command, because the secret moves with it. Ref updates preserve history, reject
 divergence and retain branches and tags removed upstream. Mirroring copies Git
 source; it does not automatically approve a new catalog package or release.
 

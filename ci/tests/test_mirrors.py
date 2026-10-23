@@ -40,42 +40,68 @@ def test_current_registry_routes_checks_to_the_project_workflow():
     assert "needs.select.outputs.check_count != '0'" in workflow
 
 
-def test_failed_mirror_does_not_skip_other_repositories(monkeypatch):
-    entries = [dict(weekday=day, fork='weewx-packages/' + name,
-                    upstream='https://github.com/author/' + name + '.git')
-               for day, name in ((1, 'broken'), (1, 'missing'), (1, 'working'), (3, 'other'))]
-    keys = {'weewx-packages/' + name: name + '-private-key' for name in ('broken', 'working')}
+def test_one_job_per_mirror_with_its_own_secret():
+    entries = [dict(weekday=1, fork='weewx-packages/weewx-gw1000'),
+               dict(weekday=1, fork='weewx-packages/continuation', sync=False),
+               dict(weekday=3, fork='weewx-packages/weewx-NovaSDS011')]
+    assert mirrors.repositories(entries, '43 3 * * 1') == {'include': [
+        dict(weekday=1, fork='weewx-packages/weewx-gw1000', secret='MIRROR_KEY_WEEWX_GW1000')]}
+    assert [item['secret'] for item in mirrors.repositories(entries, '')['include']] == [
+        'MIRROR_KEY_WEEWX_GW1000', 'MIRROR_KEY_WEEWX_NOVASDS011']
+    with pytest.raises(ValueError, match='share a secret name'):
+        mirrors.repositories([dict(weekday=1, fork='weewx-packages/a-b'),
+                              dict(weekday=2, fork='weewx-packages/a_b')], '')
+
+
+def test_current_registry_has_distinct_secrets_and_workflow_reads_one():
+    root = Path(__file__).resolve().parents[2]
+    entries = json.loads((root / 'ci/mirrors.json').read_text())
+    selected = mirrors.repositories(entries, '')['include']
+    assert len(selected) == sum(1 for entry in entries if entry.get('sync', True))
+    workflow = (root / '.github/workflows/mirrors.yml').read_text()
+    assert 'MIRROR_SSH_KEY: ${{ secrets[matrix.secret] }}' in workflow
+    assert 'name: mirrors-${{ matrix.weekday }}' in workflow
+    assert 'deployment: false' in workflow
+
+
+def test_sync_passes_only_the_key_path_to_git(monkeypatch):
+    entries = [dict(weekday=1, fork='weewx-packages/working',
+                    upstream='https://github.com/author/working.git')]
     seen = []
 
     def git(args, env):
-        assert 'MIRROR_SSH_KEYS' not in env
+        assert 'MIRROR_SSH_KEY' not in env
         key_path = Path(env['GIT_SSH_COMMAND'].split()[2])
         assert key_path.stat().st_mode & 0o777 == 0o600
         seen.append((args[-1], key_path.read_text()))
-        return subprocess.CompletedProcess(args, 1 if 'broken' in args[-1] else 0)
+        return subprocess.CompletedProcess(args, 0)
 
     monkeypatch.setattr(mirrors.subprocess, 'check_output', lambda *args, **kwargs:
                         json.dumps({'ssh_keys': ['ssh-ed25519 github-host-key']}))
     monkeypatch.setattr(mirrors.subprocess, 'run', git)
-    with patch.dict(os.environ, MIRROR_SSH_KEYS=json.dumps(keys)):
-        failed = mirrors.sync(entries, 1, keys)
-    assert failed == ['weewx-packages/broken', 'weewx-packages/missing']
-    assert seen == [('git@github.com:weewx-packages/broken.git', 'broken-private-key'),
-                    ('git@github.com:weewx-packages/working.git', 'working-private-key')]
+    with patch.dict(os.environ, MIRROR_SSH_KEY='working-private-key'):
+        assert mirrors.sync(entries, 'weewx-packages/working', 'working-private-key')
+    assert seen == [('git@github.com:weewx-packages/working.git', 'working-private-key\n')]
 
 
-def test_mirror_cannot_push_outside_the_organization(monkeypatch):
-    monkeypatch.setattr(mirrors.subprocess, 'check_output', lambda *args, **kwargs:
-                        json.dumps({'ssh_keys': []}))
+def test_missing_secret_fails_without_pushing(monkeypatch):
+    push = Mock()
+    monkeypatch.setattr(mirrors.subprocess, 'run', push)
+    assert not mirrors.sync([dict(weekday=1, fork='weewx-packages/missing')],
+                            'weewx-packages/missing', '')
+    push.assert_not_called()
+
+
+def test_mirror_cannot_push_outside_the_organization():
     with pytest.raises(ValueError, match='weewx-packages'):
-        mirrors.sync([dict(weekday=1, fork='author/original')], 1, {})
+        mirrors.sync([dict(weekday=1, fork='author/original')], 'author/original', 'key')
+    with pytest.raises(ValueError, match='not listed'):
+        mirrors.sync([], 'weewx-packages/unknown', 'key')
 
 
 def test_independent_continuation_cannot_be_overwritten(monkeypatch):
-    monkeypatch.setattr(mirrors.subprocess, 'check_output', lambda *args, **kwargs:
-                        json.dumps({'ssh_keys': []}))
     push = Mock()
     monkeypatch.setattr(mirrors.subprocess, 'run', push)
     assert mirrors.sync([dict(weekday=1, fork='weewx-packages/continuation', sync=False)],
-                        1, {'weewx-packages/continuation': 'unused-key'}) == []
+                        'weewx-packages/continuation', 'unused-key')
     push.assert_not_called()
