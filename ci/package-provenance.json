@@ -3402,42 +3402,6 @@
       "sha256": "90e2224525b182382db211d2d88a07e18fdea14b750dcfe8f743e4200a81d73b"
     }
   },
-  "aqi": {
-    "status": "published",
-    "source_sha": "a6133a018062a02b3f1823751c17e836e5ab7dcf",
-    "archive_sha256": "1ae5d8c19a0411f3f2a13402efd5069ea9f0c5bfe1550742557587b09772dae2",
-    "archive": {
-      "url": "https://github.com/weewx-packages/catalog/releases/download/aqi/v1.5.0.post20261022/aqi-1.5.0.post20261022.tar.gz",
-      "format": "tar.gz",
-      "sha256": "1ae5d8c19a0411f3f2a13402efd5069ea9f0c5bfe1550742557587b09772dae2"
-    },
-    "publication": {
-      "release_id": 420370931,
-      "asset_id": 664887836,
-      "immutable": true,
-      "sha256": "1ae5d8c19a0411f3f2a13402efd5069ea9f0c5bfe1550742557587b09772dae2"
-    },
-    "repository": "weewx-packages/weewx-aqi",
-    "tests_path": "ci/project_tests/weewx-aqi",
-    "coverage": "release",
-    "limitations": [
-      "The top-level bin/aqi_backfill launcher is retained as source but is not installed; use user.aqi.backfill.",
-      "No physical sensor, external API or station hardware is used by the backfill check."
-    ],
-    "packaging_recipe": {
-      "source_sha": "a6133a018062a02b3f1823751c17e836e5ab7dcf",
-      "patch": "ci/recipes/aqi/package.patch",
-      "sha256": "5909904d80e24cbdd0b5a4d14ba94c22608823a08f730faf9b0a4e0fa210ba43",
-      "changes": "The top-level bin/aqi_backfill launcher is retained as source but is not installed; use user.aqi.backfill."
-    },
-    "license": "GPL-3.0-only",
-    "license_evidence": [
-      "https://github.com/weewx-packages/weewx-aqi/blob/a6133a018062a02b3f1823751c17e836e5ab7dcf/LICENSE"
-    ],
-    "test_sha256": {
-      "ci/project_tests/weewx-aqi/test_backfill.py": "1e197e9b850522424836db2390454ba8248b9f906c5ad62365b3e0ef882638ab"
-    }
-  },
   "observerip": {
     "status": "published",
     "source_sha": "e08f1e8e9402668bd16a2ec4cdfaa2fb23b90207",

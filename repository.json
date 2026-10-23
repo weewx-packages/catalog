@@ -37,6 +37,18 @@
           },
           "release_notes": "https://github.com/weewx-packages/weewx-livedata/releases/tag/v0.2.0",
           "restart_required": true
+        },
+        {
+          "version": "0.2.1",
+          "requires_python": ">=3.7",
+          "requires_weewx": ">=5.2,<6",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-livedata/releases/download/v0.2.1/weewx-livedata-0.2.1.zip",
+            "format": "zip",
+            "sha256": "eb6e1617510a4278ef90b46997cbd69f6d35f6053a69c23fddc6542c345ac1bd"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-livedata/releases/tag/v0.2.1",
+          "restart_required": true
         }
       ]
     },
@@ -115,6 +127,18 @@
             "sha256": "bcb7eaa901ec3e9b9b8f73294c2e7036625e70e45d5f53385c7745d003e95bba"
           },
           "release_notes": "https://github.com/weewx-packages/weewx-rtldavis/releases/tag/v0.21.1",
+          "restart_required": true
+        },
+        {
+          "version": "0.21.2",
+          "requires_python": ">=3.7",
+          "requires_weewx": ">=5,<6",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-rtldavis/releases/download/v0.21.2/weewx-rtldavis-0.21.2.zip",
+            "format": "zip",
+            "sha256": "3ddb914f07d894237dec49a6fb224de411e55c52b46f73c052760510ca5115c2"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-rtldavis/releases/tag/v0.21.2",
           "restart_required": true
         }
       ]
@@ -210,6 +234,18 @@
             "sha256": "af7fa689e2bbbe86d81335370bd19ef6f38cbf8dffaaed36acc47bd69391f236"
           },
           "release_notes": "https://github.com/weewx-packages/weewx-tracer/releases/tag/v0.3.0",
+          "restart_required": true
+        },
+        {
+          "version": "0.3.1",
+          "requires_python": ">=3.10",
+          "requires_weewx": ">=5,<6",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-tracer/releases/download/v0.3.1/tracer-0.3.1.zip",
+            "format": "zip",
+            "sha256": "0d9d8dac422dae273f13cd41ce8541e04e43c42cf1e8a3b61b8ed70a57aaeb3e"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-tracer/releases/tag/v0.3.1",
           "restart_required": true
         }
       ]
@@ -547,6 +583,18 @@
           },
           "release_notes": "https://github.com/weewx-packages/weewx-meteostick/releases/tag/v0.68.1",
           "restart_required": true
+        },
+        {
+          "version": "0.68.2",
+          "requires_python": ">=3.10",
+          "requires_weewx": ">=5.2,<6",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-meteostick/releases/download/v0.68.2/weewx-meteostick-0.68.2.zip",
+            "format": "zip",
+            "sha256": "bcdc44c56d4c884014cd1f69560c0a3f2ee489ee3ed007afe6ece8a3dfd6b65e"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-meteostick/releases/tag/v0.68.2",
+          "restart_required": true
         }
       ]
     },
@@ -622,6 +670,18 @@
           },
           "release_notes": "https://github.com/weewx-packages/ventusw820/releases/tag/v0.2.1",
           "restart_required": true
+        },
+        {
+          "version": "0.2.2",
+          "requires_python": ">=3.10",
+          "requires_weewx": ">=5.2,<6",
+          "archive": {
+            "url": "https://github.com/weewx-packages/ventusw820/releases/download/v0.2.2/ventusw820-0.2.2.zip",
+            "format": "zip",
+            "sha256": "fe5d57da0cbca900f5032d1ae2d5d81e3836afd31e296102c0132296fa153e03"
+          },
+          "release_notes": "https://github.com/weewx-packages/ventusw820/releases/tag/v0.2.2",
+          "restart_required": true
         }
       ]
     },
@@ -646,6 +706,18 @@
             "sha256": "88d0b19bd794cc88e1de3dc87171705f9d58815396c9f6ade3076bdb86069f87"
           },
           "release_notes": "https://github.com/weewx-packages/weewx-wh23xx/releases/tag/v0.15.0",
+          "restart_required": true
+        },
+        {
+          "version": "0.15.1",
+          "requires_python": ">=3.10",
+          "requires_weewx": ">=5.2,<6",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-wh23xx/releases/download/v0.15.1/weewx-wh23xx-0.15.1.zip",
+            "format": "zip",
+            "sha256": "050c17a8021c96861735207ec059a9f26782138653f06cf72ad3fca53f43082a"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-wh23xx/releases/tag/v0.15.1",
           "restart_required": true
         }
       ]
@@ -776,6 +848,18 @@
           "release_notes": "https://github.com/weewx-packages/weewx-aqi/releases/tag/v1.5.0",
           "restart_required": true,
           "yanked": true
+        },
+        {
+          "version": "1.5.1",
+          "requires_python": ">=3.10,<3.15",
+          "requires_weewx": ">=5.5.2,<5.7",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-aqi/releases/download/v1.5.1/weewx-aqi-1.5.1.zip",
+            "format": "zip",
+            "sha256": "3365f6126465f212f39dd7d1a2755a162eca26c7d2372af70bf3c6bea773c89a"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-aqi/releases/tag/v1.5.1",
+          "restart_required": true
         }
       ]
     },
@@ -836,6 +920,18 @@
           },
           "release_notes": "https://github.com/weewx-packages/weewx-csv/releases/tag/v0.12.0",
           "restart_required": true
+        },
+        {
+          "version": "0.12.1",
+          "requires_python": ">=3.10,<3.15",
+          "requires_weewx": ">=5.5.2,<5.7",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-csv/releases/download/v0.12.1/weewx-csv-0.12.1.zip",
+            "format": "zip",
+            "sha256": "9cb622b77b0bd776da6540504e95b097408e5f542ccd3088a34fa4db987bf45f"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-csv/releases/tag/v0.12.1",
+          "restart_required": true
         }
       ]
     },
@@ -865,6 +961,18 @@
           },
           "release_notes": "https://github.com/weewx-packages/weewx-json/releases/tag/v1.3.0",
           "restart_required": true
+        },
+        {
+          "version": "1.3.1",
+          "requires_python": ">=3.10,<3.15",
+          "requires_weewx": ">=5.5.2,<5.7",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-json/releases/download/v1.3.1/weewx-json_1.3.1.tar.gz",
+            "format": "tar.gz",
+            "sha256": "1451c82165b6bc89415d262765790db65e9fab3c2fddb09e83452f20497db645"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-json/releases/tag/v1.3.1",
+          "restart_required": true
         }
       ]
     },
@@ -893,6 +1001,18 @@
             "sha256": "d34a0667898321d1761bdd03fe69d8a1d0e0712151d758a208e7dc63db65686a"
           },
           "release_notes": "https://github.com/weewx-packages/bme280wx/releases/tag/v1.1.1",
+          "restart_required": true
+        },
+        {
+          "version": "1.1.2",
+          "requires_python": ">=3.10,<3.15",
+          "requires_weewx": ">=5.5.2,<5.7",
+          "archive": {
+            "url": "https://github.com/weewx-packages/bme280wx/releases/download/v1.1.2/bme280wx-1.1.2.zip",
+            "format": "zip",
+            "sha256": "6b2486a84fb63b219d91436cf8fba0528c2848b5a76789cbfd498428cfa187a9"
+          },
+          "release_notes": "https://github.com/weewx-packages/bme280wx/releases/tag/v1.1.2",
           "restart_required": true
         }
       ]
@@ -3223,6 +3343,18 @@
             "sha256": "2dc0d2f8fbc38d9b146637238a0d762f8ebd1ce02ba2d8011989540846560b9c"
           },
           "release_notes": "https://github.com/weewx-packages/weewx-davis-cloud/releases/tag/v0.1.0a1",
+          "restart_required": true
+        },
+        {
+          "version": "0.1.0a2",
+          "requires_python": ">=3.10,<3.15",
+          "requires_weewx": ">=5.5,<6",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-davis-cloud/releases/download/v0.1.0a2/davis-cloud-0.1.0a2.tar.gz",
+            "format": "tar.gz",
+            "sha256": "3037d19025e12b495c82894307ae06837604a2cf939f24f58b384fe9f8d08713"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-davis-cloud/releases/tag/v0.1.0a2",
           "restart_required": true
         }
       ]

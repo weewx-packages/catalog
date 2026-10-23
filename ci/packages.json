@@ -187,7 +187,7 @@
   },
   "meteostick": {
     "repository": "weewx-packages/weewx-meteostick",
-    "ref": "2345202a03892295e6ce8689a1bdc5d3eb6f8000",
+    "ref": "v{version}",
     "imports": [
       "user.meteostick"
     ],
@@ -211,7 +211,7 @@
   },
   "ventusw820": {
     "repository": "weewx-packages/ventusw820",
-    "ref": "97b41caecbf776c3039836cbd12024a03beccdba",
+    "ref": "v{version}",
     "imports": [
       "user.ventus",
       "user.ventusw820"
@@ -229,7 +229,7 @@
   },
   "wh23xx": {
     "repository": "weewx-packages/weewx-wh23xx",
-    "ref": "015cd77d894c503ca3ba3581307886fc40f87151",
+    "ref": "v{version}",
     "imports": [
       "user.wh23xx"
     ],
@@ -266,7 +266,7 @@
   },
   "aqi": {
     "repository": "weewx-packages/weewx-aqi",
-    "ref": "a6133a018062a02b3f1823751c17e836e5ab7dcf",
+    "ref": "v{version}",
     "imports": [
       "user.aqi.service",
       "user.aqi.au",
@@ -292,7 +292,7 @@
   },
   "csv": {
     "repository": "weewx-packages/weewx-csv",
-    "ref": "4319f3f33e53e0658138e3e8260689d09aaf3b96",
+    "ref": "v{version}",
     "imports": [
       "user.csv"
     ],
@@ -301,7 +301,7 @@
   },
   "json": {
     "repository": "weewx-packages/weewx-json",
-    "ref": "1b59f6d0e0bc2cadb04e5497c77bae83672c97f9",
+    "ref": "v{version}",
     "imports": [],
     "allowed_skips": [],
     "pip_packages": [],
@@ -314,7 +314,7 @@
   },
   "bme280wx": {
     "repository": "weewx-packages/bme280wx",
-    "ref": "fb8e33ad37b8edf9f767a595c98d98db9ddcbf82",
+    "ref": "v{version}",
     "imports": [
       "user.bme280wx"
     ],
