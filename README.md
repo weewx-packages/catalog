@@ -1,52 +1,38 @@
 # WeeWX packages
 
-A shared catalog of WeeWX extensions, drivers, and skins. It lists versioned
-downloads and the Python and WeeWX versions each release supports. Packages
-stay with their publishers.
+A catalog of extensions, drivers and skins for [WeeWX](https://weewx.com/).
+Each package links to its own documentation and to a catalog page with the
+current release, its WeeWX and Python requirements and the install command.
+Packages stay with their publishers and keep their licenses.
 
-## Install with stock WeeWX
+## Install a package
 
-Open the package's page through its ID in the table below. The page names the
-current release, its WeeWX and Python requirements, and the `weectl extension install`
-command for its archive. Stock WeeWX installs extension archives by URL or local
-filename. The package's guide, linked from the same page, lists dependencies
-and configuration.
-
-## Use repository search and updates
-
-Repository support is currently provided by the experimental
-[standalone package manager](https://github.com/weewx-packages/weewx-package-manager#install).
-There is no core integration. Stock `weectl extension` does not accept catalog
-package IDs or provide `repo`, `search`, `check-updates` or `update` actions.
-
-Install the standalone manager using its instructions. It is a source-built
-prerelease without a published release archive. After a WeeWX extension
-installation, put your station's `bin` directory on `PYTHONPATH` and use the
-same Python interpreter as WeeWX:
+Open the package's catalog page from the Install column below. Install the
+dependencies named in the package's documentation, then install the archive
+with the `weectl` of the Python environment running WeeWX:
 
 ```shell
-export PYTHONPATH=/path/to/station/bin
-python -m user.packages repo add packages https://raw.githubusercontent.com/weewx-packages/catalog/main/repository.json
-python -m user.packages search php
-python -m user.packages install livedata --repo packages
+weectl extension install ARCHIVE_URL
 ```
 
-The explicit `--repo` selects this source if another registered repository
-publishes the same package ID. A Python-package installation of the manager
-also provides `weectl-packages` with the same actions.
+Configure the package as its documentation describes and restart WeeWX. To
+update, install the newer archive from the same page. `weectl extension list`
+shows installed extensions, `weectl extension uninstall NAME` removes one.
 
-Follow the individual package's configuration instructions after installation.
+## Search and update with the package manager
 
-NeoWX Material, Belchertown and DivumWX mirror the original upstream source,
-including fonts and bundled license notices. Their catalog archives preserve
-the upstream release files. DivumWX uses the original 1.7.0 package; the modified
-1.7.0.post1 package is withdrawn from new installations.
-NeoWX Material may require selecting `skin = neowx-material` in your
-`[[StandardReport]]` configuration and enabling that report.
+The [package manager](https://github.com/weewx-packages/weewx-package-manager#readme)
+is an extension that searches this catalog, installs packages by ID and keeps
+them up to date. It is experimental. Install it like any other extension:
 
-Tracer / EPEVER requires `pymodbus>=3.11,<4` and `pyserial`. Version 0.3.0 uses
-watt-hours for energy observations; review older energy values before combining
-records from different driver versions.
+```shell
+weectl extension install https://github.com/weewx-packages/weewx-package-manager/releases/latest/download/package-manager.tar.gz
+```
+
+Its [documentation](https://github.com/weewx-packages/weewx-package-manager#install)
+shows how to register this catalog and run it.
+
+## Packages
 
 <!-- packages:start -->
 ### Skins
@@ -199,53 +185,15 @@ records from different driver versions.
 | [wlip-emulator](https://github.com/weewx-packages/weewx-wlip-emulator) | [`wlip-emulator`](packages/wlip-emulator.md) | WeatherLinkIP Emulator |
 <!-- packages:end -->
 
-With the standalone manager, new packages become available when the registered
-index refreshes. Use `python -m user.packages repo refresh packages` to refresh it
-explicitly in the environment configured above.
+## About the catalog
 
-## Check and update
+* [Compatibility checks](COMPATIBILITY.md) install every package release
+  weekly against WeeWX `master` and `development`. Failures appear as
+  [compatibility issues](https://github.com/weewx-packages/catalog/issues?q=label%3Acompatibility).
+* [Add or update a package](CONTRIBUTING.md). The index is
+  [repository.json](repository.json), its contract
+  [repository-v1.schema.json](schemas/repository-v1.schema.json).
+* Installing an extension runs its publisher's installer. The archive digest
+  only confirms that the download matches the index.
 
-```shell
-python -m user.packages check-updates
-python -m user.packages update
-```
-
-These are standalone-manager commands. The selected source remains bound to the
-installed extension. Updates check its
-compatibility and archive digest, and ask before replacing local changes.
-Updates run when requested; this catalog sets up no background updater.
-For a stock WeeWX installation without the manager, follow the package's
-documented archive upgrade procedure.
-
-## Publish a package
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for adding a package or release.
-The published index is [repository.json](repository.json). Its structural
-contract is [repository-v1.schema.json](schemas/repository-v1.schema.json).
-
-Installing an extension executes its publisher's Python installer. An archive
-digest checks agreement with the index, so use catalogs and publishers you trust.
-
-## Compatibility checks
-
-[GitHub Actions](https://github.com/weewx-packages/catalog/actions/workflows/compatibility.yml)
-tests catalog releases weekly against WeeWX `master` and `development`.
-Failures open or update a [compatibility issue](https://github.com/weewx-packages/catalog/issues?q=label%3Acompatibility).
-See [the checks and their coverage](COMPATIBILITY.md).
-
-The [upstream skin workflow](https://github.com/weewx-packages/catalog/actions/workflows/upstreams.yml)
-mirrors each skin fork weekly and publishes new stable versions after its
-installation and report tests pass. The package table comes from the catalog
-index and is updated in the same commit.
-
-The [wiki review](WIKI-AUDIT.md) records licensing, maintenance and successor
-decisions for the complete extension list. Additional source backups run weekly,
-distributed across Monday through Friday. Source installation checks and
-[upstream activity](https://github.com/weewx-packages/catalog/issues?q=%22Upstream+activity%22)
-are reported separately from the tested catalog releases. See
-[backup coverage](COMPATIBILITY.md#source-backups-and-upstream-activity).
-
-## License
-
-The catalog, schema, and documentation use [GPL-3.0-only](LICENSE).
-Listed packages retain their respective licenses.
+The catalog, schema and documentation use [GPL-3.0-only](LICENSE).

@@ -30,9 +30,9 @@ Complete the configuration described in the guide. Then restart WeeWX.
 
 ## Install with the package manager
 
-The experimental [standalone package manager](https://github.com/weewx-packages/weewx-package-manager#install)
-installs by package ID and keeps track of updates. Register this catalog
-as `packages` [once](../README.md#use-repository-search-and-updates), then run:
+The experimental [package manager](https://github.com/weewx-packages/weewx-package-manager#install)
+extension installs by package ID and keeps track of updates. Register this
+catalog as `packages` once, as its documentation shows, then run:
 
 ```shell
 python -m user.packages install crt --repo packages
