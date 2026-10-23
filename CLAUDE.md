@@ -5,7 +5,9 @@ Static JSON index for WeeWX clients with extension repository support.
 ## Validation
 
 - `just fast`: validate the index with the client's semantic validator, about 0.1 s.
-- Requires a WeeWX build with repository support and `weectl` on PATH.
+- Requires the standalone `user.packages` client importable by `python3`, using
+  a Python-package install or the extension's station bin directory on PYTHONPATH.
+- Stock WeeWX has no `weectl extension repo` command.
 - `just test-ci`: test CI planning, result handling and issue lifecycle.
   Requires pytest, packaging, Git and Bash.
 
