@@ -45,8 +45,6 @@ jobs:
           path: plan
       - name: Install test dependencies
         run: |
-          mkdir -p result
-          printf '%s\n' '{"status":"error","phase":"setup","details":["Job stopped before producing a test result. See the dependency setup and job logs."]}' > result/result.json
           # The hosted runner's Azure mirror can take several minutes per package.
           # Keep Ubuntu's signed repositories, using its HTTPS archive directly.
           if [ -f /etc/apt/apt-mirrors.txt ]; then
@@ -57,6 +55,13 @@ jobs:
           python -m pip install ./weewx pytest packaging requests skyfield "pymodbus>=3.11,<4" pyserial
       - name: Install and test the release archive
         run: python catalog/ci/compatibility.py run --plan plan/matrix.json --case-id "${{ matrix.case_id }}" --source extension --work result
+      - name: Record missing test results
+        if: always()
+        run: |
+          if [ ! -f result/result.json ]; then
+            mkdir -p result
+            printf '%s\n' '{"status":"error","phase":"setup","details":["Job stopped before producing a test result. See the dependency setup and job logs."]}' > result/result.json
+          fi
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         if: always()
         with:
