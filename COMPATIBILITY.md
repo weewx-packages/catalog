@@ -137,12 +137,11 @@ runtime code is patched. Each candidate is installed and rendered against WeeWX
 and Belchertown use Python 3.10 and 3.14; DivumWX uses 3.14 because its upstream
 requires Python 3.13.5 or later and WeeWX 5.5 or later.
 
-DivumWX 1.7.0.post1 uses a separately versioned, cleaned archive. The recipe in
-`ci/repack_divumwx.py` verifies every input file against the audited 1.7.0 tag,
-retains freely licensed fonts with full notices and replaces AstroDot letters
-with Unicode zodiac symbols. The original archive is withdrawn. The `blocked`
-field prevents direct publication of future tags until their assets are reviewed.
-Use restrictions and redistribution grants are evaluated separately.
+The mirrored skins retain their original fonts and bundled notices. DivumWX
+1.7.0 is the unchanged upstream tag archive. Its modified 1.7.0.post1 variant
+remains available as an immutable historical download, marked `yanked` in the
+catalog. New upstream releases follow the same packaging and compatibility
+checks as the other mirrored skins.
 
 The skin suite runs the original installer, verifies installer identity and
 imports from the installed station, fills an isolated SQLite archive, and runs
