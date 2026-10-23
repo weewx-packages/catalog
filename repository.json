@@ -15,6 +15,7 @@
         "service",
         "generator"
       ],
+      "category": "uploader",
       "keywords": [
         "live.php",
         "live",
@@ -47,6 +48,7 @@
       "types": [
         "driver"
       ],
+      "category": "driver",
       "keywords": [
         "ecowitt",
         "http",
@@ -88,6 +90,7 @@
       "types": [
         "driver"
       ],
+      "category": "driver",
       "keywords": [
         "davis",
         "vantage",
@@ -124,6 +127,7 @@
       "types": [
         "skin"
       ],
+      "category": "skin",
       "keywords": [
         "neowx-material",
         "skin",
@@ -154,6 +158,7 @@
       "types": [
         "skin"
       ],
+      "category": "skin",
       "keywords": [
         "belchertown",
         "skin",
@@ -184,6 +189,7 @@
       "types": [
         "driver"
       ],
+      "category": "driver",
       "keywords": [
         "tracer",
         "epever",
@@ -216,6 +222,7 @@
       "types": [
         "service"
       ],
+      "category": "other",
       "keywords": [
         "cumulus",
         "realtime",
@@ -245,6 +252,7 @@
       "types": [
         "service"
       ],
+      "category": "other",
       "keywords": [
         "cumulus",
         "wxnow",
@@ -274,6 +282,7 @@
       "types": [
         "service"
       ],
+      "category": "uploader",
       "keywords": [
         "graphite",
         "carbon",
@@ -303,6 +312,7 @@
       "types": [
         "service"
       ],
+      "category": "uploader",
       "keywords": [
         "influxdb",
         "database",
@@ -332,6 +342,7 @@
       "types": [
         "service"
       ],
+      "category": "uploader",
       "keywords": [
         "meteotemplate",
         "uploader"
@@ -360,6 +371,7 @@
       "types": [
         "service"
       ],
+      "category": "uploader",
       "keywords": [
         "openweathermap",
         "uploader"
@@ -388,6 +400,7 @@
       "types": [
         "service"
       ],
+      "category": "uploader",
       "keywords": [
         "prometheus",
         "pushgateway",
@@ -417,6 +430,7 @@
       "types": [
         "service"
       ],
+      "category": "uploader",
       "keywords": [
         "twitter",
         "twython",
@@ -446,6 +460,7 @@
       "types": [
         "service"
       ],
+      "category": "uploader",
       "keywords": [
         "zabbix",
         "monitoring"
@@ -474,6 +489,7 @@
       "types": [
         "skin"
       ],
+      "category": "skin",
       "keywords": [
         "divumwx",
         "skin",
@@ -517,6 +533,7 @@
       "types": [
         "driver"
       ],
+      "category": "driver",
       "homepage": "https://github.com/weewx-packages/weewx-meteostick",
       "releases": [
         {
@@ -541,6 +558,7 @@
       "types": [
         "driver"
       ],
+      "category": "driver",
       "homepage": "https://github.com/weewx-packages/weewx-sdr",
       "releases": [
         {
@@ -565,6 +583,7 @@
       "types": [
         "service"
       ],
+      "category": "driver",
       "homepage": "https://github.com/weewx-packages/weewx-NovaSDS011/blob/weewx-packages-docs/README.md",
       "releases": [
         {
@@ -589,6 +608,7 @@
       "types": [
         "driver"
       ],
+      "category": "driver",
       "homepage": "https://github.com/weewx-packages/ventusw820",
       "releases": [
         {
@@ -613,6 +633,7 @@
       "types": [
         "driver"
       ],
+      "category": "driver",
       "homepage": "https://github.com/weewx-packages/weewx-wh23xx",
       "releases": [
         {
@@ -637,6 +658,7 @@
       "types": [
         "driver"
       ],
+      "category": "driver",
       "homepage": "https://github.com/weewx-packages/weewx-wxt5x0",
       "releases": [
         {
@@ -661,6 +683,7 @@
       "types": [
         "driver"
       ],
+      "category": "driver",
       "homepage": "https://github.com/weewx-packages/weewx-wll",
       "releases": [
         {
@@ -685,6 +708,7 @@
       "types": [
         "driver"
       ],
+      "category": "driver",
       "homepage": "https://github.com/weewx-packages/weewx-observerip",
       "releases": [
         {
@@ -721,6 +745,7 @@
       "types": [
         "service"
       ],
+      "category": "other",
       "keywords": [
         "aqi",
         "weewx"
@@ -764,6 +789,7 @@
         "driver",
         "skin"
       ],
+      "category": "driver",
       "keywords": [
         "cmon",
         "weewx"
@@ -792,6 +818,7 @@
       "types": [
         "service"
       ],
+      "category": "other",
       "keywords": [
         "csv",
         "weewx"
@@ -820,6 +847,7 @@
       "types": [
         "skin"
       ],
+      "category": "skin",
       "keywords": [
         "json",
         "weewx"
@@ -848,6 +876,7 @@
       "types": [
         "service"
       ],
+      "category": "driver",
       "keywords": [
         "bme280wx",
         "weewx"
@@ -876,6 +905,7 @@
       "types": [
         "skin"
       ],
+      "category": "skin",
       "keywords": [
         "niculskin",
         "weewx"
@@ -904,6 +934,7 @@
       "types": [
         "service"
       ],
+      "category": "driver",
       "homepage": "https://github.com/weewx-packages/weewx-airlink",
       "releases": [
         {
@@ -927,6 +958,7 @@
       "types": [
         "service"
       ],
+      "category": "driver",
       "homepage": "https://github.com/weewx-packages/weewx-airlink-extended",
       "releases": [
         {
@@ -950,6 +982,7 @@
       "types": [
         "service"
       ],
+      "category": "driver",
       "homepage": "https://github.com/weewx-packages/weewx-as3935",
       "releases": [
         {
@@ -973,6 +1006,7 @@
       "types": [
         "driver"
       ],
+      "category": "driver",
       "homepage": "https://github.com/weewx-packages/weewx-atmocom-udp/blob/weewx-packages-docs/README.md",
       "releases": [
         {
@@ -996,6 +1030,7 @@
       "types": [
         "driver"
       ],
+      "category": "driver",
       "homepage": "https://github.com/weewx-packages/weewx-cm1/blob/weewx-packages-docs/README.md",
       "releases": [
         {
@@ -1019,6 +1054,7 @@
       "types": [
         "driver"
       ],
+      "category": "driver",
       "homepage": "https://github.com/weewx-packages/weewx-columbia-ms",
       "releases": [
         {
@@ -1042,6 +1078,7 @@
       "types": [
         "driver"
       ],
+      "category": "driver",
       "homepage": "https://github.com/weewx-packages/weewx-davisconsoleapi/blob/weewx-packages-docs/README.md",
       "releases": [
         {
@@ -1077,6 +1114,7 @@
       "types": [
         "service"
       ],
+      "category": "driver",
       "homepage": "https://github.com/weewx-packages/weewx-ecowittGateway",
       "releases": [
         {
@@ -1100,6 +1138,7 @@
       "types": [
         "driver"
       ],
+      "category": "driver",
       "homepage": "https://github.com/weewx-packages/weewx-envoy/blob/weewx-packages-docs/README.md",
       "releases": [
         {
@@ -1123,6 +1162,7 @@
       "types": [
         "driver"
       ],
+      "category": "driver",
       "homepage": "https://github.com/weewx-packages/weewx-gill-metconnect",
       "releases": [
         {
@@ -1146,6 +1186,7 @@
       "types": [
         "driver"
       ],
+      "category": "driver",
       "homepage": "https://github.com/weewx-packages/weewx-id5001/blob/weewx-packages-docs/README.md",
       "releases": [
         {
@@ -1169,6 +1210,7 @@
       "types": [
         "driver"
       ],
+      "category": "driver",
       "homepage": "https://github.com/weewx-packages/weewx-interceptor/blob/weewx-packages-docs/README.md",
       "releases": [
         {
@@ -1192,6 +1234,7 @@
       "types": [
         "driver"
       ],
+      "category": "driver",
       "homepage": "https://github.com/weewx-packages/weewx-ip100",
       "releases": [
         {
@@ -1215,6 +1258,7 @@
       "types": [
         "driver"
       ],
+      "category": "driver",
       "homepage": "https://github.com/weewx-packages/weewx-luxtronik",
       "releases": [
         {
@@ -1238,6 +1282,7 @@
       "types": [
         "driver"
       ],
+      "category": "driver",
       "homepage": "https://github.com/weewx-packages/weewx-maxbotix",
       "releases": [
         {
@@ -1261,6 +1306,7 @@
       "types": [
         "driver"
       ],
+      "category": "driver",
       "homepage": "https://github.com/weewx-packages/weewx-modbus-tcp",
       "releases": [
         {
@@ -1284,6 +1330,7 @@
       "types": [
         "driver"
       ],
+      "category": "driver",
       "homepage": "https://github.com/weewx-packages/weewx-netatmo",
       "releases": [
         {
@@ -1307,6 +1354,7 @@
       "types": [
         "service"
       ],
+      "category": "driver",
       "homepage": "https://github.com/weewx-packages/weewx-nmea-xdr/blob/weewx-packages-docs/README.md",
       "releases": [
         {
@@ -1330,6 +1378,7 @@
       "types": [
         "driver"
       ],
+      "category": "driver",
       "homepage": "https://github.com/weewx-packages/weewx-owfs",
       "releases": [
         {
@@ -1353,6 +1402,7 @@
       "types": [
         "service"
       ],
+      "category": "driver",
       "homepage": "https://github.com/weewx-packages/weewx-photovoltaics",
       "releases": [
         {
@@ -1376,6 +1426,7 @@
       "types": [
         "service"
       ],
+      "category": "driver",
       "homepage": "https://github.com/weewx-packages/weewx-precipmeter",
       "releases": [
         {
@@ -1399,6 +1450,7 @@
       "types": [
         "service"
       ],
+      "category": "driver",
       "homepage": "https://github.com/weewx-packages/weewx-reservoir",
       "releases": [
         {
@@ -1422,6 +1474,7 @@
       "types": [
         "service"
       ],
+      "category": "driver",
       "homepage": "https://github.com/weewx-packages/weewx-snmp/blob/weewx-packages-docs/README.md",
       "releases": [
         {
@@ -1445,6 +1498,7 @@
       "types": [
         "driver"
       ],
+      "category": "driver",
       "homepage": "https://github.com/weewx-packages/weewx-tempest-ws",
       "releases": [
         {
@@ -1468,6 +1522,7 @@
       "types": [
         "driver"
       ],
+      "category": "driver",
       "homepage": "https://github.com/weewx-packages/weewx-tfrc",
       "releases": [
         {
@@ -1491,6 +1546,7 @@
       "types": [
         "driver"
       ],
+      "category": "driver",
       "homepage": "https://github.com/weewx-packages/weewx-ultimate-push",
       "releases": [
         {
@@ -1514,6 +1570,7 @@
       "types": [
         "driver"
       ],
+      "category": "driver",
       "homepage": "https://github.com/weewx-packages/weewx-uradmon",
       "releases": [
         {
@@ -1537,6 +1594,7 @@
       "types": [
         "driver"
       ],
+      "category": "driver",
       "homepage": "https://github.com/weewx-packages/weewx-vedirect/blob/weewx-packages-docs/README.md",
       "releases": [
         {
@@ -1560,6 +1618,7 @@
       "types": [
         "driver"
       ],
+      "category": "driver",
       "homepage": "https://github.com/weewx-packages/weewx-wmr89",
       "releases": [
         {
@@ -1583,6 +1642,7 @@
       "types": [
         "driver"
       ],
+      "category": "driver",
       "homepage": "https://github.com/weewx-packages/weewx-ws6in1",
       "releases": [
         {
@@ -1607,6 +1667,7 @@
         "service",
         "generator"
       ],
+      "category": "forecast",
       "homepage": "https://github.com/weewx-packages/weewx-xtide",
       "releases": [
         {
@@ -1630,6 +1691,7 @@
       "types": [
         "service"
       ],
+      "category": "forecast",
       "homepage": "https://github.com/weewx-packages/weewx-DWD/blob/weewx-packages-docs/README.md",
       "releases": [
         {
@@ -1653,6 +1715,7 @@
       "types": [
         "service"
       ],
+      "category": "other",
       "homepage": "https://github.com/weewx-packages/weewx-GTS",
       "releases": [
         {
@@ -1676,6 +1739,7 @@
       "types": [
         "service"
       ],
+      "category": "driver",
       "homepage": "https://github.com/weewx-packages/weewx-airQ/blob/weewx-packages-docs/README.md",
       "releases": [
         {
@@ -1699,6 +1763,7 @@
       "types": [
         "service"
       ],
+      "category": "driver",
       "homepage": "https://github.com/weewx-packages/weewx-airgradient",
       "releases": [
         {
@@ -1722,6 +1787,7 @@
       "types": [
         "skin"
       ],
+      "category": "skin",
       "homepage": "https://github.com/weewx-packages/weewx-amphibian",
       "releases": [
         {
@@ -1746,6 +1812,7 @@
         "service",
         "search-list"
       ],
+      "category": "other",
       "homepage": "https://github.com/weewx-packages/weewx-aqi-xtype",
       "releases": [
         {
@@ -1770,6 +1837,7 @@
         "skin",
         "service"
       ],
+      "category": "skin",
       "homepage": "https://github.com/weewx-packages/weewx-carbonsteel-series",
       "releases": [
         {
@@ -1793,6 +1861,7 @@
       "types": [
         "service"
       ],
+      "category": "other",
       "homepage": "https://github.com/weewx-packages/weewx-climate",
       "releases": [
         {
@@ -1816,6 +1885,7 @@
       "types": [
         "generator"
       ],
+      "category": "other",
       "homepage": "https://github.com/weewx-packages/weewx-conditions/blob/weewx-packages-docs/README.md",
       "releases": [
         {
@@ -1840,6 +1910,7 @@
         "skin",
         "service"
       ],
+      "category": "skin",
       "homepage": "https://github.com/weewx-packages/weewx-ecowitt_console_emulator",
       "releases": [
         {
@@ -1863,6 +1934,7 @@
       "types": [
         "skin"
       ],
+      "category": "skin",
       "homepage": "https://github.com/weewx-packages/weewx-exfoliation",
       "releases": [
         {
@@ -1886,6 +1958,7 @@
       "types": [
         "service"
       ],
+      "category": "driver",
       "homepage": "https://github.com/weewx-packages/weewx-filepile",
       "releases": [
         {
@@ -1909,6 +1982,7 @@
       "types": [
         "service"
       ],
+      "category": "forecast",
       "homepage": "https://github.com/weewx-packages/weewx-forecast",
       "releases": [
         {
@@ -1932,6 +2006,7 @@
       "types": [
         "skin"
       ],
+      "category": "skin",
       "homepage": "https://github.com/weewx-packages/weewx-jas/blob/weewx-packages-docs/README.md",
       "releases": [
         {
@@ -1955,6 +2030,7 @@
       "types": [
         "service"
       ],
+      "category": "forecast",
       "homepage": "https://github.com/weewx-packages/weewx-meteoalarm",
       "releases": [
         {
@@ -1978,6 +2054,7 @@
       "types": [
         "generator"
       ],
+      "category": "other",
       "homepage": "https://github.com/weewx-packages/weewx-metrics/blob/weewx-packages-docs/README.md",
       "releases": [
         {
@@ -2001,6 +2078,7 @@
       "types": [
         "service"
       ],
+      "category": "driver",
       "homepage": "https://github.com/weewx-packages/weewx-mqtt-subscribe/blob/weewx-packages-docs/README.md",
       "releases": [
         {
@@ -2024,6 +2102,7 @@
       "types": [
         "service"
       ],
+      "category": "forecast",
       "homepage": "https://github.com/weewx-packages/weewx-nws",
       "releases": [
         {
@@ -2047,6 +2126,7 @@
       "types": [
         "service"
       ],
+      "category": "driver",
       "homepage": "https://github.com/weewx-packages/weewx-openweather_API/blob/weewx-packages-docs/README.md",
       "releases": [
         {
@@ -2082,6 +2162,7 @@
       "types": [
         "service"
       ],
+      "category": "driver",
       "homepage": "https://github.com/weewx-packages/weewx-purple",
       "releases": [
         {
@@ -2105,6 +2186,7 @@
       "types": [
         "service"
       ],
+      "category": "other",
       "homepage": "https://github.com/weewx-packages/weewx-saratoga",
       "releases": [
         {
@@ -2129,6 +2211,7 @@
         "driver",
         "service"
       ],
+      "category": "driver",
       "homepage": "https://github.com/weewx-packages/weewx-sds011/blob/weewx-packages-docs/readme",
       "releases": [
         {
@@ -2152,6 +2235,7 @@
       "types": [
         "service"
       ],
+      "category": "other",
       "homepage": "https://github.com/weewx-packages/weewx-setprocessname",
       "releases": [
         {
@@ -2175,6 +2259,7 @@
       "types": [
         "service"
       ],
+      "category": "other",
       "homepage": "https://github.com/weewx-packages/weewx-since-last-archive-accumulator",
       "releases": [
         {
@@ -2198,6 +2283,7 @@
       "types": [
         "generator"
       ],
+      "category": "uploader",
       "homepage": "https://github.com/weewx-packages/weewx-sqlupload",
       "releases": [
         {
@@ -2221,6 +2307,7 @@
       "types": [
         "service"
       ],
+      "category": "driver",
       "homepage": "https://github.com/weewx-packages/weewx-sqm/blob/weewx-packages-docs/README.md",
       "releases": [
         {
@@ -2244,6 +2331,7 @@
       "types": [
         "skin"
       ],
+      "category": "skin",
       "homepage": "https://github.com/weewx-packages/weewx-weatherboard",
       "releases": [
         {
@@ -2268,6 +2356,7 @@
         "service",
         "search-list"
       ],
+      "category": "other",
       "homepage": "https://github.com/weewx-packages/weewx-xaggs",
       "releases": [
         {
@@ -2292,6 +2381,7 @@
         "skin",
         "search-list"
       ],
+      "category": "skin",
       "homepage": "https://github.com/weewx-packages/weewx-WXgraphic/blob/weewx-packages-docs/README.md",
       "releases": [
         {
@@ -2315,6 +2405,7 @@
       "types": [
         "service"
       ],
+      "category": "other",
       "homepage": "https://github.com/weewx-packages/weewx-aggregated-values",
       "releases": [
         {
@@ -2338,6 +2429,7 @@
       "types": [
         "service"
       ],
+      "category": "other",
       "homepage": "https://github.com/weewx-packages/weewx-aprs",
       "releases": [
         {
@@ -2361,6 +2453,7 @@
       "types": [
         "service"
       ],
+      "category": "other",
       "homepage": "https://github.com/weewx-packages/weewx-celestial",
       "releases": [
         {
@@ -2385,6 +2478,7 @@
         "service",
         "search-list"
       ],
+      "category": "other",
       "homepage": "https://github.com/weewx-packages/weewx-easter-almanac-example/blob/weewx-packages-docs/README.md",
       "releases": [
         {
@@ -2408,6 +2502,7 @@
       "types": [
         "service"
       ],
+      "category": "uploader",
       "homepage": "https://github.com/weewx-packages/weewx-emoncms/blob/weewx-packages-docs/README.md",
       "releases": [
         {
@@ -2431,6 +2526,7 @@
       "types": [
         "service"
       ],
+      "category": "other",
       "homepage": "https://github.com/weewx-packages/weewx-healthchecks",
       "releases": [
         {
@@ -2454,6 +2550,7 @@
       "types": [
         "other"
       ],
+      "category": "driver",
       "homepage": "https://github.com/weewx-packages/weewx-import-wlk",
       "releases": [
         {
@@ -2477,6 +2574,7 @@
       "types": [
         "service"
       ],
+      "category": "other",
       "homepage": "https://github.com/weewx-packages/weewx-knx",
       "releases": [
         {
@@ -2500,6 +2598,7 @@
       "types": [
         "service"
       ],
+      "category": "other",
       "homepage": "https://github.com/weewx-packages/weewx-loopdata",
       "releases": [
         {
@@ -2523,6 +2622,7 @@
       "types": [
         "service"
       ],
+      "category": "uploader",
       "homepage": "https://github.com/weewx-packages/weewx-mqtt-publish",
       "releases": [
         {
@@ -2546,6 +2646,7 @@
       "types": [
         "service"
       ],
+      "category": "uploader",
       "homepage": "https://github.com/weewx-packages/weewx-mqtt-publish-v2",
       "releases": [
         {
@@ -2569,6 +2670,7 @@
       "types": [
         "service"
       ],
+      "category": "other",
       "homepage": "https://github.com/weewx-packages/weewx-notify/blob/weewx-packages-docs/README.md",
       "releases": [
         {
@@ -2592,6 +2694,7 @@
       "types": [
         "service"
       ],
+      "category": "uploader",
       "homepage": "https://github.com/weewx-packages/weewx-ortsnetz-auslastung/blob/weewx-packages-docs/README.md",
       "releases": [
         {
@@ -2615,6 +2718,7 @@
       "types": [
         "other"
       ],
+      "category": "other",
       "homepage": "https://github.com/weewx-packages/weewx-postgresql/blob/weewx-packages-docs/README.md",
       "releases": [
         {
@@ -2638,6 +2742,7 @@
       "types": [
         "service"
       ],
+      "category": "uploader",
       "homepage": "https://github.com/weewx-packages/weewx-pusher",
       "releases": [
         {
@@ -2661,6 +2766,7 @@
       "types": [
         "service"
       ],
+      "category": "other",
       "homepage": "https://github.com/weewx-packages/weewx-pushover",
       "releases": [
         {
@@ -2684,6 +2790,7 @@
       "types": [
         "generator"
       ],
+      "category": "other",
       "homepage": "https://github.com/weewx-packages/weewx-rtsp-image",
       "releases": [
         {
@@ -2707,6 +2814,7 @@
       "types": [
         "service"
       ],
+      "category": "uploader",
       "homepage": "https://github.com/weewx-packages/weewx-rwsa",
       "releases": [
         {
@@ -2730,6 +2838,7 @@
       "types": [
         "generator"
       ],
+      "category": "uploader",
       "homepage": "https://github.com/weewx-packages/weewx-sftp",
       "releases": [
         {
@@ -2754,6 +2863,7 @@
         "service",
         "search-list"
       ],
+      "category": "other",
       "homepage": "https://github.com/weewx-packages/weewx-skyfield",
       "releases": [
         {
@@ -2778,6 +2888,7 @@
         "service",
         "search-list"
       ],
+      "category": "other",
       "homepage": "https://github.com/weewx-packages/weewx-skyfield-almanac/blob/weewx-packages-docs/README.md",
       "releases": [
         {
@@ -2802,6 +2913,7 @@
         "service",
         "search-list"
       ],
+      "category": "other",
       "homepage": "https://github.com/weewx-packages/weewx-skymap-almanac/blob/weewx-packages-docs/README.md",
       "releases": [
         {
@@ -2825,6 +2937,7 @@
       "types": [
         "service"
       ],
+      "category": "uploader",
       "homepage": "https://github.com/weewx-packages/weewx-skyvex",
       "releases": [
         {
@@ -2848,6 +2961,7 @@
       "types": [
         "generator"
       ],
+      "category": "other",
       "homepage": "https://github.com/weewx-packages/weewx-svg2png",
       "releases": [
         {
@@ -2871,6 +2985,7 @@
       "types": [
         "service"
       ],
+      "category": "uploader",
       "homepage": "https://github.com/weewx-packages/weewx-thingspeak/blob/weewx-packages-docs/README.md",
       "releases": [
         {
@@ -2894,6 +3009,7 @@
       "types": [
         "service"
       ],
+      "category": "uploader",
       "homepage": "https://github.com/weewx-packages/weewx-wbug/blob/weewx-packages-docs/README.md",
       "releases": [
         {
@@ -2917,6 +3033,7 @@
       "types": [
         "service"
       ],
+      "category": "uploader",
       "homepage": "https://github.com/weewx-packages/weewx-weepe/blob/weewx-packages-docs/readme.md",
       "releases": [
         {
@@ -2940,6 +3057,7 @@
       "types": [
         "service"
       ],
+      "category": "uploader",
       "homepage": "https://github.com/weewx-packages/weewx-wetter/blob/weewx-packages-docs/README.md",
       "releases": [
         {
@@ -2963,6 +3081,7 @@
       "types": [
         "service"
       ],
+      "category": "uploader",
       "homepage": "https://github.com/weewx-packages/weewx-windfinder/blob/weewx-packages-docs/README.md",
       "releases": [
         {
@@ -2986,6 +3105,7 @@
       "types": [
         "service"
       ],
+      "category": "uploader",
       "homepage": "https://github.com/weewx-packages/weewx-windy/blob/weewx-packages-docs/README.md",
       "releases": [
         {
@@ -3009,6 +3129,7 @@
       "types": [
         "service"
       ],
+      "category": "other",
       "homepage": "https://github.com/weewx-packages/weewx-wlip-emulator",
       "releases": [
         {
@@ -3032,6 +3153,7 @@
       "types": [
         "service"
       ],
+      "category": "uploader",
       "homepage": "https://github.com/weewx-packages/weewx-wns",
       "releases": [
         {
@@ -3055,6 +3177,7 @@
       "types": [
         "service"
       ],
+      "category": "uploader",
       "homepage": "https://github.com/weewx-packages/weewx-wundergroundlike",
       "releases": [
         {
@@ -3079,6 +3202,7 @@
         "driver",
         "service"
       ],
+      "category": "driver",
       "keywords": [
         "davis",
         "cloud",

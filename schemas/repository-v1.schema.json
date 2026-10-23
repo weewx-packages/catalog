@@ -113,6 +113,7 @@
         "name",
         "description",
         "types",
+        "category",
         "releases"
       ],
       "properties": {
@@ -142,6 +143,16 @@
               "other"
             ]
           }
+        },
+        "category": {
+          "description": "Purpose of the package, used for listings and search.",
+          "enum": [
+            "skin",
+            "driver",
+            "uploader",
+            "forecast",
+            "other"
+          ]
         },
         "keywords": {
           "type": "array",

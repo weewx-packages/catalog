@@ -12,8 +12,11 @@ configuration paths consistent with that layout.
 Add a package entry to [repository.json](repository.json), using an existing
 entry as a template. Choose a stable lowercase package ID and copy
 `installer_name` from the installer's `name`. Each package needs a description,
-one or more types, and at least one release. Keywords make hardware models and
-features searchable.
+one or more types, a category and at least one release. `types` names the WeeWX
+components the installer adds. `category` names the package's purpose:
+`skin`, `driver` (including services that read sensors or remote data),
+`uploader`, `forecast` (forecasts and warnings) or `other`. Keywords make
+hardware models and features searchable.
 
 Each release supplies its exact version, Python and WeeWX requirements, archive
 format, download URL, and SHA-256 digest. Use the publisher's documented version
@@ -65,17 +68,20 @@ added and which installation test you ran.
 
 New packages also need a [compatibility check](COMPATIBILITY.md#add-a-package-check).
 
-## Keep the package table in sync
+## Keep the package table and pages in sync
 
-The README package table is generated from `repository.json`, including manually
-maintained packages. After editing the index, run:
+The README package table and the package pages under [packages/](packages) are
+generated from `repository.json`, including manually maintained packages. Each
+page shows the current release and its install commands, so package READMEs
+link to it instead of naming versions or archive URLs. The table has one
+section per package `category`. After editing the index, run:
 
 ```shell
 python3 ci/upstreams.py readme
 just fast
 ```
 
-Validation rejects a stale table. The upstream skin publishing workflow updates
-the index, test profile and README in one commit. See
+Validation rejects a stale table or page. The upstream skin publishing workflow
+updates the index, test profile, README and pages in one commit. See
 [mirrored skin packaging](COMPATIBILITY.md#mirrored-skins-and-release-packaging)
 for its release selection and tests.

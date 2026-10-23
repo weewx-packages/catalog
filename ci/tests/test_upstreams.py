@@ -151,13 +151,69 @@ def test_publication_keeps_tested_revision_and_digest(spec, publication, tmp_pat
 def test_readme_uses_catalog_and_preserves_surrounding_text(tmp_path):
     path = tmp_path / 'README.md'
     path.write_text('Introduction\n<!-- packages:start -->\nOld table\n<!-- packages:end -->\nInstall instructions\n')
-    package = dict(id='skin', name='A skin', description='One | two', homepage='https://example.test')
+    package = dict(id='skin', name='A skin', description='One | two', homepage='https://example.test', category='skin')
     upstreams.update_readme({'packages': [package]}, path)
     text = path.read_text()
-    assert '[A skin](https://example.test) | `skin` | One \\| two' in text
+    assert '[A skin](https://example.test) | [`skin`](packages/skin.md) | One \\| two' in text
     assert text.startswith('Introduction\n') and text.endswith('Install instructions\n')
     upstreams.update_readme({'packages': []}, path)
     assert '`skin`' not in path.read_text()
+
+
+def release(version, url=None, **fields):
+    return dict(version=version, requires_python='>=3.10', requires_weewx='>=5,<6', restart_required=True,
+        archive=dict(url=url or 'https://example.test/%s.zip' % version, format='zip', sha256='0'*64), **fields)
+
+
+def test_page_offers_newest_stable_release_and_marks_withdrawn_ones():
+    package = dict(id='pkg', installer_name='Pkg', name='Package', description='Does things.',
+        homepage='https://example.test/guide', releases=[
+            release('1.0'), release('1.1', yanked=True), release('1.2rc1')])
+    page = upstreams.package_page(package)
+    assert 'weectl extension install https://example.test/1.0.zip' in page
+    assert 'install pkg --repo packages\n' in page and 'update Pkg\n' in page
+    assert 'weectl extension uninstall Pkg' in page
+    assert '| 1.1 | `>=5,<6` | `>=3.10` | Withdrawn |' in page
+    assert '| 1.2rc1 | `>=5,<6` | `>=3.10` | [Download](https://example.test/1.2rc1.zip) |' in page
+
+
+def test_page_for_prerelease_only_package_requires_pre():
+    package = dict(id='pkg', installer_name='pkg', name='Package', description='Does things.',
+        homepage='https://example.test/guide', releases=[release('0.1a1'), release('0.1a2')])
+    page = upstreams.package_page(package)
+    assert '| Version | 0.1a2 (prerelease) |' in page
+    assert 'install pkg --repo packages --pre' in page and 'update pkg --pre' in page
+
+
+def test_pages_follow_the_index_and_check_is_read_only(tmp_path):
+    package = dict(id='pkg', installer_name='pkg', name='Package', description='Does things.',
+        homepage='https://example.test/guide', releases=[release('1.0')])
+    folder = tmp_path / 'packages'
+    upstreams.update_pages({'packages': [package]}, folder)
+    upstreams.update_pages({'packages': [package]}, folder, check=True)
+    (folder / 'removed.md').write_text('old page')
+    with pytest.raises(ValueError, match='stale'):
+        upstreams.update_pages({'packages': [package]}, folder, check=True)
+    assert (folder / 'removed.md').exists()
+    upstreams.update_pages({'packages': [package]}, folder)
+    assert sorted(path.name for path in folder.iterdir()) == ['pkg.md']
+
+
+def test_readme_groups_packages_by_category(tmp_path):
+    path = tmp_path / 'README.md'
+    path.write_text('<!-- packages:start -->\n<!-- packages:end -->\n')
+    entry = lambda id, category: dict(id=id, name=id.title(), description='Text', homepage='https://example.test',
+                                       category=category)
+    catalog = {'packages': [entry('zeta', 'skin'), entry('alpha', 'skin'), entry('probe', 'driver'),
+                            entry('upload', 'uploader'), entry('misc', 'other')]}
+    upstreams.update_readme(catalog, path)
+    text = path.read_text()
+    assert text.index('### Skins') < text.index('`alpha`') < text.index('`zeta`') < text.index('### Drivers')
+    assert text.index('### Drivers') < text.index('`probe`') < text.index('### Uploaders') < text.index('`upload`')
+    assert text.index('### Other') < text.index('`misc`') and 'Forecasts' not in text
+    catalog['packages'][3]['category'] = 'uploaders'
+    with pytest.raises(ValueError, match='Unknown package categories'):
+        upstreams.update_readme(catalog, path)
 
 
 def test_readme_check_is_read_only(tmp_path):
