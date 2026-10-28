@@ -667,7 +667,7 @@
     "notice_scan_complete": true
   },
   "Cosmospacedog/weewx-metrics": {
-    "captured_at": "2026-10-23T11:41:00.097276+00:00",
+    "captured_at": "2026-10-28T10:02:08.065726+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -675,7 +675,7 @@
     "notice_scan_complete": true
   },
   "MichaelStrommer-dreiS/weewx-skyvex": {
-    "captured_at": "2026-10-23T11:41:00.011741+00:00",
+    "captured_at": "2026-10-28T10:02:07.958951+00:00",
     "items": {},
     "notices": {
       "LICENSE": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
@@ -683,7 +683,7 @@
     "notice_scan_complete": true
   },
   "Millardiang/weewx-carbonsteel-series": {
-    "captured_at": "2026-10-23T11:40:59.961625+00:00",
+    "captured_at": "2026-10-28T10:02:08.006827+00:00",
     "items": {},
     "notices": {
       "CS/fonts/Lexend-OFL.txt": "6c35713d3e414367b9b2d9bba14d9d39c8b750db",
@@ -698,7 +698,7 @@
     "notice_scan_complete": true
   },
   "Millardiang/weewx-ecowittGateway": {
-    "captured_at": "2026-10-23T11:41:01.097397+00:00",
+    "captured_at": "2026-10-28T10:02:09.345861+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f6cdd22a6c1fbc887e08a215cb4beb3c47048041"
@@ -706,7 +706,7 @@
     "notice_scan_complete": true
   },
   "cavedon/weewx-aprs": {
-    "captured_at": "2026-10-23T11:41:05.119397+00:00",
+    "captured_at": "2026-10-28T10:02:14.491445+00:00",
     "items": {
       "7": {
         "title": "weewx APRS crash",
@@ -733,7 +733,7 @@
     "notice_scan_complete": true
   },
   "chaunceygardiner/weewx-purple": {
-    "captured_at": "2026-10-23T11:41:03.354931+00:00",
+    "captured_at": "2026-10-28T10:02:12.393201+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7",
@@ -742,7 +742,7 @@
     "notice_scan_complete": true
   },
   "glennmckechnie/weewx-uradmon": {
-    "captured_at": "2026-10-23T11:41:04.839904+00:00",
+    "captured_at": "2026-10-28T10:02:14.257201+00:00",
     "items": {
       "5": {
         "title": "Languages, over to you...",
@@ -757,7 +757,7 @@
     "notice_scan_complete": true
   },
   "iiseppi/wlip-emulator": {
-    "captured_at": "2026-10-23T11:41:06.583866+00:00",
+    "captured_at": "2026-10-28T10:02:14.987554+00:00",
     "items": {
       "8": {
         "title": "Emulate serial console",
@@ -772,7 +772,7 @@
     "notice_scan_complete": true
   },
   "livysdad27/tempestWS": {
-    "captured_at": "2026-10-23T11:41:06.631903+00:00",
+    "captured_at": "2026-10-28T10:02:16.641933+00:00",
     "items": {
       "17": {
         "title": "does driver use rapid wind packets or obs_st?",
@@ -868,7 +868,7 @@
     "notice_scan_complete": true
   },
   "open-astro/weewx-conditions": {
-    "captured_at": "2026-10-23T11:41:07.862999+00:00",
+    "captured_at": "2026-10-28T10:02:18.071197+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -876,7 +876,7 @@
     "notice_scan_complete": true
   },
   "roe-dl/weathericons": {
-    "captured_at": "2026-10-23T11:41:08.086991+00:00",
+    "captured_at": "2026-10-28T10:02:18.542474+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -884,7 +884,7 @@
     "notice_scan_complete": true
   },
   "roe-dl/weewx-GTS": {
-    "captured_at": "2026-10-23T11:41:08.879023+00:00",
+    "captured_at": "2026-10-28T10:02:19.479288+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -892,7 +892,7 @@
     "notice_scan_complete": true
   },
   "roe-dl/weewx-airQ": {
-    "captured_at": "2026-10-23T11:41:09.133458+00:00",
+    "captured_at": "2026-10-28T10:02:19.930326+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -900,31 +900,73 @@
     "notice_scan_complete": true
   },
   "thomaslehmann1234/datenerfassung-ortsnetz-auslastung": {
-    "captured_at": "2026-10-23T11:41:19.301285+00:00",
+    "captured_at": "2026-10-28T10:02:42.062574+00:00",
     "items": {
+      "51": {
+        "title": "Pro-3EM-Script 0.1.1 verhindert \u00dcbertragung bei Messung nur einer Phase",
+        "url": "https://github.com/thomaslehmann1234/datenerfassung-ortsnetz-auslastung/issues/51",
+        "kind": "issue",
+        "digest": "124b9859cd7ae60d253245082e93d197fdcc4752f29bb615ad682b0cee65f5df"
+      },
+      "50": {
+        "title": "GoodWe-Integration \u00fcber Modbus TCP",
+        "url": "https://github.com/thomaslehmann1234/datenerfassung-ortsnetz-auslastung/pull/50",
+        "kind": "PR",
+        "digest": "7886bb4700eb80eb29429932f36b6904d268056f2e44c0bb2b1971a4cbb6090b"
+      },
+      "49": {
+        "title": "Add Shelly PlugS Gen3 script for Ortsnetz-Auslastung",
+        "url": "https://github.com/thomaslehmann1234/datenerfassung-ortsnetz-auslastung/pull/49",
+        "kind": "PR",
+        "digest": "b50ffac0eca3f2286efe5bd2240072a45ee9ad2fb2311b29f2564a2a2d593520"
+      },
+      "48": {
+        "title": "Unterst\u00fctzung Shelly PlugS",
+        "url": "https://github.com/thomaslehmann1234/datenerfassung-ortsnetz-auslastung/issues/48",
+        "kind": "issue",
+        "digest": "67df0da4077d8857d665622373d157e7537945905bd093975df14db8e0eb93dd"
+      },
+      "46": {
+        "title": "Unterst\u00fctzung f\u00fcr everHome EcoTracker pr\u00fcfen",
+        "url": "https://github.com/thomaslehmann1234/datenerfassung-ortsnetz-auslastung/issues/46",
+        "kind": "issue",
+        "digest": "4a7859e3f5d23614f492d798480bc22de82905cacf24ba72fad05362f3f8c263"
+      },
+      "45": {
+        "title": "Loxone Miniserver: Integration \u00fcber den Webservice (/jdev/sps/io)",
+        "url": "https://github.com/thomaslehmann1234/datenerfassung-ortsnetz-auslastung/pull/45",
+        "kind": "PR",
+        "digest": "ecd7b4ddc4a9ae46391e7514c1a7f029f7660b82f1ce80a740dd3cfc2390af37"
+      },
+      "44": {
+        "title": "Contribution: Node-RED Flow for Victron / Venus OS (Cerbo GX)",
+        "url": "https://github.com/thomaslehmann1234/datenerfassung-ortsnetz-auslastung/issues/44",
+        "kind": "issue",
+        "digest": "1e9144be3bd4eac787812836ffe9036b43ad8effa2f551abdcda65df962e06b6"
+      },
+      "43": {
+        "title": "KESM als Flex-Getter und Modbus-Lesen in einem Block",
+        "url": "https://github.com/thomaslehmann1234/datenerfassung-ortsnetz-auslastung/pull/43",
+        "kind": "PR",
+        "digest": "524733c0bc9861e22b08f946d9ebcf5cd9b687a7efe10d2537852cccb101273a"
+      },
+      "39": {
+        "title": "enhancement: schliessen des detail-hover via ESC und click ins freiefeld",
+        "url": "https://github.com/thomaslehmann1234/datenerfassung-ortsnetz-auslastung/issues/39",
+        "kind": "issue",
+        "digest": "679e707be8af266f29799e6bafcf7ca7898ba52581ac2afe4ae581b1a2e266e4"
+      },
       "38": {
         "title": "Hinzuf\u00fcgen von einem E3DC Python Script zur \u00dcbermittlung zur Ortsnetzauslastungs Webseite",
         "url": "https://github.com/thomaslehmann1234/datenerfassung-ortsnetz-auslastung/pull/38",
         "kind": "PR",
-        "digest": "76493ce70fa563819808716821f1a0ab8cea935c98b49bd54b3b0a23e8aa024e"
-      },
-      "37": {
-        "title": "Add random delay to the script to not storm the API server",
-        "url": "https://github.com/thomaslehmann1234/datenerfassung-ortsnetz-auslastung/pull/37",
-        "kind": "PR",
-        "digest": "edd6242f4eac848500e33c703d5619f5a37d510312c362d7570029de854ac424"
-      },
-      "35": {
-        "title": "Messpunkt auf der Webseite nicht (mehr) aktuell",
-        "url": "https://github.com/thomaslehmann1234/datenerfassung-ortsnetz-auslastung/issues/35",
-        "kind": "issue",
-        "digest": "94e3e6e11b1e8a5c3568dc40bba5dea4c99d8080a3940e2f53c446ccd9cfd20d"
+        "digest": "7aea492c2cf0b714056d34faf7afa7678ce90a3060a4c6d3b88cefc5d28d0eda"
       },
       "34": {
         "title": "FHEM-Integration (abgestimmte Version zu #32)",
         "url": "https://github.com/thomaslehmann1234/datenerfassung-ortsnetz-auslastung/pull/34",
         "kind": "PR",
-        "digest": "632037ab4b9da1689304abcbca6336c9336042cfe4765b5e192327601cf0ca06"
+        "digest": "5f1f942af4705b222057b9c866abc09e35c94e01dd8d0b43bee213c9cf27860d"
       },
       "33": {
         "title": "Beispiel-Code f\u00fcr Smartmeter Typ EMU Professional 3/75 TCP/IP 3-phase energymeter 202494 M23 1259",
@@ -932,23 +974,11 @@
         "kind": "issue",
         "digest": "979a31ff7a8d9a8c461d3fcf9dbe9ae4d0c88cb755417e5061ddb490059e8662"
       },
-      "30": {
-        "title": "HA: Umgang mit < 3 Phasen (BKW)",
-        "url": "https://github.com/thomaslehmann1234/datenerfassung-ortsnetz-auslastung/issues/30",
-        "kind": "issue",
-        "digest": "27e5ecd2f10c0cb61e18dc72df333b80b1ad85f4289164298c196573f181ba02"
-      },
-      "29": {
-        "title": "iobroker script",
-        "url": "https://github.com/thomaslehmann1234/datenerfassung-ortsnetz-auslastung/issues/29",
-        "kind": "issue",
-        "digest": "208f688cd8c1fcc46cef2552ae620397cfb900b44b671a5254a7d97c22f51396"
-      },
       "16": {
         "title": "Add SAX Smartmeter integration",
         "url": "https://github.com/thomaslehmann1234/datenerfassung-ortsnetz-auslastung/pull/16",
         "kind": "PR",
-        "digest": "70f97fd30a58b1f9fb809d65c0711f9b7ba9fc647e439a44d1d3d38024673399"
+        "digest": "50bb71b13fc38155476448a7f3ddd02759969d3531e9e632eaef86828ebfd6e3"
       },
       "14": {
         "title": "Python Script f\u00fcr SAX-Speicher Smartmeter ADL400",
@@ -964,12 +994,13 @@
       }
     },
     "notices": {
-      "LICENSE": "2ebf864e9a2db48f552cb1c9f00e0ff0c03e5db6"
+      "LICENSE": "2ebf864e9a2db48f552cb1c9f00e0ff0c03e5db6",
+      "ecoflow-ortsnetz-auslastung/ortsnetz-auslastung-ecoflow.js": "f30188a5c67fa0d9d1e0930f37c2fe12e2db04ae"
     },
     "notice_scan_complete": true
   },
   "tkeffer/filepile": {
-    "captured_at": "2026-10-23T11:41:11.804314+00:00",
+    "captured_at": "2026-10-28T10:02:22.802194+00:00",
     "items": {},
     "notices": {
       "LICENSE.txt": "0a041280bd00a9d068f503b8ee7ce35214bd24a1"
@@ -977,7 +1008,7 @@
     "notice_scan_complete": true
   },
   "tkeffer/import-wlk": {
-    "captured_at": "2026-10-23T11:41:12.722408+00:00",
+    "captured_at": "2026-10-28T10:02:24.059615+00:00",
     "items": {},
     "notices": {
       "LICENSE.txt": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
@@ -985,7 +1016,7 @@
     "notice_scan_complete": true
   },
   "tkeffer/weewx-xaggs": {
-    "captured_at": "2026-10-23T11:41:14.113504+00:00",
+    "captured_at": "2026-10-28T10:02:25.726969+00:00",
     "items": {
       "4": {
         "title": "Support `sum`",
@@ -1000,7 +1031,7 @@
     "notice_scan_complete": true
   },
   "weewx-packages/weewx-livedata": {
-    "captured_at": "2026-10-23T11:41:14.811636+00:00",
+    "captured_at": "2026-10-28T10:02:26.764881+00:00",
     "items": {},
     "notices": {
       "LICENSE.txt": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
@@ -1008,13 +1039,13 @@
     "notice_scan_complete": true
   },
   "ziti/weewx-rtsp-image": {
-    "captured_at": "2026-10-23T11:41:16.953708+00:00",
+    "captured_at": "2026-10-28T10:02:29.617131+00:00",
     "items": {
-      "12": {
-        "title": "chore: update ruff requirement from >=0.17.0 to >=0.17.1",
-        "url": "https://github.com/ziti/weewx-rtsp-image/pull/12",
+      "13": {
+        "title": "chore: update ruff requirement from >=0.17.0 to >=0.17.2",
+        "url": "https://github.com/ziti/weewx-rtsp-image/pull/13",
         "kind": "PR",
-        "digest": "5d2975db803e3718eead4679adaaf2db8df3a43e01e3aa9952a774024ed26869"
+        "digest": "9abb75123d0ea076d0e9ec0eab109ab6a2566a8a4e0109429896ca2a426d56dc"
       }
     },
     "notices": {
@@ -1023,8 +1054,33 @@
     "notice_scan_complete": true
   },
   "ziti/weewx-sftp": {
-    "captured_at": "2026-10-23T11:41:15.176869+00:00",
-    "items": {},
+    "captured_at": "2026-10-28T10:02:37.434256+00:00",
+    "items": {
+      "7": {
+        "title": "Read password and key passphrase from environment variables",
+        "url": "https://github.com/ziti/weewx-sftp/pull/7",
+        "kind": "PR",
+        "digest": "faea2437cf864f2446d4c783911ebec9cb0ac2637b88a5eb8742f7468409c8a4"
+      },
+      "6": {
+        "title": "Warn when paramiko is vulnerable to Terrapin (CVE-2023-48795)",
+        "url": "https://github.com/ziti/weewx-sftp/pull/6",
+        "kind": "PR",
+        "digest": "82bd88c0e4efe53e6cf907d809c2dbe328e9b4ed9525eed75508fe82d88a1263"
+      },
+      "5": {
+        "title": "Do not follow symlinks out of the report directory",
+        "url": "https://github.com/ziti/weewx-sftp/pull/5",
+        "kind": "PR",
+        "digest": "d0ccc3b94400aab64eac7acf12c75028fa0f6e7623c9a0a2baa958d7937460f0"
+      },
+      "4": {
+        "title": "Store the upload cache as JSON instead of pickle",
+        "url": "https://github.com/ziti/weewx-sftp/pull/4",
+        "kind": "PR",
+        "digest": "c9ed6a022decdeddf687980d1e766d76a7f614bed655cd1758d2cf967588e591"
+      }
+    },
     "notices": {
       "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
     },
@@ -2130,7 +2186,7 @@
     "notice_scan_complete": true
   },
   "Buco7854/weewx-netatmo": {
-    "captured_at": "2026-10-23T11:41:00.100089+00:00",
+    "captured_at": "2026-10-28T10:02:07.866295+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -2138,7 +2194,7 @@
     "notice_scan_complete": true
   },
   "matthewwall/weewx-cmon": {
-    "captured_at": "2026-10-23T11:41:07.082674+00:00",
+    "captured_at": "2026-10-28T10:02:17.150678+00:00",
     "items": {
       "4": {
         "title": "After upgrade to weewx 5.02, cmon.py crashes weewx on trying to access docker overlay",
@@ -2165,7 +2221,7 @@
     "notice_scan_complete": true
   },
   "matthewwall/weewx-meteostick": {
-    "captured_at": "2026-10-23T11:41:13.049860+00:00",
+    "captured_at": "2026-10-28T10:02:24.012142+00:00",
     "items": {
       "11": {
         "title": "Restart after timeout implemented",
@@ -2192,7 +2248,7 @@
     "notice_scan_complete": true
   },
   "matthewwall/weewx-wxt5x0": {
-    "captured_at": "2026-10-23T11:41:10.854498+00:00",
+    "captured_at": "2026-10-28T10:02:21.540417+00:00",
     "items": {
       "13": {
         "title": "WeeWX dies when WXT5x0Driver loses connection",
@@ -2231,7 +2287,7 @@
     "notice_scan_complete": true
   },
   "sulrich/weewx-prompush": {
-    "captured_at": "2026-10-23T11:41:11.722760+00:00",
+    "captured_at": "2026-10-28T10:02:23.329182+00:00",
     "items": {
       "6": {
         "title": "Bump requests from 2.10.0 to 2.20.0",
@@ -2730,7 +2786,7 @@
     "notice_scan_complete": true
   },
   "Millardiang/weewx-stackedwindrose26": {
-    "captured_at": "2026-10-23T11:41:01.067893+00:00",
+    "captured_at": "2026-10-28T10:02:09.428249+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7",
@@ -2739,7 +2795,7 @@
     "notice_scan_complete": true
   },
   "bakerkj/weewx-purpleair": {
-    "captured_at": "2026-10-23T11:41:06.194161+00:00",
+    "captured_at": "2026-10-28T10:02:15.985217+00:00",
     "items": {
       "33": {
         "title": "Display the AQi rating number?",
@@ -2784,7 +2840,7 @@
     "notice_scan_complete": true
   },
   "bellrichm/WeeWX-Extras": {
-    "captured_at": "2026-10-23T11:41:02.151448+00:00",
+    "captured_at": "2026-10-28T10:02:10.983047+00:00",
     "items": {
       "4": {
         "title": "[observationtime] Support a configurable dateTime field",
@@ -2812,7 +2868,7 @@
     "notice_scan_complete": true
   },
   "brewster76/fuzzy-archer": {
-    "captured_at": "2026-10-23T11:41:03.781613+00:00",
+    "captured_at": "2026-10-28T10:02:13.096209+00:00",
     "items": {
       "201": {
         "title": "Unit not displayed (\u00b5S/cm)",
@@ -2847,12 +2903,19 @@
     },
     "notices": {
       "LICENSE": "d7f105139782ab695d86613e343916f7372f4ac0",
-      "skins/Bootstrap/font/OFL.txt": "1fd9f8e65d07e0e5fcecba4386b28910ebffa456"
+      "skins/Bootstrap/font/OFL.txt": "1fd9f8e65d07e0e5fcecba4386b28910ebffa456",
+      "skins/Bootstrap/license/Bootstrap-icons/LICENSE": "f95243911022df8e34bb8c73c87ef491ee1696cf",
+      "skins/Bootstrap/license/Bootstrap/LICENSE": "fa7c00bc4ebd5dc9c0b1e7f8c4b6a202fd9fa816",
+      "skins/Bootstrap/license/echarts/LICENSE": "c633765305b658c2b42837d2b72071d73c0379c5",
+      "skins/Bootstrap/license/echarts/LICENSE-d3": "721bd22ece6587a9408eda1b6a3949c425b5624a",
+      "skins/Bootstrap/license/jquery/LICENSE.txt": "f642c3f7a77a5833bc3dfee643ad8ca6387b23e7",
+      "skins/Bootstrap/license/luxon/LICENSE.md": "2d560a6433eb68f3b1277d58a819ce56a01f9dd5",
+      "skins/Bootstrap/license/mqttjs/LICENSE.md": "d23ded90216505bc0250a5cf8aa243f06018c09b"
     },
     "notice_scan_complete": true
   },
   "tkeffer/weewx-time_since": {
-    "captured_at": "2026-10-23T11:41:12.784975+00:00",
+    "captured_at": "2026-10-28T10:02:24.592860+00:00",
     "items": {},
     "notices": {
       "LICENSE.txt": "0a041280bd00a9d068f503b8ee7ce35214bd24a1"
@@ -2860,7 +2923,7 @@
     "notice_scan_complete": true
   },
   "weewx-contrib/sds011-mqtt": {
-    "captured_at": "2026-10-23T11:41:13.819119+00:00",
+    "captured_at": "2026-10-28T10:02:25.381046+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -2868,7 +2931,7 @@
     "notice_scan_complete": true
   },
   "weewx-contrib/stackedwindrose-extension": {
-    "captured_at": "2026-10-23T11:41:14.095775+00:00",
+    "captured_at": "2026-10-28T10:02:26.278040+00:00",
     "items": {},
     "notices": {},
     "notice_scan_complete": true
