@@ -17,6 +17,8 @@ jobs:
     timeout-minutes: 30
     strategy:
       fail-fast: false
+      # See max-parallel of the test job in compatibility.yml.
+      max-parallel: 8
       matrix: ${{ fromJSON(inputs.matrix) }}
     name: ${{ matrix.package }} / ${{ matrix.branch }} / Python ${{ matrix.python }}
     steps:
