@@ -92,8 +92,10 @@ jobs:
     uses: weewx-packages/catalog/.github/workflows/package-tests.yml@main
 ```
 
-Use the repository's default branch under `branches`. Set `pip-packages` under
-`with:` for test dependencies besides WeeWX and pytest. Mirrors get no
+Use the repository's default branch under `branches`. Under `with:`, set
+`pip-packages` for test dependencies besides WeeWX and pytest, and
+`system-packages` for Debian packages, as in the package's entry in
+[ci/packages.json](ci/packages.json). Mirrors get no
 workflow, because a commit of their own would break the sync.
 
 ## Add a package check
