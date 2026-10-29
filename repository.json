@@ -3889,6 +3889,40 @@
           "restart_required": true
         }
       ]
+    },
+    {
+      "id": "archivecheck",
+      "installer_name": "archivecheck",
+      "name": "Archivecheck",
+      "description": "Inspect SQLite archive alignment and export reviewed corrections with verified backups.",
+      "types": [
+        "other"
+      ],
+      "category": "other",
+      "keywords": [
+        "archive",
+        "sqlite",
+        "alignment",
+        "aggregation",
+        "backup",
+        "pv",
+        "dry-run"
+      ],
+      "homepage": "https://github.com/weewx-packages/weewx-archivecheck",
+      "releases": [
+        {
+          "version": "0.1.1",
+          "requires_python": ">=3.10,<3.15",
+          "requires_weewx": ">=5.5.2,<5.7",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-archivecheck/releases/download/v0.1.1/weewx-archivecheck-0.1.1.zip",
+            "format": "zip",
+            "sha256": "86ae60fe3c6a5acd9bacf1ae96e732fd3ee0cd673020c61b6e61218a56c6418d"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-archivecheck/releases/tag/v0.1.1",
+          "restart_required": false
+        }
+      ]
     }
   ]
 }

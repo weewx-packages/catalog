@@ -2201,5 +2201,18 @@
       "https://github.com/sbsrouteur/weewx-opensensemap/blob/f9046c8274571ee87c9c2b306a10a4dcffbe9b32/README.md",
       "https://github.com/sbsrouteur/weewx-opensensemap/blob/f9046c8274571ee87c9c2b306a10a4dcffbe9b32/install.py"
     ]
+  },
+  {
+    "upstream": "https://github.com/weewx-packages/weewx-archivecheck.git",
+    "fork": "weewx-packages/weewx-archivecheck",
+    "weekday": 5,
+    "sync": false,
+    "check": "catalog",
+    "reviewed_revision": "1f29dab7a0e92a78c7d7e883370954a74521332e",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/weewx-packages/weewx-archivecheck/blob/1f29dab7a0e92a78c7d7e883370954a74521332e/LICENSE.txt",
+      "https://github.com/weewx-packages/weewx-archivecheck/blob/1f29dab7a0e92a78c7d7e883370954a74521332e/bin/user/archivechecklib/__init__.py"
+    ]
   }
 ]

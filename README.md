@@ -163,6 +163,7 @@ shows how to register this catalog and run it.
 | [Aggregated Values](https://github.com/weewx-packages/weewx-aggregated-values) | [`aggregated-values`](packages/aggregated-values.md) | Calculate aggregated values that other extensions can then use without duplicating functionality and database lookups |
 | [Air quality indices](https://github.com/weewx-packages/weewx-aqi) | [`aqi`](packages/aqi.md) | Calculate air quality indices with explicit historical and EPA 2024 standards. Backfill with PYTHONPATH=station/bin python -m user.aqi.backfill. |
 | [aprs](https://github.com/weewx-packages/weewx-aprs) | [`aprs`](packages/aprs.md) | Write archive data in APRS positionless format. |
+| [Archivecheck](https://github.com/weewx-packages/weewx-archivecheck) | [`archivecheck`](packages/archivecheck.md) | Inspect SQLite archive alignment and export reviewed corrections with verified backups. |
 | [Conditions](https://github.com/weewx-packages/weewx-conditions/blob/weewx-packages-docs/README.md) | [`conditions`](packages/conditions.md) | Generate JSON weather summaries, current observations and archive datasets. |
 | [CSV output](https://github.com/weewx-packages/weewx-csv) | [`csv`](packages/csv.md) | Write LOOP packets or archive records as CSV, with optional atomic snapshots and decimal precision. |
 | [Cumulus realtime output](https://github.com/weewx-packages/weewx-crt) | [`crt`](packages/crt.md) | Write Cumulus realtime files, optional realmore data and gauge output from WeeWX observations. |
