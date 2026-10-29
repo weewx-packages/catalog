@@ -1699,5 +1699,16 @@
     ],
     "allowed_skips": [],
     "pip_packages": []
+  },
+  "archivecheck": {
+    "repository": "weewx-packages/weewx-archivecheck",
+    "ref": "v{version}",
+    "imports": [
+      "user.archivechecklib.archive",
+      "user.archivechecklib.cli",
+      "user.archivechecklib.web"
+    ],
+    "allowed_skips": [],
+    "pip_packages": []
   }
 }
