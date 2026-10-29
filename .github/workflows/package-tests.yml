@@ -1,0 +1,43 @@
+name: Package tests
+
+# Called by the test workflow of a package repository the organization develops
+# itself (sync: false in ci/mirrors.json), on its pull requests and pushes. It
+# runs the repository's tests/ against its source with the current WeeWX
+# release from PyPI, on the oldest and newest Python that compatibility.yml
+# tests. Released archives are checked by compatibility.yml, not here.
+
+on:
+  workflow_call:
+    inputs:
+      pip-packages:
+        description: Python packages the tests need besides WeeWX and pytest, separated by spaces.
+        type: string
+        default: ''
+
+permissions:
+  contents: read
+
+jobs:
+  pytest:
+    name: Python ${{ matrix.python }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.10', '3.14']
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install WeeWX and pytest
+        env:
+          PIP_PACKAGES: ${{ inputs.pip-packages }}
+        run: |
+          read -ra extra <<< "$PIP_PACKAGES"
+          python -m pip install weewx pytest "${extra[@]}"
+      - name: Run tests
+        run: python -m pytest -q --tb=short tests
