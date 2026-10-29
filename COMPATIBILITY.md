@@ -67,6 +67,34 @@ GitHub can delay scheduled runs and disables public-repository schedules after
 runs stop. [GitHub's schedule documentation](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule)
 describes these limits.
 
+## Tests in package repositories
+
+Package repositories the organization develops itself (`sync: false` in
+[ci/mirrors.json](ci/mirrors.json)) run their `tests/` on pull requests and
+pushes, before a release exists. Their workflow calls
+[package-tests.yml](.github/workflows/package-tests.yml), which installs the
+current WeeWX release from PyPI on Python 3.10 and 3.14:
+
+```yaml
+name: Tests
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    uses: weewx-packages/catalog/.github/workflows/package-tests.yml@main
+```
+
+Use the repository's default branch under `branches`. Set `pip-packages` under
+`with:` for test dependencies besides WeeWX and pytest. Mirrors get no
+workflow, because a commit of their own would break the sync.
+
 ## Add a package check
 
 Add an entry keyed by the catalog package ID to `ci/packages.json`. Set

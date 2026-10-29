@@ -39,6 +39,7 @@ extension (weewx-package-manager).
 - `ci/wiki_backup.py`: Private wiki Git bundles with independent restore checks.
 - `ci/wiki-state.json`: Public wiki availability and last verified backup status.
 - `ci/source_quality.py`: Source installation checks, separate from release regression tests.
+- `.github/workflows/package-tests.yml`: Reusable workflow that own package repositories call to run their tests on pull requests.
 
 ## Conventions
 
