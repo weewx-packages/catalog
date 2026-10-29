@@ -101,6 +101,10 @@ jobs:
     if: ${{ !cancelled() && needs.prepare.result == 'success' }}
     strategy:
       fail-fast: false
+      # Two groups at a time with max-parallel 8 in compatibility-group.yml run
+      # at most 16 jobs. The free plan allows 20 concurrent jobs for the whole
+      # organization, which leaves 4 for the tests of package pull requests.
+      max-parallel: 2
       matrix: ${{ fromJSON(needs.prepare.outputs.matrix) }}
     name: Group ${{ matrix.group }}
     uses: ./.github/workflows/compatibility-group.yml
