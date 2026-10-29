@@ -740,6 +740,18 @@
           },
           "release_notes": "https://github.com/weewx-packages/weewx-sdr/releases/tag/v0.99.2",
           "restart_required": true
+        },
+        {
+          "version": "0.100.0",
+          "requires_python": ">=3.10",
+          "requires_weewx": ">=5.2,<6",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-sdr/releases/download/v0.100.0/weewx-sdr-0.100.0.zip",
+            "format": "zip",
+            "sha256": "e50b113ef7b36b2f3cd3c6c6dcb17875251d73cd55c2f21ae59068470979450c"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-sdr/releases/tag/v0.100.0",
+          "restart_required": true
         }
       ]
     },
