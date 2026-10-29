@@ -40,4 +40,8 @@ jobs:
           read -ra extra <<< "$PIP_PACKAGES"
           python -m pip install weewx pytest "${extra[@]}"
       - name: Run tests
+        # compatibility.yml runs the tests with the station's bin directory on
+        # PYTHONPATH. The repository's bin directory takes its place here.
+        env:
+          PYTHONPATH: bin
         run: python -m pytest -q --tb=short tests

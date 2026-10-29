@@ -73,7 +73,8 @@ Package repositories the organization develops itself (`sync: false` in
 [ci/mirrors.json](ci/mirrors.json)) run their `tests/` on pull requests and
 pushes, before a release exists. Their workflow calls
 [package-tests.yml](.github/workflows/package-tests.yml), which installs the
-current WeeWX release from PyPI on Python 3.10 and 3.14:
+current WeeWX release from PyPI on Python 3.10 and 3.14 and runs the tests with
+the repository's `bin` directory on `PYTHONPATH`:
 
 ```yaml
 name: Tests
