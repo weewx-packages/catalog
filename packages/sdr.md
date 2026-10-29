@@ -11,10 +11,10 @@ dependencies and settings.
 
 | | |
 |---|---|
-| Version | 0.99.2 |
+| Version | 0.100.0 |
 | WeeWX | `>=5.2,<6` |
 | Python | `>=3.10` |
-| Release notes | [0.99.2](https://github.com/weewx-packages/weewx-sdr/releases/tag/v0.99.2) |
+| Release notes | [0.100.0](https://github.com/weewx-packages/weewx-sdr/releases/tag/v0.100.0) |
 
 ## Install with stock WeeWX
 
@@ -22,7 +22,7 @@ Install the dependencies named in the guide first. Then use the `weectl`
 of the Python environment running WeeWX:
 
 ```shell
-weectl extension install https://github.com/weewx-packages/weewx-sdr/releases/download/v0.99.2/weewx-sdr-0.99.2.zip
+weectl extension install https://github.com/weewx-packages/weewx-sdr/releases/download/v0.100.0/weewx-sdr-0.100.0.zip
 ```
 
 Add `--config /path/to/weewx.conf` if your station uses another configuration file.
@@ -51,4 +51,5 @@ weectl extension uninstall sdr
 
 | Version | WeeWX | Python | Archive |
 |---|---|---|---|
+| 0.99.2 | `>=5.2,<6` | `>=3.10` | [Download](https://github.com/weewx-packages/weewx-sdr/releases/download/v0.99.2/weewx-sdr-0.99.2.zip) |
 | 0.99.1 | `>=5.2,<6` | `>=3.10` | [Download](https://github.com/weewx-packages/weewx-sdr/releases/download/v0.99.1/weewx-sdr-0.99.1.zip) |
