@@ -1087,7 +1087,7 @@
     "notice_scan_complete": true
   },
   "FColinet/WeeWX-ModbusTCP-driver": {
-    "captured_at": "2026-10-23T11:41:04.146202+00:00",
+    "captured_at": "2026-10-29T10:38:44.641906+00:00",
     "items": {},
     "notices": {
       "LICENSE": "8e48f0c4eda2e3e7a6e3ab31b62921af799d7607"
@@ -1095,13 +1095,13 @@
     "notice_scan_complete": true
   },
   "Millardiang/weewx-ecowitt_console_emulator": {
-    "captured_at": "2026-10-23T11:41:04.525831+00:00",
+    "captured_at": "2026-10-29T10:38:45.102398+00:00",
     "items": {
-      "4": {
-        "title": "Picking up from battery issue started in weewx-echowittGateway",
-        "url": "https://github.com/Millardiang/weewx-ecowitt_console_emulator/issues/4",
+      "8": {
+        "title": "Changing Station Name",
+        "url": "https://github.com/Millardiang/weewx-ecowitt_console_emulator/issues/8",
         "kind": "issue",
-        "digest": "0d3ea912d930b1a428d7025f43706e636d614f76c3c4033c72b8a6fcc4b70b65"
+        "digest": "9e84877cf06147e9eb5efe25b24b353897b65f59e47c677c29715daf2cce82b7"
       }
     },
     "notices": {
@@ -1110,7 +1110,7 @@
     "notice_scan_complete": true
   },
   "WernerKr/davisconsoleapi": {
-    "captured_at": "2026-10-23T11:41:05.363641+00:00",
+    "captured_at": "2026-10-29T10:38:45.795493+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7",
@@ -1120,7 +1120,7 @@
     "notice_scan_complete": true
   },
   "chaunceygardiner/weewx-airgradient": {
-    "captured_at": "2026-10-23T11:41:05.390159+00:00",
+    "captured_at": "2026-10-29T10:38:45.894724+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7",
@@ -1129,7 +1129,7 @@
     "notice_scan_complete": true
   },
   "chaunceygardiner/weewx-celestial": {
-    "captured_at": "2026-10-23T11:41:05.819037+00:00",
+    "captured_at": "2026-10-29T10:38:46.375542+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -1137,22 +1137,15 @@
     "notice_scan_complete": true
   },
   "chaunceygardiner/weewx-forecast": {
-    "captured_at": "2026-10-23T11:41:07.070436+00:00",
-    "items": {
-      "2": {
-        "title": "Endopint problems",
-        "url": "https://github.com/chaunceygardiner/weewx-forecast/issues/2",
-        "kind": "issue",
-        "digest": "1c029c36aed6153965ed09b2cb7bdbe4b40f4d74c158adcb0da81a1d5c276ef1"
-      }
-    },
+    "captured_at": "2026-10-29T10:38:46.983235+00:00",
+    "items": {},
     "notices": {
       "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
     },
     "notice_scan_complete": true
   },
   "chaunceygardiner/weewx-loopdata": {
-    "captured_at": "2026-10-23T11:41:06.593705+00:00",
+    "captured_at": "2026-10-29T10:38:47.042892+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -1160,7 +1153,7 @@
     "notice_scan_complete": true
   },
   "chaunceygardiner/weewx-xtide": {
-    "captured_at": "2026-10-23T11:41:07.017852+00:00",
+    "captured_at": "2026-10-29T10:38:47.514572+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -1168,7 +1161,7 @@
     "notice_scan_complete": true
   },
   "evilbunny2008/SinceLastArchiveAccumulator": {
-    "captured_at": "2026-10-23T11:41:07.849751+00:00",
+    "captured_at": "2026-10-29T10:38:48.235044+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -1176,7 +1169,7 @@
     "notice_scan_complete": true
   },
   "glennmckechnie/weewx-owfs": {
-    "captured_at": "2026-10-23T11:41:08.312954+00:00",
+    "captured_at": "2026-10-29T10:38:48.671843+00:00",
     "items": {},
     "notices": {},
     "notice_scan_complete": true
@@ -1509,7 +1502,7 @@
     "notice_scan_complete": true
   },
   "matthewwall/weewx-tfrc": {
-    "captured_at": "2026-10-23T11:41:15.995252+00:00",
+    "captured_at": "2026-10-29T10:38:53.795231+00:00",
     "items": {},
     "notices": {
       "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
@@ -1517,7 +1510,7 @@
     "notice_scan_complete": true
   },
   "matthewwall/weewx-vedirect": {
-    "captured_at": "2026-10-23T11:41:18.639529+00:00",
+    "captured_at": "2026-10-29T10:38:55.218804+00:00",
     "items": {},
     "notices": {
       "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
@@ -1525,7 +1518,7 @@
     "notice_scan_complete": true
   },
   "raymondelooff/weewx-pusher": {
-    "captured_at": "2026-10-23T11:41:22.235149+00:00",
+    "captured_at": "2026-10-29T10:38:56.313528+00:00",
     "items": {},
     "notices": {
       "LICENSE": "9cecc1d4669ee8af2ca727a5d8cde10cd8b2d7cc"
@@ -1533,7 +1526,7 @@
     "notice_scan_complete": true
   },
   "roe-dl/weewx-rwsa": {
-    "captured_at": "2026-10-23T11:41:23.320612+00:00",
+    "captured_at": "2026-10-29T10:38:57.355936+00:00",
     "items": {},
     "notices": {
       "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
@@ -1541,7 +1534,7 @@
     "notice_scan_complete": true
   },
   "roe-dl/weewx-snmp": {
-    "captured_at": "2026-10-23T11:41:24.368949+00:00",
+    "captured_at": "2026-10-29T10:38:58.419775+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -1549,7 +1542,7 @@
     "notice_scan_complete": true
   },
   "tkeffer/weewx-nmea-xdr": {
-    "captured_at": "2026-10-23T11:41:26.936859+00:00",
+    "captured_at": "2026-10-29T10:38:59.747759+00:00",
     "items": {},
     "notices": {
       "LICENSE.txt": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
@@ -1557,7 +1550,7 @@
     "notice_scan_complete": true
   },
   "tkeffer/weewx-wmr89": {
-    "captured_at": "2026-10-23T11:41:28.084948+00:00",
+    "captured_at": "2026-10-29T10:39:00.666832+00:00",
     "items": {},
     "notices": {
       "LICENSE.txt": "0a041280bd00a9d068f503b8ee7ce35214bd24a1"
@@ -1565,7 +1558,7 @@
     "notice_scan_complete": true
   },
   "w4kus/weewx-weepe": {
-    "captured_at": "2026-10-23T11:41:28.257530+00:00",
+    "captured_at": "2026-10-29T10:39:01.515467+00:00",
     "items": {},
     "notices": {
       "LICENSE.txt": "86648b6bf93b72e747e9bc2239cb8ac5b890b05c"
@@ -1573,7 +1566,7 @@
     "notice_scan_complete": true
   },
   "weewx-contrib/weewx-NovaSDS011": {
-    "captured_at": "2026-10-23T11:41:31.210392+00:00",
+    "captured_at": "2026-10-29T10:39:03.683842+00:00",
     "items": {
       "1": {
         "title": "Add local Sensor.Community HTTP input",
@@ -1588,7 +1581,7 @@
     "notice_scan_complete": true
   },
   "weewx-extensions/aqi-xtype": {
-    "captured_at": "2026-10-23T11:41:30.218245+00:00",
+    "captured_at": "2026-10-29T10:39:03.644569+00:00",
     "items": {
       "3": {
         "title": "Support retrieving series data for nowcast algorithm",
@@ -2302,7 +2295,7 @@
     "notice_scan_complete": true
   },
   "jonotaegi/weewx-wll": {
-    "captured_at": "2026-10-23T11:41:14.408730+00:00",
+    "captured_at": "2026-10-29T10:38:54.082579+00:00",
     "items": {
       "7": {
         "title": "add request timeout",
@@ -2339,7 +2332,7 @@
     "notice_scan_complete": true
   },
   "matthewwall/weewx-crt": {
-    "captured_at": "2026-10-23T11:41:14.912644+00:00",
+    "captured_at": "2026-10-29T10:38:52.697904+00:00",
     "items": {
       "13": {
         "title": "crt fails to load on Python 3.12+: No module named 'distutils'",
@@ -2372,13 +2365,13 @@
     "notice_scan_complete": true
   },
   "matthewwall/weewx-influx": {
-    "captured_at": "2026-10-23T11:41:27.091663+00:00",
+    "captured_at": "2026-10-29T10:39:05.248009+00:00",
     "items": {
       "36": {
         "title": "Avoid distutils version parsing",
         "url": "https://github.com/matthewwall/weewx-influx/pull/36",
         "kind": "PR",
-        "digest": "c45aa9b8545bb2db73bf640e34e7574dd84c69261735ac0eee6e7bcc8c5fc978"
+        "digest": "748d1eef2405fcfde0ee68c583722bced919fb56fdb1ecee18211abf6bfa529d"
       },
       "35": {
         "title": "ModuleNotFoundError: No module named 'distutils' on Python 3.12",
@@ -2390,7 +2383,7 @@
         "title": "added support for native influx v2",
         "url": "https://github.com/matthewwall/weewx-influx/pull/34",
         "kind": "PR",
-        "digest": "a71846db42caf223e670b6bddd8facb16a38ffe920b4b3466a3197e270bafff1"
+        "digest": "782dc2c8cb3e1f7f54eb3b29f2965bd11ad2d2e1f94c02d865d0ea3d58b6d30d"
       },
       "33": {
         "title": "Send Historical Data from Weewx to Influx",
@@ -2398,23 +2391,17 @@
         "kind": "issue",
         "digest": "66f1575b3d7ac49dfa2b20b7ba0af28849357f2b6242caabe00b7f66452b9922"
       },
-      "32": {
-        "title": "Upload to Influx 2.4.0 fails (configuration issue?)",
-        "url": "https://github.com/matthewwall/weewx-influx/issues/32",
-        "kind": "issue",
-        "digest": "98dbf32de84672c77d0ddc97182f85bf83ea6a55f75344926e87e216fbc5bb32"
-      },
       "31": {
         "title": "Token auth",
         "url": "https://github.com/matthewwall/weewx-influx/pull/31",
         "kind": "PR",
-        "digest": "c2f8db040a2bcba2a8c65de5dd56863a6e7e3de4dc86dda4479670b3d3fd7c99"
+        "digest": "126282c3dce95ab8e1695072a86c634bef416f695031f99ef5cc8321ebf03907"
       },
       "30": {
         "title": "Switch README to Markdown",
         "url": "https://github.com/matthewwall/weewx-influx/pull/30",
         "kind": "PR",
-        "digest": "cc0956c8dba654a695de101f3bc67b455fe024b78b97ad336bd4fc6bbf575c3b"
+        "digest": "5b46f61e6abb8c0e2977c71a15f167c8a09171d460a0fc0c9f5b810d32446077"
       },
       "28": {
         "title": "Token-based authentication",
@@ -2471,7 +2458,7 @@
     "notice_scan_complete": true
   },
   "matthewwall/weewx-twitter": {
-    "captured_at": "2026-10-23T11:41:17.524313+00:00",
+    "captured_at": "2026-10-29T10:38:55.289898+00:00",
     "items": {
       "4": {
         "title": "Posting on Twitter at fixed time",
@@ -2484,7 +2471,7 @@
     "notice_scan_complete": true
   },
   "tfilo/weewx-interceptor": {
-    "captured_at": "2026-10-23T11:41:25.601598+00:00",
+    "captured_at": "2026-10-29T10:38:58.690255+00:00",
     "items": {},
     "notices": {
       "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
@@ -2592,7 +2579,7 @@
     "notice_scan_complete": true
   },
   "jonathankoren/weewx-aqi": {
-    "captured_at": "2026-10-23T11:41:12.379425+00:00",
+    "captured_at": "2026-10-29T10:38:52.629450+00:00",
     "items": {
       "42": {
         "title": "United States EPA has updated their AQI ranges for PM2.5",
@@ -2937,7 +2924,7 @@
     "notice_scan_complete": true
   },
   "CameronD73/weewx-utilities": {
-    "captured_at": "2026-10-23T11:41:04.212672+00:00",
+    "captured_at": "2026-10-29T10:38:44.604777+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7",
@@ -2949,7 +2936,7 @@
     "notice_scan_complete": true
   },
   "Daveiano/weewx-wdc": {
-    "captured_at": "2026-10-23T11:41:28.987924+00:00",
+    "captured_at": "2026-10-29T10:39:07.861241+00:00",
     "items": {
       "314": {
         "title": "Look up table rows and rain periods by key",
@@ -3096,85 +3083,13 @@
     "notice_scan_complete": true
   },
   "felddy/weewx-home-assistant": {
-    "captured_at": "2026-10-23T11:41:25.714078+00:00",
+    "captured_at": "2026-10-29T10:38:49.322719+00:00",
     "items": {
-      "42": {
-        "title": "Race condition in config_publisher.py: RuntimeError: dictionary changed size during iteration",
-        "url": "https://github.com/felddy/weewx-home-assistant/issues/42",
-        "kind": "issue",
-        "digest": "82105d0e8f9c8b55b830846398a4deebe522a5a0036841c5740dd75739d38acf"
-      },
-      "40": {
-        "title": "Add state_class on sensors so we can use statistics entities in Home Assistant.",
-        "url": "https://github.com/felddy/weewx-home-assistant/issues/40",
-        "kind": "issue",
-        "digest": "1d2b019be499b47bb1b592951ad26be85260b515931495407a88852efe9b7bb7"
-      },
-      "39": {
-        "title": "feat: add retain=True and state_class to MQTT publishes",
-        "url": "https://github.com/felddy/weewx-home-assistant/pull/39",
-        "kind": "PR",
-        "digest": "f713d0cea9817d395f1f3c6a3338f37f624713fa703ed82d53d3325c4eb529b8"
-      },
-      "38": {
-        "title": "Bump weewx from 5.1.0 to 5.3.1",
-        "url": "https://github.com/felddy/weewx-home-assistant/pull/38",
-        "kind": "PR",
-        "digest": "d253bc1398a0304e9b55e7d72f510f5029b76d12d6651d9ac7535bb99759bb74"
-      },
-      "36": {
-        "title": "Bump actions/upload-artifact from 4 to 7",
-        "url": "https://github.com/felddy/weewx-home-assistant/pull/36",
-        "kind": "PR",
-        "digest": "bf8982f1e4e4716e049fdf820d10daaa38782b6f171a093573fbcfc57671f97b"
-      },
-      "35": {
-        "title": "Bump actions/download-artifact from 4 to 8",
-        "url": "https://github.com/felddy/weewx-home-assistant/pull/35",
-        "kind": "PR",
-        "digest": "557d229017c6dd6e3cb74bf0ae4182c031c82aa58f866b781a7f269cf5d08bf3"
-      },
-      "33": {
-        "title": "Add missing metadata for `inch_per_hour`",
-        "url": "https://github.com/felddy/weewx-home-assistant/issues/33",
-        "kind": "issue",
-        "digest": "510a6f45f41a50245b282c0d2d7d47c84639557e4c783b8835879df39ce0d9be"
-      },
-      "32": {
-        "title": "Documentation Error w/timezone",
-        "url": "https://github.com/felddy/weewx-home-assistant/issues/32",
-        "kind": "issue",
-        "digest": "9c8f49bf8d6fcf9bf2f993d28150586f3e55b2756a699fc6c4467fcb8b16d495"
-      },
       "29": {
         "title": "No module named 'weewx_ha'",
         "url": "https://github.com/felddy/weewx-home-assistant/issues/29",
         "kind": "issue",
         "digest": "10bcbd7d40c8fd12a1015ee5e3014b9c27fe5cb3b827868e9b716b9e012264c4"
-      },
-      "25": {
-        "title": "Bump github/codeql-action from 3 to 4",
-        "url": "https://github.com/felddy/weewx-home-assistant/pull/25",
-        "kind": "PR",
-        "digest": "5481bfdbdedc1e2cc56e5e061b6c48dc23a79e7781e8a23aba3ade9d6e13f963"
-      },
-      "24": {
-        "title": "How to install on HA?",
-        "url": "https://github.com/felddy/weewx-home-assistant/issues/24",
-        "kind": "issue",
-        "digest": "81d25ec6885074114da9e627f509cdf758f4726d9b9e10d561cb5404dcdd511d"
-      },
-      "22": {
-        "title": "Fix: Create a shallow copy of loop packet",
-        "url": "https://github.com/felddy/weewx-home-assistant/pull/22",
-        "kind": "PR",
-        "digest": "a9fdedca82dab2b89f405005c4764a1aa598a9303927196266cf33c8db046acb"
-      },
-      "19": {
-        "title": "Add optional retain parameter for Home Assistant discovery messages",
-        "url": "https://github.com/felddy/weewx-home-assistant/issues/19",
-        "kind": "issue",
-        "digest": "b6fd09073678aed518463b339b00cb15938c634a4c400b8185dff1e9b2e97f9f"
       },
       "18": {
         "title": "Support non-containerized WeeWX install",
@@ -3195,7 +3110,7 @@
     "notice_scan_complete": true
   },
   "glennmckechnie/weewx-wxobs": {
-    "captured_at": "2026-10-23T11:41:09.662873+00:00",
+    "captured_at": "2026-10-29T10:38:50.170202+00:00",
     "items": {
       "10": {
         "title": "Negative number of Wind Chill",
@@ -3216,7 +3131,7 @@
     "notice_scan_complete": true
   },
   "mcrossley/SteelSeries-Weather-Gauges": {
-    "captured_at": "2026-10-23T11:41:21.068474+00:00",
+    "captured_at": "2026-10-29T10:38:57.589043+00:00",
     "items": {
       "24": {
         "title": "pageUpdateLimit not working",
@@ -3250,21 +3165,8 @@
     "notice_scan_complete": true
   },
   "tkeffer/weewx-brultech": {
-    "captured_at": "2026-10-23T11:41:29.356211+00:00",
-    "items": {
-      "3": {
-        "title": "Handling old previous records",
-        "url": "https://github.com/tkeffer/weewx-brultech/issues/3",
-        "kind": "issue",
-        "digest": "9967362631f02b327db064da1addb7ea0eb88a6dffb0ca2b46d27fbdfe0731cd"
-      },
-      "2": {
-        "title": "Newskin",
-        "url": "https://github.com/tkeffer/weewx-brultech/pull/2",
-        "kind": "PR",
-        "digest": "379afea3eac60c8ed69c02d5778058328b076739825b06e51ffb6d033d375488"
-      }
-    },
+    "captured_at": "2026-10-29T10:38:59.616094+00:00",
+    "items": {},
     "notices": {
       "LICENSE.txt": "94a045322262546cfb9d72561e1d587b5c2ffb1e",
       "skins/SeasonsPower/font/OFL.txt": "1fd9f8e65d07e0e5fcecba4386b28910ebffa456",
@@ -3273,7 +3175,7 @@
     "notice_scan_complete": true
   },
   "weewx-packages/weewx-davis-cloud": {
-    "captured_at": "2026-10-23T11:41:30.047362+00:00",
+    "captured_at": "2026-10-29T10:39:04.672502+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"

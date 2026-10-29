@@ -1201,7 +1201,7 @@
   },
   "FColinet/WeeWX-ModbusTCP-driver": {
     "url": "https://github.com/FColinet/WeeWX-ModbusTCP-driver.wiki.git",
-    "checked_at": "2026-10-23T11:41:34.233555+00:00",
+    "checked_at": "2026-10-29T10:39:14.474993+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -1209,7 +1209,7 @@
   },
   "Millardiang/weewx-ecowitt_console_emulator": {
     "url": "https://github.com/Millardiang/weewx-ecowitt_console_emulator.wiki.git",
-    "checked_at": "2026-10-23T11:41:34.233759+00:00",
+    "checked_at": "2026-10-29T10:39:14.475086+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -1217,7 +1217,7 @@
   },
   "WernerKr/davisconsoleapi": {
     "url": "https://github.com/WernerKr/davisconsoleapi.wiki.git",
-    "checked_at": "2026-10-23T11:41:34.677920+00:00",
+    "checked_at": "2026-10-29T10:39:14.748257+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -1225,7 +1225,7 @@
   },
   "chaunceygardiner/weewx-airgradient": {
     "url": "https://github.com/chaunceygardiner/weewx-airgradient.wiki.git",
-    "checked_at": "2026-10-23T11:41:34.685138+00:00",
+    "checked_at": "2026-10-29T10:39:14.766274+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -1233,7 +1233,7 @@
   },
   "chaunceygardiner/weewx-celestial": {
     "url": "https://github.com/chaunceygardiner/weewx-celestial.wiki.git",
-    "checked_at": "2026-10-23T11:41:34.696124+00:00",
+    "checked_at": "2026-10-29T10:39:14.770834+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -1241,7 +1241,7 @@
   },
   "chaunceygardiner/weewx-forecast": {
     "url": "https://github.com/chaunceygardiner/weewx-forecast.wiki.git",
-    "checked_at": "2026-10-23T11:41:34.754407+00:00",
+    "checked_at": "2026-10-29T10:39:14.889897+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -1249,7 +1249,7 @@
   },
   "chaunceygardiner/weewx-loopdata": {
     "url": "https://github.com/chaunceygardiner/weewx-loopdata.wiki.git",
-    "checked_at": "2026-10-23T11:41:35.123152+00:00",
+    "checked_at": "2026-10-29T10:39:15.032140+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -1257,7 +1257,7 @@
   },
   "chaunceygardiner/weewx-xtide": {
     "url": "https://github.com/chaunceygardiner/weewx-xtide.wiki.git",
-    "checked_at": "2026-10-23T11:41:35.162599+00:00",
+    "checked_at": "2026-10-29T10:39:15.036282+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -1265,7 +1265,7 @@
   },
   "evilbunny2008/SinceLastArchiveAccumulator": {
     "url": "https://github.com/evilbunny2008/SinceLastArchiveAccumulator.wiki.git",
-    "checked_at": "2026-10-23T11:41:35.168627+00:00",
+    "checked_at": "2026-10-29T10:39:15.047562+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -1273,7 +1273,7 @@
   },
   "glennmckechnie/weewx-owfs": {
     "url": "https://github.com/glennmckechnie/weewx-owfs.wiki.git",
-    "checked_at": "2026-10-23T11:41:35.508379+00:00",
+    "checked_at": "2026-10-29T10:39:15.288308+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -1281,7 +1281,7 @@
   },
   "jonathankoren/weewx-aqi": {
     "url": "https://github.com/jonathankoren/weewx-aqi.wiki.git",
-    "checked_at": "2026-10-23T11:41:35.619944+00:00",
+    "checked_at": "2026-10-29T10:39:15.521495+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -1289,7 +1289,7 @@
   },
   "jonotaegi/weewx-wll": {
     "url": "https://github.com/jonotaegi/weewx-wll.wiki.git",
-    "checked_at": "2026-10-23T11:41:35.642308+00:00",
+    "checked_at": "2026-10-29T10:39:15.533976+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -1297,7 +1297,7 @@
   },
   "matthewwall/weewx-crt": {
     "url": "https://github.com/matthewwall/weewx-crt.wiki.git",
-    "checked_at": "2026-10-23T11:41:35.912923+00:00",
+    "checked_at": "2026-10-29T10:39:15.573663+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -1305,7 +1305,7 @@
   },
   "matthewwall/weewx-influx": {
     "url": "https://github.com/matthewwall/weewx-influx.wiki.git",
-    "checked_at": "2026-10-23T11:41:35.998641+00:00",
+    "checked_at": "2026-10-29T10:39:15.616003+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -1313,7 +1313,7 @@
   },
   "matthewwall/weewx-tfrc": {
     "url": "https://github.com/matthewwall/weewx-tfrc.wiki.git",
-    "checked_at": "2026-10-23T11:41:36.052661+00:00",
+    "checked_at": "2026-10-29T10:39:15.764629+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -1321,7 +1321,7 @@
   },
   "matthewwall/weewx-twitter": {
     "url": "https://github.com/matthewwall/weewx-twitter.wiki.git",
-    "checked_at": "2026-10-23T11:41:36.062657+00:00",
+    "checked_at": "2026-10-29T10:39:15.807461+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -1329,7 +1329,7 @@
   },
   "matthewwall/weewx-vedirect": {
     "url": "https://github.com/matthewwall/weewx-vedirect.wiki.git",
-    "checked_at": "2026-10-23T11:41:36.326679+00:00",
+    "checked_at": "2026-10-29T10:39:15.825604+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -1337,7 +1337,7 @@
   },
   "raymondelooff/weewx-pusher": {
     "url": "https://github.com/raymondelooff/weewx-pusher.wiki.git",
-    "checked_at": "2026-10-23T11:41:36.469930+00:00",
+    "checked_at": "2026-10-29T10:39:16.027984+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -1345,7 +1345,7 @@
   },
   "roe-dl/weewx-rwsa": {
     "url": "https://github.com/roe-dl/weewx-rwsa.wiki.git",
-    "checked_at": "2026-10-23T11:41:36.470062+00:00",
+    "checked_at": "2026-10-29T10:39:16.058518+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -1353,15 +1353,15 @@
   },
   "roe-dl/weewx-snmp": {
     "url": "https://github.com/roe-dl/weewx-snmp.wiki.git",
-    "checked_at": "2026-10-23T11:41:36.732912+00:00",
+    "checked_at": "2026-10-29T10:39:16.088808+00:00",
     "status": "saved",
-    "last_verified": "2026-10-23T11:41:36.732912+00:00",
+    "last_verified": "2026-10-29T10:39:16.088808+00:00",
     "digest": "82886c6d5cbbdde92911d15998b82810ecf21103893fdc992db8ff7a8f72aa14",
     "retained": false
   },
   "tfilo/weewx-interceptor": {
     "url": "https://github.com/tfilo/weewx-interceptor.wiki.git",
-    "checked_at": "2026-10-23T11:41:36.815871+00:00",
+    "checked_at": "2026-10-29T10:39:16.147403+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -1369,7 +1369,7 @@
   },
   "tkeffer/weewx-nmea-xdr": {
     "url": "https://github.com/tkeffer/weewx-nmea-xdr.wiki.git",
-    "checked_at": "2026-10-23T11:41:36.894775+00:00",
+    "checked_at": "2026-10-29T10:39:16.311972+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -1377,7 +1377,7 @@
   },
   "tkeffer/weewx-wmr89": {
     "url": "https://github.com/tkeffer/weewx-wmr89.wiki.git",
-    "checked_at": "2026-10-23T11:41:37.261342+00:00",
+    "checked_at": "2026-10-29T10:39:16.417833+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -1385,7 +1385,7 @@
   },
   "w4kus/weewx-weepe": {
     "url": "https://github.com/w4kus/weewx-weepe.wiki.git",
-    "checked_at": "2026-10-23T11:41:37.313933+00:00",
+    "checked_at": "2026-10-29T10:39:16.421867+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -1393,7 +1393,7 @@
   },
   "weewx-contrib/weewx-NovaSDS011": {
     "url": "https://github.com/weewx-contrib/weewx-NovaSDS011.wiki.git",
-    "checked_at": "2026-10-23T11:41:37.350175+00:00",
+    "checked_at": "2026-10-29T10:39:16.539348+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -1401,15 +1401,15 @@
   },
   "weewx-extensions/aqi-xtype": {
     "url": "https://github.com/weewx-extensions/aqi-xtype.wiki.git",
-    "checked_at": "2026-10-23T11:41:37.677903+00:00",
+    "checked_at": "2026-10-29T10:39:16.580020+00:00",
     "status": "saved",
-    "last_verified": "2026-10-23T11:41:37.677903+00:00",
+    "last_verified": "2026-10-29T10:39:16.580020+00:00",
     "digest": "b8a239184ef1ee4e175b2c22213b419ada8c57e7fcb186ec6455597a3ed05e8d",
     "retained": false
   },
   "weewx-packages/weewx": {
     "url": "https://github.com/weewx-packages/weewx.wiki.git",
-    "checked_at": "2026-10-23T11:41:38.002760+00:00",
+    "checked_at": "2026-10-29T10:39:16.811743+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -1417,7 +1417,7 @@
   },
   "weewx-packages/weewx-NovaSDS011": {
     "url": "https://github.com/weewx-packages/weewx-NovaSDS011.wiki.git",
-    "checked_at": "2026-10-23T11:41:38.101506+00:00",
+    "checked_at": "2026-10-29T10:39:16.900177+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -1425,7 +1425,7 @@
   },
   "weewx-packages/weewx-airgradient": {
     "url": "https://github.com/weewx-packages/weewx-airgradient.wiki.git",
-    "checked_at": "2026-10-23T11:41:38.157503+00:00",
+    "checked_at": "2026-10-29T10:39:16.945307+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -1433,7 +1433,7 @@
   },
   "weewx-packages/weewx-aqi": {
     "url": "https://github.com/weewx-packages/weewx-aqi.wiki.git",
-    "checked_at": "2026-10-23T11:41:38.214673+00:00",
+    "checked_at": "2026-10-29T10:39:16.952957+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -1441,7 +1441,7 @@
   },
   "weewx-packages/weewx-aqi-xtype": {
     "url": "https://github.com/weewx-packages/weewx-aqi-xtype.wiki.git",
-    "checked_at": "2026-10-23T11:41:38.420734+00:00",
+    "checked_at": "2026-10-29T10:39:17.074629+00:00",
     "status": "disabled",
     "last_verified": null,
     "digest": null,
@@ -1449,7 +1449,7 @@
   },
   "weewx-packages/weewx-celestial": {
     "url": "https://github.com/weewx-packages/weewx-celestial.wiki.git",
-    "checked_at": "2026-10-23T11:41:38.492551+00:00",
+    "checked_at": "2026-10-29T10:39:17.157810+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -1457,7 +1457,7 @@
   },
   "weewx-packages/weewx-crt": {
     "url": "https://github.com/weewx-packages/weewx-crt.wiki.git",
-    "checked_at": "2026-10-23T11:41:38.592816+00:00",
+    "checked_at": "2026-10-29T10:39:17.219659+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -1465,7 +1465,7 @@
   },
   "weewx-packages/weewx-davisconsoleapi": {
     "url": "https://github.com/weewx-packages/weewx-davisconsoleapi.wiki.git",
-    "checked_at": "2026-10-23T11:41:38.852226+00:00",
+    "checked_at": "2026-10-29T10:39:17.346864+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -1473,7 +1473,7 @@
   },
   "weewx-packages/weewx-ecowitt_console_emulator": {
     "url": "https://github.com/weewx-packages/weewx-ecowitt_console_emulator.wiki.git",
-    "checked_at": "2026-10-23T11:41:38.884052+00:00",
+    "checked_at": "2026-10-29T10:39:17.406345+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -1481,7 +1481,7 @@
   },
   "weewx-packages/weewx-forecast": {
     "url": "https://github.com/weewx-packages/weewx-forecast.wiki.git",
-    "checked_at": "2026-10-23T11:41:39.007404+00:00",
+    "checked_at": "2026-10-29T10:39:17.476456+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -1489,7 +1489,7 @@
   },
   "weewx-packages/weewx-influx": {
     "url": "https://github.com/weewx-packages/weewx-influx.wiki.git",
-    "checked_at": "2026-10-23T11:41:39.288086+00:00",
+    "checked_at": "2026-10-29T10:39:17.621666+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -1497,7 +1497,7 @@
   },
   "weewx-packages/weewx-interceptor": {
     "url": "https://github.com/weewx-packages/weewx-interceptor.wiki.git",
-    "checked_at": "2026-10-23T11:41:39.332316+00:00",
+    "checked_at": "2026-10-29T10:39:17.650695+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -1505,7 +1505,7 @@
   },
   "weewx-packages/weewx-loopdata": {
     "url": "https://github.com/weewx-packages/weewx-loopdata.wiki.git",
-    "checked_at": "2026-10-23T11:41:39.435258+00:00",
+    "checked_at": "2026-10-29T10:39:17.742544+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -1513,7 +1513,7 @@
   },
   "weewx-packages/weewx-modbus-tcp": {
     "url": "https://github.com/weewx-packages/weewx-modbus-tcp.wiki.git",
-    "checked_at": "2026-10-23T11:41:39.517343+00:00",
+    "checked_at": "2026-10-29T10:39:17.745931+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -1521,7 +1521,7 @@
   },
   "weewx-packages/weewx-nmea-xdr": {
     "url": "https://github.com/weewx-packages/weewx-nmea-xdr.wiki.git",
-    "checked_at": "2026-10-23T11:41:39.747034+00:00",
+    "checked_at": "2026-10-29T10:39:17.872067+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -1529,7 +1529,7 @@
   },
   "weewx-packages/weewx-owfs": {
     "url": "https://github.com/weewx-packages/weewx-owfs.wiki.git",
-    "checked_at": "2026-10-23T11:41:39.754490+00:00",
+    "checked_at": "2026-10-29T10:39:17.915634+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -1537,7 +1537,7 @@
   },
   "weewx-packages/weewx-pusher": {
     "url": "https://github.com/weewx-packages/weewx-pusher.wiki.git",
-    "checked_at": "2026-10-23T11:41:39.883532+00:00",
+    "checked_at": "2026-10-29T10:39:17.995662+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -1545,7 +1545,7 @@
   },
   "weewx-packages/weewx-rwsa": {
     "url": "https://github.com/weewx-packages/weewx-rwsa.wiki.git",
-    "checked_at": "2026-10-23T11:41:39.932618+00:00",
+    "checked_at": "2026-10-29T10:39:18.000484+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -1553,7 +1553,7 @@
   },
   "weewx-packages/weewx-since-last-archive-accumulator": {
     "url": "https://github.com/weewx-packages/weewx-since-last-archive-accumulator.wiki.git",
-    "checked_at": "2026-10-23T11:41:40.207437+00:00",
+    "checked_at": "2026-10-29T10:39:18.157585+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -1561,7 +1561,7 @@
   },
   "weewx-packages/weewx-snmp": {
     "url": "https://github.com/weewx-packages/weewx-snmp.wiki.git",
-    "checked_at": "2026-10-23T11:41:40.230072+00:00",
+    "checked_at": "2026-10-29T10:39:18.219563+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -1569,7 +1569,7 @@
   },
   "weewx-packages/weewx-tfrc": {
     "url": "https://github.com/weewx-packages/weewx-tfrc.wiki.git",
-    "checked_at": "2026-10-23T11:41:40.302477+00:00",
+    "checked_at": "2026-10-29T10:39:18.261826+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -1577,7 +1577,7 @@
   },
   "weewx-packages/weewx-twitter": {
     "url": "https://github.com/weewx-packages/weewx-twitter.wiki.git",
-    "checked_at": "2026-10-23T11:41:40.358764+00:00",
+    "checked_at": "2026-10-29T10:39:18.269680+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -1585,7 +1585,7 @@
   },
   "weewx-packages/weewx-vedirect": {
     "url": "https://github.com/weewx-packages/weewx-vedirect.wiki.git",
-    "checked_at": "2026-10-23T11:41:40.644739+00:00",
+    "checked_at": "2026-10-29T10:39:18.457255+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -1593,7 +1593,7 @@
   },
   "weewx-packages/weewx-weepe": {
     "url": "https://github.com/weewx-packages/weewx-weepe.wiki.git",
-    "checked_at": "2026-10-23T11:41:40.771589+00:00",
+    "checked_at": "2026-10-29T10:39:18.523258+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -1601,7 +1601,7 @@
   },
   "weewx-packages/weewx-wll": {
     "url": "https://github.com/weewx-packages/weewx-wll.wiki.git",
-    "checked_at": "2026-10-23T11:41:41.047762+00:00",
+    "checked_at": "2026-10-29T10:39:18.666870+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -1609,7 +1609,7 @@
   },
   "weewx-packages/weewx-wmr89": {
     "url": "https://github.com/weewx-packages/weewx-wmr89.wiki.git",
-    "checked_at": "2026-10-23T11:41:41.120195+00:00",
+    "checked_at": "2026-10-29T10:39:18.701552+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -1617,7 +1617,7 @@
   },
   "weewx-packages/weewx-xtide": {
     "url": "https://github.com/weewx-packages/weewx-xtide.wiki.git",
-    "checked_at": "2026-10-23T11:41:41.183521+00:00",
+    "checked_at": "2026-10-29T10:39:18.780582+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -1625,10 +1625,10 @@
   },
   "weewx/weewx": {
     "url": "https://github.com/weewx/weewx.wiki.git",
-    "checked_at": "2026-10-23T11:41:41.493612+00:00",
+    "checked_at": "2026-10-29T10:39:18.949420+00:00",
     "status": "saved",
-    "last_verified": "2026-10-23T11:41:41.493612+00:00",
-    "digest": "7645467ffc21b265df781edf8a4d19a75d85c9e3f22bd8102f66e19eb617b303",
+    "last_verified": "2026-10-29T10:39:18.949420+00:00",
+    "digest": "cfbd71d2940085f4de1334659d5778eebb31d3dac9b3e1e73406cfde67588033",
     "retained": false
   },
   "Cosmospacedog/Gill-WeeWX": {
@@ -2481,7 +2481,7 @@
   },
   "CameronD73/weewx-utilities": {
     "url": "https://github.com/CameronD73/weewx-utilities.wiki.git",
-    "checked_at": "2026-10-23T11:41:34.233101+00:00",
+    "checked_at": "2026-10-29T10:39:14.474652+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -2489,15 +2489,15 @@
   },
   "Daveiano/weewx-wdc": {
     "url": "https://github.com/Daveiano/weewx-wdc.wiki.git",
-    "checked_at": "2026-10-23T11:41:34.233388+00:00",
+    "checked_at": "2026-10-29T10:39:14.474876+00:00",
     "status": "saved",
-    "last_verified": "2026-10-23T11:41:34.233388+00:00",
+    "last_verified": "2026-10-29T10:39:14.474876+00:00",
     "digest": "a75026be54dff2e86416e6198528cef3f73c796be90154bdab0c283377312189",
     "retained": false
   },
   "felddy/weewx-home-assistant": {
     "url": "https://github.com/felddy/weewx-home-assistant.wiki.git",
-    "checked_at": "2026-10-23T11:41:35.210916+00:00",
+    "checked_at": "2026-10-29T10:39:15.240466+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -2505,15 +2505,15 @@
   },
   "glennmckechnie/weewx-wxobs": {
     "url": "https://github.com/glennmckechnie/weewx-wxobs.wiki.git",
-    "checked_at": "2026-10-23T11:41:35.596469+00:00",
+    "checked_at": "2026-10-29T10:39:15.300909+00:00",
     "status": "saved",
-    "last_verified": "2026-10-23T11:41:35.596469+00:00",
+    "last_verified": "2026-10-29T10:39:15.300909+00:00",
     "digest": "bcb8e1cebb6ba61f41e388dfb95df10e4198a2baaf0e1870523f8902f56a7d7e",
     "retained": false
   },
   "mcrossley/SteelSeries-Weather-Gauges": {
     "url": "https://github.com/mcrossley/SteelSeries-Weather-Gauges.wiki.git",
-    "checked_at": "2026-10-23T11:41:36.393689+00:00",
+    "checked_at": "2026-10-29T10:39:15.867673+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -2521,7 +2521,7 @@
   },
   "tkeffer/weewx-brultech": {
     "url": "https://github.com/tkeffer/weewx-brultech.wiki.git",
-    "checked_at": "2026-10-23T11:41:36.885863+00:00",
+    "checked_at": "2026-10-29T10:39:16.286761+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -2529,7 +2529,7 @@
   },
   "weewx-packages/.github": {
     "url": "https://github.com/weewx-packages/.github.wiki.git",
-    "checked_at": "2026-10-23T11:41:37.740581+00:00",
+    "checked_at": "2026-10-29T10:39:16.681690+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -2537,7 +2537,7 @@
   },
   "weewx-packages/SteelSeries-Weather-Gauges": {
     "url": "https://github.com/weewx-packages/SteelSeries-Weather-Gauges.wiki.git",
-    "checked_at": "2026-10-23T11:41:37.768765+00:00",
+    "checked_at": "2026-10-29T10:39:16.704356+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -2545,7 +2545,7 @@
   },
   "weewx-packages/weewx-brultech": {
     "url": "https://github.com/weewx-packages/weewx-brultech.wiki.git",
-    "checked_at": "2026-10-23T11:41:38.420766+00:00",
+    "checked_at": "2026-10-29T10:39:17.074650+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -2553,7 +2553,7 @@
   },
   "weewx-packages/weewx-davis-cloud": {
     "url": "https://github.com/weewx-packages/weewx-davis-cloud.wiki.git",
-    "checked_at": "2026-10-23T11:41:38.655214+00:00",
+    "checked_at": "2026-10-29T10:39:17.219919+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -2561,7 +2561,7 @@
   },
   "weewx-packages/weewx-home-assistant": {
     "url": "https://github.com/weewx-packages/weewx-home-assistant.wiki.git",
-    "checked_at": "2026-10-23T11:41:39.090844+00:00",
+    "checked_at": "2026-10-29T10:39:17.485130+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -2569,7 +2569,7 @@
   },
   "weewx-packages/weewx-utilities": {
     "url": "https://github.com/weewx-packages/weewx-utilities.wiki.git",
-    "checked_at": "2026-10-23T11:41:40.627601+00:00",
+    "checked_at": "2026-10-29T10:39:18.409911+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -2577,7 +2577,7 @@
   },
   "weewx-packages/weewx-wdc": {
     "url": "https://github.com/weewx-packages/weewx-wdc.wiki.git",
-    "checked_at": "2026-10-23T11:41:40.719595+00:00",
+    "checked_at": "2026-10-29T10:39:18.522314+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
@@ -2585,7 +2585,7 @@
   },
   "weewx-packages/weewx-wxobs": {
     "url": "https://github.com/weewx-packages/weewx-wxobs.wiki.git",
-    "checked_at": "2026-10-23T11:41:41.127576+00:00",
+    "checked_at": "2026-10-29T10:39:18.780500+00:00",
     "status": "absent",
     "last_verified": null,
     "digest": null,
