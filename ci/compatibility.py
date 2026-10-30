@@ -6,6 +6,7 @@ failures are compatibility failures. Only the latter produce package issues.
 """
 
 import argparse
+import datetime
 import hashlib
 import importlib.metadata
 import json
@@ -145,6 +146,70 @@ def matrix(catalog, checks, external=None, selected=None):
                                   branch=branch, weewx_sha=weewx_sha,
                                   weewx_repository=WEEWX_REPOSITORY, python=python))
     return {'include': cases}
+
+
+def changed_selection(base, catalog, checks, external, weekday):
+    """Select the packages a change since base can affect.
+
+    A package is selected when its catalog entry, its check profile, its
+    recipe or its project tests changed. A change anywhere else, such as the
+    CI code or a workflow, can affect every package; it adds the packages of
+    the weekday group, the same share a scheduled run tests.
+
+    Args:
+        base (str): Git revision to compare the working tree against.
+        catalog (dict): Current repository.json.
+        checks (dict): Current ci/packages.json.
+        external (dict): Current ci/external.json.
+        weekday (int): Weekday group, 1 to 5, used for changes outside the data.
+
+    Returns:
+        set[str]: Package IDs to test. Empty if nothing that is tested changed.
+    """
+    def at_base(path, default):
+        result = subprocess.run(['git', 'show', '%s:%s' % (base, path)], cwd=ROOT,
+                                capture_output=True, text=True)
+        return json.loads(result.stdout) if result.returncode == 0 else default
+
+    old_packages = {package['id']: package for package in at_base('repository.json', {}).get('packages', [])}
+    old_checks = at_base('ci/packages.json', {})
+    old_external = at_base('ci/external.json', {})
+    selected = {package['id'] for package in catalog['packages']
+                if old_packages.get(package['id']) != package
+                or old_checks.get(package['id']) != checks.get(package['id'])}
+    selected |= {name for name, item in external.items() if old_external.get(name) != item}
+    profiles = dict(checks, **{name: item['check_profile'] for name, item in external.items()})
+    changed = subprocess.run(['git', 'diff', '--name-only', base, '--'], cwd=ROOT,
+                             capture_output=True, text=True, check=True).stdout.split()
+    for path in changed:
+        parts = path.split('/')
+        if parts[:2] == ['ci', 'recipes'] and len(parts) > 3:
+            selected.add(parts[2])
+        elif parts[:2] == ['ci', 'project_tests'] and len(parts) > 3:
+            tests_path = '/'.join(parts[:3])
+            selected |= {name for name, profile in profiles.items()
+                         if profile.get('tests_path', '').rstrip('/') == tests_path}
+        elif parts[0] != 'schemas' and path.endswith(('.json', '.md')):
+            # Data and documentation. Entries that are tested were compared above.
+            continue
+        else:
+            selected |= weekday_selection(profiles, weekday)
+    return selected & set(profiles)
+
+
+def weekday_selection(profiles, weekday):
+    """Return the package IDs whose repository belongs to a weekday group.
+
+    Args:
+        profiles (dict): Check profiles by package ID.
+        weekday (int): Weekday group, 1 to 5.
+
+    Returns:
+        set[str]: Package IDs of that group.
+    """
+    mirrors = json.loads((ROOT / 'ci/mirrors.json').read_text())
+    repositories = {item['fork'] for item in mirrors if item['weekday'] == weekday}
+    return {name for name, profile in profiles.items() if profile['repository'] in repositories}
 
 
 def shards(plan, limit=200):
@@ -410,6 +475,7 @@ if __name__ == '__main__':
     parser.add_argument('--plan', type=Path)
     parser.add_argument('--case-id', type=int)
     parser.add_argument('--weekday', type=int, choices=range(1, 6))
+    parser.add_argument('--base', help='test only what changed since this revision')
     args = parser.parse_args()
     if args.action == 'matrix':
         catalog = json.loads((ROOT / 'repository.json').read_text())
@@ -417,12 +483,13 @@ if __name__ == '__main__':
         external_path = ROOT / 'ci/external.json'
         external = json.loads(external_path.read_text()) if external_path.exists() else {}
         selected = None
+        profiles = dict(checks, **{name: item['check_profile'] for name, item in external.items()})
         if args.weekday:
-            mirrors = json.loads((ROOT / 'ci/mirrors.json').read_text())
-            repositories = {item['fork'] for item in mirrors
-                            if item['weekday'] == args.weekday}
-            profiles = dict(checks, **{name: item['check_profile'] for name, item in external.items()})
-            selected = {name for name, profile in profiles.items() if profile['repository'] in repositories}
+            selected = weekday_selection(profiles, args.weekday)
+        elif args.base:
+            # Saturday and Sunday fall back to the groups of Monday and Tuesday.
+            today = (datetime.date.today().isoweekday() - 1) % 5 + 1
+            selected = changed_selection(args.base, catalog, checks, external, today)
         print(json.dumps(matrix(catalog, checks, external, selected)))
     elif args.action == 'shards':
         print(json.dumps(shards(json.loads(args.plan.read_text())), separators=(',', ':')))
