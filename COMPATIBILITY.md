@@ -2,7 +2,10 @@
 
 The compatibility workflow runs one group each weekday at 04:23 UTC, following
 the assignments in `ci/mirrors.json`. Each project runs once a week. Catalog
-pushes, pull requests and **Run workflow** check every group. It tests the latest
+pushes and pull requests check the packages whose catalog entry, check profile,
+recipe or project tests they change. A change to other files, such as the CI
+code, adds the current weekday's group. **Run workflow** checks every group.
+It tests the latest
 stable, non-yanked release of every catalog package against the current commits
 of WeeWX branches `master` and `development`, on Python 3.10 and 3.14.
 These checks warn about changes already published in those branches. They cannot

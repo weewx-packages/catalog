@@ -53,10 +53,13 @@ jobs:
     timeout-minutes: 10
     outputs:
       matrix: ${{ steps.plan.outputs.matrix }}
+      cases: ${{ steps.plan.outputs.cases }}
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           persist-credentials: false
+          # Pull requests and pushes compare against an earlier commit.
+          fetch-depth: 0
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
         with:
           python-version: '3.14'
@@ -79,13 +82,22 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           TEST_SCHEDULE: ${{ github.event.schedule }}
+          PR_BASE: ${{ github.event.pull_request.base.sha }}
+          PUSH_BEFORE: ${{ github.event.before }}
         run: |
+          # Pull requests and pushes test the packages they change; a change to
+          # the CI itself adds today's weekday group. Manual runs test all.
           if [ "$GITHUB_EVENT_NAME" = schedule ]; then
             python ci/compatibility.py matrix --weekday "${TEST_SCHEDULE##* }" > matrix.json
+          elif [ "$GITHUB_EVENT_NAME" = pull_request ]; then
+            python ci/compatibility.py matrix --base "$PR_BASE" > matrix.json
+          elif [ "$GITHUB_EVENT_NAME" = push ]; then
+            python ci/compatibility.py matrix --base "$PUSH_BEFORE" > matrix.json
           else
             python ci/compatibility.py matrix > matrix.json
           fi
           echo "matrix=$(python ci/compatibility.py shards --plan matrix.json)" >> "$GITHUB_OUTPUT"
+          echo "cases=$(python -c 'import json; print(len(json.load(open("matrix.json"))["include"]))')" >> "$GITHUB_OUTPUT"
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: plan
@@ -98,7 +110,8 @@ jobs:
     needs: prepare
     # PRs skip the mirror. Override implicit success() so that skipped ancestor
     # cannot suppress the matrix after preparation has succeeded.
-    if: ${{ !cancelled() && needs.prepare.result == 'success' }}
+    # GitHub rejects an empty matrix, for example after a README-only change.
+    if: ${{ !cancelled() && needs.prepare.result == 'success' && needs.prepare.outputs.cases != '0' }}
     strategy:
       fail-fast: false
       # Two groups at a time with max-parallel 8 in compatibility-group.yml run
