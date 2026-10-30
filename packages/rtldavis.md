@@ -11,10 +11,10 @@ dependencies and settings.
 
 | | |
 |---|---|
-| Version | 0.22.0 |
+| Version | 0.22.1 |
 | WeeWX | `>=5,<6` |
 | Python | `>=3.7` |
-| Release notes | [0.22.0](https://github.com/weewx-packages/weewx-rtldavis/releases/tag/v0.22.0) |
+| Release notes | [0.22.1](https://github.com/weewx-packages/weewx-rtldavis/releases/tag/v0.22.1) |
 
 ## Install with stock WeeWX
 
@@ -22,7 +22,7 @@ Install the dependencies named in the guide first. Then use the `weectl`
 of the Python environment running WeeWX:
 
 ```shell
-weectl extension install https://github.com/weewx-packages/weewx-rtldavis/releases/download/v0.22.0/weewx-rtldavis-0.22.0.zip
+weectl extension install https://github.com/weewx-packages/weewx-rtldavis/releases/download/v0.22.1/weewx-rtldavis-0.22.1.zip
 ```
 
 Add `--config /path/to/weewx.conf` if your station uses another configuration file.
@@ -51,5 +51,6 @@ weectl extension uninstall rtldavis
 
 | Version | WeeWX | Python | Archive |
 |---|---|---|---|
+| 0.22.0 | `>=5,<6` | `>=3.7` | [Download](https://github.com/weewx-packages/weewx-rtldavis/releases/download/v0.22.0/weewx-rtldavis-0.22.0.zip) |
 | 0.21.2 | `>=5,<6` | `>=3.7` | [Download](https://github.com/weewx-packages/weewx-rtldavis/releases/download/v0.21.2/weewx-rtldavis-0.21.2.zip) |
 | 0.21.1 | `>=5,<6` | `>=3.7` | [Download](https://github.com/weewx-packages/weewx-rtldavis/releases/download/v0.21.1/weewx-rtldavis-0.21.1.zip) |
