@@ -2,6 +2,7 @@
 
 import json
 from pathlib import Path
+import subprocess
 import sys
 import tarfile
 from unittest.mock import Mock
@@ -265,3 +266,31 @@ def test_explicit_python_profile_does_not_claim_unsupported_versions(package, mo
     checks['example']['pythons'] = []
     with pytest.raises(ValueError, match='Python'):
         compat.matrix({'packages': [package]}, checks)
+
+
+def test_changes_select_only_the_packages_they_affect(tmp_path, monkeypatch):
+    def write(path, data):
+        target = tmp_path / path
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_text(data if isinstance(data, str) else json.dumps(data))
+        subprocess.run(['git', 'add', '-A'], cwd=tmp_path, check=True)
+
+    packages = [{'id': 'a', 'releases': []}, {'id': 'b', 'releases': []}]
+    checks = {'a': {'repository': 'org/a'}, 'b': {'repository': 'org/b'}}
+    subprocess.run(['git', 'init', '-q'], cwd=tmp_path, check=True)
+    write('repository.json', {'packages': packages})
+    write('ci/packages.json', checks)
+    write('ci/mirrors.json', [{'fork': 'org/b', 'weekday': 3}])
+    subprocess.run(['git', '-c', 'user.name=t', '-c', 'user.email=t@example.org',
+                    'commit', '-qm', 'base'], cwd=tmp_path, check=True)
+    monkeypatch.setattr(compat, 'ROOT', tmp_path)
+    released = [dict(packages[0], releases=[{'version': '1.0'}]), packages[1]]
+    write('repository.json', {'packages': released})
+    write('README.md', 'Generated table')
+    assert compat.changed_selection('HEAD', {'packages': released}, checks, {}, 3) == {'a'}
+    write('ci/recipes/b/package.patch', 'patch')
+    assert compat.changed_selection('HEAD', {'packages': released}, checks, {}, 3) == {'a', 'b'}
+    (tmp_path / 'ci/recipes/b/package.patch').unlink()
+    # Code can affect every package; the weekday group stands in for all.
+    write('ci/compatibility.py', 'changed')
+    assert compat.changed_selection('HEAD', {'packages': packages}, checks, {}, 3) == {'b'}
