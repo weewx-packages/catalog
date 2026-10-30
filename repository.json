@@ -4062,6 +4062,121 @@
           "restart_required": false
         }
       ]
+    },
+    {
+      "id": "ecowittcustom",
+      "installer_name": "ecowittcustom",
+      "name": "Ecowitt custom",
+      "description": "Receive uploads from Ecowitt consoles and gateways set to a customized server. The driver of ecowittcustom, without its skins.",
+      "types": [
+        "driver"
+      ],
+      "category": "driver",
+      "keywords": [
+        "ecowitt",
+        "fine offset",
+        "gw1000",
+        "gw1100",
+        "gw2000",
+        "ws3900",
+        "customized",
+        "http"
+      ],
+      "homepage": "https://github.com/weewx-packages/weewx-ecowittcustom",
+      "releases": [
+        {
+          "version": "0.2.0.post1",
+          "requires_python": ">=3.10",
+          "requires_weewx": ">=5,<6",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-ecowittcustom/releases/download/v0.2.0.post1/weewx-ecowittcustom-0.2.0.post1.tar.gz",
+            "format": "tar",
+            "sha256": "5e78ef608397f1e5218c17c00e9c2b78f39fdc279ee8d575531db6c21af903b9"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-ecowittcustom/releases/tag/v0.2.0.post1",
+          "restart_required": true,
+          "setup": [
+            {
+              "command": "sudo weectl station reconfigure --driver=user.ecowittcustom",
+              "note": "selects the driver"
+            },
+            {
+              "command": "sudo systemctl restart weewx"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "package-manager",
+      "installer_name": "package-manager",
+      "name": "Package manager",
+      "description": "Install, search and update WeeWX extensions from repository indexes.",
+      "types": [
+        "other"
+      ],
+      "category": "other",
+      "keywords": [
+        "packages",
+        "catalog",
+        "install",
+        "update"
+      ],
+      "homepage": "https://github.com/weewx-packages/weewx-package-manager",
+      "releases": [
+        {
+          "version": "0.1.0a3",
+          "requires_python": ">=3.10",
+          "requires_weewx": ">=5,<6",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-package-manager/releases/download/v0.1.0a3/package-manager-0.1.0a3.tar.gz",
+            "format": "tar",
+            "sha256": "d9fa20fe9cbbd5da47a5f0fdbcf9648b95da2e1aa12b9c441555656ff701bf98"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-package-manager/releases/tag/v0.1.0a3",
+          "restart_required": true,
+          "requirements": {
+            "python": [
+              "packaging"
+            ],
+            "debian": [
+              "python3-packaging"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "station-admin",
+      "installer_name": "station-admin",
+      "name": "Station administration",
+      "description": "Web administration of the WeeWX station image. It needs the services of that image.",
+      "types": [
+        "service"
+      ],
+      "category": "other",
+      "keywords": [
+        "admin",
+        "web",
+        "backup",
+        "configuration",
+        "image"
+      ],
+      "homepage": "https://github.com/weewx-packages/weewx-station-admin",
+      "releases": [
+        {
+          "version": "0.1.0a1",
+          "requires_python": ">=3.10",
+          "requires_weewx": ">=5,<6",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-station-admin/releases/download/v0.1.0a1/weewx-station-admin-0.1.0a1.tar.gz",
+            "format": "tar",
+            "sha256": "ba9273f14ece97815801e30c16bf632f46fb059be0ff28fb7128a160ca184b45"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-station-admin/releases/tag/v0.1.0a1",
+          "restart_required": true
+        }
+      ]
     }
   ]
 }

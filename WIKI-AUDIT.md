@@ -83,7 +83,7 @@ evidence, tracker details, reasons, successor decisions and repair results.
 | 193 | [WeatherLink Live UDP and Airlink](https://github.com/WernerKr/weewx-weatherlinkliveudp) | GPL-3.0-or-later AND GPL-3.0-only AND OFL-1.1 AND LicenseRef-Unresolved-bundled-components | blocked_license |  |
 | 194 | [WeatherLink Live](https://github.com/Drealine/weatherlinklive-driver-weewx) | Apache-2.0 | fork_created | [repository](https://github.com/weewx-packages/weatherlinklive-driver-weewx) |
 | 195 | [WeatherLink Live WLL](https://github.com/jonotaegi/weewx-wll) | GPL-3.0-or-later AND GPL-3.0-only | released | [repository](https://github.com/weewx-packages/weewx-wll) |
-| 201 | [ecowittcustom](https://github.com/WernerKr/Ecowitt-or-DAVIS-stations-and-Season-skin) | GPL-3.0-or-later AND GPL-3.0-only AND OFL-1.1 AND LicenseRef-Highcharts AND LicenseRef-Unresolved-bundled-components | blocked_license |  |
+| 201 | [ecowittcustom](https://github.com/WernerKr/Ecowitt-or-DAVIS-stations-and-Season-skin) | GPL-3.0-only (driver only) | fork_created | [repository](https://github.com/weewx-packages/weewx-ecowittcustom) |
 | 202 | [ecowittGateway](https://github.com/Millardiang/weewx-ecowittGateway) | GPL-3.0-or-later | fork_created | [repository](https://github.com/weewx-packages/weewx-ecowittGateway) |
 | 203 | [gw1000](https://github.com/weewx-contrib/weewx-gw1000) | GPL-3.0-or-later AND GPL-2.0-or-later | skip_superseded |  |
 | 204 | [Weewx_Ecowitt-Gateway-API_Driver](https://repo.w0chp.net/Chipster/Weewx_Ecowitt-Gateway-API_Driver) | GPL-3.0-only | defer_external_import |  |

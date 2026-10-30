@@ -64,6 +64,7 @@ shows how to register this catalog and run it.
 | [Computer monitor](https://github.com/weewx-packages/weewx-cmon) | [`cmon`](packages/cmon.md) | Archive CPU, memory, disk and network measurements from the local computer. |
 | [Davis RTL-SDR](https://github.com/weewx-packages/weewx-rtldavis) | [`rtldavis`](packages/rtldavis.md) | Receive Davis Vantage Pro, Pro2 and Vue wireless observations through RTL-SDR. The receiver runs inside WeeWX and needs numpy and librtlsdr. |
 | [Davis WeatherLink Cloud (pre-release)](https://github.com/weewx-packages/weewx-davis-cloud) | [`davis-cloud`](packages/davis-cloud.md) | Unified Davis cloud current conditions, archives and optional health service. Pre-release; legacy package migration is incomplete. |
+| [Ecowitt custom](https://github.com/weewx-packages/weewx-ecowittcustom) | [`ecowittcustom`](packages/ecowittcustom.md) | Receive uploads from Ecowitt consoles and gateways set to a customized server. The driver of ecowittcustom, without its skins. |
 | [Ecowitt HTTP Push](https://github.com/weewx-packages/weewx-ecowitt-http-push) | [`ecowitt-http-push`](packages/ecowitt-http-push.md) | Receive HTTP push uploads from Ecowitt gateways and consoles using the Ecowitt or Weather Underground custom-server protocol. |
 | [filepile](https://github.com/weewx-packages/weewx-filepile) | [`filepile`](packages/filepile.md) | Merge named readings from a text file into archive records with unit conversion. |
 | [import-wlk](https://github.com/weewx-packages/weewx-import-wlk) | [`import-wlk`](packages/import-wlk.md) | Pseudo-driver for importing WLK files |
@@ -173,10 +174,12 @@ shows how to register this catalog and run it.
 | [loopdata](https://github.com/weewx-packages/weewx-loopdata) | [`loopdata`](packages/loopdata.md) | Loop statistics for real time reporting. |
 | [Metrics](https://github.com/weewx-packages/weewx-metrics/blob/weewx-packages-docs/README.md) | [`metrics`](packages/metrics.md) | Generate Prometheus metrics from WeeWX weather observations. |
 | [notifier](https://github.com/weewx-packages/weewx-notify/blob/weewx-packages-docs/README.md) | [`notify`](packages/notify.md) | Notification to remote server Alternative installations: shares installer Notify and user/notify.py with Pushover; do not install together. |
+| [Package manager](https://github.com/weewx-packages/weewx-package-manager) | [`package-manager`](packages/package-manager.md) | Install, search and update WeeWX extensions from repository indexes. |
 | [Pushover](https://github.com/weewx-packages/weewx-pushover) | [`pushover`](packages/pushover.md) | Monitor observation values and send alerts. Alternative installations: shares installer Notify and user/notify.py with the webhook Notify extension; do not install together. |
 | [RTSP Image](https://github.com/weewx-packages/weewx-rtsp-image) | [`rtsp-image`](packages/rtsp-image.md) | Capture still images from RTSP camera feeds using ffmpeg. |
 | [SetProcessName](https://github.com/weewx-packages/weewx-setprocessname) | [`setprocessname`](packages/setprocessname.md) | Set the WeeWX daemon process title from configuration. |
 | [Since Last Archive Accumulator](https://github.com/weewx-packages/weewx-since-last-archive-accumulator) | [`since-last-archive-accumulator`](packages/since-last-archive-accumulator.md) | Accumulate rain and evapotranspiration between archive records. |
+| [Station administration](https://github.com/weewx-packages/weewx-station-admin) | [`station-admin`](packages/station-admin.md) | Web administration of the WeeWX station image. It needs the services of that image. |
 | [weewx-aqi-xtype](https://github.com/weewx-packages/weewx-aqi-xtype) | [`aqi-xtype`](packages/aqi-xtype.md) | Calculate EPA air quality indices and NowCast through WeeWX XTypes. Prerelease. |
 | [weewx-celestial](https://github.com/weewx-packages/weewx-celestial) | [`celestial`](packages/celestial.md) | A live celestial report driven by weewx-loopdata almanac fields. |
 | [weewx-climate](https://github.com/weewx-packages/weewx-climate) | [`climate`](packages/climate.md) | Download and query historical ACIS climate statistics. |
