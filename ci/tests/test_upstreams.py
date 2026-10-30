@@ -232,3 +232,17 @@ def test_tag_releases_can_advance_without_a_github_release(spec, monkeypatch):
     plan = upstreams.plan([spec], {'packages': []})
     assert plan['candidates'][0]['version'] == '1.5'
     assert plan['candidates'][0]['asset'] is None
+
+
+def test_page_with_requirements_holds_the_whole_installation():
+    package = dict(id='pkg', installer_name='pkg', name='Package', description='Does things.',
+        homepage='https://example.test/guide', releases=[release(
+            '1.0', requirements={'python': ['numpy>=1.17'], 'debian': ['python3-numpy', 'librtlsdr0']},
+            setup=[{'command': 'sudo usermod -aG plugdev {user}', 'note': 'dongle access'}])])
+    page = upstreams.package_page(package)
+    assert 'dependencies named in the guide' not in page
+    assert 'sudo apt install python3-numpy librtlsdr0' in page
+    # A pip installation takes the Python module from pip, the rest from apt.
+    assert "python -m pip install 'numpy>=1.17'\nsudo apt install librtlsdr0\n" in page
+    assert 'sudo weectl extension install https://example.test/1.0.zip' in page
+    assert 'sudo usermod -aG plugdev weewx    # dongle access' in page

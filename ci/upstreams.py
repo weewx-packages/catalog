@@ -8,6 +8,7 @@ import argparse
 import hashlib
 import json
 from pathlib import Path
+import shlex
 import subprocess
 import urllib.request
 
@@ -168,6 +169,39 @@ def current_release(package):
     return max(candidates, key=lambda release: Version(release['version'])) if candidates else None
 
 
+def requirements_section(needs):
+    """Render the commands that provide a release's requirements.
+
+    Debian packages named python3-* are the distribution's builds of the Python
+    requirements. A pip installation of WeeWX gets those from pip instead and
+    only the other Debian packages from apt.
+
+    Args:
+        needs (dict): The release's requirements, possibly empty.
+
+    Returns:
+        list[str]: Markdown lines, empty without requirements.
+    """
+    if not needs:
+        return []
+    python = needs.get('python', [])
+    debian = needs.get('debian', [])
+    other = [name for name in debian if not name.startswith('python3-')]
+    lines = ['## Requirements', '']
+    if debian:
+        lines += ['With WeeWX installed from its Debian or Raspberry Pi OS package:', '',
+                  '```shell', 'sudo apt install ' + ' '.join(debian), '```', '']
+    if python or other:
+        lines += ['With a pip installation of WeeWX, activate its virtual environment first:', '',
+                  '```shell']
+        if python:
+            lines.append('python -m pip install ' + ' '.join(shlex.quote(item) for item in python))
+        if other:
+            lines.append('sudo apt install ' + ' '.join(other))
+        lines += ['```', '']
+    return lines
+
+
 def package_page(package):
     """Render the catalog page that package guides link to for installation.
 
@@ -180,11 +214,14 @@ def package_page(package):
     Returns:
         str: Complete Markdown page.
     """
+    release = current_release(package)
+    # A release that declares its requirements and setup is installed from this
+    # page alone; the package guide is then only needed for further settings.
+    complete = bool(release and (release.get('requirements') or release.get('setup')))
     lines = [PAGE_MARKER, '', '# ' + package['name'], '', package['description'], '',
              'Package ID `%s`. The [installation and configuration guide](%s) lists its' % (
                  package['id'], package['homepage']),
-             'dependencies and settings.', '']
-    release = current_release(package)
+             'further settings.' if complete else 'dependencies and settings.', '']
     if release is None:
         lines += ['All releases of this package are withdrawn. It cannot be installed from the catalog.', '']
         return '\n'.join(lines)
@@ -197,13 +234,31 @@ def package_page(package):
         lines.append('| Release notes | [%s](%s) |' % (release['version'], release['release_notes']))
     lines.append('')
     restart = ' Then restart WeeWX.' if release.get('restart_required') else ''
-    lines += ['## Install with stock WeeWX', '',
-              'Install the dependencies named in the guide first. Then use the `weectl`',
-              'of the Python environment running WeeWX:', '',
-              '```shell', 'weectl extension install ' + release['archive']['url'], '```', '',
-              'Add `--config /path/to/weewx.conf` if your station uses another configuration file.',
-              'Complete the configuration described in the guide.' + restart, '',
-              '## Install with the package manager', '',
+    steps = release.get('setup', [])
+    lines += requirements_section(release.get('requirements', {}))
+    lines += ['## Install with stock WeeWX', '']
+    if complete:
+        # Commands are shown for a package installation, where WeeWX runs as
+        # weewx and its files belong to root.
+        lines += ['```shell', 'sudo weectl extension install ' + release['archive']['url'], '```', '',
+                  'Add `--config /path/to/weewx.conf` if your station uses another configuration file.']
+        if steps:
+            lines += ['', '## Set up', '', '```shell']
+            for step in steps:
+                command = step['command'].replace('{user}', 'weewx')
+                lines.append(command + ('    # ' + step['note'] if step.get('note') else ''))
+            lines += ['```', '']
+        else:
+            lines += ['Then restart WeeWX.' if release.get('restart_required') else '', '']
+        lines += ['For a pip installation, run `weectl` from its virtual environment without',
+                  '`sudo`, and use the account that runs WeeWX instead of `weewx`.', '']
+    else:
+        lines += ['Install the dependencies named in the guide first. Then use the `weectl`',
+                  'of the Python environment running WeeWX:', '',
+                  '```shell', 'weectl extension install ' + release['archive']['url'], '```', '',
+                  'Add `--config /path/to/weewx.conf` if your station uses another configuration file.',
+                  'Complete the configuration described in the guide.' + restart, '']
+    lines += ['## Install with the package manager', '',
               'The experimental [package manager](https://github.com/weewx-packages/weewx-package-manager#install)',
               'extension installs by package ID and keeps track of updates. Register this',
               'catalog as `packages` once, as its documentation shows, then run:', '',
@@ -211,8 +266,13 @@ def package_page(package):
               'python -m user.packages install %s --repo packages%s' % (package['id'], ' --pre' if prerelease else ''),
               'python -m user.packages update %s%s' % (package['installer_name'], ' --pre' if prerelease else ''),
               '```', '',
-              'The second command installs a later release when the catalog lists one.', '',
-              '## Remove', '',
+              'The second command installs a later release when the catalog lists one.']
+    if complete:
+        lines += ['Both check the requirements, install missing Python packages into a virtual',
+                  'environment and print the setup steps. `python -m user.packages requirements %s`'
+                  % package['installer_name'],
+                  'checks them again later.']
+    lines += ['', '## Remove', '',
               '```shell', 'weectl extension uninstall ' + package['installer_name'], '```', '']
     others = [entry for entry in package['releases'] if entry is not release]
     if others:

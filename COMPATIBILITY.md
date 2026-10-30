@@ -119,7 +119,9 @@ station and complete pinned case. Test behavior from the payload or installed
 modules. Tests must not import runtime code from the source checkout.
 
 Use `pip_packages` for additional Python dependencies and `system_packages` for
-Debian package names. Direct WeeWX dependencies and apt command options are
+Debian package names. The `requirements` of the tested release are added:
+`python` to `pip_packages`, and `debian` packages other than `python3-*` to
+`system_packages`. Direct WeeWX dependencies and apt command options are
 rejected. An `install_prerequisites` list pins other extensions by repository
 and full `sha`; `install_input` supplies explicit installer answers without
 credentials. Prerequisite setup failures are infrastructure errors.

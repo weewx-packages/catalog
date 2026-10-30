@@ -31,10 +31,7 @@
       "user.rtldavis_receiver",
       "user.rtldavis_dsp"
     ],
-    "allowed_skips": [],
-    "pip_packages": [
-      "numpy"
-    ]
+    "allowed_skips": []
   },
   "neowx-material": {
     "repository": "weewx-packages/neowx-material",
