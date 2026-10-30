@@ -4008,7 +4008,7 @@
       "id": "archivecheck",
       "installer_name": "archivecheck",
       "name": "Archivecheck",
-      "description": "Inspect SQLite archive alignment and export reviewed corrections with verified backups.",
+      "description": "Inspect SQLite and MySQL archive alignment and export reviewed corrections with verified backups.",
       "types": [
         "other"
       ],
@@ -4016,6 +4016,7 @@
       "keywords": [
         "archive",
         "sqlite",
+        "mysql",
         "alignment",
         "aggregation",
         "backup",
@@ -4034,6 +4035,18 @@
             "sha256": "86ae60fe3c6a5acd9bacf1ae96e732fd3ee0cd673020c61b6e61218a56c6418d"
           },
           "release_notes": "https://github.com/weewx-packages/weewx-archivecheck/releases/tag/v0.1.1",
+          "restart_required": false
+        },
+        {
+          "version": "0.2.0",
+          "requires_python": ">=3.10,<3.15",
+          "requires_weewx": ">=5.5.2,<5.7",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-archivecheck/releases/download/v0.2.0/weewx-archivecheck-0.2.0.zip",
+            "format": "zip",
+            "sha256": "dcaf6ccaf592944ecd0d051d00c662294cf4f49e0941d2af357278e714feecbf"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-archivecheck/releases/tag/v0.2.0",
           "restart_required": false
         }
       ]

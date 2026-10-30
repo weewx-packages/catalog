@@ -1708,9 +1708,12 @@
     "imports": [
       "user.archivechecklib.archive",
       "user.archivechecklib.cli",
+      "user.archivechecklib.mysqlsource",
       "user.archivechecklib.web"
     ],
-    "allowed_skips": [],
+    "allowed_skips": [
+      "ARCHIVECHECK_TEST_MYSQL"
+    ],
     "pip_packages": []
   }
 }
