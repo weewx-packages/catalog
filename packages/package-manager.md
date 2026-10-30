@@ -11,10 +11,10 @@ further settings.
 
 | | |
 |---|---|
-| Version | 0.1.0a3 (prerelease) |
+| Version | 0.1.0a4 (prerelease) |
 | WeeWX | `>=5,<6` |
 | Python | `>=3.10` |
-| Release notes | [0.1.0a3](https://github.com/weewx-packages/weewx-package-manager/releases/tag/v0.1.0a3) |
+| Release notes | [0.1.0a4](https://github.com/weewx-packages/weewx-package-manager/releases/tag/v0.1.0a4) |
 
 ## Requirements
 
@@ -33,7 +33,7 @@ python -m pip install packaging
 ## Install with stock WeeWX
 
 ```shell
-sudo weectl extension install https://github.com/weewx-packages/weewx-package-manager/releases/download/v0.1.0a3/package-manager-0.1.0a3.tar.gz
+sudo weectl extension install https://github.com/weewx-packages/weewx-package-manager/releases/download/v0.1.0a4/package-manager-0.1.0a4.tar.gz
 ```
 
 Add `--config /path/to/weewx.conf` if your station uses another configuration file.
@@ -63,3 +63,9 @@ checks them again later.
 ```shell
 weectl extension uninstall package-manager
 ```
+
+## Other releases
+
+| Version | WeeWX | Python | Archive |
+|---|---|---|---|
+| 0.1.0a3 | `>=5,<6` | `>=3.10` | [Download](https://github.com/weewx-packages/weewx-package-manager/releases/download/v0.1.0a3/package-manager-0.1.0a3.tar.gz) |
