@@ -27,9 +27,14 @@
     "repository": "weewx-packages/weewx-rtldavis",
     "ref": "v{version}",
     "imports": [
-      "user.rtldavis"
+      "user.rtldavis",
+      "user.rtldavis_receiver",
+      "user.rtldavis_dsp"
     ],
-    "allowed_skips": []
+    "allowed_skips": [],
+    "pip_packages": [
+      "numpy"
+    ]
   },
   "neowx-material": {
     "repository": "weewx-packages/neowx-material",
