@@ -6542,11 +6542,11 @@
       "source": "https://github.com/WernerKr/Ecowitt-or-DAVIS-stations-and-Season-skin",
       "reviewed_revision": "07a752442a48484dd6208641febdc46db1b6dc3d",
       "last_commit": "2026-10-10T13:19:07Z",
-      "decision": "blocked_license",
-      "reason": "GPL-Header in Ecowitt-Treibern und vielen Erweiterungen belegt, aber Gesamtpaket bündelt verschiedene Skins und Highcharts/Highstock. Deren Header verweist auf highcharts.com/license; im Repository kein belastbarer Nachweis der für unsere Gesamtübernahme erforderlichen Rechte. Keine Veröffentlichung des gemischten Gesamtpakets.",
-      "fork": null,
+      "decision": "fork_created",
+      "reason": "Nur der Treiber ecowittcustom.py ist übernommen: GPL-Header von Matthew Wall und Werner Krenn und die Lizenzdatei im Archiv belegen GPL-3.0. Skins, Highcharts/Highstock und Helfer bleiben draußen, weil die Rechte am Gesamtpaket nicht belegt sind. Das Upstream-Repository wird nicht gespiegelt.",
+      "fork": "weewx-packages/weewx-ecowittcustom",
       "license": {
-        "spdx": "GPL-3.0-or-later AND GPL-3.0-only AND OFL-1.1 AND LicenseRef-Highcharts AND LicenseRef-Unresolved-bundled-components",
+        "spdx": "GPL-3.0-only",
         "evidence": [],
         "obligations": [
           "Quell-/Font-/Skin-/Bibliothekslizenzen getrennt erhalten.",

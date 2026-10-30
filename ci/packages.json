@@ -1715,5 +1715,35 @@
       "ARCHIVECHECK_TEST_MYSQL"
     ],
     "pip_packages": []
+  },
+  "ecowittcustom": {
+    "repository": "weewx-packages/weewx-ecowittcustom",
+    "ref": "v{version}",
+    "imports": [
+      "user.ecowittcustom"
+    ],
+    "allowed_skips": []
+  },
+  "package-manager": {
+    "repository": "weewx-packages/weewx-package-manager",
+    "ref": "v{version}",
+    "allow_prereleases": true,
+    "imports": [
+      "user.packages.cli"
+    ],
+    "allowed_skips": [],
+    "pip_packages": [
+      "packaging"
+    ]
+  },
+  "station-admin": {
+    "repository": "weewx-packages/weewx-station-admin",
+    "ref": "v{version}",
+    "allow_prereleases": true,
+    "imports": [
+      "user.station_admin.server",
+      "user.station_admin.live"
+    ],
+    "allowed_skips": []
   }
 }

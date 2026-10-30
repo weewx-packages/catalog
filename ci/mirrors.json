@@ -2214,5 +2214,37 @@
       "https://github.com/weewx-packages/weewx-archivecheck/blob/1f29dab7a0e92a78c7d7e883370954a74521332e/LICENSE.txt",
       "https://github.com/weewx-packages/weewx-archivecheck/blob/1f29dab7a0e92a78c7d7e883370954a74521332e/bin/user/archivechecklib/__init__.py"
     ]
+  },
+  {
+    "upstream": "https://github.com/WernerKr/Ecowitt-or-DAVIS-stations-and-Season-skin.git",
+    "fork": "weewx-packages/weewx-ecowittcustom",
+    "weekday": 1,
+    "sync": false,
+    "check": "catalog",
+    "reviewed_revision": "07a752442a48484dd6208641febdc46db1b6dc3d",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/WernerKr/Ecowitt-or-DAVIS-stations-and-Season-skin/blob/07a752442a48484dd6208641febdc46db1b6dc3d/weewx-ecowittcustom.zip"
+    ]
+  },
+  {
+    "upstream": "https://github.com/weewx-packages/weewx-package-manager.git",
+    "fork": "weewx-packages/weewx-package-manager",
+    "weekday": 2,
+    "sync": false,
+    "check": "catalog",
+    "reviewed_revision": null,
+    "license": "GPL-3.0",
+    "license_evidence": []
+  },
+  {
+    "upstream": "https://github.com/weewx-packages/weewx-station-admin.git",
+    "fork": "weewx-packages/weewx-station-admin",
+    "weekday": 3,
+    "sync": false,
+    "check": "catalog",
+    "reviewed_revision": null,
+    "license": "GPL-3.0-or-later",
+    "license_evidence": []
   }
 ]
