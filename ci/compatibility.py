@@ -122,6 +122,7 @@ def matrix(catalog, checks, external=None, selected=None):
         check = checks[package['id']]
         release = (external[package['id']]['release'] if package['id'] in external
                    else latest_release(package, check.get('allow_prereleases', False)))
+        check = with_release_requirements(check, release)
         system_packages(check)
         for dependency in check.get('pip_packages', []):
             if canonicalize_name(Requirement(dependency).name) == 'weewx':
@@ -146,6 +147,29 @@ def matrix(catalog, checks, external=None, selected=None):
                                   branch=branch, weewx_sha=weewx_sha,
                                   weewx_repository=WEEWX_REPOSITORY, python=python))
     return {'include': cases}
+
+
+def with_release_requirements(check, release):
+    """Add the requirements a release declares to the dependencies of its check.
+
+    The tests run in their own Python, not in Debian's, so Debian packages of
+    Python modules (python3-*) are left to the release's pip requirements.
+
+    Args:
+        check (dict): Check profile from ci/packages.json.
+        release (dict): Selected catalog release.
+
+    Returns:
+        dict: A copy of the profile with the release's requirements added.
+    """
+    needs = release.get('requirements', {})
+    check = dict(check)
+    check['pip_packages'] = list(check.get('pip_packages', [])) + [
+        item for item in needs.get('python', []) if item not in check.get('pip_packages', [])]
+    check['system_packages'] = list(check.get('system_packages', [])) + [
+        name for name in needs.get('debian', [])
+        if not name.startswith('python3-') and name not in check.get('system_packages', [])]
+    return check
 
 
 def changed_selection(base, catalog, checks, external, weekday):

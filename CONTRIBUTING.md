@@ -25,6 +25,28 @@ Keep prereleases identifiable; use a separate `.post` version for catalog
 packaging changes and record the source commit in provenance. If compatibility
 has an unverified upper boundary, restrict the range rather than claiming support for future major releases.
 
+A release can also list what it needs outside its archive, and the steps after
+installation. The package page then holds the complete installation, and the
+package manager checks the requirements:
+
+```json
+"requirements": {
+  "python": ["numpy"],
+  "debian": ["python3-numpy", "librtlsdr0"]
+},
+"setup": [
+  {"command": "sudo weectl station reconfigure --driver=user.rtldavis",
+   "note": "asks for band, ISS channel and rain bucket"},
+  {"command": "sudo usermod -aG plugdev {user}", "note": "lets WeeWX open the dongle"}
+]
+```
+
+`python` holds PEP 508 requirements, `debian` the packages for a WeeWX package
+installation, including the Debian builds of the Python requirements
+(`python3-*`). Write setup commands for a package installation. `{user}` stands
+for the account that runs WeeWX. The compatibility tests install `python` with
+pip and the other `debian` packages with apt.
+
 Compute the digest from the exact bytes users will download:
 
 ```shell

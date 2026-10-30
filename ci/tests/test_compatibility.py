@@ -294,3 +294,13 @@ def test_changes_select_only_the_packages_they_affect(tmp_path, monkeypatch):
     # Code can affect every package; the weekday group stands in for all.
     write('ci/compatibility.py', 'changed')
     assert compat.changed_selection('HEAD', {'packages': packages}, checks, {}, 3) == {'b'}
+
+
+def test_release_requirements_become_test_dependencies():
+    check = {'repository': 'org/a', 'pip_packages': ['pytest-mock'], 'system_packages': ['tzdata']}
+    release = {'requirements': {'python': ['numpy'], 'debian': ['python3-numpy', 'librtlsdr0']}}
+    merged = compat.with_release_requirements(check, release)
+    assert merged['pip_packages'] == ['pytest-mock', 'numpy']
+    # The tests run in their own Python, so Debian's numpy is not installed.
+    assert merged['system_packages'] == ['tzdata', 'librtlsdr0']
+    assert check['pip_packages'] == ['pytest-mock']
