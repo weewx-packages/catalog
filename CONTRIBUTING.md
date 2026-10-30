@@ -32,7 +32,7 @@ package manager checks the requirements:
 ```json
 "requirements": {
   "python": ["numpy"],
-  "debian": ["python3-numpy", "librtlsdr0"]
+  "debian": ["python3-numpy", "rtl-sdr"]
 },
 "setup": [
   {"command": "sudo weectl station reconfigure --driver=user.rtldavis",

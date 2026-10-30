@@ -11,30 +11,30 @@ further settings.
 
 | | |
 |---|---|
-| Version | 0.22.1 |
+| Version | 0.22.2 |
 | WeeWX | `>=5,<6` |
 | Python | `>=3.7` |
-| Release notes | [0.22.1](https://github.com/weewx-packages/weewx-rtldavis/releases/tag/v0.22.1) |
+| Release notes | [0.22.2](https://github.com/weewx-packages/weewx-rtldavis/releases/tag/v0.22.2) |
 
 ## Requirements
 
 With WeeWX installed from its Debian or Raspberry Pi OS package:
 
 ```shell
-sudo apt install python3-numpy librtlsdr0
+sudo apt install python3-numpy rtl-sdr
 ```
 
 With a pip installation of WeeWX, activate its virtual environment first:
 
 ```shell
 python -m pip install numpy
-sudo apt install librtlsdr0
+sudo apt install rtl-sdr
 ```
 
 ## Install with stock WeeWX
 
 ```shell
-sudo weectl extension install https://github.com/weewx-packages/weewx-rtldavis/releases/download/v0.22.1/weewx-rtldavis-0.22.1.zip
+sudo weectl extension install https://github.com/weewx-packages/weewx-rtldavis/releases/download/v0.22.2/weewx-rtldavis-0.22.2.zip
 ```
 
 Add `--config /path/to/weewx.conf` if your station uses another configuration file.
@@ -77,6 +77,7 @@ weectl extension uninstall rtldavis
 
 | Version | WeeWX | Python | Archive |
 |---|---|---|---|
+| 0.22.1 | `>=5,<6` | `>=3.7` | [Download](https://github.com/weewx-packages/weewx-rtldavis/releases/download/v0.22.1/weewx-rtldavis-0.22.1.zip) |
 | 0.22.0 | `>=5,<6` | `>=3.7` | [Download](https://github.com/weewx-packages/weewx-rtldavis/releases/download/v0.22.0/weewx-rtldavis-0.22.0.zip) |
 | 0.21.2 | `>=5,<6` | `>=3.7` | [Download](https://github.com/weewx-packages/weewx-rtldavis/releases/download/v0.21.2/weewx-rtldavis-0.21.2.zip) |
 | 0.21.1 | `>=5,<6` | `>=3.7` | [Download](https://github.com/weewx-packages/weewx-rtldavis/releases/download/v0.21.1/weewx-rtldavis-0.21.1.zip) |

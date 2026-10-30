@@ -170,7 +170,7 @@
             ],
             "debian": [
               "python3-numpy",
-              "librtlsdr0"
+              "rtl-sdr"
             ]
           },
           "setup": [
@@ -208,7 +208,45 @@
             ],
             "debian": [
               "python3-numpy",
-              "librtlsdr0"
+              "rtl-sdr"
+            ]
+          },
+          "setup": [
+            {
+              "command": "sudo weectl station reconfigure --driver=user.rtldavis",
+              "note": "asks for band, ISS channel and rain bucket"
+            },
+            {
+              "command": "sudo usermod -aG plugdev {user}",
+              "note": "lets WeeWX open the dongle"
+            },
+            {
+              "command": "sudo systemctl restart weewx"
+            },
+            {
+              "command": "journalctl -u weewx -f",
+              "note": "plug in the dongle; shows the frequency search and the first frames"
+            }
+          ]
+        },
+        {
+          "version": "0.22.2",
+          "requires_python": ">=3.7",
+          "requires_weewx": ">=5,<6",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-rtldavis/releases/download/v0.22.2/weewx-rtldavis-0.22.2.zip",
+            "format": "zip",
+            "sha256": "e562d0234ddf06ed1e74b931f4e8f2020b9d4ef77d0fc56aad53bce6d53f872c"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-rtldavis/releases/tag/v0.22.2",
+          "restart_required": true,
+          "requirements": {
+            "python": [
+              "numpy"
+            ],
+            "debian": [
+              "python3-numpy",
+              "rtl-sdr"
             ]
           },
           "setup": [
