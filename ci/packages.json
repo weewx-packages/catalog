@@ -1708,6 +1708,7 @@
     "imports": [
       "user.archivechecklib.archive",
       "user.archivechecklib.cli",
+      "user.archivechecklib.mysqlsource",
       "user.archivechecklib.web"
     ],
     "allowed_skips": [],

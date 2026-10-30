@@ -2,7 +2,7 @@
 
 # Archivecheck
 
-Inspect SQLite archive alignment and export reviewed corrections with verified backups.
+Inspect SQLite and MySQL archive alignment and export reviewed corrections with verified backups.
 
 Package ID `archivecheck`. The [installation and configuration guide](https://github.com/weewx-packages/weewx-archivecheck) lists its
 dependencies and settings.
@@ -11,10 +11,10 @@ dependencies and settings.
 
 | | |
 |---|---|
-| Version | 0.1.1 |
+| Version | 0.2.0 |
 | WeeWX | `>=5.5.2,<5.7` |
 | Python | `>=3.10,<3.15` |
-| Release notes | [0.1.1](https://github.com/weewx-packages/weewx-archivecheck/releases/tag/v0.1.1) |
+| Release notes | [0.2.0](https://github.com/weewx-packages/weewx-archivecheck/releases/tag/v0.2.0) |
 
 ## Install with stock WeeWX
 
@@ -22,7 +22,7 @@ Install the dependencies named in the guide first. Then use the `weectl`
 of the Python environment running WeeWX:
 
 ```shell
-weectl extension install https://github.com/weewx-packages/weewx-archivecheck/releases/download/v0.1.1/weewx-archivecheck-0.1.1.zip
+weectl extension install https://github.com/weewx-packages/weewx-archivecheck/releases/download/v0.2.0/weewx-archivecheck-0.2.0.zip
 ```
 
 Add `--config /path/to/weewx.conf` if your station uses another configuration file.
@@ -46,3 +46,9 @@ The second command installs a later release when the catalog lists one.
 ```shell
 weectl extension uninstall archivecheck
 ```
+
+## Other releases
+
+| Version | WeeWX | Python | Archive |
+|---|---|---|---|
+| 0.1.1 | `>=5.5.2,<5.7` | `>=3.10,<3.15` | [Download](https://github.com/weewx-packages/weewx-archivecheck/releases/download/v0.1.1/weewx-archivecheck-0.1.1.zip) |
