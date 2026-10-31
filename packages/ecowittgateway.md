@@ -4,6 +4,11 @@
 
 WeeWX driver/service for Ecowitt gateways and consoles (local HTTP API, or TCP API for the GW1000).
 
+The author maintains this project at [Millardiang/weewx-ecowittGateway](https://github.com/Millardiang/weewx-ecowittGateway). Ask for support and report
+bugs there. The catalog keeps a backup copy, tests the releases and packages
+them. Report problems with the catalog archive in the
+[catalog issues](https://github.com/weewx-packages/catalog/issues).
+
 Package ID `ecowittgateway`. The [installation and configuration guide](https://github.com/weewx-packages/weewx-ecowittGateway) lists its
 dependencies and settings.
 

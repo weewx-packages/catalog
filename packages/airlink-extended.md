@@ -4,6 +4,11 @@
 
 Record air quality as provided by a Davis AirLink sensor.
 
+The author maintains this project at [evilbunny2008/weewx-airlink](https://github.com/evilbunny2008/weewx-airlink). Ask for support and report
+bugs there. The catalog keeps a backup copy, tests the releases and packages
+them. Report problems with the catalog archive in the
+[catalog issues](https://github.com/weewx-packages/catalog/issues).
+
 Package ID `airlink-extended`. The [installation and configuration guide](https://github.com/weewx-packages/weewx-airlink-extended) lists its
 dependencies and settings.
 

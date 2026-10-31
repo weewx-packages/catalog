@@ -4,6 +4,11 @@
 
 Set the WeeWX daemon process title from configuration.
 
+The author maintains this project at [knight-of-ni/WeeWX-SetProcessName](https://github.com/knight-of-ni/WeeWX-SetProcessName). Ask for support and report
+bugs there. The catalog keeps a backup copy, tests the releases and packages
+them. Report problems with the catalog archive in the
+[catalog issues](https://github.com/weewx-packages/catalog/issues).
+
 Package ID `setprocessname`. The [installation and configuration guide](https://github.com/weewx-packages/weewx-setprocessname) lists its
 dependencies and settings.
 

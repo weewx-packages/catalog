@@ -4,6 +4,11 @@
 
 Weather website with live observations, interactive charts and forecasts.
 
+The author maintains this project at [poblabs/weewx-belchertown](https://github.com/poblabs/weewx-belchertown). Ask for support and report
+bugs there. The catalog keeps a backup copy, tests the releases and packages
+them. Report problems with the catalog archive in the
+[catalog issues](https://github.com/weewx-packages/catalog/issues).
+
 Package ID `belchertown`. The [installation and configuration guide](https://github.com/weewx-packages/weewx-belchertown/blob/weewx-packages-docs/README.md) lists its
 dependencies and settings.
 

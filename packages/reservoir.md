@@ -4,6 +4,11 @@
 
 Add USGS reservoir level and precipitation data to WeeWX archive records
 
+The author maintains this project at [ziti/weewx-reservoir](https://github.com/ziti/weewx-reservoir). Ask for support and report
+bugs there. The catalog keeps a backup copy, tests the releases and packages
+them. Report problems with the catalog archive in the
+[catalog issues](https://github.com/weewx-packages/catalog/issues).
+
 Package ID `reservoir`. The [installation and configuration guide](https://github.com/weewx-packages/weewx-reservoir) lists its
 dependencies and settings.
 

@@ -4,6 +4,11 @@
 
 Upload weather data to WeatherBug.
 
+The author maintains this project at [matthewwall/weewx-wbug](https://github.com/matthewwall/weewx-wbug). Ask for support and report
+bugs there. The catalog keeps a backup copy, tests the releases and packages
+them. Report problems with the catalog archive in the
+[catalog issues](https://github.com/weewx-packages/catalog/issues).
+
 Package ID `wbug`. The [installation and configuration guide](https://github.com/weewx-packages/weewx-wbug/blob/weewx-packages-docs/README.md) lists its
 dependencies and settings.
 

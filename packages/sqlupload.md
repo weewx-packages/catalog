@@ -4,6 +4,11 @@
 
 Split generated HTML and publish report data through SQL-backed PHP pages.
 
+The author maintains this project at [roe-dl/weewx-sqlupload](https://github.com/roe-dl/weewx-sqlupload). Ask for support and report
+bugs there. The catalog keeps a backup copy, tests the releases and packages
+them. Report problems with the catalog archive in the
+[catalog issues](https://github.com/weewx-packages/catalog/issues).
+
 Package ID `sqlupload`. The [installation and configuration guide](https://github.com/weewx-packages/weewx-sqlupload) lists its
 dependencies and settings.
 

@@ -4,6 +4,11 @@
 
 Capture weather data from HTTP requests
 
+The author maintains this project at [tfilo/weewx-interceptor](https://github.com/tfilo/weewx-interceptor). Ask for support and report
+bugs there. The catalog keeps a backup copy, tests the releases and packages
+them. Report problems with the catalog archive in the
+[catalog issues](https://github.com/weewx-packages/catalog/issues).
+
 Package ID `interceptor`. The [installation and configuration guide](https://github.com/weewx-packages/weewx-interceptor/blob/weewx-packages-docs/README.md) lists its
 dependencies and settings.
 

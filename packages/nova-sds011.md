@@ -4,6 +4,11 @@
 
 Add SDS011 particulate concentrations through a serial sensor or a local Sensor.Community HTTP endpoint.
 
+The author maintains this project at [weewx-contrib/weewx-NovaSDS011](https://github.com/weewx-contrib/weewx-NovaSDS011). Ask for support and report
+bugs there. The catalog keeps a backup copy, tests the releases and packages
+them. Report problems with the catalog archive in the
+[catalog issues](https://github.com/weewx-packages/catalog/issues).
+
 Package ID `nova-sds011`. The [installation and configuration guide](https://github.com/weewx-packages/weewx-NovaSDS011/blob/weewx-packages-docs/README.md) lists its
 dependencies and settings.
 

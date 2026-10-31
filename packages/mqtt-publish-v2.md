@@ -4,6 +4,11 @@
 
 Publish WeeWX data to a MQTT broker.
 
+The author maintains this project at [evilbunny2008/MQTTPublishV2](https://github.com/evilbunny2008/MQTTPublishV2). Ask for support and report
+bugs there. The catalog keeps a backup copy, tests the releases and packages
+them. Report problems with the catalog archive in the
+[catalog issues](https://github.com/weewx-packages/catalog/issues).
+
 Package ID `mqtt-publish-v2`. The [installation and configuration guide](https://github.com/weewx-packages/weewx-mqtt-publish-v2) lists its
 dependencies and settings.
 

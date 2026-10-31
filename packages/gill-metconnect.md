@@ -4,6 +4,11 @@
 
 WeewX driver for Gill MetConnect Stations.
 
+The author maintains this project at [Cosmospacedog/Gill-WeeWX](https://github.com/Cosmospacedog/Gill-WeeWX). Ask for support and report
+bugs there. The catalog keeps a backup copy, tests the releases and packages
+them. Report problems with the catalog archive in the
+[catalog issues](https://github.com/weewx-packages/catalog/issues).
+
 Package ID `gill-metconnect`. The [installation and configuration guide](https://github.com/weewx-packages/weewx-gill-metconnect) lists its
 dependencies and settings.
 

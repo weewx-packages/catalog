@@ -4,6 +4,11 @@
 
 Calculate aggregated values that other extensions can then use without duplicating functionality and database lookups
 
+The author maintains this project at [evilbunny2008/AggregatedValues](https://github.com/evilbunny2008/AggregatedValues). Ask for support and report
+bugs there. The catalog keeps a backup copy, tests the releases and packages
+them. Report problems with the catalog archive in the
+[catalog issues](https://github.com/weewx-packages/catalog/issues).
+
 Package ID `aggregated-values`. The [installation and configuration guide](https://github.com/weewx-packages/weewx-aggregated-values) lists its
 dependencies and settings.
 

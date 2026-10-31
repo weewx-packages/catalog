@@ -4,6 +4,11 @@
 
 Calculate EPA air quality indices and NowCast through WeeWX XTypes. Prerelease.
 
+The author maintains this project at [weewx-extensions/aqi-xtype](https://github.com/weewx-extensions/aqi-xtype). Ask for support and report
+bugs there. The catalog keeps a backup copy, tests the releases and packages
+them. Report problems with the catalog archive in the
+[catalog issues](https://github.com/weewx-packages/catalog/issues).
+
 Package ID `aqi-xtype`. The [installation and configuration guide](https://github.com/weewx-packages/weewx-aqi-xtype) lists its
 dependencies and settings.
 

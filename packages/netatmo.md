@@ -4,6 +4,11 @@
 
 Driver for netatmo weather stations.
 
+The author maintains this project at [Buco7854/weewx-netatmo](https://github.com/Buco7854/weewx-netatmo). Ask for support and report
+bugs there. The catalog keeps a backup copy, tests the releases and packages
+them. Report problems with the catalog archive in the
+[catalog issues](https://github.com/weewx-packages/catalog/issues).
+
 Package ID `netatmo`. The [installation and configuration guide](https://github.com/weewx-packages/weewx-netatmo) lists its
 dependencies and settings.
 

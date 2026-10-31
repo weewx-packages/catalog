@@ -4,6 +4,11 @@
 
 Generate JSON weather summaries, current observations and archive datasets.
 
+The author maintains this project at [open-astro/weewx-conditions](https://github.com/open-astro/weewx-conditions). Ask for support and report
+bugs there. The catalog keeps a backup copy, tests the releases and packages
+them. Report problems with the catalog archive in the
+[catalog issues](https://github.com/weewx-packages/catalog/issues).
+
 Package ID `conditions`. The [installation and configuration guide](https://github.com/weewx-packages/weewx-conditions/blob/weewx-packages-docs/README.md) lists its
 dependencies and settings.
 

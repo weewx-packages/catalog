@@ -4,6 +4,11 @@
 
 Driver for devices that support the Ecowitt local HTTP API.
 
+The author maintains this project at [weewx-contrib/weewx-ecowitt_local_http](https://github.com/weewx-contrib/weewx-ecowitt_local_http). Ask for support and report
+bugs there. The catalog keeps a backup copy, tests the releases and packages
+them. Report problems with the catalog archive in the
+[catalog issues](https://github.com/weewx-packages/catalog/issues).
+
 Package ID `ecowitt-local-http`. The [installation and configuration guide](https://github.com/weewx-packages/weewx-ecowitt_local_http) lists its
 dependencies and settings.
 

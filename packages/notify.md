@@ -4,6 +4,11 @@
 
 Notification to remote server Alternative installations: shares installer Notify and user/notify.py with Pushover; do not install together.
 
+The author maintains this project at [teeks99/weewx-notify](https://github.com/teeks99/weewx-notify). Ask for support and report
+bugs there. The catalog keeps a backup copy, tests the releases and packages
+them. Report problems with the catalog archive in the
+[catalog issues](https://github.com/weewx-packages/catalog/issues).
+
 Package ID `notify`. The [installation and configuration guide](https://github.com/weewx-packages/weewx-notify/blob/weewx-packages-docs/README.md) lists its
 dependencies and settings.
 

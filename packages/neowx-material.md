@@ -4,6 +4,11 @@
 
 Material-style weather website with interactive charts and live observations.
 
+The author maintains this project at [seehase/neowx-material](https://github.com/seehase/neowx-material). Ask for support and report
+bugs there. The catalog keeps a backup copy, tests the releases and packages
+them. Report problems with the catalog archive in the
+[catalog issues](https://github.com/weewx-packages/catalog/issues).
+
 Package ID `neowx-material`. The [installation and configuration guide](https://github.com/weewx-packages/neowx-material/blob/weewx-packages-docs/README.md) lists its
 dependencies and settings.
 
