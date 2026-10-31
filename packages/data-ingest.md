@@ -4,6 +4,11 @@
 
 Inject data from external JSON, XML or text files into the archive.
 
+The author maintains this project at [Millardiang/weewx-data-ingest](https://github.com/Millardiang/weewx-data-ingest). Ask for support and report
+bugs there. The catalog keeps a backup copy, tests the releases and packages
+them. Report problems with the catalog archive in the
+[catalog issues](https://github.com/weewx-packages/catalog/issues).
+
 Package ID `data-ingest`. The [installation and configuration guide](https://github.com/weewx-packages/weewx-data-ingest) lists its
 dependencies and settings.
 

@@ -95,8 +95,10 @@ New packages also need a [compatibility check](COMPATIBILITY.md#add-a-package-ch
 The README package table and the package pages under [packages/](packages) are
 generated from `repository.json`, including manually maintained packages. Each
 page shows the current release and its install commands, so package READMEs
-link to it instead of naming versions or archive URLs. The table has one
-section per package `category`. After editing the index, run:
+link to it instead of naming versions or archive URLs. A page for a project its
+author still maintains also links to that upstream, as listed in
+`ci/mirrors.json` and `ci/upstreams.json`. The table has one section per package
+`category`. After editing the index or changing `sync` on a mirror, run:
 
 ```shell
 python3 ci/upstreams.py readme

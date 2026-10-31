@@ -4,6 +4,11 @@
 
 upload grid voltages and frequency to the Ortsnetz-Auslastung project
 
+The author maintains this project at [thomaslehmann1234/datenerfassung-ortsnetz-auslastung](https://github.com/thomaslehmann1234/datenerfassung-ortsnetz-auslastung). Ask for support and report
+bugs there. The catalog keeps a backup copy, tests the releases and packages
+them. Report problems with the catalog archive in the
+[catalog issues](https://github.com/weewx-packages/catalog/issues).
+
 Package ID `ortsnetz-auslastung`. The [installation and configuration guide](https://github.com/weewx-packages/weewx-ortsnetz-auslastung/blob/weewx-packages-docs/README.md) lists its
 dependencies and settings.
 

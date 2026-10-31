@@ -4,6 +4,11 @@
 
 Weather Graphic image generator via a php script
 
+The author maintains this project at [glennmckechnie/weewx-WXgraphic](https://github.com/glennmckechnie/weewx-WXgraphic). Ask for support and report
+bugs there. The catalog keeps a backup copy, tests the releases and packages
+them. Report problems with the catalog archive in the
+[catalog issues](https://github.com/weewx-packages/catalog/issues).
+
 Package ID `wxgraphic`. The [installation and configuration guide](https://github.com/weewx-packages/weewx-WXgraphic/blob/weewx-packages-docs/README.md) lists its
 dependencies and settings.
 

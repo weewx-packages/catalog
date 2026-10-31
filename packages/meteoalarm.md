@@ -4,6 +4,11 @@
 
 Read CAP weather warning feeds and generate local warning reports.
 
+The author maintains this project at [Millardiang/weewx-meteoalarm](https://github.com/Millardiang/weewx-meteoalarm). Ask for support and report
+bugs there. The catalog keeps a backup copy, tests the releases and packages
+them. Report problems with the catalog archive in the
+[catalog issues](https://github.com/weewx-packages/catalog/issues).
+
 Package ID `meteoalarm`. The [installation and configuration guide](https://github.com/weewx-packages/weewx-meteoalarm) lists its
 dependencies and settings.
 

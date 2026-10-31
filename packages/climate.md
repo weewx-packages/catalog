@@ -4,6 +4,11 @@
 
 Download and query historical ACIS climate statistics.
 
+The author maintains this project at [tkeffer/weewx-climate](https://github.com/tkeffer/weewx-climate). Ask for support and report
+bugs there. The catalog keeps a backup copy, tests the releases and packages
+them. Report problems with the catalog archive in the
+[catalog issues](https://github.com/weewx-packages/catalog/issues).
+
 Package ID `climate`. The [installation and configuration guide](https://github.com/weewx-packages/weewx-climate) lists its
 dependencies and settings.
 

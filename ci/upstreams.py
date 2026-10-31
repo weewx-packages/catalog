@@ -139,6 +139,7 @@ def compatibility_case(spec, receipt, archive, branch, python, weewx_sha):
 
 PAGE_FOLDER = 'packages'
 PAGE_MARKER = '<!-- Generated from repository.json by ci/upstreams.py readme. Do not edit. -->'
+CATALOG_ISSUES = 'https://github.com/weewx-packages/catalog/issues'
 
 
 def cell(text):
@@ -202,7 +203,39 @@ def requirements_section(needs):
     return lines
 
 
-def package_page(package):
+def upstream_repositories():
+    """Find the projects whose author maintains the package, not this organization.
+
+    Returns:
+        dict: Upstream URL by lowercase fork name (e.g., 'weewx-packages/weewx-nws').
+            Independent continuations and our own projects are absent.
+    """
+    mirrors = json.loads((ROOT / 'ci' / 'mirrors.json').read_text())
+    skins = json.loads((ROOT / 'ci' / 'upstreams.json').read_text())
+    upstreams = {mirror['fork'].lower(): mirror['upstream'].removesuffix('.git')
+                 for mirror in mirrors if mirror['sync']}
+    # The skins say sync: false in mirrors.json because the Upstream skins workflow
+    # syncs them instead of Extension mirrors. Their authors still maintain them.
+    upstreams.update({skin['fork'].lower(): 'https://github.com/' + skin['upstream'] for skin in skins})
+    return upstreams
+
+
+def upstream_of(package, upstreams):
+    """Look up the upstream project of a catalog package.
+
+    Args:
+        package (dict): Catalog package entry.
+        upstreams (dict): Result of upstream_repositories().
+
+    Returns:
+        str|None: Upstream URL, or None if this organization maintains the package.
+    """
+    # A homepage is the fork, on mirrors often with a path into its documentation
+    # branch. Only the owner and repository name identify it.
+    return upstreams.get('/'.join(package['homepage'].split('/')[3:5]).lower())
+
+
+def package_page(package, upstream=None):
     """Render the catalog page that package guides link to for installation.
 
     Package READMEs carry no version numbers or archive URLs. This page is the
@@ -210,6 +243,8 @@ def package_page(package):
 
     Args:
         package (dict): Catalog package entry.
+        upstream (str|None): URL of the project that maintains the package, or
+            None if this organization maintains it. Default is None.
 
     Returns:
         str: Complete Markdown page.
@@ -218,10 +253,19 @@ def package_page(package):
     # A release that declares its requirements and setup is installed from this
     # page alone; the package guide is then only needed for further settings.
     complete = bool(release and (release.get('requirements') or release.get('setup')))
-    lines = [PAGE_MARKER, '', '# ' + package['name'], '', package['description'], '',
-             'Package ID `%s`. The [installation and configuration guide](%s) lists its' % (
-                 package['id'], package['homepage']),
-             'further settings.' if complete else 'dependencies and settings.', '']
+    lines = [PAGE_MARKER, '', '# ' + package['name'], '', package['description'], '']
+    if upstream:
+        # Forks of maintained projects have their issues turned off, so without
+        # this link a reader of the page has no way to reach the author. Archives
+        # may carry a catalog patch, and the author must not get those reports.
+        lines += ['The author maintains this project at [%s](%s). Ask for support and report' % (
+                      '/'.join(upstream.split('/')[3:5]), upstream),
+                  'bugs there. The catalog keeps a backup copy, tests the releases and packages',
+                  'them. Report problems with the catalog archive in the',
+                  '[catalog issues](%s).' % CATALOG_ISSUES, '']
+    lines += ['Package ID `%s`. The [installation and configuration guide](%s) lists its' % (
+                  package['id'], package['homepage']),
+              'further settings.' if complete else 'dependencies and settings.', '']
     if release is None:
         lines += ['All releases of this package are withdrawn. It cannot be installed from the catalog.', '']
         return '\n'.join(lines)
@@ -286,15 +330,18 @@ def package_page(package):
     return '\n'.join(lines)
 
 
-def update_pages(catalog, folder, check=False):
+def update_pages(catalog, folder, check=False, upstreams=None):
     """Write one page per package and remove pages of packages no longer listed.
 
     Args:
         catalog (dict): Complete package index, including manual entries.
         folder (Path): Directory holding only generated package pages.
         check (bool): Raise instead of writing if any page differs.
+        upstreams (dict|None): Result of upstream_repositories(). None names no
+            upstream on any page. Default is None.
     """
-    wanted = {package['id'] + '.md': package_page(package) for package in catalog['packages']}
+    wanted = {package['id'] + '.md': package_page(package, upstream_of(package, upstreams or {}))
+              for package in catalog['packages']}
     existing = {path.name: path.read_text() for path in folder.glob('*.md')} if folder.is_dir() else {}
     if check:
         if existing != wanted:
@@ -354,7 +401,7 @@ def update_listing(catalog, check=False):
         check (bool): Raise instead of writing if anything generated differs.
     """
     update_readme(catalog, ROOT / 'README.md', check)
-    update_pages(catalog, ROOT / PAGE_FOLDER, check)
+    update_pages(catalog, ROOT / PAGE_FOLDER, check, upstream_repositories())
 
 
 def publish(specs, plan_data, artifacts):

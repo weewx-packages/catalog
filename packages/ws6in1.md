@@ -4,6 +4,11 @@
 
 Collect data from WS6in1 PC connected console
 
+The author maintains this project at [BobAtchley/weewx-ws6in1](https://github.com/BobAtchley/weewx-ws6in1). Ask for support and report
+bugs there. The catalog keeps a backup copy, tests the releases and packages
+them. Report problems with the catalog archive in the
+[catalog issues](https://github.com/weewx-packages/catalog/issues).
+
 Package ID `ws6in1`. The [installation and configuration guide](https://github.com/weewx-packages/weewx-ws6in1) lists its
 dependencies and settings.
 

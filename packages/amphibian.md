@@ -4,6 +4,11 @@
 
 Display weather history and charts in the Amphibian skin.
 
+The author maintains this project at [matthewwall/weewx-amphibian](https://github.com/matthewwall/weewx-amphibian). Ask for support and report
+bugs there. The catalog keeps a backup copy, tests the releases and packages
+them. Report problems with the catalog archive in the
+[catalog issues](https://github.com/weewx-packages/catalog/issues).
+
 Package ID `amphibian`. The [installation and configuration guide](https://github.com/weewx-packages/weewx-amphibian) lists its
 dependencies and settings.
 

@@ -4,6 +4,11 @@
 
 Generate interactive weather charts and pages with the JAS skin. Prerelease.
 
+The author maintains this project at [weewx-extensions/jas](https://github.com/weewx-extensions/jas). Ask for support and report
+bugs there. The catalog keeps a backup copy, tests the releases and packages
+them. Report problems with the catalog archive in the
+[catalog issues](https://github.com/weewx-packages/catalog/issues).
+
 Package ID `jas`. The [installation and configuration guide](https://github.com/weewx-packages/weewx-jas/blob/weewx-packages-docs/README.md) lists its
 dependencies and settings.
 

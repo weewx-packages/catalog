@@ -4,6 +4,11 @@
 
 Retrieve NWS forecasts and warnings for local weather reports.
 
+The author maintains this project at [chaunceygardiner/weewx-nws](https://github.com/chaunceygardiner/weewx-nws). Ask for support and report
+bugs there. The catalog keeps a backup copy, tests the releases and packages
+them. Report problems with the catalog archive in the
+[catalog issues](https://github.com/weewx-packages/catalog/issues).
+
 Package ID `nws`. The [installation and configuration guide](https://github.com/weewx-packages/weewx-nws) lists its
 dependencies and settings.
 

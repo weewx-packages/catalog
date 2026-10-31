@@ -4,6 +4,11 @@
 
 Collect data from Victron VEDirect devices
 
+The author maintains this project at [matthewwall/weewx-vedirect](https://github.com/matthewwall/weewx-vedirect). Ask for support and report
+bugs there. The catalog keeps a backup copy, tests the releases and packages
+them. Report problems with the catalog archive in the
+[catalog issues](https://github.com/weewx-packages/catalog/issues).
+
 Package ID `vedirect`. The [installation and configuration guide](https://github.com/weewx-packages/weewx-vedirect/blob/weewx-packages-docs/README.md) lists its
 dependencies and settings.
 

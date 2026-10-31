@@ -4,6 +4,11 @@
 
 almanac extension using Skyfield mdule
 
+The author maintains this project at [roe-dl/weewx-skymap-almanac](https://github.com/roe-dl/weewx-skymap-almanac). Ask for support and report
+bugs there. The catalog keeps a backup copy, tests the releases and packages
+them. Report problems with the catalog archive in the
+[catalog issues](https://github.com/weewx-packages/catalog/issues).
+
 Package ID `skymap-almanac`. The [installation and configuration guide](https://github.com/weewx-packages/weewx-skymap-almanac/blob/weewx-packages-docs/README.md) lists its
 dependencies and settings.
 

@@ -4,6 +4,11 @@
 
 Estimate cloud coverage from a region of a sky camera image.
 
+The author maintains this project at [Millardiang/weewx-Cloud_coverage](https://github.com/Millardiang/weewx-Cloud_coverage). Ask for support and report
+bugs there. The catalog keeps a backup copy, tests the releases and packages
+them. Report problems with the catalog archive in the
+[catalog issues](https://github.com/weewx-packages/catalog/issues).
+
 Package ID `cloud-coverage`. The [installation and configuration guide](https://github.com/weewx-packages/weewx-Cloud_coverage) lists its
 dependencies and settings.
 

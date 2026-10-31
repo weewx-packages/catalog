@@ -4,6 +4,11 @@
 
 Capture data from tfrc
 
+The author maintains this project at [matthewwall/weewx-tfrc](https://github.com/matthewwall/weewx-tfrc). Ask for support and report
+bugs there. The catalog keeps a backup copy, tests the releases and packages
+them. Report problems with the catalog archive in the
+[catalog issues](https://github.com/weewx-packages/catalog/issues).
+
 Package ID `tfrc`. The [installation and configuration guide](https://github.com/weewx-packages/weewx-tfrc) lists its
 dependencies and settings.
 

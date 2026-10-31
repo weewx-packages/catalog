@@ -4,6 +4,11 @@
 
 Capture weather data from a Columbia Weather Systems MicroServer
 
+The author maintains this project at [bburton/weewx-columbia-ms](https://github.com/bburton/weewx-columbia-ms). Ask for support and report
+bugs there. The catalog keeps a backup copy, tests the releases and packages
+them. Report problems with the catalog archive in the
+[catalog issues](https://github.com/weewx-packages/catalog/issues).
+
 Package ID `columbia-ms`. The [installation and configuration guide](https://github.com/weewx-packages/weewx-columbia-ms) lists its
 dependencies and settings.
 

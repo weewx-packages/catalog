@@ -4,6 +4,11 @@
 
 Stacked wind rose image generator for WeeWX.
 
+The author maintains this project at [weewx-contrib/stackedwindrose-extension](https://github.com/weewx-contrib/stackedwindrose-extension). Ask for support and report
+bugs there. The catalog keeps a backup copy, tests the releases and packages
+them. Report problems with the catalog archive in the
+[catalog issues](https://github.com/weewx-packages/catalog/issues).
+
 Package ID `stackedwindrose`. The [installation and configuration guide](https://github.com/weewx-packages/weewx-stackedwindrose) lists its
 dependencies and settings.
 

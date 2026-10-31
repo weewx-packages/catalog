@@ -4,6 +4,11 @@
 
 Display weather gauges with CarbonSteelSeries and publish converted realtime observations.
 
+The author maintains this project at [Millardiang/weewx-carbonsteel-series](https://github.com/Millardiang/weewx-carbonsteel-series). Ask for support and report
+bugs there. The catalog keeps a backup copy, tests the releases and packages
+them. Report problems with the catalog archive in the
+[catalog issues](https://github.com/weewx-packages/catalog/issues).
+
 Package ID `carbonsteel-series`. The [installation and configuration guide](https://github.com/weewx-packages/weewx-carbonsteel-series) lists its
 dependencies and settings.
 

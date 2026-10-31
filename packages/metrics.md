@@ -4,6 +4,11 @@
 
 Generate Prometheus metrics from WeeWX weather observations.
 
+The author maintains this project at [Cosmospacedog/weewx-metrics](https://github.com/Cosmospacedog/weewx-metrics). Ask for support and report
+bugs there. The catalog keeps a backup copy, tests the releases and packages
+them. Report problems with the catalog archive in the
+[catalog issues](https://github.com/weewx-packages/catalog/issues).
+
 Package ID `metrics`. The [installation and configuration guide](https://github.com/weewx-packages/weewx-metrics/blob/weewx-packages-docs/README.md) lists its
 dependencies and settings.
 

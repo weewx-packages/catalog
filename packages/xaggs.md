@@ -4,6 +4,11 @@
 
 Calculate historical and threshold aggregations from daily weather summaries.
 
+The author maintains this project at [tkeffer/weewx-xaggs](https://github.com/tkeffer/weewx-xaggs). Ask for support and report
+bugs there. The catalog keeps a backup copy, tests the releases and packages
+them. Report problems with the catalog archive in the
+[catalog issues](https://github.com/weewx-packages/catalog/issues).
+
 Package ID `xaggs`. The [installation and configuration guide](https://github.com/weewx-packages/weewx-xaggs) lists its
 dependencies and settings.
 

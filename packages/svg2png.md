@@ -4,6 +4,11 @@
 
 convert SVG to PNG files
 
+The author maintains this project at [roe-dl/weewx-svg2png](https://github.com/roe-dl/weewx-svg2png). Ask for support and report
+bugs there. The catalog keeps a backup copy, tests the releases and packages
+them. Report problems with the catalog archive in the
+[catalog issues](https://github.com/weewx-packages/catalog/issues).
+
 Package ID `svg2png`. The [installation and configuration guide](https://github.com/weewx-packages/weewx-svg2png) lists its
 dependencies and settings.
 

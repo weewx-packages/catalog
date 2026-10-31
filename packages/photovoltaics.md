@@ -4,6 +4,11 @@
 
 Service to retrieve data from PV system E3/DC
 
+The author maintains this project at [roe-dl/weewx-photovoltaics](https://github.com/roe-dl/weewx-photovoltaics). Ask for support and report
+bugs there. The catalog keeps a backup copy, tests the releases and packages
+them. Report problems with the catalog archive in the
+[catalog issues](https://github.com/weewx-packages/catalog/issues).
+
 Package ID `photovoltaics`. The [installation and configuration guide](https://github.com/weewx-packages/weewx-photovoltaics) lists its
 dependencies and settings.
 

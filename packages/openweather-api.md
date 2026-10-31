@@ -4,6 +4,11 @@
 
 Retrieve configured weather and air-quality fields from OpenWeather APIs.
 
+The author maintains this project at [inguy24/weewx-openweather_API](https://github.com/inguy24/weewx-openweather_API). Ask for support and report
+bugs there. The catalog keeps a backup copy, tests the releases and packages
+them. Report problems with the catalog archive in the
+[catalog issues](https://github.com/weewx-packages/catalog/issues).
+
 Package ID `openweather-api`. The [installation and configuration guide](https://github.com/weewx-packages/weewx-openweather_API/blob/weewx-packages-docs/README.md) lists its
 dependencies and settings.
 

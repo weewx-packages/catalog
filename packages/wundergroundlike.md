@@ -4,6 +4,11 @@
 
 Post to a custom server_url that uses Weather Underground formatting
 
+The author maintains this project at [smeisens/weewx-wundergroundlike](https://github.com/smeisens/weewx-wundergroundlike). Ask for support and report
+bugs there. The catalog keeps a backup copy, tests the releases and packages
+them. Report problems with the catalog archive in the
+[catalog issues](https://github.com/weewx-packages/catalog/issues).
+
 Package ID `wundergroundlike`. The [installation and configuration guide](https://github.com/weewx-packages/weewx-wundergroundlike) lists its
 dependencies and settings.
 

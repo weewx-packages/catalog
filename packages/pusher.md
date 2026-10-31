@@ -4,6 +4,11 @@
 
 Send realtime weather data to Pusher.
 
+The author maintains this project at [raymondelooff/weewx-pusher](https://github.com/raymondelooff/weewx-pusher). Ask for support and report
+bugs there. The catalog keeps a backup copy, tests the releases and packages
+them. Report problems with the catalog archive in the
+[catalog issues](https://github.com/weewx-packages/catalog/issues).
+
 Package ID `pusher`. The [installation and configuration guide](https://github.com/weewx-packages/weewx-pusher) lists its
 dependencies and settings.
 

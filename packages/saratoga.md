@@ -4,6 +4,11 @@
 
 Generate Saratoga weather data and calculate derived observations.
 
+The author maintains this project at [ktrue/weewx-saratoga](https://github.com/ktrue/weewx-saratoga). Ask for support and report
+bugs there. The catalog keeps a backup copy, tests the releases and packages
+them. Report problems with the catalog archive in the
+[catalog issues](https://github.com/weewx-packages/catalog/issues).
+
 Package ID `saratoga`. The [installation and configuration guide](https://github.com/weewx-packages/weewx-saratoga) lists its
 dependencies and settings.
 

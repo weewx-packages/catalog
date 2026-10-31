@@ -93,6 +93,8 @@ def publication(spec, tmp_path, monkeypatch):
     (tmp_path/'ci').mkdir()
     (tmp_path/'repository.json').write_text('{"packages": []}')
     (tmp_path/'ci/packages.json').write_text('{}')
+    (tmp_path/'ci/mirrors.json').write_text('[]')
+    (tmp_path/'ci/upstreams.json').write_text('[]')
     (tmp_path/'README.md').write_text('Intro\n<!-- packages:start -->\nold table\n<!-- packages:end -->\nHelp\n')
     artifacts=tmp_path/'artifacts'
     folder=artifacts/'candidate-example'
@@ -197,6 +199,26 @@ def test_pages_follow_the_index_and_check_is_read_only(tmp_path):
     assert (folder / 'removed.md').exists()
     upstreams.update_pages({'packages': [package]}, folder)
     assert sorted(path.name for path in folder.iterdir()) == ['pkg.md']
+
+
+def test_pages_name_the_upstream_of_maintained_projects_only(tmp_path):
+    mirrored = dict(id='mirrored', installer_name='mirrored', name='Mirrored', description='Does things.',
+        homepage='https://github.com/weewx-packages/weewx-Mirrored/blob/weewx-packages-docs/README.md',
+        releases=[release('1.0')])
+    adopted = dict(mirrored, id='adopted', homepage='https://github.com/weewx-packages/weewx-adopted')
+    upstreams_by_fork = {'weewx-packages/weewx-mirrored': 'https://github.com/author/weewx-mirrored'}
+    folder = tmp_path / 'packages'
+    upstreams.update_pages({'packages': [mirrored, adopted]}, folder, upstreams=upstreams_by_fork)
+    assert '[author/weewx-mirrored](https://github.com/author/weewx-mirrored)' in (folder / 'mirrored.md').read_text()
+    assert upstreams.CATALOG_ISSUES in (folder / 'mirrored.md').read_text()
+    assert 'maintains this project' not in (folder / 'adopted.md').read_text()
+
+
+def test_upstreams_cover_mirrors_and_skins_but_not_continuations():
+    found = upstreams.upstream_repositories()
+    assert found['weewx-packages/weewx-loopdata'] == 'https://github.com/chaunceygardiner/weewx-loopdata'
+    assert found['weewx-packages/weewx-belchertown'] == 'https://github.com/poblabs/weewx-belchertown'
+    assert 'weewx-packages/weewx-crt' not in found
 
 
 def test_readme_groups_packages_by_category(tmp_path):

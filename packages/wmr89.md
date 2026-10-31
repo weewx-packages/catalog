@@ -4,6 +4,11 @@
 
 Driver for the Oregon Scientific WMR89
 
+The author maintains this project at [tkeffer/weewx-wmr89](https://github.com/tkeffer/weewx-wmr89). Ask for support and report
+bugs there. The catalog keeps a backup copy, tests the releases and packages
+them. Report problems with the catalog archive in the
+[catalog issues](https://github.com/weewx-packages/catalog/issues).
+
 Package ID `wmr89`. The [installation and configuration guide](https://github.com/weewx-packages/weewx-wmr89) lists its
 dependencies and settings.
 

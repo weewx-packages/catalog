@@ -4,6 +4,11 @@
 
 Generate Zambretti forecasts and retrieve forecast data from weather services.
 
+The author maintains this project at [chaunceygardiner/weewx-forecast](https://github.com/chaunceygardiner/weewx-forecast). Ask for support and report
+bugs there. The catalog keeps a backup copy, tests the releases and packages
+them. Report problems with the catalog archive in the
+[catalog issues](https://github.com/weewx-packages/catalog/issues).
+
 Package ID `forecast`. The [installation and configuration guide](https://github.com/weewx-packages/weewx-forecast) lists its
 dependencies and settings.
 

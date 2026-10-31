@@ -4,6 +4,11 @@
 
 Read air-Q environmental sensors through encrypted HTTP replies. Includes the user.airq_conf configuration tool. Prerelease.
 
+The author maintains this project at [roe-dl/weewx-airQ](https://github.com/roe-dl/weewx-airQ). Ask for support and report
+bugs there. The catalog keeps a backup copy, tests the releases and packages
+them. Report problems with the catalog archive in the
+[catalog issues](https://github.com/weewx-packages/catalog/issues).
+
 Package ID `airq`. The [installation and configuration guide](https://github.com/weewx-packages/weewx-airQ/blob/weewx-packages-docs/README.md) lists its
 dependencies and settings.
 

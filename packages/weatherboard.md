@@ -4,6 +4,11 @@
 
 Display live weather observations with the WeatherBoard skin.
 
+The author maintains this project at [chaunceygardiner/weewx-weatherboard](https://github.com/chaunceygardiner/weewx-weatherboard). Ask for support and report
+bugs there. The catalog keeps a backup copy, tests the releases and packages
+them. Report problems with the catalog archive in the
+[catalog issues](https://github.com/weewx-packages/catalog/issues).
+
 Package ID `weatherboard`. The [installation and configuration guide](https://github.com/weewx-packages/weewx-weatherboard) lists its
 dependencies and settings.
 

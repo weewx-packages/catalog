@@ -4,6 +4,11 @@
 
 Live weather dashboard with charts, forecasts and astronomy pages. Requires requests and skyfield.
 
+The author maintains this project at [Millardiang/weewx-divumwx](https://github.com/Millardiang/weewx-divumwx). Ask for support and report
+bugs there. The catalog keeps a backup copy, tests the releases and packages
+them. Report problems with the catalog archive in the
+[catalog issues](https://github.com/weewx-packages/catalog/issues).
+
 Package ID `divumwx`. The [installation and configuration guide](https://github.com/weewx-packages/weewx-divumwx/blob/weewx-packages-docs/README.md) lists its
 dependencies and settings.
 

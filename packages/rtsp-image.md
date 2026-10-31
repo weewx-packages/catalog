@@ -4,6 +4,11 @@
 
 Capture still images from RTSP camera feeds using ffmpeg.
 
+The author maintains this project at [ziti/weewx-rtsp-image](https://github.com/ziti/weewx-rtsp-image). Ask for support and report
+bugs there. The catalog keeps a backup copy, tests the releases and packages
+them. Report problems with the catalog archive in the
+[catalog issues](https://github.com/weewx-packages/catalog/issues).
+
 Package ID `rtsp-image`. The [installation and configuration guide](https://github.com/weewx-packages/weewx-rtsp-image) lists its
 dependencies and settings.
 

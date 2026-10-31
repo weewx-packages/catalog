@@ -4,6 +4,11 @@
 
 ModbusTcp driver for weewx.
 
+The author maintains this project at [FColinet/WeeWX-ModbusTCP-driver](https://github.com/FColinet/WeeWX-ModbusTCP-driver). Ask for support and report
+bugs there. The catalog keeps a backup copy, tests the releases and packages
+them. Report problems with the catalog archive in the
+[catalog issues](https://github.com/weewx-packages/catalog/issues).
+
 Package ID `modbus-tcp`. The [installation and configuration guide](https://github.com/weewx-packages/weewx-modbus-tcp) lists its
 dependencies and settings.
 

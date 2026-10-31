@@ -4,6 +4,11 @@
 
 Sends APRS formatted weather packets over a transport layer
 
+The author maintains this project at [w4kus/weewx-weepe](https://github.com/w4kus/weewx-weepe). Ask for support and report
+bugs there. The catalog keeps a backup copy, tests the releases and packages
+them. Report problems with the catalog archive in the
+[catalog issues](https://github.com/weewx-packages/catalog/issues).
+
 Package ID `weepe`. The [installation and configuration guide](https://github.com/weewx-packages/weewx-weepe/blob/weewx-packages-docs/readme.md) lists its
 dependencies and settings.
 

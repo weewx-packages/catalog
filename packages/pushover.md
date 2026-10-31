@@ -4,6 +4,11 @@
 
 Monitor observation values and send alerts. Alternative installations: shares installer Notify and user/notify.py with the webhook Notify extension; do not install together.
 
+The author maintains this project at [weewx-extensions/pushover](https://github.com/weewx-extensions/pushover). Ask for support and report
+bugs there. The catalog keeps a backup copy, tests the releases and packages
+them. Report problems with the catalog archive in the
+[catalog issues](https://github.com/weewx-packages/catalog/issues).
+
 Package ID `pushover`. The [installation and configuration guide](https://github.com/weewx-packages/weewx-pushover) lists its
 dependencies and settings.
 
