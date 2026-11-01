@@ -4067,7 +4067,7 @@
       "id": "ecowittcustom",
       "installer_name": "ecowittcustom",
       "name": "Ecowitt custom",
-      "description": "Receive uploads from Ecowitt consoles and gateways set to a customized server. The driver of ecowittcustom, without its skins.",
+      "description": "Receive customized-server uploads from Ecowitt consoles and gateways. Independently maintained driver without skins.",
       "types": [
         "driver"
       ],
@@ -4094,6 +4094,27 @@
             "sha256": "5e78ef608397f1e5218c17c00e9c2b78f39fdc279ee8d575531db6c21af903b9"
           },
           "release_notes": "https://github.com/weewx-packages/weewx-ecowittcustom/releases/tag/v0.2.0.post1",
+          "restart_required": true,
+          "setup": [
+            {
+              "command": "sudo weectl station reconfigure --driver=user.ecowittcustom",
+              "note": "selects the driver"
+            },
+            {
+              "command": "sudo systemctl restart weewx"
+            }
+          ]
+        },
+        {
+          "version": "0.3.0",
+          "requires_python": ">=3.10",
+          "requires_weewx": ">=5,<6",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-ecowittcustom/releases/download/v0.3.0/weewx-ecowittcustom-0.3.0.tar.gz",
+            "format": "tar",
+            "sha256": "047b83d14d834cb557c1dae79e97aa670392ccb0ff7a0ef9e969d2f15bb17925"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-ecowittcustom/releases/tag/v0.3.0",
           "restart_required": true,
           "setup": [
             {
