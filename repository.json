@@ -1050,7 +1050,15 @@
             "sha256": "eaad02d6287614cd8911d713769a2fa28eefcd5ef5ea0688d8e536f6d5676c33"
           },
           "release_notes": "https://github.com/weewx-packages/weewx-wll/releases/tag/v0.2.3",
-          "restart_required": true
+          "restart_required": true,
+          "requirements": {
+            "python": [
+              "requests>=2,<3"
+            ],
+            "debian": [
+              "python3-requests"
+            ]
+          }
         }
       ]
     },
@@ -4239,6 +4247,74 @@
             "sha256": "6f46460a6276910e4aaeb875e42b63dfd78c6cb8c9b004930fe367b084445195"
           },
           "release_notes": "https://github.com/weewx-packages/weewx-station-admin/releases/tag/v0.1.0a3",
+          "restart_required": true
+        }
+      ]
+    },
+    {
+      "id": "ambient-http-push",
+      "installer_name": "ambient-http-push",
+      "name": "Ambient HTTP Push",
+      "description": "Receive the custom server uploads of Ambient Weather consoles. Pre-release.",
+      "types": [
+        "driver"
+      ],
+      "category": "driver",
+      "keywords": [
+        "ambient",
+        "ambient-weather",
+        "awnet",
+        "ws-2902",
+        "ws-5000",
+        "custom-server",
+        "http",
+        "push"
+      ],
+      "homepage": "https://github.com/weewx-packages/weewx-ambient-http-push",
+      "releases": [
+        {
+          "version": "0.1.0a1",
+          "requires_python": ">=3.10,<3.15",
+          "requires_weewx": ">=5.5,<6",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-ambient-http-push/releases/download/v0.1.0a1/weewx-ambient-http-push-0.1.0a1.zip",
+            "format": "zip",
+            "sha256": "01107690f3a786389d4cdb62b9cdbe1805cb6b5032a8e19ac3c8c75583ccb100"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-ambient-http-push/releases/tag/v0.1.0a1",
+          "restart_required": true
+        }
+      ]
+    },
+    {
+      "id": "tempest-udp",
+      "installer_name": "tempest-udp",
+      "name": "Tempest UDP",
+      "description": "Receive the UDP broadcasts of a WeatherFlow Tempest hub, with no account. Pre-release.",
+      "types": [
+        "driver"
+      ],
+      "category": "driver",
+      "keywords": [
+        "tempest",
+        "weatherflow",
+        "udp",
+        "hub",
+        "air",
+        "sky"
+      ],
+      "homepage": "https://github.com/weewx-packages/weewx-tempest-udp",
+      "releases": [
+        {
+          "version": "0.1.0a1",
+          "requires_python": ">=3.10,<3.15",
+          "requires_weewx": ">=5.5,<6",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-tempest-udp/releases/download/v0.1.0a1/weewx-tempest-udp-0.1.0a1.zip",
+            "format": "zip",
+            "sha256": "ce1d7c1ecc49e04c5bbecdc73e2e338e9852ecb950a64d10042e541da36b22fe"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-tempest-udp/releases/tag/v0.1.0a1",
           "restart_required": true
         }
       ]

@@ -1750,5 +1750,23 @@
       "user.station_admin.live"
     ],
     "allowed_skips": []
+  },
+  "ambient-http-push": {
+    "repository": "weewx-packages/weewx-ambient-http-push",
+    "ref": "v{version}",
+    "allow_prereleases": true,
+    "imports": [
+      "user.ambient_http_push"
+    ],
+    "allowed_skips": []
+  },
+  "tempest-udp": {
+    "repository": "weewx-packages/weewx-tempest-udp",
+    "ref": "v{version}",
+    "allow_prereleases": true,
+    "imports": [
+      "user.tempest_udp"
+    ],
+    "allowed_skips": []
   }
 }

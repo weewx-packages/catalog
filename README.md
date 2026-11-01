@@ -60,6 +60,7 @@ shows how to register this catalog and run it.
 |---|---|---|
 | [airgradient](https://github.com/weewx-packages/weewx-airgradient) | [`airgradient`](packages/airgradient.md) | Read AirGradient air quality sensors and calculate particulate AQI. |
 | [airQ](https://github.com/weewx-packages/weewx-airQ/blob/weewx-packages-docs/README.md) | [`airq`](packages/airq.md) | Read air-Q environmental sensors through encrypted HTTP replies. Includes the user.airq_conf configuration tool. Prerelease. |
+| [Ambient HTTP Push](https://github.com/weewx-packages/weewx-ambient-http-push) | [`ambient-http-push`](packages/ambient-http-push.md) | Receive the custom server uploads of Ambient Weather consoles. Pre-release. |
 | [BME280 data service](https://github.com/weewx-packages/bme280wx) | [`bme280wx`](packages/bme280wx.md) | Add temperature, humidity and pressure readings from an I2C BME280 sensor to LOOP packets. |
 | [Computer monitor](https://github.com/weewx-packages/weewx-cmon) | [`cmon`](packages/cmon.md) | Archive CPU, memory, disk and network measurements from the local computer. |
 | [Davis RTL-SDR](https://github.com/weewx-packages/weewx-rtldavis) | [`rtldavis`](packages/rtldavis.md) | Receive Davis Vantage Pro, Pro2 and Vue wireless observations through RTL-SDR. The receiver runs inside WeeWX and needs numpy and librtlsdr. |
@@ -77,6 +78,7 @@ shows how to register this catalog and run it.
 | [SDR](https://github.com/weewx-packages/weewx-sdr) | [`sdr`](packages/sdr.md) | Read weather sensors through rtl_433. Requires a separately installed rtl_433 executable. |
 | [sds011](https://github.com/weewx-packages/weewx-sds011/blob/weewx-packages-docs/readme) | [`sds011`](packages/sds011.md) | Read particulate measurements from an SDS011 serial sensor. |
 | [SQM](https://github.com/weewx-packages/weewx-sqm/blob/weewx-packages-docs/README.md) | [`sqm`](packages/sqm.md) | Read SQM-LE TCP sky brightness measurements and calculate derived sky metrics. |
+| [Tempest UDP](https://github.com/weewx-packages/weewx-tempest-udp) | [`tempest-udp`](packages/tempest-udp.md) | Receive the UDP broadcasts of a WeatherFlow Tempest hub, with no account. Pre-release. |
 | [Tracer / EPEVER](https://github.com/weewx-packages/weewx-tracer) | [`tracer`](packages/tracer.md) | Read EPEVER and Tracer MPPT solar charge controllers over RS485 Modbus. Requires pymodbus 3.11 through 3.x and pyserial. |
 | [Vaisala WXT5x0](https://github.com/weewx-packages/weewx-wxt5x0) | [`wxt5x0`](packages/wxt5x0.md) | Read Vaisala WXT5x0 observations over serial or a TCP serial server. |
 | [Ventus W820](https://github.com/weewx-packages/ventusw820) | [`ventusw820`](packages/ventusw820.md) | Read Ventus W820 weather observations over Bluetooth LE. Requires bluepy and a supported Bluetooth adapter. |

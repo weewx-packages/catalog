@@ -2246,5 +2246,29 @@
     "reviewed_revision": null,
     "license": "GPL-3.0-or-later",
     "license_evidence": []
+  },
+  {
+    "upstream": "https://github.com/weewx-packages/weewx-ambient-http-push.git",
+    "fork": "weewx-packages/weewx-ambient-http-push",
+    "weekday": 5,
+    "sync": false,
+    "check": "catalog",
+    "reviewed_revision": "f64cabc989be62bd033af7cc5943246688ed8e4a",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/weewx-packages/weewx-ambient-http-push/blob/f64cabc989be62bd033af7cc5943246688ed8e4a/LICENSE"
+    ]
+  },
+  {
+    "upstream": "https://github.com/weewx-packages/weewx-tempest-udp.git",
+    "fork": "weewx-packages/weewx-tempest-udp",
+    "weekday": 3,
+    "sync": false,
+    "check": "catalog",
+    "reviewed_revision": "804991a313d0746293d035f981a700ed3f398920",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/weewx-packages/weewx-tempest-udp/blob/804991a313d0746293d035f981a700ed3f398920/LICENSE"
+    ]
   }
 ]
