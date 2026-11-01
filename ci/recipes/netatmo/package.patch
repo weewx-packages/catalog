@@ -1,0 +1,38 @@
+diff --git a/bin/user/netatmo.py b/bin/user/netatmo.py
+index 1fe5837..110094a 100644
+--- a/bin/user/netatmo.py
++++ b/bin/user/netatmo.py
+@@ -1,4 +1,5 @@
+ #!/usr/bin/python
++# Modified 2026-11-01 by weewx-packages: keep the tokens and the client secret out of the log.
+ # Copyright 2015 Matthew Wall
+ # Distributed under the terms of the GNU Public License (GPLv3)
+ #
+@@ -621,13 +622,12 @@ class CloudClient(Collector):
+             headers = {}
+         headers.update({
+             "Content-Type": "application/x-www-form-urlencoded;charset=utf-8"})
+-        logdbg("url: %s data: %s hdr: %s" % (url, params, headers))
++        logdbg("url: %s" % url)
+         req = urllib.request.Request(url=url, data=params, headers=headers) if pvers == 3 else \
+             urllib2.Request(url=url, data=params, headers=headers)
+         resp = urllib.request.urlopen(req).read(65535) if pvers == 3 else \
+             urllib2.urlopen(req).read(65535)
+         resp_obj = json.loads(resp)
+-        logdbg("resp_obj: %s" % resp_obj)
+         return resp_obj
+ 
+ 
+diff --git a/install.py b/install.py
+index d189142..60c19a5 100644
+--- a/install.py
++++ b/install.py
+@@ -12,7 +12,7 @@ def loader():
+ class NetatmoInstaller(ExtensionInstaller):
+     def __init__(self):
+         super(NetatmoInstaller, self).__init__(
+-            version="0.17",
++            version="0.17.post1",
+             name='netatmo',
+             description='Driver for netatmo weather stations.',
+             author="Matthew Wall",

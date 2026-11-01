@@ -541,5 +541,43 @@
       "pip_packages": []
     },
     "external_source": "brultech-source"
+  },
+  {
+    "id": "netatmo",
+    "weekday": 3,
+    "upstream": "Buco7854/weewx-netatmo",
+    "fork": "weewx-packages/weewx-netatmo",
+    "branch": "master",
+    "name": "weewx-netatmo",
+    "description": "Driver for netatmo weather stations.",
+    "types": [
+      "driver"
+    ],
+    "category": "driver",
+    "installer_name": "netatmo",
+    "requires_python": ">=3.10,<3.15",
+    "requires_weewx": ">=5.5,<6",
+    "restart_required": true,
+    "version_file": "install.py",
+    "version_regex": "^\\s*version\\s*=\\s*[\"\\']([^\"\\']+)[\"\\']",
+    "license": "GPL-3.0-only",
+    "license_evidence": [
+      "https://github.com/Buco7854/weewx-netatmo/blob/132ce8562c969a88ebc1fc455a9d3106851a5c64/LICENSE",
+      "https://github.com/Buco7854/weewx-netatmo/blob/132ce8562c969a88ebc1fc455a9d3106851a5c64/README.md",
+      "https://github.com/Buco7854/weewx-netatmo/blob/132ce8562c969a88ebc1fc455a9d3106851a5c64/bin/user/netatmo.py",
+      "https://github.com/Buco7854/weewx-netatmo/blob/132ce8562c969a88ebc1fc455a9d3106851a5c64/install.py"
+    ],
+    "check": {
+      "repository": "weewx-packages/weewx-netatmo",
+      "ref": "master",
+      "imports": [
+        "user.netatmo"
+      ],
+      "allowed_skips": [],
+      "tests_path": "ci/project_tests/weewx-netatmo",
+      "pip_packages": []
+    },
+    "patch": "ci/recipes/netatmo/package.patch",
+    "post": 1
   }
 ]
