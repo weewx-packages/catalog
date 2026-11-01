@@ -1789,6 +1789,17 @@
             "sha256": "657fea01006bd3b8c88b34d564c576682586fed7232d323af231af50026b166a"
           },
           "restart_required": true
+        },
+        {
+          "version": "0.17.post1",
+          "requires_python": ">=3.10,<3.15",
+          "archive": {
+            "url": "https://github.com/weewx-packages/catalog/releases/download/netatmo/v0.17.post1/netatmo-0.17.post1.tar.gz",
+            "format": "tar.gz",
+            "sha256": "3e81e259002faccb55603dd7a9cb8063381c3a397ae075c85c3d6c0264f60dba"
+          },
+          "requires_weewx": ">=5.5,<6",
+          "restart_required": true
         }
       ]
     },
