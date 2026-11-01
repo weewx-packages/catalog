@@ -2,7 +2,7 @@
 
 # Ecowitt custom
 
-Receive uploads from Ecowitt consoles and gateways set to a customized server. The driver of ecowittcustom, without its skins.
+Receive customized-server uploads from Ecowitt consoles and gateways. Independently maintained driver without skins.
 
 Package ID `ecowittcustom`. The [installation and configuration guide](https://github.com/weewx-packages/weewx-ecowittcustom) lists its
 further settings.
@@ -11,15 +11,15 @@ further settings.
 
 | | |
 |---|---|
-| Version | 0.2.0.post1 |
+| Version | 0.3.0 |
 | WeeWX | `>=5,<6` |
 | Python | `>=3.10` |
-| Release notes | [0.2.0.post1](https://github.com/weewx-packages/weewx-ecowittcustom/releases/tag/v0.2.0.post1) |
+| Release notes | [0.3.0](https://github.com/weewx-packages/weewx-ecowittcustom/releases/tag/v0.3.0) |
 
 ## Install with stock WeeWX
 
 ```shell
-sudo weectl extension install https://github.com/weewx-packages/weewx-ecowittcustom/releases/download/v0.2.0.post1/weewx-ecowittcustom-0.2.0.post1.tar.gz
+sudo weectl extension install https://github.com/weewx-packages/weewx-ecowittcustom/releases/download/v0.3.0/weewx-ecowittcustom-0.3.0.tar.gz
 ```
 
 Add `--config /path/to/weewx.conf` if your station uses another configuration file.
@@ -55,3 +55,9 @@ checks them again later.
 ```shell
 weectl extension uninstall ecowittcustom
 ```
+
+## Other releases
+
+| Version | WeeWX | Python | Archive |
+|---|---|---|---|
+| 0.2.0.post1 | `>=5,<6` | `>=3.10` | [Download](https://github.com/weewx-packages/weewx-ecowittcustom/releases/download/v0.2.0.post1/weewx-ecowittcustom-0.2.0.post1.tar.gz) |
