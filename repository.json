@@ -4437,6 +4437,55 @@
           "restart_required": true
         }
       ]
+    },
+    {
+      "id": "display",
+      "installer_name": "display",
+      "name": "weewx-display",
+      "description": "Write the data of a wall display as JSON: live readings, extremes and totals, history, forecast, sun and moon.",
+      "types": [
+        "service",
+        "search-list",
+        "generator",
+        "skin"
+      ],
+      "category": "other",
+      "keywords": [
+        "display",
+        "wall display",
+        "dashboard",
+        "json",
+        "esp32",
+        "live",
+        "records",
+        "forecast",
+        "open-meteo",
+        "sun",
+        "moon"
+      ],
+      "homepage": "https://github.com/weewx-packages/weewx-display",
+      "releases": [
+        {
+          "version": "0.1.1",
+          "requires_python": ">=3.10",
+          "requires_weewx": ">=5.5,<6",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-display/releases/download/v0.1.1/weewx-display-0.1.1.zip",
+            "format": "zip",
+            "sha256": "c6b211b7130031e6b7fd1f0648c9fd696b71d8c1df4f1eeefaa94374a8307911"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-display/releases/tag/v0.1.1",
+          "restart_required": true,
+          "requirements": {
+            "python": [
+              "ephem"
+            ],
+            "debian": [
+              "python3-ephem"
+            ]
+          }
+        }
+      ]
     }
   ]
 }

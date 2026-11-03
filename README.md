@@ -187,6 +187,7 @@ shows how to register this catalog and run it.
 | [weewx-climate](https://github.com/weewx-packages/weewx-climate) | [`climate`](packages/climate.md) | Download and query historical ACIS climate statistics. |
 | [weewx-Cloud_coverage](https://github.com/weewx-packages/weewx-Cloud_coverage) | [`cloud-coverage`](packages/cloud-coverage.md) | Estimate cloud coverage from a region of a sky camera image. |
 | [weewx-data-ingest](https://github.com/weewx-packages/weewx-data-ingest) | [`data-ingest`](packages/data-ingest.md) | Inject data from external JSON, XML or text files into the archive. |
+| [weewx-display](https://github.com/weewx-packages/weewx-display) | [`display`](packages/display.md) | Write the data of a wall display as JSON: live readings, extremes and totals, history, forecast, sun and moon. |
 | [weewx-easter-almanac-example](https://github.com/weewx-packages/weewx-easter-almanac-example/blob/weewx-packages-docs/README.md) | [`easter-almanac-example`](packages/easter-almanac-example.md) | almanac extension example that calculates easter date |
 | [weewx-GTS](https://github.com/weewx-packages/weewx-GTS) | [`gts`](packages/gts.md) | Calculate growing degree sums, local solar day boundaries and pressure corrections. |
 | [weewx-home-assistant](https://github.com/weewx-packages/weewx-home-assistant) | [`home-assistant`](packages/home-assistant.md) | Publish WeeWX observations to Home Assistant over MQTT discovery. |
