@@ -4343,6 +4343,18 @@
           },
           "release_notes": "https://github.com/weewx-packages/weewx-station-admin/releases/tag/v0.1.0a10",
           "restart_required": true
+        },
+        {
+          "version": "0.1.0a11",
+          "requires_python": ">=3.10",
+          "requires_weewx": ">=5,<6",
+          "archive": {
+            "url": "https://github.com/weewx-packages/weewx-station-admin/releases/download/v0.1.0a11/weewx-station-admin-0.1.0a11.tar.gz",
+            "format": "tar",
+            "sha256": "ee7fec3dcdfa0293c15df0736ca1688a1acd57203ec2394ad7b80614c2ce0ad2"
+          },
+          "release_notes": "https://github.com/weewx-packages/weewx-station-admin/releases/tag/v0.1.0a11",
+          "restart_required": true
         }
       ]
     },
