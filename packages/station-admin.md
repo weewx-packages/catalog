@@ -11,10 +11,10 @@ dependencies and settings.
 
 | | |
 |---|---|
-| Version | 0.1.0a4 (prerelease) |
+| Version | 0.1.0a5 (prerelease) |
 | WeeWX | `>=5,<6` |
 | Python | `>=3.10` |
-| Release notes | [0.1.0a4](https://github.com/weewx-packages/weewx-station-admin/releases/tag/v0.1.0a4) |
+| Release notes | [0.1.0a5](https://github.com/weewx-packages/weewx-station-admin/releases/tag/v0.1.0a5) |
 
 ## Install with stock WeeWX
 
@@ -22,7 +22,7 @@ Install the dependencies named in the guide first. Then use the `weectl`
 of the Python environment running WeeWX:
 
 ```shell
-weectl extension install https://github.com/weewx-packages/weewx-station-admin/releases/download/v0.1.0a4/weewx-station-admin-0.1.0a4.tar.gz
+weectl extension install https://github.com/weewx-packages/weewx-station-admin/releases/download/v0.1.0a5/weewx-station-admin-0.1.0a5.tar.gz
 ```
 
 Add `--config /path/to/weewx.conf` if your station uses another configuration file.
@@ -51,6 +51,7 @@ weectl extension uninstall station-admin
 
 | Version | WeeWX | Python | Archive |
 |---|---|---|---|
+| 0.1.0a4 | `>=5,<6` | `>=3.10` | [Download](https://github.com/weewx-packages/weewx-station-admin/releases/download/v0.1.0a4/weewx-station-admin-0.1.0a4.tar.gz) |
 | 0.1.0a3 | `>=5,<6` | `>=3.10` | [Download](https://github.com/weewx-packages/weewx-station-admin/releases/download/v0.1.0a3/weewx-station-admin-0.1.0a3.tar.gz) |
 | 0.1.0a2 | `>=5,<6` | `>=3.10` | [Download](https://github.com/weewx-packages/weewx-station-admin/releases/download/v0.1.0a2/weewx-station-admin-0.1.0a2.tar.gz) |
 | 0.1.0a1 | `>=5,<6` | `>=3.10` | [Download](https://github.com/weewx-packages/weewx-station-admin/releases/download/v0.1.0a1/weewx-station-admin-0.1.0a1.tar.gz) |
