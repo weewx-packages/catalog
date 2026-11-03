@@ -290,7 +290,7 @@
     "notice_scan_complete": true
   },
   "AZAZ78/weewx-knx": {
-    "captured_at": "2026-10-27T09:19:57.755275+00:00",
+    "captured_at": "2026-11-03T11:18:20.434619+00:00",
     "items": {
       "1": {
         "title": "this extension has a page in the weewx wiki with instructions",
@@ -305,7 +305,7 @@
     "notice_scan_complete": true
   },
   "Jterrettaz/weewx-windy": {
-    "captured_at": "2026-10-27T09:19:57.337516+00:00",
+    "captured_at": "2026-11-03T11:18:20.203804+00:00",
     "items": {},
     "notices": {
       "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
@@ -313,7 +313,7 @@
     "notice_scan_complete": true
   },
   "Millardiang/weewx-meteoalarm": {
-    "captured_at": "2026-10-27T09:19:58.584460+00:00",
+    "captured_at": "2026-11-03T11:18:21.208281+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -321,7 +321,7 @@
     "notice_scan_complete": true
   },
   "bburton/weewx-columbia-ms": {
-    "captured_at": "2026-10-27T09:19:58.553897+00:00",
+    "captured_at": "2026-11-03T11:18:21.248006+00:00",
     "items": {},
     "notices": {
       "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
@@ -329,7 +329,7 @@
     "notice_scan_complete": true
   },
   "chaunceygardiner/weewx-exfoliation": {
-    "captured_at": "2026-10-27T09:19:59.031744+00:00",
+    "captured_at": "2026-11-03T11:18:21.562781+00:00",
     "items": {},
     "notices": {
       "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e",
@@ -338,7 +338,7 @@
     "notice_scan_complete": true
   },
   "chaunceygardiner/weewx-weatherboard": {
-    "captured_at": "2026-10-27T09:19:59.650084+00:00",
+    "captured_at": "2026-11-03T11:18:22.349352+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7",
@@ -348,7 +348,7 @@
     "notice_scan_complete": true
   },
   "evilbunny2008/AggregatedValues": {
-    "captured_at": "2026-10-27T09:20:01.275530+00:00",
+    "captured_at": "2026-11-03T11:18:23.401129+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -356,7 +356,7 @@
     "notice_scan_complete": true
   },
   "hilman2/weewx-ultimate-push": {
-    "captured_at": "2026-10-27T09:20:09.809865+00:00",
+    "captured_at": "2026-11-03T11:18:30.663655+00:00",
     "items": {
       "31": {
         "title": "Clarify HTTP-only station transport before a remote TLS proxy",
@@ -509,7 +509,7 @@
     "notice_scan_complete": true
   },
   "inguy24/weewx-openweather_API": {
-    "captured_at": "2026-10-27T09:20:04.385616+00:00",
+    "captured_at": "2026-11-03T11:18:26.548430+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -517,7 +517,7 @@
     "notice_scan_complete": true
   },
   "knight-of-ni/WeeWX-SetProcessName": {
-    "captured_at": "2026-10-27T09:20:04.917806+00:00",
+    "captured_at": "2026-11-03T11:18:26.802258+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -525,7 +525,7 @@
     "notice_scan_complete": true
   },
   "matthewwall/weewx-amphibian": {
-    "captured_at": "2026-10-27T09:20:05.331883+00:00",
+    "captured_at": "2026-11-03T11:18:27.148649+00:00",
     "items": {},
     "notices": {
       "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
@@ -533,7 +533,7 @@
     "notice_scan_complete": true
   },
   "n2ee/weewx-id5001": {
-    "captured_at": "2026-10-27T09:20:05.471304+00:00",
+    "captured_at": "2026-11-03T11:18:27.558901+00:00",
     "items": {},
     "notices": {
       "LICENSE": "ea97251003d0f46c0ba1b0eca493c6c229f9322b"
@@ -541,7 +541,7 @@
     "notice_scan_complete": true
   },
   "poblabs/weewx-belchertown": {
-    "captured_at": "2026-10-27T09:20:06.071531+00:00",
+    "captured_at": "2026-11-03T11:18:27.804568+00:00",
     "items": {},
     "notices": {
       "LICENSE": "94a9ed024d3859793618152ea559a168bbcbb5e2"
@@ -549,8 +549,14 @@
     "notice_scan_complete": true
   },
   "roe-dl/weewx-DWD": {
-    "captured_at": "2026-10-27T09:20:07.320633+00:00",
+    "captured_at": "2026-11-03T11:18:30.752277+00:00",
     "items": {
+      "86": {
+        "title": "Radar: read RV and WN composites in ODIM HDF5 format (DWD changed format on 2026-10-22)",
+        "url": "https://github.com/roe-dl/weewx-DWD/pull/86",
+        "kind": "PR",
+        "digest": "8c9bef81cbf686e3790688f4c9a73c18227f06734a457dd03711624ab97c4f1e"
+      },
       "84": {
         "title": "Timeouts beim Download vom DWD",
         "url": "https://github.com/roe-dl/weewx-DWD/issues/84",
@@ -570,7 +576,7 @@
     "notice_scan_complete": true
   },
   "roe-dl/weewx-precipmeter": {
-    "captured_at": "2026-10-27T09:20:06.552629+00:00",
+    "captured_at": "2026-11-03T11:18:28.516498+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -578,7 +584,7 @@
     "notice_scan_complete": true
   },
   "roe-dl/weewx-skymap-almanac": {
-    "captured_at": "2026-10-27T09:20:07.432206+00:00",
+    "captured_at": "2026-11-03T11:18:28.904413+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -586,7 +592,7 @@
     "notice_scan_complete": true
   },
   "roe-dl/weewx-svg2png": {
-    "captured_at": "2026-10-27T09:20:07.829818+00:00",
+    "captured_at": "2026-11-03T11:18:29.674729+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -594,7 +600,7 @@
     "notice_scan_complete": true
   },
   "smeisens/weewx-wundergroundlike": {
-    "captured_at": "2026-10-27T09:20:08.481212+00:00",
+    "captured_at": "2026-11-03T11:18:29.871724+00:00",
     "items": {},
     "notices": {
       "LICENSE.txt": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
@@ -602,13 +608,13 @@
     "notice_scan_complete": true
   },
   "weewx-contrib/weewx-rtldavis": {
-    "captured_at": "2026-10-27T09:20:09.543616+00:00",
+    "captured_at": "2026-11-03T11:18:31.667486+00:00",
     "items": {},
     "notices": {},
     "notice_scan_complete": true
   },
   "weewx-mqtt/subscribe": {
-    "captured_at": "2026-10-27T09:20:14.989992+00:00",
+    "captured_at": "2026-11-03T11:18:36.036390+00:00",
     "items": {
       "13": {
         "title": "First-time install failure",
@@ -632,7 +638,7 @@
         "title": "case of script name and actually usable version number",
         "url": "https://github.com/weewx-mqtt/subscribe/pull/9",
         "kind": "PR",
-        "digest": "d87d221ed862834a5da3dedc72568d9d48f4e0df1be49d8f76fc8492285c2d55"
+        "digest": "75e4076d5f1d1c09e15919918ecefb52fad1066f418353353551228f92ab2c9a"
       },
       "4": {
         "title": "Rename MQTTSubscribe.py to mqttsubscribe.py",
@@ -659,7 +665,7 @@
     "notice_scan_complete": true
   },
   "weewx-packages/weewx-ecowitt-http-push": {
-    "captured_at": "2026-10-27T09:20:10.964417+00:00",
+    "captured_at": "2026-11-03T11:18:32.753426+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -2079,7 +2085,7 @@
     "notice_scan_complete": true
   },
   "daduke/ventusw820": {
-    "captured_at": "2026-10-27T09:20:00.538563+00:00",
+    "captured_at": "2026-11-03T11:18:23.042819+00:00",
     "items": {
       "3": {
         "title": "Move to python 3?",
@@ -2098,7 +2104,7 @@
     "notice_scan_complete": true
   },
   "dkmcode/weewx-observerip": {
-    "captured_at": "2026-10-27T09:20:03.734465+00:00",
+    "captured_at": "2026-11-03T11:18:25.770947+00:00",
     "items": {
       "3": {
         "title": "Python3 compatibility",
@@ -2125,7 +2131,7 @@
     "notice_scan_complete": true
   },
   "gitlab.com/ngulden/niculskin": {
-    "captured_at": "2026-10-27T09:20:03.082726+00:00",
+    "captured_at": "2026-11-03T11:18:25.399941+00:00",
     "items": {
       "21": {
         "title": "language is always english if weewx > 4.5.1",
@@ -2159,7 +2165,7 @@
     "notice_scan_complete": true
   },
   "teeks99/weewx-json": {
-    "captured_at": "2026-10-27T09:20:11.360681+00:00",
+    "captured_at": "2026-11-03T11:18:33.380827+00:00",
     "items": {
       "15": {
         "title": "Add UV Index and Radiation",
@@ -2682,7 +2688,7 @@
     "notice_scan_complete": true
   },
   "Drealine/weatherlinklive-driver-weewx": {
-    "captured_at": "2026-10-27T09:19:58.459328+00:00",
+    "captured_at": "2026-11-03T11:18:21.155803+00:00",
     "items": {
       "30": {
         "title": "WeeWX 5 - Cannot load configurator for WLLDriver",
@@ -2709,7 +2715,7 @@
     "notice_scan_complete": true
   },
   "Millardiang/weewx-Belchertown-MQTT-Cloudflare-Tunnel": {
-    "captured_at": "2026-10-27T09:19:57.341294+00:00",
+    "captured_at": "2026-11-03T11:18:20.064043+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -2717,13 +2723,13 @@
     "notice_scan_complete": true
   },
   "dennypage/weewx-hubitat": {
-    "captured_at": "2026-10-27T09:19:59.819410+00:00",
+    "captured_at": "2026-11-03T11:18:22.389853+00:00",
     "items": {},
     "notices": {},
     "notice_scan_complete": true
   },
   "dieseld23/weewx-dark": {
-    "captured_at": "2026-10-27T09:20:00.089567+00:00",
+    "captured_at": "2026-11-03T11:18:22.762510+00:00",
     "items": {},
     "notices": {
       "LICENSE": "1367570a03e20322541291f385fb204b7cc7b53c",
@@ -2733,7 +2739,7 @@
     "notice_scan_complete": true
   },
   "inguy24/weewx-airvisual": {
-    "captured_at": "2026-10-27T09:20:02.854054+00:00",
+    "captured_at": "2026-11-03T11:18:24.760602+00:00",
     "items": {
       "1": {
         "title": "Error installing extension",
@@ -2748,7 +2754,7 @@
     "notice_scan_complete": true
   },
   "inguy24/weewx-noaa_marine_API": {
-    "captured_at": "2026-10-27T09:20:04.225412+00:00",
+    "captured_at": "2026-11-03T11:18:26.130728+00:00",
     "items": {
       "1": {
         "title": "install on Weewx v5.3.1",
@@ -2763,7 +2769,7 @@
     "notice_scan_complete": true
   },
   "weewx-contrib/weewx-realtime_gauge-data": {
-    "captured_at": "2026-10-27T09:20:09.085060+00:00",
+    "captured_at": "2026-11-03T11:18:30.945791+00:00",
     "items": {},
     "notices": {
       "LICENSE": "9cecc1d4669ee8af2ca727a5d8cde10cd8b2d7cc",
@@ -2772,7 +2778,7 @@
     "notice_scan_complete": true
   },
   "weewx-mqtt/plugin-loopdata": {
-    "captured_at": "2026-10-27T09:20:10.446311+00:00",
+    "captured_at": "2026-11-03T11:18:31.797802+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -3225,6 +3231,14 @@
   },
   "weewx-packages/weewx-archivecheck": {
     "captured_at": "2026-10-30T10:28:53.437493+00:00",
+    "items": {},
+    "notices": {
+      "LICENSE.txt": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
+    },
+    "notice_scan_complete": true
+  },
+  "weewx-packages/weewx-package-manager": {
+    "captured_at": "2026-11-03T11:18:32.770280+00:00",
     "items": {},
     "notices": {
       "LICENSE.txt": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
