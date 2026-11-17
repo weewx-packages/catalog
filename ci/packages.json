@@ -1768,5 +1768,14 @@
       "user.tempest_udp"
     ],
     "allowed_skips": []
+  },
+  "display": {
+    "repository": "weewx-packages/weewx-display",
+    "ref": "v{version}",
+    "imports": [
+      "user.display",
+      "user.jsongenerator"
+    ],
+    "allowed_skips": []
   }
 }
