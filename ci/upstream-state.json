@@ -290,13 +290,13 @@
     "notice_scan_complete": true
   },
   "AZAZ78/weewx-knx": {
-    "captured_at": "2026-11-10T11:43:47.658602+00:00",
+    "captured_at": "2026-11-17T12:25:32.589067+00:00",
     "items": {
       "1": {
         "title": "this extension has a page in the weewx wiki with instructions",
         "url": "https://github.com/AZAZ78/weewx-knx/issues/1",
         "kind": "issue",
-        "digest": "a54ec8958119946a266d47a2d353b602b60446a16e051edeb7c66ad79c413fc6"
+        "digest": "f1cafdb01f7ff4f1ca1d1aef8f0a62b9885cd827857514ddf8600f353f778052"
       }
     },
     "notices": {
@@ -305,7 +305,7 @@
     "notice_scan_complete": true
   },
   "Jterrettaz/weewx-windy": {
-    "captured_at": "2026-11-10T11:43:47.403548+00:00",
+    "captured_at": "2026-11-17T12:25:32.392323+00:00",
     "items": {},
     "notices": {
       "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
@@ -313,7 +313,7 @@
     "notice_scan_complete": true
   },
   "Millardiang/weewx-meteoalarm": {
-    "captured_at": "2026-11-10T11:43:48.932310+00:00",
+    "captured_at": "2026-11-17T12:25:33.287577+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -321,7 +321,7 @@
     "notice_scan_complete": true
   },
   "bburton/weewx-columbia-ms": {
-    "captured_at": "2026-11-10T11:43:48.681587+00:00",
+    "captured_at": "2026-11-17T12:25:33.399332+00:00",
     "items": {},
     "notices": {
       "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
@@ -329,7 +329,7 @@
     "notice_scan_complete": true
   },
   "chaunceygardiner/weewx-exfoliation": {
-    "captured_at": "2026-11-10T11:43:49.047526+00:00",
+    "captured_at": "2026-11-17T12:25:33.575284+00:00",
     "items": {},
     "notices": {
       "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e",
@@ -338,7 +338,7 @@
     "notice_scan_complete": true
   },
   "chaunceygardiner/weewx-weatherboard": {
-    "captured_at": "2026-11-10T11:43:49.987422+00:00",
+    "captured_at": "2026-11-17T12:25:34.265416+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7",
@@ -348,7 +348,7 @@
     "notice_scan_complete": true
   },
   "evilbunny2008/AggregatedValues": {
-    "captured_at": "2026-11-10T11:43:51.790723+00:00",
+    "captured_at": "2026-11-17T12:25:35.306020+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -356,169 +356,169 @@
     "notice_scan_complete": true
   },
   "hilman2/weewx-ultimate-push": {
-    "captured_at": "2026-11-10T11:44:03.175063+00:00",
+    "captured_at": "2026-11-17T12:25:42.842857+00:00",
     "items": {
       "34": {
         "title": "An upload can overtake the one sent before it",
         "url": "https://github.com/hilman2/weewx-ultimate-push/issues/34",
         "kind": "issue",
-        "digest": "e9541f908e8501eb259eb32bde428521c0fb5a70201e48dee91365980441b8d5"
+        "digest": "cb676ecf695b263671456272c3b1099e0f8ca67b5f32379201ec4d0305fec92e"
       },
       "33": {
         "title": "field_map_extensions in [UltimatePush] does not reach stations in weewx.conf",
         "url": "https://github.com/hilman2/weewx-ultimate-push/issues/33",
         "kind": "issue",
-        "digest": "c73df21bba1297b1547c69867070069ee385c072e484e555c1dce009fa538833"
+        "digest": "4b8fe00ef7c81806ce4b635f67a7ef315cb2b03e0d2fc76287f05a1c0a54b9a6"
       },
       "32": {
         "title": "A new installation records no rain",
         "url": "https://github.com/hilman2/weewx-ultimate-push/issues/32",
         "kind": "issue",
-        "digest": "b037290d579d9a27013622aa5cde48469ef47575de46aeaeadda26e4a02c9f09"
+        "digest": "d005a878df45d37e866a41052f03a69b635e9c6ca1243da012efcf1f88698a49"
       },
       "31": {
         "title": "Clarify HTTP-only station transport before a remote TLS proxy",
         "url": "https://github.com/hilman2/weewx-ultimate-push/issues/31",
         "kind": "issue",
-        "digest": "046c745b9a0faeaf0826919e8a854e27c0737d6b0eaef7bf13826d0ef0769763"
+        "digest": "fd44f89141b91f129b3de1a8635a63f6c62eee7748db3d17847a6558eab2683d"
       },
       "27": {
         "title": "Beta testers wanted: the WS28xx driver, hosted",
         "url": "https://github.com/hilman2/weewx-ultimate-push/issues/27",
         "kind": "issue",
-        "digest": "98e0830c73c1a9a35bbfdbeadc90822e2ed83ba2f10b554a70b8b052a368bd96"
+        "digest": "0061673a926a2129aa001381303368c5961b263e4ae41940dc4e080e874c1684"
       },
       "26": {
         "title": "Beta testers wanted: the WS23xx driver, hosted",
         "url": "https://github.com/hilman2/weewx-ultimate-push/issues/26",
         "kind": "issue",
-        "digest": "a34293be80f9ace489b87a1d10b74a6785d2e2da046b50d619934056a63f7396"
+        "digest": "4a902f12fd4a7093673b38bb4a4def3add3dc5f9ba779fb3ed1d56621e3c2705"
       },
       "25": {
         "title": "Beta testers wanted: the WS1 driver, hosted",
         "url": "https://github.com/hilman2/weewx-ultimate-push/issues/25",
         "kind": "issue",
-        "digest": "ecb770ccb8d2ff5d370d76393ce5ae8f404cc05c6465d21e5a77b6d66e61c0b6"
+        "digest": "f0ea2e3476c4fa42fe3fafffa1ac94b9ed42c22545235a68561dac3c69e1d4bc"
       },
       "24": {
         "title": "Beta testers wanted: the WMR9x8 driver, hosted",
         "url": "https://github.com/hilman2/weewx-ultimate-push/issues/24",
         "kind": "issue",
-        "digest": "fc01e966514cc7272fbdacdc357c38a4338a70e568ae6c297d7acf4419f904d9"
+        "digest": "28a96a986ab1806c6fc5a180015547d02a629baaed2e1366b5f54c852e35b71c"
       },
       "23": {
         "title": "Beta testers wanted: the WMR300 driver, hosted",
         "url": "https://github.com/hilman2/weewx-ultimate-push/issues/23",
         "kind": "issue",
-        "digest": "0386f50b95826c03619eedff753fe0e9e1754ba4ffac55722e849c02f81f03ea"
+        "digest": "ddbd23953d31884368ef10d1966fe8958e64d7ef6f85bf62fe08959e19d18ef2"
       },
       "22": {
         "title": "Beta testers wanted: the WMR100 driver, hosted",
         "url": "https://github.com/hilman2/weewx-ultimate-push/issues/22",
         "kind": "issue",
-        "digest": "94dfe126f7e376e0e9994faf42ccb336845a94cc01d61075905a07a73f391c73"
+        "digest": "12787c85170f8ca9f8b6b62b81307741464c0e26f62a23561622015f264e0d3d"
       },
       "21": {
         "title": "Beta testers wanted: the Ultimeter driver, hosted",
         "url": "https://github.com/hilman2/weewx-ultimate-push/issues/21",
         "kind": "issue",
-        "digest": "bf1b7bc8689322ae4f7ada7bc36fb28c8d8a634d6fdee6b5aea802e44dfef96a"
+        "digest": "0ae2bfa52ca58ba6c13bd13c9171cc556a77bf01b2e4c3c4941a9d9b794eea19"
       },
       "20": {
         "title": "Beta testers wanted: the TE923 driver, hosted",
         "url": "https://github.com/hilman2/weewx-ultimate-push/issues/20",
         "kind": "issue",
-        "digest": "8d1dd5c9b7c251a1f123872e7f437ebec2bda1b619b479989f7fadbe56deb8c7"
+        "digest": "4a22d3ac92bc3f482c7104a44e767d13651b3b78ddca05a837011f6a6674d076"
       },
       "19": {
         "title": "Beta testers wanted: the FineOffsetUSB driver, hosted",
         "url": "https://github.com/hilman2/weewx-ultimate-push/issues/19",
         "kind": "issue",
-        "digest": "51d1189fd26453a986708c2dde398a6da05c0136f4fd49c9b01cd9a81de9b100"
+        "digest": "a1415c9d5f4a4b07c3159328fb419887e70a26b223946da9ab3c0d9021bf5c5d"
       },
       "18": {
         "title": "Beta testers wanted: the CC3000 driver, hosted",
         "url": "https://github.com/hilman2/weewx-ultimate-push/issues/18",
         "kind": "issue",
-        "digest": "9c94b9539761fa62fbf0ced7a3734ee5953ea85bbbe76726b069bf92aa2a5759"
+        "digest": "f3f917d339d9f8212d19a5857c34382a33a59412894e3b146f1347a9dc8a48a9"
       },
       "17": {
         "title": "Beta testers wanted: the AcuRite driver, hosted",
         "url": "https://github.com/hilman2/weewx-ultimate-push/issues/17",
         "kind": "issue",
-        "digest": "c7a18544630942ee685a6d738568ee6af69fc66e3f6308a0f149ca104c74217a"
+        "digest": "f0720cbc793ebb42870fec60fc83fd142c1d128802e03f902e32a96364191f7a"
       },
       "16": {
         "title": "Beta testers wanted: the Vantage driver, hosted",
         "url": "https://github.com/hilman2/weewx-ultimate-push/issues/16",
         "kind": "issue",
-        "digest": "34e3af1a10c8a17541d6fdb0af499e372f19df0003ca067d45d9b40b6d6352a3"
+        "digest": "cf703e7460d6f0380afc2c26935eb07a217c6a23c878a9d89c4bf85f438ff225"
       },
       "15": {
         "title": "Beta testers wanted: 433/868/915 MHz sensors over rtl_433",
         "url": "https://github.com/hilman2/weewx-ultimate-push/issues/15",
         "kind": "issue",
-        "digest": "3a82822801a0daece72a94f4a30220bead17dc4195efa0a4e39e68eba841583a"
+        "digest": "32e3f8a110dfbdd9c95fcc9abe6588e97b65eed1eac6c8f6fefca31ab5171459"
       },
       "14": {
         "title": "Beta testers wanted: WeatherFlow Tempest, AIR and SKY",
         "url": "https://github.com/hilman2/weewx-ultimate-push/issues/14",
         "kind": "issue",
-        "digest": "00c923fdb172cd5111c55d2fe941a5a0acfbec028cfa18c40bf3f0f270852d80"
+        "digest": "24b932143f58761cf28fd11b4d32f4511014e1c5e99065d1501ea1ac18cdf1b5"
       },
       "13": {
         "title": "Beta testers wanted: Home Assistant as a source of readings",
         "url": "https://github.com/hilman2/weewx-ultimate-push/issues/13",
         "kind": "issue",
-        "digest": "4426ea80aec9e304d3aae7e8d2b1aa6625ea5fd3d5b33f90d7bc1ca30a438655"
+        "digest": "9d46eb542f19d122ea08011c92973848e7823ae89739d5ea46eb918bf9614d48"
       },
       "12": {
         "title": "Beta testers wanted: Davis AirLink",
         "url": "https://github.com/hilman2/weewx-ultimate-push/issues/12",
         "kind": "issue",
-        "digest": "f122d2d5be69609263d44ec850177d47bf88db4f9044be7baa5cbe7d606e930c"
+        "digest": "32af87420eadf260ca687d44817ad20a7040ab66055c8ea019ae245649534ca5"
       },
       "11": {
         "title": "Beta testers wanted: PurpleAir",
         "url": "https://github.com/hilman2/weewx-ultimate-push/issues/11",
         "kind": "issue",
-        "digest": "0d64aa52106781717442f6a27f3cd2ed1ef4940f9b2358bc3a7df514e63d596a"
+        "digest": "f2067c2e65de351728c74be5565513490e9132a52ce42691f4465cfb470f3030"
       },
       "10": {
         "title": "Beta testers wanted: an Ecowitt gateway over its own API",
         "url": "https://github.com/hilman2/weewx-ultimate-push/issues/10",
         "kind": "issue",
-        "digest": "5de8e6d2f636475074a6ff28ae49071ac89b21860757da924791b5bf7fc3c0d3"
+        "digest": "5797c2fa948c575aa76be79d044f86758ba8b0e3844afcb2a1e46f017f3a1fb1"
       },
       "9": {
         "title": "Beta testers wanted: LaCrosse LW301 and LW302 gateways",
         "url": "https://github.com/hilman2/weewx-ultimate-push/issues/9",
         "kind": "issue",
-        "digest": "a0905561b135397038886815613f2075ad51ba0a3c7763c5b214e52fd8a011fe"
+        "digest": "48daa40206ff607d3a65bd21334e4060d46b05facf31d547c5bd0c9bcbd97c85"
       },
       "8": {
         "title": "Beta testers wanted: Acurite smartHUB and Access",
         "url": "https://github.com/hilman2/weewx-ultimate-push/issues/8",
         "kind": "issue",
-        "digest": "c48b1f8ab736e2f06f38a7b734284448d271797c0ad6a3fbe2c5768bfd3ee54f"
+        "digest": "677abb8f63dd474a3d8a9f96cdd2bd2ecb8870662902298b48ebe908473ed05d"
       },
       "7": {
         "title": "Beta testers wanted: Ambient Weather consoles",
         "url": "https://github.com/hilman2/weewx-ultimate-push/issues/7",
         "kind": "issue",
-        "digest": "1be6971f602c5bbe0e986fb386e7706deed515c422bc47f2cd44eab7e6703ae8"
+        "digest": "2fcd0b28ff8fd0b0c216980d76d4f991c318ec1a73f5193b03a53691cb73f235"
       },
       "6": {
         "title": "Beta testers wanted: Consoles set to the Weather Underground protocol",
         "url": "https://github.com/hilman2/weewx-ultimate-push/issues/6",
         "kind": "issue",
-        "digest": "fde75a2770e7cd6b80a9696e5822f564dbbe165dd4e6fd480def4b9c97d43e36"
+        "digest": "66a495a9d08c127ac26b0b7ccd8d189b26e2552ddc9159844f216ac92c1326f3"
       },
       "5": {
         "title": "Beta testers wanted: Ecowitt, Froggit and Misol consoles",
         "url": "https://github.com/hilman2/weewx-ultimate-push/issues/5",
         "kind": "issue",
-        "digest": "f599f7cabe920c72e1623336cca04cd926327f4bdc7a6705d9b49bc601c6f845"
+        "digest": "3e8acc954278b44583569cdac385148ea06216dbca44689f6df2c9f3beefcc3d"
       }
     },
     "notices": {
@@ -527,7 +527,7 @@
     "notice_scan_complete": true
   },
   "inguy24/weewx-openweather_API": {
-    "captured_at": "2026-11-10T11:43:55.046566+00:00",
+    "captured_at": "2026-11-17T12:25:38.619968+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -535,7 +535,7 @@
     "notice_scan_complete": true
   },
   "knight-of-ni/WeeWX-SetProcessName": {
-    "captured_at": "2026-11-10T11:43:56.111353+00:00",
+    "captured_at": "2026-11-17T12:25:38.597363+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -543,7 +543,7 @@
     "notice_scan_complete": true
   },
   "matthewwall/weewx-amphibian": {
-    "captured_at": "2026-11-10T11:43:56.389551+00:00",
+    "captured_at": "2026-11-17T12:25:38.732363+00:00",
     "items": {},
     "notices": {
       "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
@@ -551,7 +551,7 @@
     "notice_scan_complete": true
   },
   "n2ee/weewx-id5001": {
-    "captured_at": "2026-11-10T11:43:56.566535+00:00",
+    "captured_at": "2026-11-17T12:25:39.575445+00:00",
     "items": {},
     "notices": {
       "LICENSE": "ea97251003d0f46c0ba1b0eca493c6c229f9322b"
@@ -559,13 +559,13 @@
     "notice_scan_complete": true
   },
   "poblabs/weewx-belchertown": {
-    "captured_at": "2026-11-10T11:43:57.980784+00:00",
+    "captured_at": "2026-11-17T12:25:41.500467+00:00",
     "items": {
-      "481": {
-        "title": "Add Free Software graphs",
-        "url": "https://github.com/poblabs/weewx-belchertown/issues/481",
-        "kind": "issue",
-        "digest": "c9e419e389532fbe8c9f793471082bec4224d3d70b52d8ad1fba3c1f032b40b7"
+      "1025": {
+        "title": "Fix temperature range record rounding and boolean series visibility",
+        "url": "https://github.com/poblabs/weewx-belchertown/pull/1025",
+        "kind": "PR",
+        "digest": "33ec57b466ab34ec7fa4417b39eb4b213dcee47f8ea27cf1c18698b996e8727f"
       }
     },
     "notices": {
@@ -574,25 +574,13 @@
     "notice_scan_complete": true
   },
   "roe-dl/weewx-DWD": {
-    "captured_at": "2026-11-10T11:44:01.320688+00:00",
+    "captured_at": "2026-11-17T12:25:39.932822+00:00",
     "items": {
-      "86": {
-        "title": "Radar: read RV and WN composites in ODIM HDF5 format (DWD changed format on 2026-10-22)",
-        "url": "https://github.com/roe-dl/weewx-DWD/pull/86",
-        "kind": "PR",
-        "digest": "8c9bef81cbf686e3790688f4c9a73c18227f06734a457dd03711624ab97c4f1e"
-      },
-      "84": {
-        "title": "Timeouts beim Download vom DWD",
-        "url": "https://github.com/roe-dl/weewx-DWD/issues/84",
-        "kind": "issue",
-        "digest": "138095c9b550adc261c50b238b24bc77277a479e52f557e558a476febd9005e4"
-      },
       "67": {
         "title": "Biowetter ben\u00f6tigt zus\u00e4tzliche Styles",
         "url": "https://github.com/roe-dl/weewx-DWD/issues/67",
         "kind": "issue",
-        "digest": "bd46712a44e6d1163bb49a756faadc34f02353812e81f87beb8121bb29c18e11"
+        "digest": "6687696af7eba67cfc9f1cdb7bf458bfb1d8b86ea5a3092b90689968429c1bfb"
       }
     },
     "notices": {
@@ -601,7 +589,7 @@
     "notice_scan_complete": true
   },
   "roe-dl/weewx-precipmeter": {
-    "captured_at": "2026-11-10T11:43:57.907202+00:00",
+    "captured_at": "2026-11-17T12:25:40.633354+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -609,7 +597,7 @@
     "notice_scan_complete": true
   },
   "roe-dl/weewx-skymap-almanac": {
-    "captured_at": "2026-11-10T11:43:59.117512+00:00",
+    "captured_at": "2026-11-17T12:25:41.041092+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -617,7 +605,7 @@
     "notice_scan_complete": true
   },
   "roe-dl/weewx-svg2png": {
-    "captured_at": "2026-11-10T11:43:59.154744+00:00",
+    "captured_at": "2026-11-17T12:25:41.654298+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -625,7 +613,7 @@
     "notice_scan_complete": true
   },
   "smeisens/weewx-wundergroundlike": {
-    "captured_at": "2026-11-10T11:44:00.418738+00:00",
+    "captured_at": "2026-11-17T12:25:42.101019+00:00",
     "items": {},
     "notices": {
       "LICENSE.txt": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
@@ -633,7 +621,7 @@
     "notice_scan_complete": true
   },
   "weewx-contrib/weewx-rtldavis": {
-    "captured_at": "2026-11-10T11:44:02.634585+00:00",
+    "captured_at": "2026-11-17T12:25:42.985628+00:00",
     "items": {},
     "notices": {
       "LICENSE.md": "f9d60c1a4ed87650f91e2090ef266cbfecd8f59b"
@@ -641,7 +629,7 @@
     "notice_scan_complete": true
   },
   "weewx-mqtt/subscribe": {
-    "captured_at": "2026-11-10T11:44:09.193374+00:00",
+    "captured_at": "2026-11-17T12:25:47.379948+00:00",
     "items": {
       "13": {
         "title": "First-time install failure",
@@ -665,7 +653,7 @@
         "title": "case of script name and actually usable version number",
         "url": "https://github.com/weewx-mqtt/subscribe/pull/9",
         "kind": "PR",
-        "digest": "69f20ee30464fbf83323372335b9eb039f6d7cd13512c5b6878de0b16b097638"
+        "digest": "c841316e4b526dc279eb07249a43d76958530e24f543a7be9f7fa5d0ba7eec5e"
       },
       "4": {
         "title": "Rename MQTTSubscribe.py to mqttsubscribe.py",
@@ -692,7 +680,7 @@
     "notice_scan_complete": true
   },
   "weewx-packages/weewx-ecowitt-http-push": {
-    "captured_at": "2026-11-10T11:44:04.505290+00:00",
+    "captured_at": "2026-11-17T12:25:43.929364+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -2045,44 +2033,44 @@
     "notice_scan_complete": true
   },
   "daduke/ventusw820": {
-    "captured_at": "2026-11-10T11:43:50.937262+00:00",
+    "captured_at": "2026-11-17T12:25:34.817215+00:00",
     "items": {
       "3": {
         "title": "Move to python 3?",
         "url": "https://github.com/daduke/ventusw820/issues/3",
         "kind": "issue",
-        "digest": "87654196ee54f88210f02e03f24d9a3211ddcbcd78e1bcab94c3e157b3a48c16"
+        "digest": "a7eceddc914940735d5538673f08914a77460e17c032cfde90a3e81733014962"
       },
       "2": {
         "title": "New driver directory",
         "url": "https://github.com/daduke/ventusw820/issues/2",
         "kind": "issue",
-        "digest": "99f30e3054cbcf0aea683260cc81763eef2e84d93a436ed5935b7ae1e2ab9d91"
+        "digest": "0db2da0e3ee5e8b888b0eee8e93b0981f452a9f8aa53c76eda764d0dcc540bed"
       }
     },
     "notices": {},
     "notice_scan_complete": true
   },
   "dkmcode/weewx-observerip": {
-    "captured_at": "2026-11-10T11:43:54.797638+00:00",
+    "captured_at": "2026-11-17T12:25:37.686541+00:00",
     "items": {
       "3": {
         "title": "Python3 compatibility",
         "url": "https://github.com/dkmcode/weewx-observerip/issues/3",
         "kind": "issue",
-        "digest": "bddd0b529d068b61594f6c12d44fea969c8befdc837ced2ee302a3e5eef43118"
+        "digest": "4290430558bd168df8edf9e8dad1ca81ece7db81b290e733c2b3bb12be0be617"
       },
       "2": {
         "title": "Got error with u_Temperature",
         "url": "https://github.com/dkmcode/weewx-observerip/issues/2",
         "kind": "issue",
-        "digest": "b1bc29f4c8241fb42be7f672d8ae8faadbb94e15d190307f4700c08aa9d2017c"
+        "digest": "53163aba85366f88a29828734618923c1fcf95e9f8e396efe17cc4ebcd65c4f6"
       },
       "1": {
         "title": "suggestions for observerip",
         "url": "https://github.com/dkmcode/weewx-observerip/pull/1",
         "kind": "PR",
-        "digest": "4665830ae9cd49d20f42e9b8f96d363fc4d95c978799f716573e4974bfdb02ae"
+        "digest": "f2d28f80755d71f08bcfcbbdb7ad41314e635f71daf5fb88004ee8c280025680"
       }
     },
     "notices": {
@@ -2091,7 +2079,7 @@
     "notice_scan_complete": true
   },
   "gitlab.com/ngulden/niculskin": {
-    "captured_at": "2026-11-10T11:43:53.490149+00:00",
+    "captured_at": "2026-11-17T12:25:37.797334+00:00",
     "items": {
       "21": {
         "title": "language is always english if weewx > 4.5.1",
@@ -2125,25 +2113,25 @@
     "notice_scan_complete": true
   },
   "teeks99/weewx-json": {
-    "captured_at": "2026-11-10T11:44:03.778266+00:00",
+    "captured_at": "2026-11-17T12:25:44.752215+00:00",
     "items": {
       "15": {
         "title": "Add UV Index and Radiation",
         "url": "https://github.com/teeks99/weewx-json/pull/15",
         "kind": "PR",
-        "digest": "a85f6cb7ffd00de6437614ab20650a80d045db65adad20edb8453d3f5c226461"
+        "digest": "8fef6f358d016e4c4f669e0471700719fd79d2c2988881b0d89f68b87b860a0b"
       },
       "13": {
         "title": "Install Instructions need updating",
         "url": "https://github.com/teeks99/weewx-json/issues/13",
         "kind": "issue",
-        "digest": "678ac619862ea19a82deba85ec3f0e9ba609c0b325a0ece58d2856364c6f7ddd"
+        "digest": "1e4af97659949fb46f72705cf7c4cf4def79460bfa5e82886e96f195aa31d6f4"
       },
       "9": {
         "title": "Extending json output with new values",
         "url": "https://github.com/teeks99/weewx-json/issues/9",
         "kind": "issue",
-        "digest": "6deb59d0e9f61686cf3cf1b3e7f5cc211a25293a6e027a39db0a82ded82fd9c6"
+        "digest": "ed623d8a3a8e58ef2d28de3b8814c0fd35212c1ce6194a9982714a26dda9f65c"
       }
     },
     "notices": {
@@ -2648,25 +2636,25 @@
     "notice_scan_complete": true
   },
   "Drealine/weatherlinklive-driver-weewx": {
-    "captured_at": "2026-11-10T11:43:48.508868+00:00",
+    "captured_at": "2026-11-17T12:25:33.179659+00:00",
     "items": {
       "30": {
         "title": "WeeWX 5 - Cannot load configurator for WLLDriver",
         "url": "https://github.com/Drealine/weatherlinklive-driver-weewx/issues/30",
         "kind": "issue",
-        "digest": "d4d8d02cfface25bb509157ea50bad2104307231973dde3748d9275ce5967de0"
+        "digest": "95b2cacf47acf4c5b0220debd77181ddc9b551521dbc4878a595b91b2262e976"
       },
       "24": {
         "title": "Wait data from archive when Weewx reload",
         "url": "https://github.com/Drealine/weatherlinklive-driver-weewx/issues/24",
         "kind": "issue",
-        "digest": "7bbcb2e9cc13e0dfb215ebef4d87bbd46c502d00a927420a88d144f2ff3ba2ef"
+        "digest": "dc93404e7b8cf2721756be819dadd73c7ca2f822a7ed190c40f30eff64c612c0"
       },
       "19": {
         "title": "Min/Max Temperature",
         "url": "https://github.com/Drealine/weatherlinklive-driver-weewx/issues/19",
         "kind": "issue",
-        "digest": "2f80c8cd2f462120d92bc4960d55ef00c9341bbdcfa20bb4e22203339c493207"
+        "digest": "607499784fd8e9bf14dadd16fbba50ec9ec62bec95729ddc8094f0e5f1166afc"
       }
     },
     "notices": {
@@ -2675,7 +2663,7 @@
     "notice_scan_complete": true
   },
   "Millardiang/weewx-Belchertown-MQTT-Cloudflare-Tunnel": {
-    "captured_at": "2026-11-10T11:43:47.299254+00:00",
+    "captured_at": "2026-11-17T12:25:32.351537+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -2683,13 +2671,13 @@
     "notice_scan_complete": true
   },
   "dennypage/weewx-hubitat": {
-    "captured_at": "2026-11-10T11:43:50.341661+00:00",
+    "captured_at": "2026-11-17T12:25:34.375214+00:00",
     "items": {},
     "notices": {},
     "notice_scan_complete": true
   },
   "dieseld23/weewx-dark": {
-    "captured_at": "2026-11-10T11:43:50.368099+00:00",
+    "captured_at": "2026-11-17T12:25:34.647247+00:00",
     "items": {},
     "notices": {
       "LICENSE": "1367570a03e20322541291f385fb204b7cc7b53c",
@@ -2699,13 +2687,13 @@
     "notice_scan_complete": true
   },
   "inguy24/weewx-airvisual": {
-    "captured_at": "2026-11-10T11:43:53.704413+00:00",
+    "captured_at": "2026-11-17T12:25:36.433481+00:00",
     "items": {
       "1": {
         "title": "Error installing extension",
         "url": "https://github.com/inguy24/weewx-airvisual/issues/1",
         "kind": "issue",
-        "digest": "b7015353a88f3e2f222b9a1c7ecba473448b8002c52f17d743fac8cb5b836709"
+        "digest": "1e164397ea559fa1cbde609086880d93bc72ff2b58a0c907362b59093936c754"
       }
     },
     "notices": {
@@ -2714,13 +2702,13 @@
     "notice_scan_complete": true
   },
   "inguy24/weewx-noaa_marine_API": {
-    "captured_at": "2026-11-10T11:43:55.251199+00:00",
+    "captured_at": "2026-11-17T12:25:37.684039+00:00",
     "items": {
       "1": {
         "title": "install on Weewx v5.3.1",
         "url": "https://github.com/inguy24/weewx-noaa_marine_API/issues/1",
         "kind": "issue",
-        "digest": "696379a8269307c219bf0a2d559dd12d0acf683832b70d78411b2d66686d1f02"
+        "digest": "93312549a51b1f10e6bbeae8f818d95e75abb4948f35b6c2ce5bfabe7a2680fe"
       }
     },
     "notices": {
@@ -2729,7 +2717,7 @@
     "notice_scan_complete": true
   },
   "weewx-contrib/weewx-realtime_gauge-data": {
-    "captured_at": "2026-11-10T11:44:01.781015+00:00",
+    "captured_at": "2026-11-17T12:25:42.645024+00:00",
     "items": {},
     "notices": {
       "LICENSE": "9cecc1d4669ee8af2ca727a5d8cde10cd8b2d7cc",
@@ -2738,7 +2726,7 @@
     "notice_scan_complete": true
   },
   "weewx-mqtt/plugin-loopdata": {
-    "captured_at": "2026-11-10T11:44:03.183269+00:00",
+    "captured_at": "2026-11-17T12:25:43.636053+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -3222,7 +3210,7 @@
     "notice_scan_complete": true
   },
   "weewx-packages/weewx-package-manager": {
-    "captured_at": "2026-11-10T11:44:04.542161+00:00",
+    "captured_at": "2026-11-17T12:25:44.520445+00:00",
     "items": {},
     "notices": {
       "LICENSE.txt": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
