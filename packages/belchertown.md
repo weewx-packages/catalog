@@ -16,10 +16,10 @@ dependencies and settings.
 
 | | |
 |---|---|
-| Version | 3.0.1 |
+| Version | 3.1.0 |
 | WeeWX | `>=5,<6` |
 | Python | `>=3.10` |
-| Release notes | [3.0.1](https://github.com/poblabs/weewx-belchertown/releases/tag/weewx-belchertown-3.0.1) |
+| Release notes | [3.1.0](https://github.com/poblabs/weewx-belchertown/releases/tag/weewx-belchertown-3.1.0) |
 
 ## Install with stock WeeWX
 
@@ -27,7 +27,7 @@ Install the dependencies named in the guide first. Then use the `weectl`
 of the Python environment running WeeWX:
 
 ```shell
-weectl extension install https://github.com/weewx-packages/catalog/releases/download/belchertown/v3.0.1/belchertown-3.0.1.tar.gz
+weectl extension install https://github.com/weewx-packages/catalog/releases/download/belchertown/v3.1.0/belchertown-3.1.0.tar.gz
 ```
 
 Add `--config /path/to/weewx.conf` if your station uses another configuration file.
@@ -56,4 +56,5 @@ weectl extension uninstall Belchertown
 
 | Version | WeeWX | Python | Archive |
 |---|---|---|---|
+| 3.0.1 | `>=5,<6` | `>=3.10` | [Download](https://github.com/weewx-packages/catalog/releases/download/belchertown/v3.0.1/belchertown-3.0.1.tar.gz) |
 | 3.0.0 | `>=5,<6` | `>=3.10` | [Download](https://github.com/weewx-packages/catalog/releases/download/belchertown/v3.0.0/belchertown-3.0.0.tar.gz) |
