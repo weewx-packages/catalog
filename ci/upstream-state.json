@@ -1061,7 +1061,7 @@
     "notice_scan_complete": true
   },
   "FColinet/WeeWX-ModbusTCP-driver": {
-    "captured_at": "2026-11-12T11:52:07.177802+00:00",
+    "captured_at": "2026-11-19T12:10:25.536492+00:00",
     "items": {},
     "notices": {
       "LICENSE": "8e48f0c4eda2e3e7a6e3ab31b62921af799d7607"
@@ -1069,7 +1069,7 @@
     "notice_scan_complete": true
   },
   "Millardiang/weewx-ecowitt_console_emulator": {
-    "captured_at": "2026-11-12T11:52:07.127494+00:00",
+    "captured_at": "2026-11-19T12:10:25.803955+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -1077,7 +1077,7 @@
     "notice_scan_complete": true
   },
   "WernerKr/davisconsoleapi": {
-    "captured_at": "2026-11-12T11:52:08.605909+00:00",
+    "captured_at": "2026-11-19T12:10:26.539808+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7",
@@ -1087,7 +1087,7 @@
     "notice_scan_complete": true
   },
   "chaunceygardiner/weewx-airgradient": {
-    "captured_at": "2026-11-12T11:52:08.536262+00:00",
+    "captured_at": "2026-11-19T12:10:26.695204+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7",
@@ -1096,7 +1096,7 @@
     "notice_scan_complete": true
   },
   "chaunceygardiner/weewx-celestial": {
-    "captured_at": "2026-11-12T11:52:08.572806+00:00",
+    "captured_at": "2026-11-19T12:10:26.860775+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -1104,15 +1104,22 @@
     "notice_scan_complete": true
   },
   "chaunceygardiner/weewx-forecast": {
-    "captured_at": "2026-11-12T11:52:09.745139+00:00",
-    "items": {},
+    "captured_at": "2026-11-19T12:10:27.905073+00:00",
+    "items": {
+      "3": {
+        "title": "Xtide for UK",
+        "url": "https://github.com/chaunceygardiner/weewx-forecast/issues/3",
+        "kind": "issue",
+        "digest": "d390350bd10e4c05ab290564ba815be907415a935b3f1d1745446a64c912cd89"
+      }
+    },
     "notices": {
       "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
     },
     "notice_scan_complete": true
   },
   "chaunceygardiner/weewx-loopdata": {
-    "captured_at": "2026-11-12T11:52:09.831207+00:00",
+    "captured_at": "2026-11-19T12:10:27.858563+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -1120,7 +1127,7 @@
     "notice_scan_complete": true
   },
   "chaunceygardiner/weewx-xtide": {
-    "captured_at": "2026-11-12T11:52:10.057984+00:00",
+    "captured_at": "2026-11-19T12:10:27.866903+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -1128,7 +1135,7 @@
     "notice_scan_complete": true
   },
   "evilbunny2008/SinceLastArchiveAccumulator": {
-    "captured_at": "2026-11-12T11:52:11.083041+00:00",
+    "captured_at": "2026-11-19T12:10:28.986465+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -1136,7 +1143,7 @@
     "notice_scan_complete": true
   },
   "glennmckechnie/weewx-owfs": {
-    "captured_at": "2026-11-12T11:52:11.381877+00:00",
+    "captured_at": "2026-11-19T12:10:28.960814+00:00",
     "items": {},
     "notices": {},
     "notice_scan_complete": true
@@ -1469,7 +1476,7 @@
     "notice_scan_complete": true
   },
   "matthewwall/weewx-tfrc": {
-    "captured_at": "2026-11-12T11:52:19.523657+00:00",
+    "captured_at": "2026-11-19T12:10:36.823366+00:00",
     "items": {},
     "notices": {
       "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
@@ -1477,7 +1484,7 @@
     "notice_scan_complete": true
   },
   "matthewwall/weewx-vedirect": {
-    "captured_at": "2026-11-12T11:52:21.255250+00:00",
+    "captured_at": "2026-11-19T12:10:39.301013+00:00",
     "items": {},
     "notices": {
       "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
@@ -1485,7 +1492,7 @@
     "notice_scan_complete": true
   },
   "raymondelooff/weewx-pusher": {
-    "captured_at": "2026-11-12T11:52:22.542160+00:00",
+    "captured_at": "2026-11-19T12:10:42.658979+00:00",
     "items": {},
     "notices": {
       "LICENSE": "9cecc1d4669ee8af2ca727a5d8cde10cd8b2d7cc"
@@ -1493,7 +1500,7 @@
     "notice_scan_complete": true
   },
   "roe-dl/weewx-rwsa": {
-    "captured_at": "2026-11-12T11:52:23.816198+00:00",
+    "captured_at": "2026-11-19T12:10:43.547072+00:00",
     "items": {},
     "notices": {
       "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
@@ -1501,7 +1508,7 @@
     "notice_scan_complete": true
   },
   "roe-dl/weewx-snmp": {
-    "captured_at": "2026-11-12T11:52:24.769808+00:00",
+    "captured_at": "2026-11-19T12:10:44.227303+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -1509,7 +1516,7 @@
     "notice_scan_complete": true
   },
   "tkeffer/weewx-nmea-xdr": {
-    "captured_at": "2026-11-12T11:52:27.053333+00:00",
+    "captured_at": "2026-11-19T12:10:46.196020+00:00",
     "items": {},
     "notices": {
       "LICENSE.txt": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
@@ -1517,7 +1524,7 @@
     "notice_scan_complete": true
   },
   "tkeffer/weewx-wmr89": {
-    "captured_at": "2026-11-12T11:52:28.240266+00:00",
+    "captured_at": "2026-11-19T12:10:47.135510+00:00",
     "items": {},
     "notices": {
       "LICENSE.txt": "0a041280bd00a9d068f503b8ee7ce35214bd24a1"
@@ -1525,7 +1532,7 @@
     "notice_scan_complete": true
   },
   "w4kus/weewx-weepe": {
-    "captured_at": "2026-11-12T11:52:28.646748+00:00",
+    "captured_at": "2026-11-19T12:10:47.537214+00:00",
     "items": {},
     "notices": {
       "LICENSE.txt": "86648b6bf93b72e747e9bc2239cb8ac5b890b05c"
@@ -1533,7 +1540,7 @@
     "notice_scan_complete": true
   },
   "weewx-contrib/weewx-NovaSDS011": {
-    "captured_at": "2026-11-12T11:52:31.771446+00:00",
+    "captured_at": "2026-11-19T12:10:49.919693+00:00",
     "items": {
       "1": {
         "title": "Add local Sensor.Community HTTP input",
@@ -1548,7 +1555,7 @@
     "notice_scan_complete": true
   },
   "weewx-extensions/aqi-xtype": {
-    "captured_at": "2026-11-12T11:52:31.532536+00:00",
+    "captured_at": "2026-11-19T12:10:49.295454+00:00",
     "items": {
       "3": {
         "title": "Support retrieving series data for nowcast algorithm",
@@ -2269,7 +2276,7 @@
     "notice_scan_complete": true
   },
   "jonotaegi/weewx-wll": {
-    "captured_at": "2026-11-12T11:52:18.247292+00:00",
+    "captured_at": "2026-11-19T12:10:35.197445+00:00",
     "items": {
       "7": {
         "title": "add request timeout",
@@ -2306,7 +2313,7 @@
     "notice_scan_complete": true
   },
   "matthewwall/weewx-crt": {
-    "captured_at": "2026-11-12T11:52:18.233495+00:00",
+    "captured_at": "2026-11-19T12:10:35.794764+00:00",
     "items": {
       "13": {
         "title": "crt fails to load on Python 3.12+: No module named 'distutils'",
@@ -2339,7 +2346,7 @@
     "notice_scan_complete": true
   },
   "matthewwall/weewx-influx": {
-    "captured_at": "2026-11-12T11:52:31.511990+00:00",
+    "captured_at": "2026-11-19T12:10:47.454782+00:00",
     "items": {
       "36": {
         "title": "Avoid distutils version parsing",
@@ -2432,7 +2439,7 @@
     "notice_scan_complete": true
   },
   "matthewwall/weewx-twitter": {
-    "captured_at": "2026-11-12T11:52:21.120417+00:00",
+    "captured_at": "2026-11-19T12:10:38.211409+00:00",
     "items": {
       "4": {
         "title": "Posting on Twitter at fixed time",
@@ -2445,7 +2452,7 @@
     "notice_scan_complete": true
   },
   "tfilo/weewx-interceptor": {
-    "captured_at": "2026-11-12T11:52:27.516846+00:00",
+    "captured_at": "2026-11-19T12:10:46.605155+00:00",
     "items": {
       "5": {
         "title": "Optional passkey check for uploads in listen mode",
@@ -2560,7 +2567,7 @@
     "notice_scan_complete": true
   },
   "jonathankoren/weewx-aqi": {
-    "captured_at": "2026-11-12T11:52:15.672208+00:00",
+    "captured_at": "2026-11-19T12:10:33.545836+00:00",
     "items": {
       "42": {
         "title": "United States EPA has updated their AQI ranges for PM2.5",
@@ -2898,7 +2905,7 @@
     "notice_scan_complete": true
   },
   "CameronD73/weewx-utilities": {
-    "captured_at": "2026-11-12T11:52:07.108553+00:00",
+    "captured_at": "2026-11-19T12:10:25.597342+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7",
@@ -2910,7 +2917,7 @@
     "notice_scan_complete": true
   },
   "Daveiano/weewx-wdc": {
-    "captured_at": "2026-11-12T11:52:33.128727+00:00",
+    "captured_at": "2026-11-19T12:10:47.965950+00:00",
     "items": {
       "315": {
         "title": "Norwegian language file",
@@ -3057,19 +3064,37 @@
     "notice_scan_complete": true
   },
   "felddy/weewx-home-assistant": {
-    "captured_at": "2026-11-12T11:52:20.132050+00:00",
+    "captured_at": "2026-11-19T12:10:43.269309+00:00",
     "items": {
+      "82": {
+        "title": "chore(deps-dev): bump coverage from 7.17.0 to 7.17.2",
+        "url": "https://github.com/felddy/weewx-home-assistant/pull/82",
+        "kind": "PR",
+        "digest": "3cd9d5cafd234a8c5ab974397366b92581cedf881598447efb6f94570ed1fd66"
+      },
+      "81": {
+        "title": "chore(deps-dev): bump semver from 3.1.0 to 3.1.1",
+        "url": "https://github.com/felddy/weewx-home-assistant/pull/81",
+        "kind": "PR",
+        "digest": "b3ec8c9f12cb9d9a19d6c8da2e9a1a3b7d4e22afdc6b0cb6a0a8c4e279ce6929"
+      },
+      "80": {
+        "title": "chore(deps): bump paho-mqtt from 2.1.0 to 2.2.0",
+        "url": "https://github.com/felddy/weewx-home-assistant/pull/80",
+        "kind": "PR",
+        "digest": "5db02d7422aba60aaf327bdd04c6560336a5da2f95eb4b7ebd5ace0879c2ef11"
+      },
+      "79": {
+        "title": "chore(deps): bump pydantic from 2.14.2 to 2.14.3",
+        "url": "https://github.com/felddy/weewx-home-assistant/pull/79",
+        "kind": "PR",
+        "digest": "63ff2a07e9cbefba06e8dac6739752bc28c89c1a844ec94b4fb4ac4ff3b0face"
+      },
       "78": {
         "title": "fix(controller): connect to MQTT only after controller is fully initialized",
         "url": "https://github.com/felddy/weewx-home-assistant/pull/78",
         "kind": "PR",
-        "digest": "8488f285ed287114250d1c8fc03c5655ddcf73ca2948bc21f79a80da3e32ebd7"
-      },
-      "77": {
-        "title": "chore(deps-dev): bump coverage from 7.17.0 to 7.17.1",
-        "url": "https://github.com/felddy/weewx-home-assistant/pull/77",
-        "kind": "PR",
-        "digest": "eeee1ee551193ff62685fefdef9f51c13373d6621abca86216af17ddea3b40c8"
+        "digest": "0ef796566104e9cd78b119accb8f8164458c3d6d956e2f9e4513cf27a7adc5b3"
       },
       "74": {
         "title": "MQTT thread can die at startup because loop_start() runs before connect()",
@@ -3081,7 +3106,7 @@
         "title": "chore(develop): release 1.3.2",
         "url": "https://github.com/felddy/weewx-home-assistant/pull/73",
         "kind": "PR",
-        "digest": "951df8b8bfba767c72342499c526bf205e669f818edae24f903fe51859a0487f"
+        "digest": "0f8130e2efe59fc8805928fccb55d96563c5ad51683adbe16299c0b45ecf4821"
       },
       "29": {
         "title": "No module named 'weewx_ha'",
@@ -3108,7 +3133,7 @@
     "notice_scan_complete": true
   },
   "glennmckechnie/weewx-wxobs": {
-    "captured_at": "2026-11-12T11:52:13.220512+00:00",
+    "captured_at": "2026-11-19T12:10:30.782998+00:00",
     "items": {
       "10": {
         "title": "Negative number of Wind Chill",
@@ -3129,7 +3154,7 @@
     "notice_scan_complete": true
   },
   "mcrossley/SteelSeries-Weather-Gauges": {
-    "captured_at": "2026-11-12T11:52:23.630237+00:00",
+    "captured_at": "2026-11-19T12:10:41.524807+00:00",
     "items": {
       "24": {
         "title": "pageUpdateLimit not working",
@@ -3163,7 +3188,7 @@
     "notice_scan_complete": true
   },
   "tkeffer/weewx-brultech": {
-    "captured_at": "2026-11-12T11:52:25.912313+00:00",
+    "captured_at": "2026-11-19T12:10:45.186725+00:00",
     "items": {},
     "notices": {
       "LICENSE.txt": "94a045322262546cfb9d72561e1d587b5c2ffb1e",
@@ -3173,7 +3198,7 @@
     "notice_scan_complete": true
   },
   "weewx-packages/weewx-davis-cloud": {
-    "captured_at": "2026-11-12T11:52:32.670306+00:00",
+    "captured_at": "2026-11-19T12:10:48.612459+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
