@@ -53,7 +53,7 @@
   },
   "belchertown": {
     "repository": "weewx-packages/weewx-belchertown",
-    "ref": "d4138fa8ddd1760a265490ede146762c4d243e35",
+    "ref": "cd5082e17ea42f6016851556cdb9f296f0765bd8",
     "kind": "skin",
     "report": "Belchertown",
     "imports": [

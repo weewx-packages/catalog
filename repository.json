@@ -390,6 +390,18 @@
           },
           "release_notes": "https://github.com/poblabs/weewx-belchertown/releases/tag/weewx-belchertown-3.1.0",
           "restart_required": true
+        },
+        {
+          "version": "3.2.3",
+          "requires_python": ">=3.10",
+          "requires_weewx": ">=5,<6",
+          "archive": {
+            "url": "https://github.com/weewx-packages/catalog/releases/download/belchertown/v3.2.3/belchertown-3.2.3.tar.gz",
+            "format": "tar",
+            "sha256": "e6d44e9a7f87660c112f5f1879e91a78b3d6d9cf85117f47b27df2b2f89559fb"
+          },
+          "release_notes": "https://github.com/poblabs/weewx-belchertown/releases/tag/weewx-belchertown-3.2.3",
+          "restart_required": true
         }
       ]
     },
