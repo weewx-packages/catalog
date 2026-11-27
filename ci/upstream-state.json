@@ -1557,7 +1557,7 @@
     "notice_scan_complete": true
   },
   "Cosmospacedog/Gill-WeeWX": {
-    "captured_at": "2026-11-20T12:12:22.038432+00:00",
+    "captured_at": "2026-11-27T13:08:10.225681+00:00",
     "items": {},
     "notices": {
       "LICENSE": "52d26ec8f48a0ee7bd2b373be19fcef28e9deddc"
@@ -1565,8 +1565,15 @@
     "notice_scan_complete": true
   },
   "Millardiang/weewx-divumwx": {
-    "captured_at": "2026-11-20T12:12:22.148345+00:00",
-    "items": {},
+    "captured_at": "2026-11-27T13:08:10.928052+00:00",
+    "items": {
+      "78": {
+        "title": "Feature request: German translation for the astronomy section (happy to contribute)",
+        "url": "https://github.com/Millardiang/weewx-divumwx/issues/78",
+        "kind": "issue",
+        "digest": "dde4d2b12d349ea133bd2e43710d0c072ad3fd8ca77f2eaf253c7231931df174"
+      }
+    },
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7",
       "divumwx/css/fonts/OFL.txt": "5bb330e992aa09bb1c4bb5afbfd39b2928c30e06",
@@ -1576,7 +1583,7 @@
     "notice_scan_complete": true
   },
   "chaunceygardiner/weewx-airlink": {
-    "captured_at": "2026-11-20T12:12:22.903459+00:00",
+    "captured_at": "2026-11-27T13:08:11.737027+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7",
@@ -1585,7 +1592,7 @@
     "notice_scan_complete": true
   },
   "chaunceygardiner/weewx-ip100": {
-    "captured_at": "2026-11-20T12:12:23.141972+00:00",
+    "captured_at": "2026-11-27T13:08:11.559823+00:00",
     "items": {},
     "notices": {
       "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
@@ -1593,7 +1600,7 @@
     "notice_scan_complete": true
   },
   "chaunceygardiner/weewx-skyfield": {
-    "captured_at": "2026-11-20T12:12:23.355920+00:00",
+    "captured_at": "2026-11-27T13:08:12.421043+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -1601,7 +1608,7 @@
     "notice_scan_complete": true
   },
   "ktrue/weewx-saratoga": {
-    "captured_at": "2026-11-20T12:12:25.890924+00:00",
+    "captured_at": "2026-11-27T13:08:15.989392+00:00",
     "items": {
       "1": {
         "title": "Update WEEWXtags.php.tmpl with WEEWX's indoor humidity into WEEWXtags.php corresponding indoorhumidity",
@@ -1617,7 +1624,7 @@
     "notice_scan_complete": true
   },
   "matthewwall/weewx-as3935": {
-    "captured_at": "2026-11-20T12:12:24.422753+00:00",
+    "captured_at": "2026-11-27T13:08:13.758158+00:00",
     "items": {},
     "notices": {
       "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
@@ -1625,31 +1632,31 @@
     "notice_scan_complete": true
   },
   "matthewwall/weewx-emoncms": {
-    "captured_at": "2026-11-20T12:12:25.533530+00:00",
+    "captured_at": "2026-11-27T13:08:15.315835+00:00",
     "items": {},
     "notices": {},
     "notice_scan_complete": true
   },
   "matthewwall/weewx-thingspeak": {
-    "captured_at": "2026-11-20T12:12:26.923922+00:00",
+    "captured_at": "2026-11-27T13:08:17.699140+00:00",
     "items": {},
     "notices": {},
     "notice_scan_complete": true
   },
   "matthewwall/weewx-wbug": {
-    "captured_at": "2026-11-20T12:12:27.863357+00:00",
+    "captured_at": "2026-11-27T13:08:18.671933+00:00",
     "items": {},
     "notices": {},
     "notice_scan_complete": true
   },
   "matthewwall/weewx-wetter": {
-    "captured_at": "2026-11-20T12:12:27.813957+00:00",
+    "captured_at": "2026-11-27T13:08:18.980609+00:00",
     "items": {},
     "notices": {},
     "notice_scan_complete": true
   },
   "open-astro/wp-weewx": {
-    "captured_at": "2026-11-20T12:12:28.338704+00:00",
+    "captured_at": "2026-11-27T13:08:19.590369+00:00",
     "items": {},
     "notices": {
       "LICENSE.md": "fb7bf50a4381735e6f539a2662af1d7a1bd66918"
@@ -1657,7 +1664,7 @@
     "notice_scan_complete": true
   },
   "roe-dl/weewx-photovoltaics": {
-    "captured_at": "2026-11-20T12:12:28.793068+00:00",
+    "captured_at": "2026-11-27T13:08:20.076598+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -1665,7 +1672,7 @@
     "notice_scan_complete": true
   },
   "roe-dl/weewx-sqlupload": {
-    "captured_at": "2026-11-20T12:12:28.733239+00:00",
+    "captured_at": "2026-11-27T13:08:20.434570+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -1673,7 +1680,7 @@
     "notice_scan_complete": true
   },
   "roe-dl/weewx-wns": {
-    "captured_at": "2026-11-20T12:12:29.158583+00:00",
+    "captured_at": "2026-11-27T13:08:20.942898+00:00",
     "items": {},
     "notices": {
       "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
@@ -1681,7 +1688,7 @@
     "notice_scan_complete": true
   },
   "sbsrouteur/weewx-PiSenseHat": {
-    "captured_at": "2026-11-20T12:12:29.561778+00:00",
+    "captured_at": "2026-11-27T13:08:21.407298+00:00",
     "items": {},
     "notices": {
       "LICENSE": "6ff95fd9dde4899151c5df833cd6cc4f7b4335db"
@@ -1689,7 +1696,7 @@
     "notice_scan_complete": true
   },
   "teeks99/weewx-notify": {
-    "captured_at": "2026-11-20T12:12:29.915293+00:00",
+    "captured_at": "2026-11-27T13:08:21.763050+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -1697,7 +1704,7 @@
     "notice_scan_complete": true
   },
   "tkeffer/weewx-climate": {
-    "captured_at": "2026-11-20T12:12:30.025983+00:00",
+    "captured_at": "2026-11-27T13:08:22.225162+00:00",
     "items": {},
     "notices": {
       "LICENSE.txt": "0a041280bd00a9d068f503b8ee7ce35214bd24a1"
@@ -1705,7 +1712,7 @@
     "notice_scan_complete": true
   },
   "tsoodla/weewx-luxtronik": {
-    "captured_at": "2026-11-20T12:12:30.512457+00:00",
+    "captured_at": "2026-11-27T13:08:22.842020+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -1713,13 +1720,13 @@
     "notice_scan_complete": true
   },
   "weewx-extensions/pushover": {
-    "captured_at": "2026-11-20T12:12:31.427973+00:00",
+    "captured_at": "2026-11-27T13:08:24.169971+00:00",
     "items": {
       "1": {
         "title": "Value",
         "url": "https://github.com/weewx-extensions/pushover/issues/1",
         "kind": "issue",
-        "digest": "9e63a3ee9846fc288e857e7541cadef5da3fd9c40124376eceeae17dbbae4aaf"
+        "digest": "bacc5a4b318055ac2805c164be15f388154f6d9b884916710edab2d1fc71bd5a"
       }
     },
     "notices": {
@@ -1728,7 +1735,7 @@
     "notice_scan_complete": true
   },
   "weewx-mqtt/publish": {
-    "captured_at": "2026-11-20T12:12:31.418639+00:00",
+    "captured_at": "2026-11-27T13:08:24.184152+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -2441,7 +2448,7 @@
     "notice_scan_complete": true
   },
   "RandomReaper/weewx-zabbix": {
-    "captured_at": "2026-11-20T12:12:25.912095+00:00",
+    "captured_at": "2026-11-27T13:08:15.695690+00:00",
     "items": {
       "10": {
         "title": "Added a Template for WeeWX",
@@ -2453,19 +2460,19 @@
         "title": "Template for Zabbix 7.0",
         "url": "https://github.com/RandomReaper/weewx-zabbix/issues/9",
         "kind": "issue",
-        "digest": "9a4097a9590cb6b3e9a23f4b528970af373415cb13d4f15c46078b77eb4c9942"
+        "digest": "0f59d6e6ac15003f72fd64a0083a4ff4a476a1742b63b4df79e96f92e4a55706"
       },
       "8": {
         "title": "Adopt Weewx 4x new logging function - Enhancement",
         "url": "https://github.com/RandomReaper/weewx-zabbix/issues/8",
         "kind": "issue",
-        "digest": "ead47dde8519af3f0fafbd819dbef786b221b6544f95b96a08ad41ba0c3812d1"
+        "digest": "0efdb939f05593fe5133060ccdea7a5c9f262e0d6f6f0e75f69fc87b6fe823a9"
       },
       "7": {
         "title": "Reformat zabbix sender stdout - Enhancement",
         "url": "https://github.com/RandomReaper/weewx-zabbix/issues/7",
         "kind": "issue",
-        "digest": "c17927fb078ec7c16e06ff557d6add9b8bb843c348b44ea1d74f949f7ff9648a"
+        "digest": "dddc3bc46cfad6ac270496606aa1a8d21df3e607b1643016bc2d7c0d53542d7a"
       }
     },
     "notices": {
@@ -2474,19 +2481,19 @@
     "notice_scan_complete": true
   },
   "matthewwall/weewx-csv": {
-    "captured_at": "2026-11-20T12:12:25.983663+00:00",
+    "captured_at": "2026-11-27T13:08:16.337454+00:00",
     "items": {
       "2": {
         "title": "CSV contains wrong data",
         "url": "https://github.com/matthewwall/weewx-csv/issues/2",
         "kind": "issue",
-        "digest": "51c309e214f82dfd540779891e7908e0f4ea310209a68611f79244e7011ad569"
+        "digest": "e087ff0e1482ea9dfb5102ae3cb0ead6e730f9d9e46cfced4b7fe400c0007c56"
       },
       "1": {
         "title": "hi, it is possible get less decimals? ",
         "url": "https://github.com/matthewwall/weewx-csv/issues/1",
         "kind": "issue",
-        "digest": "ce8ae396284fa495647743429857edca4941eb797624e7b2e602a74413d25512"
+        "digest": "ad73dd30661f6441019d845eef1ec82384e38708c72ab223f213b980639dd634"
       }
     },
     "notices": {
@@ -2495,25 +2502,25 @@
     "notice_scan_complete": true
   },
   "matthewwall/weewx-meteotemplate": {
-    "captured_at": "2026-11-20T12:12:27.321442+00:00",
+    "captured_at": "2026-11-27T13:08:18.223782+00:00",
     "items": {
       "12": {
         "title": "altri dati da spedire a meteotemplate con la tua estensione",
         "url": "https://github.com/matthewwall/weewx-meteotemplate/issues/12",
         "kind": "issue",
-        "digest": "cb601d62b116d8ad5724b9e7fa224782705c995f9cf70e0f71ac9afdc169e003"
+        "digest": "a261eeae2caee9a0a8c5a197842e0dbe75f6c4d8f67f2d62d2e0136c9120c50c"
       },
       "11": {
         "title": "no api data ?",
         "url": "https://github.com/matthewwall/weewx-meteotemplate/issues/11",
         "kind": "issue",
-        "digest": "660866301d445a8e24270bbaec95173723c92dd4006ee5815edfd3ee8b44e0cc"
+        "digest": "d91cdaea82c69f04dca4b9549ba3de406de31e2c3efb25a6caf3880a71dabcb8"
       },
       "6": {
         "title": "Cummulative Rain",
         "url": "https://github.com/matthewwall/weewx-meteotemplate/issues/6",
         "kind": "issue",
-        "digest": "e9c87f574210e02d5b71713e7d9744c1236169946aa94f50799e2b4ecfd1403e"
+        "digest": "3d762e8e867ff94dbb129c920dbae8c80a81701b49597215e4adf94725259dac"
       }
     },
     "notices": {
@@ -2522,7 +2529,7 @@
     "notice_scan_complete": true
   },
   "matthewwall/weewx-owm": {
-    "captured_at": "2026-11-20T12:12:29.028648+00:00",
+    "captured_at": "2026-11-27T13:08:20.273168+00:00",
     "items": {
       "4": {
         "title": "Update readme.txt",
@@ -2534,7 +2541,7 @@
         "title": "format STATION_ID",
         "url": "https://github.com/matthewwall/weewx-owm/issues/3",
         "kind": "issue",
-        "digest": "9f5657f5bfd825b3745587094a45aeb463611d02ebc70459a153838d8274e1cb"
+        "digest": "8b9f2de5fc6baddc029da2cca6abf3c1334a4cf8a26bec550098afc7e5357de5"
       }
     },
     "notices": {},
@@ -2598,7 +2605,7 @@
     "notice_scan_complete": true
   },
   "LapplandsCohan/weewx-temperaturnu": {
-    "captured_at": "2026-11-20T12:12:22.005243+00:00",
+    "captured_at": "2026-11-27T13:08:10.134779+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -2606,7 +2613,7 @@
     "notice_scan_complete": true
   },
   "Millardiang/weewx-data-ingest": {
-    "captured_at": "2026-11-20T12:12:22.406737+00:00",
+    "captured_at": "2026-11-27T13:08:10.187282+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -2614,7 +2621,7 @@
     "notice_scan_complete": true
   },
   "matthewwall/weewx-taptap": {
-    "captured_at": "2026-11-20T12:12:26.887659+00:00",
+    "captured_at": "2026-11-27T13:08:17.323551+00:00",
     "items": {},
     "notices": {
       "license": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
@@ -2622,7 +2629,7 @@
     "notice_scan_complete": true
   },
   "weewx-contrib/weewx-ecowitt_local_http": {
-    "captured_at": "2026-11-20T12:12:30.803956+00:00",
+    "captured_at": "2026-11-27T13:08:23.197830+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
@@ -3144,19 +3151,19 @@
     "notice_scan_complete": true
   },
   "glennmckechnie/weewx-mastodon": {
-    "captured_at": "2026-11-20T12:12:24.500239+00:00",
+    "captured_at": "2026-11-27T13:08:13.972823+00:00",
     "items": {
       "2": {
         "title": "Mastodon.py User Agent",
         "url": "https://github.com/glennmckechnie/weewx-mastodon/issues/2",
         "kind": "issue",
-        "digest": "3ed40eddeec5f1e7bf18e49edae54e2a42122d2fce14d7f686def731a5d83455"
+        "digest": "c3375bf2e39a3f9d8806a665b7783038dde3fe9a3b0afef1611dc508d78dd799"
       },
       "1": {
         "title": "Thank you! And a request",
         "url": "https://github.com/glennmckechnie/weewx-mastodon/issues/1",
         "kind": "issue",
-        "digest": "5350c81eb0c1cc77c289f3db0dd70b085d54b495738a781b1205252daff6ba0a"
+        "digest": "b708fa34ca8367ca62a8f2da05e93b1fb4fadf5c2d1ed1482dfeb531bd47ac37"
       }
     },
     "notices": {
@@ -3165,7 +3172,7 @@
     "notice_scan_complete": true
   },
   "sbsrouteur/weewx-opensensemap": {
-    "captured_at": "2026-11-20T12:12:31.798999+00:00",
+    "captured_at": "2026-11-27T13:08:24.308546+00:00",
     "items": {
       "3": {
         "title": "Fix missing unit group in sensor conversion",
@@ -3178,7 +3185,7 @@
     "notice_scan_complete": true
   },
   "weewx-packages/weewx-archivecheck": {
-    "captured_at": "2026-11-20T12:12:32.336296+00:00",
+    "captured_at": "2026-11-27T13:08:25.565136+00:00",
     "items": {},
     "notices": {
       "LICENSE.txt": "94a045322262546cfb9d72561e1d587b5c2ffb1e"
@@ -3210,7 +3217,7 @@
     "notice_scan_complete": true
   },
   "weewx-packages/weewx-ambient-http-push": {
-    "captured_at": "2026-11-20T12:12:31.740437+00:00",
+    "captured_at": "2026-11-27T13:08:24.590223+00:00",
     "items": {},
     "notices": {
       "LICENSE": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7"
